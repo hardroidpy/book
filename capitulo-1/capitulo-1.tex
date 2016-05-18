@@ -1,0 +1,54 @@
+\chapter{Introducción}
+
+El conocimiento 
+
+\section{Justificación y Antecedentes}
+El reconocimiento de actividades humanas (Human Activity Recognition, HAR) es una línea de investigación de continuo desarrollo que desde hace más de una década busca recolectar datos de las personas (de manera ubicua) en interacción con su entorno para proveer información contextual en su vida diaria \cite{Bao2004}. El ejemplo más común sería reconocer actividades básicas ambulatorias, cuando una persona está caminando, corriendo, de pie, sentada a través de algún tipo de sensor o cámara disponible para dicho efecto.
+
+Desde que empezaron a masificarse los teléfonos móviles inteligentes con bajo costo, gran capacidad, con múltiples sensores y de adecuado tamaño, las personas interactúan cada vez más con estos dispositivos. Esto genera información contextual que hace posible realizar minería de datos para reconocer actividades para diversos tipos de aplicaciones. Ej. en medicina, seguridad, entretenimiento o de uso militar, etc.\cite{LaraLabrador2013}.
+
+Los sensores disponibles en un teléfono móvil inteligente en la actualidad son variados e incluyen: GPS (localización), micrófonos, cámaras, luz, temperatura, barómetro, dirección (brújula) y aceleración. Existen otros más variados dependiendo del modelo, el fabricante y los accesorios. El acelerómetro es el sensor más común en estos dispositivos, puede medir la aceleración en dos o tres ejes, detectar la orientación del dispositivo y provee principalmente información crucial para el reconocimiento de actividades.
+
+Existe bastante información en el estado del arte de esta línea de investigación sobre técnicas de reconocimiento de actividades, los métodos de captura y el procesamiento de datos de sensores \cite{LaraLabrador2012}, \cite{Kwapisz2011}. Sin embargo, a pesar de estar bien definida en la literatura la arquitectura de un sistema de recolección, existe una necesidad de un componente de librerías para teléfonos móviles que pueda ser libremente utilizado sin depender de definiciones de API privadas (Application Programming Interfaces), servicios de en nube (Software as a Service), o aplicaciones de terceros en Tiendas (Ej. Google Play Services).
+
+Esta propuesta centra en el estudio del reconocimiento de actividades humanas utilizando sensores en teléfonos móviles inteligentes, de manera a aportar una librería de reconocimiento para estos dispositivos. Durante las pruebas experimentales y la recolección de los datos se desarrollará una aplicación móvil que demuestre la efectividad de la librería y evaluará la técnica de reconocimiento sencilla de aprendizaje automático.
+
+\section{Propuesta y Objetivos}
+Inicialmente se realizará una revisión del estado del arte con el objetivo de entender y comprender los métodos de reconocimientos de actividades actualmente empleados.
+ 
+Luego de ello se implementaría la librería propuesta con una API y un servicio Android que atienda a los pedidos de reconocimiento de actividades estándar. La librería además tendrá incluida la utilización y actualización del modelo colaborativo para intentar mejorar las predicciones de las actividades.
+
+Además se implementará un servicio web de captura de las muestras de la librería y actualice el modelo de predicción para futuras versiones de la librería. El modelo de aprendizaje se basará en aprendizaje automático con árboles de decisión (Decision Trees), algoritmo de clasificación C4.5.
+Para terminar, se creará una aplicación móvil de prueba para recolectar muestras y evaluar el resultado de predicción utilizando la librería de reconocimiento propuesta
+
+\subsection{Objetivo General}
+Implementar un sistema de reconocimiento de actividades humanas con teléfonos móviles que aporte componentes de librería y arquitectura de sistema abiertos.
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}
+
+\item Explorar el estado del arte sobre reconocimiento de actividades humanas (HAR).
+
+\item Comprender las técnicas de recolección de datos para aprendizaje en línea en entornos restringidos para bajo consumo de batería.
+
+\item Comprender el procesamiento de señales en datos de sensores de aceleración para identificar muestras de ensayo de aprendizaje automático.
+
+\item Entender las técnicas de clasificación por aprendizaje automático más apropiados en entornos restringidos para bajo consumo de batería.
+
+\item Diseñar la arquitectura de un sistema de reconocimiento para la recolección de datos de manera colaborativa y predicción de actividades humanas en-linea.
+
+\item Aportar un componente de librería de código abierto apropiado para teléfonos móviles con restricciones de bajo consumo de batería.
+
+
+\end{itemize}
+
+\section{Organización del trabajo}
+El trabajo está organizado como sigue: en el Capítulo 2 se presenta el reconocimiento de actividades, sus características, dificultades, y los métodos abordados para el realizar esta reconocimiento.
+
+El Capítulo 3 introduce el aprendizaje automático, los tipos de aprendizajes, y las distintas técnicas o enfoques aplicados, y sobre todo sobre los arboles de decisión. Estos capítulos representan el estado del arte de este trabajo.
+
+El Capítulo 4 se presenta el reconocimiento en dispositivos moviles. Bla bla..
+En el Capítulo 5 se presenta el modelo y la implementación del reconocedor de actividades colaborativo, su diseño y arquitectura, y tecnologías utilizadas para su desarrollo.
+
+En el Capítulo 6 se presentan los experimentos realizados, y en el capitulo 7 los resultados obtenidos. En el Capítulo 8 presentan las conclusiones de este trabajo y los posibles trabajos futuros resultado de este trabajo final de grado.

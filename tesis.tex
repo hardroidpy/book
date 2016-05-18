@@ -1,0 +1,89 @@
+\documentclass[final,fmstyle]{./util/ucathesis}
+
+% paquetes recomendados
+\usepackage{amsmath,amsthm}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage[style=authoryear, uniquename=full, sorting=none,backend=biber, natbib=true]{biblatex}
+\usepackage[style=alphabetic, uniquename=full, sorting=none,backend=biber, natbib=true]{biblatex}
+%\RequirePackage[style=alphabetic, uniquename=full, sorting=none,backend=biber, natbib=true]{biblatex}
+%\usepackage[style=authoryear,maxnames=1,backend=biber]{biblatex}
+
+\usepackage{listings}
+% para la lista de simbolos
+\usepackage{array} %for vertical thick lines in tables
+\usepackage{multirow} %multirow tables
+\usepackage{nicefrac} %for fractions like 1/4
+\usepackage[table]{xcolor} %para colorear las tablas
+% para las tablas
+
+%referencias
+\addbibresource{referencias.bib}
+%se importan las configuraciones custmizdas realizadas.
+\include{./util/custom}
+
+% datos de la tesis
+\title{Sistema de reconocimiento de actividades movil colaborativo}
+\author{Alberto Gimenez \\ Santiago A. Yegros Z.} 
+\degree{Inform\'{a}tica}
+
+\advisor{Prof. Ing.}{Joaquin Lima}
+
+%\newtheorem{definicion}{Definicin}
+
+\logosource{./graphics/logo.png}
+\institution{Universidad Nacional de Asunci\'{o}n}
+\faculty{Facultad Polit\'{e}cnica}
+\address{San Lorenzo - Paraguay}
+
+\begin{document}
+
+\maketitle     % esto hace las portadas
+
+% Agradecimientos
+\include{agradecimientos}
+
+% los siguientes comandos producen 'indices.
+
+% Tabla de contenidos
+\tableofcontents	
+% Lista de figuras
+\listoffigures
+% Lista de tablas
+\listoftables
+% Lista de algoritmos
+\listofalgorithms
+%\include{acronimos}
+%\listofsymbols
+
+
+\mainmatter  % inician los capitulos de la tesis
+
+
+% incluye aqui los capitulos (un archivo .tex por capitulo)
+\include{capitulo-1/capitulo-1} 	%Cap 1: Introducción
+\include{capitulo-2/capitulo-2} 	%Cap 2: Reconocimiento de Actividades
+\include{capitulo-3/capitulo-3} 	%Cap 3: Aprendizaje Automático
+\include{capitulo-4/capitulo-4} 	%Cap 4: Reconocimiento en aplicaciones móviles.
+\include{capitulo-5/capitulo-5}		%Cap 5: Metodología Propuesta - Reconocedor de Actividades Colaborativo
+\include{capitulo-6/capitulo-6}		%Cap 6: Experimentos realizados
+\include{capitulo-7/capitulo-7}		%Cap 7: Resultados Obtenidos
+\include{capitulo-8/capitulo-8} 	%Cap 8: Conclusiones y Trabajos Futuros
+
+\appendix   % inician los apendices de tu tesis
+% los cap'itulos que incluyas a partir de aqu'i aparecen
+% como ap'endices
+%\include{anexos/anexo-1}
+%\include{anexos/lecciones-aprendidas}
+% estos comandos generan la bilbiograf'ia
+\printbibliography
+
+
+\end{document}

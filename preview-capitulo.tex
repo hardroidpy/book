@@ -1,0 +1,51 @@
+\documentclass[final,fmstyle]{./util/ucathesis}
+% La opcion 'final' muestra los graficos, para generar una version sin los graficos utiliza la opcion 'draft'
+
+% paquetes recomendados
+%\usepackage[chapter]{theorems}
+%\usepackage{symbols}
+%\usepackage{url}
+\usepackage{amsmath,amsthm}
+
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[style=numeric,sorting=none,backend=biber]{biblatex}
+\usepackage{listings}
+\addbibresource{referencias.bib}
+
+
+% custom commands
+\newcommand{\foreign}[1]{{\it #1}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\algsetup{indent=2em}
+
+% \setcounter{tocdepth}{3}
+
+\begin{document}
+\lstset{
+    language=java,
+    basicstyle=\small\sffamily,
+    numbers=left,
+    numberstyle=\tiny,
+    frame=tb,
+    columns=fullflexible,
+    showstringspaces=false
+}
+
+
+% incluye aqui los capitulos (un archivo .tex por capitulo)
+
+\include{capitulo-4/capitulo-4}
+
+
+\appendix   % inician los apendices de tu tesis
+
+% los cap'itulos que incluyas a partir de aqu'i aparecen
+% como ap'endices
+
+% estos comandos generan la bilbiograf'ia
+\printbibliography
+
+\end{document}
