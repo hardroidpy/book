@@ -1,77 +1,71 @@
 
-\chapter{Introducción\label{introduccion}}
+\chapter{Introducción}
+
+\label{introduccion}
 
 Hace apenas una década, en que los teléfonos móviles pasaron de ser
 simples aparatos de comunicación, a ser dispositivos de información
 que sea han extendido en todo el mundo como el dispositivo electrónico
-más utilizado de manera diaria. A pesar de que algunos puedan opinar
-lo contrario, se podría afirmar que desde el lanzamiento del iPhone,
-uno de los primeros teléfonos móviles modernos\footnote{ \textit{\emph{o teléfonos inteligentes, }}\textit{smartphones}}
-con pantalla táctil, la convergencia en el uso de teléfonos móviles,
-las redes de datos e Internet ha ido aumentando gradualmente \cite{fling2009mobile}.
+más utilizado de manera diaria. Desde la aparición de los teléfonos
+móviles modernos (\emph{Smartphones}, teléfonos inteligentes) con
+pantalla táctil, la convergencia en el uso de teléfonos móviles, las
+redes de datos e Internet ha ido aumentando gradualmente \cite{fling2009mobile}.
 
-Podemos citar ciertos de los factores importantes en esta revolución
-de la industria móvil como la conocemos y que motivan este trabajo.
 La capacidad y prestaciones de los teléfonos móviles modernos han
 mejorado drásticamente, ya que fusiona los aspectos de teléfonos móviles
 y computadoras portátiles, la promesa esperada desde hace más de una
-década \cite{Tanenbaum2010}. Prácticamente, se pueden realizar muchas
-de las tareas asociadas comúnmente a una computadora personal de escritorio
-en un teléfono móvil, pero con un mayor potencial debido a que el
-teléfono móvil está más próximo a las actividades diarias del portador.
+década \cite{Tanenbaum2010}. Muchas de las tareas asociadas comúnmente
+a una computadora personal de escritorio pueden ser realizadas con
+un teléfono móvil moderno, pero con la ventaja adicional de que el
+móvil está más próximo a las actividades diarias del portador.
 
-A pesar de que los teléfonos móviles modernos son en esencia teléfonos
-ordinarios de comunicación, tienen el valor agregado de poder procesar
-información. Además de poder hablar a través del mismo con otras personas,
-enviar y recibir mensajes de texto, también proporcionan acceso a
-una red de datos móvil de alta velocidad que se haya esparcida por
-todas las latitudes. Últimamente hasta es posible comprar bienes y
-pagar servicios sin utilizar billetes sino simplemente con el teléfono
-móvil a mano. 
+Desde los teléfonos móviles modernos se tiene acceso a la información
+pero en un contexto móvil. El contexto puede darse de dos formas,
+la primera forma es el valor que los usuarios mismos generan a partir
+de las circunstancias en la que están involucrados \cite{fling2009mobile}.
+La información provee un contexto que permite al usuario entender
+mejor el momento por el que está pasando. La segunda forma del contexto
+es el entorno en el cual el usuario realiza una acción determinada
+\cite{fling2009mobile}. El contexto físico de un individuo es su
+ubicación y la actividad física. 
 
-El teléfono móvil moderno está conectado constantemente Internet,
-por lo cual ha popularizando el acceso a la Web\footnote{World Wide Web}.
-Así como la computación móvil ha crecido rápidamente en este segmento,
-así también lo ha hecho el uso de la Web (cfr. \cite{nyt2008iph}).
-Si bien las computadoras y dispositivos portátiles (\emph{laptops}
-y \emph{PDAs}) han contribuido bastante a la conectividad, más aún
-los teléfonos móviles modernos con las conexiones de red de última
-generación (3G/4G\footnote{Tercera y Cuarta Generación}).
+El reconocimiento de actividades humanas (HAR\nomenclature{HAR}{Reconocimiento de Actividades Humanas, por sus siglas en inglés},
+\emph{Human Activity Recognition}) es un línea de investigación que
+busca diseñar algoritmos que detecten el contexto del individuo a
+partir de datos ambiguos del entorno \cite{Bao2004}. Diseñar aplicaciones
+móviles contextuales que detecten las actividades físicas que un individuo
+realiza en su vida diaria es un ejercicio práctico de esta línea de
+investigación. 
 
-Además, las plataformas abiertas como \emph{Android} \cite{google2005and}\nomenclature{Android}{Android es un sistema operativo móvil desarrollado por Google. Está basado en el kernel de Linux.}
-e\emph{ iOS} \cite{apple2007ios}\nomenclature{iOS}{Es un sistema operativo móvil creado y desarrollado por Apple Inc.},
-permiten crear aplicaciones móviles formando un nuevo ecosistema de
-computación contextual y un nuevo medio digital masivo. Estas plataformas
-son las que conducen la expansión y crecimiento de las aplicaciones
-móviles e inalámbricas \cite{Tanenbaum2010}. Podemos citar ejemplos
-de aplicaciones móviles comunes hoy en día, como el de consultar el
-lugar en la esquina donde esté uno ubicado y además todo lo que está
-cerca en un radio determinado de forma inmediata. 
+En el ámbito de los teléfonos móviles existen bastantes usos al reconocer
+las actividades básicas ambulatorias, de si el individuo camina, corre,
+está quieto o moviéndose rápidamente en algún vehículo \cite{campuzano2015}
+\cite{googlio2013}. Actualmente, existen varias implementaciones
+privativas como lo han hecho los fabricantes \emph{Google}, \emph{Sony}
+y \emph{Apple} que demuestran esta tendencia necesaria de proveer
+aplicaciones ricas en contexto con sus respectivos productos \emph{Google
+Play Services API} \cite{googl2016loc}, \emph{LifeLog API} \cite{sony2016act}
+y \emph{HealthKit} \cite{healthkit2016}. 
 
-Desde los teléfonos móviles modernos el usuario tiene acceso a la
-información pero en un contexto móvil. El \emph{contexto} puede darse
-de dos formas, la primera forma es el valor que los usuarios mismos
-generan a partir de las circunstancias en la que están involucrados.
-Por ejemplo, cuando el usuario viaja a un país extranjero y consulta
-con el teléfono móvil en \emph{Wikipedia} \nomenclature{Wikipedia}{Sitio web colaborativo de una enciclopedia mundial y libre}
-acerca de un monumento que está admirando durante su visita. La información
-provee un contexto que permite al usuario entender mejor el momento
-por el que está pasando. La segunda forma del contexto es el modo,
-el medio o el entorno en el cual el usuario realiza una acción determinada
-\cite{fling2009mobile}. 
+Sin embargo, las plataformas como \emph{Android} \cite{google2005and}\nomenclature{Android}{Android es un sistema operativo móvil desarrollado por Google. Está basado en el kernel de Linux.}
+e\emph{ iOS} \cite{apple2007ios}\nomenclature{iOS}{Es un sistema operativo móvil creado y desarrollado por Apple Inc.}
+proveen un ecosistema abierto para crear aplicaciones de contexto
+y de medios digitales masivos. Estas plataformas son las que conducen
+la expansión y crecimiento de las aplicaciones móviles e inalámbricas
+\cite{Tanenbaum2010}. También es primordial contar iniciativas abiertas
+de implementaciones de reconocimiento de actividades para lo que este
+trabajo está abocado.
 
-El tema principal de este trabajo se centra en el contexto de entorno
-(o físico) de un individuo que puede ser la ubicación: dónde está
-posicionado en un instante específico, o la actividad física: qué
-acción realiza en un instante específico. La detección actividades
-físicas es uno de los principales desafíos al crear aplicaciones móviles
-basadas en contexto, diseñar algoritmos que detecten el contexto a
-partir de datos ambiguos del entorno del individuo\cite{Bao2004}.
-En este trabajo se estudia y desarrolla la detección del contexto
-de los usuarios de teléfonos móviles poniendo énfasis ciertas actividades
-físicas en su vida diaria.
+Por último, el teléfono móvil moderno está conectado constantemente
+Internet, por lo cual ha popularizando el acceso a la Web\footnote{World Wide Web}.
+Como la computación móvil ha crecido rápidamente, también lo ha hecho
+el acceso a la Web (cfr. \cite{nyt2008iph}) abriendo posibilidades
+para la colaboración continua de individuos como sujetos de estudio
+en el área de reconocimiento de actividades.
 
-\section{Planteamiento del problema\label{planteamiento}}
+\section{Planteamiento del problema}
+
+\label{planteamiento}
 
 TODO: Explicar El problema
 
