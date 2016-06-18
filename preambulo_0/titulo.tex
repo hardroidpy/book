@@ -1,0 +1,85 @@
+\usepackage{graphics} % for improved inclusion of graphics
+\usepackage{wrapfig} % to include figure with text wrapping around it
+\newcommand{\submittedtext}{{Proyecto de Trabajo de Grado presentado en conformidad a los requisitos para obtener el grado de}}
+
+\ifpdf
+    \DeclareGraphicsExtensions{.png, .jpg, .jpeg, .pdf, .gif} %GIF doesn't work??
+    \usepackage[pdftex]{graphicx}
+    \pdfcompresslevel=9
+\else
+    \usepackage[ dvips, 
+                 bookmarks,
+                 bookmarksopen = true,
+                 bookmarksnumbered = true,
+                 breaklinks = true,
+                 linktocpage,
+                 pagebackref,
+                 colorlinks = true,
+                 linkcolor = blue,
+                 urlcolor  = blue,
+                 citecolor = red,
+                 anchorcolor = green,
+                 hyperindex = true,
+                 hyperfigures
+                 ]{hyperref}
+
+    \DeclareGraphicsExtensions{.eps, .ps}
+    \usepackage{epsfig}
+    \usepackage{graphicx}
+    %\graphicspath{{0_frontmatter/figures/EPS/}{0_frontmatter/figures/}}
+\fi
+
+% The full (unabbreviated) name of the degree
+\def\degree#1{\gdef\@degree{#1}}
+% The name of your college or department(eg. Trinity, Pembroke, Maths, Physics)
+\def\faculty#1{\gdef\@faculty{#1}}
+% The name of your University
+\def\university#1{\gdef\@university{#1}}
+% Defining the crest
+\def\crest#1{\gdef\@crest{#1}}
+% Stating the city of birth for title page where needed; uncommented for use
+\def\city#1{\gdef\@city{#1}}
+\def\advisor#1{\gdef\@advisor{#1}}
+\newcommand{\@monthyear}{\thismonth}
+\newcommand{\monthyear}[1]{\gdef\@monthyear{#1}}
+% The year and term the degree will be officially conferred
+\renewcommand{\@date}{\longdate}
+\renewcommand{\date}[1]{\gdef\@date{#1}}
+
+% default date/time strings %
+\newcommand{\monthname}{\ifcase\month\or Enero\or Febrero\or
+      Marzo\or Abril\or Mayo\or Junio\or Julio\or Agosto\or Septiembre\or
+      Octubre\or Noviembre\or Diciembre\fi}
+	  
+\newcommand{\thismonth}{\monthname\ de \the\year}
+\newcommand{\longdate}{\@arabic\day\ de \monthname\ de \the\year}
+\newcommand{\shortdate}{\@arabic\day/\@arabic\month/\@arabic\year}
+
+\renewcommand{\maketitle}{%
+  \renewcommand{\footnotesize}{\small}
+  \renewcommand{\footnoterule}{\relax}
+  \thispagestyle{empty}
+  \begin{wrapfigure}{l}{0.1mm}{\includegraphics[width=4cm]{\@crest}}\end{wrapfigure}
+  \begin{minipage}{16cm}
+       \begin{flushright}
+         {\LARGE \textbf {\sffamily {\@university}} }\par
+         {\Large {\@faculty}}
+       \end{flushright}
+  \end{minipage}
+
+  \begin{center}
+    \vspace*{40mm}
+    { \huge {\bfseries {\@title}} \par}
+    \vspace*{10ex}
+    {\Large \@author} \par
+    \vspace*{10ex}
+    {\Large {\bfseries Orientador:} {\@advisor}  \par}
+    {\large 
+      \vspace*{25mm}
+      \parbox[c]{85mm}{{\submittedtext} {\@degree}} \par
+      \vspace*{25mm}
+      {\@city, \@date}
+    }
+  \end{center}
+  \null\vfill
+}
