@@ -26,18 +26,18 @@ de las circunstancias en la que están involucrados \cite{fling2009mobile}.
 La información provee un contexto que permite al usuario entender
 mejor el momento por el que está pasando. La segunda forma del contexto
 es el entorno en el cual el usuario realiza una acción determinada
-\cite{fling2009mobile}. El contexto físico de un usuario es la ubicación
-y la actividad física. 
+\cite{fling2009mobile}. El contexto físico de un usuario es su ubicación
+y su actividad física. 
 
-El reconocimiento de actividades humanas (HAR\nomenclature{HAR}{Reconocimiento de Actividades Humanas, por sus siglas en inglés},
+El reconocimiento de actividades humanas (\nomenclature{HAR}{Reconocimiento de Actividades Humanas, por sus siglas en inglés}HAR,
 \emph{Human Activity Recognition}) es un línea de investigación amplia
 que busca diseñar algoritmos que detecten el contexto de uno o más
 individuos a partir de datos ambiguos de su entorno \cite{Bao2004}.
 El proceso de reconocimiento puede realizarse utilizando datos obtenidos
-de sensores externos o bien sensores puestos en el individuo. Los
-teléfonos móviles pueden ser utilizados como sensores de bolsillo
-donde diseñar aplicaciones móviles contextuales que detecten las actividades
-físicas de un individuo en su vida diaria\cite{LaraLabrador2013}. 
+de sensores externos o bien sensores de atuendo puestos en el individuo
+\cite{LaraLabrador2013}. Los teléfonos móviles son utilizados como
+sensores de bolsillo con aplicaciones móviles contextuales diseñados
+para detectar las actividades físicas de un individuo en su vida diaria. 
 
 En el ámbito de los teléfonos móviles existen bastantes usos al reconocer
 las actividades básicas ambulatorias, de si el individuo camina, corre,
@@ -50,30 +50,29 @@ crear aplicaciones ricas en contexto.
 Desde el año 2013 que \emph{Google} viene proveyendo como parte de
 su plataforma \emph{Android} \cite{google2005and}\nomenclature{Android}{Android es un sistema operativo móvil desarrollado por Google. Está basado en el kernel de Linux.}
 un producto denominado \emph{Google Play Services} \cite{googl2016loc},
-que es un conjunto de librerías de desarrolladores que posee dentro
-una implementación de reconocimiento de actividades. Además, \emph{Sony}
+que es un conjunto de librerías de desarrolladores que dispone una
+implementación de reconocimiento de actividades. Además, \emph{Sony}
 ha lanzado un producto y librerías para desarrolladores llamado \emph{Lifelog}
 \cite{sony2016act} que es parte de una suite completa para mantenerse
-en forma que también posee reconocedor de actividades. También, \emph{Apple}
-en su plataforma \emph{iOS} \cite{apple2007ios}\nomenclature{iOS}{Es un sistema operativo móvil creado y desarrollado por Apple Inc.}
-ha dispuesto recientemente una librería para desarrolladores llamada
-\emph{HealthKit} \cite{healthkit2016}, de características similares
-a los productos antes mencionados. 
+en forma donde uno de los componentes es un reconocedor de actividades
+físicas. También, \emph{Apple} en su plataforma \nomenclature{iOS}{Es un sistema operativo móvil creado y desarrollado por Apple Inc.}\emph{iOS}
+\cite{apple2007ios} ha dispuesto recientemente una librería para
+desarrolladores llamada \emph{HealthKit} \cite{healthkit2016}, de
+características similares a los productos antes mencionados. 
 
-Las plataformas de desarrollo móvil de \emph{Android} e \emph{iOS}
-e\emph{ }proveen un ecosistema abierto para crear aplicaciones de
-contexto y de medios digitales masivos. Estas plataformas son las
-que conducen la expansión y crecimiento de las aplicaciones móviles
-e inalámbricas \cite{Tanenbaum2010}. Por esta razón es primordial
-contar iniciativas abiertas de implementaciones de reconocimiento
-de actividades para lo que este trabajo está abocado.
+Las plataformas de desarrollo móvil de \emph{Android} e \emph{iOS
+}proveen un ecosistema abierto para crear aplicaciones personalizadas
+de contexto y de medios digitales. Estas plataformas son las que conducen
+la expansión y crecimiento de las aplicaciones móviles e inalámbricas
+\cite{Tanenbaum2010}. Sin embargo, no existen iniciativas abiertas
+que aporten al desarrollo del reconocimiento de actividades.
 
 Por último, el teléfono móvil moderno está conectado constantemente
 Internet, por lo cual ha popularizando el acceso a la Web\footnote{World Wide Web}.
 Como la computación móvil ha crecido rápidamente, también lo ha hecho
-el acceso a la Web (cfr. \cite{nyt2008iph}), esto abre las posibilidades
-para la colaboración masiva de individuos que formen parte como sujetos
-de estudio en el área de reconocimiento de actividades.
+el acceso a la Web (cfr. \cite{nyt2008iph}), promoviendo la colaboración
+masiva de parte de individuos como sujetos de estudio en el área de
+reconocimiento de actividades físicas.
 
 \section{Planteamiento del problema}
 
@@ -81,167 +80,175 @@ de estudio en el área de reconocimiento de actividades.
 
 El reconocimiento de actividades humanas es un tópico de investigación
 que data desde los años 90 y que al día de hoy sigue atrayendo interés
-ya que es una línea amplia que abarca varias áreas. Por mencionar
-algunas, desde la computación ubicua y móvil, la computación contextual,
-la seguridad basada en la vigilancia y la vivienda asistida por el
-ambiente \cite{chen2012sensor}. 
+ya que abarca varias áreas de estudio. Por mencionar algunas, desde
+la computación ubicua y móvil, la computación contextual, la seguridad
+basada en la vigilancia, la vivienda asistida por el ambiente y otras
+\cite{chen2012sensor}. 
 
 Reconocer las actividades físicas consiste en detectar los movimientos
-que realiza un individuo o un conjunto de individuos utilizando sensores
+que realizan un individuo o un conjunto de individuos utilizando sensores
 internos o externos. Las actividades más básicas serían las ambulatorias,
 que son cuando una persona está caminando, corriendo, de pie o sentada
 y las de transporte, cuando una persona está en un vehículo en movimiento.
+También existen otras actividades más complejas como las de postura,
+entrenamiento físico y otras más mundanas como cepillarse los dientes,
+mirar TV, comer, tomar, etc. \cite{LaraLabrador2013}
 
-La técnica de reconocimiento consiste en recolectar datos de movimientos
-de un conjunto de individuos, donde cada muestra inicial debe ser
-etiquetada con la actividad identificada. Luego se procesan los datos
-de manera a extraer información relevante para construir un modelo
-de inferencia. El resultado es un modelo entrenado con un algoritmo
-que detecta con cierta precisión las mismas actividades etiquetadas
+El problema del reconocimiento de actividades física es abordado con
+un modelo de aprendizaje automático supervisado que utiliza una técnica
+de inferencia basada en dos etapas: entrenamiento y evaluación \cite{LaraLabrador2013}
+\cite{Kwapisz2011}. En resumen, la técnica consiste en recolectar
+datos previamente de un conjunto de individuos, donde cada muestra
+inicial debe ser etiquetada con la actividad identificada de forma
+supervisada. Luego se procesan los datos de manera a extraer variables
+con información relevante para construir un modelo de inferencia.
+Finalmente, se construye un modelo entrenado que produce un algoritmo
+que detecta con cierta precisión las actividades inicialmente etiquetadas
 teniendo como entrada cualquier conjunto de datos no etiquetados \cite{Bao2004}.
 
 El área de investigación ha crecido con avances sostenidos debido
 al acompañamiento de las mejoras tecnológicas de sensores de bajo
 costo, las redes inalámbricas de alta velocidad y los teléfonos móviles
 de características sin precedentes \cite{chen2012sensor}. A pesar
-de los avances en el tópico y las tecnologías, aún siguen latentes
-algunos principales desafíos que se presentan al construir sistemas
-de reconocimiento de actividades basados en sensores como son: la
-selección de las métricas de estudio, la utilización de un recolector
-de datos diminuto, los métodos de inferencia y extracción de muestras
-significativas, la recolección de datos en condiciones realistas,
-la flexibilidad para soportar nuevos usuarios sin re-entrenar el modelo
-y la implementación del sistema en dispositivos móviles bajo restricciones
-de potencia y procesamiento \cite{LaraLabrador2013}. 
+de los avances en el área y las tecnologías, aún siguen latentes algunos
+principales desafíos que se presentan al construir sistemas de reconocimiento
+de actividades basados en sensores como son: la selección de las métricas
+de estudio, la utilización de un recolector de datos diminuto, los
+métodos de inferencia y extracción de muestras significativas, la
+recolección de datos en condiciones realistas, la flexibilidad para
+soportar nuevos usuarios sin re-entrenar el modelo y la implementación
+del sistema en dispositivos móviles bajo restricciones de potencia
+y procesamiento \cite{LaraLabrador2013}. 
 
-De estas seis cuestiones citadas ponemos énfasis en este trabajo en
-cuatro que definen el problema a resolver utilizando teléfonos móviles
+De estas seis cuestiones citadas ponemos énfasis en cuatro puntos
+que definen el problema a resolver y donde a continuación se describe
+la justificación de este trabajo utilizando los teléfonos móviles
 como principal herramienta.
 
 \section{Justificación}
 
 \label{justificaciuxf3n}
 
-Los sistemas de reconocimiento de actividades utilizan uno o más sensores
-como entrada de datos. Los teléfonos móviles modernos poseen múltiples
-sensores, el tamaño y las condiciones adecuadas para la captura de
-datos ya que las personas interactúan con estos dispositivos de manera
-ubicua. 
+Para construir sistemas de reconocimiento de actividades se necesitan
+uno o más sensores para capturar los datos del entorno del individuo.
+Los teléfonos móviles modernos poseen múltiples sensores, el tamaño
+y las condiciones adecuadas para la captura de datos de manera ubicua.
+Algunos de los sensores comunes en un teléfono inteligente son: localización
+(\nomenclature{GPS}{Sistema de Geoposicionamiento Global, por sus siglas en inglés}GPS,
+\emph{Global Positioning System}), brújula y aceleración, como también
+micrófonos, cámaras, luminosidad, temperatura, barómetro y otros más
+variados dependiendo del modelo, el fabricante y los accesorios del
+teléfono \cite{Kwapisz2011}.
 
-Las métricas de estudio son los datos brutos de los sensores de movimiento
-del teléfono, el sensor de aceleración\footnote{acelerómetro}, el
-más común en todos los aparatos. El sensor de aceleración puede medir
-el movimiento en dos o tres ejes, detectar la orientación del dispositivo
-y provee información crucial para el reconocimiento de actividades
-con un bajo consumo de energía. 
+El sensor de aceleración\footnote{acelerómetro} mide principalmente
+el movimiento en dos o tres ejes y puede ser utilizado para detectar
+la orientación del dispositivo, estos datos proveen información crucial
+para el reconocimiento de actividades con un bajo consumo de energía.
+Adicionalmente, los teléfonos inteligentes son de gran capacidad de
+almacenamiento, procesamiento y conectividad de manera que son plataformas
+ideales para construir sistemas de reconocimiento autónomos.
 
-Además, los teléfonos móviles modernos tienen gran capacidad de almacenamiento,
-procesamiento y conectividad por lo que son plataformas ideales para
-construir sistemas de reconocimiento instantáneos, sin comunicación
-con un agente o sistema externo de procesamiento de fondo. 
-
-La combinación de gran capacidad, tamaño diminuto y bajo costo lleva
-a las personas a interactuar y usar comúnmente estos dispositivos
-en cualquier lugar. Esto aporta al estudio ya que el conjunto de individuos
-que formarían la muestra para recolección de datos en condiciones
-realistas, no tendrían la naturaleza de muestras de laboratorio.
-
-Esto genera información contextual que hace posible realizar minería
-de datos para reconocer actividades para diversos tipos de aplicaciones.
-Ej. en medicina, seguridad, entretenimiento o de uso militar, etc.\cite{LaraLabrador2013}.
-Los sensores disponibles en un teléfono móvil inteligente en la actualidad
-son variados e incluyen: GPS (localización), micrófonos, cámaras,
-luz, temperatura, barómetro, dirección (brújula) y aceleración. Existen
-otros más variados dependiendo del modelo, el fabricante y los accesorios.
-.
+La combinación de gran capacidad, tamaño diminuto y bajo costo hace
+que los dispositivos sean portados a cualquier lugar por las personas,
+permitiendo recolectar datos en condiciones realistas, completamente
+ajenas a obtener muestras supervisadas en un laboratorio \cite{Bao2004}. 
 
 Existe bastante información en el estado del arte de esta línea de
 investigación sobre técnicas de reconocimiento de actividades, los
 métodos de captura y el procesamiento de datos de sensores \cite{LaraLabrador2012},
 \cite{Kwapisz2011}. Sin embargo, a pesar de estar bien definida en
-la literatura la arquitectura de un sistema de recolección, existe
-una necesidad de un componente de librerías para teléfonos móviles
-que pueda ser libremente utilizado sin depender de definiciones de
-API privadas (Application Programming Interfaces), servicios de en
-nube (Software as a Service), o aplicaciones de terceros en Tiendas
-(Ej. Google Play Services).
+la literatura acerca de la arquitectura de un sistema de reconocimiento,
+aún existe un hueco en contar con componente de software para teléfonos
+móviles que pueda ser utilizado libremente sin depender de librerías
+privativas (Ej. \emph{Google Play Services} API) (\nomenclature{API}{Interfaces de Programación de Aplicaciones, por sus siglas en inglés}API,
+\emph{Application Programming Interface}), servicios de Internet (\nomenclature{SaaS}{Software como Servicio}SaaS,
+\emph{Software as a Service} ), o aplicaciones de terceros (Ej. \emph{Lifelog}).
+
+El modelo de desarrollo de software libre hace posible tener un enfoque
+colaborativo en dos dimensiones, por un lado el software en sí, la
+librería del sistema de reconocimiento, y por otro el conjunto de
+datos de muestras utilizadas para el entrenamiento del reconocedor
+de actividades.
 
 \section{Alcance y Objetivos}
 
 \label{alcance-y-objetivos}
 
-Esta propuesta centra en el estudio del reconocimiento de actividades
-humanas utilizando sensores en teléfonos móviles inteligentes, de
-manera a aportar una librería de reconocimiento para estos dispositivos.
-Durante las pruebas experimentales y la recolección de los datos se
-desarrollará una aplicación móvil que demuestre la efectividad de
-la librería y evaluará la técnica de reconocimiento sencilla de aprendizaje
+Este trabajo estudia el reconocimiento de actividades humanas utilizando
+sensores en teléfonos móviles inteligentes, de manera a aportar un
+sistema de reconocimiento en forma de librería abierta y libremente
+distribuida. Durante la recolección de datos y las pruebas se desarrollará
+adicionalmente una aplicación móvil que demuestre la efectividad de
+la librería como componente de software independiente. También se
+evaluará el sistema de reconocimiento de actividades basado en aprendizaje
 automático.
 
-Inicialmente se realizará una revisión del estado del arte con el
-objetivo de entender y comprender los métodos de reconocimientos de
-actividades actualmente empleados.
+Se incluye la revisión del estado del arte de la materia con el objetivo
+de entender y comprender las metodologías de reconocimiento actualmente
+empleadas. Luego, se construirá una librería cliente y un servicio
+basado en Android que atienda a las llamadas de procedimiento del
+sistema de reconocimiento de actividades. 
 
-Luego de ello se implementaría la librería propuesta con una API y
-un servicio Android que atienda a los pedidos de reconocimiento de
-actividades estándar. La librería además tendrá incluida la utilización
-y actualización del modelo colaborativo para intentar mejorar las
-predicciones de las actividades.
+Dentro del sistema de reconocimiento se incluirá un modelo colaborativo
+capaz de actualizarse constantemente, a nuestro criterio, esto mejorará
+las predicciones basándose en un conjunto de datos de entrenamiento
+proveniente de las personas que colaboren de forma anónima y en condiciones
+reales.
 
 Además se implementará un servicio web de captura de las muestras
 de la librería y actualice el modelo de predicción para futuras versiones
 de la librería. El modelo de aprendizaje se basará en aprendizaje
-automático con árboles de decisión (Decision Trees), algoritmo de
-clasificación C4.5. Para terminar, se creará una aplicación móvil
-de prueba para recolectar muestras y evaluar el resultado de predicción
-utilizando la librería de reconocimiento propuesta
+automático por árboles de decisión (\nomenclature{DT}{Árboles de decisión, por sus siglas en inglés}DT,
+\emph{Decision Trees}). Finalmente, para evaluar la metodología se
+creará una aplicación móvil de para recolectar muestras y evaluar
+el resultado de predicción utilizando el sistema de reconocimiento
+propuesto.
 
 \subsection{Objetivo General}
 
 \label{objetivo-general}
 
 Implementar un sistema de reconocimiento de actividades humanas con
-teléfonos móviles que aporte componentes de librería y arquitectura
-de sistema abiertos.
+teléfonos móviles cuyo principal aporte sea un servicio y una librería
+libremente distribuidos.
 
 \subsection{Objetivos Específicos}
 
 \label{objetivos-especuxedficos}
 \begin{itemize}
-\item Explorar el estado del arte sobre reconocimiento de actividades humanas
+\item Definir el estado del arte sobre reconocimiento de actividades humanas
 (HAR). 
-\item Comprender las técnicas de recolección de datos para aprendizaje en
-línea en entornos restringidos para bajo consumo de batería. 
-\item Comprender el procesamiento de señales en datos de sensores de aceleración
-para identificar muestras de ensayo de aprendizaje automático. 
-\item Entender las técnicas de clasificación por aprendizaje automático
-más apropiados en entornos restringidos para bajo consumo de batería. 
-\item Diseñar la arquitectura de un sistema de reconocimiento para la recolección
-de datos de manera colaborativa y predicción de actividades humanas
-en-linea. 
-\item Aportar un componente de librería de código abierto apropiado para
-teléfonos móviles con restricciones de bajo consumo de batería. 
+\item Comprender las técnicas de recolección de datos en entornos restringidos
+para bajo consumo energía. 
+\item Comprender el procesamiento de señales de datos de aceleración inercial
+para identificar variables significativas de entrenamiento. 
+\item Comprender la clasificación por aprendizaje automático en entornos
+restringidos para bajo consumo energía. 
+\item Diseñar un sistema de reconocimiento de actividades que comprenda
+la recolección de muestras de manera colaborativa y predicción de
+actividades en-línea. 
+\item Aportar un componente de software de código abierto para uso en teléfonos
+móviles inteligentes. 
 \end{itemize}
 
 \section{Organización del trabajo}
 
 \label{organizaciuxf3n-del-trabajo}
 
-El trabajo está organizado como sigue: en el Capítulo 2 se presenta
-el reconocimiento de actividades, sus características, dificultades,
-y los métodos abordados para el realizar esta reconocimiento.
+El trabajo está organizado en la siguiente manera: en el Capítulo
+2 se presenta define el marco teórico del área describiendo los conceptos
+principales del reconocimiento de actividades humanas, sus características,
+dificultades, y las metodologías existentes. El Capítulo 3 definimos
+el aprendizaje automático, los tipos de aprendizajes, y las distintas
+técnicas o enfoques aplicados, dando énfasis en los arboles de decisión.
+Estos capítulos representan el estado del arte de este trabajo.
 
-El Capítulo 3 introduce el aprendizaje automático, los tipos de aprendizajes,
-y las distintas técnicas o enfoques aplicados, y sobre todo sobre
-los arboles de decisión. Estos capítulos representan el estado del
-arte de este trabajo.
+El Capítulo 4 se presenta en detalle la construcción de un sistema
+de reconocimiento para teléfonos móviles. Continuando, en el Capítulo
+5 se discute el modelo y la implementación de un reconocedor de actividades
+colaborativo, su diseño, arquitectura, y tecnologías utilizadas.
 
-El Capítulo 4 se presenta el reconocimiento en dispositivos moviles.
-Bla bla.. En el Capítulo 5 se presenta el modelo y la implementación
-del reconocedor de actividades colaborativo, su diseño y arquitectura,
-y tecnologías utilizadas para su desarrollo.
-
-En el Capítulo 6 se presentan los experimentos realizados, y en el
-capitulo 7 los resultados obtenidos. En el Capítulo 8 presentan las
-conclusiones de este trabajo y los posibles trabajos futuros resultado
-de este trabajo final de grado. 
+En el Capítulo 6 se detallan los protocolos de los experimentos realizados,
+y en el Capítulo 7 los resultados obtenidos durante el estudio. Para
+finalizar, en el Capítulo 8 se incluyen las conclusiones y los posibles
+trabajos futuros. 
