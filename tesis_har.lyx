@@ -220,6 +220,13 @@ filename "capitulo-1/capitulo-1.lyx"
 \end_inset
 
 
+\begin_inset CommandInset include
+LatexCommand include
+filename "capitulo-8/capitulo-8.lyx"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

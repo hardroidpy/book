@@ -1,0 +1,239 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Conclusiones y Trabajos Futuros
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "conclusiones-y-trabajos-futuros"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusiones
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "conclusiones"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El reconocimiento de actividades humanas es un área de investigación multidiscip
+linaria con constantes aportes y diversos usos en la actualidad debido a
+ su relevancia en la computación contextual y ubicua.
+ Los avances en la miniaturización de los sistemas de computación y sensores
+ hacen del área tanto atractiva como desafiante para explorar y proponer
+ nuevas ideas en este ámbito 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
+ Sin embargo, los esfuerzos realizados por otros trabajos no han tenido
+ en cuenta la dimensión de la colaboración y el uso de Internet para contribuir
+ a la mejora de los sistemas de reconocimiento, tal como se ha hecho este
+ trabajo.
+\end_layout
+
+\begin_layout Standard
+El problema planteado en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "objetivo-general"
+
+\end_inset
+
+ de diseñar un sistema de reconocimiento de actividades colaborativo fue
+ abordado con la utilización de tres elementos principales para lograr el
+ objetivo principal: los teléfonos móviles, el software libre y la Internet.
+ Los primeros cuatro objetivos específicos (1 al 4) descritos en la sección
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "objetivos-especuxedficos"
+
+\end_inset
+
+ son cuestiones del marco teórico en el estudio de HAR donde no se hace
+ una contribución específica.
+ Los objetivos específicos 5 y 6 son el aporte principal de este trabajo
+ y completan la solución al problema planteado.
+\end_layout
+
+\begin_layout Standard
+Primeramente, el problema de recolectar datos en condiciones realistas fue
+ resuelto por medio de una aplicación de captura de datos en forma de encuesta
+ implementado para los teléfonos móviles que comparte los datos recolectados
+ para retroalimentar el modelo de aprendizaje del sistema de reconocimiento.
+\end_layout
+
+\begin_layout Standard
+Además, el aporte principal de este trabajo es el sistema de reconocimiento
+ que está disponible como proyecto de software libre para la plataforma
+ 
+\emph on
+Android
+\emph default
+ que puede ser incluido por otras aplicaciones móviles en tiempo de construcción
+ o simplemente puede ser utilizada como un servicio en los teléfonos móviles
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hardroid2016a"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para finalizar, la colaboración se desenvuelve en dos aspectos principales.
+ En el aspecto de los datos para el modelo de aprendizaje automático.
+ Las personas comparten información relevante al utilizar la aplicación
+ de encuesta y el sistema de reconocimiento puede actualizar su modelo periódica
+mente.
+ En el aspecto del componente de software donde la implementación del reconocedo
+r está disponible para que cualquiera lo extienda o mejore según sus necesidades
+ particulares o comunes de una comunidad 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hardroid2016b"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Trabajos Futuros
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "trabajos-futuros"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego de la experiencia obtenida y teniendo en cuenta la amplia aplicabilidad
+ del reconocimiento de actividades y sobre todo en dispositivos móviles:
+\end_layout
+
+\begin_layout Enumerate
+Poder identificar más actividades en otros contextos.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Segmentar los grupos de individuos distintos por rangos de edad, sexo y/o
+ factores fisiológicos y generar modelos distintos para cada grupo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Realizar una comparación de distintos métodos de aprendizaje automático.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Incluir más variables en el procesamiento de la señal teniendo en cuenta
+ la orientación del dispositivo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Utilizar un reloj inteligente (Smartwatch) u otros accesorios que agreguen
+ variables relevantes en el reconocimiento de actividades dependiendo del
+ contexto.
+ 
+\end_layout
+
+\end_body
+\end_document
