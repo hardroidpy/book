@@ -22,32 +22,38 @@ El problema planteado en la sección \ref{objetivo-general} de diseñar
 un sistema de reconocimiento de actividades colaborativo fue abordado
 con la utilización de tres elementos principales para lograr el objetivo
 principal: los teléfonos móviles, el software libre y la Internet.
-Los primeros cuatro objetivos específicos (1 al 4) descritos en la
-sección\ref{objetivos-especuxedficos} son cuestiones del marco teórico
-en el estudio de HAR donde no se hace una contribución específica.
-Los objetivos específicos 5 y 6 son el aporte principal de este trabajo
-y completan la solución al problema planteado.
+Los primeros cuatro objetivos específicos (\ref{enu:obe1} al \ref{enu:obe4})
+descritos en la sección \ref{objetivos-especuxedficos} son cuestiones
+del marco teórico en el estudio de HAR donde no se hace una contribución
+específica. Los objetivos específicos \ref{enu:obe5} y \ref{enu:obe6}
+son el aporte principal de este trabajo y completan la solución al
+problema planteado.
 
 Primeramente, el problema de recolectar datos en condiciones realistas
-fue resuelto por medio de una aplicación de captura de datos en forma
-de encuesta implementado para los teléfonos móviles que comparte los
-datos recolectados para retroalimentar el modelo de aprendizaje del
-sistema de reconocimiento.
+fue abordado por medio de una aplicación de captura de datos en forma
+de encuesta. La aplicación construida para los teléfonos móviles fue
+publicada para que las personas su descarga y colaborar aportando
+los datos de sensores y las actividades reconocidas mientras utilizan
+el sistema de reconocimiento. Periodicamente, con el objetivo de retroalimentar
+el modelo de aprendizaje automático, la información recolectada se
+sube a Internet para que pueda servir de entrada para entrenar de
+nuevo el modelo con actualizaciones constantes.
 
-Además, el aporte principal de este trabajo es el sistema de reconocimiento
-que está disponible como proyecto de software libre para la plataforma
-\emph{Android} que puede ser incluido por otras aplicaciones móviles
-en tiempo de construcción o simplemente puede ser utilizada como un
-servicio en los teléfonos móviles \cite{hardroid2016a}.
+Además, se construyo el sistema de reconocimiento de actividades,
+que es el aporte principal de este trabajo, el mismo está disponible
+como un proyecto de software libre para la plataforma \emph{Android.}
+Este puede ser utilizado de dos maneras, otras aplicaciones móviles
+pueden incluirla en tiempo de construcción o simplemente pueden utilizar
+el sistema como un servicio a través de una API de integración \cite{hardroid2016a}.
 
-Para finalizar, la colaboración se desenvuelve en dos aspectos principales.
-En el aspecto de los datos para el modelo de aprendizaje automático.
-Las personas comparten información relevante al utilizar la aplicación
-de encuesta y el sistema de reconocimiento puede actualizar su modelo
-periódicamente. En el aspecto del componente de software donde la
-implementación del reconocedor está disponible para que cualquiera
-lo extienda o mejore según sus necesidades particulares o comunes
-de una comunidad \cite{hardroid2016b}.
+Finalmente, la colaboración planteada se desenvuelve en dos aspectos
+principales. En el aspecto de los datos recolectados para el modelo
+de aprendizaje automático donde las personas comparten información
+relevante al utilizar la aplicación de encuesta y el sistema de reconocimiento
+puede actualizar su modelo periódicamente. En el aspecto del componente
+de software donde la implementación del sistema reconocedor está disponible
+para que cualquiera comunidad lo extienda o utilice según sus necesidades
+particulares \cite{hardroid2016b}.
 
 \section{Trabajos Futuros}
 
