@@ -130,7 +130,21 @@ reference "objetivo-general"
  de diseñar un sistema de reconocimiento de actividades colaborativo fue
  abordado con la utilización de tres elementos principales para lograr el
  objetivo principal: los teléfonos móviles, el software libre y la Internet.
- Los primeros cuatro objetivos específicos (1 al 4) descritos en la sección
+ Los primeros cuatro objetivos específicos (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:obe1"
+
+\end_inset
+
+ al 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:obe4"
+
+\end_inset
+
+) descritos en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "objetivos-especuxedficos"
@@ -139,27 +153,47 @@ reference "objetivos-especuxedficos"
 
  son cuestiones del marco teórico en el estudio de HAR donde no se hace
  una contribución específica.
- Los objetivos específicos 5 y 6 son el aporte principal de este trabajo
- y completan la solución al problema planteado.
+ Los objetivos específicos 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:obe5"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:obe6"
+
+\end_inset
+
+ son el aporte principal de este trabajo y completan la solución al problema
+ planteado.
 \end_layout
 
 \begin_layout Standard
 Primeramente, el problema de recolectar datos en condiciones realistas fue
- resuelto por medio de una aplicación de captura de datos en forma de encuesta
- implementado para los teléfonos móviles que comparte los datos recolectados
- para retroalimentar el modelo de aprendizaje del sistema de reconocimiento.
+ abordado por medio de una aplicación de captura de datos en forma de encuesta.
+ La aplicación construida para los teléfonos móviles fue publicada para
+ que las personas su descarga y colaborar aportando los datos de sensores
+ y las actividades reconocidas mientras utilizan el sistema de reconocimiento.
+ Periodicamente, con el objetivo de retroalimentar el modelo de aprendizaje
+ automático, la información recolectada se sube a Internet para que pueda
+ servir de entrada para entrenar de nuevo el modelo con actualizaciones
+ constantes.
 \end_layout
 
 \begin_layout Standard
-Además, el aporte principal de este trabajo es el sistema de reconocimiento
- que está disponible como proyecto de software libre para la plataforma
- 
+Además, se construyo el sistema de reconocimiento de actividades, que es
+ el aporte principal de este trabajo, el mismo está disponible como un proyecto
+ de software libre para la plataforma 
 \emph on
-Android
+Android.
+
 \emph default
- que puede ser incluido por otras aplicaciones móviles en tiempo de construcción
- o simplemente puede ser utilizada como un servicio en los teléfonos móviles
- 
+ Este puede ser utilizado de dos maneras, otras aplicaciones móviles pueden
+ incluirla en tiempo de construcción o simplemente pueden utilizar el sistema
+ como un servicio a través de una API de integración 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hardroid2016a"
@@ -170,14 +204,14 @@ key "hardroid2016a"
 \end_layout
 
 \begin_layout Standard
-Para finalizar, la colaboración se desenvuelve en dos aspectos principales.
- En el aspecto de los datos para el modelo de aprendizaje automático.
- Las personas comparten información relevante al utilizar la aplicación
+Finalmente, la colaboración planteada se desenvuelve en dos aspectos principales.
+ En el aspecto de los datos recolectados para el modelo de aprendizaje automátic
+o donde las personas comparten información relevante al utilizar la aplicación
  de encuesta y el sistema de reconocimiento puede actualizar su modelo periódica
 mente.
- En el aspecto del componente de software donde la implementación del reconocedo
-r está disponible para que cualquiera lo extienda o mejore según sus necesidades
- particulares o comunes de una comunidad 
+ En el aspecto del componente de software donde la implementación del sistema
+ reconocedor está disponible para que cualquiera comunidad lo extienda o
+ utilice según sus necesidades particulares 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hardroid2016b"
@@ -207,11 +241,6 @@ Luego de la experiencia obtenida y teniendo en cuenta la amplia aplicabilidad
 \end_layout
 
 \begin_layout Enumerate
-Poder identificar más actividades en otros contextos.
- 
-\end_layout
-
-\begin_layout Enumerate
 Segmentar los grupos de individuos distintos por rangos de edad, sexo y/o
  factores fisiológicos y generar modelos distintos para cada grupo.
  
@@ -223,8 +252,13 @@ Realizar una comparación de distintos métodos de aprendizaje automático.
 \end_layout
 
 \begin_layout Enumerate
-Incluir más variables en el procesamiento de la señal teniendo en cuenta
- la orientación del dispositivo.
+Utilizar más variables Incluir más variables en el procesamiento de la señal
+ para mejorar las predicciones teniendo en cuenta la orientación del dispositivo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Identificar otras actividades aplicado a otras disciplinas o contextos.
  
 \end_layout
 
@@ -233,6 +267,49 @@ Utilizar un reloj inteligente (Smartwatch) u otros accesorios que agreguen
  variables relevantes en el reconocimiento de actividades dependiendo del
  contexto.
  
+\end_layout
+
+\begin_layout Standard
+Se propone generar modelos segmentados por distintas características de
+ las personas, como ser rango de edades, sexo, etc.
+ Teniendo en cuenta que la motricidad para en las diferentes edades por
+ ejemplo varía para distintas edades o sexo, comprobando si esto crea modelos
+ más preciso, y que cada usuario disponga en su dispositivo móvil el modelo
+ acorde.
+ La segmentación podría llegar a aumentarse hasta tener un modelo por persona.
+\end_layout
+
+\begin_layout Standard
+Entre los métodos de aprendizaje automático existen varias opciones por
+ explorar, como ser las principales el SVM, Redes Neuronales, o kNN, explorando
+ cual obtiene mejores resultados en contrapartida con el consumo de batería
+ del dispositivo móvil.
+\end_layout
+
+\begin_layout Standard
+En el proceso de selección de variables estadísticas se debería explorar
+ en detalle un mayor numero de ella, como las tres dimensiones del movimiento
+ para obtener mejores resultados en las predicciones.
+ 
+\end_layout
+
+\begin_layout Standard
+Dentro de las actividades definidas en el modelo de este trabajo pueden
+ extenderse a otras que podrían aplicarse a otro tipo de aplicaciones, como
+ se la medica, militar, etc.
+ Para aplicaciones medicas actividades relevantes serian las posturas del
+ cuerpo como ser parado, sentado, acostado.
+ Esto propone un sin numero de aplicaciones del modelo de reconocimiento
+ de actividades.
+ 
+\end_layout
+
+\begin_layout Standard
+De la misma manera de las actividades, se propone complementar el modelo
+ con diferentes tipos de dispositivos inteligentes como ser un reloj Inteligente
+, algún tipo de sensor que dé mayor información del contexto de la persona.
+ Esto va muy relacionado al punto anterior, ya que algunas actividades o
+ posturas podrían requerir mayores datos para realizar el reconocimiento.
 \end_layout
 
 \end_body

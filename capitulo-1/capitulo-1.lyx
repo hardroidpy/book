@@ -730,36 +730,72 @@ name "objetivos-especuxedficos"
 
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:obe1"
+
+\end_inset
+
 Definir el estado del arte sobre reconocimiento de actividades humanas (HAR).
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:obe2"
+
+\end_inset
+
 Comprender las técnicas de recolección de datos en entornos restringidos
  para bajo consumo energía.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:obe3"
+
+\end_inset
+
 Comprender el procesamiento de señales de datos de aceleración inercial
  para identificar variables significativas de entrenamiento.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:obe4"
+
+\end_inset
+
 Comprender la clasificación por aprendizaje automático en entornos restringidos
  para bajo consumo energía.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:obe5"
+
+\end_inset
+
 Diseñar un sistema de reconocimiento de actividades que comprenda la recolección
  de muestras de manera colaborativa y predicción de actividades en-línea.
  
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:obe6"
+
+\end_inset
+
 Aportar un componente de software de código abierto para uso en teléfonos
  móviles inteligentes.
  
