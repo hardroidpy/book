@@ -30,7 +30,7 @@ if "%1" == "docx" (
 )
 
 if "%1" == "latex" (
-    start pdflatex tesis.tex && biber tesis.tex && pdflatex tesis.tex && pdflatex tesis.tex
+    start pdflatex tesis && biber tesis && pdflatex tesis && pdflatex tesis
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. 
@@ -54,7 +54,7 @@ if "%1" == "text" (
 )
 
 if "%1" == "clean" (
-for /r %%i in (*.aux, *.bbl, *.bcf, *.blg, *.log, *.lof, *.loa, *.lot, *.pdf, *.run.xml, *.toc, *.nlo, *.md, *.docx) do del /q /s %%i
+for /r %%i in (*.aux, *.bbl, *.bcf, *.blg, *.log, *.lof, *.loa, *.lot, *.pdf, *.run.xml, *.toc, *.nlo, *.md, *.docx *.ild *.ind *.out *.ilg *.lyx~)do del /q /s %%i
     echo.
 	echo.Build finished.
 	goto end

@@ -22,51 +22,84 @@ El problema planteado en la sección \ref{objetivo-general} de diseñar
 un sistema de reconocimiento de actividades colaborativo fue abordado
 con la utilización de tres elementos principales para lograr el objetivo
 principal: los teléfonos móviles, el software libre y la Internet.
-Los primeros cuatro objetivos específicos (1 al 4) descritos en la
-sección\ref{objetivos-especuxedficos} son cuestiones del marco teórico
-en el estudio de HAR donde no se hace una contribución específica.
-Los objetivos específicos 5 y 6 son el aporte principal de este trabajo
-y completan la solución al problema planteado.
+Los primeros cuatro objetivos específicos (\ref{enu:obe1} al \ref{enu:obe4})
+descritos en la sección \ref{objetivos-especuxedficos} son cuestiones
+del marco teórico en el estudio de HAR donde no se hace una contribución
+específica. Los objetivos específicos \ref{enu:obe5} y \ref{enu:obe6}
+son el aporte principal de este trabajo y completan la solución al
+problema planteado.
 
 Primeramente, el problema de recolectar datos en condiciones realistas
-fue resuelto por medio de una aplicación de captura de datos en forma
-de encuesta implementado para los teléfonos móviles que comparte los
-datos recolectados para retroalimentar el modelo de aprendizaje del
-sistema de reconocimiento.
+fue abordado por medio de una aplicación de captura de datos en forma
+de encuesta. La aplicación construida para los teléfonos móviles fue
+publicada para que las personas su descarga y colaborar aportando
+los datos de sensores y las actividades reconocidas mientras utilizan
+el sistema de reconocimiento. Periodicamente, con el objetivo de retroalimentar
+el modelo de aprendizaje automático, la información recolectada se
+sube a Internet para que pueda servir de entrada para entrenar de
+nuevo el modelo con actualizaciones constantes.
 
-Además, el aporte principal de este trabajo es el sistema de reconocimiento
-que está disponible como proyecto de software libre para la plataforma
-\emph{Android} que puede ser incluido por otras aplicaciones móviles
-en tiempo de construcción o simplemente puede ser utilizada como un
-servicio en los teléfonos móviles \cite{hardroid2016a}.
+Además, se construyo el sistema de reconocimiento de actividades,
+que es el aporte principal de este trabajo, el mismo está disponible
+como un proyecto de software libre para la plataforma \emph{Android.}
+Este puede ser utilizado de dos maneras, otras aplicaciones móviles
+pueden incluirla en tiempo de construcción o simplemente pueden utilizar
+el sistema como un servicio a través de una API de integración \cite{hardroid2016a}.
 
-Para finalizar, la colaboración se desenvuelve en dos aspectos principales.
-En el aspecto de los datos para el modelo de aprendizaje automático.
-Las personas comparten información relevante al utilizar la aplicación
-de encuesta y el sistema de reconocimiento puede actualizar su modelo
-periódicamente. En el aspecto del componente de software donde la
-implementación del reconocedor está disponible para que cualquiera
-lo extienda o mejore según sus necesidades particulares o comunes
-de una comunidad \cite{hardroid2016b}.
+Finalmente, la colaboración planteada se desenvuelve en dos aspectos
+principales. En el aspecto de los datos recolectados para el modelo
+de aprendizaje automático donde las personas comparten información
+relevante al utilizar la aplicación de encuesta y el sistema de reconocimiento
+puede actualizar su modelo periódicamente. En el aspecto del componente
+de software donde la implementación del sistema reconocedor está disponible
+para que cualquiera comunidad lo extienda o utilice según sus necesidades
+particulares \cite{hardroid2016b}.
 
-\subsection{Trabajos Futuros}
-Luego de la experiencia obtenida y teniendo en cuenta la amplia aplicabilidad del reconocimiento de actividades y sobre todo en dispositivos moviles:
+\section{Trabajos Futuros}
+
+\label{trabajos-futuros}
+
+Luego de la experiencia obtenida y teniendo en cuenta la amplia aplicabilidad
+del reconocimiento de actividades y sobre todo en dispositivos móviles:
 \begin{enumerate}
-	\item Segmentación del modelo generado en distintos rangos de edad, y sexo de las personas.
-	\item Realizar una comparación de distintos métodos de aprendizaje automático. 
-	\item Utilizar más variables para mejorar las predicciones y teniendo en cuenta las posición del dispositivo.
-	\item Identificar otras actividades aplicado a otras disciplinas.
-	\item Utilizar un reloj inteligente (Smartwatch) u otros accesorios que agreguen variables relevantes en el reconocimiento de actividades.
+\item Segmentar los grupos de individuos distintos por rangos de edad, sexo
+y/o factores fisiológicos y generar modelos distintos para cada grupo. 
+\item Realizar una comparación de distintos métodos de aprendizaje automático. 
+\item Utilizar más variables Incluir más variables en el procesamiento de
+la señal para mejorar las predicciones teniendo en cuenta la orientación
+del dispositivo. 
+\item Identificar otras actividades aplicado a otras disciplinas o contextos. 
+\item Utilizar un reloj inteligente (Smartwatch) u otros accesorios que
+agreguen variables relevantes en el reconocimiento de actividades
+dependiendo del contexto. 
 \end{enumerate}
+Se propone generar modelos segmentados por distintas características
+de las personas, como ser rango de edades, sexo, etc. Teniendo en
+cuenta que la motricidad para en las diferentes edades por ejemplo
+varía para distintas edades o sexo, comprobando si esto crea modelos
+más preciso, y que cada usuario disponga en su dispositivo móvil el
+modelo acorde. La segmentación podría llegar a aumentarse hasta tener
+un modelo por persona.
 
-Se propone generar modelos segmentados por distintas características de las personas, como ser rango de edades, sexo, etc. Teniendo en cuenta que la motricidad para en las diferentes edades por ejemplo varía para distintas edades o sexo, comprobando si esto crea modelos más preciso, y que cada usuario disponga en su dispositivo móvil el modelo acorde. La segmentación podría llegar a aumentarse hasta tener un modelo por persona.
+Entre los métodos de aprendizaje automático existen varias opciones
+por explorar, como ser las principales el SVM, Redes Neuronales, o
+kNN, explorando cual obtiene mejores resultados en contrapartida con
+el consumo de batería del dispositivo móvil.
 
-Entre los métodos de aprendizaje automático existen varias opciones por explorar, como ser las principales el SVM, Redes Neuronales, o kNN, explorando cual obtiene mejores resultados en contrapartida con el consumo de batería del dispositivo movil.
+En el proceso de selección de variables estadísticas se debería explorar
+en detalle un mayor numero de ella, como las tres dimensiones del
+movimiento para obtener mejores resultados en las predicciones. 
 
-En el proceso de selección de variables estadísticas se debería explorar en detalle un mayor numero de ella, como las tres dimensiones del movimiento para obtener mejores resultados en las predicciones. 
+Dentro de las actividades definidas en el modelo de este trabajo pueden
+extenderse a otras que podrían aplicarse a otro tipo de aplicaciones,
+como se la medica, militar, etc. Para aplicaciones medicas actividades
+relevantes serian las posturas del cuerpo como ser parado, sentado,
+acostado. Esto propone un sin numero de aplicaciones del modelo de
+reconocimiento de actividades. 
 
-Dentro de las actividades definidas en el modelo de este trabajo pueden extenderse a otras que podrían aplicarse a otro tipo de aplicaciones, como se la medica, militar, etc. Para aplicaciones medicas actividades relevantes serian las posturas del cuerpo como ser parado, sentado, acostado. Esto propone un sin numero de aplicaciones del modelo de reconocimiento de actividades. 
-
-De la misma manera de las actividades, se propone complementar el modelo con diferentes tipos de dispositivos inteligentes como ser un reloj Inteligente, algún tipo de sensor que dé mayor información del contexto de la persona. Esto va muy relacionado al punto anterior, ya que algunas actividades o posturas podrían requerir mayores datos para realizar el reconocimiento.
-
-
+De la misma manera de las actividades, se propone complementar el
+modelo con diferentes tipos de dispositivos inteligentes como ser
+un reloj Inteligente, algún tipo de sensor que dé mayor información
+del contexto de la persona. Esto va muy relacionado al punto anterior,
+ya que algunas actividades o posturas podrían requerir mayores datos
+para realizar el reconocimiento.
