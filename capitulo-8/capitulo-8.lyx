@@ -72,7 +72,7 @@
 \begin_body
 
 \begin_layout Chapter
-Conclusiones y Trabajos Futuros
+Conclusiones
 \end_layout
 
 \begin_layout Standard
@@ -86,7 +86,7 @@ name "conclusiones-y-trabajos-futuros"
 \end_layout
 
 \begin_layout Section
-Conclusiones
+Logros
 \end_layout
 
 \begin_layout Standard
@@ -105,7 +105,7 @@ linaria con constantes aportes y diversos usos en la actualidad debido a
  su relevancia en la computación contextual y ubicua.
  Los avances en la miniaturización de los sistemas de computación y sensores
  hacen del área tanto atractiva como desafiante para explorar y proponer
- nuevas ideas en este ámbito 
+ nuevas ideas en este ámbito
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -115,22 +115,31 @@ key "LaraLabrador2013"
 .
  Sin embargo, los esfuerzos realizados por otros trabajos no han tenido
  en cuenta la dimensión de la colaboración y el uso de Internet para contribuir
- a la mejora de los sistemas de reconocimiento, tal como se ha hecho este
+ a la mejora de los sistemas de reconocimiento tal como se ha hecho en este
  trabajo.
+ Los logros más relevantes se describen a continuación.
 \end_layout
 
 \begin_layout Standard
-El problema planteado en la sección 
+Acorde al objetivo principal descrito en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "objetivo-general"
 
 \end_inset
 
- de diseñar un sistema de reconocimiento de actividades colaborativo fue
- abordado con la utilización de tres elementos principales para lograr el
- objetivo principal: los teléfonos móviles, el software libre y la Internet.
- Los primeros cuatro objetivos específicos (
+ se construyó un sistema de reconocimiento de actividades colaborativo utilizand
+o tres elementos principales: los teléfonos móviles modernos, el software
+ libre y la Internet.
+ El desarrollo del trabajo se llevó acabo en dos etapas.
+ La primera etapa consistió en el entrenamiento de un modelo y la segunda
+ etapa consistió en la construcción de un sistema reconocedor de actividades
+ para teléfonos móviles.
+\end_layout
+
+\begin_layout Standard
+De acuerdo al marco teórico de esta área enunciado en los objetivos específicos
+ (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "enu:obe1"
@@ -144,16 +153,41 @@ reference "enu:obe4"
 
 \end_inset
 
-) descritos en la sección 
+) de la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "objetivos-especuxedficos"
 
 \end_inset
 
- son cuestiones del marco teórico en el estudio de HAR donde no se hace
- una contribución específica.
- Los objetivos específicos 
+ ambas etapas siguen las guías comunes para reconocer actividades humanas
+ y son:
+\end_layout
+
+\begin_layout Enumerate
+Recolección de datos de sensores
+\end_layout
+
+\begin_layout Enumerate
+Procesamiento de señal en ventanas de tiempo
+\end_layout
+
+\begin_layout Enumerate
+Extracción de muestras y variables características
+\end_layout
+
+\begin_layout Standard
+La primera etapa se caracterizó por la construcción de un clasificador basado
+ en aprendizaje automático y la exportación del mismo a un modelo ejecutable
+ en 
+\emph on
+Java
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Los objetivos específicos 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "enu:obe5"
@@ -167,33 +201,17 @@ reference "enu:obe6"
 
 \end_inset
 
- son el aporte principal de este trabajo y completan la solución al problema
- planteado.
-\end_layout
-
-\begin_layout Standard
-Primeramente, el problema de recolectar datos en condiciones realistas fue
- abordado por medio de una aplicación de captura de datos en forma de encuesta.
- La aplicación construida para los teléfonos móviles fue publicada para
- que las personas su descarga y colaborar aportando los datos de sensores
- y las actividades reconocidas mientras utilizan el sistema de reconocimiento.
- Periodicamente, con el objetivo de retroalimentar el modelo de aprendizaje
- automático, la información recolectada se sube a Internet para que pueda
- servir de entrada para entrenar de nuevo el modelo con actualizaciones
- constantes.
-\end_layout
-
-\begin_layout Standard
-Además, se construyo el sistema de reconocimiento de actividades, que es
- el aporte principal de este trabajo, el mismo está disponible como un proyecto
- de software libre para la plataforma 
+ engloban el aporte principal de este trabajo el cual se desenvolvió en
+ la segunda etapa.
+ Se construyó el sistema de reconocimiento de actividades para teléfonos
+ móviles para la plataforma 
 \emph on
-Android.
-
+Android
 \emph default
- Este puede ser utilizado de dos maneras, otras aplicaciones móviles pueden
- incluirla en tiempo de construcción o simplemente pueden utilizar el sistema
- como un servicio a través de una API de integración 
+ siguiendo las guías comunes y utilizando el resultado de la primera etapa.
+ Este sistema puede ser utilizado de dos maneras, otras aplicaciones móviles
+ pueden incluirla en tiempo de construcción o simplemente ejecutarlo como
+ un servicio a través de una interfaz de integración
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hardroid2016a"
@@ -204,14 +222,31 @@ key "hardroid2016a"
 \end_layout
 
 \begin_layout Standard
-Finalmente, la colaboración planteada se desenvuelve en dos aspectos principales.
- En el aspecto de los datos recolectados para el modelo de aprendizaje automátic
-o donde las personas comparten información relevante al utilizar la aplicación
- de encuesta y el sistema de reconocimiento puede actualizar su modelo periódica
-mente.
- En el aspecto del componente de software donde la implementación del sistema
- reconocedor está disponible para que cualquiera comunidad lo extienda o
- utilice según sus necesidades particulares 
+En parte, para evaluar el sistema construido y además recolectar datos de
+ sensores en condiciones realistas se construyó una aplicación que reconoce
+ actividades y realiza una encuesta en línea.
+ Esta aplicación 
+\emph on
+Android
+\emph default
+ construida fue publicada para que los participantes del estudio la descarguen
+ y colaboren aportando los datos asociados a las actividades reconocidas
+ mientras utilizan el sistema de reconocimiento.
+ El objetivo de este ejercicio es retroalimentar el modelo de aprendizaje
+ automático periódicamente.
+ La información recolectada se comparte a través de Internet para que se
+ evalúe y eventualmente sirva como entrada para construir un nuevo el modelo
+ en etapas posteriores.
+\end_layout
+
+\begin_layout Standard
+Finalmente, la colaboración se desenvuelve en dos aspectos principales.
+ En el aspecto de la información recolectada para evaluar el modelo de aprendiza
+je automático al utilizar la aplicación de encuesta y la actualización del
+ modelo del sistema de reconocimiento de manera periódica.
+ En el aspecto del componente de software construido, donde la implementación
+ del sistema reconocedor está disponible para que cualquiera lo extienda
+ o utilice según sus necesidades particulares
 \begin_inset CommandInset citation
 LatexCommand cite
 key "hardroid2016b"
@@ -263,9 +298,12 @@ Identificar otras actividades aplicado a otras disciplinas o contextos.
 \end_layout
 
 \begin_layout Enumerate
-Utilizar un reloj inteligente (Smartwatch) u otros accesorios que agreguen
- variables relevantes en el reconocimiento de actividades dependiendo del
- contexto.
+Utilizar un reloj inteligente (
+\emph on
+Smartwatch
+\emph default
+, reloj inteligente) u otros accesorios que agreguen variables relevantes
+ en el reconocimiento de actividades dependiendo del contexto.
  
 \end_layout
 
@@ -281,9 +319,16 @@ Se propone generar modelos segmentados por distintas características de
 
 \begin_layout Standard
 Entre los métodos de aprendizaje automático existen varias opciones por
- explorar, como ser las principales el SVM, Redes Neuronales, o kNN, explorando
- cual obtiene mejores resultados en contrapartida con el consumo de batería
- del dispositivo móvil.
+ explorar, como ser las principales el 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SVM"
+description "Support Vector Machine"
+
+\end_inset
+
+SVM o Redes Neuronales, explorando cual obtiene mejores resultados en contrapart
+ida con el consumo de batería del dispositivo móvil.
 \end_layout
 
 \begin_layout Standard
@@ -306,7 +351,7 @@ Dentro de las actividades definidas en el modelo de este trabajo pueden
 
 \begin_layout Standard
 De la misma manera de las actividades, se propone complementar el modelo
- con diferentes tipos de dispositivos inteligentes como ser un reloj Inteligente
+ con diferentes tipos de dispositivos inteligentes como ser un reloj inteligente
 , algún tipo de sensor que dé mayor información del contexto de la persona.
  Esto va muy relacionado al punto anterior, ya que algunas actividades o
  posturas podrían requerir mayores datos para realizar el reconocimiento.
