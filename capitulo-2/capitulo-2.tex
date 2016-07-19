@@ -59,7 +59,6 @@ Después hay que mencionar que dentro de los wearables están los que usan senso
 
 Otros autores como \cite{karmul2010} extraen al reconocimiento con cámaras de vídeo como una clasificación diferente a los ambientales. 
 
-
 \section{Dispositivos Moviles}
 <<<Acá hablamos del las ventajas de realizar el reconocimiento con dispositivos móviles ya que tiene sensores>>>
 
@@ -67,11 +66,16 @@ Otros autores como \cite{karmul2010} extraen al reconocimiento con cámaras de v
 \section{Metodología HAR}
 <<<Acá hablamos de tipo de actividades, las fases del reconocimiento de actividades (Colección de datos, procesamiento de datos o extracción de feature, modelado o aprendizaje, y evaluación e inferencia), y por ultimo La definición matemática del problema. >>>
 
-
-\subsection{Actividades Humanas}
-
 \subsection{Fases del Reconocimiento}
 
 \subsection{Definición del Problema}
+Teniendo en cuenta todo esto puntos podemos definir el problema como 
 
+\newtheorem{defi}{Definición}
+
+\begin{defi}(HARP)
+	Dado un conjunto $S = \{S_{0},...,S_{k-1}\} $ de $k$ series de tiempo, cada una medida de cada atributo, y todo definido en un intervalo de tiempo $I =  \left [ t_{\alpha}, t_{\omega} \right ]$ el objetivo es encontrar un sub intervalo de tiempo $\left\langle I_{0},...,I_{r-1} \right\rangle $ en $I$, basado en datos de $S$ y conjunto de etiquetas que representan la actividad realizada durante cada intervalo $I_{j}$ (Ej. sentado, caminando, corriendo, etc.). Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos, no superpuestos y tal que \displaystyle\bigcup_{r-1}^{j=0}{I_j = I }
+\end{defi}
+
+Note que el HARP no es factible una resolución determinista. El numero de combinaciones de valores de atributos y actividades puede ser muy grande a veces infinito; y encontrar los puntos de transicion es complicado
 
