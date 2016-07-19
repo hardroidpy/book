@@ -1,9 +1,9 @@
 
-\chapter{Conclusiones y Trabajos Futuros}
+\chapter{Conclusiones}
 
 \label{conclusiones-y-trabajos-futuros}
 
-\section{Conclusiones}
+\section{Logros}
 
 \label{conclusiones}
 
@@ -12,48 +12,60 @@ multidisciplinaria con constantes aportes y diversos usos en la actualidad
 debido a su relevancia en la computación contextual y ubicua. Los
 avances en la miniaturización de los sistemas de computación y sensores
 hacen del área tanto atractiva como desafiante para explorar y proponer
-nuevas ideas en este ámbito \cite{LaraLabrador2013}. Sin embargo,
+nuevas ideas en este ámbito\cite{LaraLabrador2013}. Sin embargo,
 los esfuerzos realizados por otros trabajos no han tenido en cuenta
 la dimensión de la colaboración y el uso de Internet para contribuir
-a la mejora de los sistemas de reconocimiento, tal como se ha hecho
-este trabajo.
+a la mejora de los sistemas de reconocimiento tal como se ha hecho
+en este trabajo. Los logros más relevantes se describen a continuación.
 
-El problema planteado en la sección \ref{objetivo-general} de diseñar
-un sistema de reconocimiento de actividades colaborativo fue abordado
-con la utilización de tres elementos principales para lograr el objetivo
-principal: los teléfonos móviles, el software libre y la Internet.
-Los primeros cuatro objetivos específicos (\ref{enu:obe1} al \ref{enu:obe4})
-descritos en la sección \ref{objetivos-especuxedficos} son cuestiones
-del marco teórico en el estudio de HAR donde no se hace una contribución
-específica. Los objetivos específicos \ref{enu:obe5} y \ref{enu:obe6}
-son el aporte principal de este trabajo y completan la solución al
-problema planteado.
+Acorde al objetivo principal descrito en la sección \ref{objetivo-general}
+se construyó un sistema de reconocimiento de actividades colaborativo
+utilizando tres elementos principales: los teléfonos móviles modernos,
+el software libre y la Internet. El desarrollo del trabajo se llevó
+acabo en dos etapas. La primera etapa consistió en el entrenamiento
+de un modelo y la segunda etapa consistió en la construcción de un
+sistema reconocedor de actividades para teléfonos móviles.
 
-Primeramente, el problema de recolectar datos en condiciones realistas
-fue abordado por medio de una aplicación de captura de datos en forma
-de encuesta. La aplicación construida para los teléfonos móviles fue
-publicada para que las personas su descarga y colaborar aportando
-los datos de sensores y las actividades reconocidas mientras utilizan
-el sistema de reconocimiento. Periodicamente, con el objetivo de retroalimentar
-el modelo de aprendizaje automático, la información recolectada se
-sube a Internet para que pueda servir de entrada para entrenar de
-nuevo el modelo con actualizaciones constantes.
+De acuerdo al marco teórico de esta área enunciado en los objetivos
+específicos (\ref{enu:obe1} al \ref{enu:obe4}) de la sección \ref{objetivos-especuxedficos}
+ambas etapas siguen las guías comunes para reconocer actividades humanas
+y son:
+\begin{enumerate}
+\item Recolección de datos de sensores
+\item Procesamiento de señal en ventanas de tiempo
+\item Extracción de muestras y variables características
+\end{enumerate}
+La primera etapa se caracterizó por la construcción de un clasificador
+basado en aprendizaje automático y la exportación del mismo a un modelo
+ejecutable en \emph{Java}.
 
-Además, se construyo el sistema de reconocimiento de actividades,
-que es el aporte principal de este trabajo, el mismo está disponible
-como un proyecto de software libre para la plataforma \emph{Android.}
-Este puede ser utilizado de dos maneras, otras aplicaciones móviles
-pueden incluirla en tiempo de construcción o simplemente pueden utilizar
-el sistema como un servicio a través de una API de integración \cite{hardroid2016a}.
+Los objetivos específicos \ref{enu:obe5} y \ref{enu:obe6} engloban
+el aporte principal de este trabajo el cual se desenvolvió en la segunda
+etapa. Se construyó el sistema de reconocimiento de actividades para
+teléfonos móviles para la plataforma \emph{Android} siguiendo las
+guías comunes y utilizando el resultado de la primera etapa. Este
+sistema puede ser utilizado de dos maneras, otras aplicaciones móviles
+pueden incluirla en tiempo de construcción o simplemente ejecutarlo
+como un servicio a través de una interfaz de integración\cite{hardroid2016a}.
 
-Finalmente, la colaboración planteada se desenvuelve en dos aspectos
-principales. En el aspecto de los datos recolectados para el modelo
-de aprendizaje automático donde las personas comparten información
-relevante al utilizar la aplicación de encuesta y el sistema de reconocimiento
-puede actualizar su modelo periódicamente. En el aspecto del componente
-de software donde la implementación del sistema reconocedor está disponible
-para que cualquiera comunidad lo extienda o utilice según sus necesidades
-particulares \cite{hardroid2016b}.
+En parte, para evaluar el sistema construido y además recolectar datos
+de sensores en condiciones realistas se construyó una aplicación que
+reconoce actividades y realiza una encuesta en línea. Esta aplicación
+\emph{Android} construida fue publicada para que los participantes
+del estudio la descarguen y colaboren aportando los datos asociados
+a las actividades reconocidas mientras utilizan el sistema de reconocimiento.
+El objetivo de este ejercicio es retroalimentar el modelo de aprendizaje
+automático periódicamente. La información recolectada se comparte
+a través de Internet para que se evalúe y eventualmente sirva como
+entrada para construir un nuevo el modelo en etapas posteriores.
+
+Finalmente, la colaboración se desenvuelve en dos aspectos principales.
+En el aspecto de la información recolectada para evaluar el modelo
+de aprendizaje automático al utilizar la aplicación de encuesta y
+la actualización del modelo del sistema de reconocimiento de manera
+periódica. En el aspecto del componente de software construido, donde
+la implementación del sistema reconocedor está disponible para que
+cualquiera lo extienda o utilice según sus necesidades particulares\cite{hardroid2016b}.
 
 \section{Trabajos Futuros}
 
@@ -69,9 +81,9 @@ y/o factores fisiológicos y generar modelos distintos para cada grupo.
 la señal para mejorar las predicciones teniendo en cuenta la orientación
 del dispositivo. 
 \item Identificar otras actividades aplicado a otras disciplinas o contextos. 
-\item Utilizar un reloj inteligente (Smartwatch) u otros accesorios que
-agreguen variables relevantes en el reconocimiento de actividades
-dependiendo del contexto. 
+\item Utilizar un reloj inteligente (\emph{Smartwatch}, reloj inteligente)
+u otros accesorios que agreguen variables relevantes en el reconocimiento
+de actividades dependiendo del contexto. 
 \end{enumerate}
 Se propone generar modelos segmentados por distintas características
 de las personas, como ser rango de edades, sexo, etc. Teniendo en
@@ -82,9 +94,9 @@ modelo acorde. La segmentación podría llegar a aumentarse hasta tener
 un modelo por persona.
 
 Entre los métodos de aprendizaje automático existen varias opciones
-por explorar, como ser las principales el SVM, Redes Neuronales, o
-kNN, explorando cual obtiene mejores resultados en contrapartida con
-el consumo de batería del dispositivo móvil.
+por explorar, como ser las principales el \nomenclature{SVM}{Support Vector Machine}SVM
+o Redes Neuronales, explorando cual obtiene mejores resultados en
+contrapartida con el consumo de batería del dispositivo móvil.
 
 En el proceso de selección de variables estadísticas se debería explorar
 en detalle un mayor numero de ella, como las tres dimensiones del
@@ -99,7 +111,7 @@ reconocimiento de actividades.
 
 De la misma manera de las actividades, se propone complementar el
 modelo con diferentes tipos de dispositivos inteligentes como ser
-un reloj Inteligente, algún tipo de sensor que dé mayor información
+un reloj inteligente, algún tipo de sensor que dé mayor información
 del contexto de la persona. Esto va muy relacionado al punto anterior,
 ya que algunas actividades o posturas podrían requerir mayores datos
 para realizar el reconocimiento.

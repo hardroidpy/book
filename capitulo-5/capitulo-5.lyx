@@ -1,0 +1,244 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Sistemas de Reconocimiento de Actividades 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:sistemas-de-reconocimiento"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este capítulo describe la arquitectura común de un sistema de reconocimiento
+ de actividades.
+ Se describe detalladamente los componentes del sistema además de sus funciones
+ principales de manera general.
+ 
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Los sistemas de reconocimiento de actividades humanas son similares a cualquier
+ aplicación de aprendizaje automático.
+ Según trabajos publicados con anterioridad
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+, los sistemas de reconocimiento comparten una misma estructura de componentes
+ y poseen las mismas fases realizadas en dos etapas, entrenamiento y evaluación,
+ así como está descrito en el Capítulo 2 [ira al 2].
+ A pesar de que siguen la misma guía de diseño puede que algunas implementacione
+s no incluyan todos los componentes requeridos, es decir, un sistema puede
+ implementar simplemente los componentes necesarios para la etapa de evaluación
+ dejando de lado cualquier tarea en etapa de entrenamiento a realizarse
+ manualmente.
+ 
+\end_layout
+
+\begin_layout Section
+Componentes
+\end_layout
+
+\begin_layout Standard
+Actualmente, dentro del marco teórico del estudio de los sistemas de reconocimie
+nto, se han identificado unos componentes mínimos requeridos para realizar
+ las etapas de aprendizaje y predicción de manera automatizada
+\begin_inset CommandInset citation
+LatexCommand cite
+key "choudhury2008mobile"
+
+\end_inset
+
+.
+ Un sistema de reconocimiento de actividades posee tres componentes o módulos
+ principales que son:
+\end_layout
+
+\begin_layout Itemize
+un 
+\emph on
+módulo recolector de datos sensoriales
+\emph default
+ que recolecta toda la información relevante para las actividades humanas
+ utilizando por supuesto sensores.
+ Ej.
+ el acelerómetro, giroscopio, brújula, etc.
+\end_layout
+
+\begin_layout Itemize
+un 
+\emph on
+módulo de procesamiento y selección de muestras
+\emph default
+ que procesa los datos en bruto para adecuarlos muestras con variables significa
+tivas que permitan discriminar las actividades a reconocer
+\end_layout
+
+\begin_layout Itemize
+un 
+\emph on
+módulo de clasificación 
+\emph default
+que utiliza las muestras extraídas para inferir qué actividad probable está
+ realizando un individuo en un determinado instante.
+\end_layout
+
+\begin_layout Standard
+Las responsabilidades y detalles de cada módulo se describen en los siguientes
+ apartados.
+\end_layout
+
+\begin_layout Subsection
+Recolector de datos
+\end_layout
+
+\begin_layout Subsection
+Procesamiento y selección de muestras
+\end_layout
+
+\begin_layout Subsection
+Clasificación
+\end_layout
+
+\begin_layout Section
+Capacidades
+\end_layout
+
+\begin_layout Standard
+Existen un conjunto de características deseables que deben ser satisfechas
+ para la construcción efectiva de los sistemas de reconocimiento.
+ Estas características abordan cuestiones de diseño importantes que conciernen
+ a la calidad y al funcionamiento del sistema:
+\end_layout
+
+\begin_layout Enumerate
+Portabilidad, el sistema utiliza sensores adjuntos a los individuos, por
+ ejemplo el sensor de aceleración, y no debe obstruir las actividades cotidianas
+ de una persona durante su uso para evitar que esto atente contra la adopción
+ masiva del sistema.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Conectividad, el sistema debe poder transferir de manera confiable los datos
+ recolectados y procesados a un componente remoto.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Almacenamiento, el sistema debe persistir datos recolectados y procesados
+ de manera local para mantener la calidad de los mismos y minimizar la cantidad
+ transferida a otro componente remoto.
+\end_layout
+
+\begin_layout Enumerate
+Procesamiento, el sistema debe realizar tareas de procesamiento y transformación
+ de datos para producir información relacionada al reconocimiento de actividades.
+\end_layout
+
+\begin_layout Enumerate
+Ubiquidad, el sistema debe operar en cualquier condición y contexto en que
+ la persona se encuentre sin interferir u obligar a la persona a interactuar
+ con el sistema.
+\end_layout
+
+\begin_layout Enumerate
+Uso de energía, el sistema debe preservar el uso de energía en los dispositivos
+ móviles que están implementados.
+ La lectura de datos de los sensores, el procesamiento y la conectividad
+ no deben incurrir en gastos excesivos de energía para que el sistema pueda
+ operar.
+\end_layout
+
+\begin_layout Enumerate
+Privacidad, el sistema debe de mantener de manera confidencial los datos
+ recolectados y producidos durante la adopción masiva del sistema, además
+ de avisar sobre la utilización de datos sensibles que puedan requerir consentim
+iento del usuario.
+\end_layout
+
+\end_body
+\end_document

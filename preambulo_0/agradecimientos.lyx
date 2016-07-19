@@ -7,7 +7,7 @@
 \textclass book
 \use_default_options false
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package none
 \inputencoding utf8
 \fontencoding default
@@ -58,7 +58,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
