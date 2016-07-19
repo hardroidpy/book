@@ -12,6 +12,34 @@ En general, el contexto de usuario significa su actividad, ubicación, preferenc
 
 En este trabajo, investigamos posibilidades y viabilidades de tener un servicio para obtener el contexto de la actividad física diaria de los usuarios con teléfonos móviles.
 
+\section{Actividades Humanas}
+El diseño de un sistema HAR depende totalmente de las actividades definidas que van a ser reconocida. Por lo tanto, el cambio del conjunto de actividades que el sistema reconoce convierte al problema en uno completamente diferente al anterior.
+
+Teniendo en cuenta esto, las distintas publicaciones, tenemos estos siete distintos grupos de actividades en la siguiente tabla.
+
+\newcommand{\rr}{\raggedright}
+\newcommand{\tn}{\tabularnewline}
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|l|p{9cm}|}
+			\hline
+			\textbf{Grupo} & \textbf{Actividades} \\
+			\hline \hline
+			Ambulatoria & Caminar, correr, sentarse, pararse, quedarse quieto, acostarse, subir escaleras, descender escaleras, usar escaleras mecánicas, usar elevador.\\ \hline
+			Transporte & Andar en bus, bicicleta y conducir \\ \hline
+			En el teléfono & Enviar mensajes de texto y hacer llamadas \\ \hline
+			Actividades diarias & Comer, beber, trabajar en la PC, mirar TV, leer, cepillarse los dientes, aspirar el piso, y otros. \\ \hline
+			Ejercitarse & Alzar pesas, bicicleta estática, remo y otros. \\ \hline
+			Militares & Arrastrarse, en cuclillas, abrir la puerta \\ \hline
+			Parte superior del cuerpo & Masticar, hablar, mover la cabeza, tragar líquidos, mirar. \\ \hline
+		\end{tabular}
+		\caption{Grupos de Actividades.}
+		\label{tabla:sencilla}
+	\end{center}
+\end{table}
+
+
 \section{Sensores ambientales vs Sensores <<Wearables>>}
 
 En la problemática del reconocimiento de la actividad que esta realizando una persona uno de los puntos importantes a considerar es la elección de los sensores a utilizar. Los sensores pueden medir signos vitales (ritmo cardíaco, temperatura del cuerpo, presión arterial), el ambiente (intensidad de luz, temperatura, niveles de sonido), movimiento (aceleración, velocidad), y posición (localización global o en interiores).
