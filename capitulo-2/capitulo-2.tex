@@ -12,6 +12,34 @@ En general, el contexto de usuario significa su actividad, ubicación, preferenc
 
 En este trabajo, investigamos posibilidades y viabilidades de tener un servicio para obtener el contexto de la actividad física diaria de los usuarios con teléfonos móviles.
 
+\section{Actividades Humanas}
+El diseño de un sistema HAR depende totalmente de las actividades definidas que van a ser reconocida. Por lo tanto, el cambio del conjunto de actividades que el sistema reconoce convierte al problema en uno completamente diferente al anterior.
+
+Teniendo en cuenta esto, las distintas publicaciones, tenemos estos siete distintos grupos de actividades en la siguiente tabla.
+
+\newcommand{\rr}{\raggedright}
+\newcommand{\tn}{\tabularnewline}
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|l|p{9cm}|}
+			\hline
+			\textbf{Grupo} & \textbf{Actividades} \\
+			\hline \hline
+			Ambulatoria & Caminar, correr, sentarse, pararse, quedarse quieto, acostarse, subir escaleras, descender escaleras, usar escaleras mecánicas, usar elevador.\\ \hline
+			Transporte & Andar en bus, bicicleta y conducir \\ \hline
+			En el teléfono & Enviar mensajes de texto y hacer llamadas \\ \hline
+			Actividades diarias & Comer, beber, trabajar en la PC, mirar TV, leer, cepillarse los dientes, aspirar el piso, y otros. \\ \hline
+			Ejercitarse & Alzar pesas, bicicleta estática, remo y otros. \\ \hline
+			Militares & Arrastrarse, en cuclillas, abrir la puerta \\ \hline
+			Parte superior del cuerpo & Masticar, hablar, mover la cabeza, tragar líquidos, mirar. \\ \hline
+		\end{tabular}
+		\caption{Grupos de Actividades.}
+		\label{tabla:sencilla}
+	\end{center}
+\end{table}
+
+
 \section{Sensores ambientales vs Sensores <<Wearables>>}
 
 En la problemática del reconocimiento de la actividad que esta realizando una persona uno de los puntos importantes a considerar es la elección de los sensores a utilizar. Los sensores pueden medir signos vitales (ritmo cardíaco, temperatura del cuerpo, presión arterial), el ambiente (intensidad de luz, temperatura, niveles de sonido), movimiento (aceleración, velocidad), y posición (localización global o en interiores).
@@ -31,7 +59,6 @@ Después hay que mencionar que dentro de los wearables están los que usan senso
 
 Otros autores como \cite{karmul2010} extraen al reconocimiento con cámaras de vídeo como una clasificación diferente a los ambientales. 
 
-
 \section{Dispositivos Moviles}
 <<<Acá hablamos del las ventajas de realizar el reconocimiento con dispositivos móviles ya que tiene sensores>>>
 
@@ -39,11 +66,16 @@ Otros autores como \cite{karmul2010} extraen al reconocimiento con cámaras de v
 \section{Metodología HAR}
 <<<Acá hablamos de tipo de actividades, las fases del reconocimiento de actividades (Colección de datos, procesamiento de datos o extracción de feature, modelado o aprendizaje, y evaluación e inferencia), y por ultimo La definición matemática del problema. >>>
 
-
-\subsection{Actividades Humanas}
-
 \subsection{Fases del Reconocimiento}
 
 \subsection{Definición del Problema}
+Teniendo en cuenta todo esto puntos podemos definir el problema como 
 
+\newtheorem{defi}{Definición}
+
+\begin{defi}(HARP)
+	Dado un conjunto $S = \{S_{0},...,S_{k-1}\} $ de $k$ series de tiempo, cada una medida de cada atributo, y todo definido en un intervalo de tiempo $I =  \left [ t_{\alpha}, t_{\omega} \right ]$ el objetivo es encontrar un sub intervalo de tiempo $\left\langle I_{0},...,I_{r-1} \right\rangle $ en $I$, basado en datos de $S$ y conjunto de etiquetas que representan la actividad realizada durante cada intervalo $I_{j}$ (Ej. sentado, caminando, corriendo, etc.). Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos, no superpuestos y tal que \displaystyle\bigcup_{r-1}^{j=0}{I_j = I }
+\end{defi}
+
+Note que el HARP no es factible una resolución determinista. El numero de combinaciones de valores de atributos y actividades puede ser muy grande a veces infinito; y encontrar los puntos de transicion es complicado
 
