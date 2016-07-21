@@ -30,7 +30,10 @@ if "%1" == "docx" (
 )
 
 if "%1" == "latex" (
-    start pdflatex tesis && biber tesis && pdflatex tesis && pdflatex tesis
+    pdflatex tesis 
+    bibtex tesis 
+    pdflatex tesis 
+    pdflatex tesis
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. 
