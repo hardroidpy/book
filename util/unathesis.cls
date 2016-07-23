@@ -90,7 +90,7 @@
 \newcommand{\shortdate}{\@arabic\day/\@arabic\month/\@arabic\year}
 \newcommand{\shorttime}{\number\hours:\ifnum\minutes<10 0\fi\number\minutes}
 
-\newcommand{\blankpageleyend}{(esta p\'agina se dej\'o en blanco de manera intencional)}
+\newcommand{\blankpagelegend}{(esta p\'agina se dej\'o en blanco de manera intencional)}
 
 % Margenes y espaciado
 \usepackage[a4paper]{geometry}
@@ -214,12 +214,13 @@
 \renewcommand{\listoffigures}{\@oldlistoffigures\addcontentsline{toc}{chapter}{\'Indice de Figuras}}
 \renewcommand{\listoftables}{\@oldlistoftables\addcontentsline{toc}{chapter}{\'Indice de Tablas}}
 \renewcommand{\listofalgorithms}{\listof{algorithm}{Algoritmos}\addcontentsline{toc}{chapter}{\'Indice de Algoritmos}}
+\renewcommand{\printnomenclature}{\printnomenclature\addcontentsline{toc}{chapter}{Nomenclatura}}
 
-\let\@oldbibliography=\thebibliography
-\renewenvironment{thebibliography}[1]{%
-  \begin{@oldthebibliography}{#1}%
+\let\@oldbibliography=\bibliography
+\renewenvironment{bibliography}[1]{%
+  \begin{@oldbibliography}{#1}%
   \phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
-}{\end{@oldthebibliography}}
+}{\end{@oldbibliography}}
 
 
 %% End of unathesis.cls
