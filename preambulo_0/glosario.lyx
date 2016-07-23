@@ -148,5 +148,16 @@ description "Árboles de decisión, por sus siglas en inglés"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SVM"
+description "Máquinas de Vectores de Soporte, por sus siglas en inglés."
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

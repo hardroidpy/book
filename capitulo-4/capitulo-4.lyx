@@ -100,7 +100,7 @@ Introducción
 \begin_layout Standard
 Los sistemas de reconocimiento de actividades humanas son similares a cualquier
  aplicación de aprendizaje automático.
- Según trabajos publicados con anterioridad
+ Según trabajos publicados con anterioridad 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -125,7 +125,7 @@ Componentes
 \begin_layout Standard
 Actualmente, dentro del marco teórico del estudio de los sistemas de reconocimie
 nto, se han identificado unos componentes mínimos requeridos para realizar
- las etapas de aprendizaje y predicción de manera automatizada
+ las etapas de aprendizaje y predicción de manera automatizada 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "choudhury2008mobile"
@@ -133,14 +133,13 @@ key "choudhury2008mobile"
 \end_inset
 
 .
- Un sistema de reconocimiento de actividades posee tres componentes o módulos
- principales que son:
+ Un sistema de reconocimiento de actividades posee tres componentes principales:
 \end_layout
 
 \begin_layout Itemize
 un 
 \emph on
-módulo recolector de datos sensoriales
+recolector de datos sensoriales
 \emph default
  que recolecta toda la información relevante para las actividades humanas
  utilizando por supuesto sensores.
@@ -151,7 +150,7 @@ módulo recolector de datos sensoriales
 \begin_layout Itemize
 un 
 \emph on
-módulo de procesamiento y selección de muestras
+procesamiento y selección de muestras
 \emph default
  que procesa los datos en bruto para adecuarlos muestras con variables significa
 tivas que permitan discriminar las actividades a reconocer
@@ -160,7 +159,7 @@ tivas que permitan discriminar las actividades a reconocer
 \begin_layout Itemize
 un 
 \emph on
-módulo de clasificación 
+clasificador 
 \emph default
 que utiliza las muestras extraídas para inferir qué actividad probable está
  realizando un individuo en un determinado instante.
