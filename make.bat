@@ -30,10 +30,11 @@ if "%1" == "docx" (
 )
 
 if "%1" == "latex" (
-    pdflatex tesis 
+    pdflatex -interaction nonstopmode tesis 
     bibtex tesis 
-    pdflatex tesis 
-    pdflatex tesis
+    makeindex tesis.nlo -s nomencl.ist -o tesis.nls
+    pdflatex -interaction nonstopmode tesis 
+    pdflatex -interaction nonstopmode tesis 
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. 
@@ -41,7 +42,7 @@ if "%1" == "latex" (
 )
 
 if "%1" == "view" (
-    start texworks tesis.pdf
+    start explorer tesis.pdf
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished.

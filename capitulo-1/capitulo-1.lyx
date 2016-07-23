@@ -96,7 +96,7 @@ Smartphones
 \emph default
 , teléfonos inteligentes) con pantalla táctil, la convergencia en el uso
  de teléfonos móviles, las redes de datos e Internet ha ido aumentando gradualme
-nte
+nte 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "fling2009mobile"
@@ -109,7 +109,7 @@ key "fling2009mobile"
 \begin_layout Standard
 La capacidad y prestaciones de los teléfonos móviles modernos han mejorado
  drásticamente, ya que fusiona los aspectos de teléfonos móviles y computadoras
- portátiles, la promesa esperada desde hace más de una década
+ portátiles, la promesa esperada desde hace más de una década 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "Tanenbaum2010"
@@ -128,7 +128,7 @@ Desde los teléfonos móviles modernos se tiene acceso a la información pero
  en un contexto móvil.
  El contexto puede darse de dos formas, la primera forma es el valor que
  los usuarios mismos generan a partir de las circunstancias en la que están
- involucrados
+ involucrados 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "fling2009mobile"
@@ -139,7 +139,7 @@ key "fling2009mobile"
  La información provee un contexto que permite al usuario entender mejor
  el momento por el que está pasando.
  La segunda forma del contexto es el entorno en el cual el usuario realiza
- una acción determinada
+ una acción determinada 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "fling2009mobile"
@@ -153,19 +153,25 @@ key "fling2009mobile"
 
 \begin_layout Standard
 El reconocimiento de actividades humanas (
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "HAR"
-description "Reconocimiento de Actividades Humanas, por sus siglas en inglés"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{abbr}{HAR}
+\end_layout
 
 \end_inset
 
-HAR, 
+, 
 \emph on
 Human Activity Recognition
 \emph default
 ) es un línea de investigación amplia que busca diseñar algoritmos que detecten
  el contexto de uno o más individuos a partir de datos ambiguos de su entorno
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
@@ -192,14 +198,14 @@ key "LaraLabrador2013"
 \begin_layout Standard
 En el ámbito de los teléfonos móviles existen bastantes usos al reconocer
  las actividades básicas ambulatorias, de si el individuo camina, corre,
- está quieto o moviéndose rápidamente en algún vehículo
+ está quieto o moviéndose rápidamente en algún vehículo 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "campuzano2015"
 
 \end_inset
 
-
+, 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "googlio2013"
@@ -229,21 +235,22 @@ Desde el año 2013 que
 Google
 \emph default
  viene proveyendo como parte de su plataforma 
-\emph on
-Android
-\emph default
+\begin_inset ERT
+status open
 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "google2005and"
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{abbr}{Android}
+\end_layout
 
 \end_inset
 
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "Android"
-description "Android es un sistema operativo móvil desarrollado por Google. Está basado en el kernel de Linux."
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "google2005and"
 
 \end_inset
 
@@ -251,7 +258,7 @@ description "Android es un sistema operativo móvil desarrollado por Google. Est
 \emph on
 Google Play Services
 \emph default
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "googl2016loc"
@@ -268,7 +275,7 @@ Sony
 \emph on
 Lifelog
 \emph default
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "sony2016act"
@@ -282,18 +289,19 @@ key "sony2016act"
 Apple
 \emph default
  en su plataforma 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "iOS"
-description "Es un sistema operativo móvil creado y desarrollado por Apple Inc."
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{abbr}{iOS}
+\end_layout
 
 \end_inset
 
-
-\emph on
-iOS
-\emph default
-
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "apple2007ios"
@@ -304,7 +312,7 @@ key "apple2007ios"
 \emph on
 HealthKit
 \emph default
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "healthkit2016"
@@ -327,7 +335,7 @@ iOS
 proveen un ecosistema abierto para crear aplicaciones personalizadas de
  contexto y de medios digitales.
  Estas plataformas son las que conducen la expansión y crecimiento de las
- aplicaciones móviles e inalámbricas
+ aplicaciones móviles e inalámbricas 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tanenbaum2010"
@@ -385,7 +393,7 @@ El reconocimiento de actividades humanas es un tópico de investigación que
  abarca varias áreas de estudio.
  Por mencionar algunas, desde la computación ubicua y móvil, la computación
  contextual, la seguridad basada en la vigilancia, la vivienda asistida
- por el ambiente y otras
+ por el ambiente y otras 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "chen2012sensor"
@@ -406,6 +414,7 @@ Reconocer las actividades físicas consiste en detectar los movimientos que
  También existen otras actividades más complejas como las de postura, entrenamie
 nto físico y otras más mundanas como cepillarse los dientes, mirar televisión,
  comer, tomar, etc.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -418,14 +427,14 @@ key "LaraLabrador2013"
 \begin_layout Standard
 El problema del reconocimiento de actividades física es abordado con un
  modelo de aprendizaje automático supervisado que utiliza una técnica de
- inferencia basada en dos etapas: entrenamiento y evaluación
+ inferencia basada en dos etapas: entrenamiento y evaluación 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
 
 \end_inset
 
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kwapisz2011"
@@ -440,7 +449,7 @@ key "Kwapisz2011"
  relevante para construir un modelo de inferencia.
  Finalmente, se construye un modelo entrenado que produce un algoritmo que
  detecta con cierta precisión las actividades inicialmente etiquetadas teniendo
- como entrada cualquier conjunto de datos no etiquetados
+ como entrada cualquier conjunto de datos no etiquetados 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
@@ -506,14 +515,19 @@ Para construir sistemas de reconocimiento de actividades se necesitan uno
  condiciones adecuadas para la captura de datos de manera ubicua.
  Algunos de los sensores comunes en un teléfono inteligente son: localización
  (
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "GPS"
-description "Sistema de Geoposicionamiento Global, por sus siglas en inglés"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{abbr}{GPS}
+\end_layout
 
 \end_inset
 
-GPS, 
+, 
 \emph on
 Global Positioning System
 \emph default
@@ -590,30 +604,40 @@ key "Kwapisz2011"
 Google Play Services
 \emph default
  API) (
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "API"
-description "Interfaces de Programación de Aplicaciones, por sus siglas en inglés"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{abbr}{API}
+\end_layout
 
 \end_inset
 
-API, 
+, 
 \emph on
 Application Programming Interface
 \emph default
 ), servicios de Internet (
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "SaaS"
-description "Software como Servicio"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{SaaS}
+\end_layout
 
 \end_inset
 
-SaaS, 
+, 
 \emph on
 Software as a Service
 \emph default
- ), o aplicaciones de terceros (Ej.
+), o aplicaciones de terceros (Ej.
  
 \emph on
 Lifelog
@@ -679,14 +703,19 @@ Además se implementará un servicio web de captura de las muestras de la
  la librería.
  El modelo de aprendizaje se basará en aprendizaje automático por árboles
  de decisión (
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "DT"
-description "Árboles de decisión, por sus siglas en inglés"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{abbr}{DT}
+\end_layout
 
 \end_inset
 
-DT, 
+, 
 \emph on
 Decision Trees
 \emph default
@@ -737,7 +766,20 @@ name "enu:obe1"
 
 \end_inset
 
-Definir el estado del arte sobre reconocimiento de actividades humanas (HAR).
+Definir el estado del arte sobre reconocimiento de actividades humanas (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{abbr}{HAR}
+\end_layout
+
+\end_inset
+
+).
  
 \end_layout
 

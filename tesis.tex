@@ -20,8 +20,6 @@
 \usepackage{multirow} %multirow tables
 \usepackage{nicefrac} %for fractions like 1/4
 \usepackage[table]{xcolor} %para colorear las tablas
-\usepackage{nomencl}
-\renewcommand*{\pagedeclaration}[1]{\unskip, \hyperpage{#1}}
 % para las tablas
 
 %se importan las configuraciones custmizdas realizadas.
@@ -39,7 +37,6 @@
 %\hfuzz=50pt
 %\setcitestyle{round}
 
-
 \makeatother
 
 \begin{document}
@@ -47,13 +44,17 @@
 \title{Reconocimiento de actividades humanas con un enfoque colaborativo}
 \author{Alberto Gimenez \and Santiago A. Yegros Z.} 
 
+% PDF
+\hypersetup{pdftitle=Reconocimiento de actividades humanas con un enfoque colaborativo,
+ pdfauthor={Alberto Gimenez, Santiago A. Yegros Z.},
+ pdfsubject={Tesis de Grado}}
+
 \maketitle     % esto hace las portadas
 \frontmatter
 
 % Agradecimientos
 \include{preambulo_0/agradecimientos}
 \include{preambulo_0/resumen}
-
 
 % los siguientes comandos producen índices.
 
@@ -66,12 +67,9 @@
 % Lista de algoritmos
 \listofalgorithms
 
-\clearpage{}
-\hypertarget{abbr}{\printnomenclature{}}
+\include{preambulo_0/simbolos}
 
 \mainmatter  % inician los capitulos de la tesis
-
-\include{preambulo_0/simbolos}
 
 % incluye aqui los capitulos (un archivo .tex por capitulo)
 \include{capitulo-1/capitulo-1} 	%Cap 1: Introducción
@@ -87,6 +85,8 @@
 %Parte V: Final
 \include{capitulo-8/capitulo-8} 	%Cap 8: Conclusiones y Trabajos Futuros
 
+\include{preambulo_0/glosario}
+
 %\appendix   
 % los capítulos que incluyas a partir de aquí aparecen
 % como apendices
@@ -96,5 +96,8 @@
 
 %referencias
 \bibliography{referencias}
+
+% Glosario
+\hypertarget{abbr}{\printnomenclature{}}
 
 \end{document}

@@ -18,7 +18,8 @@
 
 \usepackage{algorithm}
 \usepackage{algorithmic}
-\bibliographystyle{unsrt} % Numeros ordenados por entrada
+\bibliographystyle{plainnat} % Numeros ordenados por entrada
+\AtBeginDocument{\renewcommand\cite{\citep}}
 
 % class fields %
 \renewcommand{\@author}{\ClassError{unathesis}{Falta especificar \string\author{}}
@@ -101,6 +102,18 @@
     \DeclareGraphicsExtensions{.png, .jpg, .jpeg, .pdf, .gif} %GIF doesn't work??
     \usepackage[pdftex]{graphicx}
     \pdfcompresslevel=9
+    %% Enlaces
+    \usepackage[unicode=true,
+                bookmarks=true,
+                bookmarksnumbered=true,
+                bookmarksopen=true,
+                bookmarksopenlevel=1,
+                breaklinks=false,
+                pdfborder={0 0 0},
+                pdfborderstyle={},
+                backref=page,
+                colorlinks = false
+            ]{hyperref}
 \else
     \usepackage[ dvips, 
                  bookmarks,
@@ -122,7 +135,6 @@
     \usepackage{epsfig}
     \usepackage{graphicx}
 \fi
-
 
 % support for \and in author%
 \newcounter{@count}
@@ -193,16 +205,32 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-%% Enlaces
-\usepackage[unicode=true,
- bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
- breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=page,colorlinks=false]
- {hyperref}
+% Nomenclatura
+\usepackage[intoc]{nomencl}
+\renewcommand{\nomname}{Glosario}
 
-% PDF
-\hypersetup{pdftitle=\@title,
- pdfauthor={\@author},
- pdfsubject={Tesis de Grado}}
+\@ifundefined{chapter}
+  {\def\wilh@nomsection{section}}
+  {\def\wilh@nomsection{chapter}}
+
+\usepackage{multicol}
+\def\thenomenclature{%
+  \begin{multicols}{2}[%
+    \csname\wilh@nomsection\endcsname*{\nomname}
+    \if@intoc\addcontentsline{toc}{\wilh@nomsection}{\nomname}\fi
+    \nompreamble]
+  \list{}{%
+    \labelwidth\nom@tempdim
+    \leftmargin\labelwidth
+    \advance\leftmargin\labelsep
+    \itemsep\nomitemsep
+    \let\makelabel\nomlabel}%
+}
+\def\endthenomenclature{%
+  \endlist
+  \end{multicols}
+  \nompostamble}
+
 
 % Redefiniciones
 \providecommand{\printnomenclature}{\printglossary}
@@ -212,9 +240,8 @@
 \let\@oldlistoftables=\listoftables
 
 \renewcommand{\listoffigures}{\@oldlistoffigures\addcontentsline{toc}{chapter}{\'Indice de Figuras}}
-\renewcommand{\listoftables}{\@oldlistoftables\addcontentsline{toc}{chapter}{\'Indice de Tablas}}
-\renewcommand{\listofalgorithms}{\listof{algorithm}{Algoritmos}\addcontentsline{toc}{chapter}{\'Indice de Algoritmos}}
-\renewcommand{\printnomenclature}{\printnomenclature\addcontentsline{toc}{chapter}{Nomenclatura}}
+\renewcommand{\listoftables}{\@oldlistoftables\addcontentsline{toc}{chapter}{\'Indice de cuadros}}
+\renewcommand{\listofalgorithms}{\listof{algorithm}{\'Indice de algoritmos}\addcontentsline{toc}{chapter}{\'Indice de Algoritmos}}
 
 \let\@oldbibliography=\bibliography
 \renewenvironment{bibliography}[1]{%
