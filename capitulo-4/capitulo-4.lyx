@@ -98,23 +98,24 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-Los sistemas de reconocimiento de actividades humanas son similares a cualquier
+Los sistemas de reconocimiento de actividades humanas son semejantes a cualquier
  aplicación de aprendizaje automático.
- Según trabajos publicados con anterioridad 
+ Según el estado del arte 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
 
 \end_inset
 
-, los sistemas de reconocimiento comparten una misma estructura de componentes
- y poseen las mismas fases realizadas en dos etapas, entrenamiento y evaluación,
- así como está descrito en el Capítulo 2 [ira al 2].
- A pesar de que siguen la misma guía de diseño puede que algunas implementacione
-s no incluyan todos los componentes requeridos, es decir, un sistema puede
- implementar simplemente los componentes necesarios para la etapa de evaluación
- dejando de lado cualquier tarea en etapa de entrenamiento a realizarse
- manualmente.
+, estos sistemas de reconocimiento poseen la misma estructura y aplican
+ las mismas fases divididas en dos etapas, la de entrenamiento y la de evaluació
+n (ver Capítulo 2).
+ A pesar de seguir la mismas guías de diseño, un sistema puede optar por
+ no implementar en al menos una de las etapas, todos los componentes citados
+ en este apartado.
+ En otras palabras, un sistema de reconocimiento dado puede implementar
+ simplemente los componentes necesarios para la etapa de evaluación dejando
+ de lado cualquier elemento relacionado a la etapa de entrenamiento y viceversa.
  
 \end_layout
 
@@ -123,12 +124,12 @@ Componentes
 \end_layout
 
 \begin_layout Standard
-Actualmente, dentro del marco teórico del estudio de los sistemas de reconocimie
-nto, se han identificado unos componentes mínimos requeridos para realizar
- las etapas de aprendizaje y predicción de manera automatizada 
+Dentro del marco teórico de los sistemas de reconocimiento, se han identificado
+ unos componentes mínimos requeridos para realizar las actividades de aprendizaj
+e y predicción de manera manual o automatizada 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "choudhury2008mobile"
+key "Choudhury2008"
 
 \end_inset
 
@@ -139,47 +140,194 @@ key "choudhury2008mobile"
 \begin_layout Itemize
 un 
 \emph on
-recolector de datos sensoriales
-\emph default
- que recolecta toda la información relevante para las actividades humanas
- utilizando por supuesto sensores.
- Ej.
- el acelerómetro, giroscopio, brújula, etc.
+recolector de datos
 \end_layout
 
 \begin_layout Itemize
-un 
+un
 \emph on
-procesamiento y selección de muestras
+ procesador de muestras
 \emph default
- que procesa los datos en bruto para adecuarlos muestras con variables significa
-tivas que permitan discriminar las actividades a reconocer
+ 
 \end_layout
 
 \begin_layout Itemize
 un 
 \emph on
 clasificador 
-\emph default
-que utiliza las muestras extraídas para inferir qué actividad probable está
- realizando un individuo en un determinado instante.
 \end_layout
 
 \begin_layout Standard
-Las responsabilidades y detalles de cada módulo se describen en los siguientes
- apartados.
+Las responsabilidades y detalles de cada componente se describen en los
+ siguientes apartados.
+ En la siguiente figura se muestra una vista general de los componentes
+ y sus interrelaciones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de componentes de un sistema HAR
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Recolector de datos
 \end_layout
 
-\begin_layout Subsection
-Procesamiento y selección de muestras
+\begin_layout Standard
+El componente recolector de datos tiene la función de capturar datos en
+ bruto de sensores que sean relevantes en el estudio de los sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hyperlink{abbr}{HAR}
+\end_layout
+
+\end_inset
+
+.
+ La captura de datos debe ser realizada con instrumentos de medición apropiados:
+ sensores adjuntos a las personas en estudio.
+ 
+\end_layout
+
+\begin_layout Standard
+Los sensores se agrupan según los atributos de estudio de los sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Description
+Ubicación miden datos obtenidos con las redes celulares 3G y los sistemas
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+.
+ Provee información contextual bastante relevante de la posición de la persona,
+ y ciertas medidas de movimiento pero a costa de un consumo considerable
+ de energía.
+\end_layout
+
+\begin_layout Description
+Movimiento miden datos inerciales como la aceleración y la orientación respecto
+ a un marco de referencia relativo al dispositivo de medición.
+ Los sensores de aceleración, giroscopio y la brújula son los más comunes
+ y utilizados para reconocimiento de actividades con bajo consumo de energía
+ y buena precisión de reconocimiento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004,LaraLabrador2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Fisiológico miden signos vitales del individuo como ritmo cardiaco (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HRM}
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+Hearth Rate Monitor
+\emph default
+), temperatura del cuerpo, ritmo de respiración y otros.
+\end_layout
+
+\begin_layout Description
+Ambiental miden datos externos que rodean al individuo como el nivel de
+ ruido, la humedad y/o la temperatura.
+ Los sensores de luz, cámara, micrófonos y termómetros son utilizados para
+ medir estos atributos.
+ 
+\end_layout
+
+\begin_layout Standard
+Los datos medidos deben ser registrados de manera persistente o transmitidos
+ para ser procesados y utilizados por otros componentes.
+ Tanto en las actividades de aprendizaje y predicción se deben recolectar
+ datos de sensores.
 \end_layout
 
 \begin_layout Subsection
-Clasificación
+Procesador de muestras
+\end_layout
+
+\begin_layout Standard
+que procesa los datos en bruto para adecuarlos muestras con variables significat
+ivas que permitan discriminar las actividades a reconocer
+\end_layout
+
+\begin_layout Subsection
+Clasificador
+\end_layout
+
+\begin_layout Standard
+que utiliza las muestras extraídas para inferir qué actividad probable está
+ realizando un individuo en un determinado instante.
 \end_layout
 
 \begin_layout Section

@@ -4,7 +4,7 @@
 %%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{unathesis}[2016/07/19 v0.01 Formato para tesis de la UNA]
+\ProvidesClass{./util/unathesis}[2016/07/19 v0.01 Formato para tesis de la UNA]
 
 \LoadClass[12pt,oneside,spanish]{book}[1996/10/31]
 
@@ -207,7 +207,11 @@
 
 % Nomenclatura
 \usepackage[intoc]{nomencl}
+\providecommand{\printnomenclature}{\printglossary}
+\providecommand{\makenomenclature}{\makeglossary}
 \renewcommand{\nomname}{Glosario}
+\renewcommand{\nomlabel}[1]{\hypertarget{#1}{#1}}
+\newcommand{\abbr}[1]{\hyperlink{#1}{#1}}
 
 \@ifundefined{chapter}
   {\def\wilh@nomsection{section}}
@@ -231,23 +235,17 @@
   \end{multicols}
   \nompostamble}
 
-
-% Redefiniciones
-\providecommand{\printnomenclature}{\printglossary}
-\providecommand{\makenomenclature}{\makeglossary}
-
 \let\@oldlistoffigures=\listoffigures
 \let\@oldlistoftables=\listoftables
-
 \renewcommand{\listoffigures}{\@oldlistoffigures\addcontentsline{toc}{chapter}{\'Indice de Figuras}}
 \renewcommand{\listoftables}{\@oldlistoftables\addcontentsline{toc}{chapter}{\'Indice de cuadros}}
 \renewcommand{\listofalgorithms}{\listof{algorithm}{\'Indice de algoritmos}\addcontentsline{toc}{chapter}{\'Indice de Algoritmos}}
+
 
 \let\@oldbibliography=\bibliography
 \renewenvironment{bibliography}[1]{%
   \begin{@oldbibliography}{#1}%
   \phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
 }{\end{@oldbibliography}}
-
 
 %% End of unathesis.cls
