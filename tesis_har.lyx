@@ -16,7 +16,8 @@ Prof. Ing. Juan Talavera}
 \crest{./graphics/logo.jpg}
 \hbadness=10000
 \hfuzz=50pt
-%\setcitestyle{round}
+\setcitestyle{round}
+\AtBeginDocument{\renewcommand\cite{\citep}}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -56,7 +57,7 @@ customHeadersFooters
 \pdf_bookmarksopenlevel 1
 \pdf_breaklinks false
 \pdf_pdfborder true
-\pdf_colorlinks false
+\pdf_colorlinks true
 \pdf_backref page
 \pdf_pdfusetitle true
 \papersize a4paper
@@ -225,7 +226,17 @@ filename "capitulo-1/capitulo-1.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "capitulo-5/capitulo-5.lyx"
+filename "capitulo-2/capitulo-2.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "capitulo-4/capitulo-4.lyx"
 
 \end_inset
 
@@ -243,11 +254,21 @@ filename "capitulo-8/capitulo-8.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "preambulo_0/glosario.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintAll"
 bibfiles "referencias"
-options "bibtotoc,alpha"
+options "bibtotoc,unsrtnat"
 
 \end_inset
 

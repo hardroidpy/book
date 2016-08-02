@@ -1,3 +1,119 @@
-%!TEX root = ../tesis.tex
-\chapter{Reconocimiento en aplicaciones móviles}
+
+\chapter{Sistemas de Reconocimiento de Actividades }
+
+\label{chap:sistemas-de-reconocimiento}
+
+Este capítulo describe la arquitectura común de un sistema de reconocimiento
+de actividades. Se describe detalladamente los componentes del sistema
+además de sus funciones principales de manera general. 
+
+\section{Introducción}
+
+Los sistemas de reconocimiento de actividades humanas son semejantes
+a cualquier aplicación de aprendizaje automático. Según el estado
+del arte \cite{LaraLabrador2013}, estos sistemas de reconocimiento
+poseen la misma estructura y aplican las mismas fases divididas en
+dos etapas, la de entrenamiento y la de evaluación (ver Capítulo 2).
+A pesar de seguir la mismas guías de diseño, un sistema puede optar
+por no implementar en al menos una de las etapas, todos los componentes
+citados en este apartado. En otras palabras, un sistema de reconocimiento
+dado puede implementar simplemente los componentes necesarios para
+la etapa de evaluación dejando de lado cualquier elemento relacionado
+a la etapa de entrenamiento y viceversa. 
+
+\section{Componentes}
+
+Dentro del marco teórico de los sistemas de reconocimiento, se han
+identificado unos componentes mínimos requeridos para realizar las
+actividades de aprendizaje y predicción de manera manual o automatizada
+\cite{Choudhury2008}. Un sistema de reconocimiento de actividades
+posee tres componentes principales:
+\begin{itemize}
+\item un \emph{recolector de datos}
+\item un\emph{ procesador de muestras} 
+\item un \emph{clasificador }
+\end{itemize}
+Las responsabilidades y detalles de cada componente se describen en
+los siguientes apartados. En la siguiente figura se muestra una vista
+general de los componentes y sus interrelaciones.
+
+\begin{figure}
+\caption{Diagrama de componentes de un sistema HAR}
+
+\end{figure}
+
+
+\subsection{Recolector de datos}
+
+El componente recolector de datos tiene la función de capturar datos
+en bruto de sensores que sean relevantes en el estudio de los sistemas
+\hyperlink{abbr}{HAR}. La captura de datos debe ser realizada con
+instrumentos de medición apropiados: sensores adjuntos a las personas
+en estudio. 
+
+Los sensores se agrupan según los atributos de estudio de los sistemas
+\abbr{HAR} \cite{LaraLabrador2013}:
+\begin{description}
+\item [{Ubicación}] miden datos obtenidos con las redes celulares 3G y
+los sistemas \abbr{GPS}. Provee información contextual bastante relevante
+de la posición de la persona, y ciertas medidas de movimiento pero
+a costa de un consumo considerable de energía.
+\item [{Movimiento}] miden datos inerciales como la aceleración y la orientación
+respecto a un marco de referencia relativo al dispositivo de medición.
+Los sensores de aceleración, giroscopio y la brújula son los más comunes
+y utilizados para reconocimiento de actividades con bajo consumo de
+energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
+\item [{Fisiológico}] miden signos vitales del individuo como ritmo cardiaco
+(\abbr{HRM}, \emph{Hearth Rate Monitor}), temperatura del cuerpo,
+ritmo de respiración y otros.
+\item [{Ambiental}] miden datos externos que rodean al individuo como el
+nivel de ruido, la humedad y/o la temperatura. Los sensores de luz,
+cámara, micrófonos y termómetros son utilizados para medir estos atributos. 
+\end{description}
+Los datos medidos deben ser registrados de manera persistente o transmitidos
+para ser procesados y utilizados por otros componentes. Tanto en las
+actividades de aprendizaje y predicción se deben recolectar datos
+de sensores.
+
+\subsection{Procesador de muestras}
+
+que procesa los datos en bruto para adecuarlos muestras con variables
+significativas que permitan discriminar las actividades a reconocer
+
+\subsection{Clasificador}
+
+que utiliza las muestras extraídas para inferir qué actividad probable
+está realizando un individuo en un determinado instante.
+
+\section{Capacidades}
+
+Existen un conjunto de características deseables que deben ser satisfechas
+para la construcción efectiva de los sistemas de reconocimiento. Estas
+características abordan cuestiones de diseño importantes que conciernen
+a la calidad y al funcionamiento del sistema:
+\begin{enumerate}
+\item Portabilidad, el sistema utiliza sensores adjuntos a los individuos,
+por ejemplo el sensor de aceleración, y no debe obstruir las actividades
+cotidianas de una persona durante su uso para evitar que esto atente
+contra la adopción masiva del sistema. 
+\item Conectividad, el sistema debe poder transferir de manera confiable
+los datos recolectados y procesados a un componente remoto. 
+\item Almacenamiento, el sistema debe persistir datos recolectados y procesados
+de manera local para mantener la calidad de los mismos y minimizar
+la cantidad transferida a otro componente remoto.
+\item Procesamiento, el sistema debe realizar tareas de procesamiento y
+transformación de datos para producir información relacionada al reconocimiento
+de actividades.
+\item Ubiquidad, el sistema debe operar en cualquier condición y contexto
+en que la persona se encuentre sin interferir u obligar a la persona
+a interactuar con el sistema.
+\item Uso de energía, el sistema debe preservar el uso de energía en los
+dispositivos móviles que están implementados. La lectura de datos
+de los sensores, el procesamiento y la conectividad no deben incurrir
+en gastos excesivos de energía para que el sistema pueda operar.
+\item Privacidad, el sistema debe de mantener de manera confidencial los
+datos recolectados y producidos durante la adopción masiva del sistema,
+además de avisar sobre la utilización de datos sensibles que puedan
+requerir consentimiento del usuario.
+\end{enumerate}
 

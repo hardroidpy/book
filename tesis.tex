@@ -1,4 +1,4 @@
-\documentclass[final,fmstyle]{./util/ucathesis}
+\documentclass{./util/unathesis}
 
 % paquetes recomendados
 \usepackage{amsmath,amsthm}
@@ -11,7 +11,8 @@
 \usepackage{enumitem}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage[style=alphabetic, uniquename=full, sorting=none,backend=biber, natbib=true]{biblatex}
+%\usepackage[style=alphabetic, uniquename=full, sorting=none, backend=biber, natbib=true, backref=true]{biblatex}
+\usepackage[authoryear]{natbib}
 \usepackage{listings}
 % para la lista de simbolos
 \usepackage{array} %for vertical thick lines in tables
@@ -19,34 +20,37 @@
 \usepackage{multirow} %multirow tables
 \usepackage{nicefrac} %for fractions like 1/4
 \usepackage[table]{xcolor} %para colorear las tablas
-\usepackage{nomencl}
 % para las tablas
 
-%referencias
-\bibliography{referencias}
 %se importan las configuraciones custmizdas realizadas.
-\include{./util/custom}
+%\include{./util/custom}
 
 \makenomenclature
 
+\makeatletter
+
 % datos de la tesis
-\title{Reconocimiento de actividades humanas con un enfoque colaborativo}
-\author{Alberto Gimenez \\ Santiago A. Yegros Z.} 
 \degree{Informática}
-
 \advisor{Prof. Ing.}{Joaquin Lima}
-
-%\newtheorem{definicion}{Definicin}
-
 \logosource{./graphics/logo.jpg}
-\institution{Universidad Nacional de Asunción}
-\faculty{Facultad Politécnica}
-\address{San Lorenzo - Paraguay}
+%\hbadness=10000
+%\hfuzz=50pt
+%\setcitestyle{round}
+
+\makeatother
 
 \begin{document}
 
-\maketitle     % esto hace las portadas
+\title{Reconocimiento de actividades humanas con un enfoque colaborativo}
+\author{Alberto Gimenez \and Santiago A. Yegros Z.} 
 
+% PDF
+\hypersetup{pdftitle=Reconocimiento de actividades humanas con un enfoque colaborativo,
+ pdfauthor={Alberto Gimenez, Santiago A. Yegros Z.},
+ pdfsubject={Tesis de Grado}}
+\
+
+\maketitle     % esto hace las portadas
 \frontmatter
 
 % Agradecimientos
@@ -63,12 +67,10 @@
 \listoftables
 % Lista de algoritmos
 \listofalgorithms
-%\include{acronimos}
-%\listofsymbols
-\printnomenclature
+
+%\include{preambulo_0/simbolos}
 
 \mainmatter  % inician los capitulos de la tesis
-
 
 % incluye aqui los capitulos (un archivo .tex por capitulo)
 \include{capitulo-1/capitulo-1} 	%Cap 1: Introducción
@@ -84,13 +86,19 @@
 %Parte V: Final
 \include{capitulo-8/capitulo-8} 	%Cap 8: Conclusiones y Trabajos Futuros
 
-\appendix   
+\include{preambulo_0/glosario}
+
+%\appendix   
 % los capítulos que incluyas a partir de aquí aparecen
 % como apendices
 %\include{anexos/anexo-1}
 %\include{anexos/lecciones-aprendidas}
 % estos comandos generan la bilbiografía
-\printbibliography
 
+%referencias
+\bibliography{referencias}
+
+% Glosario
+\hypertarget{abbr}{\printnomenclature{}}
 
 \end{document}

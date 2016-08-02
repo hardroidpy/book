@@ -71,40 +71,99 @@
 
 \begin_body
 
-\begin_layout Chapter*
-Resumen
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-blankpagelegend
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Android"
+description "Android es un sistema operativo móvil desarrollado por Google. Está basado en el kernel de Linux."
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Chapter*
-Abstract
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HAR"
+description "Reconocimiento de Actividades Humanas, por sus siglas en inglés"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "iOS"
+description "Es un sistema operativo móvil creado y desarrollado por Apple Inc."
 
-\begin_layout Plain Layout
+\end_inset
 
 
-\backslash
-blankpagelegend
 \end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GPS"
+description "Sistema de Geoposicionamiento Global, por sus siglas en inglés"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "API"
+description "Interfaces de Programación de Aplicaciones, por sus siglas en inglés"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SaaS"
+description "Software como Servicio"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "DT"
+description "Árboles de decisión, por sus siglas en inglés"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SVM"
+description "Máquinas de Vectores de Soporte, por sus siglas en inglés."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HRM"
+description "Monitor de ritmo cardiaco por sus siglas en inglés."
 
 \end_inset
 

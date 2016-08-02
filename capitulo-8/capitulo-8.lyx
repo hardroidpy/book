@@ -105,7 +105,7 @@ linaria con constantes aportes y diversos usos en la actualidad debido a
  su relevancia en la computación contextual y ubicua.
  Los avances en la miniaturización de los sistemas de computación y sensores
  hacen del área tanto atractiva como desafiante para explorar y proponer
- nuevas ideas en este ámbito
+ nuevas ideas en este ámbito 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -206,15 +206,28 @@ reference "enu:obe6"
  Se construyó el sistema de reconocimiento de actividades para teléfonos
  móviles para la plataforma 
 \emph on
-Android
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+
 \emph default
  siguiendo las guías comunes y utilizando el resultado de la primera etapa.
  Este sistema puede ser utilizado de dos maneras, otras aplicaciones móviles
  pueden incluirla en tiempo de construcción o simplemente ejecutarlo como
- un servicio a través de una interfaz de integración
+ un servicio a través de una interfaz de integración 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "hardroid2016a"
+key "GimenezYegros2016a"
 
 \end_inset
 
@@ -227,12 +240,25 @@ En parte, para evaluar el sistema construido y además recolectar datos de
  actividades y realiza una encuesta en línea.
  Esta aplicación 
 \emph on
-Android
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+
 \emph default
  construida fue publicada para que los participantes del estudio la descarguen
  y colaboren aportando los datos asociados a las actividades reconocidas
  mientras utilizan el sistema de reconocimiento.
- El objetivo de este ejercicio es retroalimentar el modelo de aprendizaje
+ El objetivo de este ejercicio es retro-alimentar el modelo de aprendizaje
  automático periódicamente.
  La información recolectada se comparte a través de Internet para que se
  evalúe y eventualmente sirva como entrada para construir un nuevo el modelo
@@ -246,10 +272,10 @@ je automático al utilizar la aplicación de encuesta y la actualización del
  modelo del sistema de reconocimiento de manera periódica.
  En el aspecto del componente de software construido, donde la implementación
  del sistema reconocedor está disponible para que cualquiera lo extienda
- o utilice según sus necesidades particulares
+ o utilice según sus necesidades particulares 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "hardroid2016b"
+key "GimenezYegros2016b"
 
 \end_inset
 
@@ -302,8 +328,8 @@ Utilizar un reloj inteligente (
 \emph on
 Smartwatch
 \emph default
-, reloj inteligente) u otros accesorios que agreguen variables relevantes
- en el reconocimiento de actividades dependiendo del contexto.
+) u otros accesorios que agreguen variables relevantes en el reconocimiento
+ de actividades dependiendo del contexto.
  
 \end_layout
 
@@ -319,16 +345,25 @@ Se propone generar modelos segmentados por distintas características de
 
 \begin_layout Standard
 Entre los métodos de aprendizaje automático existen varias opciones por
- explorar, como ser las principales el 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-symbol "SVM"
-description "Support Vector Machine"
+ explorar, como las técnicas de (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{SVM}
+\end_layout
 
 \end_inset
 
-SVM o Redes Neuronales, explorando cual obtiene mejores resultados en contrapart
-ida con el consumo de batería del dispositivo móvil.
+, 
+\emph on
+Support Vector Machine
+\emph default
+) o Redes Neuronales, explorando cual obtiene mejores resultados en contrapartid
+a con el consumo de batería del dispositivo móvil.
 \end_layout
 
 \begin_layout Standard
@@ -341,8 +376,8 @@ En el proceso de selección de variables estadísticas se debería explorar
 \begin_layout Standard
 Dentro de las actividades definidas en el modelo de este trabajo pueden
  extenderse a otras que podrían aplicarse a otro tipo de aplicaciones, como
- se la medica, militar, etc.
- Para aplicaciones medicas actividades relevantes serian las posturas del
+ ser la médica, militar, etc.
+ Para aplicaciones médicas actividades relevantes serian las posturas del
  cuerpo como ser parado, sentado, acostado.
  Esto propone un sin numero de aplicaciones del modelo de reconocimiento
  de actividades.
