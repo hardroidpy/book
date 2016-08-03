@@ -242,10 +242,11 @@
 \renewcommand{\listofalgorithms}{\listof{algorithm}{\'Indice de algoritmos}\addcontentsline{toc}{chapter}{\'Indice de Algoritmos}}
 
 
-\let\@oldbibliography=\bibliography
-\renewenvironment{bibliography}[1]{%
-  \begin{@oldbibliography}{#1}%
-  \phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
-}{\end{@oldbibliography}}
+%\let\@oldbibliography=\bibliography
+%\let\end@oldbibliography=\endbibliography
+%\renewenvironment{bibliography}[1]{%
+%  \begin{@oldbibliography}{#1}%
+%  \phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
+%}{\end{@oldbibliography}}
 
 %% End of unathesis.cls

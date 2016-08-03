@@ -58,7 +58,7 @@ if "%1" == "text" (
 )
 
 if "%1" == "clean" (
-for /r %%i in (*.aux, *.bbl, *.bcf, *.blg, *.log, *.lof, *.loa, *.lot, *.pdf, *.run.xml, *.toc, *.nlo, *.md, *.docx *.ild *.ind *.out *.ilg *.lyx~)do del /q /s %%i
+for /r %%i in (*.aux, *.bbl, *.bcf, *.blg, *.log, *.lof, *.loa, *.lot, *.pdf, *.run.xml, *.toc, *.nlo, *.md, *.docx *.ild *.ind *.out *.ilg *.lyx~ *.brf *.nls)do del /q /s %%i
     echo.
 	echo.Build finished.
 	goto end

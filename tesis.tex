@@ -48,7 +48,6 @@
 \hypersetup{pdftitle=Reconocimiento de actividades humanas con un enfoque colaborativo,
  pdfauthor={Alberto Gimenez, Santiago A. Yegros Z.},
  pdfsubject={Tesis de Grado}}
-\
 
 \maketitle     % esto hace las portadas
 \frontmatter
@@ -69,8 +68,12 @@
 \listofalgorithms
 
 %\include{preambulo_0/simbolos}
+% Glosario
+\hypertarget{abbr}{\printnomenclature{}}
 
 \mainmatter  % inician los capitulos de la tesis
+
+\include{preambulo_0/glosario}
 
 % incluye aqui los capitulos (un archivo .tex por capitulo)
 \include{capitulo-1/capitulo-1} 	%Cap 1: Introducción
@@ -86,8 +89,6 @@
 %Parte V: Final
 \include{capitulo-8/capitulo-8} 	%Cap 8: Conclusiones y Trabajos Futuros
 
-\include{preambulo_0/glosario}
-
 %\appendix   
 % los capítulos que incluyas a partir de aquí aparecen
 % como apendices
@@ -95,10 +96,10 @@
 %\include{anexos/lecciones-aprendidas}
 % estos comandos generan la bilbiografía
 
+
 %referencias
+\phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
 \bibliography{referencias}
 
-% Glosario
-\hypertarget{abbr}{\printnomenclature{}}
 
 \end{document}
