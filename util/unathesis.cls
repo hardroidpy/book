@@ -95,7 +95,7 @@
 
 % Margenes y espaciado
 \usepackage[a4paper]{geometry}
-\geometry{verbose,tmargin=2.5cm,bmargin=2cm,lmargin=2.5cm,rmargin=1.5cm}
+\geometry{verbose,tmargin=20mm,bmargin=1in,lmargin=35mm,rmargin=1in}
 
 % PDF
 \ifpdf
@@ -161,11 +161,12 @@
 }
 
 %% Espacios
-%\def\setspace@size{\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi}
-%\def\doublespacing{\def\baselinestretch{1.660} \setspace@size}
-%\def\singlespacing{\def\baselinestretch{1} \setspace@size}
+\def\setspace@size{\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi}
+\def\doublespacing{\def\baselinestretch{1.660} \setspace@size}
+\def\singlespacing{\def\baselinestretch{1} \setspace@size}
 
-\onehalfspacing
+%\onehalfspacing
+\doublespacing
 
 %% Titulo
 \newlength{\@line}
@@ -187,7 +188,7 @@
       \textsc{Trabajo Final de Grado presentado por}\par
       \vfill{\scshape \@typeauthor{\unskip,\par}{\unskip\par y{} }}\par
       \vfill\textsc{como requisito}\par
-      \textsc{para obtener el título de \@grade}\par
+      \textsc{para obtener el t\'itulo de \@grade}\par
       \textsc{en \@degree}\par
       \vfill\textsc{\@advisorname}\par\vspace{4pt}
       \textsc{\@advisortitle\ \@advisor}\par\vspace{4pt}
