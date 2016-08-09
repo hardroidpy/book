@@ -161,6 +161,7 @@
 }
 
 %% Espacios
+\newcommand*{\@normalsize}{\normalsize}
 \def\setspace@size{\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi}
 \def\doublespacing{\def\baselinestretch{1.660} \setspace@size}
 \def\singlespacing{\def\baselinestretch{1} \setspace@size}
@@ -205,6 +206,8 @@
 % Cabeceras
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+%\fancyhead[R]{\fontsize{10}{11}\selectfont \thepage}
+%\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{\leftmark}{\rightmark}}
 
 % Nomenclatura
 \usepackage[intoc]{nomencl}
@@ -238,16 +241,16 @@
 
 \let\@oldlistoffigures=\listoffigures
 \let\@oldlistoftables=\listoftables
-\renewcommand{\listoffigures}{\@oldlistoffigures\addcontentsline{toc}{chapter}{\'Indice de Figuras}}
+\renewcommand{\listoffigures}{\@oldlistoffigures\addcontentsline{toc}{chapter}{\'Indice de figuras}}
 \renewcommand{\listoftables}{\@oldlistoftables\addcontentsline{toc}{chapter}{\'Indice de cuadros}}
-\renewcommand{\listofalgorithms}{\listof{algorithm}{\'Indice de algoritmos}\addcontentsline{toc}{chapter}{\'Indice de Algoritmos}}
+\renewcommand{\listofalgorithms}{\listof{algorithm}{\'Indice de algoritmos}\addcontentsline{toc}{chapter}{\'Indice de algoritmos}}
 
 
-%\let\@oldbibliography=\bibliography
-%\let\end@oldbibliography=\endbibliography
-%\renewenvironment{bibliography}[1]{%
-%  \begin{@oldbibliography}{#1}%
-%  \phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
-%}{\end{@oldbibliography}}
+\let\@oldbibliography=\bibliography
+\let\end@oldbibliography=\endbibliography
+\renewenvironment{bibliography}[1]{
+   \phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
+   \@oldbibliography{#1}
+}{\end{@oldbibliography}}
 
 %% End of unathesis.cls

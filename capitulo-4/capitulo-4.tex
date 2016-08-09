@@ -37,43 +37,42 @@ Las responsabilidades y detalles de cada componente se describen en
 los siguientes apartados. En la siguiente figura se muestra una vista
 general de los componentes y sus interrelaciones.
 
-\begin{figure}
-\caption{Diagrama de componentes de un sistema HAR}
-
+\begin{figure}[!tbph]
+\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption{Componentes del sistema HAR}
+\label{fig:comphar}
 \end{figure}
 
 
 \subsection{Recolector de datos}
 
 El componente recolector de datos tiene la función de capturar datos
-en bruto de sensores que sean relevantes en el estudio de los sistemas
-\hyperlink{abbr}{HAR}. La captura de datos debe ser realizada con
-instrumentos de medición apropiados: sensores adjuntos a las personas
-en estudio. 
+de sensores indexadas en la dimensión del tiempo. La captura de datos
+relevantes para los sistemas \abbr{HAR} debe ser realizada con instrumentos
+de medición apropiados: sensores adjuntados a sus usuarios. 
 
-Los sensores se agrupan según los atributos de estudio de los sistemas
-\abbr{HAR} \cite{LaraLabrador2013}:
+Los sensores pueden caracterizarse según los siguientes atributos
+\cite{LaraLabrador2013}:
 \begin{description}
 \item [{Ubicación}] miden datos obtenidos con las redes celulares 3G y
-los sistemas \abbr{GPS}. Provee información contextual bastante relevante
-de la posición de la persona, y ciertas medidas de movimiento pero
-a costa de un consumo considerable de energía.
+los satélites de navegación \abbr{GPS}. Provee información de contexto
+bastante relevante acerca de la posición del individuo, además de
+ciertas medidas de movimiento pero con un consumo moderado de energía.
 \item [{Movimiento}] miden datos inerciales como la aceleración y la orientación
-respecto a un marco de referencia relativo al dispositivo de medición.
-Los sensores de aceleración, giroscopio y la brújula son los más comunes
-y utilizados para reconocimiento de actividades con bajo consumo de
-energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
-\item [{Fisiológico}] miden signos vitales del individuo como ritmo cardiaco
-(\abbr{HRM}, \emph{Hearth Rate Monitor}), temperatura del cuerpo,
-ritmo de respiración y otros.
+respecto a un marco de referencia relativo al dispositivo que contiene
+los sensores. El acelerómetro, giroscopio y la brújula son los sensores
+más comunes y utilizados para reconocimiento de actividades con un
+bajo consumo de energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
+\item [{Fisiología}] miden signos vitales del individuo como el ritmo cardíaco
+(\abbr{HRM}, \emph{Hearth Rate Monitor}), la temperatura del cuerpo,
+el ritmo de respiración, entre otros.
 \item [{Ambiental}] miden datos externos que rodean al individuo como el
 nivel de ruido, la humedad y/o la temperatura. Los sensores de luz,
-cámara, micrófonos y termómetros son utilizados para medir estos atributos. 
+cámara, micrófonos y termómetros miden estos datos. 
 \end{description}
-Los datos medidos deben ser registrados de manera persistente o transmitidos
-para ser procesados y utilizados por otros componentes. Tanto en las
-actividades de aprendizaje y predicción se deben recolectar datos
-de sensores.
+Los datos de medidos deben ser registrados de manera secuencial y
+transmitidos para su posterior procesamiento por otros componentes
+del sistema. En ambas etapas, aprendizaje y predicción, se deben recolectar
+datos de los sensores.
 
 \subsection{Procesador de muestras}
 
@@ -92,28 +91,29 @@ para la construcción efectiva de los sistemas de reconocimiento. Estas
 características abordan cuestiones de diseño importantes que conciernen
 a la calidad y al funcionamiento del sistema:
 \begin{enumerate}
-\item Portabilidad, el sistema utiliza sensores adjuntos a los individuos,
-por ejemplo el sensor de aceleración, y no debe obstruir las actividades
-cotidianas de una persona durante su uso para evitar que esto atente
-contra la adopción masiva del sistema. 
-\item Conectividad, el sistema debe poder transferir de manera confiable
-los datos recolectados y procesados a un componente remoto. 
-\item Almacenamiento, el sistema debe persistir datos recolectados y procesados
-de manera local para mantener la calidad de los mismos y minimizar
-la cantidad transferida a otro componente remoto.
-\item Procesamiento, el sistema debe realizar tareas de procesamiento y
-transformación de datos para producir información relacionada al reconocimiento
-de actividades.
+\item Portabilidad, el sistema utiliza sensores adjuntos a los individuos
+(Ej. el acelerómetro) y no deben obstruir las actividades cotidianas
+de los usuarios durante su uso. El fin es de evitar que se afecte
+la adopción masiva del sistema. 
+\item Conectividad, el sistema debe transmitir de manera confiable los datos
+recolectados y/o procesados a algún componente desplegado de forma
+remota. 
+\item Almacenamiento, el sistema debe persistir los datos recolectados y/o
+procesados de manera local en el dispositivo móvil con el fin de mantener
+la calidad y minimizar la cantidad transferida a otros componentes.
+\item Procesamiento, el sistema debe procesar y transformar los datos en
+bruto para producir información relevante para el reconocimiento de
+actividades.
 \item Ubiquidad, el sistema debe operar en cualquier condición y contexto
-en que la persona se encuentre sin interferir u obligar a la persona
+en que la persona se encuentre sin interferir u obligar al usuario
 a interactuar con el sistema.
 \item Uso de energía, el sistema debe preservar el uso de energía en los
-dispositivos móviles que están implementados. La lectura de datos
-de los sensores, el procesamiento y la conectividad no deben incurrir
-en gastos excesivos de energía para que el sistema pueda operar.
-\item Privacidad, el sistema debe de mantener de manera confidencial los
-datos recolectados y producidos durante la adopción masiva del sistema,
-además de avisar sobre la utilización de datos sensibles que puedan
-requerir consentimiento del usuario.
+dispositivos móviles que están implementados. La lectura de datos,
+el procesamiento y la conectividad no deben incurrir en gastos excesivos
+de energía para que el sistema pueda operar.
+\item Privacidad, el sistema debe mantener de manera confidencial los datos
+recolectados y/o producidos durante la adopción masiva del sistema,
+además de alertar sobre la utilización de datos sensibles que requieran
+el consentimiento del usuario.
 \end{enumerate}
 
