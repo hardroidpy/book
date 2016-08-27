@@ -26,7 +26,7 @@
 % para las tablas
 
 %se importan las configuraciones custmizdas realizadas.
-%\include{./util/custom}
+\include{./util/custom}
 
 \makenomenclature
 
@@ -35,7 +35,7 @@
 % datos de la tesis
 \degree{Informática}
 \advisor{Prof. Ing.}{Joaquin Lima}
-\logosource{./graphics/logo.jpg}
+\logosource{./graphics/logo.png}
 %\hbadness=10000
 %\hfuzz=50pt
 %\setcitestyle{round}
@@ -71,8 +71,6 @@
 \listofalgorithms
 
 %\include{preambulo_0/simbolos}
-% Glosario
-\hypertarget{abbr}{\printnomenclature{}}
 
 \mainmatter  % inician los capitulos de la tesis
 
@@ -99,9 +97,10 @@
 %\include{anexos/lecciones-aprendidas}
 % estos comandos generan la bilbiografía
 
+% Glosario
+\hypertarget{abbr}{\printnomenclature{}}
 
 %referencias
-\phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
 \bibliography{referencias}
 
 

@@ -95,7 +95,7 @@
 
 % Margenes y espaciado
 \usepackage[a4paper]{geometry}
-\geometry{verbose,tmargin=2.5cm,bmargin=2cm,lmargin=2.5cm,rmargin=1.5cm}
+\geometry{verbose,tmargin=20mm,bmargin=1in,lmargin=35mm,rmargin=1in}
 
 % PDF
 \ifpdf
@@ -161,11 +161,13 @@
 }
 
 %% Espacios
-%\def\setspace@size{\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi}
-%\def\doublespacing{\def\baselinestretch{1.660} \setspace@size}
-%\def\singlespacing{\def\baselinestretch{1} \setspace@size}
+\newcommand*{\@normalsize}{\normalsize}
+\def\setspace@size{\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi}
+\def\doublespacing{\def\baselinestretch{1.660} \setspace@size}
+\def\singlespacing{\def\baselinestretch{1} \setspace@size}
 
-\onehalfspacing
+%\onehalfspacing
+\doublespacing
 
 %% Titulo
 \newlength{\@line}
@@ -187,7 +189,7 @@
       \textsc{Trabajo Final de Grado presentado por}\par
       \vfill{\scshape \@typeauthor{\unskip,\par}{\unskip\par y{} }}\par
       \vfill\textsc{como requisito}\par
-      \textsc{para obtener el título de \@grade}\par
+      \textsc{para obtener el t\'itulo de \@grade}\par
       \textsc{en \@degree}\par
       \vfill\textsc{\@advisorname}\par\vspace{4pt}
       \textsc{\@advisortitle\ \@advisor}\par\vspace{4pt}
@@ -204,6 +206,8 @@
 % Cabeceras
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+%\fancyhead[R]{\fontsize{10}{11}\selectfont \thepage}
+%\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{\leftmark}{\rightmark}}
 
 % Nomenclatura
 \usepackage[intoc]{nomencl}
@@ -237,16 +241,16 @@
 
 \let\@oldlistoffigures=\listoffigures
 \let\@oldlistoftables=\listoftables
-\renewcommand{\listoffigures}{\@oldlistoffigures\addcontentsline{toc}{chapter}{\'Indice de Figuras}}
+\renewcommand{\listoffigures}{\@oldlistoffigures\addcontentsline{toc}{chapter}{\'Indice de figuras}}
 \renewcommand{\listoftables}{\@oldlistoftables\addcontentsline{toc}{chapter}{\'Indice de cuadros}}
-\renewcommand{\listofalgorithms}{\listof{algorithm}{\'Indice de algoritmos}\addcontentsline{toc}{chapter}{\'Indice de Algoritmos}}
+\renewcommand{\listofalgorithms}{\listof{algorithm}{\'Indice de algoritmos}\addcontentsline{toc}{chapter}{\'Indice de algoritmos}}
 
 
-%\let\@oldbibliography=\bibliography
-%\let\end@oldbibliography=\endbibliography
-%\renewenvironment{bibliography}[1]{%
-%  \begin{@oldbibliography}{#1}%
-%  \phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
-%}{\end{@oldbibliography}}
+\let\@oldbibliography=\bibliography
+\let\end@oldbibliography=\endbibliography
+\renewenvironment{bibliography}[1]{
+   \phantomsection\addcontentsline{toc}{chapter}{\bibname}\nocite{*}
+   \@oldbibliography{#1}
+}{\end{@oldbibliography}}
 
 %% End of unathesis.cls

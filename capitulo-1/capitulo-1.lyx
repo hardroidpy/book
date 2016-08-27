@@ -78,7 +78,7 @@ Introducción
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:introduccion"
+name "chap1:introduccion"
 
 \end_inset
 
@@ -414,7 +414,7 @@ Planteamiento del problema
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "planteamiento"
+name "sec11:planteamiento"
 
 \end_inset
 
@@ -566,7 +566,7 @@ Justificación
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "justificaciuxf3n"
+name "sec12:justificaciuxf3n"
 
 \end_inset
 
@@ -725,7 +725,7 @@ Alcance y Objetivos
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "alcance-y-objetivos"
+name "sec13:alcance-y-objetivos"
 
 \end_inset
 
@@ -927,7 +927,7 @@ Organización del trabajo
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "organizaciuxf3n-del-trabajo"
+name "sec14:organizaciuxf3n-del-trabajo"
 
 \end_inset
 

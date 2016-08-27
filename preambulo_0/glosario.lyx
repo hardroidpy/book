@@ -170,5 +170,16 @@ description "Monitor de ritmo cardiaco por sus siglas en inglés."
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Wearables"
+description "Dispositivos o aparatos que pueden ser atuendos de un individuo"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

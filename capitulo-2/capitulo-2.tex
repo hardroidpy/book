@@ -1,19 +1,18 @@
 
 \chapter{Reconocimiento de Actividades}
-\label{chap:Reconocimiento de Actividades}
+\label{chap2:Reconocimiento de Actividades}
 
 %##Capítulo 2. Reconocimiento de Actividades
-%* Introducción
-%* Estructuras de datos de los Sistemas de Información Geográfica
-%\input{capitulo-2/definicion-sig.tex}
 
 \section{Introducción}
+\label{sec21:introduccion}
 El conocimiento del contexto de usuario es una de las nuevas aplicaciones y servicios móviles en el área de la computación ubicua.
 En general, el contexto de usuario significa su actividad, ubicación, preferencia, su situación, emoción, etc. Con los teléfonos móviles cada vez más potentes, la mayoría de los puntos mencionados del contexto se determinan con componentes de detección integrados en los teléfonos móviles, como acelerómetro, GPS, micrófono, bluetooth, cámara, etc. En esencia, los teléfonos móviles pueden crear redes de sensores móviles que son capaces de recoger datos de los sensores sobre la vida diaria de un usuario, es decir, quien es, lo que está haciendo el usuario, donde se encuentra, ya quien esta ? 
 
 En este trabajo, investigamos posibilidades y viabilidades de tener un servicio para obtener el contexto de la actividad física diaria de los usuarios con teléfonos móviles.
 
 \section{Actividades Humanas}
+\label{sec22:actividades-humanas}
 El diseño de un sistema HAR depende totalmente de las actividades definidas que van a ser reconocida. Por lo tanto, el cambio del conjunto de actividades que el sistema reconoce convierte al problema en uno completamente diferente al anterior.
 
 Teniendo en cuenta esto, las distintas publicaciones, tenemos estos siete distintos grupos de actividades en la siguiente tabla.
@@ -42,11 +41,12 @@ Teniendo en cuenta esto, las distintas publicaciones, tenemos estos siete distin
 
 
 \section{Dispositivos Móviles}
+\label{sec23:dispositivos-moviles}
 Los dispositivos móviles, tales como teléfonos móviles, reproductores de música o relojes inteligentes, han comenzado ya hace un par de años incorporar un diversos sensores. Algunos de los sensores son GPS, de audio (micrófonos), de imágenes (cámaras), de luz, sensores de temperatura, sensor de dirección (brújula), y acelerómetro.
 Debido a su tamaño reducido de estos dispositivos inteligentes, su enorme capacidad de procesamiento, la posibilidad de recibir y enviar datos; y su omnipresencia en nuestra sociedad de hoy, lo hacen dispositivos de preferencia para utilizarlo en la implementación de un sistema reconocedor de actividades Humanas.
 
-\section{Sensores ambientales vs Sensores <<Wearables>>}
-
+\section{Sensores ambientales vs Sensores \emph{wearables}}
+\label{sec24:sensores}
 En la problemática del reconocimiento de la actividad que esta realizando una persona uno de los puntos importantes a considerar es la elección de los sensores a utilizar. Los sensores pueden medir signos vitales (ritmo cardíaco, temperatura del cuerpo, presión arterial), el ambiente (intensidad de luz, temperatura, niveles de sonido), movimiento (aceleración, velocidad), y posición (localización global o en interiores).
 Sobre la localización de los sensores respecto a la persona, algunos autores \cite{ReyesOrtiz2015} diferencian entre ambientales, cuando los sensores esta ubicados de manera estatica en el ambiente que rodea a la persona, y <<wearables>> cuando lo sensores se usan o están conectados al cuerpo de la persona.
 
@@ -66,6 +66,7 @@ Otros autores como \cite{karmul2010} extraen al reconocimiento con cámaras de v
 
 
 \section{Metodología HAR}
+\label{sec25:metodologia-har}
 Al igual que en otras aplicaciones de aprendizaje automático, la actividad el reconocimiento requiere dos etapas, es decir, entrenamiento y las pruebas o evaluación.
 
 \begin{figure}[!htbp]

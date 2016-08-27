@@ -26,6 +26,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement !tbph
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -78,19 +79,11 @@ Sistemas de Reconocimiento de Actividades
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:sistemas-de-reconocimiento"
+name "chap4:sistemas-de-reconocimiento"
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Este capítulo describe la arquitectura común de un sistema de reconocimiento
- de actividades.
- Se describe detalladamente los componentes del sistema además de sus funciones
- principales de manera general.
- 
 \end_layout
 
 \begin_layout Section
@@ -98,29 +91,102 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-Los sistemas de reconocimiento de actividades humanas son semejantes a cualquier
- aplicación de aprendizaje automático.
- Según el estado del arte 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec21:introduccion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este capítulo se definen los requerimientos de implementación de un sistema
+ de reconocimiento de actividades humanas (sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+).
+ Se describe en detalle los mecanismos para implementar los mimos.
+ 
+\end_layout
+
+\begin_layout Standard
+Primeramente, se describe el conjunto de componentes y sus funciones principales
+ de manera general.
+ Luego se describen los sensores adecuados para el reconocimiento de actividades
+ y las características de los teléfonos móviles modernos utilizados como
+ dispositivo seleccionado para la implementación de un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Componentes
+\end_layout
+
+\begin_layout Standard
+El diseño de un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+) es semejante cualquier aplicación de aprendizaje automático.
+ Los sistemas de reconocimiento siguen la misma estructura y las mismas
+ fases 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
 
 \end_inset
 
-, estos sistemas de reconocimiento poseen la misma estructura y aplican
- las mismas fases divididas en dos etapas, la de entrenamiento y la de evaluació
-n (ver Capítulo 2).
- A pesar de seguir la mismas guías de diseño, un sistema puede optar por
- no implementar en al menos una de las etapas, todos los componentes citados
- en este apartado.
- En otras palabras, un sistema de reconocimiento dado puede implementar
- simplemente los componentes necesarios para la etapa de evaluación dejando
- de lado cualquier elemento relacionado a la etapa de entrenamiento y viceversa.
+, con un proceso que se divide en dos etapas, la etapa de entrenamiento
+ y la etapa de evaluación (ver 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec25:metodologia-har"
+
+\end_inset
+
+).
  
 \end_layout
 
-\begin_layout Section
-Componentes
+\begin_layout Standard
+A pesar de seguir la mismas guías de diseño, un sistema puede optar por
+ no implementar todos los componentes para ambas etapas.
+ En otras palabras, un sistema puede implementar simplemente los componentes
+ necesarios para la etapa de evaluación dejando de lado cualquier elemento
+ relacionado a la etapa de entrenamiento y viceversa .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -158,10 +224,22 @@ clasificador
 \end_layout
 
 \begin_layout Standard
-Las responsabilidades y detalles de cada componente se describen en los
- siguientes apartados.
- En la siguiente figura se muestra una vista general de los componentes
- y sus interrelaciones.
+En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig41:componentes-har}
+\end_layout
+
+\end_inset
+
+ se muestra una vista general de los componentes y sus interrelaciones.
+ Las responsabilidades y detalles de cada componente se describen a continuación.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -171,18 +249,29 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/diagrama_4_1.jpg
+	special width=1\linewidth
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de componentes de un sistema HAR
+Componentes de los sistemas HAR
 \end_layout
 
 \end_inset
 
 
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig41:componentes-har"
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -196,28 +285,9 @@ Recolector de datos
 \end_layout
 
 \begin_layout Standard
-El componente recolector de datos tiene la función de capturar datos en
- bruto de sensores que sean relevantes en el estudio de los sistemas 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-hyperlink{abbr}{HAR}
-\end_layout
-
-\end_inset
-
-.
- La captura de datos debe ser realizada con instrumentos de medición apropiados:
- sensores adjuntos a las personas en estudio.
- 
-\end_layout
-
-\begin_layout Standard
-Los sensores se agrupan según los atributos de estudio de los sistemas 
+El recolector de datos tiene la función de capturar medidas de los sensores
+ e registrar la información indexada en la dimensión del tiempo.
+ La captura de datos relevantes para los sistemas 
 \begin_inset ERT
 status open
 
@@ -230,7 +300,52 @@ abbr{HAR}
 
 \end_inset
 
- 
+ debe ser realizada con instrumentos de medición apropiados: en nuestro
+ caso con sensores (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Wearables}
+\end_layout
+
+\end_inset
+
+, o de atuendo).
+ Los sensores adjuntos se utilizan para recolectar señales directamente
+ de los usuarios.
+ Estos están anexados a diferentes partes del cuerpo como la cintura, la
+ muñeca, el pectoral, los muslos o la cabeza 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004"
+
+\end_inset
+
+, como también ser portados ya que pueden estar empotrados en dispositivos
+ de uso regular como teléfonos móviles modernos, relojes inteligentes o
+ lentes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2012,Choudhury2008"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Sensores 
+\emph on
+Wearables
+\end_layout
+
+\begin_layout Standard
+Los sensores anexos directamente a un individuo pueden caracterizarse según
+ los siguientes atributos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -241,8 +356,8 @@ key "LaraLabrador2013"
 \end_layout
 
 \begin_layout Description
-Ubicación miden datos obtenidos con las redes celulares 3G y los sistemas
- 
+Ubicación miden datos obtenidos con las redes celulares 3G y los satélites
+ de navegación 
 \begin_inset ERT
 status open
 
@@ -256,16 +371,16 @@ abbr{GPS}
 \end_inset
 
 .
- Provee información contextual bastante relevante de la posición de la persona,
- y ciertas medidas de movimiento pero a costa de un consumo considerable
- de energía.
+ Provee información de contexto bastante relevante acerca de la posición
+ del individuo, además de ciertas medidas de movimiento pero con un consumo
+ moderado de energía.
 \end_layout
 
 \begin_layout Description
 Movimiento miden datos inerciales como la aceleración y la orientación respecto
- a un marco de referencia relativo al dispositivo de medición.
- Los sensores de aceleración, giroscopio y la brújula son los más comunes
- y utilizados para reconocimiento de actividades con bajo consumo de energía
+ a un marco de referencia relativo al dispositivo que contiene los sensores.
+ El acelerómetro, giroscopio y la brújula son los sensores más comunes y
+ utilizados para reconocimiento de actividades con un bajo consumo de energía
  y buena precisión de reconocimiento 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -277,7 +392,7 @@ key "Bao2004,LaraLabrador2012"
 \end_layout
 
 \begin_layout Description
-Fisiológico miden signos vitales del individuo como ritmo cardiaco (
+Fisiología miden signos vitales del individuo como el ritmo cardíaco (
 \begin_inset ERT
 status open
 
@@ -294,22 +409,21 @@ abbr{HRM}
 \emph on
 Hearth Rate Monitor
 \emph default
-), temperatura del cuerpo, ritmo de respiración y otros.
+), la temperatura del cuerpo, el ritmo de respiración, entre otros.
 \end_layout
 
 \begin_layout Description
 Ambiental miden datos externos que rodean al individuo como el nivel de
  ruido, la humedad y/o la temperatura.
- Los sensores de luz, cámara, micrófonos y termómetros son utilizados para
- medir estos atributos.
+ Los sensores de luz, cámara, micrófonos y termómetros miden estos datos.
  
 \end_layout
 
 \begin_layout Standard
-Los datos medidos deben ser registrados de manera persistente o transmitidos
- para ser procesados y utilizados por otros componentes.
- Tanto en las actividades de aprendizaje y predicción se deben recolectar
- datos de sensores.
+Las señales medidas deben ser registrados de manera secuencial y transmitidos
+ para su posterior procesamiento.
+ En ambas etapas, aprendizaje y predicción, se miden las señales de los
+ sensores.
 \end_layout
 
 \begin_layout Subsection
@@ -342,49 +456,48 @@ Existen un conjunto de características deseables que deben ser satisfechas
 \end_layout
 
 \begin_layout Enumerate
-Portabilidad, el sistema utiliza sensores adjuntos a los individuos, por
- ejemplo el sensor de aceleración, y no debe obstruir las actividades cotidianas
- de una persona durante su uso para evitar que esto atente contra la adopción
- masiva del sistema.
+Portabilidad, el sistema utiliza sensores adjuntos a los individuos (Ej.
+ el acelerómetro) y no deben obstruir las actividades cotidianas de los
+ usuarios durante su uso.
+ El fin es de evitar que se afecte la adopción masiva del sistema.
  
 \end_layout
 
 \begin_layout Enumerate
-Conectividad, el sistema debe poder transferir de manera confiable los datos
- recolectados y procesados a un componente remoto.
+Conectividad, el sistema debe transmitir de manera confiable los datos recolecta
+dos y/o procesados a algún componente desplegado de forma remota.
  
 \end_layout
 
 \begin_layout Enumerate
-Almacenamiento, el sistema debe persistir datos recolectados y procesados
- de manera local para mantener la calidad de los mismos y minimizar la cantidad
- transferida a otro componente remoto.
+Almacenamiento, el sistema debe persistir los datos recolectados y/o procesados
+ de manera local en el dispositivo móvil con el fin de mantener la calidad
+ y minimizar la cantidad transferida a otros componentes.
 \end_layout
 
 \begin_layout Enumerate
-Procesamiento, el sistema debe realizar tareas de procesamiento y transformación
- de datos para producir información relacionada al reconocimiento de actividades.
+Procesamiento, el sistema debe procesar y transformar los datos en bruto
+ para producir información relevante para el reconocimiento de actividades.
 \end_layout
 
 \begin_layout Enumerate
 Ubiquidad, el sistema debe operar en cualquier condición y contexto en que
- la persona se encuentre sin interferir u obligar a la persona a interactuar
+ la persona se encuentre sin interferir u obligar al usuario a interactuar
  con el sistema.
 \end_layout
 
 \begin_layout Enumerate
 Uso de energía, el sistema debe preservar el uso de energía en los dispositivos
  móviles que están implementados.
- La lectura de datos de los sensores, el procesamiento y la conectividad
- no deben incurrir en gastos excesivos de energía para que el sistema pueda
- operar.
+ La lectura de datos, el procesamiento y la conectividad no deben incurrir
+ en gastos excesivos de energía para que el sistema pueda operar.
 \end_layout
 
 \begin_layout Enumerate
-Privacidad, el sistema debe de mantener de manera confidencial los datos
- recolectados y producidos durante la adopción masiva del sistema, además
- de avisar sobre la utilización de datos sensibles que puedan requerir consentim
-iento del usuario.
+Privacidad, el sistema debe mantener de manera confidencial los datos recolectad
+os y/o producidos durante la adopción masiva del sistema, además de alertar
+ sobre la utilización de datos sensibles que requieran el consentimiento
+ del usuario.
 \end_layout
 
 \end_body
