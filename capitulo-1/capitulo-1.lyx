@@ -137,7 +137,7 @@ key "Fling2009"
 
 .
  La información provee un contexto que permite al usuario entender mejor
- el momento por el que está pasando.
+ el momento en el que está involucrado.
  La segunda forma del contexto es el entorno en el cual el usuario realiza
  una acción determinada 
 \begin_inset CommandInset citation
@@ -147,7 +147,8 @@ key "Fling2009"
 \end_inset
 
 .
- El contexto físico de un usuario es su ubicación y su actividad física.
+ El contexto físico de un usuario es usualmente su ubicación y su actividad
+ física.
  
 \end_layout
 
@@ -165,9 +166,13 @@ abbr{HAR}
 
 \end_inset
 
-) es un línea de investigación amplia que busca diseñar algoritmos que detecten
- el contexto de uno o más individuos a partir de datos ambiguos capturados
- en su entorno 
+, 
+\emph on
+Human Activity Recognition
+\emph default
+) es un línea de investigación amplia que busca diseñar algoritmos que provean
+ información el contexto de uno o más individuos a partir de datos ambiguos
+ capturados en su entorno 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
@@ -175,26 +180,31 @@ key "Bao2004"
 \end_inset
 
 .
- El proceso de reconocimiento se realiza a partir de datos capturados por
- sensores externos o adjuntos a los individuos 
+ El reconocimiento es un componente primordial de los sistemas inteligentes
+ y cognitivos, forma parte de un proceso más complejo contribuyendo en las
+ etapas de análisis y captura de datos por sensores externos o adjuntos
+ a los individuos 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "LaraLabrador2013,Chen2012"
+key "ReyesOrtiz2015,Chen2012"
 
 \end_inset
 
 .
- Los teléfonos móviles modernos han venido siendo sensores de bolsillo con
- el objetivo de construir aplicaciones contextuales que detecten las acciones
- de un individuo en su vida diaria.
+ Muchas de las aplicaciones de los sistemas de reconocimiento en el ámbito
+ de entornos inteligentes, vigilancia, usos militares y de salud requieren
+ del uso de sensores adjuntos a los usuarios.
+ Los teléfonos móviles modernos de bolsillo son dispositivos ideales para
+ aplicaciones contextuales con un reconocedor empotrado que detecte las
+ acciones del usuario en su vida diaria.
  
 \end_layout
 
 \begin_layout Standard
 Dentro del enfoque de las aplicaciones contextuales en los teléfonos móviles
  modernos, existen bastantes incentivos para reconocer las actividades básicas
- ambulatorias de un individuo, de si el mismo camina, corre, está quieto
- o moviéndose rápidamente en algún vehículo 
+ ambulatorias de un individuo, de si el mismo esta caminando, corriendo,
+ está quieto o moviéndose rápidamente en algún vehículo 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CampuzanoLopez2015,Google2013l"
@@ -202,8 +212,7 @@ key "CampuzanoLopez2015,Google2013l"
 \end_inset
 
 .
- Actualmente, ya existen algunas soluciones privadas como las de los fabricantes
- de tecnología 
+ Actualmente, existen algunas aplicaciones proveídas por 
 \emph on
 Google
 \emph default
@@ -215,7 +224,7 @@ Sony
 \emph on
 Apple
 \emph default
-, principales protagonistas en la tendencia de crear este tipo de aplicaciones
+, principales protagonistas en la tendencia de crear aplicaciones móviles
  basadas en contexto.
 \end_layout
 
