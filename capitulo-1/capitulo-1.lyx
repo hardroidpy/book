@@ -170,9 +170,9 @@ abbr{HAR}
 \emph on
 Human Activity Recognition
 \emph default
-) es un línea de investigación amplia que busca diseñar algoritmos que provean
- información el contexto de uno o más individuos a partir de datos ambiguos
- capturados en su entorno 
+) es un tópico de investigación que busca diseñar algoritmos que provean
+ información acerca del contexto de uno o más individuos a partir de datos
+ ambiguos capturados en su entorno 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
@@ -180,9 +180,9 @@ key "Bao2004"
 \end_inset
 
 .
- El reconocimiento es un componente primordial de los sistemas inteligentes
- y cognitivos, forma parte de un proceso más complejo contribuyendo en las
- etapas de análisis y captura de datos por sensores externos o adjuntos
+ Reconocer el contexto es un componente primordial de los sistemas inteligentes
+ y cognitivos, este forma parte de un proceso más complejo, donde contribuye
+ en las etapas de análisis y captura de datos por sensores externos o adjuntos
  a los individuos 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -191,19 +191,18 @@ key "ReyesOrtiz2015,Chen2012"
 \end_inset
 
 .
- Muchas de las aplicaciones de los sistemas de reconocimiento en el ámbito
- de entornos inteligentes, vigilancia, usos militares y de salud requieren
- del uso de sensores adjuntos a los usuarios.
- Los teléfonos móviles modernos de bolsillo son dispositivos ideales para
- aplicaciones contextuales con un reconocedor empotrado que detecte las
- acciones del usuario en su vida diaria.
+ Debido a los grandes avances en la miniaturización de sensores de bajo
+ consumo y buenas prestaciones, tanto como la mejora de las redes inalámbricas
+ y el procesamiento de datos, convirtió a los teléfonos móviles modernos
+ de bolsillo herramientas para el estudio de sistemas inteligentes que reconozca
+n las acciones del usuario en su vida diaria.
  
 \end_layout
 
 \begin_layout Standard
-Dentro del enfoque de las aplicaciones contextuales en los teléfonos móviles
- modernos, existen bastantes incentivos para reconocer las actividades básicas
- ambulatorias de un individuo, de si el mismo esta caminando, corriendo,
+Desarrollar sistemas inteligentes móviles (o aplicaciones contextuales)
+ traen consigo bastantes incentivos, como por ejemplo reconocer las actividades
+ básicas ambulatorias de un individuo: si está caminando, está corriendo,
  está quieto o moviéndose rápidamente en algún vehículo 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -212,7 +211,9 @@ key "CampuzanoLopez2015,Google2013l"
 \end_inset
 
 .
- Actualmente, existen algunas aplicaciones proveídas por 
+ La popularidad de las aplicación móviles de cuidado personal, movilidad
+ y asistencia en la vida diaria ha impulsado a que broten distintas aplicaciones
+ móviles, como las proveídas por 
 \emph on
 Google
 \emph default
@@ -257,12 +258,12 @@ key "Google2005a"
 
 \end_inset
 
- dentro del producto 
+ el producto 
 \emph on
 Google Play Services
 \emph default
-, una implementación de reconocimiento de actividades humanas expuesta en
- forma de librería para desarrolladores 
+, este posee una implementación de reconocimiento de actividades humanas
+ expuesta en forma de librería utilitaria para desarrolladores 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Google2013l"
@@ -270,12 +271,12 @@ key "Google2013l"
 \end_inset
 
 .
- También, 
+ Saliendo al paso, 
 \emph on
 Sony
 \emph default
  ha lanzado una suite completa (aplicaciones, pulseras y relojes) para manteners
-e en forma, acompañados con el producto principal 
+e en forma, y acompañados de su producto estrella 
 \emph on
 Lifelog
 \emph default
@@ -286,7 +287,7 @@ key "Sony2016l"
 
 \end_inset
 
-, donde un componente reconocedor de actividades físicas es incluido.
+, que también posee un reconocedor de actividades físicas.
  Además, 
 \emph on
 Apple
@@ -326,12 +327,12 @@ key "Apple2016h"
 
 \end_inset
 
-, de características similares a los productos anteriormente mencionados.
+, de enfoque similar a los productos anteriormente mencionados.
  
 \end_layout
 
 \begin_layout Standard
-Las plataformas de aplicaciones móviles 
+Las plataformas para aplicaciones móviles 
 \emph on
 
 \begin_inset ERT
@@ -365,9 +366,9 @@ abbr{iOS}
 
 
 \emph default
- proveen un ecosistema abierto para crear aplicaciones personalizadas.
- Estas plataformas conducen la expansión y crecimiento de aplicaciones móviles
- e inalámbricas 
+ proveen un ecosistema abierto para crear aplicaciones personalizadas, por
+ lo que conducen a la expansión y el crecimiento de aplicaciones contextuales
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tanenbaum2010"
@@ -375,22 +376,22 @@ key "Tanenbaum2010"
 \end_inset
 
 .
- Sin embargo, aún no contamos con proyectos de código abierto que contribuyan
- al desarrollo del reconocimiento de actividades humanas a pesar de ciertos
- precedentes no disponibles a la fecha 
+ Sin embargo, a pesar de proveer una plataforma abierta, no existen proyectos
+ de código abierto que contribuyan al desarrollo de sistemas inteligentes
+ que reconozcan actividades humanas, a pesar de existir que ciertos precedentes
+ ya no disponibles a la fecha 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kwapisz2011,LaraLabrador2013"
 
 \end_inset
 
-.
+ u otras iniciativas similares como FUNF y SensingKit.
 \end_layout
 
 \begin_layout Standard
-Por último, es notable que desde que los teléfonos móviles modernos están
- conectados constantemente Internet, se ha popularizando el acceso a la
- Web
+Por último, desde que los teléfonos móviles modernos están conectados constantem
+ente Internet, se ha popularizando el acceso a la Web
 \begin_inset Foot
 status collapsed
 

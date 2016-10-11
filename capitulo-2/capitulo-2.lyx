@@ -1,0 +1,714 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Reconocimiento de Actividades
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:reconocimiento"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+El conocimiento del contexto de usuario es una de las nuevas aplicaciones
+ y servicios móviles en el área de la computación ubicua.
+ En general, el contexto de usuario significa su actividad, ubicación, preferenc
+ia, su situación, emoción, etc.
+ Con los teléfonos móviles cada vez más potentes, la mayoría de los puntos
+ mencionados del contexto se determinan con componentes de detección integrados
+ en los teléfonos móviles, como acelerómetro, GPS, micrófono, bluetooth,
+ cámara, etc.
+ En esencia, los teléfonos móviles pueden crear redes de sensores móviles
+ que son capaces de recoger datos de los sensores sobre la vida diaria de
+ un usuario, es decir, quien es, lo que está haciendo el usuario, donde
+ se encuentra, ya quien esta ?
+\end_layout
+
+\begin_layout Standard
+En este trabajo, investigamos posibilidades y viabilidades de tener un servicio
+ para obtener el contexto de la actividad física diaria de los usuarios
+ con teléfonos móviles.
+\end_layout
+
+\begin_layout Section
+Actividades Humanas
+\end_layout
+
+\begin_layout Standard
+El diseño de un sistema HAR depende totalmente de las actividades definidas
+ que van a ser reconocida.
+ Por lo tanto, el cambio del conjunto de actividades que el sistema reconoce
+ convierte al problema en uno completamente diferente al anterior.
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta esto, las distintas publicaciones, tenemos estos siete
+ distintos grupos de actividades en la siguiente tabla.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\rr}{\raggedright}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\tn}{\tabularnewline}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" width="9cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Grupo
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Actividades
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ambulatoria 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caminar, correr, sentarse, pararse, quedarse quieto, acostarse, subir escaleras,
+ descender escaleras, usar escaleras mecánicas, usar elevador.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transporte 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Andar en bus, bicicleta y conducir 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+En el teléfono 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enviar mensajes de texto y hacer llamadas 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actividades diarias 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comer, beber, trabajar en la PC, mirar TV, leer, cepillarse los dientes,
+ aspirar el piso, y otros.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ejercitarse 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alzar pesas, bicicleta estática, remo y otros.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Militares 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arrastrarse, en cuclillas, abrir la puerta 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parte superior del cuerpo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Masticar, hablar, mover la cabeza, tragar líquidos, mirar.
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grupos de Actividades.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla:sencilla"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sensores ambientales vs Sensores 
+\begin_inset Quotes ard
+\end_inset
+
+Wearables
+\begin_inset Quotes ald
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la problemática del reconocimiento de la actividad que esta realizando
+ una persona uno de los puntos importantes a considerar es la elección de
+ los sensores a utilizar.
+ Los sensores pueden medir signos vitales (ritmo cardíaco, temperatura del
+ cuerpo, presión arterial), el ambiente (intensidad de luz, temperatura,
+ niveles de sonido), movimiento (aceleración, velocidad), y posición (localizaci
+ón global o en interiores).
+ Sobre la localización de los sensores respecto a la persona, algunos autores
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ReyesOrtiz2015"
+
+\end_inset
+
+ diferencian entre ambientales, cuando los sensores esta ubicados de manera
+ estatica en el ambiente que rodea a la persona, y 
+\begin_inset Quotes ard
+\end_inset
+
+wearables
+\begin_inset Quotes ald
+\end_inset
+
+ cuando lo sensores se usan o están conectados al cuerpo de la persona.
+\end_layout
+
+\begin_layout Subsection
+Sensores Ambientales
+\end_layout
+
+\begin_layout Standard
+Los sensores ambientales, también denominados externos o de entorno, son
+ un conjunto de dispositivos que se encuentran en el medio ambiente que
+ miden propiedades físicas del entorno donde las personas se encuentras
+ e interactúan.
+ Existe una amplia variedad de sensores ambientales, como micrófonos, cámaras
+ de vídeo, sensores de presencia, termómetros y sensores de profundidad(Kinect).
+ Para este tipo de reconocimiento tenemos por ejemplo a 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Poppe2007"
+
+\end_inset
+
+ que realiza un análisis de movimientos humanos utilizando cámaras de vídeo.
+\end_layout
+
+\begin_layout Subsection
+Sensores 
+\begin_inset Quotes ard
+\end_inset
+
+Wearables
+\begin_inset Quotes ald
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los sensores 
+\begin_inset Quotes ard
+\end_inset
+
+Wearables
+\begin_inset Quotes ald
+\end_inset
+
+ son usados para obtener señales directamente en una persona, estos pueden
+ estar unidos a varias partes del cuerpo, como ser la cintura, muñeca, pecho,
+ pierna, y cabeza(agregar referencia un paper con dispositivo en brazo/pierna/et
+c) pero también pueden formar parte de la ropa o embebido en otro accesorio
+ de uso común, como relojes, anteojos, o teléfonos móviles.
+ Como característica tienen una batería que proporciona la energía para
+ poder operar, y algunos cuentan con conexión inalámbrica wifi/bluetooh
+ para la transmisión de los datos obtenidos.
+\end_layout
+
+\begin_layout Standard
+Señales del movimientos y físicas son obtenidas por los sensores, como ser
+ temperatura de la piel, frecuencia cardíaca, conductividad, y posicionamiento
+ global (GPS), posicionamiento en interiores y movimientos del cuerpo.
+ Todos estas mediciones son utilices para tener una constante información
+ del estado de una persona en cualquier momento.
+\end_layout
+
+\begin_layout Standard
+Después hay que mencionar que dentro de los wearables están los que usan
+ sensores acelerómetro en varias partes del cuerpo y los que usan acelerómetro
+ de teléfonos moviles.
+\end_layout
+
+\begin_layout Standard
+Otros autores como 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "karmul2010"
+
+\end_inset
+
+ extraen al reconocimiento con cámaras de vídeo como una clasificación diferente
+ a los ambientales.
+\end_layout
+
+\begin_layout Section
+Dispositivos Moviles
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes ard
+\end_inset
+
+<Acá hablamos del las ventajas de realizar el reconocimiento con dispositivos
+ móviles ya que tiene sensores
+\begin_inset Quotes ald
+\end_inset
+
+>
+\end_layout
+
+\begin_layout Section
+Metodología HAR
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes ard
+\end_inset
+
+<Acá hablamos de tipo de actividades, las fases del reconocimiento de actividade
+s (Colección de datos, procesamiento de datos o extracción de feature, modelado
+ o aprendizaje, y evaluación e inferencia), y por ultimo La definición matemátic
+a del problema.
+ 
+\begin_inset Quotes ald
+\end_inset
+
+>
+\end_layout
+
+\begin_layout Subsection
+Fases del Reconocimiento
+\end_layout
+
+\begin_layout Subsection
+Definición del Problema
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta todo esto puntos podemos definir el problema como
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{defi}{
+\end_layout
+
+\end_inset
+
+Definición
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+(HARP) Dado un conjunto 
+\begin_inset Formula $S=\{S_{0},...,S_{k-1}\}$
+\end_inset
+
+ de 
+\begin_inset Formula $k$
+\end_inset
+
+ series de tiempo, cada una medida de cada atributo, y todo definido en
+ un intervalo de tiempo 
+\begin_inset Formula $I=\left[t_{\alpha},t_{\omega}\right]$
+\end_inset
+
+ el objetivo es encontrar un sub intervalo de tiempo 
+\begin_inset Formula $\left\langle I_{0},...,I_{r-1}\right\rangle $
+\end_inset
+
+ en 
+\begin_inset Formula $I$
+\end_inset
+
+, basado en datos de 
+\begin_inset Formula $S$
+\end_inset
+
+ y conjunto de etiquetas que representan la actividad realizada durante
+ cada intervalo 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+ (Ej.
+ sentado, caminando, corriendo, etc.).
+ Esto implica que cada intervalo 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+ son consecutivos, no vacíos, no superpuestos y tal que 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+displaystyle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigcup
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+r-1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+j=0
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Ij = I 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note que el HARP no es factible una resolución determinista.
+ El numero de combinaciones de valores de atributos y actividades puede
+ ser muy grande a veces infinito; y encontrar los puntos de transicion es
+ complicado
+\end_layout
+
+\end_body
+\end_document
