@@ -78,7 +78,22 @@ Reconocimiento de Actividades
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "chap:reconocimiento"
+name "chap2:Reconocimiento de Actividades"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%##Capítulo 2.
+ Reconocimiento de Actividades
+\end_layout
 
 \end_inset
 
@@ -90,14 +105,32 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-El conocimiento del contexto de usuario es una de las nuevas aplicaciones
+\begin_inset CommandInset label
+LatexCommand label
+name "sec21:introduccion"
+
+\end_inset
+
+ El conocimiento del contexto de usuario es una de las nuevas aplicaciones
  y servicios móviles en el área de la computación ubicua.
  En general, el contexto de usuario significa su actividad, ubicación, preferenc
 ia, su situación, emoción, etc.
  Con los teléfonos móviles cada vez más potentes, la mayoría de los puntos
  mencionados del contexto se determinan con componentes de detección integrados
- en los teléfonos móviles, como acelerómetro, GPS, micrófono, bluetooth,
- cámara, etc.
+ en los teléfonos móviles, como acelerómetro, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+, micrófono, bluetooth, cámara, etc.
  En esencia, los teléfonos móviles pueden crear redes de sensores móviles
  que son capaces de recoger datos de los sensores sobre la vida diaria de
  un usuario, es decir, quien es, lo que está haciendo el usuario, donde
@@ -115,7 +148,13 @@ Actividades Humanas
 \end_layout
 
 \begin_layout Standard
-El diseño de un sistema HAR depende totalmente de las actividades definidas
+\begin_inset CommandInset label
+LatexCommand label
+name "sec22:actividades-humanas"
+
+\end_inset
+
+ El diseño de un sistema HAR depende totalmente de las actividades definidas
  que van a ser reconocida.
  Por lo tanto, el cambio del conjunto de actividades que el sistema reconoce
  convierte al problema en uno completamente diferente al anterior.
@@ -355,19 +394,55 @@ name "tabla:sencilla"
 \end_layout
 
 \begin_layout Section
-Sensores ambientales vs Sensores 
-\begin_inset Quotes ard
-\end_inset
-
-Wearables
-\begin_inset Quotes ald
-\end_inset
-
-
+Dispositivos Móviles
 \end_layout
 
 \begin_layout Standard
-En la problemática del reconocimiento de la actividad que esta realizando
+\begin_inset CommandInset label
+LatexCommand label
+name "sec23:dispositivos-moviles"
+
+\end_inset
+
+ Los dispositivos móviles, tales como teléfonos móviles, reproductores de
+ música o relojes inteligentes, han comenzado ya hace un par de años en
+ incorporar diversos sensores.
+ Algunos de los sensores son 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+, de audio (micrófonos), de imágenes (cámaras), de luz, sensores de temperatura,
+ sensor de dirección (brújula), y acelerómetro.
+ Debido a su tamaño reducido de estos dispositivos inteligentes, su enorme
+ capacidad de procesamiento, la posibilidad de recibir y enviar datos; y
+ su omnipresencia en nuestra sociedad de hoy, lo hacen dispositivos de preferenc
+ia para utilizarlo en la implementación de un sistema reconocedor de actividades
+ Humanas.
+\end_layout
+
+\begin_layout Section
+Sensores ambientales vs Sensores 
+\emph on
+wearables
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec24:sensores"
+
+\end_inset
+
+ En la problemática del reconocimiento de la actividad que está realizando
  una persona uno de los puntos importantes a considerar es la elección de
  los sensores a utilizar.
  Los sensores pueden medir signos vitales (ritmo cardíaco, temperatura del
@@ -383,14 +458,10 @@ key "ReyesOrtiz2015"
 \end_inset
 
  diferencian entre ambientales, cuando los sensores esta ubicados de manera
- estatica en el ambiente que rodea a la persona, y 
-\begin_inset Quotes ard
-\end_inset
-
+ estática en el ambiente que rodea a la persona, y 
+\emph on
 wearables
-\begin_inset Quotes ald
-\end_inset
-
+\emph default
  cuando lo sensores se usan o están conectados al cuerpo de la persona.
 \end_layout
 
@@ -404,7 +475,8 @@ Los sensores ambientales, también denominados externos o de entorno, son
  miden propiedades físicas del entorno donde las personas se encuentras
  e interactúan.
  Existe una amplia variedad de sensores ambientales, como micrófonos, cámaras
- de vídeo, sensores de presencia, termómetros y sensores de profundidad(Kinect).
+ de vídeo, sensores de presencia, termómetros y sensores de profundidad
+ (Kinect).
  Para este tipo de reconocimiento tenemos por ejemplo a 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -416,52 +488,135 @@ key "Poppe2007"
 \end_layout
 
 \begin_layout Subsection
-Sensores 
-\begin_inset Quotes ard
-\end_inset
-
-Wearables
-\begin_inset Quotes ald
-\end_inset
-
-
+Sensores Wearables
 \end_layout
 
 \begin_layout Standard
 Los sensores 
-\begin_inset Quotes ard
-\end_inset
-
-Wearables
-\begin_inset Quotes ald
-\end_inset
-
+\emph on
+wearables
+\emph default
  son usados para obtener señales directamente en una persona, estos pueden
  estar unidos a varias partes del cuerpo, como ser la cintura, muñeca, pecho,
- pierna, y cabeza(agregar referencia un paper con dispositivo en brazo/pierna/et
-c) pero también pueden formar parte de la ropa o embebido en otro accesorio
+ pierna, y cabeza 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004"
+
+\end_inset
+
+ pero también pueden formar parte de la ropa o embebido en otro accesorio
  de uso común, como relojes, anteojos, o teléfonos móviles.
  Como característica tienen una batería que proporciona la energía para
- poder operar, y algunos cuentan con conexión inalámbrica wifi/bluetooh
+ poder operar, y algunos cuentan con conexiones inalámbricas (con WIFI/Bluetooh)
  para la transmisión de los datos obtenidos.
 \end_layout
 
 \begin_layout Standard
-Señales del movimientos y físicas son obtenidas por los sensores, como ser
- temperatura de la piel, frecuencia cardíaca, conductividad, y posicionamiento
- global (GPS), posicionamiento en interiores y movimientos del cuerpo.
+Las señales de movimiento y fisiológicas son obtenidas por los sensores,
+ como ser temperatura de la piel, frecuencia cardíaca, conductividad, y
+ posicionamiento global (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+), posicionamiento en interiores y movimientos del cuerpo.
  Todos estas mediciones son utilices para tener una constante información
  del estado de una persona en cualquier momento.
 \end_layout
 
 \begin_layout Standard
-Después hay que mencionar que dentro de los wearables están los que usan
- sensores acelerómetro en varias partes del cuerpo y los que usan acelerómetro
- de teléfonos moviles.
+Los sensores anexos directamente a un individuo pueden caracterizarse según
+ los siguientes atributos 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Description
+Ubicación miden datos obtenidos con las redes celulares 3G y los satélites
+ de navegación 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+.
+ Provee información de contexto bastante relevante acerca de la posición
+ del individuo, además de ciertas medidas de movimiento pero con un consumo
+ moderado de energía.
+\end_layout
+
+\begin_layout Description
+Movimiento miden datos inerciales como la aceleración y la orientación respecto
+ a un marco de referencia relativo al dispositivo que contiene los sensores.
+ El acelerómetro, giroscopio y la brújula son los sensores más comunes y
+ utilizados para reconocimiento de actividades con un bajo consumo de energía
+ y buena precisión de reconocimiento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004,LaraLabrador2012"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Fisiología miden signos vitales del individuo como el ritmo cardíaco (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HRM}
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+Hearth Rate Monitor
+\emph default
+), la temperatura del cuerpo, el ritmo de respiración, entre otros.
+\end_layout
+
+\begin_layout Description
+Ambiental miden datos externos que rodean al individuo como el nivel de
+ ruido, la humedad y/o la temperatura.
+ Los sensores de luz, cámara, micrófonos y termómetros miden estos datos.
+ 
 \end_layout
 
 \begin_layout Standard
-Otros autores como 
+[Después hay que mencionar que dentro de los 
+\emph on
+wearables
+\emph default
+ están los que usan sensores acelerómetro en varias partes del cuerpo y
+ los que usan acelerómetro de teléfonos móviles.
+ Otros autores como 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "karmul2010"
@@ -469,23 +624,7 @@ key "karmul2010"
 \end_inset
 
  extraen al reconocimiento con cámaras de vídeo como una clasificación diferente
- a los ambientales.
-\end_layout
-
-\begin_layout Section
-Dispositivos Moviles
-\end_layout
-
-\begin_layout Standard
-\begin_inset Quotes ard
-\end_inset
-
-<Acá hablamos del las ventajas de realizar el reconocimiento con dispositivos
- móviles ya que tiene sensores
-\begin_inset Quotes ald
-\end_inset
-
->
+ a los ambientales.]
 \end_layout
 
 \begin_layout Section
@@ -493,22 +632,339 @@ Metodología HAR
 \end_layout
 
 \begin_layout Standard
-\begin_inset Quotes ard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec25:metodologia-har"
+
 \end_inset
 
-<Acá hablamos de tipo de actividades, las fases del reconocimiento de actividade
-s (Colección de datos, procesamiento de datos o extracción de feature, modelado
- o aprendizaje, y evaluación e inferencia), y por ultimo La definición matemátic
-a del problema.
+ Al igual que en otras aplicaciones de aprendizaje automático, la actividad
+ el reconocimiento requiere dos etapas, es decir, entrenamiento y las pruebas
+ o evaluación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement !htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
  
-\begin_inset Quotes ald
+\begin_inset Graphics
+	filename graphics/harsystem.png
+	width 70line%
+
 \end_inset
 
->
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Flujo HAR
+\end_layout
+
+\end_inset
+
+Flujo general del Reconocimiento de Actividades Humanas (HAR)
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:harsystem"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+fig:harsystem
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ se visualiza las fases comunes de las dos etapas.
+ La etapa de entrenamiento requiere inicialmente un conjunto de datos recolectad
+os en una serie de tiempo con los atributos medidos a partir de individuos
+ que realizan cada actividad.
+ Las series se dividen en ventanas de tiempo para aplicar la extracción
+ de muestras filtrando así la información relevante en las señales en bruto.
+ Más tarde, los métodos de aprendizaje se utilizan para generar un modelo
+ de reconocimiento de actividades del conjunto de datos colectado a través
+ de las características calculadas.
+ Del mismo modo, para la etapa de prueba o evaluación, se recogen datos
+ durante una ventana de tiempo, que se utiliza para extraer las mismas caracterí
+sticas utilizadas en el modelo, estas se evalúan en el modelo de aprendizaje
+ previamente entrenado, generando una etiqueta de la actividad predicha.
+\end_layout
+
+\begin_layout Standard
+Para cada estaba tenemos puntos a tener en cuenta:
 \end_layout
 
 \begin_layout Subsection
-Fases del Reconocimiento
+Colección de Datos
+\end_layout
+
+\begin_layout Standard
+La definición del método de colección de datos es un punto importante en
+ un 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+ Según como se realiza la observación del individuo existen: ambientes realistas
+, que son los ideales pero no siempre es posible realizar este tipo de colectas.
+ También existen los ambientes cuasi realistas que se realizan en laboratorios
+ simulando las condiciones reales de las actividades.
+ Por otro lado tenemos los ambientes totalmente controlados en laboratorio.
+\end_layout
+
+\begin_layout Standard
+Una falla en el diseño de un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ se puede dar por no considerar las condiciones reales de las actividades,
+ tales como actividades no tenidas en cuenta, calibración de sensores, ruido,
+ etc.
+\end_layout
+
+\begin_layout Standard
+Otra de las consideraciones a tener en cuenta en este punto es la cantidad
+ de individuos para realizar la colección, es recomendable el mayor cantidad
+ de individuos en distintos tipos de edades y condiciones físicas.
+\end_layout
+
+\begin_layout Subsection
+Selección y Extracción de Características
+\end_layout
+
+\begin_layout Standard
+Para cualquier problema de aprendizaje automático, la selección de característic
+as se refiere al proceso de selección de un conjunto significativo de caracterís
+ticas que aporten relevancia a la capacidad de discriminación en un algoritmo
+ de aprendizaje.
+ Por otro lado, la extracción de características, tiene como objetivo disminuir
+ la cantidad de características a utilizar mediante distintas transformaciones
+ entre ellas para obtener nuevas características reducidas sin perder informació
+n relevante del conjunto de datos originales.
+ La selección y extracción de características también permite reducir los
+ tiempos de procesamiento en la fase de entrenamiento y aumenta el rendimiento
+ en la fase de evaluación
+\end_layout
+
+\begin_layout Standard
+Dependiendo de la aplicación, las características requeridas para la extracción
+ de la información relevante pueden variar.
+ En el caso particular de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+, una representación reducida de los datos del sensor se puede utilizar
+ como la entrada del algoritmo de reconocimiento.
+ Esto se logra mediante medición de la señal del sensor en varios dominios,
+ pudiendo ser en tiempo y frecuencia.
+\end_layout
+
+\begin_layout Subsection
+Métodos de Aprendizaje
+\end_layout
+
+\begin_layout Standard
+Varios enfoques de LD se han desarrollado a lo largo de los años para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+ En su mayoría a través de algoritmos de aprendizaje supervisado aunque
+ también se han propuesto métodos semi-supervisados y no supervisados.
+\end_layout
+
+\begin_layout Standard
+Modelos bayesianos y basados en frecuencia han sido bien cubierto en toda
+ la literatura 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+ Implican modelos basados en reglas como Arboles de decisión y Selvas Aleatorias
+, algunos con un enfoques geométrico k-NN, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ANN}
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{SVM}
+\end_layout
+
+\end_inset
+
+, y los métodos de clasificación probabilistas, por ejemplo clasificadores
+ de Bayes, y modelos ocultos de Markov (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HMM}
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Otros aspectos relevantes para la selección del algoritmo de modelo de aprendiza
+je incluyen: el consumo de energía, los requisitos de memoria, interpretabilidad
+ y complejidad computacional, etc.
+ Estos aspectos se agudizan si se utilizan dispositivos inteligentes .Como
+ cuestión de ejemplo, árboles de decisión podrían ser preferidos cuando
+ se requiere simplicidad en su implementación y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{SVM}
+\end_layout
+
+\end_inset
+
+ para aplicaciones de alto rendimiento.
+\end_layout
+
+\begin_layout Standard
+En el capitulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Aprendizaje-Automatico"
+
+\end_inset
+
+ se detalla todo lo referente a métodos de aprendizaje y los utilizados
+ en este trabajo.
 \end_layout
 
 \begin_layout Subsection
@@ -516,7 +972,7 @@ Definición del Problema
 \end_layout
 
 \begin_layout Standard
-Teniendo en cuenta todo esto puntos podemos definir el problema como
+Teniendo en cuenta todo esto puntos podemos definir el problema como:
 \end_layout
 
 \begin_layout Standard
@@ -596,95 +1052,7 @@ begin{defi}
 \end_inset
 
  son consecutivos, no vacíos, no superpuestos y tal que 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-displaystyle
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-bigcup
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-r-1
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-j=0
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-Ij = I 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
+\begin_inset Formula ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
 \end_inset
 
  
@@ -706,8 +1074,8 @@ end{defi}
 \begin_layout Standard
 Note que el HARP no es factible una resolución determinista.
  El numero de combinaciones de valores de atributos y actividades puede
- ser muy grande a veces infinito; y encontrar los puntos de transicion es
- complicado
+ ser muy grande a veces infinito; y encontrar los puntos de transición es
+ complicado teniendo en cuenta que se desconoce la duración de las actividades.
 \end_layout
 
 \end_body

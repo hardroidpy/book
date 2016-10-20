@@ -93,7 +93,7 @@ Introducción
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec21:introduccion"
+name "sec41:introduccion"
 
 \end_inset
 
@@ -314,6 +314,13 @@ abbr{Wearables}
 
 \end_inset
 
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec24:sensores"
+
+\end_inset
+
 , o de atuendo).
  Los sensores adjuntos se utilizan para recolectar señales directamente
  de los usuarios.
@@ -335,88 +342,6 @@ key "LaraLabrador2012,Choudhury2008"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Subsubsection
-Sensores 
-\emph on
-Wearables
-\end_layout
-
-\begin_layout Standard
-Los sensores anexos directamente a un individuo pueden caracterizarse según
- los siguientes atributos 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "LaraLabrador2013"
-
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Description
-Ubicación miden datos obtenidos con las redes celulares 3G y los satélites
- de navegación 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{GPS}
-\end_layout
-
-\end_inset
-
-.
- Provee información de contexto bastante relevante acerca de la posición
- del individuo, además de ciertas medidas de movimiento pero con un consumo
- moderado de energía.
-\end_layout
-
-\begin_layout Description
-Movimiento miden datos inerciales como la aceleración y la orientación respecto
- a un marco de referencia relativo al dispositivo que contiene los sensores.
- El acelerómetro, giroscopio y la brújula son los sensores más comunes y
- utilizados para reconocimiento de actividades con un bajo consumo de energía
- y buena precisión de reconocimiento 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bao2004,LaraLabrador2012"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Description
-Fisiología miden signos vitales del individuo como el ritmo cardíaco (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HRM}
-\end_layout
-
-\end_inset
-
-, 
-\emph on
-Hearth Rate Monitor
-\emph default
-), la temperatura del cuerpo, el ritmo de respiración, entre otros.
-\end_layout
-
-\begin_layout Description
-Ambiental miden datos externos que rodean al individuo como el nivel de
- ruido, la humedad y/o la temperatura.
- Los sensores de luz, cámara, micrófonos y termómetros miden estos datos.
- 
 \end_layout
 
 \begin_layout Standard

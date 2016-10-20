@@ -195,8 +195,8 @@ key "ReyesOrtiz2015,Chen2012"
 \begin_layout Standard
 Diseñar sistemas móviles inteligentes, o aplicaciones móviles de contexto,
  que reconozcan las actividades de un individuo, Ej.
- si está caminando, está corriendo, está quieto o moviéndose en algún vehículo
- tiene diversos motivos en la actualidad
+ Si está caminando, está corriendo, está quieto o moviéndose en algún vehículo
+ tiene diversos motivos en la actualidad 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CampuzanoLopez2015,Google2013l"
@@ -204,7 +204,7 @@ key "CampuzanoLopez2015,Google2013l"
 \end_inset
 
 .
- Tal es la motivación, que ha aumentado la popularidad de las aplicación
+ Tal es la motivación, que ha aumentado la popularidad de las aplicaciones
  móviles de contexto con funcionalidades en el ámbito del cuidado personal,
  la movilidad y la asistencia en la vida diaria que requieren de estas capacidad
 es.
@@ -479,7 +479,7 @@ key "Chen2012"
  ambulatorias y de transportación.
  Además existen otras acciones más complejas como la postura, los movimientos
  en ejercicio aeróbico u otras más seculares, Ej.
- cepillarse los dientes, mirar televisión, comer, beber, hablar por teléfono,
+ Cepillarse los dientes, mirar televisión, comer, beber, hablar por teléfono,
  etc.
  
 \begin_inset CommandInset citation
@@ -715,7 +715,7 @@ abbr{HAR}
 \end_inset
 
 , aún existe un hueco de contar con un componente de software para teléfonos
- móviles que pueda ser utilizado sin depender de librerías privadas Ej.
+ móviles que pueda ser utilizado sin depender de librerías privadas, Ej.
  
 \emph on
 Google Play Services
@@ -761,7 +761,7 @@ abbr{SaaS}
 \emph on
 Software as a Service
 \emph default
-), o bien aplicaciones distribuidas por terceros Ej.
+), o bien aplicaciones distribuidas por terceros, Ej.
  
 \emph on
 Lifelog
@@ -771,8 +771,8 @@ Lifelog
 
 \begin_layout Standard
 El modelo de desarrollo de software libre hace posible tener un enfoque
- colaborativo en dos dimensiones, por un lado el software como tal Ej.
- una librería de reconocimiento, y por otro el los de datos sensoriales
+ colaborativo en dos dimensiones, por un lado el software como tal, Ej.
+ Una librería de reconocimiento, y por otro el los de datos sensoriales
  utilizadas para el entrenamiento del modelo de predicción de actividades.
 \end_layout
 
@@ -867,7 +867,7 @@ Objetivo General
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "objetivo-general"
+name "sec13:objetivo-general"
 
 \end_inset
 
@@ -877,7 +877,7 @@ name "objetivo-general"
 \begin_layout Standard
 Implementar un sistema de reconocimiento de actividades humanas con teléfonos
  móviles cuyo principal aporte sea una librería de código abierto libremente
- distribuidos.
+ distribuido.
 \end_layout
 
 \begin_layout Subsection
@@ -887,7 +887,7 @@ Objetivos Específicos
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "objetivos-especuxedficos"
+name "sec13:objetivos-especuxedficos"
 
 \end_inset
 

@@ -5,7 +5,7 @@
 
 \section{Introducción}
 
-\label{sec21:introduccion}
+\label{sec41:introduccion}
 
 En este capítulo se definen los requerimientos de implementación de
 un sistema de reconocimiento de actividades humanas (sistemas \abbr{HAR}).
@@ -57,35 +57,14 @@ El recolector de datos tiene la función de capturar medidas de los
 sensores e registrar la información indexada en la dimensión del tiempo.
 La captura de datos relevantes para los sistemas \abbr{HAR} debe
 ser realizada con instrumentos de medición apropiados: en nuestro
-caso con sensores (\abbr{Wearables}, o de atuendo). Los sensores
-adjuntos se utilizan para recolectar señales directamente de los usuarios.
-Estos están anexados a diferentes partes del cuerpo como la cintura,
-la muñeca, el pectoral, los muslos o la cabeza \cite{Bao2004}, como
-también ser portados ya que pueden estar empotrados en dispositivos
+caso con sensores (\abbr{Wearables}\ref{sec24:sensores}, o de atuendo).
+Los sensores adjuntos se utilizan para recolectar señales directamente
+de los usuarios. Estos están anexados a diferentes partes del cuerpo
+como la cintura, la muñeca, el pectoral, los muslos o la cabeza \cite{Bao2004},
+como también ser portados ya que pueden estar empotrados en dispositivos
 de uso regular como teléfonos móviles modernos, relojes inteligentes
 o lentes \cite{LaraLabrador2012,Choudhury2008}.
 
-\subsubsection{Sensores \emph{Wearables}}
-
-Los sensores anexos directamente a un individuo pueden caracterizarse
-según los siguientes atributos \cite{LaraLabrador2013}:
-\begin{description}
-\item [{Ubicación}] miden datos obtenidos con las redes celulares 3G y
-los satélites de navegación \abbr{GPS}. Provee información de contexto
-bastante relevante acerca de la posición del individuo, además de
-ciertas medidas de movimiento pero con un consumo moderado de energía.
-\item [{Movimiento}] miden datos inerciales como la aceleración y la orientación
-respecto a un marco de referencia relativo al dispositivo que contiene
-los sensores. El acelerómetro, giroscopio y la brújula son los sensores
-más comunes y utilizados para reconocimiento de actividades con un
-bajo consumo de energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
-\item [{Fisiología}] miden signos vitales del individuo como el ritmo cardíaco
-(\abbr{HRM}, \emph{Hearth Rate Monitor}), la temperatura del cuerpo,
-el ritmo de respiración, entre otros.
-\item [{Ambiental}] miden datos externos que rodean al individuo como el
-nivel de ruido, la humedad y/o la temperatura. Los sensores de luz,
-cámara, micrófonos y termómetros miden estos datos. 
-\end{description}
 Las señales medidas deben ser registrados de manera secuencial y transmitidos
 para su posterior procesamiento. En ambas etapas, aprendizaje y predicción,
 se miden las señales de los sensores.

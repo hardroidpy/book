@@ -5,7 +5,7 @@ REM Command file for TeX documentation
 set PATH=%PATH%;%USERPROFILES%/Apps/Git/bin
 set PATH=%PATH%;"%USERPROFILES%/AppData/Local/Programs/MiKTeX 2.9/miktex/bin/x64"
 set PATH=%PATH%;"%USERPROFILES%/AppData/Local/Pandoc"
-set LANG=en_US
+REM set LANG=en_US
 
 if "%1" == "" goto help
 
@@ -22,7 +22,7 @@ if "%1" == "help" (
 )
 
 if "%1" == "docx" (
-    pandoc --bibliography=referencias.bib -t docx tesis.tex -o tesis.docx
+    pandoc --bibliography=referencias.bib -t docx %2.tex -o %2.docx
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. The Docx is in .
