@@ -205,9 +205,6 @@
 
 % Cabeceras
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-%\fancyhead[R]{\fontsize{10}{11}\selectfont \thepage}
-%\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{\leftmark}{\rightmark}}
 
 % Nomenclatura
 \usepackage[intoc]{nomencl}
