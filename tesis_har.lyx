@@ -107,7 +107,7 @@ customHeadersFooters
 \begin_body
 
 \begin_layout Title
-Reconocimiento de Actividades Humanas con teléfonos móviles
+Reconocimiento de Actividades Humanas con teléfonos Android
 \end_layout
 
 \begin_layout Author
@@ -247,6 +247,36 @@ filename "capitulo-3/capitulo-3.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "capitulo-4/capitulo-4.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "capitulo-5/capitulo-5.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "capitulo-6/capitulo-6.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "capitulo-7/capitulo-7.lyx"
 
 \end_inset
 

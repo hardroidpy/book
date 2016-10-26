@@ -49,6 +49,14 @@ if "%1" == "view" (
 	goto end
 )
 
+if "%1" == "viewtex" (
+    start explorer tesis.tex
+	if errorlevel 1 exit /b 1
+	echo.
+	echo.Build finished.
+	goto end
+)
+
 if "%1" == "text" (
     for /r %%i in (*.tex) do pandoc -t markdown_mmd %%i -o %%~ni.md
 	if errorlevel 1 exit /b 1

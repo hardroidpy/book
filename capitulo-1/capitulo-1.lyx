@@ -448,10 +448,10 @@ name "sec11:planteamiento"
 \begin_layout Standard
 El reconocimiento de actividades humanas es un tópico de investigación que
  data desde los noventa (90), y a la actualidad sigue atrayendo bastante
- interés ya que abarca varias áreas novedosas de estudio.
- Algunas áreas de estudio que se pueden mencionar son la computación ubicua,
- la computación móvil, y la computación contextual; también la seguridad
- por vigilancia, las viviendas asistidas y los ambientes inteligentes, etc.
+ interés ya que abarca varias áreas de estudio con aplicaciones novedosas.
+ Algunas de estas áreas son la computación ubicua, la computación móvil,
+ y la computación contextual; también la seguridad por vigilancia, las viviendas
+ asistidas y los ambientes inteligentes, etc.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chen2012"
@@ -463,9 +463,17 @@ key "Chen2012"
 \end_layout
 
 \begin_layout Standard
-Reconocer actividades humanas consiste en detectar las acciones o interacciones
- con el entorno que llevan acabo las personas utilizando sensores.
- Las actividades humanas pueden ser catalogados en distintos tipos y según
+Reconocer actividades humanas consiste en comprender las acciones e interaccione
+s de las personas con su entorno a través de la integración de sensores
+ y el razonamiento
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ReyesOrtiz2015"
+
+\end_inset
+
+.
+ Las actividades humanas se pueden catalogar en diferentes tipos y según
  el nivel de detalle 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -474,10 +482,10 @@ key "Chen2012"
 \end_inset
 
 .
- Poniendo énfasis en las actividades básicas que un individuo puede realizar
+ Poniendo énfasis en las actividades básicas que un individuo puede realizar,
  podemos destacar las acciones físicas más simples, como lo son las actividades
- ambulatorias y de transportación.
- Además existen otras acciones más complejas como la postura, los movimientos
+ ambulatorias y de transporte.
+ Además, existen otras acciones más complejas como la postura, los movimientos
  en ejercicio aeróbico u otras más seculares, Ej.
  Cepillarse los dientes, mirar televisión, comer, beber, hablar por teléfono,
  etc.
@@ -494,8 +502,25 @@ key "LaraLabrador2013"
 \begin_layout Standard
 El problema del reconocimiento de actividades humanas conlleva un proceso
  complejo que se resume en la utilización de técnicas de aprendizaje automático
- supervisado, con un modelo de inferencia construido en dos etapas: entrenamient
-o y evaluación 
+ supervisado (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+Machine Learning
+\emph default
+), con un modelo de inferencia construido en dos etapas: entrenamiento y
+ evaluación 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013,Kwapisz2011"
@@ -503,7 +528,7 @@ key "LaraLabrador2013,Kwapisz2011"
 \end_inset
 
 .
- Es un proceso se puede resumir en un flujo iterativo que consiste en 
+ El proceso se puede resumir en un flujo iterativo que consiste en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
@@ -536,7 +561,7 @@ Retroalimentar y/o evaluar el modelo para obtener una mejora continua.
 \end_layout
 
 \begin_layout Standard
-La investigación en el área de los sistemas 
+La investigación en el área de estudio de los sistemas 
 \begin_inset ERT
 status open
 
@@ -549,9 +574,9 @@ abbr{HAR}
 
 \end_inset
 
- utilizando teléfonos móviles ha progresado de manera sostenida debido a
- los avances tecnológicas de sensores de bajo costo, las redes inalámbricas
- de alta velocidad y los dispositivos móviles inteligentes 
+ ha progresado de manera sostenida debido a los avances tecnológicas de
+ sensores de bajo costo, las redes inalámbricas de alta velocidad y los
+ dispositivos móviles inteligentes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chen2012"
@@ -559,10 +584,10 @@ key "Chen2012"
 \end_inset
 
 .
- A pesar de los avances tecnológicos, aún existen importantes desafíos por
- resolver como: seleccionar medidas relevantes, recolectar datos en forma
- no invasiva, analizar métodos de inferencia alternativos y extraer muestras
- significativas 
+ A pesar de ciertos avances, aún existen importantes desafíos por resolver
+ como: seleccionar medidas relevantes, recolectar datos en forma no invasiva,
+ analizar métodos de inferencia alternativos y extraer muestras significativas
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -570,10 +595,10 @@ key "LaraLabrador2013"
 \end_inset
 
 .
- Además de la restricción al recolectar datos en condiciones realistas y
- tener la flexibilidad para soportar nuevos individuos sin necesidad entrenar
- el modelo permanentemente se debe diseñar el sistema bajo condiciones especiale
-s de ahorro de energía y procesamiento 
+ Además, las restricciones para recolectar datos en condiciones realistas,
+ la flexibilidad para soportar nuevos individuos sin necesidad entrenar
+ el modelo permanentemente y condiciones especiales de ahorro de energía
+ como procesamiento 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ReyesOrtiz2015"
@@ -585,10 +610,9 @@ key "ReyesOrtiz2015"
 \end_layout
 
 \begin_layout Standard
-De las cuestiones citadas anteriormente, en este trabajo ponemos énfasis
- en cuatro puntos que enmarcan el problema a resolver y cuya justificación
- responde a utilizar los teléfonos móviles como plataforma de reconocimiento
- de actividades humanas.
+En este trabajo se pone énfasis en cuatro puntos que enmarcan el problema
+ planteado y cuya justificación responde a la utilización de teléfonos móviles
+ modernos como plataforma de reconocimiento de actividades humanas.
 \end_layout
 
 \begin_layout Section
@@ -622,7 +646,8 @@ abbr{HAR}
  se requiere utilizar uno o más sensores que midan datos del entorno de
  un usuario.
  Los teléfonos móviles modernos poseen múltiples sensores de bajo consumo,
- con el tamaño y las condiciones adecuadas para la capturar de manera ubicua.
+ con el tamaño y las condiciones adecuadas para la capturar datos de manera
+ ubicua.
  Comúnmente los teléfonos modernos se componen de sensores de: localización
  (
 \begin_inset ERT
@@ -642,8 +667,7 @@ abbr{GPS}
 Global Positioning System
 \emph default
 ), brújula, aceleración, audio (micrófonos) y vídeo (cámaras), luminosidad,
- temperatura, barómetro y otros dependiendo del fabricante y/o accesorios
- adicionales
+ temperatura, barómetro y otros 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kwapisz2011"
@@ -664,22 +688,23 @@ acelerómetro
 
 \end_inset
 
- mide el movimiento en dos o tres ejes y puede ser combinado con otros para
- detectar la orientación del dispositivo.
- Estas medidas proveen información crucial para el reconocimiento de actividades
- humanas con un bajo consumo de energía.
- El sensor de localización y podómetro (contador de pasos) también son ideales
- para su uso pero poseen más restricciones asociadas.
+ mide el movimiento en dos o tres dimensiones y que al ser combinado con
+ otros sensores puede detectar la orientación del dispositivo.
+ Estas medidas inerciales proveen información crucial para el reconocimiento
+ de actividades humanas con un bajo consumo de energía.
+ El sensor de localización y podómetro (contador de pasos) también son útiles
+ pero poseen limitaciones adicionales como la disponibilidad, cobertura
+ y consumo de energía.
  Adicionalmente, los teléfonos modernos tienen capacidad de almacenamiento
  y procesamiento, una buena conectividad por lo que son plataformas ideales
  para construir sistemas de reconocimiento autónomos.
 \end_layout
 
 \begin_layout Standard
-La combinación de capacidad, tamaño diminuto y bajo costo hace que los dispositi
-vos sean portados a cualquier lugar por sus usuarios, esto permite recolectar
- los datos en condiciones realistas, una ventaja ideal que tener que obtener
- muestras supervisadas en un laboratorio 
+La combinación de capacidad, tamaño diminuto y bajo costo hace que estos
+ dispositivos sean portados en cualquier lugar por sus usuarios, esto permitiría
+ recolectar los datos bajo condiciones realistas, una ventaja ideal sobre
+ obtener muestras supervisadas durante un experimento de laboratorio 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
@@ -691,17 +716,7 @@ key "Bao2004"
 \end_layout
 
 \begin_layout Standard
-La información sobre el estado de arte de esta área de investigación es
- bastante extensa y abarca las técnicas de reconocimiento, los métodos de
- captura y el procesamiento de datos de sensoriales
-\begin_inset CommandInset citation
-LatexCommand cite
-key "LaraLabrador2012,Kwapisz2011"
-
-\end_inset
-
-.
- Sin embargo, a pesar de estar definida la arquitectura los sistemas 
+La conocimiento acerca del estado de los sistemas 
 \begin_inset ERT
 status open
 
@@ -714,19 +729,35 @@ abbr{HAR}
 
 \end_inset
 
-, aún existe un hueco de contar con un componente de software para teléfonos
- móviles que pueda ser utilizado sin depender de librerías privadas, Ej.
+ es bastante extensa, esta abarca las técnicas de reconocimiento, los métodos
+ de captura y el procesamiento de datos sensoriales
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2012,Kwapisz2011"
+
+\end_inset
+
+.
+ Sin embargo, a pesar de estar definida la arquitectura de los sistemas
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ aún existen escasez de componentes de software para teléfonos móviles que
+ puedan ser utilizados sin depender de librerías privadas, Ej.
  
 \emph on
 Google Play Services
 \emph default
- API 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Google2016l"
-
-\end_inset
-
  (
 \begin_inset ERT
 status open
@@ -744,7 +775,14 @@ abbr{API}
 \emph on
 Application Programming Interface
 \emph default
-), o servicios alojados en Internet (
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google2016l"
+
+\end_inset
+
+, o servicios alojados en Internet (
 \begin_inset ERT
 status open
 
@@ -761,7 +799,7 @@ abbr{SaaS}
 \emph on
 Software as a Service
 \emph default
-), o bien aplicaciones distribuidas por terceros, Ej.
+), o aplicaciones distribuidas por terceros, Ej.
  
 \emph on
 Lifelog
@@ -770,10 +808,10 @@ Lifelog
 \end_layout
 
 \begin_layout Standard
-El modelo de desarrollo de software libre hace posible tener un enfoque
- colaborativo en dos dimensiones, por un lado el software como tal, Ej.
- Una librería de reconocimiento, y por otro el los de datos sensoriales
- utilizadas para el entrenamiento del modelo de predicción de actividades.
+Las iniciativas de desarrollo de software libre hacen posible un enfoque
+ colaborativo en dos dimensiones, por un lado la construcción y disponibilidad
+ del software como una librería de reconocimiento, y por otro de los datos
+ utilizados para el entrenamiento de un modelo de predicción de actividades.
 \end_layout
 
 \begin_layout Section
@@ -792,19 +830,32 @@ name "sec13:alcance-y-objetivos"
 
 \begin_layout Standard
 Este trabajo se centra en el reconocimiento de actividades humanas con teléfonos
- móviles inteligentes utilizando sensores y aportar una componente de librería
- de código abierto que sea libremente distribuida.
+ móviles modernos utilizando sensores y aportar una componente de software
+ en formato de librería de código abierto que sea libremente distribuida.
  Durante la recolección de datos y las pruebas se desarrollará adicionalmente
  una aplicación móvil que demuestre la efectividad de la librería como component
 e de software independiente.
  También se evaluará el sistema de reconocimiento de actividades basado
- en aprendizaje automático.
+ en aprendizaje automático en comparación con otras soluciones equivalentes.
 \end_layout
 
 \begin_layout Standard
-Se incluye la revisión del estado del arte de la materia con el objetivo
- de comprender las metodologías de reconocimiento actualmente empleadas.
- Luego, se construirá una librería cliente y un servicio basado en 
+Se abarca la revisión del marco teórico de los sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ con el objetivo de exponer las metodologías empleadas en la actualidad.
+ El contenido principal del trabajo se compone de la construcción y diseño
+ de una librería cliente y un servicio para la plataforma 
 \emph on
 
 \begin_inset ERT
@@ -821,22 +872,52 @@ abbr{Android}
 
 
 \emph default
- que atienda a las llamadas de procedimiento del sistema de reconocimiento
- de actividades.
+ que atienda a las llamadas de procedimiento del sistema (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{IPC}
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+Inter Process Communication
+\emph default
+) de reconocimiento de actividades.
  
 \end_layout
 
 \begin_layout Standard
-Dentro del sistema de reconocimiento se incluirá un modelo colaborativo
- capaz de actualizarse constantemente, a nuestro criterio, esto mejorará
- las predicciones basándose en un conjunto de datos de entrenamiento proveniente
- de las personas que colaboren de forma anónima y en condiciones reales.
+Dentro de la implementación del sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ se incluirá un modelo colaborativo capaz de actualizarse constantemente,
+ a nuestro criterio, esto mejorará las predicciones basándose en un conjunto
+ de datos de entrenamiento proveniente de las personas que colaboren de
+ forma anónima y en condiciones reales.
 \end_layout
 
 \begin_layout Standard
-Además se implementará un servicio Web de captura de muestras con predicciones
- para evaluar y actualizar el modelo de predicción para futuras versiones.
- El modelo de aprendizaje se basará en aprendizaje automático por árboles
+Además se implementará un servicio en Internet de captura de muestras y
+ predicciones para evaluar y/o actualizar el modelo de predicción para futuras
+ versiones.
+ El modelo de aprendizaje automático se basará en la técnica por árboles
  de decisión (
 \begin_inset ERT
 status open
@@ -855,9 +936,9 @@ abbr{DT}
 Decision Trees
 \emph default
 ).
- Finalmente, para evaluar la metodología se creará una aplicación móvil
- para recolectar muestras y evaluar el resultado de predicción utilizando
- el sistema de reconocimiento propuesto.
+ Finalmente, para evaluar el componente se creará una aplicación móvil para
+ recolectar muestras y evaluar el resultado de predicción utilizando el
+ sistema de reconocimiento propuesto.
 \end_layout
 
 \begin_layout Subsection
@@ -876,8 +957,8 @@ name "sec13:objetivo-general"
 
 \begin_layout Standard
 Implementar un sistema de reconocimiento de actividades humanas con teléfonos
- móviles cuyo principal aporte sea una librería de código abierto libremente
- distribuido.
+ móviles cuyo principal aporte sea un componente de software en forma de
+ librería de código abierto y libremente distribuido.
 \end_layout
 
 \begin_layout Subsection
@@ -901,7 +982,8 @@ name "enu:obe1"
 
 \end_inset
 
-Definir el estado del arte sobre reconocimiento de actividades humanas (
+Definir el marco teórico sobre el reconocimiento de actividades humanas
+ (
 \begin_inset ERT
 status open
 
@@ -937,8 +1019,8 @@ name "enu:obe3"
 
 \end_inset
 
-Comprender el procesamiento de señales de datos de aceleración inercial
- para identificar variables significativas de entrenamiento.
+Comprender el procesamiento de señales de datos inerciales para identificar
+ variables significativas de entrenamiento.
  
 \end_layout
 
@@ -961,8 +1043,9 @@ name "enu:obe5"
 
 \end_inset
 
-Diseñar un sistema de reconocimiento de actividades que comprenda la recolección
- de muestras de manera colaborativa y predicción de actividades en-línea.
+Diseñar un sistema de reconocimiento de actividades que se componga de la
+ recolección de muestras colaborativas y predicción de actividades humanas
+ en-línea.
  
 \end_layout
 
@@ -973,8 +1056,21 @@ name "enu:obe6"
 
 \end_inset
 
-Aportar un componente de software de código abierto para uso en teléfonos
- móviles inteligentes.
+Aportar un componente de software en forma de librería para uso en teléfonos
+ móviles modernos con la plataforma 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -993,29 +1089,174 @@ name "sec14:organizaciuxf3n-del-trabajo"
 \end_layout
 
 \begin_layout Standard
-El trabajo está organizado en la siguiente manera: en el Capítulo 2 se presenta
- define el marco teórico del área describiendo los conceptos principales
- del reconocimiento de actividades humanas, sus características, dificultades,
- y las metodologías existentes.
- El Capítulo 3 definimos el aprendizaje automático, los tipos de aprendizajes,
- y las distintas técnicas o enfoques aplicados, dando énfasis en los arboles
- de decisión.
- Estos capítulos representan el estado del arte de este trabajo.
+Este trabajo se centra en el diseño e implementación de un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ utilizando teléfonos móviles modernos basados en 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+.
+ El trabajo está organizado en las siguientes partes: en el Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap2:marco-teorico"
+
+\end_inset
+
+ se definen las ideas generales relevantes al área de estudio para crear
+ sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ con miras a generalizar la perspectiva acerca del problema de abordado.
+ El Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap3:Aprendizaje-Automatico"
+
+\end_inset
+
+ examina los detalles acerca de las practicas sobre el aprendizaje automático,
+ los tipos de aprendizajes, las distintas técnicas o enfoques aplicados,
+ dando un énfasis especial en los arboles de decisión.
+ Estos capítulos resumen el estado del arte en el área de los sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-El Capítulo 4 se presenta en detalle la construcción de un sistema de reconocimi
-ento para teléfonos móviles.
- Continuando, en el Capítulo 5 se discute el modelo y la implementación
- de un reconocedor de actividades colaborativo, su diseño, arquitectura,
- y tecnologías utilizadas.
+El Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap4:sistemas-de-reconocimiento"
+
+\end_inset
+
+ explica en detalle la arquitectura de los sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ para dispositivos móviles junto con las consideraciones generales de diseño
+ e implementación tomadas en cuenta en este trabajo.
+ En el Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap5:hardroid"
+
+\end_inset
+
+ se introduce la propuesta de implementación de un reconocedor de actividades
+ humanas colaborativo y en linea utilizando la plataforma 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-En el Capítulo 6 se detallan los protocolos de los experimentos realizados,
- y en el Capítulo 7 los resultados obtenidos durante el estudio.
- Para finalizar, en el Capítulo 8 se incluyen las conclusiones y los posibles
- trabajos futuros.
+El Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap6:experimentos"
+
+\end_inset
+
+ presenta los protocolos realizados para obtener datos experimentales necesarios
+ para conducir los experimentos de este trabajo, se incluyen las pruebas
+ supervisadas y la validación de los datos.
+ En el Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap7:resultados"
+
+\end_inset
+
+ se expone la evaluación en base a los resultados obtenidos durante las
+ pruebas del sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ propuesto instalado en teléfonos móviles y utilizado en condiciones reales.
+ 
+\end_layout
+
+\begin_layout Standard
+Para finalizar, en el Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap8:conclusiones-y-trabajos-futuros"
+
+\end_inset
+
+ se resumen los logros y los posibles trabajos futuros relacionados a este
+ trabajo.
  
 \end_layout
 

@@ -3,9 +3,8 @@
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter. #1 }}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
 \fancyhf{}
-%%\fancyhead[LE,LO]{\bfseries\rightmark}
-%%\fancyhead[RE,RO]{\bfseries\leftmark}
-\fancyhead[LE,RO]{\chaptermark}
+\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{}{\leftmark}}
+\fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\rightmark}{}}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
