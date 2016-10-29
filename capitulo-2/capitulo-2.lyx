@@ -85,21 +85,6 @@ name "chap2:marco-teorico"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%##Capítulo 2.
- Reconocimiento de Actividades
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Introducción
 \end_layout
@@ -196,36 +181,63 @@ name "sec22:contexto"
 
 \end_inset
 
-El conocimiento del contexto de usuario es una de las nuevas aplicaciones
- y servicios móviles en el área de la computación ubicua.
- En general, el contexto de usuario significa su actividad, ubicación, preferenc
-ia, su situación, emoción, etc.
- Con los teléfonos móviles cada vez más potentes, la mayoría de los puntos
- mencionados del contexto se determinan con componentes de detección integrados
- en los teléfonos móviles, como acelerómetro, 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{GPS}
-\end_layout
-
-\end_inset
-
-, micrófono, bluetooth, cámara, etc.
- En esencia, los teléfonos móviles pueden crear redes de sensores móviles
- que son capaces de recoger datos de los sensores sobre la vida diaria de
- un usuario, es decir, quien es, lo que está haciendo el usuario, donde
- se encuentra, ya quien esta ?
+En la actualidad construir aplicaciones interactivas requieren tener en
+ cuenta el aspecto del contexto del usuario principalmente por la importancia
+ de este asunto debido a que este cambia con mucha frecuencia, como ocurren
+ en la computación móvil y ubicua.
+ El contexto de un usuario es un medio adicional para la interacción entre
+ computadora y humano, además de otros los métodos convencionales de entrada
+ de datos.
+ Este nuevo medio abre nuevas posibilidades de comunicación y producción
+ de nuevos servicios en computación.
+ 
 \end_layout
 
 \begin_layout Standard
-En este trabajo, investigamos posibilidades y viabilidades de tener un servicio
- para obtener el contexto de la actividad física diaria de los usuarios
- con teléfonos móviles.
+Pero, ¿qué es el contexto?, citando otras fuentes podemos definir el contexto
+ como: "
+\emph on
+...
+ cualquier información que pueda ser utilizada para caracterizar la situación
+ de una entidad.
+ Un entidad es una persona, lugar, o objeto que es considerado relevante
+ en la interacción entre el usuario y la aplicación, incluyendo al usuario
+ y la aplicación
+\emph default
+" 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dey2000"
+
+\end_inset
+
+.
+ De manera específica, el contexto de un usuario es el estado de su información
+ física, emocional o social, sin dejar de lado cualquier otra situación
+ en que el usuario esté involucrado y sea relevante para la aplicación.
+\end_layout
+
+\begin_layout Standard
+Debido a la libertad de movilidad presentes en la computación móvil y ubicua,
+ es primordial construir aplicaciones que conozcan el contexto de sus usuarios
+ (
+\emph on
+context-aware
+\emph default
+, o aplicaciones de contexto).
+ Debido a que el entorno de ejecución cambia con cierto dinamismo, el rango
+ de situaciones posibles del usuario se amplia y por lo tanto se requiere
+ que los servicios proveídos por una aplicación se adapten para mejorar
+ la interacción entre el usuario y el computador.
+ 
+\end_layout
+
+\begin_layout Standard
+Los tipos de contexto prácticos más importantes en las aplicaciones de contexto
+ con computación móvil son la ubicación, la identidad, la actividad y el
+ tiempo.
+ Esta caracterización permite a los diseñadores de aplicaciones escoger
+ el contexto más relevante para su uso.
 \end_layout
 
 \begin_layout Section
@@ -303,7 +315,7 @@ key "Bao2004"
 \end_inset
 
  pero también pueden formar parte de la ropa o embebido en otro accesorio
- de uso común, como relojes, anteojos, o teléfonos móviles.
+ de uso común, como relojes, anteojos y teléfonos móviles.
  Como característica tienen una batería que proporciona la energía para
  poder operar, y algunos cuentan con conexiones inalámbricas (con WIFI/Bluetooh)
  para la transmisión de los datos obtenidos.
@@ -326,7 +338,7 @@ abbr{GPS}
 \end_inset
 
 ), posicionamiento en interiores y movimientos del cuerpo.
- Todos estas mediciones son utilices para tener una constante información
+ Todos estas mediciones son útiles para tener una constante información
  del estado de una persona en cualquier momento.
 \end_layout
 
@@ -406,24 +418,6 @@ Ambiental miden datos externos que rodean al individuo como el nivel de
  
 \end_layout
 
-\begin_layout Standard
-[Después hay que mencionar que dentro de los 
-\emph on
-wearables
-\emph default
- están los que usan sensores acelerómetro en varias partes del cuerpo y
- los que usan acelerómetro de teléfonos móviles.
- Otros autores como 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "karmul2010"
-
-\end_inset
-
- extraen al reconocimiento con cámaras de vídeo como una clasificación diferente
- a los ambientales.]
-\end_layout
-
 \begin_layout Section
 Teléfonos móviles modernos
 \end_layout
@@ -438,26 +432,30 @@ name "sec24:dispositivos-moviles"
  Los dispositivos móviles, tales como teléfonos móviles, reproductores de
  música o relojes inteligentes, han comenzado ya hace un par de años en
  incorporar diversos sensores.
- Algunos de los sensores son 
+ Debido a su tamaño reducido de estos dispositivos inteligentes, su enorme
+ capacidad de procesamiento, la posibilidad de recibir y enviar datos; y
+ su omnipresencia en nuestra sociedad de hoy, lo hacen dispositivos de preferenc
+ia para utilizarlo en la vida diaria de un usuario.
+\end_layout
+
+\begin_layout Standard
+En este trabajo, investigamos posibilidades y viabilidades de tener un servicio
+ para obtener el contexto de la actividad física diaria de los usuarios
+ con teléfonos móviles.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-abbr{GPS}
+%% TODO: Definir mejor los teléfonos móviles, no tanto los sensores
 \end_layout
 
 \end_inset
 
-, de audio (micrófonos), de imágenes (cámaras), de luz, sensores de temperatura,
- sensor de dirección (brújula), y acelerómetro.
- Debido a su tamaño reducido de estos dispositivos inteligentes, su enorme
- capacidad de procesamiento, la posibilidad de recibir y enviar datos; y
- su omnipresencia en nuestra sociedad de hoy, lo hacen dispositivos de preferenc
-ia para utilizarlo en la implementación de un sistema reconocedor de actividades
- Humanas.
+
 \end_layout
 
 \begin_layout Section
@@ -591,7 +589,7 @@ centering
 
 \begin_layout Plain Layout
 \begin_inset Argument 1
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Flujo HAR
@@ -599,7 +597,7 @@ Flujo HAR
 
 \end_inset
 
-Flujo general del Reconocimiento de Actividades Humanas (HAR)
+Flujo general del Reconocimiento de Actividades Humanas
 \end_layout
 
 \end_inset
@@ -633,7 +631,14 @@ figref{fig:harsystem}
 
 \end_inset
 
- se visualiza las fases comunes de las dos etapas.
+ se visualiza las fases comunes de las dos etapas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
  La etapa de entrenamiento requiere inicialmente un conjunto de datos recolectad
 os en una serie de tiempo con los atributos medidos a partir de individuos
  que realizan cada actividad.
@@ -649,7 +654,8 @@ sticas utilizadas en el modelo, estas se evalúan en el modelo de aprendizaje
 \end_layout
 
 \begin_layout Standard
-Para cada estaba tenemos puntos a tener en cuenta:
+En las siguientes secciones detallamos el objetivo de la clasificación,
+ las responsabilidades de cada etapa y la definición formal del problema.
 \end_layout
 
 \begin_layout Subsection
@@ -954,7 +960,7 @@ Otra de las consideraciones a tener en cuenta en este punto es la cantidad
 \end_layout
 
 \begin_layout Subsection
-Selección y Extracción de Características
+Extracción de Muestras
 \end_layout
 
 \begin_layout Standard
@@ -994,7 +1000,7 @@ abbr{HAR}
 \end_layout
 
 \begin_layout Subsection
-Métodos de Aprendizaje
+Aprendizaje e Inferencia
 \end_layout
 
 \begin_layout Standard
@@ -1131,7 +1137,7 @@ abbr{HMM}
 \begin_layout Standard
 Otros aspectos relevantes para la selección del algoritmo de modelo de aprendiza
 je incluyen: el consumo de energía, los requisitos de memoria, interpretabilidad
- y complejidad computacional, etc.
+ y complejidad de computo, etc.
  Estos aspectos se agudizan si se utilizan dispositivos inteligentes .Como
  cuestión de ejemplo, árboles de decisión podrían ser preferidos cuando
  se requiere simplicidad en su implementación y 
@@ -1174,7 +1180,29 @@ Definición del Problema
 \end_layout
 
 \begin_layout Standard
-Teniendo en cuenta todo esto puntos podemos definir el problema como:
+El marco teórico del estudio de los 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ no podría estar completo sin una definición formal del problema.
+ Considerando el objetivo y los elementos del proceso de reconocimiento
+ podemos definir el problema según 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
@@ -1185,7 +1213,7 @@ status open
 
 
 \backslash
-newtheorem{defi}{Definición}
+newtheorem{defi}{Definición 1}
 \end_layout
 
 \end_inset
@@ -1206,7 +1234,7 @@ begin{defi}
 
 \end_inset
 
-(HARP) Dado un conjunto 
+(Problema HAR) Dado un conjunto 
 \begin_inset Formula $S=\{S_{0},...,S_{k-1}\}$
 \end_inset
 
@@ -1214,12 +1242,13 @@ begin{defi}
 \begin_inset Formula $k$
 \end_inset
 
- series de tiempo, cada una medida de cada atributo, y todo definido en
- un intervalo de tiempo 
-\begin_inset Formula $I=\left[t_{\alpha},t_{\omega}\right]$
+ series de tiempo, cada una con una medida particular de cada atributo,
+ y definidas en el intervalo de tiempo 
+\begin_inset Formula $I=\left[t_{\alpha},t_{\omega}\right]$
 \end_inset
 
- el objetivo es encontrar un sub-intervalo de tiempo 
+, el objetivo es encontrar una partición temporal (sub-intervalo de tiempo)
+ 
 \begin_inset Formula $\left\langle I_{0},...,I_{r-1}\right\rangle $
 \end_inset
 
@@ -1227,22 +1256,26 @@ begin{defi}
 \begin_inset Formula $I$
 \end_inset
 
-, basado en datos de 
+, basado en los datos de 
 \begin_inset Formula $S$
 \end_inset
 
- y conjunto de etiquetas que representan la actividad realizada durante
+ y el conjunto de etiquetas que representan la actividad realizada durante
  cada intervalo 
 \begin_inset Formula $I_{j}$
 \end_inset
 
  (Ej.
- sentado, caminando, corriendo, etc.).
- Esto implica que cada intervalo 
+ quieto, caminando, corriendo, etc.).
+ 
+\end_layout
+
+\begin_layout Standard
+Esto implica que cada intervalo 
 \begin_inset Formula $I_{j}$
 \end_inset
 
- son consecutivos, no vacíos, no superpuestos y tal que 
+ son consecutivos, no vacíos, no superpuestos y que 
 \begin_inset Formula ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
 \end_inset
 
@@ -1263,10 +1296,142 @@ end{defi}
 \end_layout
 
 \begin_layout Standard
-Note que el HARP no es factible una resolución determinista.
+Se asumen que las actividades consideradas no son realizadas simultáneamente,
+ como correr y caminar al mismo tiempo.
+ Además, se debe notar que el problema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ no es factible a ser resuelto con una solución determinista.
  El numero de combinaciones de valores de atributos y actividades puede
- ser muy grande a veces infinito; y encontrar los puntos de transición es
- complicado teniendo en cuenta que se desconoce la duración de las actividades.
+ ser muy grande, inclusive infinito; y encontrar los puntos de transición
+ es complicado teniendo en cuenta que se desconoce la duración cada actividad.
+ 
+\end_layout
+
+\begin_layout Standard
+Las practicas de aprendizaje automático son utilizadas para reconocer actividade
+s por medio de la clasificación.
+ La utilización de las prácticas de aprendizaje automático para resolver
+ el problema requiere la introducción de una definición relajada del problema
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ que sigue: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{defi}{Definición 2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+(Problema HAR relajado) Dado (1) un conjunto 
+\begin_inset Formula $W=\{W_{0},...,W_{m-1}\}$
+\end_inset
+
+ de 
+\begin_inset Formula $m$
+\end_inset
+
+ ventanas de tiempo del mismo tamaño, donde cada una esta total o parcialmente
+ etiquetada, y que cada 
+\begin_inset Formula $W_{i}$
+\end_inset
+
+ contiene un conjunto de series de tiempo 
+\begin_inset Formula $S_{i}=\{S_{i,0},...,S_{i,k-1}\}$
+\end_inset
+
+ para cada 
+\begin_inset Formula $k$
+\end_inset
+
+ de atributos medidos, y (2) un conjunto 
+\begin_inset Formula $A\text{=}\{a_{0},...,a_{n-1}\}$
+\end_inset
+
+ de etiquetas de actividades, el objetivo es encontrar una función 
+\begin_inset Formula $f\colon S_{i}\rightarrow A$
+\end_inset
+
+ que pueda ser evaluada para todos los valores posibles de 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+, tal que 
+\begin_inset Formula $f(S_{i})$
+\end_inset
+
+ es lo más próximo a la actividad realizada durante 
+\begin_inset Formula $W_{i}$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Utilizar esta definición relajada introduce un error en el modelo durante
+ las ventanas de transición entre actividades, debido a que en una ventana
+ de tiempo una persona puede estar realizando más de una actividad.
+ Sin embargo, el número de ventanas en transición es menor al número total
+ de ventanas por lo que el error introducido por la relajación no es significati
+vo para la mayoría de las aplicaciones.
 \end_layout
 
 \begin_layout Section
@@ -1283,7 +1448,7 @@ name "sec27:conclusion"
 Este capitulo abarcó los tópicos primordiales del estudio del reconocimiento
  de las actividades humanas.
  Los conceptos descritos sirven de base de conocimiento para entender el
- problema de los sistemas 
+ problema de 
 \begin_inset ERT
 status open
 
