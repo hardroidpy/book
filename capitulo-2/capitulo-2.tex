@@ -20,7 +20,7 @@ durante su locomoción. Las siguientes secciones dan todos los elementos
 requeridos para implementar los sistemas \abbr{HAR}. Desde el punto
 de vista de implementación se discuten los sensores y los teléfonos
 móviles inteligentes. La última sección define el marco teórico del
-reconocimiento de actividades humanas en base al estado del arte.
+reconocimiento de actividades humanas en base al estado de arte.
 
 \section{Aplicaciones de contexto}
 
@@ -158,9 +158,81 @@ datos.
 
 \section{Reconocimiento de Actividades Humanas}
 
-\label{sec25:metodologia-har} Al igual que en otras aplicaciones
-de aprendizaje automático, la actividad el reconocimiento requiere
-dos etapas, es decir, entrenamiento y las pruebas o evaluación.
+El campo de estudio del \abbr{HAR} incluye las metodologías para
+comprender el comportamiento humano a partir de interpretar atributos
+derivados de diversas fuentes \cite{Bao2004,Poppe2007}, como por
+ejemplo el movimiento con sensores, ubicación u otras señales fisiológicas. 
+
+El objetivo es identificar las acciones llevadas acabo por una persona
+en base a observaciones realizadas sobre el mismo en el entorno que
+se desenvuelve. Las aplicaciones en computación móvil y ubicua explotan
+el contexto del usuario haciendo uso de sistemas \abbr{HAR} como
+una herramienta tecnológica. Para tener un conocimiento acabado de
+este trabajo, en esta sección se expone una descripción general de
+aspectos clave como la definición del problema, el proceso de reconocimiento
+estándar, las actividades estudiadas y las técnicas de aprendizaje.
+
+\subsection{Definición del Problema}
+
+\label{sec261:definicion-har}De manera a establecer el marco teórico
+de estudio del problema \abbr{HAR} en este apartado se describe una
+definición formal del problema. Considerando el objetivo y los elementos
+de reconocimiento podemos definir el problema como\cite{LaraLabrador2013}:
+
+\newtheorem{defi}{Definición}
+
+\begin{defi}(Problema \abbr{HAR}) Dado un conjunto $S=\{S_{0},...,S_{k-1}\}$
+de $k$ series de tiempo, cada una con una medida particular de cada
+atributo, y definidas en el intervalo de tiempo $I=\left[t_{\alpha},t_{\omega}\right]$,
+el objetivo es encontrar una partición temporal (sub-intervalo de
+tiempo) $\left\langle I_{0},...,I_{r-1}\right\rangle $ en $I$, basado
+en los datos de $S$ y el conjunto de etiquetas que representan la
+acción realizada durante cada intervalo $I_{j}$ (Ej. quieto, caminando,
+corriendo, etc.). 
+
+Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos,
+no superpuestos y que ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
+\end{defi}
+
+Se asumen que las acciones consideradas no son realizadas simultáneamente,
+es decir la persona no realiza la acción de correr y caminar al mismo
+tiempo. Además, se debe notar que el problema \abbr{HAR} no es factible
+a ser resuelto con una solución determinista. El numero de combinaciones
+de valores de atributos y acciones puede ser muy grande, inclusive
+infinito; y encontrar los puntos de transición es complejo teniendo
+en cuenta que se desconoce la duración cada acción. 
+
+Es por esta razón que las metodologías de aprendizaje automático son
+utilizadas como proceso para reconocer actividades humanas por medio
+de la técnica clasificación. Debido a la utilización de aprendizaje
+automático para la resolución del problema, se requiere la siguiente
+definición relajada del problema \abbr{HAR} descrito anteriormente: 
+
+\newtheorem{defi}{Definición}
+
+\begin{defi}(Problema \abbr{HAR} relajado) Dado (1) un conjunto
+$W=\{W_{0},...,W_{m-1}\}$ de $m$ ventanas de tiempo del mismo tamaño,
+donde cada una está total o parcialmente etiquetada, y que cada $W_{i}$
+contiene un conjunto de series de tiempo $S_{i}=\{S_{i,0},...,S_{i,k-1}\}$
+para cada $k$ atributos medidos, y (2) un conjunto $A\text{=}\{a_{0},...,a_{n-1}\}$
+de etiquetas de actividades, el objetivo es encontrar una función
+$f\colon S_{i}\rightarrow A$ que sea evaluada para todos los valores
+posibles de $S_{i}$, tal que $f(S_{i})$ es lo más próximo a la acción
+realizada durante $W_{i}$ \end{defi}
+
+Considerar la utilización de esta definición relajada introduce un
+error en el modelo durante las ventanas de transición entre actividades,
+debido a que, en una ventana de tiempo una persona puede estar realizando
+más de una acción. Sin embargo, el número de ventanas en transición
+es menor al número total de ventanas por lo que el error introducido
+por relajar el problema no es significativo para la mayoría de las
+aplicaciones.
+
+\subsection{Proceso de Reconocimiento }
+
+\label{sec262:proceso-har}Al igual que en otras aplicaciones de aprendizaje
+automático, el proceso de reconocimiento se divide en dos etapas bien
+conocidas, la de entrenamiento y las pruebas (o evaluación).
 
 \begin{figure}[!htbp]
 \centering \includegraphics[width=0.7\linewidth]{capitulo-2/graphics/harsystem}
@@ -174,27 +246,30 @@ inicialmente un conjunto de datos recolectados en una serie de tiempo
 con los atributos medidos a partir de individuos que realizan cada
 actividad. Las series se dividen en ventanas de tiempo para aplicar
 la extracción de muestras filtrando así la información relevante en
-las señales en bruto. Más tarde, los métodos de aprendizaje se utilizan
-para generar un modelo de reconocimiento de actividades del conjunto
-de datos colectado a través de las características calculadas. Del
-mismo modo, para la etapa de prueba o evaluación, se recogen datos
-durante una ventana de tiempo, que se utiliza para extraer las mismas
-características utilizadas en el modelo, estas se evalúan en el modelo
-de aprendizaje previamente entrenado, generando una etiqueta de la
-actividad predicha.
+las señales en bruto. 
 
-En las siguientes secciones detallamos el objetivo de la clasificación,
-las responsabilidades de cada etapa y la definición formal del problema.
+Más adelante, se utilizan métodos de aprendizaje para generar un modelo
+de reconocimiento de actividades a partir del conjunto de datos colectado
+a través de las características calculadas. Del mismo modo, para la
+etapa de prueba o evaluación, se recogen datos durante una ventana
+de tiempo, que se utiliza para extraer las mismas características
+utilizadas en el modelo, estas se evalúan en el modelo de aprendizaje
+previamente entrenado, generando una etiqueta de la actividad predicha.
+
+En las siguientes secciones detallamos el objeto de la clasificación
+(actividades humanas) y las funciones de cada etapa.
 
 \subsection{Actividades Humanas}
 
-\label{sec22:actividades-humanas} El diseño de un sistema \abbr{HAR}
-depende totalmente de las actividades definidas que van a ser reconocida.
-Por lo tanto, el cambio del conjunto de actividades que el sistema
-reconoce convierte al problema en uno completamente diferente al anterior.
+\label{sec263:actividades-humanas} El diseño e implementación de
+un sistema \abbr{HAR} depende totalmente de las actividades que serán
+reconocidas. Por lo tanto, el cambio del conjunto de actividades que
+un sistema reconoce convierte al problema en uno completamente distinto
+a otro sistema construido con el mismo propósito.
 
-Teniendo en cuenta esto, las distintas publicaciones, tenemos estos
-siete distintos grupos de actividades en la siguiente tabla.
+Teniendo en cuenta esta razón, y de acuerdo a distintas publicaciones,
+presentamos siete grupos distintos de actividades agrupados en la
+siguiente tabla.
 
 \begin{table}[htbp]
 \centering{}%
@@ -223,16 +298,27 @@ Parte superior del cuerpo  & Masticar, hablar, mover la cabeza, tragar líquidos
 \label{tabla:sencilla} 
 \end{table}
 
+Las actividades pueden separase en varios grupos de acuerdo a la duración
+y la complejidad del evento. Los eventos cortos son movimientos de
+transición y movimientos en base a gestos. Los eventos al que nos
+enfocamos en este trabajo son aquellos que se componen de las actividades
+básicas de larga duración que se caracterizan por las acciones continuas
+y cíclicas de un individuo \cite{ReyesOrtiz2015}. Nuestro estudio
+no se basa en actividades complejas que sean una secuencia de actividades
+básicas y eventos cortos.
+
+Definimos como objetivo de estudio detectar actividades básicas ambulatorias
+y de transporte, de larga duración y sin cambios bruscos de transición.
 
 \subsection{Colección de Datos}
 
 La definición del método de colección de datos es un punto importante
-en un \abbr{HAR}. Según como se realiza la observación del individuo
-existen: ambientes realistas, que son los ideales pero no siempre
-es posible realizar este tipo de colectas. También existen los ambientes
-cuasi realistas que se realizan en laboratorios simulando las condiciones
-reales de las actividades. Por otro lado tenemos los ambientes totalmente
-controlados en laboratorio.
+en un sistema \abbr{HAR}. Según como se realiza la observación del
+individuo existen: ambientes realistas, que son los ideales pero no
+siempre es posible realizar este tipo de colectas. También existen
+los ambientes cuasi realistas que se realizan en laboratorios simulando
+las condiciones reales de las actividades. Por otro lado tenemos los
+ambientes totalmente controlados en laboratorio.
 
 Una falla en el diseño de un sistema \abbr{HAR} se puede dar por
 no considerar las condiciones reales de las actividades, tales como
@@ -290,60 +376,6 @@ alto rendimiento\cite{ReyesOrtiz2015}.
 
 En el capitulo \ref{chap:Aprendizaje-Automatico} se detalla todo
 lo referente a métodos de aprendizaje y los utilizados en este trabajo.
-
-\subsection{Definición del Problema}
-
-El marco teórico del estudio de los \abbr{HAR} no podría estar completo
-sin una definición formal del problema. Considerando el objetivo y
-los elementos del proceso de reconocimiento podemos definir el problema
-según \cite{LaraLabrador2013}:
-
-\newtheorem{defi}{Definición 1}
-
-\begin{defi}(Problema HAR) Dado un conjunto $S=\{S_{0},...,S_{k-1}\}$
-de $k$ series de tiempo, cada una con una medida particular de cada
-atributo, y definidas en el intervalo de tiempo $I=\left[t_{\alpha},t_{\omega}\right]$,
-el objetivo es encontrar una partición temporal (sub-intervalo de
-tiempo) $\left\langle I_{0},...,I_{r-1}\right\rangle $ en $I$, basado
-en los datos de $S$ y el conjunto de etiquetas que representan la
-actividad realizada durante cada intervalo $I_{j}$ (Ej. quieto, caminando,
-corriendo, etc.). 
-
-Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos,
-no superpuestos y que ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
-\end{defi}
-
-Se asumen que las actividades consideradas no son realizadas simultáneamente,
-como correr y caminar al mismo tiempo. Además, se debe notar que el
-problema \abbr{HAR} no es factible a ser resuelto con una solución
-determinista. El numero de combinaciones de valores de atributos y
-actividades puede ser muy grande, inclusive infinito; y encontrar
-los puntos de transición es complicado teniendo en cuenta que se desconoce
-la duración cada actividad. 
-
-Las practicas de aprendizaje automático son utilizadas para reconocer
-actividades por medio de la clasificación. La utilización de las prácticas
-de aprendizaje automático para resolver el problema requiere la introducción
-de una definición relajada del problema \abbr{HAR} que sigue: 
-
-\newtheorem{defi}{Definición 2}
-
-\begin{defi}(Problema HAR relajado) Dado (1) un conjunto $W=\{W_{0},...,W_{m-1}\}$
-de $m$ ventanas de tiempo del mismo tamaño, donde cada una esta total
-o parcialmente etiquetada, y que cada $W_{i}$ contiene un conjunto
-de series de tiempo $S_{i}=\{S_{i,0},...,S_{i,k-1}\}$ para cada $k$
-de atributos medidos, y (2) un conjunto $A\text{=}\{a_{0},...,a_{n-1}\}$
-de etiquetas de actividades, el objetivo es encontrar una función
-$f\colon S_{i}\rightarrow A$ que pueda ser evaluada para todos los
-valores posibles de $S_{i}$, tal que $f(S_{i})$ es lo más próximo
-a la actividad realizada durante $W_{i}$ \end{defi}
-
-Utilizar esta definición relajada introduce un error en el modelo
-durante las ventanas de transición entre actividades, debido a que
-en una ventana de tiempo una persona puede estar realizando más de
-una actividad. Sin embargo, el número de ventanas en transición es
-menor al número total de ventanas por lo que el error introducido
-por la relajación no es significativo para la mayoría de las aplicaciones.
 
 \section{Conclusión}
 

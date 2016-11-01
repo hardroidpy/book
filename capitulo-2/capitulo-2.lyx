@@ -167,7 +167,7 @@ abbr{HAR}
  Desde el punto de vista de implementación se discuten los sensores y los
  teléfonos móviles inteligentes.
  La última sección define el marco teórico del reconocimiento de actividades
- humanas en base al estado del arte.
+ humanas en base al estado de arte.
 \end_layout
 
 \begin_layout Section
@@ -546,15 +546,362 @@ Reconocimiento de Actividades Humanas
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "sec25:metodologia-har"
+El campo de estudio del 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
 
 \end_inset
 
- Al igual que en otras aplicaciones de aprendizaje automático, la actividad
- el reconocimiento requiere dos etapas, es decir, entrenamiento y las pruebas
- o evaluación.
+ incluye las metodologías para comprender el comportamiento humano a partir
+ de interpretar atributos derivados de diversas fuentes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004,Poppe2007"
+
+\end_inset
+
+, como por ejemplo el movimiento con sensores, ubicación u otras señales
+ fisiológicas.
+ 
+\end_layout
+
+\begin_layout Standard
+El objetivo es identificar las acciones llevadas acabo por una persona en
+ base a observaciones realizadas sobre el mismo en el entorno que se desenvuelve.
+ Las aplicaciones en computación móvil y ubicua explotan el contexto del
+ usuario haciendo uso de sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ como una herramienta tecnológica.
+ Para tener un conocimiento acabado de este trabajo, en esta sección se
+ expone una descripción general de aspectos clave como la definición del
+ problema, el proceso de reconocimiento estándar, las actividades estudiadas
+ y las técnicas de aprendizaje.
+\end_layout
+
+\begin_layout Subsection
+Definición del Problema
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec261:definicion-har"
+
+\end_inset
+
+De manera a establecer el marco teórico de estudio del problema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ en este apartado se describe una definición formal del problema.
+ Considerando el objetivo y los elementos de reconocimiento podemos definir
+ el problema como
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{defi}{Definición}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+(Problema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+) Dado un conjunto 
+\begin_inset Formula $S=\{S_{0},...,S_{k-1}\}$
+\end_inset
+
+ de 
+\begin_inset Formula $k$
+\end_inset
+
+ series de tiempo, cada una con una medida particular de cada atributo,
+ y definidas en el intervalo de tiempo 
+\begin_inset Formula $I=\left[t_{\alpha},t_{\omega}\right]$
+\end_inset
+
+, el objetivo es encontrar una partición temporal (sub-intervalo de tiempo)
+ 
+\begin_inset Formula $\left\langle I_{0},...,I_{r-1}\right\rangle $
+\end_inset
+
+ en 
+\begin_inset Formula $I$
+\end_inset
+
+, basado en los datos de 
+\begin_inset Formula $S$
+\end_inset
+
+ y el conjunto de etiquetas que representan la acción realizada durante
+ cada intervalo 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+ (Ej.
+ quieto, caminando, corriendo, etc.).
+ 
+\end_layout
+
+\begin_layout Standard
+Esto implica que cada intervalo 
+\begin_inset Formula $I_{j}$
+\end_inset
+
+ son consecutivos, no vacíos, no superpuestos y que 
+\begin_inset Formula ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se asumen que las acciones consideradas no son realizadas simultáneamente,
+ es decir la persona no realiza la acción de correr y caminar al mismo tiempo.
+ Además, se debe notar que el problema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ no es factible a ser resuelto con una solución determinista.
+ El numero de combinaciones de valores de atributos y acciones puede ser
+ muy grande, inclusive infinito; y encontrar los puntos de transición es
+ complejo teniendo en cuenta que se desconoce la duración cada acción.
+ 
+\end_layout
+
+\begin_layout Standard
+Es por esta razón que las metodologías de aprendizaje automático son utilizadas
+ como proceso para reconocer actividades humanas por medio de la técnica
+ clasificación.
+ Debido a la utilización de aprendizaje automático para la resolución del
+ problema, se requiere la siguiente definición relajada del problema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ descrito anteriormente: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{defi}{Definición}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+(Problema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ relajado) Dado (1) un conjunto 
+\begin_inset Formula $W=\{W_{0},...,W_{m-1}\}$
+\end_inset
+
+ de 
+\begin_inset Formula $m$
+\end_inset
+
+ ventanas de tiempo del mismo tamaño, donde cada una está total o parcialmente
+ etiquetada, y que cada 
+\begin_inset Formula $W_{i}$
+\end_inset
+
+ contiene un conjunto de series de tiempo 
+\begin_inset Formula $S_{i}=\{S_{i,0},...,S_{i,k-1}\}$
+\end_inset
+
+ para cada 
+\begin_inset Formula $k$
+\end_inset
+
+ atributos medidos, y (2) un conjunto 
+\begin_inset Formula $A\text{=}\{a_{0},...,a_{n-1}\}$
+\end_inset
+
+ de etiquetas de actividades, el objetivo es encontrar una función 
+\begin_inset Formula $f\colon S_{i}\rightarrow A$
+\end_inset
+
+ que sea evaluada para todos los valores posibles de 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+, tal que 
+\begin_inset Formula $f(S_{i})$
+\end_inset
+
+ es lo más próximo a la acción realizada durante 
+\begin_inset Formula $W_{i}$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considerar la utilización de esta definición relajada introduce un error
+ en el modelo durante las ventanas de transición entre actividades, debido
+ a que, en una ventana de tiempo una persona puede estar realizando más
+ de una acción.
+ Sin embargo, el número de ventanas en transición es menor al número total
+ de ventanas por lo que el error introducido por relajar el problema no
+ es significativo para la mayoría de las aplicaciones.
+\end_layout
+
+\begin_layout Subsection
+Proceso de Reconocimiento 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec262:proceso-har"
+
+\end_inset
+
+Al igual que en otras aplicaciones de aprendizaje automático, el proceso
+ de reconocimiento se divide en dos etapas bien conocidas, la de entrenamiento
+ y las pruebas (o evaluación).
 \end_layout
 
 \begin_layout Standard
@@ -644,9 +991,13 @@ os en una serie de tiempo con los atributos medidos a partir de individuos
  que realizan cada actividad.
  Las series se dividen en ventanas de tiempo para aplicar la extracción
  de muestras filtrando así la información relevante en las señales en bruto.
- Más tarde, los métodos de aprendizaje se utilizan para generar un modelo
- de reconocimiento de actividades del conjunto de datos colectado a través
- de las características calculadas.
+ 
+\end_layout
+
+\begin_layout Standard
+Más adelante, se utilizan métodos de aprendizaje para generar un modelo
+ de reconocimiento de actividades a partir del conjunto de datos colectado
+ a través de las características calculadas.
  Del mismo modo, para la etapa de prueba o evaluación, se recogen datos
  durante una ventana de tiempo, que se utiliza para extraer las mismas caracterí
 sticas utilizadas en el modelo, estas se evalúan en el modelo de aprendizaje
@@ -654,8 +1005,8 @@ sticas utilizadas en el modelo, estas se evalúan en el modelo de aprendizaje
 \end_layout
 
 \begin_layout Standard
-En las siguientes secciones detallamos el objetivo de la clasificación,
- las responsabilidades de cada etapa y la definición formal del problema.
+En las siguientes secciones detallamos el objeto de la clasificación (actividade
+s humanas) y las funciones de cada etapa.
 \end_layout
 
 \begin_layout Subsection
@@ -665,11 +1016,11 @@ Actividades Humanas
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec22:actividades-humanas"
+name "sec263:actividades-humanas"
 
 \end_inset
 
- El diseño de un sistema 
+ El diseño e implementación de un sistema 
 \begin_inset ERT
 status open
 
@@ -682,14 +1033,15 @@ abbr{HAR}
 
 \end_inset
 
- depende totalmente de las actividades definidas que van a ser reconocida.
- Por lo tanto, el cambio del conjunto de actividades que el sistema reconoce
- convierte al problema en uno completamente diferente al anterior.
+ depende totalmente de las actividades que serán reconocidas.
+ Por lo tanto, el cambio del conjunto de actividades que un sistema reconoce
+ convierte al problema en uno completamente distinto a otro sistema construido
+ con el mismo propósito.
 \end_layout
 
 \begin_layout Standard
-Teniendo en cuenta esto, las distintas publicaciones, tenemos estos siete
- distintos grupos de actividades en la siguiente tabla.
+Teniendo en cuenta esta razón, y de acuerdo a distintas publicaciones, presentam
+os siete grupos distintos de actividades agrupados en la siguiente tabla.
 \end_layout
 
 \begin_layout Standard
@@ -907,13 +1259,37 @@ name "tabla:sencilla"
 
 \end_layout
 
+\begin_layout Standard
+Las actividades pueden separase en varios grupos de acuerdo a la duración
+ y la complejidad del evento.
+ Los eventos cortos son movimientos de transición y movimientos en base
+ a gestos.
+ Los eventos al que nos enfocamos en este trabajo son aquellos que se componen
+ de las actividades básicas de larga duración que se caracterizan por las
+ acciones continuas y cíclicas de un individuo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ReyesOrtiz2015"
+
+\end_inset
+
+.
+ Nuestro estudio no se basa en actividades complejas que sean una secuencia
+ de actividades básicas y eventos cortos.
+\end_layout
+
+\begin_layout Standard
+Definimos como objetivo de estudio detectar actividades básicas ambulatorias
+ y de transporte, de larga duración y sin cambios bruscos de transición.
+\end_layout
+
 \begin_layout Subsection
 Colección de Datos
 \end_layout
 
 \begin_layout Standard
 La definición del método de colección de datos es un punto importante en
- un 
+ un sistema 
 \begin_inset ERT
 status open
 
@@ -1173,265 +1549,6 @@ reference "chap:Aprendizaje-Automatico"
 
  se detalla todo lo referente a métodos de aprendizaje y los utilizados
  en este trabajo.
-\end_layout
-
-\begin_layout Subsection
-Definición del Problema
-\end_layout
-
-\begin_layout Standard
-El marco teórico del estudio de los 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
- no podría estar completo sin una definición formal del problema.
- Considerando el objetivo y los elementos del proceso de reconocimiento
- podemos definir el problema según 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "LaraLabrador2013"
-
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newtheorem{defi}{Definición 1}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{defi}
-\end_layout
-
-\end_inset
-
-(Problema HAR) Dado un conjunto 
-\begin_inset Formula $S=\{S_{0},...,S_{k-1}\}$
-\end_inset
-
- de 
-\begin_inset Formula $k$
-\end_inset
-
- series de tiempo, cada una con una medida particular de cada atributo,
- y definidas en el intervalo de tiempo 
-\begin_inset Formula $I=\left[t_{\alpha},t_{\omega}\right]$
-\end_inset
-
-, el objetivo es encontrar una partición temporal (sub-intervalo de tiempo)
- 
-\begin_inset Formula $\left\langle I_{0},...,I_{r-1}\right\rangle $
-\end_inset
-
- en 
-\begin_inset Formula $I$
-\end_inset
-
-, basado en los datos de 
-\begin_inset Formula $S$
-\end_inset
-
- y el conjunto de etiquetas que representan la actividad realizada durante
- cada intervalo 
-\begin_inset Formula $I_{j}$
-\end_inset
-
- (Ej.
- quieto, caminando, corriendo, etc.).
- 
-\end_layout
-
-\begin_layout Standard
-Esto implica que cada intervalo 
-\begin_inset Formula $I_{j}$
-\end_inset
-
- son consecutivos, no vacíos, no superpuestos y que 
-\begin_inset Formula ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{defi}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Se asumen que las actividades consideradas no son realizadas simultáneamente,
- como correr y caminar al mismo tiempo.
- Además, se debe notar que el problema 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
- no es factible a ser resuelto con una solución determinista.
- El numero de combinaciones de valores de atributos y actividades puede
- ser muy grande, inclusive infinito; y encontrar los puntos de transición
- es complicado teniendo en cuenta que se desconoce la duración cada actividad.
- 
-\end_layout
-
-\begin_layout Standard
-Las practicas de aprendizaje automático son utilizadas para reconocer actividade
-s por medio de la clasificación.
- La utilización de las prácticas de aprendizaje automático para resolver
- el problema requiere la introducción de una definición relajada del problema
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
- que sigue: 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newtheorem{defi}{Definición 2}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{defi}
-\end_layout
-
-\end_inset
-
-(Problema HAR relajado) Dado (1) un conjunto 
-\begin_inset Formula $W=\{W_{0},...,W_{m-1}\}$
-\end_inset
-
- de 
-\begin_inset Formula $m$
-\end_inset
-
- ventanas de tiempo del mismo tamaño, donde cada una esta total o parcialmente
- etiquetada, y que cada 
-\begin_inset Formula $W_{i}$
-\end_inset
-
- contiene un conjunto de series de tiempo 
-\begin_inset Formula $S_{i}=\{S_{i,0},...,S_{i,k-1}\}$
-\end_inset
-
- para cada 
-\begin_inset Formula $k$
-\end_inset
-
- de atributos medidos, y (2) un conjunto 
-\begin_inset Formula $A\text{=}\{a_{0},...,a_{n-1}\}$
-\end_inset
-
- de etiquetas de actividades, el objetivo es encontrar una función 
-\begin_inset Formula $f\colon S_{i}\rightarrow A$
-\end_inset
-
- que pueda ser evaluada para todos los valores posibles de 
-\begin_inset Formula $S_{i}$
-\end_inset
-
-, tal que 
-\begin_inset Formula $f(S_{i})$
-\end_inset
-
- es lo más próximo a la actividad realizada durante 
-\begin_inset Formula $W_{i}$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{defi}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Utilizar esta definición relajada introduce un error en el modelo durante
- las ventanas de transición entre actividades, debido a que en una ventana
- de tiempo una persona puede estar realizando más de una actividad.
- Sin embargo, el número de ventanas en transición es menor al número total
- de ventanas por lo que el error introducido por la relajación no es significati
-vo para la mayoría de las aplicaciones.
 \end_layout
 
 \begin_layout Section
