@@ -5,86 +5,134 @@
 
 \section{Introducción}
 
-\label{sec41:introduccion}
+\label{sec41:introduccion}El diseño de sistemas con conocimiento
+del contexto promueven una interacción novedosa con los usuarios y
+diversas aplicaciones en las áreas de ambientes inteligentes, repuesta
+a emergencias, vigilancia y otros \cite{Choudhury2008}. Un sistema
+con la capacidad de reconocer las actividades humanas por medio del
+uso de sensores empotrados posee mecanismos para crear aplicaciones
+de cuidado personal, salud y asistencia inteligente. El requerimiento
+primordial de un sistema con una aplicación de contexto es que este
+pueda ser portado continuamente como atuendo de sus usuarios (un sistema
+\abbr{Wearable}). Por lo tanto, un sistema que acompaña continuamente
+al usuario puede interaccionar oportunamente con el mismo ya que este
+tiene la capacidad de observar en tiempo real las acciones de su portador.
+La ventaja adicional de un sistema de este tipo es que puede ser desactivado
+fácilmente o removido de la actividad diaria de su usuario.
 
-En este capítulo se definen los requerimientos de implementación de
-un sistema de reconocimiento de actividades humanas (sistemas \abbr{HAR}).
-Se describe en detalle los mecanismos para implementar los mismos. 
+En este capítulo se definen los componentes principales de un sistema
+de reconocimiento de actividades humanas (sistemas \abbr{HAR}). El
+objetivo principal del sistema \abbr{HAR}en conjunto es proveer módulo
+base para aplicaciones novedosas de contexto. El módulo debe ser capaz
+de reconocer varias actividades realizadas rutinariamente de diferentes
+maneras, por diferentes usuarios y en diferentes condiciones contextuales.
+Las funciones principales de los componentes descritos en la primera
+sección exponen los mecanismos para implementar los mismos en base
+trabajos relacionados de \abbr{HAR} \cite{Choudhury2008,ReyesOrtiz2015}. 
 
-Primeramente, se describe el conjunto de componentes y sus funciones
-principales de manera general. Luego se describen los sensores adecuados
-para el reconocimiento de actividades y las características de los
-teléfonos móviles modernos utilizados como dispositivo seleccionado
-para la implementación de un sistema \abbr{HAR}.
+La última sección, enumera los requisitos no funcionales para lograr
+una aplicación de contexto móvil y ubicua. Por un lado, las características
+esperadas en una aplicación de esta naturaleza, y por el otro los
+requisitos técnicos de los dispositivos móviles y los sensores empotrados
+utilizados como hardware de implementación.
 
-\section{Componentes}
+\section{Arquitectura del sistema}
 
-El diseño de un sistema \abbr{HAR}) es semejante cualquier aplicación
-de aprendizaje automático. Los sistemas de reconocimiento siguen la
-misma estructura y las mismas fases \cite{LaraLabrador2013}, con
-un proceso que se divide en dos etapas, la etapa de entrenamiento
-y la etapa de evaluación (ver \ref{sec262:proceso-har}). 
+\label{sec42:componentes}El diseño de la arquitectura de componentes
+de un sistema \abbr{HAR} se rige de acuerdo a las guías de implementación
+de una aplicación de aprendizaje automático (\abbr{ML}). De acuerdo
+al proceso definido en la sección \ref{sec262:proceso-har}, se tiene
+en cuenta la misma estructura de componentes y las mismas fases de
+procesamiento de información. Además, se debe contemplar que el proceso
+se divide en dos etapas: la etapa de entrenamiento y la de evaluación
+\cite{LaraLabrador2013}. 
 
-A pesar de seguir la mismas guías de diseño, un sistema puede optar
-por no implementar todos los componentes para ambas etapas. En otras
-palabras, un sistema puede implementar simplemente los componentes
-necesarios para la etapa de evaluación dejando de lado cualquier elemento
-relacionado a la etapa de entrenamiento y viceversa . 
+Ambas etapas requieren la implementación de los mismos componentes,
+pero un sistema \abbr{HAR} práctico debe contemplar principalmente
+la fase de evaluación, ya que el reconocimiento de actividades resulta
+de una \emph{predicción} basado en un algoritmo de \abbr{ML} en-linea
+(\emph{On-line learning}). Sin embargo, la etapa de entrenamiento
+es un elemento clave para el sistema ya que es el punto de partida
+para el \emph{aprendizaje} basado en modelo de \abbr{ML} y usualmente
+se realiza bajo demanda (\emph{Off-line learning}).
 
-Dentro del marco teórico de los sistemas de reconocimiento, se han
-identificado unos componentes mínimos requeridos para realizar las
-actividades de aprendizaje y predicción de manera manual o automatizada
-\cite{Choudhury2008}. Un sistema de reconocimiento de actividades
-posee tres componentes principales:
+Bajo el marco teórico de los sistemas \abbr{HAR} basados en \abbr{ML},
+se han identificado unos componentes comunes para realizar las funcionalidades
+de aprendizaje y predicción según\cite{Choudhury2008}. Un sistema
+de reconocimiento de actividades posee tres componentes:
 \begin{itemize}
-\item un \emph{recolector de datos}
-\item un\emph{ procesador de muestras} 
-\item un \emph{clasificador }
+\item un \emph{recolector }de medidas
+\item un\emph{ procesador }de muestras 
+\item un \emph{clasificador }de actividades
 \end{itemize}
-En la \figref{fig41:componentes-har} se muestra una vista general
-de los componentes y sus interrelaciones. Las responsabilidades y
-detalles de cada componente se describen a continuación. 
+En la \figref{fig42:componentes-har} se muestra una vista general
+de los componentes y sus interrelaciones. Las funcionalidades de cada
+componente se describen a continuación. 
 
 \begin{figure}[!tbph]
-\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption{Componentes de los sistemas HAR}
-\label{fig41:componentes-har}
+\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption{Componentes de los sistemas \abbr{HAR}}
+\label{fig42:componentes-har}
 \end{figure}
 
 
-\subsection{Recolector de datos}
+\subsection{Recolector de medidas}
 
-El recolector de datos tiene la función de capturar medidas de los
-sensores e registrar la información indexada en la dimensión del tiempo.
-La captura de datos relevantes para los sistemas \abbr{HAR} debe
-ser realizada con instrumentos de medición apropiados: en nuestro
-caso con sensores (\abbr{Wearables}\ref{sec23:sensores}, o de atuendo).
-Los sensores adjuntos se utilizan para recolectar señales directamente
-de los usuarios. Estos están anexados a diferentes partes del cuerpo
-como la cintura, la muñeca, el pectoral, los muslos o la cabeza \cite{Bao2004},
-como también ser portados ya que pueden estar empotrados en dispositivos
-de uso regular como teléfonos móviles modernos, relojes inteligentes
-o lentes \cite{LaraLabrador2012,Choudhury2008}.
+\label{sec421:recolector-datos}El recolector de datos tiene la función
+de capturar medidas de los sensores e registrar la información indexada
+en la dimensión del tiempo. La captura de datos relevantes para los
+sistemas \abbr{HAR} debe ser realizada con instrumentos de medición
+apropiados: en nuestro caso con sensores (\abbr{Wearables})\ref{sec23:sensores}.
+Los sensores empotrados se utilizan para recolectar señales directamente
+de los usuarios. Estos deben estar anexados al cuerpo como la cintura,
+la muñeca, el pectoral, los muslos o la cabeza \cite{Bao2004}, también
+pueden ser portados simplemente ya están comúnmente empotrados en
+dispositivos de uso regular como los teléfonos móviles modernos, relojes
+o lentes inteligentes \cite{LaraLabrador2012,Choudhury2008}.
 
-Las señales medidas deben ser registrados de manera secuencial y transmitidos
-para su posterior procesamiento. En ambas etapas, aprendizaje y predicción,
-se miden las señales de los sensores.
+\subsubsection{Registro}
+
+Las señales de variables medidas deben ser registrados de manera secuencial
+y transmitidos para su posterior procesamiento.
+
+\subsubsection{Señales de Aceleración}
+
+\subsubsection{Señales de Giroscopio}
+
+\subsubsection{Señales de Ubicación}
+
+\subsubsection{Señales de Fisiológicas}
 
 \subsection{Procesador de muestras}
 
-que procesa los datos en bruto para adecuarlos muestras con variables
-significativas que permitan discriminar las actividades a reconocer
+\label{sec422:proceso-se=0000F1ales}Proceso de señales en bruto para
+adecuarlos muestras con variables significativas que permitan discriminar
+las actividades a reconocer
 
-\subsection{Clasificador}
+\subsubsection{Etiquetado}
 
-que utiliza las muestras extraídas para inferir qué actividad probable
-está realizando un individuo en un determinado instante.
+\subsubsection{Filtro de Señal}
 
-\section{Capacidades }
+\subsubsection{Muestreo}
 
-Existen un conjunto de características deseables que deben ser satisfechas
-para la construcción efectiva de los sistemas de reconocimiento. Estas
-características abordan cuestiones de diseño importantes que conciernen
-a la calidad y al funcionamiento del sistema:
+\subsection{Clasificador de actividades}
+
+\label{sec423:clasificador}Utiliza las muestras extraídas para construir
+un modelo e predecir qué actividad probable está realizando un individuo
+en un determinado instante.
+
+\subsubsection{Clasificación}
+
+\subsubsection{Reconocimiento}
+
+\section{Capacidades deseables}
+
+\subsection{Características no funcionales}
+
+\label{sec431:caracteristicas}Existen un conjunto de características
+deseables que deben ser satisfechas para la construcción efectiva
+de los sistemas de reconocimiento. Estas características abordan cuestiones
+de diseño importantes que conciernen a la calidad y al funcionamiento
+del sistema:
 \begin{enumerate}
 \item Portabilidad, el sistema utiliza sensores adjuntos a los individuos
 (Ej. el acelerómetro) y no deben obstruir las actividades cotidianas
@@ -112,3 +160,27 @@ además de alertar sobre la utilización de datos sensibles que requieran
 el consentimiento del usuario.
 \end{enumerate}
 
+\subsection{Dispositivos móviles}
+
+\label{sec432:dispositivos-moviles}Descripción técnica de dispositivos
+móviles: procesador, memoria, sensores y almacenamiento
+
+\subsubsection{Teléfonos móviles}
+
+\subsubsection{Relojes inteligentes}
+
+\subsection{Sensores empotrados}
+
+\label{sec433:sensores-empotrados}Descripción técnica de los sensores
+de aceleración, variables, orientación en dispositivo, unidades de
+medida, precisión vs consumo.
+
+\subsubsection{Acelerómetro}
+
+\subsubsection{Giroscopio}
+
+\subsubsection{GPS/WIFI}
+
+\section{Conclusión}
+
+Resumen

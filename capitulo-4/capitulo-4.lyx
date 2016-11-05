@@ -97,102 +97,9 @@ name "sec41:introduccion"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-En este capítulo se definen los requerimientos de implementación de un sistema
- de reconocimiento de actividades humanas (sistemas 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
-).
- Se describe en detalle los mecanismos para implementar los mismos.
- 
-\end_layout
-
-\begin_layout Standard
-Primeramente, se describe el conjunto de componentes y sus funciones principales
- de manera general.
- Luego se describen los sensores adecuados para el reconocimiento de actividades
- y las características de los teléfonos móviles modernos utilizados como
- dispositivo seleccionado para la implementación de un sistema 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
-Componentes
-\end_layout
-
-\begin_layout Standard
-El diseño de un sistema 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
-) es semejante cualquier aplicación de aprendizaje automático.
- Los sistemas de reconocimiento siguen la misma estructura y las mismas
- fases 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "LaraLabrador2013"
-
-\end_inset
-
-, con un proceso que se divide en dos etapas, la etapa de entrenamiento
- y la etapa de evaluación (ver 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec25:metodologia-har"
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Standard
-A pesar de seguir la mismas guías de diseño, un sistema puede optar por
- no implementar todos los componentes para ambas etapas.
- En otras palabras, un sistema puede implementar simplemente los componentes
- necesarios para la etapa de evaluación dejando de lado cualquier elemento
- relacionado a la etapa de entrenamiento y viceversa .
- 
-\end_layout
-
-\begin_layout Standard
-Dentro del marco teórico de los sistemas de reconocimiento, se han identificado
- unos componentes mínimos requeridos para realizar las actividades de aprendizaj
-e y predicción de manera manual o automatizada 
+El diseño de sistemas con conocimiento del contexto promueven una interacción
+ novedosa con los usuarios y diversas aplicaciones en las áreas de ambientes
+ inteligentes, repuesta a emergencias, vigilancia y otros 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Choudhury2008"
@@ -200,27 +107,283 @@ key "Choudhury2008"
 \end_inset
 
 .
- Un sistema de reconocimiento de actividades posee tres componentes principales:
+ Un sistema con la capacidad de reconocer las actividades humanas por medio
+ del uso de sensores empotrados posee mecanismos para crear aplicaciones
+ de cuidado personal, salud y asistencia inteligente.
+ El requerimiento primordial de un sistema con una aplicación de contexto
+ es que este pueda ser portado continuamente como atuendo de sus usuarios
+ (un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Wearable}
+\end_layout
+
+\end_inset
+
+).
+ Por lo tanto, un sistema que acompaña continuamente al usuario puede interaccio
+nar oportunamente con el mismo ya que este tiene la capacidad de observar
+ en tiempo real las acciones de su portador.
+ La ventaja adicional de un sistema de este tipo es que puede ser desactivado
+ fácilmente o removido de la actividad diaria de su usuario.
+\end_layout
+
+\begin_layout Standard
+En este capítulo se definen los componentes principales de un sistema de
+ reconocimiento de actividades humanas (sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+).
+ El objetivo principal del sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+en conjunto es proveer módulo base para aplicaciones novedosas de contexto.
+ El módulo debe ser capaz de reconocer varias actividades realizadas rutinariame
+nte de diferentes maneras, por diferentes usuarios y en diferentes condiciones
+ contextuales.
+ Las funciones principales de los componentes descritos en la primera sección
+ exponen los mecanismos para implementar los mismos en base trabajos relacionado
+s de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Choudhury2008,ReyesOrtiz2015"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+La última sección, enumera los requisitos no funcionales para lograr una
+ aplicación de contexto móvil y ubicua.
+ Por un lado, las características esperadas en una aplicación de esta naturaleza
+, y por el otro los requisitos técnicos de los dispositivos móviles y los
+ sensores empotrados utilizados como hardware de implementación.
+\end_layout
+
+\begin_layout Section
+Arquitectura del sistema
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec42:componentes"
+
+\end_inset
+
+El diseño de la arquitectura de componentes de un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ se rige de acuerdo a las guías de implementación de una aplicación de aprendiza
+je automático (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+).
+ De acuerdo al proceso definido en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec262:proceso-har"
+
+\end_inset
+
+, se tiene en cuenta la misma estructura de componentes y las mismas fases
+ de procesamiento de información.
+ Además, se debe contemplar que el proceso se divide en dos etapas: la etapa
+ de entrenamiento y la de evaluación 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Ambas etapas requieren la implementación de los mismos componentes, pero
+ un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ práctico debe contemplar principalmente la fase de evaluación, ya que el
+ reconocimiento de actividades resulta de una 
+\emph on
+predicción
+\emph default
+ basado en un algoritmo de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ en-linea (
+\emph on
+On-line learning
+\emph default
+).
+ Sin embargo, la etapa de entrenamiento es un elemento clave para el sistema
+ ya que es el punto de partida para el 
+\emph on
+aprendizaje
+\emph default
+ basado en modelo de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ y usualmente se realiza bajo demanda (
+\emph on
+Off-line learning
+\emph default
+).
+\end_layout
+
+\begin_layout Standard
+Bajo el marco teórico de los sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ basados en 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+, se han identificado unos componentes comunes para realizar las funcionalidades
+ de aprendizaje y predicción según
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Choudhury2008"
+
+\end_inset
+
+.
+ Un sistema de reconocimiento de actividades posee tres componentes:
 \end_layout
 
 \begin_layout Itemize
 un 
 \emph on
-recolector de datos
+recolector 
+\emph default
+de medidas
 \end_layout
 
 \begin_layout Itemize
 un
 \emph on
- procesador de muestras
+ procesador 
 \emph default
- 
+de muestras 
 \end_layout
 
 \begin_layout Itemize
 un 
 \emph on
 clasificador 
+\emph default
+de actividades
 \end_layout
 
 \begin_layout Standard
@@ -232,13 +395,13 @@ status open
 
 
 \backslash
-figref{fig41:componentes-har}
+figref{fig42:componentes-har}
 \end_layout
 
 \end_inset
 
  se muestra una vista general de los componentes y sus interrelaciones.
- Las responsabilidades y detalles de cada componente se describen a continuación.
+ Las funcionalidades de cada componente se describen a continuación.
  
 \end_layout
 
@@ -260,7 +423,20 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Componentes de los sistemas HAR
+Componentes de los sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -268,7 +444,7 @@ Componentes de los sistemas HAR
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig41:componentes-har"
+name "fig42:componentes-har"
 
 \end_inset
 
@@ -281,10 +457,16 @@ name "fig41:componentes-har"
 \end_layout
 
 \begin_layout Subsection
-Recolector de datos
+Recolector de medidas
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec421:recolector-datos"
+
+\end_inset
+
 El recolector de datos tiene la función de capturar medidas de los sensores
  e registrar la información indexada en la dimensión del tiempo.
  La captura de datos relevantes para los sistemas 
@@ -314,27 +496,27 @@ abbr{Wearables}
 
 \end_inset
 
-
+)
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec23:sensores"
 
 \end_inset
 
-, o de atuendo).
- Los sensores adjuntos se utilizan para recolectar señales directamente
+.
+ Los sensores empotrados se utilizan para recolectar señales directamente
  de los usuarios.
- Estos están anexados a diferentes partes del cuerpo como la cintura, la
- muñeca, el pectoral, los muslos o la cabeza 
+ Estos deben estar anexados al cuerpo como la cintura, la muñeca, el pectoral,
+ los muslos o la cabeza 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
 
 \end_inset
 
-, como también ser portados ya que pueden estar empotrados en dispositivos
- de uso regular como teléfonos móviles modernos, relojes inteligentes o
- lentes 
+, también pueden ser portados simplemente ya están comúnmente empotrados
+ en dispositivos de uso regular como los teléfonos móviles modernos, relojes
+ o lentes inteligentes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2012,Choudhury2008"
@@ -344,11 +526,29 @@ key "LaraLabrador2012,Choudhury2008"
 .
 \end_layout
 
+\begin_layout Subsubsection
+Registro
+\end_layout
+
 \begin_layout Standard
-Las señales medidas deben ser registrados de manera secuencial y transmitidos
- para su posterior procesamiento.
- En ambas etapas, aprendizaje y predicción, se miden las señales de los
- sensores.
+Las señales de variables medidas deben ser registrados de manera secuencial
+ y transmitidos para su posterior procesamiento.
+\end_layout
+
+\begin_layout Subsubsection
+Señales de Aceleración
+\end_layout
+
+\begin_layout Subsubsection
+Señales de Giroscopio
+\end_layout
+
+\begin_layout Subsubsection
+Señales de Ubicación
+\end_layout
+
+\begin_layout Subsubsection
+Señales de Fisiológicas
 \end_layout
 
 \begin_layout Subsection
@@ -356,24 +556,66 @@ Procesador de muestras
 \end_layout
 
 \begin_layout Standard
-que procesa los datos en bruto para adecuarlos muestras con variables significat
-ivas que permitan discriminar las actividades a reconocer
+\begin_inset CommandInset label
+LatexCommand label
+name "sec422:proceso-señales"
+
+\end_inset
+
+Proceso de señales en bruto para adecuarlos muestras con variables significativa
+s que permitan discriminar las actividades a reconocer
+\end_layout
+
+\begin_layout Subsubsection
+Etiquetado
+\end_layout
+
+\begin_layout Subsubsection
+Filtro de Señal
+\end_layout
+
+\begin_layout Subsubsection
+Muestreo
 \end_layout
 
 \begin_layout Subsection
-Clasificador
+Clasificador de actividades
 \end_layout
 
 \begin_layout Standard
-que utiliza las muestras extraídas para inferir qué actividad probable está
- realizando un individuo en un determinado instante.
+\begin_inset CommandInset label
+LatexCommand label
+name "sec423:clasificador"
+
+\end_inset
+
+Utiliza las muestras extraídas para construir un modelo e predecir qué actividad
+ probable está realizando un individuo en un determinado instante.
+\end_layout
+
+\begin_layout Subsubsection
+Clasificación
+\end_layout
+
+\begin_layout Subsubsection
+Reconocimiento
 \end_layout
 
 \begin_layout Section
-Capacidades 
+Capacidades deseables
+\end_layout
+
+\begin_layout Subsection
+Características no funcionales
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec431:caracteristicas"
+
+\end_inset
+
 Existen un conjunto de características deseables que deben ser satisfechas
  para la construcción efectiva de los sistemas de reconocimiento.
  Estas características abordan cuestiones de diseño importantes que conciernen
@@ -423,6 +665,64 @@ Privacidad, el sistema debe mantener de manera confidencial los datos recolectad
 os y/o producidos durante la adopción masiva del sistema, además de alertar
  sobre la utilización de datos sensibles que requieran el consentimiento
  del usuario.
+\end_layout
+
+\begin_layout Subsection
+Dispositivos móviles
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec432:dispositivos-moviles"
+
+\end_inset
+
+Descripción técnica de dispositivos móviles: procesador, memoria, sensores
+ y almacenamiento
+\end_layout
+
+\begin_layout Subsubsection
+Teléfonos móviles
+\end_layout
+
+\begin_layout Subsubsection
+Relojes inteligentes
+\end_layout
+
+\begin_layout Subsection
+Sensores empotrados
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec433:sensores-empotrados"
+
+\end_inset
+
+Descripción técnica de los sensores de aceleración, variables, orientación
+ en dispositivo, unidades de medida, precisión vs consumo.
+\end_layout
+
+\begin_layout Subsubsection
+Acelerómetro
+\end_layout
+
+\begin_layout Subsubsection
+Giroscopio
+\end_layout
+
+\begin_layout Subsubsection
+GPS/WIFI
+\end_layout
+
+\begin_layout Section
+Conclusión
+\end_layout
+
+\begin_layout Standard
+Resumen
 \end_layout
 
 \end_body

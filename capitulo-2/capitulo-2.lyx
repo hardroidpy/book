@@ -419,7 +419,7 @@ Ambiental miden datos externos que rodean al individuo como el nivel de
 \end_layout
 
 \begin_layout Section
-Teléfonos móviles modernos
+Dispositivos móviles
 \end_layout
 
 \begin_layout Standard
@@ -471,9 +471,26 @@ name "sec25:aprendizaje-automatico"
 
 Una de las técnicas de reconocimiento de actividades humanas consiste en
  encontrar un modelo para descubrir información a partir de los datos, es
- decir utilizar algoritmos de aprendizaje automático para construir modelos
- que puedan inferir actividades a partir de una gran cantidad de datos medidos
- con anterioridad junto con el comportamiento deseado del usuario
+ decir utilizar algoritmos de aprendizaje automático (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+, 
+\emph on
+Machine Learning
+\emph default
+) para construir modelos que puedan inferir actividades a partir de una
+ gran cantidad de datos medidos con anterioridad junto con el comportamiento
+ deseado del usuario
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chen2012"

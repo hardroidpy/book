@@ -236,5 +236,16 @@ description "Dispositivos o aparatos que pueden ser atuendos de un individuo"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "ML"
+description "Machine Learning, por sus siglas en inglés."
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
