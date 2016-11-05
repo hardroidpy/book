@@ -27,6 +27,53 @@ El árbol de decisión es un método de aprendizaje predictivo de una conjunto d
 	\label{fig:arbolEjemplo}
 \end{figure}
 
+En la figura por ejemplo un típico árbol de decisión que representa el concepto de jugar o no Golf, teniendo en cuenta variables climática representadas en los nodos internos, y los nodos hojas denotan las decisiones de jugar o no golf. 
+
+\section{Algoritmo C4.5}
+J.R Quinlan propone un mejora, una extensión al algoritmo ID3, al que denomina C4.5, este algoritmo genera un árbol de decisión a partir de los datos mediante particiones realizadas recursivamente. El árbol se construye mediante la estrategia profundidad-primero (depth-first).
+
+El algoritmo C4.5 utiliza técnica heurística conocida como proporción de ganancia (gain-ratio). Es una medida basada en información que considera diferentes números y probabilidades de los resultados de las pruebas. 
+
+El algoritmo considera todas las pruebas posibles que puede dividir el conjunto de datos, seleccionar la prueba que le haya generado mayor ganancia de información. Para cada atributo discreto, se considera una prueba con N resultados, siendo N el numero de valores posibles que puede tomar el atributo. Para cada atributo continuo, se realiza la prueba binaria (1,0) sobre cada uno de los valores que puede tomar el atributo de los datos.
+
+\section{Características del algoritmo C4.5}
+\begin{itemize}
+	\item Permite trabaja con valores continuos para los atributos, separando los posibles resultados en dos ramas $ A_{i} <= N $ y $ A_{i} > N $ . 
+	\item Los arboles son menos frondosos, ya que cada hoja cubre una distribución de clases no una clase en particular.
+	\item Utiliza el método 'divide y vencerás' para generar el árbol de decisión incial a partir de un conjunto de datos de entrenamiento.
+	\item Se basan en la utilización del criterio de proporción de ganancia, definido como $ I(X_{i},C) / I(X_{i})  $. De esta manera se consigue evitar que la variables con mayor numero de categorías salgan beneficiadas en la selección. 
+	\item Es recursivo.
+\end{itemize}
+
+\section{Información de Ganancia / Entropía }
+C4.5 como su predecesor ID3 utiliza la entropía como medida de selección para el atributo. 
+Dado un nodo $N$ que representa las tuplas de la partición $D$. El atributo con mayor valor de ganancia es elegido para la división de $N$, el atributo reduce al mínimo la información necesaria para clasificar las tuplas de las particiones resultantes y refleja la menos aleatoriedad o impureza de la partición. Este enfoque minimiza el número esperado de los ensayos necesarios para clasificar una tupla dada y garantiza que un árbol simple (pero no necesariamente el más simple) se encuentre.
+
+La información de ganancia necesaria para clasificar una tupla en $D$ es igual a:
+
+\begin{equation}
+Info(D) = - \displaystyle\sum_{i=1}^{m} p_{i}\log_2(p_{i}) 
+\end{equation}
+
+donde $p_{i}$ es la probabilidad de una tupla arbitraria en $D$ que pertenece a la clase $C_{i}$ se estima que es $ \lvert C_{i,D}} \rvert / \lvert D \rvert $. Se utiliza un logaritmo en base 2 porque la información esta codificada en bits. $Info(D)$ es la cantidad media de información necesaria para identificar la etiqueta de una tupla dada en $D$. Nótese, que la información que tenemos se basa solamente en las proporciones de tuplas de cada clase. $Info(D)$ también se conoce como entropía de $D$
+
+Ahora, supongamos que estábamos para particionar las tuplas en $D$ en algunos atribuyen A teniendo $v$ valores distintos $ \{ a_{1},a_{2},...,a_{v} \}$, como se observa a partir de los datos de entrenamiento. Si A tiene valores discretos, estos valores se corresponden directamente con los resultados de una prueba de $v$ sobre $A$. El atributo $A$ se puede utilizar para dividir $D$ en $v$ particiones o subconjuntos, $ \{ D_{1},D_{2},...,D_{v} \}$, donde $D_j$ contiene aquellas tuplas en $D$ que tienen $a_j$ resultados de $A$. Estas particiones se corresponderían con las ramas que crecen a partir del nodo $N$. Idealmente, nos gustaría que esta división para producir una clasificación exacta de las tuplas. Es decir, nos gustaría para cada partición sea pura. Sin embargo, es bastante probable que las particiones sea impura (por ejemplo, cuando una partición puede contener una colección de tuplas de diferentes clases en lugar de una sola clase). ¿Cuánto más información sería todavía necesaria (después de la partición) con el fin de llegar a una clasificación exacta? Esta cantidad se mide por:
+
+\begin{equation}
+Info_{A}(D) = \displaystyle\sum_{j=1}^{v} \displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert} \times Info(D_{j})
+\end{equation}
+
+El termino $\displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert}$ actúa como el peso de la j-esima partición. $Info_{A}(D)$ es la información esperada requerida para clasificar la tupla de $D$ basada en la partición de $A$. Cuando menor sea la información esperada, mayor es la pureza de las particiones.
+
+La información de ganancia se define como la diferencia entre lo requerido de información original (basado en la proporción de clases) y el nuevo requerimiento, obtenido luego de realizar la partición en $A$. Es decir,
+
+\begin{equation}
+Gain(A) = Info(D) - Info_{A}(D).
+\end{equation}
+
+En otras palabras, $Gain(A)$ nos dice cuanto se ganaría por la ramificación en $A$. Es la reducción esperada en el requisito de información causado por conocer el valor de $A$. El atributo A con ganancia mas alta, $Gain(A)$, se selecciona como atributo de división en el nodo $N$. Esto equivale a decir que queremos particionar en el atributo A que haría la mejor clasificación, por lo que la cantidad de información aun necesaria para clasificar las tuplas sea minima, $InfoA(D)$.
+
+
 \section{Algoritmo}
 
 \begin{algorithm}
