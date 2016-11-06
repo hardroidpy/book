@@ -13,7 +13,6 @@
 \usepackage{subcaption} 
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-\input{./util/spanishAlgorithmic}
 %\usepackage[style=alphabetic, uniquename=full, sorting=none, backend=biber, natbib=true, backref=true]{biblatex}
 \usepackage[authoryear]{natbib}
 \usepackage{listings}
@@ -26,7 +25,8 @@
 % para las tablas
 
 %se importan las configuraciones custmizdas realizadas.
-\include{./util/custom}
+\input{./util/custom}
+\input{./util/fancyhdr}
 
 \makenomenclature
 
@@ -34,7 +34,8 @@
 
 % datos de la tesis
 \degree{Informática}
-\advisor{Prof. Ing.}{Joaquin Lima}
+\advisor{Prof. Ing.}{Joaquin Lima \\
+Juan Talavera}
 \logosource{./graphics/logo.png}
 %\hbadness=10000
 %\hfuzz=50pt
@@ -82,7 +83,7 @@
 \include{capitulo-2/capitulo-2} 	%Cap 2: Reconocimiento de Actividades 
 \include{capitulo-3/capitulo-3}     %Cap 3: Aprendizaje Automático
 %Parte III: Desenvolvimiento
-\include{capitulo-4/capitulo-4} 	%Cap 4: Sistemas de Reconocimiento de Actividades
+\include{capitulo-4/capitulo-4} 	%Cap 4: Sistemas HAR
 \include{capitulo-5/capitulo-5}		%Cap 5: HARDroid: Un Sistema Reconocedor Colaborativo
 %Parte IV: Resultados
 \include{capitulo-6/capitulo-6}		%Cap 6: Experimentos realizados

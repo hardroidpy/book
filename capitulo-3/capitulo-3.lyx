@@ -1,0 +1,698 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Reconocimiento de Actividades Humanas
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "chap3:Aprendizaje-Automatico"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Aprendizaje Automático
+\end_layout
+
+\begin_layout Standard
+En el contexto de aprendizaje automático, los patrones deben ser descubierto
+ a partir de una serie de ejemplos que son denominados instancias.
+ Tal conjunto de entrada se denomina conjunto de entrenamiento.
+ En nuestro caso específico, cada instancia es un vector de características
+ extraída de señales en una determinada ventana de tiempo.
+ Los ejemplos en el conjunto de entrenamiento pueden o no pueden ser etiquetados
+, es decir, asociada a una clase conocida (por ejemplo, caminar, correr,
+ etc.).
+ En algunos casos, tener datos etiquetados no es factible, ya que puede
+ requerir un experto para examinar manualmente los ejemplos y asignar una
+ etiqueta en base a su experiencia.
+\end_layout
+
+\begin_layout Standard
+Este proceso es generalmente tedioso, caro y consume mucho tiempo en muchas
+ aplicaciones de minería de datos.
+ Existen dos enfoques de aprendizaje, es decir, aprendizaje supervisado
+ y no supervisado, que se ocupan de datos etiquetados y no etiquetados,
+ respectivamente.
+ Puesto que un sistema de reconocimiento de la actividad humana debe devolver
+ un marcador tal como caminar, sentarse, correr, etc., la mayoría de los
+ sistemas de HAR utilizan modelos de aprendizaje supervisados.
+ De hecho, podría ser muy difícil de discriminar actividades en un contexto
+ completamente sin supervisión.
+ Algunos otros sistemas funcionan de una manera semisupervisada en donde
+ parte de los datos están sin etiqueta.
+\end_layout
+
+\begin_layout Subsection
+Aprendizaje supervisado
+\end_layout
+
+\begin_layout Standard
+El etiquetado de datos detectados a partir de individuos que realizan diferentes
+ actividades es una tarea relativamente fácil.
+ Algunos sistemas guardan datos del sensor en medios no volátiles mientras
+ que una persona del equipo de investigación supervisa el proceso de recolección
+ y de forma manual registra y etiqueta la actividad en cada intervalo de
+ tiempo.
+ Otros sistemas se caracterizan por una aplicación móvil que permite al
+ usuario seleccionar la actividad que se realiza a partir de una lista,
+ de esta manera, cada muestra se corresponde con una etiqueta de actividad
+ y, a continuación, se almacena en el servidor.
+ Este ultimo utilizado en este trabajo.
+\end_layout
+
+\begin_layout Standard
+El aprendizaje supervisado ha sido un campo muy productivo, dando lugar
+ a un gran número de algoritmos.
+ La Tabla V resume los clasificadores más importantes en el reconocimiento
+ de la actividad humana y su descripción se incluye a continuación.
+\end_layout
+
+\begin_layout Standard
+**insertar listado de algoritmos**
+\end_layout
+
+\begin_layout Standard
+En las siguientes secciones nos concentramos en el árbol de decisión, el
+ cual fue utilizado para este trabajo.
+\end_layout
+
+\begin_layout Subsection
+Arboles de Decisión
+\end_layout
+
+\begin_layout Standard
+El árbol de decisión es un método de aprendizaje predictivo de una conjunto
+ de tuplas o instancias etiquetadas.
+ Un árbol de decisión es una estructura de árbol similar a un diagrama de
+ flujo, donde cada nodo interno (nodo no hoja) denota una prueba de un atributo,
+ y cada rama representa el camino de a seguir luego de la evaluación, y
+ cada nodo hoja es una etiqueta o clase.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement !htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename graphics/ad_1.png
+	width 70line%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Árbol de decisión
+\end_layout
+
+\end_inset
+
+Árbol de decisión
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:arbolEjemplo"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Algoritmo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Árbol de Decisión - C4.5
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "algoC45"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\end_inset
+
+[1] 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Require
+\end_layout
+
+\end_inset
+
+ Conjunto de datos etiquetados 
+\begin_inset Formula $D$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+C4.5
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $D$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+If
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $D>\textit{es puro o cumple el criterio de parada}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+
+\shape italic
+Termina
+\shape default
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndIf
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+ForAll
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $a\in D$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\textit{Computar información de division en a }$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndFor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $a_{best}=$
+\end_inset
+
+ Mejor atributo de división respecto al criterio 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $Arbol=$
+\end_inset
+
+ Crear un nodo de decisión con 
+\begin_inset Formula $a_{best}$
+\end_inset
+
+ en la raíz 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $D_{v}=$
+\end_inset
+
+ Introducir sub-conjunto de 
+\begin_inset Formula $D$
+\end_inset
+
+ basado en división 
+\begin_inset Formula $a_{best}$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+ForAll
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $D_{v}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $Arbol_{v}=C4.5(D_{v})$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ Unir 
+\begin_inset Formula $Arbol_{v}$
+\end_inset
+
+ al correspondiente arco del Árbol 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndFor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Return
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $Arbol$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

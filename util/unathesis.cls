@@ -163,7 +163,7 @@
 %% Espacios
 \newcommand*{\@normalsize}{\normalsize}
 \def\setspace@size{\ifx\@currsize\normalsize\@normalsize\else\@currsize\fi}
-\def\doublespacing{\def\baselinestretch{1.660} \setspace@size}
+\def\doublespacing{\def\baselinestretch{1.3} \setspace@size}
 \def\singlespacing{\def\baselinestretch{1} \setspace@size}
 
 %\onehalfspacing
@@ -205,9 +205,6 @@
 
 % Cabeceras
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-%\fancyhead[R]{\fontsize{10}{11}\selectfont \thepage}
-%\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{\leftmark}{\rightmark}}
 
 % Nomenclatura
 \usepackage[intoc]{nomencl}

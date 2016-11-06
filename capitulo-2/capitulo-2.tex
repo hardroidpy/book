@@ -1,115 +1,390 @@
 
-\chapter{Reconocimiento de Actividades}
-\label{chap2:Reconocimiento de Actividades}
+\chapter{Marco Teórico}
 
-%##Capítulo 2. Reconocimiento de Actividades
+\label{chap2:marco-teorico}
 
 \section{Introducción}
-\label{sec21:introduccion}
-El conocimiento del contexto de usuario es una de las nuevas aplicaciones y servicios móviles en el área de la computación ubicua.
-En general, el contexto de usuario significa su actividad, ubicación, preferencia, su situación, emoción, etc. Con los teléfonos móviles cada vez más potentes, la mayoría de los puntos mencionados del contexto se determinan con componentes de detección integrados en los teléfonos móviles, como acelerómetro, GPS, micrófono, bluetooth, cámara, etc. En esencia, los teléfonos móviles pueden crear redes de sensores móviles que son capaces de recoger datos de los sensores sobre la vida diaria de un usuario, es decir, quien es, lo que está haciendo el usuario, donde se encuentra, ya quien esta ? 
 
-En este trabajo, investigamos posibilidades y viabilidades de tener un servicio para obtener el contexto de la actividad física diaria de los usuarios con teléfonos móviles.
+\label{sec21:introduccion}En este capitulo, se resumen las cuatro
+áreas principales de estudio relacionados a los sistemas \abbr{HAR}
+con miras a definir el problema del reconocimiento de actividades
+humanas desde un punto de vista teórico. La descripción de estas áreas
+detallan las aplicaciones que motivan los sistemas \abbr{HAR} y también
+los mecanismos que llevan a una implementación factible. 
 
-\section{Actividades Humanas}
-\label{sec22:actividades-humanas}
-El diseño de un sistema HAR depende totalmente de las actividades definidas que van a ser reconocida. Por lo tanto, el cambio del conjunto de actividades que el sistema reconoce convierte al problema en uno completamente diferente al anterior.
+La primera sección, se introducen las aplicaciones de contexto que
+son el principal marco de trabajo del estudio de sistemas \abbr{HAR}.
+En síntesis, nuestro enfoque es detectar las actividades físicas para
+dar información de contexto en las actividades diarias de un individuo
+durante su locomoción. Las siguientes secciones dan todos los elementos
+requeridos para implementar los sistemas \abbr{HAR}. Desde el punto
+de vista de implementación se discuten los sensores y los teléfonos
+móviles inteligentes. La última sección define el marco teórico del
+reconocimiento de actividades humanas en base al estado de arte.
 
-Teniendo en cuenta esto, las distintas publicaciones, tenemos estos siete distintos grupos de actividades en la siguiente tabla.
+\section{Aplicaciones de contexto}
 
-\newcommand{\rr}{\raggedright}
-\newcommand{\tn}{\tabularnewline}
+\label{sec22:contexto}En la actualidad construir aplicaciones interactivas
+requieren tener en cuenta el aspecto del contexto del usuario principalmente
+por la importancia de este asunto debido a que este cambia con mucha
+frecuencia, como ocurren en la computación móvil y ubicua. El contexto
+de un usuario es un medio adicional para la interacción entre computadora
+y humano, además de otros los métodos convencionales de entrada de
+datos. Este nuevo medio abre nuevas posibilidades de comunicación
+y producción de nuevos servicios en computación. 
 
-\begin{table}[htbp]
-	\begin{center}
-		\begin{tabular}{|l|p{9cm}|}
-			\hline
-			\textbf{Grupo} & \textbf{Actividades} \\
-			\hline \hline
-			Ambulatoria & Caminar, correr, sentarse, pararse, quedarse quieto, acostarse, subir escaleras, descender escaleras, usar escaleras mecánicas, usar elevador.\\ \hline
-			Transporte & Andar en bus, bicicleta y conducir \\ \hline
-			En el teléfono & Enviar mensajes de texto y hacer llamadas \\ \hline
-			Actividades diarias & Comer, beber, trabajar en la PC, mirar TV, leer, cepillarse los dientes, aspirar el piso, y otros. \\ \hline
-			Ejercitarse & Alzar pesas, bicicleta estática, remo y otros. \\ \hline
-			Militares & Arrastrarse, en cuclillas, abrir la puerta \\ \hline
-			Parte superior del cuerpo & Masticar, hablar, mover la cabeza, tragar líquidos, mirar. \\ \hline
-		\end{tabular}
-		\caption{Grupos de Actividades.}
-		\label{tabla:sencilla}
-	\end{center}
-\end{table}
+Pero, ¿qué es el contexto?, citando otras fuentes podemos definir
+el contexto como: \textquotedbl{}\emph{... cualquier información que
+pueda ser utilizada para caracterizar la situación de una entidad.
+Un entidad es una persona, lugar, o objeto que es considerado relevante
+en la interacción entre el usuario y la aplicación, incluyendo al
+usuario y la aplicación}\textquotedbl{} \cite{Dey2000}. De manera
+específica, el contexto de un usuario es el estado de su información
+física, emocional o social, sin dejar de lado cualquier otra situación
+en que el usuario esté involucrado y sea relevante para la aplicación.
 
+Debido a la libertad de movilidad presentes en la computación móvil
+y ubicua, es primordial construir aplicaciones que conozcan el contexto
+de sus usuarios (\emph{context-aware}, o aplicaciones de contexto).
+Debido a que el entorno de ejecución cambia con cierto dinamismo,
+el rango de situaciones posibles del usuario se amplia y por lo tanto
+se requiere que los servicios proveídos por una aplicación se adapten
+para mejorar la interacción entre el usuario y el computador. 
 
-\section{Dispositivos Móviles}
-\label{sec23:dispositivos-moviles}
-Los dispositivos móviles, tales como teléfonos móviles, reproductores de música o relojes inteligentes, han comenzado ya hace un par de años incorporar un diversos sensores. Algunos de los sensores son GPS, de audio (micrófonos), de imágenes (cámaras), de luz, sensores de temperatura, sensor de dirección (brújula), y acelerómetro.
-Debido a su tamaño reducido de estos dispositivos inteligentes, su enorme capacidad de procesamiento, la posibilidad de recibir y enviar datos; y su omnipresencia en nuestra sociedad de hoy, lo hacen dispositivos de preferencia para utilizarlo en la implementación de un sistema reconocedor de actividades Humanas.
+Los tipos de contexto prácticos más importantes en las aplicaciones
+de contexto con computación móvil son la ubicación, la identidad,
+la actividad y el tiempo. Esta caracterización permite a los diseñadores
+de aplicaciones escoger el contexto más relevante para su uso.
 
-\section{Sensores ambientales vs Sensores \emph{wearables}}
-\label{sec24:sensores}
-En la problemática del reconocimiento de la actividad que esta realizando una persona uno de los puntos importantes a considerar es la elección de los sensores a utilizar. Los sensores pueden medir signos vitales (ritmo cardíaco, temperatura del cuerpo, presión arterial), el ambiente (intensidad de luz, temperatura, niveles de sonido), movimiento (aceleración, velocidad), y posición (localización global o en interiores).
-Sobre la localización de los sensores respecto a la persona, algunos autores \cite{ReyesOrtiz2015} diferencian entre ambientales, cuando los sensores esta ubicados de manera estatica en el ambiente que rodea a la persona, y <<wearables>> cuando lo sensores se usan o están conectados al cuerpo de la persona.
+\section{Sensores}
+
+\label{sec23:sensores} En la problemática del reconocimiento de la
+actividad que está realizando una persona uno de los puntos importantes
+a considerar es la elección de los sensores a utilizar. Los sensores
+pueden medir signos vitales (ritmo cardíaco, temperatura del cuerpo,
+presión arterial), el ambiente (intensidad de luz, temperatura, niveles
+de sonido), movimiento (aceleración, velocidad), y posición (localización
+global o en interiores). Sobre la localización de los sensores respecto
+a la persona, algunos autores \cite{ReyesOrtiz2015} diferencian entre
+ambientales, cuando los sensores esta ubicados de manera estática
+en el ambiente que rodea a la persona, y \emph{wearables} cuando lo
+sensores se usan o están conectados al cuerpo de la persona.
 
 \subsection{Sensores Ambientales}
 
-Los sensores ambientales, también denominados externos o de entorno, son un conjunto de dispositivos que se encuentran en el medio ambiente que miden propiedades físicas del entorno donde las personas se encuentras e interactúan. Existe una amplia variedad de sensores ambientales, como micrófonos, cámaras de vídeo, sensores de presencia, termómetros y sensores de profundidad(Kinect). Para este tipo de reconocimiento tenemos por ejemplo a \cite{Poppe2007} que realiza un análisis de movimientos humanos utilizando cámaras de vídeo.
+Los sensores ambientales, también denominados externos o de entorno,
+son un conjunto de dispositivos que se encuentran en el medio ambiente
+que miden propiedades físicas del entorno donde las personas se encuentras
+e interactúan. Existe una amplia variedad de sensores ambientales,
+como micrófonos, cámaras de vídeo, sensores de presencia, termómetros
+y sensores de profundidad (Kinect). Para este tipo de reconocimiento
+tenemos por ejemplo a \cite{Poppe2007} que realiza un análisis de
+movimientos humanos utilizando cámaras de vídeo.
 
-\subsection{Sensores <<Wearables>>}
+\subsection{Sensores Wearables}
 
-Los sensores <<Wearables>> son usados para obtener señales directamente en una persona, estos pueden estar unidos a varias partes del cuerpo, como ser la cintura, muñeca, pecho, pierna, y cabeza(agregar referencia un paper con dispositivo en brazo/pierna/etc) pero también pueden formar parte de la ropa o embebido en otro accesorio de uso común, como relojes, anteojos, o teléfonos móviles. Como característica tienen una batería que proporciona la energía para poder operar, y algunos cuentan con conexión inalámbrica wifi/bluetooh para la transmisión de los datos obtenidos.
+Los sensores \emph{wearables} son usados para obtener señales directamente
+en una persona, estos pueden estar unidos a varias partes del cuerpo,
+como ser la cintura, muñeca, pecho, pierna, y cabeza \cite{Bao2004}
+pero también pueden formar parte de la ropa o embebido en otro accesorio
+de uso común, como relojes, anteojos y teléfonos móviles. Como característica
+tienen una batería que proporciona la energía para poder operar, y
+algunos cuentan con conexiones inalámbricas (con WIFI/Bluetooh) para
+la transmisión de los datos obtenidos.
 
-Señales del movimientos y físicas son obtenidas por los sensores, como ser temperatura de la piel, frecuencia cardíaca, conductividad, y posicionamiento global (GPS), posicionamiento en interiores y movimientos del cuerpo. Todos estas mediciones son utilices para tener una constante información del estado de una persona en cualquier momento.
+Las señales de movimiento y fisiológicas son obtenidas por los sensores,
+como ser temperatura de la piel, frecuencia cardíaca, conductividad,
+y posicionamiento global (\abbr{GPS}), posicionamiento en interiores
+y movimientos del cuerpo. Todos estas mediciones son útiles para tener
+una constante información del estado de una persona en cualquier momento.
 
-Después hay que mencionar que dentro de los wearables están los que usan sensores acelerómetro en varias partes del cuerpo y los que usan acelerómetro de teléfonos moviles.
+Los sensores anexos directamente a un individuo pueden caracterizarse
+según los siguientes atributos \cite{LaraLabrador2013}:
+\begin{description}
+\item [{Ubicación}] miden datos obtenidos con las redes celulares 3G y
+los satélites de navegación \abbr{GPS}. Provee información de contexto
+bastante relevante acerca de la posición del individuo, además de
+ciertas medidas de movimiento pero con un consumo moderado de energía.
+\item [{Movimiento}] miden datos inerciales como la aceleración y la orientación
+respecto a un marco de referencia relativo al dispositivo que contiene
+los sensores. El acelerómetro, giroscopio y la brújula son los sensores
+más comunes y utilizados para reconocimiento de actividades con un
+bajo consumo de energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
+\item [{Fisiología}] miden signos vitales del individuo como el ritmo cardíaco
+(\abbr{HRM}, \emph{Hearth Rate Monitor}), la temperatura del cuerpo,
+el ritmo de respiración, entre otros.
+\item [{Ambiental}] miden datos externos que rodean al individuo como el
+nivel de ruido, la humedad y/o la temperatura. Los sensores de luz,
+cámara, micrófonos y termómetros miden estos datos. 
+\end{description}
 
-Otros autores como \cite{karmul2010} extraen al reconocimiento con cámaras de vídeo como una clasificación diferente a los ambientales. 
+\section{Dispositivos móviles}
 
+\label{sec24:dispositivos-moviles} Los dispositivos móviles, tales
+como teléfonos móviles, reproductores de música o relojes inteligentes,
+han comenzado ya hace un par de años en incorporar diversos sensores.
+Debido a su tamaño reducido de estos dispositivos inteligentes, su
+enorme capacidad de procesamiento, la posibilidad de recibir y enviar
+datos; y su omnipresencia en nuestra sociedad de hoy, lo hacen dispositivos
+de preferencia para utilizarlo en la vida diaria de un usuario.
 
-\section{Metodología HAR}
-\label{sec25:metodologia-har}
-Al igual que en otras aplicaciones de aprendizaje automático, la actividad el reconocimiento requiere dos etapas, es decir, entrenamiento y las pruebas o evaluación.
+En este trabajo, investigamos posibilidades y viabilidades de tener
+un servicio para obtener el contexto de la actividad física diaria
+de los usuarios con teléfonos móviles.
 
-\begin{figure}[!htbp]
-\centering
-	\includegraphics[width=0.7\linewidth]{capitulo-2/graphics/harsystem}
-	\caption[Flujo HAR]{Flujo general del Reconocimiento de Actividades Humanas (HAR)}
-	\label{fig:harsystem}
-\end{figure}
+%% TODO: Definir mejor los teléfonos móviles, no tanto los sensores
 
-En la \figref{fig:harsystem} se visualiza las fases comunes de las dos etapas. La etapa de entrenamiento requiere inicialmente un conjunto de datos recolectados en una serie de tiempo con los atributos medidos a partir de individuos que realizan cada actividad. Las series de tiempo se divide en ventanas de tiempo para aplicar la extracción de muestras filtrando así la información relevante en las señales en bruto. Más tarde, los métodos de aprendizaje se utilizan para generar un modelo de reconocimiento de actividades del conjunto de datos colectado a través de las características calculadas. Del mismo modo, para la etapa de prueba o evaluación, se recogen datos durante una ventana de tiempo, que se utiliza para extraer las mismas características utilizadas en el modelo,  estas se evalúan en el modelo de aprendizaje previamente  entrenado, generando una etiqueta de la actividad predicha.
+\section{Aprendizaje Automático}
 
-Para cada estaba tenemos puntos a tener en cuenta:
+\label{sec25:aprendizaje-automatico}Una de las técnicas de reconocimiento
+de actividades humanas consiste en encontrar un modelo para descubrir
+información a partir de los datos, es decir utilizar algoritmos de
+aprendizaje automático (\abbr{ML}, \emph{Machine Learning}) para
+construir modelos que puedan inferir actividades a partir de una gran
+cantidad de datos medidos con anterioridad junto con el comportamiento
+deseado del usuario\cite{Chen2012}. Esta técnica involucra la creación
+de modelos de clasificación probabilistas o estadísticos, seguidos
+por los procesos de entrenamiento y aprendizaje.
 
-\subsection{Colección de Datos}
-La definición del método de colección de datos es un punto importante en un HAR. Según como se realiza la observación del individuo existen: ambientes realistas, que son los ideales pero no siempre es posible realizar este tipo de colectas. También existen los ambientes semirealistas que se realizan en laboratorios simulando las condiciones reales de las actividades. Por otro lado tenemos los ambientes totalmente controlados en laboratorio.
+El aprendizaje automático implica la utilización de datos como conjunto
+inicial de entrenamiento para entrenar un algoritmo, uno de muchos
+existentes, como redes de Bayes, máquinas de soporte-vector \abbr{SVM},
+Árboles de decisión \abbr{DT}, Modelos de Markov ocultos\abbr{HMM},
+y otros \cite{Rajaraman2011} (véase siguiente sección). Las ventajas
+de utilizar este enfoque de reconocimiento es su capacidad de manejar
+información temporal y con cierto grado de incertidumbre, pero su
+desventaja es que requiere una cantidad grande de datos de entrenamiento,
+por lo que puede sufrir de problemas de inicio lento y escasez de
+datos.
 
-Una falla en el diseño de un sistema HAR se puede dar por no considerar las condiciones reales de las actividades, tales como actividades no tenidas en cuenta, calibración de sensores, ruido, etc.
+\section{Reconocimiento de Actividades Humanas}
 
-Otra de las consideraciones a tener en cuenta en este punto es la cantidad de individuos para realizar la colección, es recomendable el mayor cantidad de individuos en distintos tipos de edades y condiciones físicas. 
+El campo de estudio del \abbr{HAR} incluye las metodologías para
+comprender el comportamiento humano a partir de interpretar atributos
+derivados de diversas fuentes \cite{Bao2004,Poppe2007}, como por
+ejemplo el movimiento con sensores, ubicación u otras señales fisiológicas. 
 
-
-\subsection{Selección y Extracción de Características}
-Para cualquier problema de aprendizaje automático, la selección de características se refiere al proceso de selección de un conjunto significativo de características que aporten relevancia a la capacidad de discriminación en un algoritmo de aprendizaje. Por otro lado, la extracción de características, tiene como objetivo disminuir la cantidad de características a utilizar mediante distintas transformaciones entre ellas para obtener nuevas características reducidas sin perder información relevante del conjunto de datos originales. La selección y extracción de características también permite reducir los tiempos de procesamiento en la fase de entrenamiento y aumenta el rendimiento en la fase de evaluación 
-
-Dependiendo de la aplicación, las características requeridas para la extracción de la información relevante pueden variar. En el caso particular de HAR, una representación reducida de los datos del sensor se puede utilizar como la entrada del algoritmo de reconocimiento. Esto se logra mediante medición de la señal del sensor en varios dominios, pudiendo ser en tiempo y frecuencia.
-
-\subsection{Métodos de Aprendizaje}
-Varios enfoques de LD se han desarrollado a lo largo de los años para HAR. En su mayoría a través de algoritmos de aprendizaje supervisado aunque también se han propuesto métodos semi-supervisados y no supervisados.
-
-Modelos bayesianos y basados en frecuencia han sido bien cubierto en toda la literatura HAR. Implican modelos basados en reglas como Arboles de decisión y Selvas Aleatorias, algunos con un enfoques geométrico k-NN, ANN y SVM, y los métodos de clasificación probabilísticos, por ejemplo clasificadores bayesiano, y modelos ocultos de Markov (HMM).
-
-Otros aspectos relevantes para la selección del algoritmo de modelo de aprendizaje incluyen: el consumo de energía, los requisitos de memoria, interpretabilidad y complejidad computacional, etc. Estos aspectos se agudizan si se utilizan dispositivos inteligentes .Como cuestión de ejemplo, árboles de decisión podrían ser preferidos cuando se requiere simplicidad en su implementación y SVMs para aplicaciones de alto rendimiento.
-
-En el capitulo \ref{chap:Aprendizaje-Automatico} se detalla todo lo referente a métodos de aprendizaje y los utilizados en este trabajo.
+El objetivo es identificar las acciones llevadas acabo por una persona
+en base a observaciones realizadas sobre el mismo en el entorno que
+se desenvuelve. Las aplicaciones en computación móvil y ubicua explotan
+el contexto del usuario haciendo uso de sistemas \abbr{HAR} como
+una herramienta tecnológica. Para tener un conocimiento acabado de
+este trabajo, en esta sección se expone una descripción general de
+aspectos clave como la definición del problema, el proceso de reconocimiento
+estándar, las actividades estudiadas y las técnicas de aprendizaje.
 
 \subsection{Definición del Problema}
-Teniendo en cuenta todo esto puntos podemos definir el problema como:
+
+\label{sec261:definicion-har}De manera a establecer el marco teórico
+de estudio del problema \abbr{HAR} en este apartado se describe una
+definición formal del problema. Considerando el objetivo y los elementos
+de reconocimiento podemos definir el problema como\cite{LaraLabrador2013}:
 
 \newtheorem{defi}{Definición}
 
-\begin{defi}(HARP)
-	Dado un conjunto $S = \{S_{0},...,S_{k-1}\} $ de $k$ series de tiempo, cada una medida de cada atributo, y todo definido en un intervalo de tiempo $I =  \left [ t_{\alpha}, t_{\omega} \right ]$ el objetivo es encontrar un sub intervalo de tiempo $\left\langle I_{0},...,I_{r-1} \right\rangle $ en $I$, basado en datos de $S$ y conjunto de etiquetas que representan la actividad realizada durante cada intervalo $I_{j}$ (Ej. sentado, caminando, corriendo, etc.). Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos, no superpuestos y tal que $ \displaystyle\bigcup_{r-1}^{j=0}{I_j = I } $
+\begin{defi}(Problema \abbr{HAR}) Dado un conjunto $S=\{S_{0},...,S_{k-1}\}$
+de $k$ series de tiempo, cada una con una medida particular de cada
+atributo, y definidas en el intervalo de tiempo $I=\left[t_{\alpha},t_{\omega}\right]$,
+el objetivo es encontrar una partición temporal (sub-intervalo de
+tiempo) $\left\langle I_{0},...,I_{r-1}\right\rangle $ en $I$, basado
+en los datos de $S$ y el conjunto de etiquetas que representan la
+acción realizada durante cada intervalo $I_{j}$ (Ej. quieto, caminando,
+corriendo, etc.). 
+
+Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos,
+no superpuestos y que ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
 \end{defi}
 
-Note que el HARP no es factible una resolución determinista. El numero de combinaciones de valores de atributos y actividades puede ser muy grande a veces infinito; y encontrar los puntos de transición es complicado teniendo en cuenta que se desconoce la duración de las actividades.
+Se asumen que las acciones consideradas no son realizadas simultáneamente,
+es decir la persona no realiza la acción de correr y caminar al mismo
+tiempo. Además, se debe notar que el problema \abbr{HAR} no es factible
+a ser resuelto con una solución determinista. El numero de combinaciones
+de valores de atributos y acciones puede ser muy grande, inclusive
+infinito; y encontrar los puntos de transición es complejo teniendo
+en cuenta que se desconoce la duración cada acción. 
 
+Es por esta razón que las metodologías de aprendizaje automático son
+utilizadas como proceso para reconocer actividades humanas por medio
+de la técnica clasificación. Debido a la utilización de aprendizaje
+automático para la resolución del problema, se requiere la siguiente
+definición relajada del problema \abbr{HAR} descrito anteriormente: 
+
+\newtheorem{defi}{Definición}
+
+\begin{defi}(Problema \abbr{HAR} relajado) Dado (1) un conjunto
+$W=\{W_{0},...,W_{m-1}\}$ de $m$ ventanas de tiempo del mismo tamaño,
+donde cada una está total o parcialmente etiquetada, y que cada $W_{i}$
+contiene un conjunto de series de tiempo $S_{i}=\{S_{i,0},...,S_{i,k-1}\}$
+para cada $k$ atributos medidos, y (2) un conjunto $A\text{=}\{a_{0},...,a_{n-1}\}$
+de etiquetas de actividades, el objetivo es encontrar una función
+$f\colon S_{i}\rightarrow A$ que sea evaluada para todos los valores
+posibles de $S_{i}$, tal que $f(S_{i})$ es lo más próximo a la acción
+realizada durante $W_{i}$ \end{defi}
+
+Considerar la utilización de esta definición relajada introduce un
+error en el modelo durante las ventanas de transición entre actividades,
+debido a que, en una ventana de tiempo una persona puede estar realizando
+más de una acción. Sin embargo, el número de ventanas en transición
+es menor al número total de ventanas por lo que el error introducido
+por relajar el problema no es significativo para la mayoría de las
+aplicaciones.
+
+\subsection{Proceso de Reconocimiento }
+
+\label{sec262:proceso-har}Al igual que en otras aplicaciones de aprendizaje
+automático, el proceso de reconocimiento se divide en dos etapas bien
+conocidas, la de entrenamiento y las pruebas (o evaluación).
+
+\begin{figure}[!htbp]
+\centering \includegraphics[width=0.7\linewidth]{capitulo-2/graphics/harsystem}
+\caption[Flujo HAR]{Flujo general del Reconocimiento de Actividades Humanas}
+\label{fig:harsystem} 
+\end{figure}
+
+En la \figref{fig:harsystem} se visualiza las fases comunes de las
+dos etapas \cite{LaraLabrador2013}. La etapa de entrenamiento requiere
+inicialmente un conjunto de datos recolectados en una serie de tiempo
+con los atributos medidos a partir de individuos que realizan cada
+actividad. Las series se dividen en ventanas de tiempo para aplicar
+la extracción de muestras filtrando así la información relevante en
+las señales en bruto. 
+
+Más adelante, se utilizan métodos de aprendizaje para generar un modelo
+de reconocimiento de actividades a partir del conjunto de datos colectado
+a través de las características calculadas. Del mismo modo, para la
+etapa de prueba o evaluación, se recogen datos durante una ventana
+de tiempo, que se utiliza para extraer las mismas características
+utilizadas en el modelo, estas se evalúan en el modelo de aprendizaje
+previamente entrenado, generando una etiqueta de la actividad predicha.
+
+En las siguientes secciones detallamos el objeto de la clasificación
+(actividades humanas) y las funciones de cada etapa.
+
+\subsection{Actividades Humanas}
+
+\label{sec263:actividades-humanas} El diseño e implementación de
+un sistema \abbr{HAR} depende totalmente de las actividades que serán
+reconocidas. Por lo tanto, el cambio del conjunto de actividades que
+un sistema reconoce convierte al problema en uno completamente distinto
+a otro sistema construido con el mismo propósito.
+
+Teniendo en cuenta esta razón, y de acuerdo a distintas publicaciones,
+presentamos siete grupos distintos de actividades agrupados en la
+siguiente tabla.
+
+\begin{table}[htbp]
+\centering{}%
+\begin{tabular}{|l|p{9cm}|}
+\hline 
+\textbf{Grupo}  & \textbf{Actividades} \tabularnewline
+\hline 
+\hline 
+Ambulatoria  & Caminar, correr, sentarse, pararse, quedarse quieto, acostarse, subir
+escaleras, descender escaleras, usar escaleras mecánicas, usar elevador.\tabularnewline
+\hline 
+Transporte  & Andar en bus, bicicleta y conducir \tabularnewline
+\hline 
+En el teléfono  & Enviar mensajes de texto y hacer llamadas \tabularnewline
+\hline 
+Actividades diarias  & Comer, beber, trabajar en la PC, mirar TV, leer, cepillarse los dientes,
+aspirar el piso, y otros. \tabularnewline
+\hline 
+Ejercitarse  & Alzar pesas, bicicleta estática, remo y otros. \tabularnewline
+\hline 
+Militares  & Arrastrarse, en cuclillas, abrir la puerta \tabularnewline
+\hline 
+Parte superior del cuerpo  & Masticar, hablar, mover la cabeza, tragar líquidos, mirar. \tabularnewline
+\hline 
+\end{tabular}\caption{Grupos de Actividades.}
+\label{tabla:sencilla} 
+\end{table}
+
+Las actividades pueden separase en varios grupos de acuerdo a la duración
+y la complejidad del evento. Los eventos cortos son movimientos de
+transición y movimientos en base a gestos. Los eventos al que nos
+enfocamos en este trabajo son aquellos que se componen de las actividades
+básicas de larga duración que se caracterizan por las acciones continuas
+y cíclicas de un individuo \cite{ReyesOrtiz2015}. Nuestro estudio
+no se basa en actividades complejas que sean una secuencia de actividades
+básicas y eventos cortos.
+
+Definimos como objetivo de estudio detectar actividades básicas ambulatorias
+y de transporte, de larga duración y sin cambios bruscos de transición.
+
+\subsection{Colección de Datos}
+
+La definición del método de colección de datos es un punto importante
+en un sistema \abbr{HAR}. Según como se realiza la observación del
+individuo existen: ambientes realistas, que son los ideales pero no
+siempre es posible realizar este tipo de colectas. También existen
+los ambientes cuasi realistas que se realizan en laboratorios simulando
+las condiciones reales de las actividades. Por otro lado tenemos los
+ambientes totalmente controlados en laboratorio.
+
+Una falla en el diseño de un sistema \abbr{HAR} se puede dar por
+no considerar las condiciones reales de las actividades, tales como
+actividades no tenidas en cuenta, calibración de sensores, ruido,
+etc.
+
+Otra de las consideraciones a tener en cuenta en este punto es la
+cantidad de individuos para realizar la colección, es recomendable
+el mayor cantidad de individuos en distintos tipos de edades y condiciones
+físicas.
+
+\subsection{Extracción de Muestras}
+
+Para cualquier problema de aprendizaje automático, la selección de
+características se refiere al proceso de selección de un conjunto
+significativo de características que aporten relevancia a la capacidad
+de discriminación en un algoritmo de aprendizaje. Por otro lado, la
+extracción de características, tiene como objetivo disminuir la cantidad
+de características a utilizar mediante distintas transformaciones
+entre ellas para obtener nuevas características reducidas sin perder
+información relevante del conjunto de datos originales. La selección
+y extracción de características también permite reducir los tiempos
+de procesamiento en la fase de entrenamiento y aumenta el rendimiento
+en la fase de evaluación
+
+Dependiendo de la aplicación, las características requeridas para
+la extracción de la información relevante pueden variar. En el caso
+particular de \abbr{HAR}, una representación reducida de los datos
+del sensor se puede utilizar como la entrada del algoritmo de reconocimiento.
+Esto se logra mediante medición de la señal del sensor en varios dominios,
+pudiendo ser en tiempo y frecuencia.
+
+\subsection{Aprendizaje e Inferencia}
+
+Varios enfoques de aprendizaje automático se han desarrollado a lo
+largo de los años para resolver el problema de \abbr{HAR}. En su
+mayoría a través de algoritmos de aprendizaje supervisado aunque también
+se han propuesto métodos semi-supervisados y no supervisados.
+
+Modelos de Bayes y basados en frecuencia han sido bien cubiertos en
+toda la literatura \abbr{HAR}. Implican modelos basados en reglas
+como Arboles de decisión \abbr{DT} y Selvas Aleatorias \abbr{RF},
+algunos con un enfoques geométricos como vecinos cercanos \abbr{k-NN},
+redes neuronales \abbr{ANN} y máquinas de soporte-vector \abbr{SVM},
+y los métodos de clasificación probabilistas, por ejemplo clasificadores
+de Bayes \abbr{NB}, y modelos ocultos de Markov \abbr{HMM}.
+
+Otros aspectos relevantes para la selección del algoritmo de modelo
+de aprendizaje incluyen: el consumo de energía, los requisitos de
+memoria, interpretabilidad y complejidad de computo, etc. Estos aspectos
+se agudizan si se utilizan dispositivos inteligentes .Como cuestión
+de ejemplo, árboles de decisión podrían ser preferidos cuando se requiere
+simplicidad en su implementación y \abbr{SVM} para aplicaciones de
+alto rendimiento\cite{ReyesOrtiz2015}.
+
+En el capitulo \ref{chap:Aprendizaje-Automatico} se detalla todo
+lo referente a métodos de aprendizaje y los utilizados en este trabajo.
+
+\section{Conclusión}
+
+\label{sec27:conclusion}Este capitulo abarcó los tópicos primordiales
+del estudio del reconocimiento de las actividades humanas. Los conceptos
+descritos sirven de base de conocimiento para entender el problema
+de \abbr{HAR} y además permiten tener una vista general de los componentes
+principales para resolver el problema. Primeramente se cubre la motivación
+en base a las aplicaciones, luego los medios disponibles para construir
+estos sistemas: sensores, teléfonos móviles y aprendizaje automático,
+y finalmente la definición metodológica y teórica del problema. 

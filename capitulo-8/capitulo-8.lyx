@@ -78,7 +78,7 @@ Conclusiones
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "conclusiones-y-trabajos-futuros"
+name "cap8:conclusiones-y-trabajos-futuros"
 
 \end_inset
 
@@ -92,7 +92,7 @@ Logros
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "conclusiones"
+name "sec81:conclusiones"
 
 \end_inset
 
@@ -124,7 +124,7 @@ key "LaraLabrador2013"
 Acorde al objetivo principal descrito en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "objetivo-general"
+reference "sec13:objetivo-general"
 
 \end_inset
 
@@ -156,7 +156,7 @@ reference "enu:obe4"
 ) de la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "objetivos-especuxedficos"
+reference "sec13:objetivos-especuxedficos"
 
 \end_inset
 
@@ -289,7 +289,7 @@ Trabajos Futuros
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "trabajos-futuros"
+name "sec82:trabajos-futuros"
 
 \end_inset
 
