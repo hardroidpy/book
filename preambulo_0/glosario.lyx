@@ -86,7 +86,7 @@ description "Android es un sistema operativo móvil desarrollado por Google. Est
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "HAR"
-description "Human Activity Recognition, por sus siglas en inglés"
+description "Human Activity Recognition"
 
 \end_inset
 
@@ -108,7 +108,7 @@ description "Es un sistema operativo móvil creado y desarrollado por Apple Inc.
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "GPS"
-description "Global Positioning System, por sus siglas en inglés"
+description "Global Positioning System"
 
 \end_inset
 
@@ -119,7 +119,7 @@ description "Global Positioning System, por sus siglas en inglés"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "API"
-description "Application Programing Interfaces, por sus siglas en inglés"
+description "Application Programing Interfaces"
 
 \end_inset
 
@@ -130,7 +130,7 @@ description "Application Programing Interfaces, por sus siglas en inglés"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "SaaS"
-description "Sofware as a Service, por sus siglas en inglés"
+description "Sofware as a Service"
 
 \end_inset
 
@@ -141,7 +141,7 @@ description "Sofware as a Service, por sus siglas en inglés"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "DT"
-description "Decision Trees, por sus siglas en inglés"
+description "Decision Trees"
 
 \end_inset
 
@@ -152,7 +152,7 @@ description "Decision Trees, por sus siglas en inglés"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "RF"
-description "Random Forest, por sus siglas en inglés"
+description "Random Forest"
 
 \end_inset
 
@@ -163,7 +163,7 @@ description "Random Forest, por sus siglas en inglés"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "SVM"
-description "Support-Vector Machines, por sus siglas en inglés."
+description "Support-Vector Machines"
 
 \end_inset
 
@@ -174,7 +174,7 @@ description "Support-Vector Machines, por sus siglas en inglés."
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "NB"
-description "Naive Bayes, por sus siglas en inglés"
+description "Naive Bayes"
 
 \end_inset
 
@@ -185,7 +185,7 @@ description "Naive Bayes, por sus siglas en inglés"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "HMM"
-description "Hidden Markov Models, por sus siglas en inglés"
+description "Hidden Markov Models"
 
 \end_inset
 
@@ -196,7 +196,7 @@ description "Hidden Markov Models, por sus siglas en inglés"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "ANN"
-description "Artificial Neural Networks, por sus siglas en inglés"
+description "Artificial Neural Networks"
 
 \end_inset
 
@@ -207,7 +207,7 @@ description "Artificial Neural Networks, por sus siglas en inglés"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "k-NN"
-description "k-Nearest Neighbors, por sus siglas en inglés"
+description "k-Nearest Neighbors"
 
 \end_inset
 
@@ -218,7 +218,7 @@ description "k-Nearest Neighbors, por sus siglas en inglés"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "HRM"
-description "Hear Rate Monitor, por sus siglas en inglés."
+description "Hear Rate Monitor"
 
 \end_inset
 
@@ -240,7 +240,18 @@ description "Dispositivos o aparatos que pueden ser atuendos de un individuo"
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
 symbol "ML"
-description "Machine Learning, por sus siglas en inglés."
+description "Machine Learning"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Hz"
+description "Hertz, unidad de medida de ciclos por segundo"
 
 \end_inset
 

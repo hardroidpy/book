@@ -197,7 +197,19 @@ La última sección, enumera los requisitos no funcionales para lograr una
  aplicación de contexto móvil y ubicua.
  Por un lado, las características esperadas en una aplicación de esta naturaleza
 , y por el otro los requisitos técnicos de los dispositivos móviles y los
- sensores empotrados utilizados como hardware de implementación.
+ sensores empotrados utilizados como instrumentos
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+hardware
+\end_layout
+
+\end_inset
+
+ de implementación.
 \end_layout
 
 \begin_layout Section
@@ -467,9 +479,9 @@ name "sec421:recolector-datos"
 
 \end_inset
 
-El recolector de datos tiene la función de capturar medidas de los sensores
- e registrar la información indexada en la dimensión del tiempo.
- La captura de datos relevantes para los sistemas 
+El recolector de datos obtiene medidas de los sensores y continuamente registrar
+ los datos en forma indexada en la dimensión del tiempo.
+ La captura de datos para los sistemas 
 \begin_inset ERT
 status open
 
@@ -482,8 +494,8 @@ abbr{HAR}
 
 \end_inset
 
- debe ser realizada con instrumentos de medición apropiados: en nuestro
- caso con sensores (
+ se realiza con instrumentos de medición apropiados: en nuestro caso con
+ sensores (
 \begin_inset ERT
 status open
 
@@ -496,27 +508,27 @@ abbr{Wearables}
 
 \end_inset
 
-)
+, véase 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec23:sensores"
 
 \end_inset
 
-.
- Los sensores empotrados se utilizan para recolectar señales directamente
- de los usuarios.
- Estos deben estar anexados al cuerpo como la cintura, la muñeca, el pectoral,
- los muslos o la cabeza 
+).
+ Las señales de los sensores capturan directamente de los usuarios por medio
+ de observaciones continuas, por lo que deben estar anexados al cuerpo;
+ en la cintura, la muñeca, el pectoral, los muslos o en la cabeza 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
 
 \end_inset
 
-, también pueden ser portados simplemente ya están comúnmente empotrados
- en dispositivos de uso regular como los teléfonos móviles modernos, relojes
- o lentes inteligentes 
+.
+ Adicionalmente, los sensores puede ser portados simplemente ya están comúnmente
+ empotrados en dispositivos de uso regular como los teléfonos móviles modernos,
+ relojes o lentes inteligentes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2012,Choudhury2008"
@@ -526,17 +538,104 @@ key "LaraLabrador2012,Choudhury2008"
 .
 \end_layout
 
+\begin_layout Standard
+A continuación se describe el método de registro de datos en flujo además
+ de algunos ejemplos de variables relevantes utilizadas.
+\end_layout
+
 \begin_layout Subsubsection
 Registro
 \end_layout
 
 \begin_layout Standard
-Las señales de variables medidas deben ser registrados de manera secuencial
- y transmitidos para su posterior procesamiento.
+El proceso de registro consiste en capturar las señales de un sensor y separar
+ las medidas en una o más variables dependientes de cada tipo de sensor.
+ La organización de los registros se debe realizar con respecto al tiempo.
+ Es decir, se dispone de un flujo continuo de datos con una marca de tiempo
+ almacenados de manera secuencial en un medio permanente para su posterior
+ procesamiento.
+ 
+\end_layout
+
+\begin_layout Standard
+La marca de tiempo se mide milisegundos y dependiendo del tipo de sensor
+ el intervalo entre medidas de variables puede variar en el mismo orden,
+ Ej.
+ con tasa de salida de 
+\family typewriter
+60 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Hz}
+\end_layout
+
+\end_inset
+
+ 
+\family default
+se tendrían 60 muestras en un segundo.
+ 
+\end_layout
+
+\begin_layout Standard
+Las señales capturadas de sensores se pueden clasificar en de movimiento,
+ entorno, fisiológicas y posición.
 \end_layout
 
 \begin_layout Subsubsection
 Señales de Aceleración
+\end_layout
+
+\begin_layout Standard
+La señal de aceleración posee variables en dos y tres dimensiones, donde
+ se mide la magnitud de la aceleración del dispositivo con respecto la orientaci
+ón del mismo (Ej.
+ mide 
+\begin_inset Formula $-9.8ms^{-2}$
+\end_inset
+
+ en dirección al suelo).
+ Se utiliza el símbolo 
+\begin_inset Formula $a$
+\end_inset
+
+ para representar el vector de las medidas de la aceleración, con tres dimension
+es medidas en los ejes 
+\begin_inset Formula $(x,y,z)$
+\end_inset
+
+ donde cada componente es representado por 
+\begin_inset Formula $a_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{y}$
+\end_inset
+
+ y 
+\begin_inset Formula $a_{z}$
+\end_inset
+
+.
+ En la figura 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig421a:muestra-ac}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -544,7 +643,7 @@ Señales de Giroscopio
 \end_layout
 
 \begin_layout Subsubsection
-Señales de Ubicación
+Señales de Posición
 \end_layout
 
 \begin_layout Subsubsection
