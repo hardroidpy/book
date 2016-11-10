@@ -588,24 +588,52 @@ Las señales capturadas de sensores se pueden clasificar en de movimiento,
 \end_layout
 
 \begin_layout Subsubsection
-Señales de Aceleración
+Señales de Movimiento
 \end_layout
 
 \begin_layout Standard
-La señal de aceleración posee variables en dos y tres dimensiones, donde
- se mide la magnitud de la aceleración del dispositivo con respecto la orientaci
-ón del mismo (Ej.
+Las señales de movimiento en sensores son altamente informativos para las
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+ El acelerómetro y giroscopio son los principales instrumentos que miden
+ el movimiento por medio de sensores empotrados y portados por los usuarios.
+\end_layout
+
+\begin_layout Standard
+Los acelerómetros miden señales de acuerdo a diferentes tipos de movimientos,
+ incluyendo la aceleración lineal y centrípeta, la gravedad y vibración
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Goehl2007"
+
+\end_inset
+
+ en dos o tres dimensiones.
+ Las variables medidas están expresadas en la magnitud de la aceleración
+ del dispositivo con respecto la orientación del mismo (Ej.
  mide 
-\begin_inset Formula $-9.8ms^{-2}$
+\begin_inset Formula $-9.8\,m\,s^{-2}$
 \end_inset
 
  en dirección al suelo).
- Se utiliza el símbolo 
+ Al representar el atributo medido por la aceleración con el símbolo
 \begin_inset Formula $a$
 \end_inset
 
- para representar el vector de las medidas de la aceleración, con tres dimension
-es medidas en los ejes 
+ que es el vector de los componentes de la aceleración en tres ejes 
 \begin_inset Formula $(x,y,z)$
 \end_inset
 
@@ -635,11 +663,447 @@ figref{fig421a:muestra-ac}
 
 \end_inset
 
+ se muestra un ejemplo de la señal de aceleración.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graficos/signal_a3d
+
+\end_inset
+
 
 \end_layout
 
-\begin_layout Subsubsection
-Señales de Giroscopio
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig421:muestra-ac"
+
+\end_inset
+
+Señal de aceleración en tres dimensiones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los giroscopios, o sensores de taza angular, miden señales de la rapidez
+ de giro de los objetos en tres dimensiones 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Goehl2007"
+
+\end_inset
+
+.
+ Las variables medidas están expresadas en el velocidad angular de rotación
+ del dispositivo con respecto a los ejes de orientación del mismo (Ej.
+ mide 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $-0.1\,rad\,s^{-1}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ en relación a un eje).
+ Al representar el atributo medido por el giroscopio con el símbolo
+\begin_inset Formula $w$
+\end_inset
+
+ que es el vector de los componentes de la giro en tres ejes 
+\begin_inset Formula $(x,y,z)$
+\end_inset
+
+ donde cada componente es representado por 
+\begin_inset Formula $w_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $w_{y}$
+\end_inset
+
+ y 
+\begin_inset Formula $w_{z}$
+\end_inset
+
+.
+ En el cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig421:muestra-ac"
+
+\end_inset
+
+ se muestra un ejemplo de las señales registradas para el sensor de aceleración.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{x}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{y}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+1.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+-2.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/s_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+1.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+-2.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+0.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2/s_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+1.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+-2.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t_{max}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+1.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+2.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+-0.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab421:ex-señales"
+
+\end_inset
+
+Ejemplo de señales medidas de aceleración
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -648,6 +1112,10 @@ Señales de Posición
 
 \begin_layout Subsubsection
 Señales de Fisiológicas
+\end_layout
+
+\begin_layout Subsubsection
+Señales del Ambiente
 \end_layout
 
 \begin_layout Subsection

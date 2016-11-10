@@ -34,7 +34,7 @@ La última sección, enumera los requisitos no funcionales para lograr
 una aplicación de contexto móvil y ubicua. Por un lado, las características
 esperadas en una aplicación de esta naturaleza, y por el otro los
 requisitos técnicos de los dispositivos móviles y los sensores empotrados
-utilizados como hardware de implementación.
+utilizados como instrumentos\footnote{\emph{hardware}} de implementación.
 
 \section{Arquitectura del sistema}
 
@@ -77,30 +77,103 @@ componente se describen a continuación.
 
 \subsection{Recolector de medidas}
 
-\label{sec421:recolector-datos}El recolector de datos tiene la función
-de capturar medidas de los sensores e registrar la información indexada
-en la dimensión del tiempo. La captura de datos relevantes para los
-sistemas \abbr{HAR} debe ser realizada con instrumentos de medición
-apropiados: en nuestro caso con sensores (\abbr{Wearables})\ref{sec23:sensores}.
-Los sensores empotrados se utilizan para recolectar señales directamente
-de los usuarios. Estos deben estar anexados al cuerpo como la cintura,
-la muñeca, el pectoral, los muslos o la cabeza \cite{Bao2004}, también
-pueden ser portados simplemente ya están comúnmente empotrados en
-dispositivos de uso regular como los teléfonos móviles modernos, relojes
-o lentes inteligentes \cite{LaraLabrador2012,Choudhury2008}.
+\label{sec421:recolector-datos}El recolector de datos obtiene medidas
+de los sensores y continuamente registrar los datos en forma indexada
+en la dimensión del tiempo. La captura de datos para los sistemas
+\abbr{HAR} se realiza con instrumentos de medición apropiados: en
+nuestro caso con sensores (\abbr{Wearables}, véase \ref{sec23:sensores}).
+Las señales de los sensores capturan directamente de los usuarios
+por medio de observaciones continuas, por lo que deben estar anexados
+al cuerpo; en la cintura, la muñeca, el pectoral, los muslos o en
+la cabeza \cite{Bao2004}. Adicionalmente, los sensores puede ser
+portados simplemente ya están comúnmente empotrados en dispositivos
+de uso regular como los teléfonos móviles modernos, relojes o lentes
+inteligentes \cite{LaraLabrador2012,Choudhury2008}.
+
+A continuación se describe el método de registro de datos en flujo
+además de algunos ejemplos de variables relevantes utilizadas.
 
 \subsubsection{Registro}
 
-Las señales de variables medidas deben ser registrados de manera secuencial
-y transmitidos para su posterior procesamiento.
+El proceso de registro consiste en capturar las señales de un sensor
+y separar las medidas en una o más variables dependientes de cada
+tipo de sensor. La organización de los registros se debe realizar
+con respecto al tiempo. Es decir, se dispone de un flujo continuo
+de datos con una marca de tiempo almacenados de manera secuencial
+en un medio permanente para su posterior procesamiento. 
 
-\subsubsection{Señales de Aceleración}
+La marca de tiempo se mide milisegundos y dependiendo del tipo de
+sensor el intervalo entre medidas de variables puede variar en el
+mismo orden, Ej. con tasa de salida de \texttt{60 \abbr{Hz} }se tendrían
+60 muestras en un segundo. 
 
-\subsubsection{Señales de Giroscopio}
+Las señales capturadas de sensores se pueden clasificar en de movimiento,
+entorno, fisiológicas y posición.
 
-\subsubsection{Señales de Ubicación}
+\subsubsection{Señales de Movimiento}
+
+Las señales de movimiento en sensores son altamente informativos para
+las \abbr{HAR}. El acelerómetro y giroscopio son los principales
+instrumentos que miden el movimiento por medio de sensores empotrados
+y portados por los usuarios.
+
+Los acelerómetros miden señales de acuerdo a diferentes tipos de movimientos,
+incluyendo la aceleración lineal y centrípeta, la gravedad y vibración
+\cite{Goehl2007} en dos o tres dimensiones. Las variables medidas
+están expresadas en la magnitud de la aceleración del dispositivo
+con respecto la orientación del mismo (Ej. mide $-9.8\,m\,s^{-2}$
+en dirección al suelo). Al representar el atributo medido por la aceleración
+con el símbolo$a$ que es el vector de los componentes de la aceleración
+en tres ejes $(x,y,z)$ donde cada componente es representado por
+$a_{x}$, $a_{y}$ y $a_{z}$. En la figura \figref{fig421a:muestra-ac}
+se muestra un ejemplo de la señal de aceleración.
+
+\begin{figure}[!tbph]
+\begin{centering}
+\includegraphics[bb = 0 0 200 100, draft, type=eps]{capitulo-4/graficos/signal_a3d}
+\par\end{centering}
+\caption{\label{fig421:muestra-ac}Señal de aceleración en tres dimensiones}
+\end{figure}
+
+Los giroscopios, o sensores de taza angular, miden señales de la rapidez
+de giro de los objetos en tres dimensiones \cite{Goehl2007}. Las
+variables medidas están expresadas en el velocidad angular de rotación
+del dispositivo con respecto a los ejes de orientación del mismo (Ej.
+mide \foreignlanguage{english}{$-0.1\,rad\,s^{-1}$} en relación a
+un eje). Al representar el atributo medido por el giroscopio con el
+símbolo$w$ que es el vector de los componentes de la giro en tres
+ejes $(x,y,z)$ donde cada componente es representado por $w_{x}$,
+$w_{y}$ y $w_{z}$. En el cuadro \ref{fig421:muestra-ac} se muestra
+un ejemplo de las señales registradas para el sensor de aceleración.
+
+\begin{table}[!tbph]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+$t$ & $a_{x}$ & $a_{y}$ & $a_{z}$\tabularnewline
+\hline 
+\hline 
+$0$ & \texttt{1.3} & \texttt{-2.1} & \texttt{0}\tabularnewline
+\hline 
+$1/s_{1}$ & \texttt{1.4} & \texttt{-2.3} & \texttt{0.1}\tabularnewline
+\hline 
+$2/s_{2}$ & \texttt{1.1} & \texttt{-2.6} & \texttt{0}\tabularnewline
+\hline 
+... & \texttt{...} & \texttt{...} & \texttt{...}\tabularnewline
+\hline 
+$t_{max}$ & \texttt{1.8} & \texttt{2.2} & \texttt{-0.4}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab421:ex-se=0000F1ales}Ejemplo de señales medidas de aceleración}
+\end{table}
+
+
+\subsubsection{Señales de Posición}
 
 \subsubsection{Señales de Fisiológicas}
+
+\subsubsection{Señales del Ambiente}
 
 \subsection{Procesador de muestras}
 
