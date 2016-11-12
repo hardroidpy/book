@@ -70,8 +70,7 @@ de los componentes y sus interrelaciones. Las funcionalidades de cada
 componente se describen a continuación. 
 
 \begin{figure}[!tbph]
-\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption{Componentes de los sistemas \abbr{HAR}}
-\label{fig42:componentes-har}
+\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption[Componentes de los sistemas HAR]{\label{fig42:componentes-har}Componentes de los sistemas \abbr{HAR}}
 \end{figure}
 
 
@@ -112,39 +111,43 @@ entorno, fisiológicas y posición.
 
 \subsubsection{Señales de Movimiento}
 
-Las señales de movimiento en sensores son altamente informativos para
-las \abbr{HAR}. El acelerómetro y giroscopio son los principales
-instrumentos que miden el movimiento por medio de sensores empotrados
-y portados por los usuarios.
+Los sensores de movimiento proveen señales altamente informativos
+para las \abbr{HAR} debido a que miden las fuerzas de aceleración
+y rotación en tres ejes cuando son portados por los usuarios. En esta
+categoría de sensores se encuentran los acelerómetros y giroscopios. 
 
 Los acelerómetros miden señales de acuerdo a diferentes tipos de movimientos,
 incluyendo la aceleración lineal y centrípeta, la gravedad y vibración
-\cite{Goehl2007} en dos o tres dimensiones. Las variables medidas
-están expresadas en la magnitud de la aceleración del dispositivo
-con respecto la orientación del mismo (Ej. mide $-9.8\,m\,s^{-2}$
-en dirección al suelo). Al representar el atributo medido por la aceleración
-con el símbolo$a$ que es el vector de los componentes de la aceleración
-en tres ejes $(x,y,z)$ donde cada componente es representado por
-$a_{x}$, $a_{y}$ y $a_{z}$. En la figura \figref{fig421a:muestra-ac}
-se muestra un ejemplo de la señal de aceleración.
+en dos o tres dimensiones \cite{Goehl2007}. Las variables medidas
+están expresadas en la magnitud de la aceleración ejercida sobre el
+dispositivo con respecto la orientación del mismo (Ej. en reposo mide
+$-9.8\,m\,s^{-2}$ en dirección al suelo). Representamos el atributo
+medido por la aceleración con el símbolo $a$ como el vector de los
+tres componentes de la aceleración en cada eje $(x,y,z)$, cada componente
+esta representado por $a_{x}$, $a_{y}$ y $a_{z}$. En la Figura
+\ref{fig421:muestra-ac} se muestra un ejemplo de las medidas obtenidas
+por la señal del acelerómetro en una actividad determinada.
 
 \begin{figure}[!tbph]
 \begin{centering}
-\includegraphics[bb = 0 0 200 100, draft, type=eps]{capitulo-4/graficos/signal_a3d}
+\includegraphics[width=1\columnwidth]{capitulo-4/graphics/signal_a3d}
 \par\end{centering}
-\caption{\label{fig421:muestra-ac}Señal de aceleración en tres dimensiones}
+\caption[Señal de aceleración en tres dimensiones]{\label{fig421:muestra-ac}Señal de aceleración en tres dimensiones}
 \end{figure}
 
-Los giroscopios, o sensores de taza angular, miden señales de la rapidez
-de giro de los objetos en tres dimensiones \cite{Goehl2007}. Las
-variables medidas están expresadas en el velocidad angular de rotación
+Los giroscopios, o sensores de razón angular, miden señales de la
+rapidez de rotación de los objetos en tres dimensiones \cite{Goehl2007}.
+Las variables medidas están expresadas en velocidad angular de rotación
 del dispositivo con respecto a los ejes de orientación del mismo (Ej.
-mide \foreignlanguage{english}{$-0.1\,rad\,s^{-1}$} en relación a
-un eje). Al representar el atributo medido por el giroscopio con el
-símbolo$w$ que es el vector de los componentes de la giro en tres
-ejes $(x,y,z)$ donde cada componente es representado por $w_{x}$,
-$w_{y}$ y $w_{z}$. En el cuadro \ref{fig421:muestra-ac} se muestra
-un ejemplo de las señales registradas para el sensor de aceleración.
+en movimiento mide \foreignlanguage{english}{$-0.1\,rad\,s^{-1}$}
+en relación a un eje fijo). Representamos el atributo medido por el
+giroscopio con el símbolo $w$ como el vector de los tres componentes
+del giro cada eje $(x,y,z)$, cada componente es representado por
+$w_{x}$, $w_{y}$ y $w_{z}$. 
+
+En el la Tabla \ref{tab421:ex-signal} se muestra un ejemplo de las
+medidas registradas por la señal del acelerómetro en una ventana de
+tiempo dada.
 
 \begin{table}[!tbph]
 \begin{centering}
@@ -165,15 +168,38 @@ $t_{max}$ & \texttt{1.8} & \texttt{2.2} & \texttt{-0.4}\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption{\label{tab421:ex-se=0000F1ales}Ejemplo de señales medidas de aceleración}
+\caption[Ejemplo de señales medidas de aceleración]{\label{tab421:ex-signal}Ejemplo de señales medidas de aceleración}
 \end{table}
 
+Las ventajas de los sensores de movimiento es el conocido amplio uso
+en el reconocimiento de actividades ambulatorias \cite{Bao2004,Kwapisz2011,ReyesOrtiz2015}.
+Los acelerómetros y giroscopios tienen un costo asociado y consumo
+de energía bastante bajo, además de estar incluidos actualmente en
+los teléfonos móviles modernos. También, varios trabajos publicados
+e implementados reportan una alta precisión en el reconocimiento de
+actividades \cite{Bao2004,LaraLabrador2012}.
 
 \subsubsection{Señales de Posición}
 
-\subsubsection{Señales de Fisiológicas}
+Los sensores de posición proveen señales con información adicional
+que pueden ser utilizados para las \abbr{HAR}. En esta categoría
+están los sensores de orientación (o brújula), magnetómetros y \abbr{GPS}. 
 
 \subsubsection{Señales del Ambiente}
+
+Los sensores ambientales miden varios atributos del entorno que lo
+rodea. Algunas señales como la temperatura del aire, presión atmosférica,
+iluminación, y humedad, y el ruido pueden proveer información de utilidad
+para conocer mejor el habitad particular de un individuo. En esta
+categoría están los barómetros, fotómetros, termómetros y micrófonos.
+
+\subsubsection{Señales de Fisiológicas}
+
+Los sensores fisiológicos proveen señales de signos vitales de un
+individuo. La información sobre el ritmo cardíaco, tasa de respiración
+y temperatura del cuerpo podrían ser combinados para enriquecer el
+contexto durante el reconocimiento en ciertas aplicaciones específicas
+como las orientadas a la salud.
 
 \subsection{Procesador de muestras}
 

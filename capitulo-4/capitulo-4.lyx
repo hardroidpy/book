@@ -435,6 +435,22 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig42:componentes-har"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Componentes de los sistemas HAR
+\end_layout
+
+\end_inset
+
 Componentes de los sistemas 
 \begin_inset ERT
 status open
@@ -450,13 +466,6 @@ abbr{HAR}
 
 
 \end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "fig42:componentes-har"
 
 \end_inset
 
@@ -592,7 +601,7 @@ Señales de Movimiento
 \end_layout
 
 \begin_layout Standard
-Las señales de movimiento en sensores son altamente informativos para las
+Los sensores de movimiento proveen señales altamente informativos para las
  
 \begin_inset ERT
 status open
@@ -606,38 +615,39 @@ abbr{HAR}
 
 \end_inset
 
-.
- El acelerómetro y giroscopio son los principales instrumentos que miden
- el movimiento por medio de sensores empotrados y portados por los usuarios.
+ debido a que miden las fuerzas de aceleración y rotación en tres ejes cuando
+ son portados por los usuarios.
+ En esta categoría de sensores se encuentran los acelerómetros y giroscopios.
+ 
 \end_layout
 
 \begin_layout Standard
 Los acelerómetros miden señales de acuerdo a diferentes tipos de movimientos,
  incluyendo la aceleración lineal y centrípeta, la gravedad y vibración
- 
+ en dos o tres dimensiones 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Goehl2007"
 
 \end_inset
 
- en dos o tres dimensiones.
+.
  Las variables medidas están expresadas en la magnitud de la aceleración
- del dispositivo con respecto la orientación del mismo (Ej.
- mide 
+ ejercida sobre el dispositivo con respecto la orientación del mismo (Ej.
+ en reposo mide 
 \begin_inset Formula $-9.8\,m\,s^{-2}$
 \end_inset
 
  en dirección al suelo).
- Al representar el atributo medido por la aceleración con el símbolo
+ Representamos el atributo medido por la aceleración con el símbolo 
 \begin_inset Formula $a$
 \end_inset
 
- que es el vector de los componentes de la aceleración en tres ejes 
+ como el vector de los tres componentes de la aceleración en cada eje 
 \begin_inset Formula $(x,y,z)$
 \end_inset
 
- donde cada componente es representado por 
+, cada componente esta representado por 
 \begin_inset Formula $a_{x}$
 \end_inset
 
@@ -650,20 +660,15 @@ key "Goehl2007"
 \end_inset
 
 .
- En la figura 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-figref{fig421a:muestra-ac}
-\end_layout
+ En la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig421:muestra-ac"
 
 \end_inset
 
- se muestra un ejemplo de la señal de aceleración.
+ se muestra un ejemplo de las medidas obtenidas por la señal del acelerómetro
+ en una actividad determinada.
 \end_layout
 
 \begin_layout Standard
@@ -675,7 +680,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename graficos/signal_a3d
+	filename graphics/signal_a3d.png
+	width 100col%
 
 \end_inset
 
@@ -689,6 +695,16 @@ status open
 \begin_inset CommandInset label
 LatexCommand label
 name "fig421:muestra-ac"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Señal de aceleración en tres dimensiones
+\end_layout
 
 \end_inset
 
@@ -706,8 +722,8 @@ Señal de aceleración en tres dimensiones
 \end_layout
 
 \begin_layout Standard
-Los giroscopios, o sensores de taza angular, miden señales de la rapidez
- de giro de los objetos en tres dimensiones 
+Los giroscopios, o sensores de razón angular, miden señales de la rapidez
+ de rotación de los objetos en tres dimensiones 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Goehl2007"
@@ -715,9 +731,9 @@ key "Goehl2007"
 \end_inset
 
 .
- Las variables medidas están expresadas en el velocidad angular de rotación
+ Las variables medidas están expresadas en velocidad angular de rotación
  del dispositivo con respecto a los ejes de orientación del mismo (Ej.
- mide 
+ en movimiento mide 
 \family roman
 \series medium
 \shape up
@@ -747,16 +763,16 @@ key "Goehl2007"
 \noun default
 \color inherit
 \lang spanish
- en relación a un eje).
- Al representar el atributo medido por el giroscopio con el símbolo
+ en relación a un eje fijo).
+ Representamos el atributo medido por el giroscopio con el símbolo 
 \begin_inset Formula $w$
 \end_inset
 
- que es el vector de los componentes de la giro en tres ejes 
+ como el vector de los tres componentes del giro cada eje 
 \begin_inset Formula $(x,y,z)$
 \end_inset
 
- donde cada componente es representado por 
+, cada componente es representado por 
 \begin_inset Formula $w_{x}$
 \end_inset
 
@@ -769,14 +785,19 @@ key "Goehl2007"
 \end_inset
 
 .
- En el cuadro 
+ 
+\end_layout
+
+\begin_layout Standard
+En el la Tabla 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig421:muestra-ac"
+reference "tab421:ex-signal"
 
 \end_inset
 
- se muestra un ejemplo de las señales registradas para el sensor de aceleración.
+ se muestra un ejemplo de las medidas registradas por la señal del acelerómetro
+ en una ventana de tiempo dada.
 \end_layout
 
 \begin_layout Standard
@@ -1087,9 +1108,19 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Ejemplo de señales medidas de aceleración
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
-name "tab421:ex-señales"
+name "tab421:ex-signal"
 
 \end_inset
 
@@ -1106,16 +1137,90 @@ Ejemplo de señales medidas de aceleración
 
 \end_layout
 
+\begin_layout Standard
+Las ventajas de los sensores de movimiento es el conocido amplio uso en
+ el reconocimiento de actividades ambulatorias 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004,Kwapisz2011,ReyesOrtiz2015"
+
+\end_inset
+
+.
+ Los acelerómetros y giroscopios tienen un costo asociado y consumo de energía
+ bastante bajo, además de estar incluidos actualmente en los teléfonos móviles
+ modernos.
+ También, varios trabajos publicados e implementados reportan una alta precisión
+ en el reconocimiento de actividades 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004,LaraLabrador2012"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsubsection
 Señales de Posición
+\end_layout
+
+\begin_layout Standard
+Los sensores de posición proveen señales con información adicional que pueden
+ ser utilizados para las 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+ En esta categoría están los sensores de orientación (o brújula), magnetómetros
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Señales del Ambiente
+\end_layout
+
+\begin_layout Standard
+Los sensores ambientales miden varios atributos del entorno que lo rodea.
+ Algunas señales como la temperatura del aire, presión atmosférica, iluminación,
+ y humedad, y el ruido pueden proveer información de utilidad para conocer
+ mejor el habitad particular de un individuo.
+ En esta categoría están los barómetros, fotómetros, termómetros y micrófonos.
 \end_layout
 
 \begin_layout Subsubsection
 Señales de Fisiológicas
 \end_layout
 
-\begin_layout Subsubsection
-Señales del Ambiente
+\begin_layout Standard
+Los sensores fisiológicos proveen señales de signos vitales de un individuo.
+ La información sobre el ritmo cardíaco, tasa de respiración y temperatura
+ del cuerpo podrían ser combinados para enriquecer el contexto durante el
+ reconocimiento en ciertas aplicaciones específicas como las orientadas
+ a la salud.
 \end_layout
 
 \begin_layout Subsection
