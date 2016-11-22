@@ -288,6 +288,16 @@ description "Global System for Mobile, sistema de comunicación celular global."
 
 \end_inset
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Kinect"
+description "Sensor de profundidad de Microsoft"
+
+\end_inset
+
 
 \end_layout
 
