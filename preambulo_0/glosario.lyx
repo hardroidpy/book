@@ -258,5 +258,38 @@ description "Hertz, unidad de medida de ciclos por segundo"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "WIFI"
+description "Wireless Fidelity, permite tener acceso o conectarse a una red utilizando ondas de radio"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GPRS"
+description "General Packet Radio Service, servicio de datos moviles en comunicaciones celulares 2G/3G"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GSM"
+description "Global System for Mobile, sistema de comunicación celular global."
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

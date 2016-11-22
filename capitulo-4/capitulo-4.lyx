@@ -804,7 +804,7 @@ reference "tab421:ex-signal"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1138,8 +1138,8 @@ Ejemplo de señales medidas de aceleración
 \end_layout
 
 \begin_layout Standard
-Las ventajas de los sensores de movimiento es el conocido amplio uso en
- el reconocimiento de actividades ambulatorias 
+Las ventajas de los sensores de movimiento es su amplio uso en el reconocimiento
+ de actividades ambulatorias 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004,Kwapisz2011,ReyesOrtiz2015"
@@ -1147,8 +1147,8 @@ key "Bao2004,Kwapisz2011,ReyesOrtiz2015"
 \end_inset
 
 .
- Los acelerómetros y giroscopios tienen un costo asociado y consumo de energía
- bastante bajo, además de estar incluidos actualmente en los teléfonos móviles
+ Los acelerómetros y giroscopios poseen un bajo costo asociado, bajo consumo
+ de energía, además de estar incluidos actualmente en los teléfonos móviles
  modernos.
  También, varios trabajos publicados e implementados reportan una alta precisión
  en el reconocimiento de actividades 
@@ -1180,7 +1180,7 @@ abbr{HAR}
 
 \end_inset
 
-.
+ y aplicaciones de contexto con servicios basados en localización.
  En esta categoría están los sensores de orientación (o brújula), magnetómetros
  y 
 \begin_inset ERT
@@ -1195,8 +1195,139 @@ abbr{GPS}
 
 \end_inset
 
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google2016s"
+
+\end_inset
+
 .
- 
+\end_layout
+
+\begin_layout Standard
+Las señales del 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+ permiten acceder a las coordenadas geográficas globales así como el modo
+ de transporte de un individuo, de acuerdo a la velocidad estimada.
+ Los teléfonos móviles modernos están equipados con dispositivos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+ además de poder estimar con buena precisión las coordenadas de acuerdo
+ a la red celular 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GSM}
+\end_layout
+
+\end_inset
+
+/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPRS}
+\end_layout
+
+\end_inset
+
+ y redes 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WIFI}
+\end_layout
+
+\end_inset
+
+ de corto alcance.
+ La señal de localización se miden por medio de dos variables, latitud y
+ longitud en la unidad de radianes (Ej.
+ latitud 
+\begin_inset Formula $-57.2322\,rad$
+\end_inset
+
+ y longitud 
+\begin_inset Formula $-25.3442\,rad$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Sin embargo, los dispositivos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+ tienen cobertura limitada, ya sea por la dificultad de señal dentro de
+ edificaciones, o sin servicio de red celular o 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WIFI}
+\end_layout
+
+\end_inset
+
+, como también el alto consumo de energía para aplicaciones que rastrean
+ la localización en tiempo real.
+ La localización particularmente es información sensible para los usuarios
+ ya que se debe tener especial atención a no comprometer la privacidad de
+ los datos y el consentimiento del usuario que permita ser rastreado 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1204,11 +1335,29 @@ Señales del Ambiente
 \end_layout
 
 \begin_layout Standard
-Los sensores ambientales miden varios atributos del entorno que lo rodea.
+Los sensores de ambiente miden varios atributos del entorno que rodea al
+ usuario.
  Algunas señales como la temperatura del aire, presión atmosférica, iluminación,
- y humedad, y el ruido pueden proveer información de utilidad para conocer
- mejor el habitad particular de un individuo.
+ humedad, y el ruido pueden proveer información de utilidad para conocer
+ mejor el habitad particular de un usuario.
  En esta categoría están los barómetros, fotómetros, termómetros y micrófonos.
+\end_layout
+
+\begin_layout Standard
+Los sensores de ambiente solos no proveen información suficiente ya que
+ los individuos pueden realizar las actividades bajo diversas circunstancias
+ contextuales en términos de clima, ruido o iluminación.
+ Por lo tanto estos sensores pueden utilizarse de manera complementaria
+ para detectar sugestiones adicionales, Ej.
+ el usuario está en el exterior de acuerdo a la luminosidad, o se encuentra
+ descansando debido a un nivel de sonido y luminosidad baja 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection

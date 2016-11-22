@@ -171,27 +171,54 @@ $t_{max}$ & \texttt{1.8} & \texttt{2.2} & \texttt{-0.4}\tabularnewline
 \caption[Ejemplo de señales medidas de aceleración]{\label{tab421:ex-signal}Ejemplo de señales medidas de aceleración}
 \end{table}
 
-Las ventajas de los sensores de movimiento es el conocido amplio uso
-en el reconocimiento de actividades ambulatorias \cite{Bao2004,Kwapisz2011,ReyesOrtiz2015}.
-Los acelerómetros y giroscopios tienen un costo asociado y consumo
-de energía bastante bajo, además de estar incluidos actualmente en
-los teléfonos móviles modernos. También, varios trabajos publicados
-e implementados reportan una alta precisión en el reconocimiento de
-actividades \cite{Bao2004,LaraLabrador2012}.
+Las ventajas de los sensores de movimiento es su amplio uso en el
+reconocimiento de actividades ambulatorias \cite{Bao2004,Kwapisz2011,ReyesOrtiz2015}.
+Los acelerómetros y giroscopios poseen un bajo costo asociado, bajo
+consumo de energía, además de estar incluidos actualmente en los teléfonos
+móviles modernos. También, varios trabajos publicados e implementados
+reportan una alta precisión en el reconocimiento de actividades \cite{Bao2004,LaraLabrador2012}.
 
 \subsubsection{Señales de Posición}
 
 Los sensores de posición proveen señales con información adicional
-que pueden ser utilizados para las \abbr{HAR}. En esta categoría
-están los sensores de orientación (o brújula), magnetómetros y \abbr{GPS}. 
+que pueden ser utilizados para las \abbr{HAR} y aplicaciones de contexto
+con servicios basados en localización. En esta categoría están los
+sensores de orientación (o brújula), magnetómetros y \abbr{GPS}\cite{Google2016s}.
+
+Las señales del \abbr{GPS} permiten acceder a las coordenadas geográficas
+globales así como el modo de transporte de un individuo, de acuerdo
+a la velocidad estimada. Los teléfonos móviles modernos están equipados
+con dispositivos \abbr{GPS} además de poder estimar con buena precisión
+las coordenadas de acuerdo a la red celular \abbr{GSM}/\abbr{GPRS}
+y redes \abbr{WIFI} de corto alcance. La señal de localización se
+miden por medio de dos variables, latitud y longitud en la unidad
+de radianes (Ej. latitud $-57.2322\,rad$ y longitud $-25.3442\,rad$).
+
+Sin embargo, los dispositivos \abbr{GPS} tienen cobertura limitada,
+ya sea por la dificultad de señal dentro de edificaciones, o sin servicio
+de red celular o \abbr{WIFI}, como también el alto consumo de energía
+para aplicaciones que rastrean la localización en tiempo real. La
+localización particularmente es información sensible para los usuarios
+ya que se debe tener especial atención a no comprometer la privacidad
+de los datos y el consentimiento del usuario que permita ser rastreado
+\cite{LaraLabrador2013}.
 
 \subsubsection{Señales del Ambiente}
 
-Los sensores ambientales miden varios atributos del entorno que lo
-rodea. Algunas señales como la temperatura del aire, presión atmosférica,
-iluminación, y humedad, y el ruido pueden proveer información de utilidad
-para conocer mejor el habitad particular de un individuo. En esta
-categoría están los barómetros, fotómetros, termómetros y micrófonos.
+Los sensores de ambiente miden varios atributos del entorno que rodea
+al usuario. Algunas señales como la temperatura del aire, presión
+atmosférica, iluminación, humedad, y el ruido pueden proveer información
+de utilidad para conocer mejor el habitad particular de un usuario.
+En esta categoría están los barómetros, fotómetros, termómetros y
+micrófonos.
+
+Los sensores de ambiente solos no proveen información suficiente ya
+que los individuos pueden realizar las actividades bajo diversas circunstancias
+contextuales en términos de clima, ruido o iluminación. Por lo tanto
+estos sensores pueden utilizarse de manera complementaria para detectar
+sugestiones adicionales, Ej. el usuario está en el exterior de acuerdo
+a la luminosidad, o se encuentra descansando debido a un nivel de
+sonido y luminosidad baja \cite{LaraLabrador2013}.
 
 \subsubsection{Señales de Fisiológicas}
 
