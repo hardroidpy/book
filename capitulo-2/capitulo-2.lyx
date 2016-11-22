@@ -251,27 +251,33 @@ name "sec23:sensores"
 
 \end_inset
 
- En la problemática del reconocimiento de la actividad que está realizando
- una persona uno de los puntos importantes a considerar es la elección de
- los sensores a utilizar.
+ En la problemática del reconocimiento de actividades realizada por un individuo
+, uno de los temas importantes a tratar es la elección de los sensores utilizado
+s.
+ Se han utilizando sensores variados para extraer información acerca de
+ las actividades de un individuo.
  Los sensores pueden medir signos vitales (ritmo cardíaco, temperatura del
- cuerpo, presión arterial), el ambiente (intensidad de luz, temperatura,
- niveles de sonido), movimiento (aceleración, velocidad), y posición (localizaci
-ón global o en interiores).
- Sobre la localización de los sensores respecto a la persona, algunos autores
+ cuerpo, presión arterial), señales del ambiente (intensidad de luz, temperatura
+, niveles de sonido), el movimiento (aceleración, velocidad), y la posición
+ (localización global o en interiores).
  
+\end_layout
+
+\begin_layout Standard
+Con respecto a la disposición de los sensores en relación a los usuarios,
+ algunos autores 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "ReyesOrtiz2015"
+key "ReyesOrtiz2015,LaraLabrador2013"
 
 \end_inset
 
- diferencian entre ambientales, cuando los sensores esta ubicados de manera
- estática en el ambiente que rodea a la persona, y 
+ diferencian entre ambientales, los sensores están ubicados de fija en el
+ ambiente que rodea a al individuo, y 
 \emph on
 wearables
 \emph default
- cuando lo sensores se usan o están conectados al cuerpo de la persona.
+ cuando los sensores están puestos o conectados al cuerpo de la persona.
 \end_layout
 
 \begin_layout Subsection
@@ -280,13 +286,33 @@ Sensores Ambientales
 
 \begin_layout Standard
 Los sensores ambientales, también denominados externos o de entorno, son
- un conjunto de dispositivos que se encuentran en el medio ambiente que
- miden propiedades físicas del entorno donde las personas se encuentras
- e interactúan.
+ un conjunto de dispositivos que se encuentran en el entorno y miden propiedades
+ físicas del mismo, a las personas que rodean, y la interacción entre los
+ mismos.
  Existe una amplia variedad de sensores ambientales, como micrófonos, cámaras
  de vídeo, sensores de presencia, termómetros y sensores de profundidad
- (Kinect).
- Para este tipo de reconocimiento tenemos por ejemplo a 
+ (Ej.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Kinect}
+\end_layout
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Existen varios trabajos que explorar el uso de sensores ambientales para
+ reconocimiento de actividades.
+ Entre ellos el lo expuesto por 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Poppe2007"
@@ -294,6 +320,9 @@ key "Poppe2007"
 \end_inset
 
  que realiza un análisis de movimientos humanos utilizando cámaras de vídeo.
+ A pesar de ser bastantes efectivos los sistemas basados en vídeos existen
+ grandes limitaciones para procesamiento en tiempo real y la privacidad
+ de los usuarios.
 \end_layout
 
 \begin_layout Subsection
@@ -305,26 +334,55 @@ Los sensores
 \emph on
 wearables
 \emph default
- son usados para obtener señales directamente en una persona, estos pueden
- estar unidos a varias partes del cuerpo, como ser la cintura, muñeca, pecho,
- pierna, y cabeza 
+ (o de atuendo) son utilizados para obtener señales directamente de los
+ usuarios, los sensores pueden estar anexos a varias partes del cuerpo,
+ como la cintura, la muñeca, el pecho, la pierna, y la cabeza 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
 
 \end_inset
 
- pero también pueden formar parte de la ropa o embebido en otro accesorio
- de uso común, como relojes, anteojos y teléfonos móviles.
- Como característica tienen una batería que proporciona la energía para
- poder operar, y algunos cuentan con conexiones inalámbricas (con WIFI/Bluetooh)
- para la transmisión de los datos obtenidos.
+ como también pueden formar parte de alguna vestimenta.
+ También, pueden estar embebidos en algún accesorio de uso común, como relojes,
+ anteojos y los teléfonos móviles.
+ 
 \end_layout
 
 \begin_layout Standard
-Las señales de movimiento y fisiológicas son obtenidas por los sensores,
- como ser temperatura de la piel, frecuencia cardíaca, conductividad, y
- posicionamiento global (
+Como característica adicional tienen autonomía gracias al uso de baterías
+ que proporcionan energía para poder operar, y además algunos cuentan con
+ conexiones inalámbricas (Ej.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WIFI}
+\end_layout
+
+\end_inset
+
+/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Bluetooth}
+\end_layout
+
+\end_inset
+
+) para la transmisión de las señales.
+ Las señales de movimiento y fisiológicas obtenidas por los sensores pueden
+ ser temperatura de la piel, frecuencia cardíaca, conductividad, posicionamiento
+ global (
 \begin_inset ERT
 status open
 
@@ -337,14 +395,14 @@ abbr{GPS}
 
 \end_inset
 
-), posicionamiento en interiores y movimientos del cuerpo.
+) y movimientos del cuerpo.
  Todos estas mediciones son útiles para tener una constante información
  del estado de una persona en cualquier momento.
 \end_layout
 
 \begin_layout Standard
-Los sensores anexos directamente a un individuo pueden caracterizarse según
- los siguientes atributos 
+Los sensores anexos directamente a un individuo se clasifican comúnmente
+ según los siguientes grupos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -352,6 +410,21 @@ key "LaraLabrador2013"
 \end_inset
 
 :
+\end_layout
+
+\begin_layout Description
+Movimiento miden datos inerciales como la aceleración y la orientación respecto
+ a un marco de referencia relativo al dispositivo que contiene los sensores.
+ El acelerómetro, giroscopio y la brújula son los sensores más comunes y
+ utilizados para reconocimiento de actividades con un bajo consumo de energía
+ y buena precisión de reconocimiento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004,LaraLabrador2012"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Description
@@ -376,21 +449,6 @@ abbr{GPS}
 \end_layout
 
 \begin_layout Description
-Movimiento miden datos inerciales como la aceleración y la orientación respecto
- a un marco de referencia relativo al dispositivo que contiene los sensores.
- El acelerómetro, giroscopio y la brújula son los sensores más comunes y
- utilizados para reconocimiento de actividades con un bajo consumo de energía
- y buena precisión de reconocimiento 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Bao2004,LaraLabrador2012"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Description
 Fisiología miden signos vitales del individuo como el ritmo cardíaco (
 \begin_inset ERT
 status open
@@ -412,9 +470,9 @@ Hearth Rate Monitor
 \end_layout
 
 \begin_layout Description
-Ambiental miden datos externos que rodean al individuo como el nivel de
- ruido, la humedad y/o la temperatura.
- Los sensores de luz, cámara, micrófonos y termómetros miden estos datos.
+Ambiente miden datos externos que rodean al individuo como el nivel de ruido,
+ la humedad y/o la temperatura.
+ Los sensores de luz, cámara, micrófonos y termómetros miden estas señales.
  
 \end_layout
 
