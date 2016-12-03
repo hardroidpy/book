@@ -72,11 +72,10 @@
 \begin_body
 
 \begin_layout Chapter
-Reconocimiento de Actividades Humanas
-\begin_inset Newline newline
-\end_inset
+Aprendizaje Automático
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "chap3:Aprendizaje-Automatico"
@@ -87,7 +86,7 @@ name "chap3:Aprendizaje-Automatico"
 \end_layout
 
 \begin_layout Section
-Aprendizaje Automático
+Introducción
 \end_layout
 
 \begin_layout Standard
@@ -119,7 +118,7 @@ Este proceso es generalmente tedioso, caro y consume mucho tiempo en muchas
  parte de los datos están sin etiqueta.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Aprendizaje supervisado
 \end_layout
 
@@ -153,7 +152,7 @@ En las siguientes secciones nos concentramos en el árbol de decisión, el
  cual fue utilizado para este trabajo.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Arboles de Decisión
 \end_layout
 
@@ -174,18 +173,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
+\align center
  
 \begin_inset Graphics
 	filename graphics/ad_1.png
@@ -214,7 +202,7 @@ status collapsed
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:arbolEjemplo"
+name "fig31:arbolEjemplo"
 
 \end_inset
 
@@ -226,6 +214,342 @@ name "fig:arbolEjemplo"
 
 \end_layout
 
+\begin_layout Standard
+En la figura por ejemplo un típico árbol de decisión que representa el concepto
+ de jugar o no Golf, teniendo en cuenta variables climática representadas
+ en los nodos internos, y los nodos hojas denotan las decisiones de jugar
+ o no golf.
+\end_layout
+
+\begin_layout Section
+Algoritmo C4.5
+\end_layout
+
+\begin_layout Standard
+J.R Quinlan propone un mejora, una extensión al algoritmo ID3, al que denomina
+ C4.5, este algoritmo genera un árbol de decisión a partir de los datos mediante
+ particiones realizadas recursivamente.
+ El árbol se construye mediante la estrategia profundidad-primero (depth-first).
+\end_layout
+
+\begin_layout Standard
+El algoritmo C4.5 utiliza técnica heurística conocida como proporción de
+ ganancia (gain-ratio).
+ Es una medida basada en información que considera diferentes números y
+ probabilidades de los resultados de las pruebas.
+\end_layout
+
+\begin_layout Standard
+El algoritmo considera todas las pruebas posibles que puede dividir el conjunto
+ de datos, seleccionar la prueba que le haya generado mayor ganancia de
+ información.
+ Para cada atributo discreto, se considera una prueba con N resultados,
+ siendo N el numero de valores posibles que puede tomar el atributo.
+ Para cada atributo continuo, se realiza la prueba binaria (1,0) sobre cada
+ uno de los valores que puede tomar el atributo de los datos.
+\end_layout
+
+\begin_layout Section
+Características del algoritmo C4.5
+\end_layout
+
+\begin_layout Itemize
+Permite trabaja con valores continuos para los atributos, separando los
+ posibles resultados en dos ramas 
+\begin_inset Formula $A_{i}<=N$
+\end_inset
+
+ y 
+\begin_inset Formula $A_{i}>N$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Itemize
+Los arboles son menos frondosos, ya que cada hoja cubre una distribución
+ de clases no una clase en particular.
+ 
+\end_layout
+
+\begin_layout Itemize
+Utiliza el método 'divide y vencerás' para generar el árbol de decisión
+ incial a partir de un conjunto de datos de entrenamiento.
+ 
+\end_layout
+
+\begin_layout Itemize
+Se basan en la utilización del criterio de proporción de ganancia, definido
+ como 
+\begin_inset Formula $I(X_{i},C)/I(X_{i})$
+\end_inset
+
+.
+ De esta manera se consigue evitar que la variables con mayor numero de
+ categorías salgan beneficiadas en la selección.
+ 
+\end_layout
+
+\begin_layout Itemize
+Es recursivo.
+ 
+\end_layout
+
+\begin_layout Section
+Información de Ganancia / Entropía 
+\end_layout
+
+\begin_layout Standard
+C4.5 como su predecesor ID3 utiliza la entropía como medida de selección
+ para el atributo.
+ Dado un nodo 
+\begin_inset Formula $N$
+\end_inset
+
+ que representa las tuplas de la partición 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ El atributo con mayor valor de ganancia es elegido para la división de
+ 
+\begin_inset Formula $N$
+\end_inset
+
+, el atributo reduce al mínimo la información necesaria para clasificar
+ las tuplas de las particiones resultantes y refleja la menos aleatoriedad
+ o impureza de la partición.
+ Este enfoque minimiza el número esperado de los ensayos necesarios para
+ clasificar una tupla dada y garantiza que un árbol simple (pero no necesariamen
+te el más simple) se encuentre.
+\end_layout
+
+\begin_layout Standard
+La información de ganancia necesaria para clasificar una tupla en 
+\begin_inset Formula $D$
+\end_inset
+
+ es igual a:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Info(D)=-{\displaystyle \sum_{i=1}^{m}p_{i}\log_{2}(p_{i})}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ es la probabilidad de una tupla arbitraria en 
+\begin_inset Formula $D$
+\end_inset
+
+ que pertenece a la clase 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ se estima que es 
+\begin_inset Formula $\lvert C_{i,D}unexpected''inmath\rvert/\lvert D\rvert$
+\end_inset
+
+.
+ Se utiliza un logaritmo en base 2 porque la información esta codificada
+ en bits.
+ 
+\begin_inset Formula $Info(D)$
+\end_inset
+
+ es la cantidad media de información necesaria para identificar la etiqueta
+ de una tupla dada en 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Nótese, que la información que tenemos se basa solamente en las proporciones
+ de tuplas de cada clase.
+ 
+\begin_inset Formula $Info(D)$
+\end_inset
+
+ también se conoce como entropía de 
+\begin_inset Formula $D$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora, supongamos que estábamos para particionar las tuplas en 
+\begin_inset Formula $D$
+\end_inset
+
+ en algunos atribuyen A teniendo 
+\begin_inset Formula $v$
+\end_inset
+
+ valores distintos 
+\begin_inset Formula $\{a_{1},a_{2},...,a_{v}\}$
+\end_inset
+
+, como se observa a partir de los datos de entrenamiento.
+ Si A tiene valores discretos, estos valores se corresponden directamente
+ con los resultados de una prueba de 
+\begin_inset Formula $v$
+\end_inset
+
+ sobre 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ El atributo 
+\begin_inset Formula $A$
+\end_inset
+
+ se puede utilizar para dividir 
+\begin_inset Formula $D$
+\end_inset
+
+ en 
+\begin_inset Formula $v$
+\end_inset
+
+ particiones o subconjuntos, 
+\begin_inset Formula $\{D_{1},D_{2},...,D_{v}\}$
+\end_inset
+
+, donde 
+\begin_inset Formula $D_{j}$
+\end_inset
+
+ contiene aquellas tuplas en 
+\begin_inset Formula $D$
+\end_inset
+
+ que tienen 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ resultados de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Estas particiones se corresponderían con las ramas que crecen a partir
+ del nodo 
+\begin_inset Formula $N$
+\end_inset
+
+.
+ Idealmente, nos gustaría que esta división para producir una clasificación
+ exacta de las tuplas.
+ Es decir, nos gustaría para cada partición sea pura.
+ Sin embargo, es bastante probable que las particiones sea impura (por ejemplo,
+ cuando una partición puede contener una colección de tuplas de diferentes
+ clases en lugar de una sola clase).
+ ¿Cuánto más información sería todavía necesaria (después de la partición)
+ con el fin de llegar a una clasificación exacta? Esta cantidad se mide
+ por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Info_{A}(D)={\displaystyle \sum_{j=1}^{v}{\displaystyle \frac{\lvert D_{j}\rvert}{\lvert D\rvert}\times Info(D_{j})}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El termino 
+\begin_inset Formula ${\displaystyle \frac{\lvert D_{j}\rvert}{\lvert D\rvert}}$
+\end_inset
+
+ actúa como el peso de la j-esima partición.
+ 
+\begin_inset Formula $Info_{A}(D)$
+\end_inset
+
+ es la información esperada requerida para clasificar la tupla de 
+\begin_inset Formula $D$
+\end_inset
+
+ basada en la partición de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Cuando menor sea la información esperada, mayor es la pureza de las particiones.
+\end_layout
+
+\begin_layout Standard
+La información de ganancia se define como la diferencia entre lo requerido
+ de información original (basado en la proporción de clases) y el nuevo
+ requerimiento, obtenido luego de realizar la partición en 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Es decir,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Gain(A)=Info(D)-Info_{A}(D).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En otras palabras, 
+\begin_inset Formula $Gain(A)$
+\end_inset
+
+ nos dice cuanto se ganaría por la ramificación en 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Es la reducción esperada en el requisito de información causado por conocer
+ el valor de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ El atributo A con ganancia mas alta, 
+\begin_inset Formula $Gain(A)$
+\end_inset
+
+, se selecciona como atributo de división en el nodo 
+\begin_inset Formula $N$
+\end_inset
+
+.
+ Esto equivale a decir que queremos particionar en el atributo A que haría
+ la mejor clasificación, por lo que la cantidad de información aun necesaria
+ para clasificar las tuplas sea mínima, 
+\begin_inset Formula $InfoA(D)$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Algoritmo
 \end_layout
@@ -234,7 +558,7 @@ Algoritmo
 \begin_inset Float algorithm
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -252,441 +576,162 @@ name "algoC45"
 
 \end_inset
 
- 
+
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-
+	
 \backslash
-begin{algorithmic}
+begin{algorithmic}[1]
 \end_layout
-
-\end_inset
-
-[1] 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+		
 \backslash
-Require
+Require Conjunto de datos etiquetados $D$
 \end_layout
-
-\end_inset
-
- Conjunto de datos etiquetados 
-\begin_inset Formula $D$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+		
 \backslash
-Procedure
+Procedure{C4.5}{$ D $}
 \end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-{
-\end_layout
-
-\end_inset
-
-C4.5
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $D$
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
+			
 \backslash
-If
+If {$D > 
+\backslash
+textit{es puro o cumple el criterio de parada} $} 
 \end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $D>\textit{es puro o cumple el criterio de parada}$
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
+				
 \backslash
 State
+\backslash
+textit{Termina}
 \end_layout
-
-\end_inset
-
-
-\shape italic
-Termina
-\shape default
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+			
 \backslash
 EndIf
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+			
 \backslash
-ForAll
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $a\in D$
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
+ForAll{$a 
 \backslash
-State
+in D $}
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $\textit{Computar información de division en a }$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
+				
+\backslash
+State $
+\backslash
+textit{Computar información de division en a }$
+\end_layout
 
+\begin_layout Plain Layout
+
+			
 \backslash
 EndFor
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+			
 \backslash
-State
+State $ a_{best} =$ Mejor atributo de división respecto al criterio 
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $a_{best}=$
-\end_inset
-
- Mejor atributo de división respecto al criterio 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+			
 \backslash
-State
+State $ Arbol =$ Crear un nodo de decisión con $ a_{best} $ en la raíz 
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $Arbol=$
-\end_inset
-
- Crear un nodo de decisión con 
-\begin_inset Formula $a_{best}$
-\end_inset
-
- en la raíz 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+			
 \backslash
-State
+State $ D_{v} =$ Introducir sub-conjunto de $D$ basado en división $ a_{best}
+ $
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $D_{v}=$
-\end_inset
-
- Introducir sub-conjunto de 
-\begin_inset Formula $D$
-\end_inset
-
- basado en división 
-\begin_inset Formula $a_{best}$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+			
 \backslash
-ForAll
+ForAll{$ D_{v} $}
 \end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $D_{v}$
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
+				
 \backslash
-State
+State $ Arbol_{v} = C4.5(D_{v}) $
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $Arbol_{v}=C4.5(D_{v})$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+				
 \backslash
-State
+State Unir $ Arbol_{v} $ al correspondiente arco del Árbol
 \end_layout
-
-\end_inset
-
- Unir 
-\begin_inset Formula $Arbol_{v}$
-\end_inset
-
- al correspondiente arco del Árbol 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+			
 \backslash
 EndFor
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+			
 \backslash
-State
+State 
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+			
 \backslash
-Return
+Return $ Arbol $
 \end_layout
 
-\end_inset
-
- 
-\begin_inset Formula $Arbol$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+		
 \backslash
 EndProcedure
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+	
 \backslash
 end{algorithmic}
 \end_layout
 
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset

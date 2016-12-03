@@ -197,7 +197,19 @@ La última sección, enumera los requisitos no funcionales para lograr una
  aplicación de contexto móvil y ubicua.
  Por un lado, las características esperadas en una aplicación de esta naturaleza
 , y por el otro los requisitos técnicos de los dispositivos móviles y los
- sensores empotrados utilizados como hardware de implementación.
+ sensores empotrados utilizados como instrumentos
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+hardware
+\end_layout
+
+\end_inset
+
+ de implementación.
 \end_layout
 
 \begin_layout Section
@@ -423,6 +435,22 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig42:componentes-har"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Componentes de los sistemas HAR
+\end_layout
+
+\end_inset
+
 Componentes de los sistemas 
 \begin_inset ERT
 status open
@@ -438,13 +466,6 @@ abbr{HAR}
 
 
 \end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "fig42:componentes-har"
 
 \end_inset
 
@@ -467,9 +488,9 @@ name "sec421:recolector-datos"
 
 \end_inset
 
-El recolector de datos tiene la función de capturar medidas de los sensores
- e registrar la información indexada en la dimensión del tiempo.
- La captura de datos relevantes para los sistemas 
+El recolector de datos obtiene medidas de los sensores y continuamente registrar
+ los datos en forma indexada en la dimensión del tiempo.
+ La captura de datos para los sistemas 
 \begin_inset ERT
 status open
 
@@ -482,8 +503,8 @@ abbr{HAR}
 
 \end_inset
 
- debe ser realizada con instrumentos de medición apropiados: en nuestro
- caso con sensores (
+ se realiza con instrumentos de medición apropiados: en nuestro caso con
+ sensores (
 \begin_inset ERT
 status open
 
@@ -496,27 +517,27 @@ abbr{Wearables}
 
 \end_inset
 
-)
+, véase 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec23:sensores"
 
 \end_inset
 
-.
- Los sensores empotrados se utilizan para recolectar señales directamente
- de los usuarios.
- Estos deben estar anexados al cuerpo como la cintura, la muñeca, el pectoral,
- los muslos o la cabeza 
+).
+ Las señales de los sensores capturan directamente de los usuarios por medio
+ de observaciones continuas, por lo que deben estar anexados al cuerpo;
+ en la cintura, la muñeca, el pectoral, los muslos o en la cabeza 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
 
 \end_inset
 
-, también pueden ser portados simplemente ya están comúnmente empotrados
- en dispositivos de uso regular como los teléfonos móviles modernos, relojes
- o lentes inteligentes 
+.
+ Adicionalmente, los sensores puede ser portados simplemente ya están comúnmente
+ empotrados en dispositivos de uso regular como los teléfonos móviles modernos,
+ relojes o lentes inteligentes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2012,Choudhury2008"
@@ -526,29 +547,829 @@ key "LaraLabrador2012,Choudhury2008"
 .
 \end_layout
 
+\begin_layout Standard
+A continuación se describe el método de registro de datos en flujo además
+ de algunos ejemplos de variables relevantes utilizadas.
+\end_layout
+
 \begin_layout Subsubsection
 Registro
 \end_layout
 
 \begin_layout Standard
-Las señales de variables medidas deben ser registrados de manera secuencial
- y transmitidos para su posterior procesamiento.
+El proceso de registro consiste en capturar las señales de un sensor y separar
+ las medidas en una o más variables dependientes de cada tipo de sensor.
+ La organización de los registros se debe realizar con respecto al tiempo.
+ Es decir, se dispone de un flujo continuo de datos con una marca de tiempo
+ almacenados de manera secuencial en un medio permanente para su posterior
+ procesamiento.
+ 
+\end_layout
+
+\begin_layout Standard
+La marca de tiempo se mide milisegundos y dependiendo del tipo de sensor
+ el intervalo entre medidas de variables puede variar en el mismo orden,
+ Ej.
+ con tasa de salida de 
+\family typewriter
+60 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Hz}
+\end_layout
+
+\end_inset
+
+ 
+\family default
+se tendrían 60 muestras en un segundo.
+ 
+\end_layout
+
+\begin_layout Standard
+Las señales capturadas de sensores se pueden clasificar en de movimiento,
+ entorno, fisiológicas y posición.
 \end_layout
 
 \begin_layout Subsubsection
-Señales de Aceleración
+Señales de Movimiento
+\end_layout
+
+\begin_layout Standard
+Los sensores de movimiento proveen señales altamente informativos para las
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ debido a que miden las fuerzas de aceleración y rotación en tres ejes cuando
+ son portados por los usuarios.
+ En esta categoría de sensores se encuentran los acelerómetros y giroscopios.
+ 
+\end_layout
+
+\begin_layout Standard
+Los acelerómetros miden señales de acuerdo a diferentes tipos de movimientos,
+ incluyendo la aceleración lineal y centrípeta, la gravedad y vibración
+ en dos o tres dimensiones 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Goehl2007"
+
+\end_inset
+
+.
+ Las variables medidas están expresadas en la magnitud de la aceleración
+ ejercida sobre el dispositivo con respecto la orientación del mismo (Ej.
+ en reposo mide 
+\begin_inset Formula $-9.8\,m\,s^{-2}$
+\end_inset
+
+ en dirección al suelo).
+ Representamos el atributo medido por la aceleración con el símbolo 
+\begin_inset Formula $a$
+\end_inset
+
+ como el vector de los tres componentes de la aceleración en cada eje 
+\begin_inset Formula $(x,y,z)$
+\end_inset
+
+, cada componente esta representado por 
+\begin_inset Formula $a_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{y}$
+\end_inset
+
+ y 
+\begin_inset Formula $a_{z}$
+\end_inset
+
+.
+ En la Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig421:muestra-ac"
+
+\end_inset
+
+ se muestra un ejemplo de las medidas obtenidas por la señal del acelerómetro
+ en una actividad determinada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/signal_a3d.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig421:muestra-ac"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Señal de aceleración en tres dimensiones
+\end_layout
+
+\end_inset
+
+Señal de aceleración en tres dimensiones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los giroscopios, o sensores de razón angular, miden señales de la rapidez
+ de rotación de los objetos en tres dimensiones 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Goehl2007"
+
+\end_inset
+
+.
+ Las variables medidas están expresadas en velocidad angular de rotación
+ del dispositivo con respecto a los ejes de orientación del mismo (Ej.
+ en movimiento mide 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $-0.1\,rad\,s^{-1}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ en relación a un eje fijo).
+ Representamos el atributo medido por el giroscopio con el símbolo 
+\begin_inset Formula $w$
+\end_inset
+
+ como el vector de los tres componentes del giro cada eje 
+\begin_inset Formula $(x,y,z)$
+\end_inset
+
+, cada componente es representado por 
+\begin_inset Formula $w_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $w_{y}$
+\end_inset
+
+ y 
+\begin_inset Formula $w_{z}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En el la Tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab421:ex-signal"
+
+\end_inset
+
+ se muestra un ejemplo de las medidas registradas por la señal del acelerómetro
+ en una ventana de tiempo dada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{x}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{y}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+1.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+-2.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/s_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+1.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+-2.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+0.1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2/s_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+1.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+-2.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t_{max}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+1.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+2.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+-0.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Ejemplo de señales medidas de aceleración
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab421:ex-signal"
+
+\end_inset
+
+Ejemplo de señales medidas de aceleración
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las ventajas de los sensores de movimiento es su amplio uso en el reconocimiento
+ de actividades ambulatorias 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004,Kwapisz2011,ReyesOrtiz2015"
+
+\end_inset
+
+.
+ Los acelerómetros y giroscopios poseen un bajo costo asociado, bajo consumo
+ de energía, además de estar incluidos actualmente en los teléfonos móviles
+ modernos.
+ También, varios trabajos publicados e implementados reportan una alta precisión
+ en el reconocimiento de actividades 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004,LaraLabrador2012"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
-Señales de Giroscopio
+Señales de Posición
+\end_layout
+
+\begin_layout Standard
+Los sensores de posición proveen señales con información adicional que pueden
+ ser utilizados para las 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ y aplicaciones de contexto con servicios basados en localización.
+ En esta categoría están los sensores de orientación (o brújula), magnetómetros
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google2016s"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Las señales del 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+ permiten acceder a las coordenadas geográficas globales así como el modo
+ de transporte de un individuo, de acuerdo a la velocidad estimada.
+ Los teléfonos móviles modernos están equipados con dispositivos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+ además de poder estimar con buena precisión las coordenadas de acuerdo
+ a la red celular 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GSM}
+\end_layout
+
+\end_inset
+
+/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPRS}
+\end_layout
+
+\end_inset
+
+ y redes 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WIFI}
+\end_layout
+
+\end_inset
+
+ de corto alcance.
+ La señal de localización se miden por medio de dos variables, latitud y
+ longitud en la unidad de radianes (Ej.
+ latitud 
+\begin_inset Formula $-57.2322\,rad$
+\end_inset
+
+ y longitud 
+\begin_inset Formula $-25.3442\,rad$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Sin embargo, los dispositivos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+ tienen cobertura limitada, ya sea por la dificultad de señal dentro de
+ edificaciones, o sin servicio de red celular o 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WIFI}
+\end_layout
+
+\end_inset
+
+, como también el alto consumo de energía para aplicaciones que rastrean
+ la localización en tiempo real.
+ La localización particularmente es información sensible para los usuarios
+ ya que se debe tener especial atención a no comprometer la privacidad de
+ los datos y el consentimiento del usuario que permita ser rastreado 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
-Señales de Ubicación
+Señales del Ambiente
+\end_layout
+
+\begin_layout Standard
+Los sensores de ambiente miden varios atributos del entorno que rodea al
+ usuario.
+ Algunas señales como la temperatura del aire, presión atmosférica, iluminación,
+ humedad, y el ruido pueden proveer información de utilidad para conocer
+ mejor el habitad particular de un usuario.
+ En esta categoría están los barómetros, fotómetros, termómetros y micrófonos.
+\end_layout
+
+\begin_layout Standard
+Los sensores de ambiente solos no proveen información suficiente ya que
+ los individuos pueden realizar las actividades bajo diversas circunstancias
+ contextuales en términos de clima, ruido o iluminación.
+ Por lo tanto estos sensores pueden utilizarse de manera complementaria
+ para detectar sugestiones adicionales, Ej.
+ el usuario está en el exterior de acuerdo a la luminosidad, o se encuentra
+ descansando debido a un nivel de sonido y luminosidad baja 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
 Señales de Fisiológicas
+\end_layout
+
+\begin_layout Standard
+Los sensores fisiológicos proveen señales de signos vitales de un individuo.
+ La información sobre el ritmo cardíaco, tasa de respiración y temperatura
+ del cuerpo podrían ser combinados para enriquecer el contexto durante el
+ reconocimiento en ciertas aplicaciones específicas como las orientadas
+ a la salud.
 \end_layout
 
 \begin_layout Subsection
