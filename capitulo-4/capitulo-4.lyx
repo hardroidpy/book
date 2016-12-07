@@ -73,7 +73,7 @@
 \begin_body
 
 \begin_layout Chapter
-Sistemas HAR 
+Sistemas HAR móviles 
 \end_layout
 
 \begin_layout Standard
@@ -162,7 +162,7 @@ abbr{HAR}
 
 \end_inset
 
-en conjunto es proveer módulo base para aplicaciones novedosas de contexto.
+ en conjunto es proveer módulo base para aplicaciones novedosas de contexto.
  El módulo debe ser capaz de reconocer varias actividades realizadas rutinariame
 nte de diferentes maneras, por diferentes usuarios y en diferentes condiciones
  contextuales.
@@ -213,7 +213,7 @@ hardware
 \end_layout
 
 \begin_layout Section
-Arquitectura del sistema
+Componentes
 \end_layout
 
 \begin_layout Standard
@@ -363,7 +363,7 @@ abbr{ML}
 \end_inset
 
 , se han identificado unos componentes comunes para realizar las funcionalidades
- de aprendizaje y predicción según
+ de aprendizaje y predicción según 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Choudhury2008"
@@ -407,7 +407,7 @@ status open
 
 
 \backslash
-figref{fig42:componentes-har}
+figref{fig4:componentes-har}
 \end_layout
 
 \end_inset
@@ -437,16 +437,16 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig42:componentes-har"
+name "fig4:componentes-har"
 
 \end_inset
 
 
 \begin_inset Argument 1
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Componentes de los sistemas HAR
+Arquitectura de sistema HAR
 \end_layout
 
 \end_inset
@@ -477,34 +477,24 @@ abbr{HAR}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Recolector de medidas
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec421:recolector-datos"
+name "sec43:recolector-datos"
 
 \end_inset
 
-El recolector de datos obtiene medidas de los sensores y continuamente registrar
- los datos en forma indexada en la dimensión del tiempo.
- La captura de datos para los sistemas 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
- se realiza con instrumentos de medición apropiados: en nuestro caso con
- sensores (
+El primer paso en el proceso de reconocimiento primeramente consiste en
+ recolectar medidas de señales obtenidas de los sensores que observan continuame
+nte a los usuarios.
+ Además, se procede a realizar un registro de manera organizada e indexada
+ con respecto al tiempo.
+ Para capturar los datos se requieren instrumentos de medición apropiados
+ como los sensores (
 \begin_inset ERT
 status open
 
@@ -525,9 +515,9 @@ reference "sec23:sensores"
 \end_inset
 
 ).
- Las señales de los sensores capturan directamente de los usuarios por medio
- de observaciones continuas, por lo que deben estar anexados al cuerpo;
- en la cintura, la muñeca, el pectoral, los muslos o en la cabeza 
+ Los sensores capturan las señales directamente de los usuarios por medio
+ de observaciones continuas, al estar anexados al cuerpo; en la cintura,
+ la muñeca, el pectoral, los muslos o en la cabeza 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
@@ -535,9 +525,9 @@ key "Bao2004"
 \end_inset
 
 .
- Adicionalmente, los sensores puede ser portados simplemente ya están comúnmente
+ También, los sensores podrían ser portados por el usuario ya están comúnmente
  empotrados en dispositivos de uso regular como los teléfonos móviles modernos,
- relojes o lentes inteligentes 
+ en relojes o lentes inteligentes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2012,Choudhury2008"
@@ -548,18 +538,19 @@ key "LaraLabrador2012,Choudhury2008"
 \end_layout
 
 \begin_layout Standard
-A continuación se describe el método de registro de datos en flujo además
- de algunos ejemplos de variables relevantes utilizadas.
+A continuación se describe el método común de registro y organización de
+ los datos obtenidos de las señales continuas, además de algunos ejemplos
+ de variables relevantes utilizadas.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Registro
 \end_layout
 
 \begin_layout Standard
-El proceso de registro consiste en capturar las señales de un sensor y separar
- las medidas en una o más variables dependientes de cada tipo de sensor.
- La organización de los registros se debe realizar con respecto al tiempo.
+El método de registro consiste en capturar las señales de un sensor y separar
+ las medidas en una o más variables dependiendo del tipo de sensor.
+ La organización de los registros se realiza con respecto al tiempo.
  Es decir, se dispone de un flujo continuo de datos con una marca de tiempo
  almacenados de manera secuencial en un medio permanente para su posterior
  procesamiento.
@@ -567,9 +558,12 @@ El proceso de registro consiste en capturar las señales de un sensor y separar
 \end_layout
 
 \begin_layout Standard
-La marca de tiempo se mide milisegundos y dependiendo del tipo de sensor
- el intervalo entre medidas de variables puede variar en el mismo orden,
- Ej.
+La marca de tiempo usualmente se mide 
+\emph on
+mili
+\emph default
+-segundos y dependiendo del sensor el intervalo entre medidas puede variar
+ en el mismo orden, Ej.
  con tasa de salida de 
 \family typewriter
 60 
@@ -587,13 +581,21 @@ abbr{Hz}
 
  
 \family default
-se tendrían 60 muestras en un segundo.
+se tendrían 60 medidas en un segundo.
  
 \end_layout
 
 \begin_layout Standard
-Las señales capturadas de sensores se pueden clasificar en de movimiento,
- entorno, fisiológicas y posición.
+Las señales de sensores pueden clasificarse de la misma manera que los grupos
+ citados en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec23:sensores"
+
+\end_inset
+
+, según movimiento, posición, entorno y fisiológicas.
+ A continuación se describen en detalle cada grupo.
 \end_layout
 
 \begin_layout Subsubsection
@@ -660,15 +662,21 @@ key "Goehl2007"
 \end_inset
 
 .
- En la Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig421:muestra-ac"
+ En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig4:muestra-ac}
+\end_layout
 
 \end_inset
 
- se muestra un ejemplo de las medidas obtenidas por la señal del acelerómetro
- en una actividad determinada.
+ se muestra un ejemplo de las medidas obtenidas por la señal de un acelerómetro
+ en una actividad física determinada.
 \end_layout
 
 \begin_layout Standard
@@ -694,7 +702,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig421:muestra-ac"
+name "fig4:muestra-ac"
 
 \end_inset
 
@@ -703,12 +711,14 @@ name "fig421:muestra-ac"
 status collapsed
 
 \begin_layout Plain Layout
-Señal de aceleración en tres dimensiones
+Señal de aceleración
 \end_layout
 
 \end_inset
 
-Señal de aceleración en tres dimensiones
+Señal de aceleración en tres dimensiones.
+ Los colores corresponden a los ejes de coordenadas representadas en la
+ siguiente figura.
 \end_layout
 
 \end_inset
@@ -785,319 +795,34 @@ key "Goehl2007"
 \end_inset
 
 .
- 
-\end_layout
+ En la 
+\begin_inset ERT
+status open
 
-\begin_layout Standard
-En el la Tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab421:ex-signal"
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig4:axis-phone}
+\end_layout
 
 \end_inset
 
- se muestra un ejemplo de las medidas registradas por la señal del acelerómetro
- en una ventana de tiempo dada.
+ se muestra la disposición de los ejes de coordenadas con respecto los teléfonos
+ móviles modernos.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
+\begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="4">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $t$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $a_{x}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $a_{y}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $a_{z}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $0$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-1.3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
--2.1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-0
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $1/s_{1}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-1.4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
--2.3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-0.1
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $2/s_{2}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-1.1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
--2.6
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-0
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-...
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-...
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-...
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-...
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $t_{max}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-1.8
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-2.2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
--0.4
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_inset Graphics
+	filename graphics/axis_device.png
+	scale 70
 
 \end_inset
 
@@ -1108,27 +833,31 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig4:axis-phone"
+
+\end_inset
+
+
 \begin_inset Argument 1
 status collapsed
 
 \begin_layout Plain Layout
-Ejemplo de señales medidas de aceleración
+Sistemas de coordenadas relativo a dispositivo
+\end_layout
+
+\end_inset
+
+Ejes de coordenadas relativas a un teléfono móvil moderno.
 \end_layout
 
 \end_inset
 
 
-\begin_inset CommandInset label
-LatexCommand label
-name "tab421:ex-signal"
-
-\end_inset
-
-Ejemplo de señales medidas de aceleración
 \end_layout
 
-\end_inset
-
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1149,7 +878,14 @@ key "Bao2004,Kwapisz2011,ReyesOrtiz2015"
 .
  Los acelerómetros y giroscopios poseen un bajo costo asociado, bajo consumo
  de energía, además de estar incluidos actualmente en los teléfonos móviles
- modernos.
+ modernos 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google2016s"
+
+\end_inset
+
+.
  También, varios trabajos publicados e implementados reportan una alta precisión
  en el reconocimiento de actividades 
 \begin_inset CommandInset citation
@@ -1195,7 +931,7 @@ abbr{GPS}
 
 \end_inset
 
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Google2016s"
@@ -1276,7 +1012,7 @@ abbr{WIFI}
 
  de corto alcance.
  La señal de localización se miden por medio de dos variables, latitud y
- longitud en la unidad de radianes (Ej.
+ longitud en la unidad radian (Ej.
  latitud 
 \begin_inset Formula $-57.2322\,rad$
 \end_inset
@@ -1286,6 +1022,76 @@ abbr{WIFI}
 \end_inset
 
 ).
+\end_layout
+
+\begin_layout Standard
+En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig4:gps}
+\end_layout
+
+\end_inset
+
+ se muestra una aplicación que despliega el detalle de triangulación basada
+ en satélites y la estimación de las coordenadas globales por medio de este
+ proceso.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/gps.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig4:gps"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Coordenadas GPS.
+\end_layout
+
+\end_inset
+
+Visualización de satélites y coordenadas globales basada en triagulación
+ GPS.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1369,44 +1175,1187 @@ Los sensores fisiológicos proveen señales de signos vitales de un individuo.
  La información sobre el ritmo cardíaco, tasa de respiración y temperatura
  del cuerpo podrían ser combinados para enriquecer el contexto durante el
  reconocimiento en ciertas aplicaciones específicas como las orientadas
- a la salud.
+ a la salud 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Procesador de muestras
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec422:proceso-señales"
+name "sec44:proceso-señales"
 
 \end_inset
 
-Proceso de señales en bruto para adecuarlos muestras con variables significativa
-s que permitan discriminar las actividades a reconocer
+El siguiente paso en el reconocimiento de actividades consiste en procesar
+ las señales obtenidas por sensores y extraer características relevantes
+ de los datos en bruto.
+ El modelo de reconocimiento se construye a partir de un conjunto de muestras
+ etiquetadas utilizando métodos de aprendizaje automático en la etapa de
+ entrenamiento.
+ Durante la etapa de evaluación las entradas con las que un modelo construido
+ opera son muestras no clasificadas pero generadas con la misma técnica
+ de muestreo utilizada durante el entrenamiento.
 \end_layout
 
-\begin_layout Subsubsection
-Etiquetado
-\end_layout
-
-\begin_layout Subsubsection
-Filtro de Señal
-\end_layout
-
-\begin_layout Subsubsection
-Muestreo
+\begin_layout Standard
+El procesador de muestras depende en tres tareas bien diferenciadas que
+ se realizan automáticamente en ambas etapas del proceso de reconocimiento,
+ adicionalmente se realiza una tarea manual durante la etapa de entrenamiento
+ llamada etiquetado.
+ A continuación se detallan cada tarea.
 \end_layout
 
 \begin_layout Subsection
+Etiquetado
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec44:labeling"
+
+\end_inset
+
+El proceso de aprendizaje automático requiere de una cantidad moderada de
+ datos recolectados a partir de usuarios mientras realizan actividades humanas
+ objetivas a nuestro estudio.
+ Estos datos deben ser recolectadas y etiquetados utilizando un teléfono
+ móvil inteligente con una aplicación diseñada para el caso.
+ Ej.
+ Utilizando 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ con la aplicación 
+\emph on
+SensorLog
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GPStore2016s"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+El protocolo de recolección consisten en alistar un grupo de personas que
+ porten un teléfono inteligente mientras realizan con conjunto específico
+ de actividades y registrar la información por medio de la aplicación.
+ Las actividades de interés descritas en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec263:actividades-humanas"
+
+\end_inset
+
+ deben ser realizadas portando el teléfono en el bolsillo y cada individuo
+ realiza una sesión de caminata, trote, bicicleta o conducir un vehículo
+ por un periodo de tiempo corto de 10 a 15 minutos.
+ La recolección de datos es llevado a cabo por medio de la aplicación disponible
+ para la plataforma 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ demostrada en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig4:sensor-log}
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/sensorlog1.jpg
+	scale 80
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename graphics/sensorlog2.jpg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig4:sensor-log"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Aplicación de entrenamiento SensorLog
+\end_layout
+
+\end_inset
+
+Aplicación de entrenamiento 
+\emph on
+SensorLog 
+\emph default
+con las interfaces de usuario configurar y controlar la sesión de entrenamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así como se ve en la figura, la aplicación tiene una interfaz de usuario
+ simple que permite elegir los sensores (Ej.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+, acelerómetro, giroscopio) para la sesión, las acciones de iniciar y parar
+ la recolección, y etiquetar la actividad que el usuario realiza durante
+ el entrenamiento.
+ Las etiquetas utilizadas en el proceso de recolección son:
+\end_layout
+
+\begin_layout Itemize
+Caminar
+\end_layout
+
+\begin_layout Itemize
+Trotar
+\end_layout
+
+\begin_layout Itemize
+Quieto
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A pesar de que esta actividad no representa un movimiento se incluye como
+ parte del estudio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En bicicleta
+\end_layout
+
+\begin_layout Itemize
+En vehículo
+\end_layout
+
+\begin_layout Standard
+La recolección se realiza obteniendo medidas a una razón de 60 
+\emph on
+mili
+\emph default
+segundos por lo que se registran aproximadamente 60 a 100 muestras por segundo.
+ Para asegurar la calidad de la recolección inicial de datos la sesión es
+ supervisada para preparar las condiciones adecuadas del entrenamiento físico
+ a elección del participante.
+\end_layout
+
+\begin_layout Subsection
+Muestreo
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec44:sampling"
+
+\end_inset
+
+La realización de actividades humanas son efectuadas durante periodos de
+ tiempo de larga duración, en el orden de los segundos o minutos.
+ Esta taza es mucho mayor comparando las tazas de muestreos de los sensores,
+ las cuales pueden llegar hasta 
+\family typewriter
+250 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Hz}
+\end_layout
+
+\end_inset
+
+
+\family default
+ (o 
+\family typewriter
+250
+\family default
+ muestras por segundo).
+ Una simple medida capturada en un instante (Ej.
+ la aceleración de 
+\begin_inset Formula $-2.5\,m\,s^{-2}$
+\end_inset
+
+ en el eje 
+\begin_inset Formula $y$
+\end_inset
+
+) no provee suficiente información para describir qué actividad se está
+ llevando acabo.
+ Por lo tanto, las actividades deben ser reconocidas a partir de las muestras
+ disponibles en una ventana de tiempo 
+\begin_inset Formula $w$
+\end_inset
+
+ en vez de utilizar una sola medida en el instante 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab4:ex-signal}
+\end_layout
+
+\end_inset
+
+ se muestra un ejemplo de las posibles medidas registradas para la señal
+ de un acelerómetro en una ventana de tiempo 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ con una taza de muestreo 
+\begin_inset Formula $r$
+\end_inset
+
+ del sensor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{x}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{y}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{z}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $1.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-2.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1/r$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $1.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-2.3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $0.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2/r$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $1.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-2.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $...$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $...$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $...$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t_{max}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $1.8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $2.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-0.4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab4:ex-signal"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Ejemplo de señales medidas de aceleración
+\end_layout
+
+\end_inset
+
+Ejemplo de una muestra con medidas de la señal de un acelerómetro.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Rememorando la definición 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def2:harp-rel"
+
+\end_inset
+
+ la incógnita surge al comparar dos ventanas de tiempo 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+, cada una con medidas 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+ correspondientes que representan dos señales completamente distintas.
+ Estas señales no serán idénticas por más que sean obtenidas del mismo individuo
+ realizando la misma actividad física.
+ Por lo tanto, para comparar las muestras es necesario extraer características
+ significativas de cada ventana 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+ filtrando información relevante y obteniendo valores cuantitativos que
+ identifiquen de cierta manera a las señales y permitan compararlas entre
+ sí.
+ Las técnicas de filtrado y extracción se describen en las siguientes secciones.
+\end_layout
+
+\begin_layout Subsection
+Filtro de Señal
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec44:filtering"
+
+\end_inset
+
+Teóricamente, si un dispositivo con sensores está en reposo mediría cero
+ en dos de los tres ejes, por ejemplo, en los ejes 
+\begin_inset Formula $x$
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+, ya que no hay registra movimiento en esa situación.
+ Sin embargo, el eje 
+\begin_inset Formula $z$
+\end_inset
+
+mediría 
+\begin_inset Formula $-9.8\,m\,s^{-2}$
+\end_inset
+
+ por ejemplo en dirección al suelo.
+ A pesar de esto, los sensores electrónicos pueden introducir cierta inestabilid
+ad en la señal (conocida como 
+\emph on
+jitter
+\emph default
+), esto provoca una fluctuación en las lecturas debido a errores en la medición
+ y por lo tanto afectan a la calidad de los datos.
+ Por lo tanto, a pesar de que un dispositivo con sensor de movimiento esté
+ completamente quieto en la mesa, las lecturas podrían presentar ruido en
+ los datos, Ej.
+ errores de magnitud 
+\begin_inset Formula $\pm0.5$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Entonces, para reducir ruido de la señal se debe aplicar uno o más filtros.
+ El filtro permite suavizar la señal por medio de una función simple como
+ la de cálculo de promedios variables (
+\emph on
+moving average
+\emph default
+) o por medio un método como el de 
+\emph on
+Butterworth
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ReyesOrtiz2015"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para nuestro estudio, el filtro de señal utilizado es la de promedios variables,
+ basado en su simplicidad y aplicación en otros trabajos como 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Yang2009"
+
+\end_inset
+
+, y es representado por la función 
+\begin_inset Formula $M$
+\end_inset
+
+ que se define a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "def4:moving-average"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{defi}{Definición}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+(
+\emph on
+Moving average
+\emph default
+) Dada una secuencia 
+\begin_inset Formula $\left\{ a_{i}\right\} _{i=1}^{N}$
+\end_inset
+
+, un 
+\begin_inset Formula $n$
+\end_inset
+
+-
+\emph on
+moving average
+\emph default
+ es una nueva secuencia 
+\begin_inset Formula $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
+\end_inset
+
+ definida a partir de 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ tomando la media aritmética de las 
+\emph on
+sub
+\emph default
+-secuencias de tamaño 
+\begin_inset Formula $n$
+\end_inset
+
+ donde,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+s_{i} & = & \frac{1}{n}\sum_{j=1}^{i+n-1}a_{j}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tal que las secuencias 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ dado los 
+\begin_inset Formula $n$
+\end_inset
+
+-
+\emph on
+moving averages
+\emph default
+ serian 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+S_{2} & = & \frac{1}{2}(a_{1}+a_{2},a_{2}+a_{3},...,a_{n-1}+a_{n})
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+S_{3}=\frac{1}{3}(a_{1}+a_{2}+a_{3},a_{2}+a_{3}+a_{4},...,a_{n-2}+a_{n-1}+a_{n})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y así sucesivamente.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como ejemplo, en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig4:filter-maf}
+\end_layout
+
+\end_inset
+
+ se despliegan las gráficas de una señal de aceleración en bruto para la
+ dimensión 
+\begin_inset Formula $y$
+\end_inset
+
+ y su correspondiente señal suavizada con un filtro 
+\begin_inset Formula $M(y)$
+\end_inset
+
+ construido a partir de la secuencia 
+\begin_inset Formula $S_{5}$
+\end_inset
+
+ durante el intervalo de 
+\begin_inset Formula $1.6$
+\end_inset
+
+ segundos.
+ Como se puede apreciar, la señal resultante está ligeramente suavizada
+ debido a un filtrado de valores extremos debido a perturbaciones bruscas
+ o ruido en la señal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/moving_average.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig4:filter-maf"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Señal suavizada por la función 
+\begin_inset Formula $M$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Señal suavizada por un filtro de promedios variables 
+\begin_inset Formula $M$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Extracción
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec44:extraction"
+
+\end_inset
+
+In general, two approaches have been proposed to extract features from time
+ series data: statistical and structural [48].
+ Statistical methods, such as the Fourier transform and the Wavelet transform,
+ use quantitative characteristics of the data to extract features, whereas
+ structural approaches take into account the interrelationship among data.
+ The criterion to choose either of these methods is certainly subject to
+ the nature of the given signal.
+ Figure 3 displays the process to transform the raw time se- ries dataset
+ —which can be from acceleration, environmental variables, or vital signs—
+ into a set of feature vectors.
+ Each instance in the processed dataset corresponds to the feature vector
+ extracted from all the signals within a time window.
+ Most of the approaches surveyed in this paper adhere to this mapping.
+\end_layout
+
+\begin_layout Section
 Clasificador de actividades
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec423:clasificador"
+name "sec45:clasificador"
 
 \end_inset
 
@@ -1433,7 +2382,7 @@ Características no funcionales
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec431:caracteristicas"
+name "ssec46:caracteristicas"
 
 \end_inset
 
@@ -1495,7 +2444,7 @@ Dispositivos móviles
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec432:dispositivos-moviles"
+name "ssec46:dispositivos-moviles"
 
 \end_inset
 
@@ -1518,7 +2467,7 @@ Sensores empotrados
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec433:sensores-empotrados"
+name "ssec46:sensores-empotrados"
 
 \end_inset
 

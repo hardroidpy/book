@@ -1,5 +1,5 @@
 
-\chapter{Sistemas HAR }
+\chapter{Sistemas HAR móviles }
 
 \label{chap4:sistemas-de-reconocimiento}
 
@@ -22,13 +22,13 @@ fácilmente o removido de la actividad diaria de su usuario.
 
 En este capítulo se definen los componentes principales de un sistema
 de reconocimiento de actividades humanas (sistemas \abbr{HAR}). El
-objetivo principal del sistema \abbr{HAR}en conjunto es proveer módulo
-base para aplicaciones novedosas de contexto. El módulo debe ser capaz
-de reconocer varias actividades realizadas rutinariamente de diferentes
-maneras, por diferentes usuarios y en diferentes condiciones contextuales.
-Las funciones principales de los componentes descritos en la primera
-sección exponen los mecanismos para implementar los mismos en base
-trabajos relacionados de \abbr{HAR} \cite{Choudhury2008,ReyesOrtiz2015}. 
+objetivo principal del sistema \abbr{HAR} en conjunto es proveer
+módulo base para aplicaciones novedosas de contexto. El módulo debe
+ser capaz de reconocer varias actividades realizadas rutinariamente
+de diferentes maneras, por diferentes usuarios y en diferentes condiciones
+contextuales. Las funciones principales de los componentes descritos
+en la primera sección exponen los mecanismos para implementar los
+mismos en base trabajos relacionados de \abbr{HAR} \cite{Choudhury2008,ReyesOrtiz2015}. 
 
 La última sección, enumera los requisitos no funcionales para lograr
 una aplicación de contexto móvil y ubicua. Por un lado, las características
@@ -36,7 +36,7 @@ esperadas en una aplicación de esta naturaleza, y por el otro los
 requisitos técnicos de los dispositivos móviles y los sensores empotrados
 utilizados como instrumentos\footnote{\emph{hardware}} de implementación.
 
-\section{Arquitectura del sistema}
+\section{Componentes}
 
 \label{sec42:componentes}El diseño de la arquitectura de componentes
 de un sistema \abbr{HAR} se rige de acuerdo a las guías de implementación
@@ -58,56 +58,60 @@ se realiza bajo demanda (\emph{Off-line learning}).
 
 Bajo el marco teórico de los sistemas \abbr{HAR} basados en \abbr{ML},
 se han identificado unos componentes comunes para realizar las funcionalidades
-de aprendizaje y predicción según\cite{Choudhury2008}. Un sistema
+de aprendizaje y predicción según \cite{Choudhury2008}. Un sistema
 de reconocimiento de actividades posee tres componentes:
 \begin{itemize}
 \item un \emph{recolector }de medidas
 \item un\emph{ procesador }de muestras 
 \item un \emph{clasificador }de actividades
 \end{itemize}
-En la \figref{fig42:componentes-har} se muestra una vista general
+En la \figref{fig4:componentes-har} se muestra una vista general
 de los componentes y sus interrelaciones. Las funcionalidades de cada
 componente se describen a continuación. 
 
 \begin{figure}[!tbph]
-\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption[Componentes de los sistemas HAR]{\label{fig42:componentes-har}Componentes de los sistemas \abbr{HAR}}
+\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption[Arquitectura de sistema HAR]{\label{fig4:componentes-har}Componentes de los sistemas \abbr{HAR}}
 \end{figure}
 
 
-\subsection{Recolector de medidas}
+\section{Recolector de medidas}
 
-\label{sec421:recolector-datos}El recolector de datos obtiene medidas
-de los sensores y continuamente registrar los datos en forma indexada
-en la dimensión del tiempo. La captura de datos para los sistemas
-\abbr{HAR} se realiza con instrumentos de medición apropiados: en
-nuestro caso con sensores (\abbr{Wearables}, véase \ref{sec23:sensores}).
-Las señales de los sensores capturan directamente de los usuarios
-por medio de observaciones continuas, por lo que deben estar anexados
+\label{sec43:recolector-datos}El primer paso en el proceso de reconocimiento
+primeramente consiste en recolectar medidas de señales obtenidas de
+los sensores que observan continuamente a los usuarios. Además, se
+procede a realizar un registro de manera organizada e indexada con
+respecto al tiempo. Para capturar los datos se requieren instrumentos
+de medición apropiados como los sensores (\abbr{Wearables}, véase
+\ref{sec23:sensores}). Los sensores capturan las señales directamente
+de los usuarios por medio de observaciones continuas, al estar anexados
 al cuerpo; en la cintura, la muñeca, el pectoral, los muslos o en
-la cabeza \cite{Bao2004}. Adicionalmente, los sensores puede ser
-portados simplemente ya están comúnmente empotrados en dispositivos
-de uso regular como los teléfonos móviles modernos, relojes o lentes
-inteligentes \cite{LaraLabrador2012,Choudhury2008}.
+la cabeza \cite{Bao2004}. También, los sensores podrían ser portados
+por el usuario ya están comúnmente empotrados en dispositivos de uso
+regular como los teléfonos móviles modernos, en relojes o lentes inteligentes
+\cite{LaraLabrador2012,Choudhury2008}.
 
-A continuación se describe el método de registro de datos en flujo
-además de algunos ejemplos de variables relevantes utilizadas.
+A continuación se describe el método común de registro y organización
+de los datos obtenidos de las señales continuas, además de algunos
+ejemplos de variables relevantes utilizadas.
 
-\subsubsection{Registro}
+\subsection{Registro}
 
-El proceso de registro consiste en capturar las señales de un sensor
-y separar las medidas en una o más variables dependientes de cada
-tipo de sensor. La organización de los registros se debe realizar
-con respecto al tiempo. Es decir, se dispone de un flujo continuo
-de datos con una marca de tiempo almacenados de manera secuencial
-en un medio permanente para su posterior procesamiento. 
+El método de registro consiste en capturar las señales de un sensor
+y separar las medidas en una o más variables dependiendo del tipo
+de sensor. La organización de los registros se realiza con respecto
+al tiempo. Es decir, se dispone de un flujo continuo de datos con
+una marca de tiempo almacenados de manera secuencial en un medio permanente
+para su posterior procesamiento. 
 
-La marca de tiempo se mide milisegundos y dependiendo del tipo de
-sensor el intervalo entre medidas de variables puede variar en el
-mismo orden, Ej. con tasa de salida de \texttt{60 \abbr{Hz} }se tendrían
-60 muestras en un segundo. 
+La marca de tiempo usualmente se mide \emph{mili}-segundos y dependiendo
+del sensor el intervalo entre medidas puede variar en el mismo orden,
+Ej. con tasa de salida de \texttt{60 \abbr{Hz} }se tendrían 60 medidas
+en un segundo. 
 
-Las señales capturadas de sensores se pueden clasificar en de movimiento,
-entorno, fisiológicas y posición.
+Las señales de sensores pueden clasificarse de la misma manera que
+los grupos citados en la sección \ref{sec23:sensores}, según movimiento,
+posición, entorno y fisiológicas. A continuación se describen en detalle
+cada grupo.
 
 \subsubsection{Señales de Movimiento}
 
@@ -124,15 +128,17 @@ dispositivo con respecto la orientación del mismo (Ej. en reposo mide
 $-9.8\,m\,s^{-2}$ en dirección al suelo). Representamos el atributo
 medido por la aceleración con el símbolo $a$ como el vector de los
 tres componentes de la aceleración en cada eje $(x,y,z)$, cada componente
-esta representado por $a_{x}$, $a_{y}$ y $a_{z}$. En la Figura
-\ref{fig421:muestra-ac} se muestra un ejemplo de las medidas obtenidas
-por la señal del acelerómetro en una actividad determinada.
+esta representado por $a_{x}$, $a_{y}$ y $a_{z}$. En la \figref{fig4:muestra-ac}
+se muestra un ejemplo de las medidas obtenidas por la señal de un
+acelerómetro en una actividad física determinada.
 
 \begin{figure}[!tbph]
 \begin{centering}
 \includegraphics[width=1\columnwidth]{capitulo-4/graphics/signal_a3d}
 \par\end{centering}
-\caption[Señal de aceleración en tres dimensiones]{\label{fig421:muestra-ac}Señal de aceleración en tres dimensiones}
+\caption[Señal de aceleración]{\label{fig4:muestra-ac}Señal de aceleración en tres dimensiones.
+Los colores corresponden a los ejes de coordenadas representadas en
+la siguiente figura.}
 \end{figure}
 
 Los giroscopios, o sensores de razón angular, miden señales de la
@@ -143,47 +149,33 @@ en movimiento mide \foreignlanguage{english}{$-0.1\,rad\,s^{-1}$}
 en relación a un eje fijo). Representamos el atributo medido por el
 giroscopio con el símbolo $w$ como el vector de los tres componentes
 del giro cada eje $(x,y,z)$, cada componente es representado por
-$w_{x}$, $w_{y}$ y $w_{z}$. 
+$w_{x}$, $w_{y}$ y $w_{z}$. En la \figref{fig4:axis-phone} se
+muestra la disposición de los ejes de coordenadas con respecto los
+teléfonos móviles modernos.
 
-En el la Tabla \ref{tab421:ex-signal} se muestra un ejemplo de las
-medidas registradas por la señal del acelerómetro en una ventana de
-tiempo dada.
-
-\begin{table}[!tbph]
+\begin{figure}[!tbph]
 \begin{centering}
-\begin{tabular}{|c|c|c|c|}
-\hline 
-$t$ & $a_{x}$ & $a_{y}$ & $a_{z}$\tabularnewline
-\hline 
-\hline 
-$0$ & \texttt{1.3} & \texttt{-2.1} & \texttt{0}\tabularnewline
-\hline 
-$1/s_{1}$ & \texttt{1.4} & \texttt{-2.3} & \texttt{0.1}\tabularnewline
-\hline 
-$2/s_{2}$ & \texttt{1.1} & \texttt{-2.6} & \texttt{0}\tabularnewline
-\hline 
-... & \texttt{...} & \texttt{...} & \texttt{...}\tabularnewline
-\hline 
-$t_{max}$ & \texttt{1.8} & \texttt{2.2} & \texttt{-0.4}\tabularnewline
-\hline 
-\end{tabular}
+\includegraphics[scale=0.7]{capitulo-4/graphics/axis_device}
 \par\end{centering}
-\caption[Ejemplo de señales medidas de aceleración]{\label{tab421:ex-signal}Ejemplo de señales medidas de aceleración}
-\end{table}
+\caption[Sistemas de coordenadas relativo a dispositivo]{\label{fig4:axis-phone}Ejes de coordenadas relativas a un teléfono
+móvil moderno.}
+
+\end{figure}
 
 Las ventajas de los sensores de movimiento es su amplio uso en el
 reconocimiento de actividades ambulatorias \cite{Bao2004,Kwapisz2011,ReyesOrtiz2015}.
 Los acelerómetros y giroscopios poseen un bajo costo asociado, bajo
 consumo de energía, además de estar incluidos actualmente en los teléfonos
-móviles modernos. También, varios trabajos publicados e implementados
-reportan una alta precisión en el reconocimiento de actividades \cite{Bao2004,LaraLabrador2012}.
+móviles modernos \cite{Google2016s}. También, varios trabajos publicados
+e implementados reportan una alta precisión en el reconocimiento de
+actividades \cite{Bao2004,LaraLabrador2012}.
 
 \subsubsection{Señales de Posición}
 
 Los sensores de posición proveen señales con información adicional
 que pueden ser utilizados para las \abbr{HAR} y aplicaciones de contexto
 con servicios basados en localización. En esta categoría están los
-sensores de orientación (o brújula), magnetómetros y \abbr{GPS}\cite{Google2016s}.
+sensores de orientación (o brújula), magnetómetros y \abbr{GPS} \cite{Google2016s}.
 
 Las señales del \abbr{GPS} permiten acceder a las coordenadas geográficas
 globales así como el modo de transporte de un individuo, de acuerdo
@@ -192,7 +184,19 @@ con dispositivos \abbr{GPS} además de poder estimar con buena precisión
 las coordenadas de acuerdo a la red celular \abbr{GSM}/\abbr{GPRS}
 y redes \abbr{WIFI} de corto alcance. La señal de localización se
 miden por medio de dos variables, latitud y longitud en la unidad
-de radianes (Ej. latitud $-57.2322\,rad$ y longitud $-25.3442\,rad$).
+radian (Ej. latitud $-57.2322\,rad$ y longitud $-25.3442\,rad$).
+
+En la \figref{fig4:gps} se muestra una aplicación que despliega el
+detalle de triangulación basada en satélites y la estimación de las
+coordenadas globales por medio de este proceso.
+
+\begin{figure}[!tbph]
+\begin{centering}
+\includegraphics[scale=0.8]{capitulo-4/graphics/gps}
+\par\end{centering}
+\caption[Coordenadas GPS.]{\label{fig4:gps}Visualización de satélites y coordenadas globales
+basada en triagulación GPS.}
+\end{figure}
 
 Sin embargo, los dispositivos \abbr{GPS} tienen cobertura limitada,
 ya sea por la dificultad de señal dentro de edificaciones, o sin servicio
@@ -226,23 +230,207 @@ Los sensores fisiológicos proveen señales de signos vitales de un
 individuo. La información sobre el ritmo cardíaco, tasa de respiración
 y temperatura del cuerpo podrían ser combinados para enriquecer el
 contexto durante el reconocimiento en ciertas aplicaciones específicas
-como las orientadas a la salud.
+como las orientadas a la salud \cite{LaraLabrador2013}.
 
-\subsection{Procesador de muestras}
+\section{Procesador de muestras}
 
-\label{sec422:proceso-se=0000F1ales}Proceso de señales en bruto para
-adecuarlos muestras con variables significativas que permitan discriminar
-las actividades a reconocer
+\label{sec44:proceso-se=0000F1ales}El siguiente paso en el reconocimiento
+de actividades consiste en procesar las señales obtenidas por sensores
+y extraer características relevantes de los datos en bruto. El modelo
+de reconocimiento se construye a partir de un conjunto de muestras
+etiquetadas utilizando métodos de aprendizaje automático en la etapa
+de entrenamiento. Durante la etapa de evaluación las entradas con
+las que un modelo construido opera son muestras no clasificadas pero
+generadas con la misma técnica de muestreo utilizada durante el entrenamiento.
 
-\subsubsection{Etiquetado}
+El procesador de muestras depende en tres tareas bien diferenciadas
+que se realizan automáticamente en ambas etapas del proceso de reconocimiento,
+adicionalmente se realiza una tarea manual durante la etapa de entrenamiento
+llamada etiquetado. A continuación se detallan cada tarea.
 
-\subsubsection{Filtro de Señal}
+\subsection{Etiquetado}
 
-\subsubsection{Muestreo}
+\label{ssec44:labeling}El proceso de aprendizaje automático requiere
+de una cantidad moderada de datos recolectados a partir de usuarios
+mientras realizan actividades humanas objetivas a nuestro estudio.
+Estos datos deben ser recolectadas y etiquetados utilizando un teléfono
+móvil inteligente con una aplicación diseñada para el caso. Ej. Utilizando
+\abbr{Android} con la aplicación \emph{SensorLog} \cite{GPStore2016s}. 
 
-\subsection{Clasificador de actividades}
+El protocolo de recolección consisten en alistar un grupo de personas
+que porten un teléfono inteligente mientras realizan con conjunto
+específico de actividades y registrar la información por medio de
+la aplicación. Las actividades de interés descritas en la sección
+\ref{sec263:actividades-humanas} deben ser realizadas portando el
+teléfono en el bolsillo y cada individuo realiza una sesión de caminata,
+trote, bicicleta o conducir un vehículo por un periodo de tiempo corto
+de 10 a 15 minutos. La recolección de datos es llevado a cabo por
+medio de la aplicación disponible para la plataforma \abbr{Android}
+demostrada en la \figref{fig4:sensor-log}. 
 
-\label{sec423:clasificador}Utiliza las muestras extraídas para construir
+\begin{figure}[!tbph]
+\begin{centering}
+\includegraphics[scale=0.8]{capitulo-4/graphics/sensorlog1}\includegraphics[scale=0.8]{capitulo-4/graphics/sensorlog2}
+\par\end{centering}
+\caption[Aplicación de entrenamiento SensorLog]{\label{fig4:sensor-log}Aplicación de entrenamiento \emph{SensorLog
+}con las interfaces de usuario configurar y controlar la sesión de
+entrenamiento}
+\end{figure}
+
+Así como se ve en la figura, la aplicación tiene una interfaz de usuario
+simple que permite elegir los sensores (Ej. \abbr{GPS}, acelerómetro,
+giroscopio) para la sesión, las acciones de iniciar y parar la recolección,
+y etiquetar la actividad que el usuario realiza durante el entrenamiento.
+Las etiquetas utilizadas en el proceso de recolección son:
+\begin{itemize}
+\item Caminar
+\item Trotar
+\item Quieto\footnote{A pesar de que esta actividad no representa un movimiento se incluye
+como parte del estudio}
+\item En bicicleta
+\item En vehículo
+\end{itemize}
+La recolección se realiza obteniendo medidas a una razón de 60 \emph{mili}segundos
+por lo que se registran aproximadamente 60 a 100 muestras por segundo.
+Para asegurar la calidad de la recolección inicial de datos la sesión
+es supervisada para preparar las condiciones adecuadas del entrenamiento
+físico a elección del participante.
+
+\subsection{Muestreo}
+
+\label{ssec44:sampling}La realización de actividades humanas son
+efectuadas durante periodos de tiempo de larga duración, en el orden
+de los segundos o minutos. Esta taza es mucho mayor comparando las
+tazas de muestreos de los sensores, las cuales pueden llegar hasta
+\texttt{250 \abbr{Hz}} (o \texttt{250} muestras por segundo). Una
+simple medida capturada en un instante (Ej. la aceleración de $-2.5\,m\,s^{-2}$
+en el eje $y$) no provee suficiente información para describir qué
+actividad se está llevando acabo. Por lo tanto, las actividades deben
+ser reconocidas a partir de las muestras disponibles en una ventana
+de tiempo $w$ en vez de utilizar una sola medida en el instante $t$.
+En la \tabref{tab4:ex-signal} se muestra un ejemplo de las posibles
+medidas registradas para la señal de un acelerómetro en una ventana
+de tiempo $w_{j}$ con una taza de muestreo $r$ del sensor.
+
+\begin{table}[!tbph]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+$w$ & $t$ & $a_{x}$ & $a_{y}$ & $a_{z}$\tabularnewline
+\hline 
+\hline 
+$j$ & $0$ & \texttt{$1.3$} & \texttt{$-2.1$} & \texttt{$0$}\tabularnewline
+\hline 
+$j$ & $1/r$ & \texttt{$1.4$} & \texttt{$-2.3$} & \texttt{$0.1$}\tabularnewline
+\hline 
+$j$ & $2/r$ & \texttt{$1.1$} & \texttt{$-2.6$} & \texttt{$0$}\tabularnewline
+\hline 
+$j$ & ... & \texttt{$...$} & \texttt{$...$} & \texttt{$...$}\tabularnewline
+\hline 
+$j$ & $t_{max}$ & \texttt{$1.8$} & \texttt{$2.2$} & \texttt{$-0.4$}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption[Ejemplo de señales medidas de aceleración]{\label{tab4:ex-signal}Ejemplo de una muestra con medidas de la señal
+de un acelerómetro.}
+\end{table}
+
+Rememorando la definición \ref{def2:harp-rel} la incógnita surge
+al comparar dos ventanas de tiempo $w_{1}$ y $w_{2}$, cada una con
+medidas $S_{i}$ correspondientes que representan dos señales completamente
+distintas. Estas señales no serán idénticas por más que sean obtenidas
+del mismo individuo realizando la misma actividad física. Por lo tanto,
+para comparar las muestras es necesario extraer características significativas
+de cada ventana $w_{i}$ filtrando información relevante y obteniendo
+valores cuantitativos que identifiquen de cierta manera a las señales
+y permitan compararlas entre sí. Las técnicas de filtrado y extracción
+se describen en las siguientes secciones.
+
+\subsection{Filtro de Señal}
+
+\label{ssec44:filtering}Teóricamente, si un dispositivo con sensores
+está en reposo mediría cero en dos de los tres ejes, por ejemplo,
+en los ejes $x$ e $y$, ya que no hay registra movimiento en esa
+situación. Sin embargo, el eje $z$mediría $-9.8\,m\,s^{-2}$ por
+ejemplo en dirección al suelo. A pesar de esto, los sensores electrónicos
+pueden introducir cierta inestabilidad en la señal (conocida como
+\emph{jitter}), esto provoca una fluctuación en las lecturas debido
+a errores en la medición y por lo tanto afectan a la calidad de los
+datos. Por lo tanto, a pesar de que un dispositivo con sensor de movimiento
+esté completamente quieto en la mesa, las lecturas podrían presentar
+ruido en los datos, Ej. errores de magnitud $\pm0.5$. 
+
+Entonces, para reducir ruido de la señal se debe aplicar uno o más
+filtros. El filtro permite suavizar la señal por medio de una función
+simple como la de cálculo de promedios variables (\emph{moving average})
+o por medio un método como el de \emph{Butterworth} \cite{ReyesOrtiz2015}. 
+
+Para nuestro estudio, el filtro de señal utilizado es la de promedios
+variables, basado en su simplicidad y aplicación en otros trabajos
+como \cite{Yang2009}, y es representado por la función $M$ que se
+define a continuación:
+
+\label{def4:moving-average}\newtheorem{defi}{Definición}
+
+\begin{defi}(\emph{Moving average}) Dada una secuencia $\left\{ a_{i}\right\} _{i=1}^{N}$,
+un $n$-\emph{moving average} es una nueva secuencia $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
+definida a partir de $a_{i}$ tomando la media aritmética de las \emph{sub}-secuencias
+de tamaño $n$ donde,
+
+\begin{eqnarray}
+s_{i} & = & \frac{1}{n}\sum_{j=1}^{i+n-1}a_{j}
+\end{eqnarray}
+
+Tal que las secuencias $S_{n}$ dado los $n$-\emph{moving averages}
+serian 
+
+\begin{eqnarray}
+S_{2} & = & \frac{1}{2}(a_{1}+a_{2},a_{2}+a_{3},...,a_{n-1}+a_{n})
+\end{eqnarray}
+
+\begin{equation}
+S_{3}=\frac{1}{3}(a_{1}+a_{2}+a_{3},a_{2}+a_{3}+a_{4},...,a_{n-2}+a_{n-1}+a_{n})
+\end{equation}
+
+y así sucesivamente.\end{defi}
+
+Como ejemplo, en la \figref{fig4:filter-maf} se despliegan las gráficas
+de una señal de aceleración en bruto para la dimensión $y$ y su correspondiente
+señal suavizada con un filtro $M(y)$ construido a partir de la secuencia
+$S_{5}$ durante el intervalo de $1.6$ segundos. Como se puede apreciar,
+la señal resultante está ligeramente suavizada debido a un filtrado
+de valores extremos debido a perturbaciones bruscas o ruido en la
+señal.
+
+\begin{figure}[!tbph]
+\begin{centering}
+\includegraphics{capitulo-4/graphics/moving_average}
+\par\end{centering}
+\caption[Señal suavizada por la función $M$]{\label{fig4:filter-maf}Señal suavizada por un filtro de promedios
+variables $M$}
+
+\end{figure}
+
+
+\subsection{Extracción}
+
+\label{ssec44:extraction}In general, two approaches have been proposed
+to extract features from time series data: statistical and structural
+{[}48{]}. Statistical methods, such as the Fourier transform and the
+Wavelet transform, use quantitative characteristics of the data to
+extract features, whereas structural approaches take into account
+the interrelationship among data. The criterion to choose either of
+these methods is certainly subject to the nature of the given signal.
+Figure 3 displays the process to transform the raw time se- ries dataset
+—which can be from acceleration, environmental variables, or vital
+signs— into a set of feature vectors. Each instance in the processed
+dataset corresponds to the feature vector extracted from all the signals
+within a time window. Most of the approaches surveyed in this paper
+adhere to this mapping.
+
+\section{Clasificador de actividades}
+
+\label{sec45:clasificador}Utiliza las muestras extraídas para construir
 un modelo e predecir qué actividad probable está realizando un individuo
 en un determinado instante.
 
@@ -254,7 +442,7 @@ en un determinado instante.
 
 \subsection{Características no funcionales}
 
-\label{sec431:caracteristicas}Existen un conjunto de características
+\label{ssec46:caracteristicas}Existen un conjunto de características
 deseables que deben ser satisfechas para la construcción efectiva
 de los sistemas de reconocimiento. Estas características abordan cuestiones
 de diseño importantes que conciernen a la calidad y al funcionamiento
@@ -288,7 +476,7 @@ el consentimiento del usuario.
 
 \subsection{Dispositivos móviles}
 
-\label{sec432:dispositivos-moviles}Descripción técnica de dispositivos
+\label{ssec46:dispositivos-moviles}Descripción técnica de dispositivos
 móviles: procesador, memoria, sensores y almacenamiento
 
 \subsubsection{Teléfonos móviles}
@@ -297,7 +485,7 @@ móviles: procesador, memoria, sensores y almacenamiento
 
 \subsection{Sensores empotrados}
 
-\label{sec433:sensores-empotrados}Descripción técnica de los sensores
+\label{ssec46:sensores-empotrados}Descripción técnica de los sensores
 de aceleración, variables, orientación en dispositivo, unidades de
 medida, precisión vs consumo.
 

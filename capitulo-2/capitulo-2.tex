@@ -103,7 +103,7 @@ que proporcionan energía para poder operar, y además algunos cuentan
 con conexiones inalámbricas (Ej. \abbr{WIFI}/\abbr{Bluetooth}) para
 la transmisión de las señales. Las señales de movimiento y fisiológicas
 obtenidas por los sensores pueden ser temperatura de la piel, frecuencia
-cardíaca, conductividad, posicionamiento global (\abbr{GPS}) y movimientos
+cardíaca, conductividad, posicionamiento por \abbr{GPS} y movimientos
 del cuerpo. Todos estas mediciones son útiles para tener una constante
 información del estado de una persona en cualquier momento.
 
@@ -148,17 +148,16 @@ de los usuarios con teléfonos móviles.
 \label{sec25:aprendizaje-automatico}Una de las técnicas de reconocimiento
 de actividades humanas consiste en encontrar un modelo para descubrir
 información a partir de los datos, es decir utilizar algoritmos de
-aprendizaje automático (\abbr{ML}, \emph{Machine Learning}) para
-construir modelos que puedan inferir actividades a partir de una gran
-cantidad de datos medidos con anterioridad junto con el comportamiento
-deseado del usuario\cite{Chen2012}. Esta técnica involucra la creación
-de modelos de clasificación probabilistas o estadísticos, seguidos
-por los procesos de entrenamiento y aprendizaje.
+aprendizaje automático (\abbr{ML}) para construir modelos que puedan
+inferir actividades a partir de una gran cantidad de datos medidos
+con anterioridad junto con el comportamiento deseado del usuario\cite{Chen2012}.
+Esta técnica involucra la creación de modelos de clasificación probabilistas
+o estadísticos, seguidos por los procesos de entrenamiento y aprendizaje.
 
 El aprendizaje automático implica la utilización de datos como conjunto
 inicial de entrenamiento para entrenar un algoritmo, uno de muchos
-existentes, como redes de Bayes, máquinas de soporte-vector \abbr{SVM},
-Árboles de decisión \abbr{DT}, Modelos de Markov ocultos\abbr{HMM},
+existentes, como redes de Bayes, máquinas de soporte-vector (\abbr{SVM}),
+árboles de decisión (\abbr{DT}), modelos de Markov (\abbr{HMM}),
 y otros \cite{Rajaraman2011} (véase siguiente sección). Las ventajas
 de utilizar este enfoque de reconocimiento es su capacidad de manejar
 información temporal y con cierto grado de incertidumbre, pero su
@@ -189,15 +188,15 @@ de estudio del problema \abbr{HAR} en este apartado se describe una
 definición formal del problema. Considerando el objetivo y los elementos
 de reconocimiento podemos definir el problema como\cite{LaraLabrador2013}:
 
-\newtheorem{defi}{Definición}
+\label{def2:harp}\newtheorem{defi}{Definición}
 
-\begin{defi}(Problema \abbr{HAR}) Dado un conjunto $S=\{S_{0},...,S_{k-1}\}$
+\begin{defi}(Problema \abbr{HAR}) Dado un conjunto $S=\{s_{0},...,s_{k-1}\}$
 de $k$ series de tiempo, cada una con una medida particular de cada
 atributo, y definidas en el intervalo de tiempo $I=\left[t_{\alpha},t_{\omega}\right]$,
-el objetivo es encontrar una partición temporal (sub-intervalo de
-tiempo) $\left\langle I_{0},...,I_{r-1}\right\rangle $ en $I$, basado
-en los datos de $S$ y el conjunto de etiquetas que representan la
-acción realizada durante cada intervalo $I_{j}$ (Ej. quieto, caminando,
+el objetivo es encontrar una partición temporal (\emph{sub}-intervalo
+de tiempo) $\left\langle I_{0},...,I_{r-1}\right\rangle $ en $I$,
+basado en los datos de $S$ y el conjunto de etiquetas que representan
+la acción realizada durante cada intervalo $I_{j}$ (Ej. quieto, caminando,
 corriendo, etc.). 
 
 Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos,
@@ -218,17 +217,17 @@ de la técnica clasificación. Debido a la utilización de aprendizaje
 automático para la resolución del problema, se requiere la siguiente
 definición relajada del problema \abbr{HAR} descrito anteriormente: 
 
-\newtheorem{defi}{Definición}
+\label{def2:harp-rel}\newtheorem{defi}{Definición}
 
 \begin{defi}(Problema \abbr{HAR} relajado) Dado (1) un conjunto
-$W=\{W_{0},...,W_{m-1}\}$ de $m$ ventanas de tiempo del mismo tamaño,
-donde cada una está total o parcialmente etiquetada, y que cada $W_{i}$
-contiene un conjunto de series de tiempo $S_{i}=\{S_{i,0},...,S_{i,k-1}\}$
+$W=\{w_{0},...,w_{m-1}\}$ de $m$ ventanas de tiempo del mismo tamaño,
+donde cada una está total o parcialmente etiquetada, y que cada $w_{i}$
+contiene un conjunto de series de tiempo $S_{i}=\{s_{i,0},...,s_{i,k-1}\}$
 para cada $k$ atributos medidos, y (2) un conjunto $A\text{=}\{a_{0},...,a_{n-1}\}$
 de etiquetas de actividades, el objetivo es encontrar una función
 $f\colon S_{i}\rightarrow A$ que sea evaluada para todos los valores
 posibles de $S_{i}$, tal que $f(S_{i})$ es lo más próximo a la acción
-realizada durante $W_{i}$ \end{defi}
+realizada durante $w_{i}$ \end{defi}
 
 Considerar la utilización de esta definición relajada introduce un
 error en el modelo durante las ventanas de transición entre actividades,
@@ -245,12 +244,13 @@ automático, el proceso de reconocimiento se divide en dos etapas bien
 conocidas, la de entrenamiento y las pruebas (o evaluación).
 
 \begin{figure}[!htbp]
-\centering \includegraphics[width=0.7\linewidth]{capitulo-2/graphics/harsystem}
-\caption[Flujo HAR]{Flujo general del Reconocimiento de Actividades Humanas}
-\label{fig:harsystem} 
+\centering{} \includegraphics[width=0.7\linewidth]{capitulo-2/graphics/harsystem}
+\caption[Proceso HAR]{\label{fig2:harsystem}Flujo general del Reconocimiento de Actividades
+Humanas}
+ 
 \end{figure}
 
-En la \figref{fig:harsystem} se visualiza las fases comunes de las
+En la \figref{fig2:harsystem} se visualiza las fases comunes de las
 dos etapas \cite{LaraLabrador2013}. La etapa de entrenamiento requiere
 inicialmente un conjunto de datos recolectados en una serie de tiempo
 con los atributos medidos a partir de individuos que realizan cada
@@ -266,8 +266,8 @@ de tiempo, que se utiliza para extraer las mismas características
 utilizadas en el modelo, estas se evalúan en el modelo de aprendizaje
 previamente entrenado, generando una etiqueta de la actividad predicha.
 
-En las siguientes secciones detallamos el objeto de la clasificación
-(actividades humanas) y las funciones de cada etapa.
+En las siguientes secciones detallamos las actividades humanas que
+son objeto de la clasificación y las funciones de cada etapa.
 
 \subsection{Actividades Humanas}
 
@@ -295,8 +295,8 @@ Transporte  & Andar en bus, bicicleta y conducir \tabularnewline
 \hline 
 En el teléfono  & Enviar mensajes de texto y hacer llamadas \tabularnewline
 \hline 
-Actividades diarias  & Comer, beber, trabajar en la PC, mirar TV, leer, cepillarse los dientes,
-aspirar el piso, y otros. \tabularnewline
+Actividades diarias  & Comer, beber, trabajar en la PC, observar TV, leer un libro, cepillarse
+los dientes, aspirar el piso, y otros. \tabularnewline
 \hline 
 Ejercitarse  & Alzar pesas, bicicleta estática, remo y otros. \tabularnewline
 \hline 
@@ -304,8 +304,7 @@ Militares  & Arrastrarse, en cuclillas, abrir la puerta \tabularnewline
 \hline 
 Parte superior del cuerpo  & Masticar, hablar, mover la cabeza, tragar líquidos, mirar. \tabularnewline
 \hline 
-\end{tabular}\caption{Grupos de Actividades.}
-\label{tabla:sencilla} 
+\end{tabular}\caption[Grupos de Actividades]{\label{tab2:grupo-actividades}Grupos de Actividades}
 \end{table}
 
 Las actividades pueden separase en varios grupos de acuerdo a la duración
@@ -333,10 +332,8 @@ ambientes totalmente controlados en laboratorio.
 Una falla en el diseño de un sistema \abbr{HAR} se puede dar por
 no considerar las condiciones reales de las actividades, tales como
 actividades no tenidas en cuenta, calibración de sensores, ruido,
-etc.
-
-Otra de las consideraciones a tener en cuenta en este punto es la
-cantidad de individuos para realizar la colección, es recomendable
+etc. Otra de las consideraciones a tener en cuenta en este punto es
+la cantidad de individuos para realizar la colección, es recomendable
 el mayor cantidad de individuos en distintos tipos de edades y condiciones
 físicas.
 
@@ -366,26 +363,50 @@ pudiendo ser en tiempo y frecuencia.
 Varios enfoques de aprendizaje automático se han desarrollado a lo
 largo de los años para resolver el problema de \abbr{HAR}. En su
 mayoría a través de algoritmos de aprendizaje supervisado aunque también
-se han propuesto métodos semi-supervisados y no supervisados.
+se han propuesto métodos \emph{semi}-supervisados y no supervisados.
 
-Modelos de Bayes y basados en frecuencia han sido bien cubiertos en
-toda la literatura \abbr{HAR}. Implican modelos basados en reglas
-como Arboles de decisión \abbr{DT} y Selvas Aleatorias \abbr{RF},
-algunos con un enfoques geométricos como vecinos cercanos \abbr{k-NN},
-redes neuronales \abbr{ANN} y máquinas de soporte-vector \abbr{SVM},
-y los métodos de clasificación probabilistas, por ejemplo clasificadores
-de Bayes \abbr{NB}, y modelos ocultos de Markov \abbr{HMM}.
+Losmodelos de Bayes y basados en frecuencia han sido bien cubiertos
+en toda la literatura del problema \abbr{HAR}. Estos métodos se resumen
+en la siguiente tabla:
 
-Otros aspectos relevantes para la selección del algoritmo de modelo
-de aprendizaje incluyen: el consumo de energía, los requisitos de
-memoria, interpretabilidad y complejidad de computo, etc. Estos aspectos
-se agudizan si se utilizan dispositivos inteligentes .Como cuestión
-de ejemplo, árboles de decisión podrían ser preferidos cuando se requiere
-simplicidad en su implementación y \abbr{SVM} para aplicaciones de
-alto rendimiento\cite{ReyesOrtiz2015}.
+\begin{table}
+\begin{centering}
+\begin{tabular}{|>{\raggedright}m{4cm}|>{\raggedright}p{9cm}|}
+\hline 
+\textbf{Grupo}  & \textbf{Actividades} \tabularnewline
+\hline 
+\hline 
+Basados en Reglas & Árboles de decisión (\abbr{DT}, \emph{Decision Trees})
 
-En el capitulo \ref{chap:Aprendizaje-Automatico} se detalla todo
-lo referente a métodos de aprendizaje y los utilizados en este trabajo.
+Selvas aleatorias (\abbr{RF}, \emph{Random Forest})\tabularnewline
+\hline 
+Enfoques Geométricos  & Vecinos cercanos (\abbr{k-NN}, \emph{k Nearest Neighbourhood})
+
+Redes neuronales (\abbr{ANN}, \emph{Artificial Neural Network})
+
+Máquinas de soporte-vector (\abbr{SVM}, \emph{Support Vector Machines})\tabularnewline
+\hline 
+Clasificación Probabilista & Clasificadores de Bayes (\abbr{NB}, \emph{Naive Bayes}), 
+
+Modelos de Markov (\abbr{HMM}, \emph{Hidden Markov Models})\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption[Resumen de métodos de aprendizaje agrupados por tipo]{\label{tab2:metodos-aprendizaje}Resumen de métodos de aprendizaje
+agrupados por tipo}
+\end{table}
+
+Los aspectos relevantes para la selección del algoritmo de aprendizaje
+son: el consumo de energía, los requisitos de memoria, la complejidad
+de computo e interpretación, etc. Estos aspectos se agudizan si se
+utilizan dispositivos móviles inteligentes. Por ejemplo, los árboles
+de decisión podría ser el método preferido cuando se requiere simplicidad
+en la implementación y métodos \abbr{SVM} para aplicaciones que requieran
+un alto rendimiento\cite{ReyesOrtiz2015}.
+
+En el capitulo \ref{chap3:Aprendizaje-Automatico} se detalla lo referente
+a los métodos de aprendizaje disponibles y el método utilizado en
+este trabajo.
 
 \section{Conclusión}
 
