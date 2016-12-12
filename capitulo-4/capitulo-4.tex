@@ -116,21 +116,20 @@ cada grupo.
 \subsubsection{Señales de Movimiento}
 
 Los sensores de movimiento proveen señales altamente informativos
-para las \abbr{HAR} debido a que miden las fuerzas de aceleración
-y rotación en tres ejes cuando son portados por los usuarios. En esta
-categoría de sensores se encuentran los acelerómetros y giroscopios. 
+para \abbr{HAR} debido a que miden las fuerzas de aceleración y rotación
+en tres ejes cuando son portados por sus usuarios. En esta categoría
+de sensores se encuentran los acelerómetros y giroscopios. 
 
 Los acelerómetros miden señales de acuerdo a diferentes tipos de movimientos,
 incluyendo la aceleración lineal y centrípeta, la gravedad y vibración
 en dos o tres dimensiones \cite{Goehl2007}. Las variables medidas
 están expresadas en la magnitud de la aceleración ejercida sobre el
 dispositivo con respecto la orientación del mismo (Ej. en reposo mide
-$-9.8\,m\,s^{-2}$ en dirección al suelo). Representamos el atributo
-medido por la aceleración con el símbolo $a$ como el vector de los
-tres componentes de la aceleración en cada eje $(x,y,z)$, cada componente
-esta representado por $a_{x}$, $a_{y}$ y $a_{z}$. En la \figref{fig4:muestra-ac}
-se muestra un ejemplo de las medidas obtenidas por la señal de un
-acelerómetro en una actividad física determinada.
+$-9.8\,m\,s^{-2}$ en dirección al suelo). La señal de la aceleración
+dada por $a(t)$ es un vector con respecto al tiempo con tres componentes
+en cada eje $(x,y,z)$, cada uno representa una medida $a_{x}$, $a_{y}$
+y $a_{z}$. En la \figref{fig4:muestra-ac} se despliegan las medidas
+obtenidas por la señal $a(t)$ durante una actividad física determinada.
 
 \begin{figure}[!tbph]
 \begin{centering}
@@ -146,12 +145,13 @@ rapidez de rotación de los objetos en tres dimensiones \cite{Goehl2007}.
 Las variables medidas están expresadas en velocidad angular de rotación
 del dispositivo con respecto a los ejes de orientación del mismo (Ej.
 en movimiento mide \foreignlanguage{english}{$-0.1\,rad\,s^{-1}$}
-en relación a un eje fijo). Representamos el atributo medido por el
-giroscopio con el símbolo $w$ como el vector de los tres componentes
-del giro cada eje $(x,y,z)$, cada componente es representado por
-$w_{x}$, $w_{y}$ y $w_{z}$. En la \figref{fig4:axis-phone} se
-muestra la disposición de los ejes de coordenadas con respecto los
-teléfonos móviles modernos.
+en relación a un eje fijo). La señal de la velocidad angular dada
+por $w(t)$ es un vector con respecto al tiempo con tres componentes
+en cada eje $(x,y,z)$, cada uno representa una medida $w_{x}$, $w_{y}$
+y $w_{z}$. La orientación de los ejes con respecto al dispositivo
+de medición depende del fabricante del mismo. Los teléfonos móviles
+modernos poseen la orientación de los ejes de acuerdo a la siguiente
+\figref{fig4:axis-phone}.
 
 \begin{figure}[!tbph]
 \begin{centering}
@@ -162,50 +162,60 @@ móvil moderno.}
 
 \end{figure}
 
-Las ventajas de los sensores de movimiento es su amplio uso en el
-reconocimiento de actividades ambulatorias \cite{Bao2004,Kwapisz2011,ReyesOrtiz2015}.
-Los acelerómetros y giroscopios poseen un bajo costo asociado, bajo
-consumo de energía, además de estar incluidos actualmente en los teléfonos
-móviles modernos \cite{Google2016s}. También, varios trabajos publicados
-e implementados reportan una alta precisión en el reconocimiento de
-actividades \cite{Bao2004,LaraLabrador2012}.
+Las medidas obtenidas son variaciones con respecto a estos tres ejes
+donde el valor $0$ está ubicado en el centro del dispositivo. Las
+ventajas de los sensores de movimiento es su amplio uso al reconocer
+actividades ambulatorias, como los citados en \cite{Bao2004,Kwapisz2011,ReyesOrtiz2015}.
+Los acelerómetros y giroscopios poseen un bajo costo de fabricación,
+bajo consumo de energía, y además están incluidos comúnmente en los
+teléfonos móviles modernos \cite{Google2016s} debido a su utilidad
+en mejorar la interacción humano-máquina por medio de gestos. Varios
+trabajos publicados evidencian una alta precisión en \abbr{HAR} utilizando
+al menos uno de estos sensores \cite{Bao2004,LaraLabrador2012}.
 
 \subsubsection{Señales de Posición}
 
 Los sensores de posición proveen señales con información adicional
-que pueden ser utilizados para las \abbr{HAR} y aplicaciones de contexto
-con servicios basados en localización. En esta categoría están los
-sensores de orientación (o brújula), magnetómetros y \abbr{GPS} \cite{Google2016s}.
+que pueden ser utilizados para efectuar \abbr{HAR} y aplicaciones
+de contexto con servicios basados en localización. En esta categoría
+están los sensores de orientación (o brújula), magnetómetros y \abbr{GPS}
+\cite{Google2016s}.
 
 Las señales del \abbr{GPS} permiten acceder a las coordenadas geográficas
-globales así como el modo de transporte de un individuo, de acuerdo
-a la velocidad estimada. Los teléfonos móviles modernos están equipados
-con dispositivos \abbr{GPS} además de poder estimar con buena precisión
-las coordenadas de acuerdo a la red celular \abbr{GSM}/\abbr{GPRS}
-y redes \abbr{WIFI} de corto alcance. La señal de localización se
-miden por medio de dos variables, latitud y longitud en la unidad
-radian (Ej. latitud $-57.2322\,rad$ y longitud $-25.3442\,rad$).
+globales como el modo de transporte de un individuo, de acuerdo a
+la velocidad estimada. Los teléfonos móviles modernos están equipados
+con sensores para captar señales del sistema \abbr{GPS} y también
+se puede estimar con buena precisión las coordenadas utilizando una
+red celular \abbr{GSM}/\abbr{GPRS} y redes \abbr{WIFI} de corto
+alcance. 
 
-En la \figref{fig4:gps} se muestra una aplicación que despliega el
-detalle de triangulación basada en satélites y la estimación de las
-coordenadas globales por medio de este proceso.
+La señal de localización utiliza dos variables, conocidas como latitud
+y longitud, y son medidas en la unidad radian (Ej. latitud $-57.2322\,rad$
+y longitud $-25.3442\,rad$). Los valores de latitud y longitud son
+coordenadas del \abbr{WGS} cuyos valores globales oscilan entre -180
+a 180 en longitud, y -90 a 90 en latitud.
+
+En la \figref{fig4:gps} se muestra una aplicación móvil para \abbr{Android}
+que muestra el proceso de triangulación por satélites del sistema
+\abbr{GPS}, donde el resultado es la estimación de las coordenadas
+globales. 
 
 \begin{figure}[!tbph]
 \begin{centering}
 \includegraphics[scale=0.8]{capitulo-4/graphics/gps}
 \par\end{centering}
-\caption[Coordenadas GPS.]{\label{fig4:gps}Visualización de satélites y coordenadas globales
+\caption[Coordenadas por GPS.]{\label{fig4:gps}Visualización de satélites y coordenadas globales
 basada en triagulación GPS.}
 \end{figure}
 
-Sin embargo, los dispositivos \abbr{GPS} tienen cobertura limitada,
-ya sea por la dificultad de señal dentro de edificaciones, o sin servicio
-de red celular o \abbr{WIFI}, como también el alto consumo de energía
-para aplicaciones que rastrean la localización en tiempo real. La
-localización particularmente es información sensible para los usuarios
-ya que se debe tener especial atención a no comprometer la privacidad
-de los datos y el consentimiento del usuario que permita ser rastreado
-\cite{LaraLabrador2013}.
+Sin embargo, los \abbr{GPS} tienen cobertura limitada por la dificultad
+de obtener señal dentro de edificaciones, o si no está disponible
+servicio de red celular o \abbr{WIFI}. También el alto consumo de
+energía es un factor importante si las aplicaciones rastrean la localización
+en tiempo real. Además, la ubicación de un individuo es particularmente
+información sensible para la mayoría de los usuarios y se debe tener
+especial atención a no comprometer la privacidad de los datos y tener
+el consentimiento del usuario para que este pueda ser rastreado \cite{LaraLabrador2013}.
 
 \subsubsection{Señales del Ambiente}
 
@@ -255,33 +265,33 @@ de una cantidad moderada de datos recolectados a partir de usuarios
 mientras realizan actividades humanas objetivas a nuestro estudio.
 Estos datos deben ser recolectadas y etiquetados utilizando un teléfono
 móvil inteligente con una aplicación diseñada para el caso. Ej. Utilizando
-\abbr{Android} con la aplicación \emph{SensorLog} \cite{GPStore2016s}. 
+un teléfono con \abbr{Android} y la aplicación \emph{SensorLog} \cite{SLog2016}. 
 
-El protocolo de recolección consisten en alistar un grupo de personas
+El protocolo de recolección consiste en alistar un grupo de personas
 que porten un teléfono inteligente mientras realizan con conjunto
-específico de actividades y registrar la información por medio de
-la aplicación. Las actividades de interés descritas en la sección
-\ref{sec263:actividades-humanas} deben ser realizadas portando el
-teléfono en el bolsillo y cada individuo realiza una sesión de caminata,
-trote, bicicleta o conducir un vehículo por un periodo de tiempo corto
-de 10 a 15 minutos. La recolección de datos es llevado a cabo por
-medio de la aplicación disponible para la plataforma \abbr{Android}
-demostrada en la \figref{fig4:sensor-log}. 
+específico de actividades y registrar datos por medio de la aplicación.
+Las actividades de interés descritas en la sección \ref{sec263:actividades-humanas}
+deben ser realizadas portando el teléfono en el bolsillo donde cada
+individuo realiza una sesión de caminata, trote, bicicleta o conducir
+un vehículo por un periodo de tiempo de 10 a 15 minutos. La recolección
+de datos llevada a cabo por medio de la aplicación disponible para
+la plataforma \abbr{Android} es mostrada en la \figref{fig4:sensor-log}. 
 
 \begin{figure}[!tbph]
 \begin{centering}
 \includegraphics[scale=0.8]{capitulo-4/graphics/sensorlog1}\includegraphics[scale=0.8]{capitulo-4/graphics/sensorlog2}
 \par\end{centering}
 \caption[Aplicación de entrenamiento SensorLog]{\label{fig4:sensor-log}Aplicación de entrenamiento \emph{SensorLog
-}con las interfaces de usuario configurar y controlar la sesión de
+}con interfaces de usuario para configurar y controlar la sesión de
 entrenamiento}
 \end{figure}
 
 Así como se ve en la figura, la aplicación tiene una interfaz de usuario
-simple que permite elegir los sensores (Ej. \abbr{GPS}, acelerómetro,
-giroscopio) para la sesión, las acciones de iniciar y parar la recolección,
-y etiquetar la actividad que el usuario realiza durante el entrenamiento.
-Las etiquetas utilizadas en el proceso de recolección son:
+simple que permite elegir los sensores de donde recolectar datos (Ej.
+\abbr{GPS}, acelerómetro, giroscopio) para la sesión, las acciones
+de iniciar y parar la actividad, y las etiquetas de la actividad que
+el usuario realiza durante el entrenamiento. Las etiquetas utilizadas
+en el proceso de recolección son:
 \begin{itemize}
 \item Caminar
 \item Trotar
@@ -289,28 +299,96 @@ Las etiquetas utilizadas en el proceso de recolección son:
 como parte del estudio}
 \item En bicicleta
 \item En vehículo
+\item \emph{Girando}\footnote{Esta no es una actividad física sino un comportamiento errático de
+la orientación del teléfono}
 \end{itemize}
-La recolección se realiza obteniendo medidas a una razón de 60 \emph{mili}segundos
-por lo que se registran aproximadamente 60 a 100 muestras por segundo.
-Para asegurar la calidad de la recolección inicial de datos la sesión
-es supervisada para preparar las condiciones adecuadas del entrenamiento
-físico a elección del participante.
+La recolección se realiza obteniendo medidas a una razón de 60 a 100
+\emph{mili}segundos por lo que se registran aproximadamente 60 a 100
+muestras por segundo. Para asegurar la calidad de la recolección inicial
+de datos las primeras sesiones de entrenamiento son supervisadas para
+preparar las condiciones adecuadas del entrenamiento físico a elección
+del participante.
+
+\subsection{Filtro de Señal}
+
+\label{ssec44:filtering}Teóricamente, si un dispositivo equipado
+con sensores de movimiento está en reposo la señal de aceleración
+$a(t)$ mediría cero (0) en dos ejes. Por ejemplo, en los ejes $x$
+e $y$ no habría registro de medidas distintas a cero (0), y el eje
+$z$mediría en dirección al suelo $-9.8\,m\,s^{-2}$. Sin embargo,
+los sensores electrónicos pueden introducir cierta inestabilidad en
+la señal (conocida como \emph{jitter}) provocando una fluctuación
+en las lecturas debido a errores en la medición afectando la calidad
+de los datos. Por lo tanto, a pesar de que un dispositivo con sensor
+de movimiento esté completamente quieto en la mesa, las lecturas podrían
+registrar ruido en los datos, Ej. errores del orden de $\pm0.005$. 
+
+Entonces, para reducir ruido de la señal se debe aplicar uno o más
+filtros. El filtro permite suavizar la señal por medio de una función
+simple como la del cálculo de promedios variables (\emph{moving average})
+o por un método como el de \emph{Butterworth} \cite{ReyesOrtiz2015}. 
+
+Para el análisis de este trabajo se utilizó el filtro de señal de
+promedios variables debido a su simplicidad y aplicabilidad basado
+en otros trabajos como \cite{Yang2009}. El filtro de señal se puede
+definir con la siguiente función $M$ descrita a continuación:
+
+\label{def4:moving-average}\newtheorem{defi}{Definición}
+
+\begin{defi}(\emph{Moving average}) Dada una secuencia $\left\{ a_{i}\right\} _{i=1}^{N}$,
+un $n$-\emph{moving average} es una nueva secuencia $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
+definida a partir de $a_{i}$ tomando la media aritmética de las \emph{sub}-secuencias
+de tamaño $n$ donde,
+
+\begin{eqnarray}
+s_{i} & = & \frac{1}{n}\sum_{j=i}^{i+n-1}a_{j}
+\end{eqnarray}
+
+Así que las secuencias $S_{n}$ dado los $n$-\emph{moving averages}
+serian 
+
+\begin{eqnarray}
+S_{2} & = & \frac{1}{2}(a_{1}+a_{2},a_{2}+a_{3},...,a_{n-1}+a_{n})
+\end{eqnarray}
+
+\begin{equation}
+S_{3}=\frac{1}{3}(a_{1}+a_{2}+a_{3},a_{2}+a_{3}+a_{4},...,a_{n-2}+a_{n-1}+a_{n})
+\end{equation}
+
+y así sucesivamente.\end{defi}
+
+Como ejemplo, en la \figref{fig4:filter-maf} se despliegan las gráficas
+de una señal de aceleración $a_{y}$ para la dimensión $y$ y su correspondiente
+señal filtrada con la función $M(a_{y})$ construida a partir de una
+secuencia $S_{5}$ durante un intervalo de $1.6$ segundos. Como se
+puede apreciar, la señal resultante está ligeramente suavizada debido
+al filtrado de valores extremos resultado de perturbaciones bruscas
+o ruido en la señal.
+
+\begin{figure}[!tbph]
+\begin{centering}
+\includegraphics{capitulo-4/graphics/moving_average}
+\par\end{centering}
+\caption[Señal filtrada por la función $M$]{\label{fig4:filter-maf}Señal filtrada por promedios variables.}
+\end{figure}
+
 
 \subsection{Muestreo}
 
 \label{ssec44:sampling}La realización de actividades humanas son
 efectuadas durante periodos de tiempo de larga duración, en el orden
-de los segundos o minutos. Esta taza es mucho mayor comparando las
-tazas de muestreos de los sensores, las cuales pueden llegar hasta
+de los segundos o minutos. Esta taza es mucho mayor comparado con
+las tazas de muestreos de los sensores, las cuales pueden llegar hasta
 \texttt{250 \abbr{Hz}} (o \texttt{250} muestras por segundo). Una
 simple medida capturada en un instante (Ej. la aceleración de $-2.5\,m\,s^{-2}$
 en el eje $y$) no provee suficiente información para describir qué
-actividad se está llevando acabo. Por lo tanto, las actividades deben
-ser reconocidas a partir de las muestras disponibles en una ventana
-de tiempo $w$ en vez de utilizar una sola medida en el instante $t$.
-En la \tabref{tab4:ex-signal} se muestra un ejemplo de las posibles
-medidas registradas para la señal de un acelerómetro en una ventana
-de tiempo $w_{j}$ con una taza de muestreo $r$ del sensor.
+actividad está llevando acabo un persona. Por lo tanto, las actividades
+humanas deben ser reconocidas a partir de muestras extraídas en ventanas
+de tiempo $w$ en vez de utilizar una sola medida instantánea en $t$. 
+
+En la \tabref{tab4:ex-signal} se muestra una tabla con posibles medidas
+instantáneas para la señal de aceleración $a(t)$ en una ventana de
+tiempo $w_{j}$ con una taza de muestreo $r$asociada al sensor.
 
 \begin{table}[!tbph]
 \begin{centering}
@@ -331,102 +409,54 @@ $j$ & $t_{max}$ & \texttt{$1.8$} & \texttt{$2.2$} & \texttt{$-0.4$}\tabularnewli
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption[Ejemplo de señales medidas de aceleración]{\label{tab4:ex-signal}Ejemplo de una muestra con medidas de la señal
-de un acelerómetro.}
+\caption[Medidas instantáneas de aceleración ]{\label{tab4:ex-signal}Ejemplo de medidas instantáneas de aceleración
+en una ventana de tiempo.}
 \end{table}
 
-Rememorando la definición \ref{def2:harp-rel} la incógnita surge
-al comparar dos ventanas de tiempo $w_{1}$ y $w_{2}$, cada una con
-medidas $S_{i}$ correspondientes que representan dos señales completamente
-distintas. Estas señales no serán idénticas por más que sean obtenidas
-del mismo individuo realizando la misma actividad física. Por lo tanto,
-para comparar las muestras es necesario extraer características significativas
-de cada ventana $w_{i}$ filtrando información relevante y obteniendo
-valores cuantitativos que identifiquen de cierta manera a las señales
-y permitan compararlas entre sí. Las técnicas de filtrado y extracción
-se describen en las siguientes secciones.
+La utilización de ventanas de tiempo hace que las señales queden segmentadas
+en muestras discretas que son utilizadas como unidades de actividad.
+De esta manera, cada ventana tiene inequívocamente una actividad humana
+asociada y de esta manera podemos satisfacer el requisito planteado
+por la definición del problema \ref{def2:harp-rel} en la sección
+\ref{sec261:definicion-har}. 
 
-\subsection{Filtro de Señal}
-
-\label{ssec44:filtering}Teóricamente, si un dispositivo con sensores
-está en reposo mediría cero en dos de los tres ejes, por ejemplo,
-en los ejes $x$ e $y$, ya que no hay registra movimiento en esa
-situación. Sin embargo, el eje $z$mediría $-9.8\,m\,s^{-2}$ por
-ejemplo en dirección al suelo. A pesar de esto, los sensores electrónicos
-pueden introducir cierta inestabilidad en la señal (conocida como
-\emph{jitter}), esto provoca una fluctuación en las lecturas debido
-a errores en la medición y por lo tanto afectan a la calidad de los
-datos. Por lo tanto, a pesar de que un dispositivo con sensor de movimiento
-esté completamente quieto en la mesa, las lecturas podrían presentar
-ruido en los datos, Ej. errores de magnitud $\pm0.5$. 
-
-Entonces, para reducir ruido de la señal se debe aplicar uno o más
-filtros. El filtro permite suavizar la señal por medio de una función
-simple como la de cálculo de promedios variables (\emph{moving average})
-o por medio un método como el de \emph{Butterworth} \cite{ReyesOrtiz2015}. 
-
-Para nuestro estudio, el filtro de señal utilizado es la de promedios
-variables, basado en su simplicidad y aplicación en otros trabajos
-como \cite{Yang2009}, y es representado por la función $M$ que se
-define a continuación:
-
-\label{def4:moving-average}\newtheorem{defi}{Definición}
-
-\begin{defi}(\emph{Moving average}) Dada una secuencia $\left\{ a_{i}\right\} _{i=1}^{N}$,
-un $n$-\emph{moving average} es una nueva secuencia $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
-definida a partir de $a_{i}$ tomando la media aritmética de las \emph{sub}-secuencias
-de tamaño $n$ donde,
-
-\begin{eqnarray}
-s_{i} & = & \frac{1}{n}\sum_{j=1}^{i+n-1}a_{j}
-\end{eqnarray}
-
-Tal que las secuencias $S_{n}$ dado los $n$-\emph{moving averages}
-serian 
-
-\begin{eqnarray}
-S_{2} & = & \frac{1}{2}(a_{1}+a_{2},a_{2}+a_{3},...,a_{n-1}+a_{n})
-\end{eqnarray}
+Para incrementar la cantidad de muestras se utiliza una superposición
+de $50\%$ con ventanas consecutivas y con tamaño de $2.56$ segundos,
+como es recomendado por otros trabajos con técnicas de reconocimiento
+\cite{Bao2004,ReyesOrtiz2015}. La superposición evita que ciertos
+eventos se pierdan y las actividades se trunquen. La elección de este
+tamaño de ventana produce muestras con medidas de tamaño fijo calculadas
+aproximadamente con la ecuación \ref{eq4:window-size}. Este tamaño
+es bastante conveniente por razones halladas en \cite{ReyesOrtiz2015}.
 
 \begin{equation}
-S_{3}=\frac{1}{3}(a_{1}+a_{2}+a_{3},a_{2}+a_{3}+a_{4},...,a_{n-2}+a_{n-1}+a_{n})
+2.56\,\mathrm{sec}\times50\mathrm{\,Hz}=128\,\mathrm{medidas}\label{eq4:window-size}
 \end{equation}
 
-y así sucesivamente.\end{defi}
-
-Como ejemplo, en la \figref{fig4:filter-maf} se despliegan las gráficas
-de una señal de aceleración en bruto para la dimensión $y$ y su correspondiente
-señal suavizada con un filtro $M(y)$ construido a partir de la secuencia
-$S_{5}$ durante el intervalo de $1.6$ segundos. Como se puede apreciar,
-la señal resultante está ligeramente suavizada debido a un filtrado
-de valores extremos debido a perturbaciones bruscas o ruido en la
-señal.
-
-\begin{figure}[!tbph]
-\begin{centering}
-\includegraphics{capitulo-4/graphics/moving_average}
-\par\end{centering}
-\caption[Señal suavizada por la función $M$]{\label{fig4:filter-maf}Señal suavizada por un filtro de promedios
-variables $M$}
-
-\end{figure}
-
+Cada muestra debe ser transformada en vectores característicos al
+pasar por un proceso de extracción de valores que se describen en
+la siguiente sección.
 
 \subsection{Extracción}
 
-\label{ssec44:extraction}In general, two approaches have been proposed
-to extract features from time series data: statistical and structural
-{[}48{]}. Statistical methods, such as the Fourier transform and the
-Wavelet transform, use quantitative characteristics of the data to
-extract features, whereas structural approaches take into account
-the interrelationship among data. The criterion to choose either of
-these methods is certainly subject to the nature of the given signal.
-Figure 3 displays the process to transform the raw time se- ries dataset
-—which can be from acceleration, environmental variables, or vital
-signs— into a set of feature vectors. Each instance in the processed
-dataset corresponds to the feature vector extracted from all the signals
-within a time window. Most of the approaches surveyed in this paper
-adhere to this mapping.
+\label{ssec44:extraction}Rememorando la definición \ref{def2:harp-rel}
+en la sección \ref{sec261:definicion-har}, la incógnita principal
+consiste en la comparación de las muestras provenientes de dos ventanas
+$w_{1}$ y $w_{2}$, cada muestra con medidas $S_{i}$ correspondientes
+que son señales completamente distintas. Estas señales no serán idénticas
+por más que sean obtenidas del mismo individuo realizando la misma
+actividad física. Por lo tanto, para comparar muestras es necesario
+extraer características significativas en cada ventana $w_{i}$ por
+medio de filtrar información relevante y calcular valores cuantitativos
+que identifiquen de cierta manera a las señales y permitan compararlas
+entre sí. 
+
+Estos vectores característicos con información relevante son obtenidos
+por cálculos realizados a partir de las ventanas $w_{i}$ con actividades
+en el dominio del tiempo como también en el dominio de frecuencia.
+Los métodos de cálculo son de tipos estadísticos y estructurales \cite{LaraLabrador2013}
+y se resumen en la siguiente \tabref{tab4:metricas} de métricas.
+
 
 \section{Clasificador de actividades}
 

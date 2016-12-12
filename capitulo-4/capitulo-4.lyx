@@ -603,8 +603,7 @@ Señales de Movimiento
 \end_layout
 
 \begin_layout Standard
-Los sensores de movimiento proveen señales altamente informativos para las
- 
+Los sensores de movimiento proveen señales altamente informativos para 
 \begin_inset ERT
 status open
 
@@ -618,7 +617,7 @@ abbr{HAR}
 \end_inset
 
  debido a que miden las fuerzas de aceleración y rotación en tres ejes cuando
- son portados por los usuarios.
+ son portados por sus usuarios.
  En esta categoría de sensores se encuentran los acelerómetros y giroscopios.
  
 \end_layout
@@ -641,15 +640,15 @@ key "Goehl2007"
 \end_inset
 
  en dirección al suelo).
- Representamos el atributo medido por la aceleración con el símbolo 
-\begin_inset Formula $a$
+ La señal de la aceleración dada por 
+\begin_inset Formula $a(t)$
 \end_inset
 
- como el vector de los tres componentes de la aceleración en cada eje 
+ es un vector con respecto al tiempo con tres componentes en cada eje 
 \begin_inset Formula $(x,y,z)$
 \end_inset
 
-, cada componente esta representado por 
+, cada uno representa una medida 
 \begin_inset Formula $a_{x}$
 \end_inset
 
@@ -675,8 +674,11 @@ figref{fig4:muestra-ac}
 
 \end_inset
 
- se muestra un ejemplo de las medidas obtenidas por la señal de un acelerómetro
- en una actividad física determinada.
+ se despliegan las medidas obtenidas por la señal 
+\begin_inset Formula $a(t)$
+\end_inset
+
+ durante una actividad física determinada.
 \end_layout
 
 \begin_layout Standard
@@ -774,15 +776,15 @@ key "Goehl2007"
 \color inherit
 \lang spanish
  en relación a un eje fijo).
- Representamos el atributo medido por el giroscopio con el símbolo 
-\begin_inset Formula $w$
+ La señal de la velocidad angular dada por 
+\begin_inset Formula $w(t)$
 \end_inset
 
- como el vector de los tres componentes del giro cada eje 
+ es un vector con respecto al tiempo con tres componentes en cada eje 
 \begin_inset Formula $(x,y,z)$
 \end_inset
 
-, cada componente es representado por 
+, cada uno representa una medida 
 \begin_inset Formula $w_{x}$
 \end_inset
 
@@ -795,7 +797,10 @@ key "Goehl2007"
 \end_inset
 
 .
- En la 
+ La orientación de los ejes con respecto al dispositivo de medición depende
+ del fabricante del mismo.
+ Los teléfonos móviles modernos poseen la orientación de los ejes de acuerdo
+ a la siguiente 
 \begin_inset ERT
 status open
 
@@ -808,8 +813,7 @@ figref{fig4:axis-phone}
 
 \end_inset
 
- se muestra la disposición de los ejes de coordenadas con respecto los teléfonos
- móviles modernos.
+.
 \end_layout
 
 \begin_layout Standard
@@ -867,8 +871,14 @@ Ejes de coordenadas relativas a un teléfono móvil moderno.
 \end_layout
 
 \begin_layout Standard
-Las ventajas de los sensores de movimiento es su amplio uso en el reconocimiento
- de actividades ambulatorias 
+Las medidas obtenidas son variaciones con respecto a estos tres ejes donde
+ el valor 
+\begin_inset Formula $0$
+\end_inset
+
+ está ubicado en el centro del dispositivo.
+ Las ventajas de los sensores de movimiento es su amplio uso al reconocer
+ actividades ambulatorias, como los citados en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004,Kwapisz2011,ReyesOrtiz2015"
@@ -876,18 +886,31 @@ key "Bao2004,Kwapisz2011,ReyesOrtiz2015"
 \end_inset
 
 .
- Los acelerómetros y giroscopios poseen un bajo costo asociado, bajo consumo
- de energía, además de estar incluidos actualmente en los teléfonos móviles
- modernos 
+ Los acelerómetros y giroscopios poseen un bajo costo de fabricación, bajo
+ consumo de energía, y además están incluidos comúnmente en los teléfonos
+ móviles modernos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Google2016s"
 
 \end_inset
 
-.
- También, varios trabajos publicados e implementados reportan una alta precisión
- en el reconocimiento de actividades 
+ debido a su utilidad en mejorar la interacción humano-máquina por medio
+ de gestos.
+ Varios trabajos publicados evidencian una alta precisión en 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ utilizando al menos uno de estos sensores 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004,LaraLabrador2012"
@@ -903,7 +926,7 @@ Señales de Posición
 
 \begin_layout Standard
 Los sensores de posición proveen señales con información adicional que pueden
- ser utilizados para las 
+ ser utilizados para efectuar 
 \begin_inset ERT
 status open
 
@@ -955,9 +978,10 @@ abbr{GPS}
 
 \end_inset
 
- permiten acceder a las coordenadas geográficas globales así como el modo
- de transporte de un individuo, de acuerdo a la velocidad estimada.
- Los teléfonos móviles modernos están equipados con dispositivos 
+ permiten acceder a las coordenadas geográficas globales como el modo de
+ transporte de un individuo, de acuerdo a la velocidad estimada.
+ Los teléfonos móviles modernos están equipados con sensores para captar
+ señales del sistema 
 \begin_inset ERT
 status open
 
@@ -970,8 +994,8 @@ abbr{GPS}
 
 \end_inset
 
- además de poder estimar con buena precisión las coordenadas de acuerdo
- a la red celular 
+ y también se puede estimar con buena precisión las coordenadas utilizando
+ una red celular 
 \begin_inset ERT
 status open
 
@@ -1011,8 +1035,12 @@ abbr{WIFI}
 \end_inset
 
  de corto alcance.
- La señal de localización se miden por medio de dos variables, latitud y
- longitud en la unidad radian (Ej.
+ 
+\end_layout
+
+\begin_layout Standard
+La señal de localización utiliza dos variables, conocidas como latitud y
+ longitud, y son medidas en la unidad radian (Ej.
  latitud 
 \begin_inset Formula $-57.2322\,rad$
 \end_inset
@@ -1022,6 +1050,21 @@ abbr{WIFI}
 \end_inset
 
 ).
+ Los valores de latitud y longitud son coordenadas del 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WGS}
+\end_layout
+
+\end_inset
+
+ cuyos valores globales oscilan entre -180 a 180 en longitud, y -90 a 90
+ en latitud.
 \end_layout
 
 \begin_layout Standard
@@ -1038,9 +1081,34 @@ figref{fig4:gps}
 
 \end_inset
 
- se muestra una aplicación que despliega el detalle de triangulación basada
- en satélites y la estimación de las coordenadas globales por medio de este
- proceso.
+ se muestra una aplicación móvil para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ que muestra el proceso de triangulación por satélites del sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+, donde el resultado es la estimación de las coordenadas globales.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1075,7 +1143,7 @@ name "fig4:gps"
 status open
 
 \begin_layout Plain Layout
-Coordenadas GPS.
+Coordenadas por GPS.
 \end_layout
 
 \end_inset
@@ -1095,7 +1163,7 @@ Visualización de satélites y coordenadas globales basada en triagulación
 \end_layout
 
 \begin_layout Standard
-Sin embargo, los dispositivos 
+Sin embargo, los 
 \begin_inset ERT
 status open
 
@@ -1108,8 +1176,8 @@ abbr{GPS}
 
 \end_inset
 
- tienen cobertura limitada, ya sea por la dificultad de señal dentro de
- edificaciones, o sin servicio de red celular o 
+ tienen cobertura limitada por la dificultad de obtener señal dentro de
+ edificaciones, o si no está disponible servicio de red celular o 
 \begin_inset ERT
 status open
 
@@ -1122,11 +1190,13 @@ abbr{WIFI}
 
 \end_inset
 
-, como también el alto consumo de energía para aplicaciones que rastrean
- la localización en tiempo real.
- La localización particularmente es información sensible para los usuarios
- ya que se debe tener especial atención a no comprometer la privacidad de
- los datos y el consentimiento del usuario que permita ser rastreado 
+.
+ También el alto consumo de energía es un factor importante si las aplicaciones
+ rastrean la localización en tiempo real.
+ Además, la ubicación de un individuo es particularmente información sensible
+ para la mayoría de los usuarios y se debe tener especial atención a no
+ comprometer la privacidad de los datos y tener el consentimiento del usuario
+ para que este pueda ser rastreado 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -1232,7 +1302,7 @@ El proceso de aprendizaje automático requiere de una cantidad moderada de
  Estos datos deben ser recolectadas y etiquetados utilizando un teléfono
  móvil inteligente con una aplicación diseñada para el caso.
  Ej.
- Utilizando 
+ Utilizando un teléfono con 
 \begin_inset ERT
 status open
 
@@ -1245,14 +1315,14 @@ abbr{Android}
 
 \end_inset
 
- con la aplicación 
+ y la aplicación 
 \emph on
 SensorLog
 \emph default
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "GPStore2016s"
+key "SLog2016"
 
 \end_inset
 
@@ -1261,9 +1331,9 @@ key "GPStore2016s"
 \end_layout
 
 \begin_layout Standard
-El protocolo de recolección consisten en alistar un grupo de personas que
+El protocolo de recolección consiste en alistar un grupo de personas que
  porten un teléfono inteligente mientras realizan con conjunto específico
- de actividades y registrar la información por medio de la aplicación.
+ de actividades y registrar datos por medio de la aplicación.
  Las actividades de interés descritas en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1271,10 +1341,10 @@ reference "sec263:actividades-humanas"
 
 \end_inset
 
- deben ser realizadas portando el teléfono en el bolsillo y cada individuo
+ deben ser realizadas portando el teléfono en el bolsillo donde cada individuo
  realiza una sesión de caminata, trote, bicicleta o conducir un vehículo
- por un periodo de tiempo corto de 10 a 15 minutos.
- La recolección de datos es llevado a cabo por medio de la aplicación disponible
+ por un periodo de tiempo de 10 a 15 minutos.
+ La recolección de datos llevada a cabo por medio de la aplicación disponible
  para la plataforma 
 \begin_inset ERT
 status open
@@ -1288,7 +1358,7 @@ abbr{Android}
 
 \end_inset
 
- demostrada en la 
+ es mostrada en la 
 \begin_inset ERT
 status open
 
@@ -1353,7 +1423,7 @@ Aplicación de entrenamiento
 \emph on
 SensorLog 
 \emph default
-con las interfaces de usuario configurar y controlar la sesión de entrenamiento
+con interfaces de usuario para configurar y controlar la sesión de entrenamiento
 \end_layout
 
 \end_inset
@@ -1368,7 +1438,7 @@ con las interfaces de usuario configurar y controlar la sesión de entrenamiento
 
 \begin_layout Standard
 Así como se ve en la figura, la aplicación tiene una interfaz de usuario
- simple que permite elegir los sensores (Ej.
+ simple que permite elegir los sensores de donde recolectar datos (Ej.
  
 \begin_inset ERT
 status open
@@ -1383,7 +1453,7 @@ abbr{GPS}
 \end_inset
 
 , acelerómetro, giroscopio) para la sesión, las acciones de iniciar y parar
- la recolección, y etiquetar la actividad que el usuario realiza durante
+ la actividad, y las etiquetas de la actividad que el usuario realiza durante
  el entrenamiento.
  Las etiquetas utilizadas en el proceso de recolección son:
 \end_layout
@@ -1419,15 +1489,356 @@ En bicicleta
 En vehículo
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+Girando
+\emph default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Esta no es una actividad física sino un comportamiento errático de la orientació
+n del teléfono
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-La recolección se realiza obteniendo medidas a una razón de 60 
+La recolección se realiza obteniendo medidas a una razón de 60 a 100 
 \emph on
 mili
 \emph default
 segundos por lo que se registran aproximadamente 60 a 100 muestras por segundo.
- Para asegurar la calidad de la recolección inicial de datos la sesión es
- supervisada para preparar las condiciones adecuadas del entrenamiento físico
- a elección del participante.
+ Para asegurar la calidad de la recolección inicial de datos las primeras
+ sesiones de entrenamiento son supervisadas para preparar las condiciones
+ adecuadas del entrenamiento físico a elección del participante.
+\end_layout
+
+\begin_layout Subsection
+Filtro de Señal
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec44:filtering"
+
+\end_inset
+
+Teóricamente, si un dispositivo equipado con sensores de movimiento está
+ en reposo la señal de aceleración 
+\begin_inset Formula $a(t)$
+\end_inset
+
+ mediría cero (0) en dos ejes.
+ Por ejemplo, en los ejes 
+\begin_inset Formula $x$
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+ no habría registro de medidas distintas a cero (0), y el eje 
+\begin_inset Formula $z$
+\end_inset
+
+mediría en dirección al suelo 
+\begin_inset Formula $-9.8\,m\,s^{-2}$
+\end_inset
+
+.
+ Sin embargo, los sensores electrónicos pueden introducir cierta inestabilidad
+ en la señal (conocida como 
+\emph on
+jitter
+\emph default
+) provocando una fluctuación en las lecturas debido a errores en la medición
+ afectando la calidad de los datos.
+ Por lo tanto, a pesar de que un dispositivo con sensor de movimiento esté
+ completamente quieto en la mesa, las lecturas podrían registrar ruido en
+ los datos, Ej.
+ errores del orden de 
+\begin_inset Formula $\pm0.005$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Entonces, para reducir ruido de la señal se debe aplicar uno o más filtros.
+ El filtro permite suavizar la señal por medio de una función simple como
+ la del cálculo de promedios variables (
+\emph on
+moving average
+\emph default
+) o por un método como el de 
+\emph on
+Butterworth
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ReyesOrtiz2015"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Para el análisis de este trabajo se utilizó el filtro de señal de promedios
+ variables debido a su simplicidad y aplicabilidad basado en otros trabajos
+ como 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Yang2009"
+
+\end_inset
+
+.
+ El filtro de señal se puede definir con la siguiente función 
+\begin_inset Formula $M$
+\end_inset
+
+ descrita a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "def4:moving-average"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{defi}{Definición}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+(
+\emph on
+Moving average
+\emph default
+) Dada una secuencia 
+\begin_inset Formula $\left\{ a_{i}\right\} _{i=1}^{N}$
+\end_inset
+
+, un 
+\begin_inset Formula $n$
+\end_inset
+
+-
+\emph on
+moving average
+\emph default
+ es una nueva secuencia 
+\begin_inset Formula $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
+\end_inset
+
+ definida a partir de 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ tomando la media aritmética de las 
+\emph on
+sub
+\emph default
+-secuencias de tamaño 
+\begin_inset Formula $n$
+\end_inset
+
+ donde,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+s_{i} & = & \frac{1}{n}\sum_{j=i}^{i+n-1}a_{j}
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así que las secuencias 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ dado los 
+\begin_inset Formula $n$
+\end_inset
+
+-
+\emph on
+moving averages
+\emph default
+ serian 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+S_{2} & = & \frac{1}{2}(a_{1}+a_{2},a_{2}+a_{3},...,a_{n-1}+a_{n})
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+S_{3}=\frac{1}{3}(a_{1}+a_{2}+a_{3},a_{2}+a_{3}+a_{4},...,a_{n-2}+a_{n-1}+a_{n})
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+y así sucesivamente.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como ejemplo, en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig4:filter-maf}
+\end_layout
+
+\end_inset
+
+ se despliegan las gráficas de una señal de aceleración 
+\begin_inset Formula $a_{y}$
+\end_inset
+
+ para la dimensión 
+\begin_inset Formula $y$
+\end_inset
+
+ y su correspondiente señal filtrada con la función 
+\begin_inset Formula $M(a_{y})$
+\end_inset
+
+ construida a partir de una secuencia 
+\begin_inset Formula $S_{5}$
+\end_inset
+
+ durante un intervalo de 
+\begin_inset Formula $1.6$
+\end_inset
+
+ segundos.
+ Como se puede apreciar, la señal resultante está ligeramente suavizada
+ debido al filtrado de valores extremos resultado de perturbaciones bruscas
+ o ruido en la señal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/moving_average.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig4:filter-maf"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Señal filtrada por la función 
+\begin_inset Formula $M$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Señal filtrada por promedios variables.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1443,7 +1854,7 @@ name "ssec44:sampling"
 
 La realización de actividades humanas son efectuadas durante periodos de
  tiempo de larga duración, en el orden de los segundos o minutos.
- Esta taza es mucho mayor comparando las tazas de muestreos de los sensores,
+ Esta taza es mucho mayor comparado con las tazas de muestreos de los sensores,
  las cuales pueden llegar hasta 
 \family typewriter
 250 
@@ -1475,19 +1886,23 @@ abbr{Hz}
 \begin_inset Formula $y$
 \end_inset
 
-) no provee suficiente información para describir qué actividad se está
- llevando acabo.
- Por lo tanto, las actividades deben ser reconocidas a partir de las muestras
- disponibles en una ventana de tiempo 
+) no provee suficiente información para describir qué actividad está llevando
+ acabo un persona.
+ Por lo tanto, las actividades humanas deben ser reconocidas a partir de
+ muestras extraídas en ventanas de tiempo 
 \begin_inset Formula $w$
 \end_inset
 
- en vez de utilizar una sola medida en el instante 
+ en vez de utilizar una sola medida instantánea en 
 \begin_inset Formula $t$
 \end_inset
 
 .
- En la 
+ 
+\end_layout
+
+\begin_layout Standard
+En la 
 \begin_inset ERT
 status open
 
@@ -1500,8 +1915,12 @@ tabref{tab4:ex-signal}
 
 \end_inset
 
- se muestra un ejemplo de las posibles medidas registradas para la señal
- de un acelerómetro en una ventana de tiempo 
+ se muestra una tabla con posibles medidas instantáneas para la señal de
+ aceleración 
+\begin_inset Formula $a(t)$
+\end_inset
+
+ en una ventana de tiempo 
 \begin_inset Formula $w_{j}$
 \end_inset
 
@@ -1509,7 +1928,7 @@ tabref{tab4:ex-signal}
 \begin_inset Formula $r$
 \end_inset
 
- del sensor.
+asociada al sensor.
 \end_layout
 
 \begin_layout Standard
@@ -1949,12 +2368,12 @@ name "tab4:ex-signal"
 status collapsed
 
 \begin_layout Plain Layout
-Ejemplo de señales medidas de aceleración
+Medidas instantáneas de aceleración 
 \end_layout
 
 \end_inset
 
-Ejemplo de una muestra con medidas de la señal de un acelerómetro.
+Ejemplo de medidas instantáneas de aceleración en una ventana de tiempo.
 \end_layout
 
 \end_inset
@@ -1968,81 +2387,22 @@ Ejemplo de una muestra con medidas de la señal de un acelerómetro.
 \end_layout
 
 \begin_layout Standard
-Rememorando la definición 
+La utilización de ventanas de tiempo hace que las señales queden segmentadas
+ en muestras discretas que son utilizadas como unidades de actividad.
+ De esta manera, cada ventana tiene inequívocamente una actividad humana
+ asociada y de esta manera podemos satisfacer el requisito planteado por
+ la definición del problema 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def2:harp-rel"
 
 \end_inset
 
- la incógnita surge al comparar dos ventanas de tiempo 
-\begin_inset Formula $w_{1}$
-\end_inset
+ en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec261:definicion-har"
 
- y 
-\begin_inset Formula $w_{2}$
-\end_inset
-
-, cada una con medidas 
-\begin_inset Formula $S_{i}$
-\end_inset
-
- correspondientes que representan dos señales completamente distintas.
- Estas señales no serán idénticas por más que sean obtenidas del mismo individuo
- realizando la misma actividad física.
- Por lo tanto, para comparar las muestras es necesario extraer características
- significativas de cada ventana 
-\begin_inset Formula $w_{i}$
-\end_inset
-
- filtrando información relevante y obteniendo valores cuantitativos que
- identifiquen de cierta manera a las señales y permitan compararlas entre
- sí.
- Las técnicas de filtrado y extracción se describen en las siguientes secciones.
-\end_layout
-
-\begin_layout Subsection
-Filtro de Señal
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "ssec44:filtering"
-
-\end_inset
-
-Teóricamente, si un dispositivo con sensores está en reposo mediría cero
- en dos de los tres ejes, por ejemplo, en los ejes 
-\begin_inset Formula $x$
-\end_inset
-
- e 
-\begin_inset Formula $y$
-\end_inset
-
-, ya que no hay registra movimiento en esa situación.
- Sin embargo, el eje 
-\begin_inset Formula $z$
-\end_inset
-
-mediría 
-\begin_inset Formula $-9.8\,m\,s^{-2}$
-\end_inset
-
- por ejemplo en dirección al suelo.
- A pesar de esto, los sensores electrónicos pueden introducir cierta inestabilid
-ad en la señal (conocida como 
-\emph on
-jitter
-\emph default
-), esto provoca una fluctuación en las lecturas debido a errores en la medición
- y por lo tanto afectan a la calidad de los datos.
- Por lo tanto, a pesar de que un dispositivo con sensor de movimiento esté
- completamente quieto en la mesa, las lecturas podrían presentar ruido en
- los datos, Ej.
- errores de magnitud 
-\begin_inset Formula $\pm0.5$
 \end_inset
 
 .
@@ -2050,17 +2410,36 @@ jitter
 \end_layout
 
 \begin_layout Standard
-Entonces, para reducir ruido de la señal se debe aplicar uno o más filtros.
- El filtro permite suavizar la señal por medio de una función simple como
- la de cálculo de promedios variables (
-\emph on
-moving average
-\emph default
-) o por medio un método como el de 
-\emph on
-Butterworth
-\emph default
+Para incrementar la cantidad de muestras se utiliza una superposición de
  
+\begin_inset Formula $50\%$
+\end_inset
+
+ con ventanas consecutivas y con tamaño de 
+\begin_inset Formula $2.56$
+\end_inset
+
+ segundos, como es recomendado por otros trabajos con técnicas de reconocimiento
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bao2004,ReyesOrtiz2015"
+
+\end_inset
+
+.
+ La superposición evita que ciertos eventos se pierdan y las actividades
+ se trunquen.
+ La elección de este tamaño de ventana produce muestras con medidas de tamaño
+ fijo calculadas aproximadamente con la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq4:window-size"
+
+\end_inset
+
+.
+ Este tamaño es bastante conveniente por razones halladas en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ReyesOrtiz2015"
@@ -2068,138 +2447,12 @@ key "ReyesOrtiz2015"
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-Para nuestro estudio, el filtro de señal utilizado es la de promedios variables,
- basado en su simplicidad y aplicación en otros trabajos como 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Yang2009"
-
-\end_inset
-
-, y es representado por la función 
-\begin_inset Formula $M$
-\end_inset
-
- que se define a continuación:
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "def4:moving-average"
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newtheorem{defi}{Definición}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{defi}
-\end_layout
-
-\end_inset
-
-(
-\emph on
-Moving average
-\emph default
-) Dada una secuencia 
-\begin_inset Formula $\left\{ a_{i}\right\} _{i=1}^{N}$
-\end_inset
-
-, un 
-\begin_inset Formula $n$
-\end_inset
-
--
-\emph on
-moving average
-\emph default
- es una nueva secuencia 
-\begin_inset Formula $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
-\end_inset
-
- definida a partir de 
-\begin_inset Formula $a_{i}$
-\end_inset
-
- tomando la media aritmética de las 
-\emph on
-sub
-\emph default
--secuencias de tamaño 
-\begin_inset Formula $n$
-\end_inset
-
- donde,
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{eqnarray}
-s_{i} & = & \frac{1}{n}\sum_{j=1}^{i+n-1}a_{j}
-\end{eqnarray}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Tal que las secuencias 
-\begin_inset Formula $S_{n}$
-\end_inset
-
- dado los 
-\begin_inset Formula $n$
-\end_inset
-
--
-\emph on
-moving averages
-\emph default
- serian 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{eqnarray}
-S_{2} & = & \frac{1}{2}(a_{1}+a_{2},a_{2}+a_{3},...,a_{n-1}+a_{n})
-\end{eqnarray}
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-S_{3}=\frac{1}{3}(a_{1}+a_{2}+a_{3},a_{2}+a_{3}+a_{4},...,a_{n-2}+a_{n-1}+a_{n})
+2.56\,\mathrm{sec}\times50\mathrm{\,Hz}=128\,\mathrm{medidas}\label{eq4:window-size}
 \end{equation}
 
 \end_inset
@@ -2208,118 +2461,9 @@ S_{3}=\frac{1}{3}(a_{1}+a_{2}+a_{3},a_{2}+a_{3}+a_{4},...,a_{n-2}+a_{n-1}+a_{n})
 \end_layout
 
 \begin_layout Standard
-y así sucesivamente.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{defi}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Como ejemplo, en la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-figref{fig4:filter-maf}
-\end_layout
-
-\end_inset
-
- se despliegan las gráficas de una señal de aceleración en bruto para la
- dimensión 
-\begin_inset Formula $y$
-\end_inset
-
- y su correspondiente señal suavizada con un filtro 
-\begin_inset Formula $M(y)$
-\end_inset
-
- construido a partir de la secuencia 
-\begin_inset Formula $S_{5}$
-\end_inset
-
- durante el intervalo de 
-\begin_inset Formula $1.6$
-\end_inset
-
- segundos.
- Como se puede apreciar, la señal resultante está ligeramente suavizada
- debido a un filtrado de valores extremos debido a perturbaciones bruscas
- o ruido en la señal.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename graphics/moving_average.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig4:filter-maf"
-
-\end_inset
-
-
-\begin_inset Argument 1
-status collapsed
-
-\begin_layout Plain Layout
-Señal suavizada por la función 
-\begin_inset Formula $M$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-Señal suavizada por un filtro de promedios variables 
-\begin_inset Formula $M$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+Cada muestra debe ser transformada en vectores característicos al pasar
+ por un proceso de extracción de valores que se describen en la siguiente
+ sección.
 \end_layout
 
 \begin_layout Subsection
@@ -2333,19 +2477,80 @@ name "ssec44:extraction"
 
 \end_inset
 
-In general, two approaches have been proposed to extract features from time
- series data: statistical and structural [48].
- Statistical methods, such as the Fourier transform and the Wavelet transform,
- use quantitative characteristics of the data to extract features, whereas
- structural approaches take into account the interrelationship among data.
- The criterion to choose either of these methods is certainly subject to
- the nature of the given signal.
- Figure 3 displays the process to transform the raw time se- ries dataset
- —which can be from acceleration, environmental variables, or vital signs—
- into a set of feature vectors.
- Each instance in the processed dataset corresponds to the feature vector
- extracted from all the signals within a time window.
- Most of the approaches surveyed in this paper adhere to this mapping.
+Rememorando la definición 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "def2:harp-rel"
+
+\end_inset
+
+ en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec261:definicion-har"
+
+\end_inset
+
+, la incógnita principal consiste en la comparación de las muestras provenientes
+ de dos ventanas 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+, cada muestra con medidas 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+ correspondientes que son señales completamente distintas.
+ Estas señales no serán idénticas por más que sean obtenidas del mismo individuo
+ realizando la misma actividad física.
+ Por lo tanto, para comparar muestras es necesario extraer características
+ significativas en cada ventana 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+ por medio de filtrar información relevante y calcular valores cuantitativos
+ que identifiquen de cierta manera a las señales y permitan compararlas
+ entre sí.
+ 
+\end_layout
+
+\begin_layout Standard
+Estos vectores característicos con información relevante son obtenidos por
+ cálculos realizados a partir de las ventanas 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+ con actividades en el dominio del tiempo como también en el dominio de
+ frecuencia.
+ Los métodos de cálculo son de tipos estadísticos y estructurales 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+ y se resumen en la siguiente 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab4:metricas}
+\end_layout
+
+\end_inset
+
+ de métricas.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
