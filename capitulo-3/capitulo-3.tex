@@ -100,3 +100,67 @@ En otras palabras, $Gain(A)$ nos dice cuanto se ganaría por la ramificación en
 		\EndProcedure
 	\end{algorithmic}
 \end{algorithm}
+
+\section{Ejemplo 1}
+
+En la siguiente tabla se presenta un conjunto de entrenamiento $D$, con la clase etiquetada, de una base de datos de compra de productos electrónicos. En este ejemplo, cada atributo tiene un valor discreto, los atributos de valores continuos fueron generalizados. La clase "Compra Computador" tiene dos valores posible {Si, No}, por lo tanto dos clases distintas (es decir, $m=2$). Tenemos $C_1$ que corresponde a $Si$ y $C_2$ corresponde a $No$.
+Existen nueve tuplas de la clase "Si", y cinco de la clase "No". Para encontrar el criterio de división para las tuplas debemos calcular la ganancia de información de cada atributo. Primero usamos la ecuación 3.1 para calcular esperada necesaria para clasificar una tupla en $D$:
+
+\begin{equation*}
+Info(D) = - \frac{9}{14}\log_2(\frac{9}{14}) - \frac{5}{14}\log_2(\frac{5}{14})	= 0.940 bits
+\end{equation*}
+
+\begin{table}[htbp]
+	\caption{Ejemplo de conjunto de entrenamiento}
+	\label{tabla:sencilla2}
+	\begin{tabular}{|c|l|l|l|l|c|}
+		\hline 
+		\textbf{Rid} & \textbf{Edad}    & \textbf{Ingreso} & \textbf{Estudiante} & \textbf{Rating Crediticio} & \textbf{Compra Computador?} \\
+		\hline 
+		\hline
+		1   & Joven   & Alto    & No         & Justa             & NO                 \\ 
+		2   & Joven   & Alto    & No         & Excelente         & NO                 \\ 
+		3   & Mediana & Alto    & No         & Justa             & SI                 \\ 
+		4   & Adulto  & Medio   & No         & Justa             & SI                 \\ 
+		5   & Adulto  & Bajo    & Si         & Justa             & SI                 \\ 
+		6   & Adulto  & Bajo    & Si         & Excelente         & NO                 \\ 
+		7   & Mediana & Bajo    & Si         & Excelente         & SI                 \\ 
+		8   & Joven   & Medio   & No         & Justa             & NO                 \\ 
+		9   & Joven   & Bajo    & Yes        & Justa             & SI                 \\ 
+		10  & Adulto  & Medio   & Si         & Justa             & SI                 \\
+		11  & Joven   & Medio   & Si         & Excelente         & SI                 \\
+		12  & Mediana & Medio   & No         & Excelente         & SI                 \\
+		13  & Mediana & Alto    & Si         & Justa             & SI                 \\
+		14  & Adulto  & Medio   & No         & Excelente         & NO                 \\
+		\hline
+		\hline
+	\end{tabular}
+\end{table}
+
+Luego, necesitamos calcular la información requerida por cada atributo. Comenzamos con el atributo $Edad$, necesitamos observar la distribución de $Si$ y $No$ por cada categoría o valor del atributo $Edad$. Para la categoría $Joven$ de edad, hay dos tuplas $Si$ y tres tuplas $No$. Para la categoría $mediana$ edad, hay cuatro tuplas $Si$ y cero tuplas $No$. Para la categoría $Adulto$, hay tres tuplas $Si$ y dos tuplas $No$. Usando la ecuación (3.2), la información esperada necesaria para clasificar una tupla en $D$ si las tuplas son divididas según el atributo $edad$:
+
+\begin{equation*}
+\begin{split}
+Info_{edad}(D) & = \frac{5}{14} \times ( -\frac{2}{5}\log_2(\frac{2}{5})-\frac{3}{5}\log_2(\frac{3}{5})  ) \\
+			   & + \frac{4}{14} \times ( -\frac{4}{4}\log_2(\frac{4}{4})-\frac{0}{4}\log_2(\frac{0}{4})  ) \\
+			   & + \frac{5}{14} \times ( -\frac{3}{5}\log_2(\frac{3}{5})-\frac{2}{5}\log_2(\frac{2}{5})  ) \\
+			   & = 0.694 bits.
+\end{split}
+\end{equation*}
+
+Por lo tanto, la ganancia esperada de realizar tal partición seria:
+
+\begin{equation*}
+Gain(edad) = Info(D) - Info_{edad}(D) = 0.940 - 0.694 = 0.246 bits
+\end{equation*}
+
+De la misma manera, se puede calcular $Gain(ingreso)$ = 0.029 bits, $Gain(estudiante)$ = 0.151 bits, y $Gain(RatingCrediticio)$ = 0.048 bits. Debido a que el atributo $edad$ tiene mayor ganancia de información, es seleccionado para realizar la partición. El nodo $N$ es etiquetado con $edad$, y se crean una rama por cada valor del atributo. Las tuplas se divinen en consecuencia, como se muestra en la figura . Notese que las tuplas en la partición $Edad = Mediana$ perteneces todas a la clase $Si$, por lo tanto en esta rama se crea una hoja con etiqueta $Si$. El árbol de decisión final devuelto por el algoritmo se muestra en la figura \ref{fig:arbolEjemplo}.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/dtree_parti}
+	\caption[Árbol de decisión]{Árbol de decisión: Particionado en el atributo 'Edad'}
+	\label{fig:arbolPartEdad}
+\end{figure}
+
+\section{Matriz de Confusión}
