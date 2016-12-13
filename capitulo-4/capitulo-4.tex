@@ -451,11 +451,67 @@ medio de filtrar información relevante y calcular valores cuantitativos
 que identifiquen de cierta manera a las señales y permitan compararlas
 entre sí. 
 
-Estos vectores característicos con información relevante son obtenidos
-por cálculos realizados a partir de las ventanas $w_{i}$ con actividades
-en el dominio del tiempo como también en el dominio de frecuencia.
-Los métodos de cálculo son de tipos estadísticos y estructurales \cite{LaraLabrador2013}
-y se resumen en la siguiente \tabref{tab4:metricas} de métricas.
+El proceso de extracción resulta en vectores característicos (\emph{feature
+vectors}) con información relevante que consisten en métricas calculadas
+a partir de las ventanas $w_{i}$ en el dominio del tiempo. Las ventanas
+también pueden transformarse en el dominio de la frecuencia con métodos
+discretos de \emph{Fourier} utilizando algoritmos \abbr{FFT} con
+números reales. Los métodos de cálculo son de tipos estadísticos y
+estructurales \cite{LaraLabrador2013} de acuerdo a lo propuesto por
+otros trabajos como \cite{Yang2009,Bao2004}. Las métricas estadísticas
+incluidas en este trabajo son la media, máximo, mínimo, desviación
+estándar, energía, entropía, asimetría, curtosis, rango intercuantil
+y coeficientes de autoregresión.
+
+Las métricas son aplicadas a la señal de aceleración procesada considerando
+la utilización de la magnitud del vector de aceleración que es calculada
+a partir de las medidas de fuerza ejercida en los tres ejes. Se eligió
+utilizar solo la magnitud $\lVert a\rVert$ del vector, y excluir
+los valores unitarios $a_{x}$, $a_{y}$, $a_{z}$ para simplificar
+el proceso de extracción, cancelar el efecto de variaciones en la
+orientación del teléfono \cite{Schneider2014} y reducir el número
+de características necesarios a un tercio ($\frac{1}{3}$). En la
+\tabref{tab4:metricas} se resumen las métricas utilizadas con su
+formulación matemática tomadas de\cite{ReyesOrtiz2015} para la señal
+de ventana $s$ de tamaño $n$ con la magnitud del vector $a$.
+
+\begin{table}[!tbph]
+\begin{centering}
+\begin{tabular}{|l|l|l|}
+\hline 
+Función & Descripción & Formulación\tabularnewline
+\hline 
+\hline 
+mag(\textbf{a}) & Magnitud de la aceleración & $\lVert a\rVert=\sqrt{a_{x}^{2}+a_{y}^{2}+a_{z}^{2}}$\tabularnewline
+\hline 
+mean(\textbf{s}) & Media aritmética & $\overline{s}=\frac{1}{n}\sum_{i=1}^{n}s_{i}$\tabularnewline
+\hline 
+std(\textbf{s}) & Desviación estándar & $\sigma=\sqrt{\frac{1}{n}\sum_{i=1}^{n}\left(s_{i}-\overline{s}\right)}$\tabularnewline
+\hline 
+max(\textbf{s}) & Valor máximo en \textbf{n} & $\max(s)$\tabularnewline
+\hline 
+min(\textbf{s}) & Valor mínimo en \textbf{n} & $\min\left(s\right)$\tabularnewline
+\hline 
+skewness(\textbf{s}) & Asimetría de señal en frecuencia & $\mathrm{E}\left[\left(\frac{s-\overline{s}}{\sigma}\right)^{3}\right]$\tabularnewline
+\hline 
+kurtosis(\textbf{s}) & Curtosis de señal en frecuencia & $\frac{\mathrm{E}\left[\left(s-\overline{s}\right)^{4}\right]}{\mathrm{E}\left[\left(s-\overline{s}\right)^{2}\right]^{2}}$\tabularnewline
+\hline 
+energy(\textbf{s}) & Promedio de suma de cuadrados & $s_{rms}^{2}=\frac{1}{n}\sum_{i=1}^{n}s_{i}$\tabularnewline
+\hline 
+entropy(\textbf{s}) & Entropía de la señal & $s_{s}=\sum_{i=1}^{n}c_{i}\log\left(c_{i}\right)\mathrm{\mathtt{,}}c_{i}=s_{i}/\sum_{j=1}^{n}s_{j}$\tabularnewline
+\hline 
+irq(\textbf{s}) & Rango inter-cuantil  & \selectlanguage{english}%
+Q3(\textbf{s}) - Q1(\textbf{s})\selectlanguage{spanish}%
+\tabularnewline
+\hline 
+autoregression(\textbf{s}) & Coeficientes de autoregresión Burg de 4to orden & $a=arburg\left(s,4\right)\mathtt{,}a\in\mathbb{R}^{4}$\tabularnewline
+\hline 
+meanFreq(\textbf{s}) & Promedio ponderado de señal en frecuencia & $\sum_{i=1}^{n}\left(is_{i}\right)/\sum_{j=1}^{n}s_{j}$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{Métricas para el calculo de vectores característicos}
+\end{table}
 
 
 \section{Clasificador de actividades}

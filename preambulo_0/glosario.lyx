@@ -313,5 +313,16 @@ description "World Geodetic System"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FFT"
+description "Fast Fourier Transform"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
