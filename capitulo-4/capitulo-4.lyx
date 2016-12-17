@@ -2230,18 +2230,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-...
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family typewriter
-\begin_inset Formula $...$
+\begin_inset Formula $\ldots$
 \end_inset
 
 
@@ -2255,7 +2244,21 @@ status open
 \begin_layout Plain Layout
 
 \family typewriter
-\begin_inset Formula $...$
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
 \end_inset
 
 
@@ -2269,7 +2272,7 @@ status open
 \begin_layout Plain Layout
 
 \family typewriter
-\begin_inset Formula $...$
+\begin_inset Formula $\ldots$
 \end_inset
 
 
@@ -2387,8 +2390,8 @@ Ejemplo de medidas instantáneas de aceleración en una ventana de tiempo.
 \end_layout
 
 \begin_layout Standard
-La utilización de ventanas de tiempo hace que las señales queden segmentadas
- en muestras discretas que son utilizadas como unidades de actividad.
+Las ventanas de tiempo hacen que las señales queden segmentadas en muestras
+ discretas utilizadas como unidades de reconocimiento de actividad.
  De esta manera, cada ventana tiene inequívocamente una actividad humana
  asociada y de esta manera podemos satisfacer el requisito planteado por
  la definición del problema 
@@ -2504,28 +2507,40 @@ reference "sec261:definicion-har"
 \begin_inset Formula $S_{i}$
 \end_inset
 
- correspondientes que son señales completamente distintas.
+ que corresponden a señales completamente distintas.
  Estas señales no serán idénticas por más que sean obtenidas del mismo individuo
  realizando la misma actividad física.
- Por lo tanto, para comparar muestras es necesario extraer características
- significativas en cada ventana 
-\begin_inset Formula $w_{i}$
+ Por lo tanto, para comparar muestras entres sí es necesario extraer valores
+ característicos en cada ventana 
+\begin_inset Formula $w_{j}$
 \end_inset
 
- por medio de filtrar información relevante y calcular valores cuantitativos
- que identifiquen de cierta manera a las señales y permitan compararlas
- entre sí.
+ por medio del filtro de información relevante y el calculo de valores que
+ identifiquen de cierta manera a las señales.
  
 \end_layout
 
 \begin_layout Standard
-El proceso de extracción resulta en vectores característicos (
+El proceso de extracción se traduce en vectores característicos (
 \emph on
-feature vectors
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{FV}
+\end_layout
+
+\end_inset
+
+, feature vectors
 \emph default
-) con información relevante que consisten en métricas calculadas a partir
- de las ventanas 
-\begin_inset Formula $w_{i}$
+) con información relevante que componen varias métricas calculadas en base
+ a las ventanas 
+\begin_inset Formula $w_{j}$
 \end_inset
 
  en el dominio del tiempo.
@@ -2548,14 +2563,19 @@ abbr{FFT}
 \end_inset
 
  con números reales.
- Los métodos de cálculo son de tipos estadísticos y estructurales 
+ 
+\end_layout
+
+\begin_layout Standard
+Los métodos de cálculo pueden ser de tipos estadísticos y estructurales
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
 
 \end_inset
 
- de acuerdo a lo propuesto por otros trabajos como 
+ y en base a lo propuesto ya por otros trabajos precedentes como 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Yang2009,Bao2004"
@@ -2563,20 +2583,20 @@ key "Yang2009,Bao2004"
 \end_inset
 
 .
- Las métricas estadísticas incluidas en este trabajo son la media, máximo,
- mínimo, desviación estándar, energía, entropía, asimetría, curtosis, rango
- intercuantil y coeficientes de autoregresión.
+ Las métricas estadísticas que son incluidas en este trabajo son la media,
+ el máximo, el mínimo, la desviación estándar, energía, entropía, asimetría,
+ curtosis, rango intercuantil y coeficientes de autoregresión.
 \end_layout
 
 \begin_layout Standard
-Las métricas son aplicadas a la señal de aceleración procesada considerando
- la utilización de la magnitud del vector de aceleración que es calculada
- a partir de las medidas de fuerza ejercida en los tres ejes.
- Se eligió utilizar solo la magnitud 
+Las métricas son aplicadas a la señal de aceleración utilizando la magnitud
+ del vector de aceleración calculada a partir de las medidas de fuerza ejercida
+ en los tres ejes.
+ Se eligió utilizar la magnitud 
 \begin_inset Formula $\lVert a\rVert$
 \end_inset
 
- del vector, y excluir los valores unitarios 
+ del vector, y excluir los valores unitarios en cada dimensión 
 \begin_inset Formula $a_{x}$
 \end_inset
 
@@ -2588,15 +2608,15 @@ Las métricas son aplicadas a la señal de aceleración procesada considerando
 \begin_inset Formula $a_{z}$
 \end_inset
 
- para simplificar el proceso de extracción, cancelar el efecto de variaciones
- en la orientación del teléfono 
+ para simplificar el proceso, cancelar el efecto de variaciones en la orientació
+n del teléfono 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schneider2014"
 
 \end_inset
 
- y reducir el número de características necesarios a un tercio (
+ y reducir la dimensión del vector característico a un tercio (
 \begin_inset Formula $\frac{1}{3}$
 \end_inset
 
@@ -2954,7 +2974,7 @@ s
 \begin_inset Text
 
 \begin_layout Plain Layout
-Promedio de suma de cuadrados
+Energía: Promedio de suma de cuadrados
 \end_layout
 
 \end_inset
@@ -2963,7 +2983,7 @@ Promedio de suma de cuadrados
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $s_{rms}^{2}=\frac{1}{n}\sum_{i=1}^{n}s_{i}$
+\begin_inset Formula $s_{rms}=\frac{1}{n}\sum_{i=1}^{n}s_{i}^{2}$
 \end_inset
 
 
@@ -3026,7 +3046,7 @@ s
 \begin_inset Text
 
 \begin_layout Plain Layout
-Rango inter-cuantil 
+Rango intercuantil
 \end_layout
 
 \end_inset
@@ -3129,7 +3149,7 @@ Coeficientes de autoregresión Burg de 4to orden
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $a=arburg\left(s,4\right)\mathtt{,}a\in\mathbb{R}^{4}$
+\begin_inset Formula $ar=arburg\left(s,4\right)\mathtt{,}ar\in\mathbb{R}^{4}$
 \end_inset
 
 
@@ -3198,8 +3218,412 @@ Métricas para el calculo de vectores característicos
 
 \end_layout
 
+\begin_layout Standard
+Un ejemplo de un proceso de extracción que mapea una ventana 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ de señales originales en un vector característico 
+\begin_inset Formula $F_{j}$
+\end_inset
+
+ de dimensión 
+\begin_inset Formula $m$
+\end_inset
+
+ representada como ejemplo en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab4:features}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.71$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-2.30$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.91$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-2.11$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.56$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-2.56$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab4:features"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Métricas de proceso de extracción
+\end_layout
+
+\end_inset
+
+Métricas procesadas a partir de las medidas de entrenamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Clasificador de actividades
+Clasificador de actividades 
 \end_layout
 
 \begin_layout Standard

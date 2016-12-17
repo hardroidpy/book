@@ -403,7 +403,7 @@ $j$ & $1/r$ & \texttt{$1.4$} & \texttt{$-2.3$} & \texttt{$0.1$}\tabularnewline
 \hline 
 $j$ & $2/r$ & \texttt{$1.1$} & \texttt{$-2.6$} & \texttt{$0$}\tabularnewline
 \hline 
-$j$ & ... & \texttt{$...$} & \texttt{$...$} & \texttt{$...$}\tabularnewline
+$j$ & $\ldots$ & \texttt{$\ldots$} & \texttt{$\ldots$} & \texttt{$\ldots$}\tabularnewline
 \hline 
 $j$ & $t_{max}$ & \texttt{$1.8$} & \texttt{$2.2$} & \texttt{$-0.4$}\tabularnewline
 \hline 
@@ -413,8 +413,8 @@ $j$ & $t_{max}$ & \texttt{$1.8$} & \texttt{$2.2$} & \texttt{$-0.4$}\tabularnewli
 en una ventana de tiempo.}
 \end{table}
 
-La utilización de ventanas de tiempo hace que las señales queden segmentadas
-en muestras discretas que son utilizadas como unidades de actividad.
+Las ventanas de tiempo hacen que las señales queden segmentadas en
+muestras discretas utilizadas como unidades de reconocimiento de actividad.
 De esta manera, cada ventana tiene inequívocamente una actividad humana
 asociada y de esta manera podemos satisfacer el requisito planteado
 por la definición del problema \ref{def2:harp-rel} en la sección
@@ -442,38 +442,38 @@ la siguiente sección.
 \label{ssec44:extraction}Rememorando la definición \ref{def2:harp-rel}
 en la sección \ref{sec261:definicion-har}, la incógnita principal
 consiste en la comparación de las muestras provenientes de dos ventanas
-$w_{1}$ y $w_{2}$, cada muestra con medidas $S_{i}$ correspondientes
-que son señales completamente distintas. Estas señales no serán idénticas
+$w_{1}$ y $w_{2}$, cada muestra con medidas $S_{i}$ que corresponden
+a señales completamente distintas. Estas señales no serán idénticas
 por más que sean obtenidas del mismo individuo realizando la misma
-actividad física. Por lo tanto, para comparar muestras es necesario
-extraer características significativas en cada ventana $w_{i}$ por
-medio de filtrar información relevante y calcular valores cuantitativos
-que identifiquen de cierta manera a las señales y permitan compararlas
-entre sí. 
+actividad física. Por lo tanto, para comparar muestras entres sí es
+necesario extraer valores característicos en cada ventana $w_{j}$
+por medio del filtro de información relevante y el calculo de valores
+que identifiquen de cierta manera a las señales. 
 
-El proceso de extracción resulta en vectores característicos (\emph{feature
-vectors}) con información relevante que consisten en métricas calculadas
-a partir de las ventanas $w_{i}$ en el dominio del tiempo. Las ventanas
-también pueden transformarse en el dominio de la frecuencia con métodos
-discretos de \emph{Fourier} utilizando algoritmos \abbr{FFT} con
-números reales. Los métodos de cálculo son de tipos estadísticos y
-estructurales \cite{LaraLabrador2013} de acuerdo a lo propuesto por
-otros trabajos como \cite{Yang2009,Bao2004}. Las métricas estadísticas
-incluidas en este trabajo son la media, máximo, mínimo, desviación
-estándar, energía, entropía, asimetría, curtosis, rango intercuantil
-y coeficientes de autoregresión.
+El proceso de extracción se traduce en vectores característicos (\emph{\abbr{FV},
+feature vectors}) con información relevante que componen varias métricas
+calculadas en base a las ventanas $w_{j}$ en el dominio del tiempo.
+Las ventanas también pueden transformarse en el dominio de la frecuencia
+con métodos discretos de \emph{Fourier} utilizando algoritmos \abbr{FFT}
+con números reales. 
 
-Las métricas son aplicadas a la señal de aceleración procesada considerando
-la utilización de la magnitud del vector de aceleración que es calculada
-a partir de las medidas de fuerza ejercida en los tres ejes. Se eligió
-utilizar solo la magnitud $\lVert a\rVert$ del vector, y excluir
-los valores unitarios $a_{x}$, $a_{y}$, $a_{z}$ para simplificar
-el proceso de extracción, cancelar el efecto de variaciones en la
-orientación del teléfono \cite{Schneider2014} y reducir el número
-de características necesarios a un tercio ($\frac{1}{3}$). En la
-\tabref{tab4:metricas} se resumen las métricas utilizadas con su
-formulación matemática tomadas de\cite{ReyesOrtiz2015} para la señal
-de ventana $s$ de tamaño $n$ con la magnitud del vector $a$.
+Los métodos de cálculo pueden ser de tipos estadísticos y estructurales
+\cite{LaraLabrador2013} y en base a lo propuesto ya por otros trabajos
+precedentes como \cite{Yang2009,Bao2004}. Las métricas estadísticas
+que son incluidas en este trabajo son la media, el máximo, el mínimo,
+la desviación estándar, energía, entropía, asimetría, curtosis, rango
+intercuantil y coeficientes de autoregresión.
+
+Las métricas son aplicadas a la señal de aceleración utilizando la
+magnitud del vector de aceleración calculada a partir de las medidas
+de fuerza ejercida en los tres ejes. Se eligió utilizar la magnitud
+$\lVert a\rVert$ del vector, y excluir los valores unitarios en cada
+dimensión $a_{x}$, $a_{y}$, $a_{z}$ para simplificar el proceso,
+cancelar el efecto de variaciones en la orientación del teléfono \cite{Schneider2014}
+y reducir la dimensión del vector característico a un tercio ($\frac{1}{3}$).
+En la \tabref{tab4:metricas} se resumen las métricas utilizadas con
+su formulación matemática tomadas de\cite{ReyesOrtiz2015} para la
+señal de ventana $s$ de tamaño $n$ con la magnitud del vector $a$.
 
 \begin{table}[!tbph]
 \begin{centering}
@@ -496,15 +496,15 @@ skewness(\textbf{s}) & Asimetría de señal en frecuencia & $\mathrm{E}\left[\le
 \hline 
 kurtosis(\textbf{s}) & Curtosis de señal en frecuencia & $\frac{\mathrm{E}\left[\left(s-\overline{s}\right)^{4}\right]}{\mathrm{E}\left[\left(s-\overline{s}\right)^{2}\right]^{2}}$\tabularnewline
 \hline 
-energy(\textbf{s}) & Promedio de suma de cuadrados & $s_{rms}^{2}=\frac{1}{n}\sum_{i=1}^{n}s_{i}$\tabularnewline
+energy(\textbf{s}) & Energía: Promedio de suma de cuadrados & $s_{rms}=\frac{1}{n}\sum_{i=1}^{n}s_{i}^{2}$\tabularnewline
 \hline 
 entropy(\textbf{s}) & Entropía de la señal & $s_{s}=\sum_{i=1}^{n}c_{i}\log\left(c_{i}\right)\mathrm{\mathtt{,}}c_{i}=s_{i}/\sum_{j=1}^{n}s_{j}$\tabularnewline
 \hline 
-irq(\textbf{s}) & Rango inter-cuantil  & \selectlanguage{english}%
+irq(\textbf{s}) & Rango intercuantil & \selectlanguage{english}%
 Q3(\textbf{s}) - Q1(\textbf{s})\selectlanguage{spanish}%
 \tabularnewline
 \hline 
-autoregression(\textbf{s}) & Coeficientes de autoregresión Burg de 4to orden & $a=arburg\left(s,4\right)\mathtt{,}a\in\mathbb{R}^{4}$\tabularnewline
+autoregression(\textbf{s}) & Coeficientes de autoregresión Burg de 4to orden & $ar=arburg\left(s,4\right)\mathtt{,}ar\in\mathbb{R}^{4}$\tabularnewline
 \hline 
 meanFreq(\textbf{s}) & Promedio ponderado de señal en frecuencia & $\sum_{i=1}^{n}\left(is_{i}\right)/\sum_{j=1}^{n}s_{j}$\tabularnewline
 \hline 
@@ -513,8 +513,35 @@ meanFreq(\textbf{s}) & Promedio ponderado de señal en frecuencia & $\sum_{i=1}^
 \caption{Métricas para el calculo de vectores característicos}
 \end{table}
 
+Un ejemplo de un proceso de extracción que mapea una ventana $w_{j}$
+de señales originales en un vector característico $F_{j}$ de dimensión
+$m$ representada como ejemplo en la \tabref{tab4:features}.
 
-\section{Clasificador de actividades}
+\begin{table}[!tbph]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+$w$ & $f_{0}$ & $\ldots$ & $f_{m}$\tabularnewline
+\hline 
+\hline 
+$0$ & $2.71$ & \texttt{$\ldots$} & \texttt{$-2.30$}\tabularnewline
+\hline 
+$\ldots$ & $\ldots$ & \texttt{$\ldots$} & \texttt{$\ldots$}\tabularnewline
+\hline 
+$j$ & $2.91$ & \texttt{$\ldots$} & \texttt{$-2.11$}\tabularnewline
+\hline 
+$\ldots$ & $\ldots$ & \texttt{$\ldots$} & \texttt{$\ldots$}\tabularnewline
+\hline 
+$k-1$ & $2.56$ & \texttt{$\ldots$} & \texttt{$-2.56$}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption[Métricas de proceso de extracción]{\label{tab4:features}Métricas procesadas a partir de las medidas
+de entrenamiento}
+\end{table}
+
+
+\section{Clasificador de actividades }
 
 \label{sec45:clasificador}Utiliza las muestras extraídas para construir
 un modelo e predecir qué actividad probable está realizando un individuo

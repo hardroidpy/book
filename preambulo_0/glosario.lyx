@@ -324,5 +324,16 @@ description "Fast Fourier Transform"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FV"
+description "Feature Vectors"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
