@@ -288,6 +288,7 @@ description "Global System for Mobile, sistema de comunicación celular global."
 
 \end_inset
 
+
 \end_layout
 
 \begin_layout Standard
@@ -295,6 +296,39 @@ description "Global System for Mobile, sistema de comunicación celular global."
 LatexCommand nomenclature
 symbol "Kinect"
 description "Sensor de profundidad de Microsoft"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "WGS"
+description "World Geodetic System"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FFT"
+description "Fast Fourier Transform"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FV"
+description "Feature Vectors"
 
 \end_inset
 
