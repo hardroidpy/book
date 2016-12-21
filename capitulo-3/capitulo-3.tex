@@ -164,7 +164,15 @@ De la misma manera, se puede calcular $Gain(ingreso)$ = 0.029 bits, $Gain(estudi
 \end{figure}
 
 \section{Métricas de evaluación y Matriz de Confusión}
-En general, la selección del algoritmos de clasificación para HAR ha sido apoyada meramente por evidencias empíricas. La gran mayoría de los estudios utilizar una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado.
+En general, la selección del algoritmos de clasificación para HAR ha sido apoyada meramente por evidencias empíricas. La gran mayoría de los estudios utilizar una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado, como se visualiza en la \ref{fig:evaluacion}.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/training-test}
+	\caption[Diagrama de Evaluación de Clasificación]{Diagrama de Evaluación de Clasificación}
+	\label{fig:evaluacion}
+\end{figure}
+	
 Los resultados de una clasificación de un métodos en particular se suelen organizar en una matriz de confusión $M_{n \times n}$ para un problema de  clasificación con $N$ clases.
 Esta es una matriz, tal que el elemento $M_{ij}$ es el numero instancias de la clase $i$ que realmente fueron clasificados como clase $j$.
 Los siguientes valores se pueden obtener de la matriz de confusión en un problema de clasificación primaria:
