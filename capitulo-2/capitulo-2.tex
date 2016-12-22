@@ -221,13 +221,13 @@ definición relajada del problema \abbr{HAR} descrito anteriormente:
 
 \begin{defi}(Problema \abbr{HAR} relajado) Dado (1) un conjunto
 $W=\{w_{0},...,w_{m-1}\}$ de $m$ ventanas de tiempo del mismo tamaño,
-donde cada una está total o parcialmente etiquetada, y que cada $w_{i}$
-contiene un conjunto de series de tiempo $S_{i}=\{s_{i,0},...,s_{i,k-1}\}$
-para cada $k$ atributos medidos, y (2) un conjunto $A\text{=}\{a_{0},...,a_{n-1}\}$
+donde cada una está total o parcialmente etiquetada, y que cada $w_{j}$
+contiene un conjunto de series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$
+para cada $k$ atributos medidos, y (2) un conjunto $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$
 de etiquetas de actividades, el objetivo es encontrar una función
-$f\colon S_{i}\rightarrow A$ que sea evaluada para todos los valores
-posibles de $S_{i}$, tal que $f(S_{i})$ es lo más próximo a la acción
-realizada durante $w_{i}$ \end{defi}
+$f\colon S_{j}\rightarrow A$ que sea evaluada para todos los valores
+posibles de $S_{j}$, tal que $f(S_{j})$ es lo más próximo a la acción
+realizada durante $w_{j}$ \end{defi}
 
 Considerar la utilización de esta definición relajada introduce un
 error en el modelo durante las ventanas de transición entre actividades,
@@ -365,7 +365,7 @@ largo de los años para resolver el problema de \abbr{HAR}. En su
 mayoría a través de algoritmos de aprendizaje supervisado aunque también
 se han propuesto métodos \emph{semi}-supervisados y no supervisados.
 
-Losmodelos de Bayes y basados en frecuencia han sido bien cubiertos
+Los modelos de Bayes y basados en frecuencia han sido bien cubiertos
 en toda la literatura del problema \abbr{HAR}. Estos métodos se resumen
 en la siguiente tabla:
 

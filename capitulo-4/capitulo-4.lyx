@@ -2480,7 +2480,7 @@ name "ssec44:extraction"
 
 \end_inset
 
-Rememorando la definición 
+Rememorando la definición del problema relajado 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def2:harp-rel"
@@ -2504,7 +2504,7 @@ reference "sec261:definicion-har"
 \end_inset
 
 , cada muestra con medidas 
-\begin_inset Formula $S_{i}$
+\begin_inset Formula $S_{j}$
 \end_inset
 
  que corresponden a señales completamente distintas.
@@ -2544,8 +2544,8 @@ abbr{FV}
 \end_inset
 
  en el dominio del tiempo.
- Las ventanas también pueden transformarse en el dominio de la frecuencia
- con métodos discretos de 
+ Las ventanas son transformadas en el dominio de la frecuencia con métodos
+ discretos de 
 \emph on
 Fourier
 \emph default
@@ -2575,7 +2575,7 @@ key "LaraLabrador2013"
 
 \end_inset
 
- y en base a lo propuesto ya por otros trabajos precedentes como 
+ en base a lo propuesto por otros trabajos precedentes como 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Yang2009,Bao2004"
@@ -2583,45 +2583,105 @@ key "Yang2009,Bao2004"
 \end_inset
 
 .
- Las métricas estadísticas que son incluidas en este trabajo son la media,
- el máximo, el mínimo, la desviación estándar, energía, entropía, asimetría,
- curtosis, rango intercuantil y coeficientes de autoregresión.
+ Las métricas estadísticas con respecto al tiempo y frecuencia utilizadas
+ en este trabajo son:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Media aritmética
+\series default
+: medida de tendencia central en la señal.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Valor máximo
+\series default
+: medida de valor extremo en la señal.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Valor mínimo
+\series default
+: medida de valor extremo en la señal.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Desviación estándar
+\series default
+: media de dispersión en la señal.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Energía
+\series default
+: promedio de suma de los cuadrados en la señal.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Entropía
+\series default
+: (de Shannon) medida de incertidumbre utilizada comúnmente en la Teoría
+ de la Información aplicada a la señal en el dominio de la frecuencia.
+ Estima la cantidad de información en la señal.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Asimetría:
+\series default
+ medida de distribución de simetría en el dominio de la frecuencia.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Curtosis:
+\series default
+ medida de distribución de concentración en el dominio de la frecuencia.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Rango inter-cuartíl: 
+\series default
+medida de dispersión de la diferencia entre el tercer y primer cuartil.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Coeficientes autorregresivos: 
+\series default
+los coeficientes obtenidos utilizando el método de Burg que aplica un modelo
+ autorregresivo para encajar en la señal.
+ La operación es aplicada a la señal en el dominio del tiempo y produce
+ cuatro (4) valores correspondientes al algoritmo de 4to orden.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Promedio en frecuencia: 
+\series default
+medida de tendencia central en el dominio de la frecuencia.
 \end_layout
 
 \begin_layout Standard
-Las métricas son aplicadas a la señal de aceleración utilizando la magnitud
- del vector de aceleración calculada a partir de las medidas de fuerza ejercida
- en los tres ejes.
- Se eligió utilizar la magnitud 
-\begin_inset Formula $\lVert a\rVert$
-\end_inset
-
- del vector, y excluir los valores unitarios en cada dimensión 
-\begin_inset Formula $a_{x}$
-\end_inset
-
-, 
-\begin_inset Formula $a_{y}$
-\end_inset
-
-, 
-\begin_inset Formula $a_{z}$
-\end_inset
-
- para simplificar el proceso, cancelar el efecto de variaciones en la orientació
-n del teléfono 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Schneider2014"
-
-\end_inset
-
- y reducir la dimensión del vector característico a un tercio (
-\begin_inset Formula $\frac{1}{3}$
-\end_inset
-
-).
- En la 
+En la 
 \begin_inset ERT
 status open
 
@@ -2634,24 +2694,18 @@ tabref{tab4:metricas}
 
 \end_inset
 
- se resumen las métricas utilizadas con su formulación matemática tomadas
- de
-\begin_inset CommandInset citation
-LatexCommand cite
-key "ReyesOrtiz2015"
-
+ se resumen las métricas enumeradas anteriormente en el orden establecido
+ junto con el nombre de función y la formulación matemática correspondiente
+ para una señal dada 
+\begin_inset Formula $s$
 \end_inset
 
- para la señal de ventana 
-\begin_inset Formula $s$
+ en cualquier ventana 
+\begin_inset Formula $w_{j}$
 \end_inset
 
  de tamaño 
 \begin_inset Formula $n$
-\end_inset
-
- con la magnitud del vector 
-\begin_inset Formula $a$
 \end_inset
 
 .
@@ -2666,9 +2720,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="3">
+<lyxtabular version="3" rows="12" columns="2">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0pt">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="left" valignment="top" width="0pt">
 <row>
@@ -2677,15 +2730,6 @@ status open
 
 \begin_layout Plain Layout
 Función
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Descripción
 \end_layout
 
 \end_inset
@@ -2705,61 +2749,14 @@ Formulación
 \begin_inset Text
 
 \begin_layout Plain Layout
-mag(
-\series bold
-a
-\series default
-)
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Magnitud de la aceleración
+\family typewriter
+mean(s)
 \end_layout
 
 \end_inset
 </cell>
 <cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\lVert a\rVert=\sqrt{a_{x}^{2}+a_{y}^{2}+a_{z}^{2}}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-mean(
-\series bold
-s
-\series default
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Media aritmética
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2777,20 +2774,9 @@ Media aritmética
 \begin_inset Text
 
 \begin_layout Plain Layout
-std(
-\series bold
-s
-\series default
-)
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Desviación estándar
+\family typewriter
+std(s)
 \end_layout
 
 \end_inset
@@ -2813,22 +2799,9 @@ Desviación estándar
 \begin_inset Text
 
 \begin_layout Plain Layout
-max(
-\series bold
-s
-\series default
-)
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Valor máximo en 
-\series bold
-n
+\family typewriter
+max(s)
 \end_layout
 
 \end_inset
@@ -2837,7 +2810,7 @@ n
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\max(s)$
+\begin_inset Formula $\mathrm{max}(s)$
 \end_inset
 
 
@@ -2851,31 +2824,18 @@ n
 \begin_inset Text
 
 \begin_layout Plain Layout
-min(
-\series bold
-s
-\series default
-)
+
+\family typewriter
+min(s)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Valor mínimo en 
-\series bold
-n
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\min\left(s\right)$
+\begin_inset Formula $\mathrm{min}(s)$
 \end_inset
 
 
@@ -2889,25 +2849,14 @@ n
 \begin_inset Text
 
 \begin_layout Plain Layout
-skewness(
-\series bold
-s
-\series default
-)
+
+\family typewriter
+skewness(s)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Asimetría de señal en frecuencia
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2925,25 +2874,14 @@ Asimetría de señal en frecuencia
 \begin_inset Text
 
 \begin_layout Plain Layout
-kurtosis(
-\series bold
-s
-\series default
-)
+
+\family typewriter
+kurtosis(s)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Curtosis de señal en frecuencia
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2961,29 +2899,18 @@ Curtosis de señal en frecuencia
 \begin_inset Text
 
 \begin_layout Plain Layout
-energy(
-\series bold
-s
-\series default
-)
+
+\family typewriter
+energy(s)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Energía: Promedio de suma de cuadrados
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $s_{rms}=\frac{1}{n}\sum_{i=1}^{n}s_{i}^{2}$
+\begin_inset Formula $\frac{1}{n}\sum_{i=1}^{n}s_{i}^{2}$
 \end_inset
 
 
@@ -2997,29 +2924,18 @@ Energía: Promedio de suma de cuadrados
 \begin_inset Text
 
 \begin_layout Plain Layout
-entropy(
-\series bold
-s
-\series default
-)
+
+\family typewriter
+entropy(s)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Entropía de la señal
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $s_{s}=\sum_{i=1}^{n}c_{i}\log\left(c_{i}\right)\mathrm{\mathtt{,}}c_{i}=s_{i}/\sum_{j=1}^{n}s_{j}$
+\begin_inset Formula $s_{s}c_{i}=\sum_{i=1}^{n}c_{i}\log\left(c_{i}\right)\mathrm{\mathtt{\mathrm{,}}\,c_{i}}=s_{i}/\sum_{j=1}^{n}s_{j}$
 \end_inset
 
 
@@ -3033,90 +2949,21 @@ Entropía de la señal
 \begin_inset Text
 
 \begin_layout Plain Layout
-irq(
-\series bold
-s
-\series default
-)
+
+\family typewriter
+irq(s)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Rango intercuantil
-\end_layout
-
+\begin_inset Formula $Q3(s)-Q1(s)$
 \end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Plain Layout
 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\lang english
-Q3(
-\family default
-\series bold
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-s
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-) - Q1(
-\family default
-\series bold
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-s
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-)
 \end_layout
 
 \end_inset
@@ -3127,29 +2974,18 @@ s
 \begin_inset Text
 
 \begin_layout Plain Layout
-autoregression(
-\series bold
-s
-\series default
-)
+
+\family typewriter
+autoregression(s)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Coeficientes de autoregresión Burg de 4to orden
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $ar=arburg\left(s,4\right)\mathtt{,}ar\in\mathbb{R}^{4}$
+\begin_inset Formula $ar=\mathrm{arburg}\left(s,4\right)\mathrm{,}\,ar\in\mathbb{R}^{4}$
 \end_inset
 
 
@@ -3163,25 +2999,14 @@ Coeficientes de autoregresión Burg de 4to orden
 \begin_inset Text
 
 \begin_layout Plain Layout
-meanFreq(
-\series bold
-s
-\series default
-)
+
+\family typewriter
+meanFreq(s)
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Promedio ponderado de señal en frecuencia
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3205,7 +3030,30 @@ Promedio ponderado de señal en frecuencia
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Métricas para el calculo de vectores característicos
+\begin_inset CommandInset label
+LatexCommand label
+name "tab4:metricas"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Métricas de valores característicos
+\end_layout
+
+\end_inset
+
+Métricas para el calculo de vectores característicos según 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ReyesOrtiz2015"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -3219,19 +3067,117 @@ Métricas para el calculo de vectores característicos
 \end_layout
 
 \begin_layout Standard
-Un ejemplo de un proceso de extracción que mapea una ventana 
+Las señales procesadas del conjunto 
+\begin_inset Formula $S$
+\end_inset
+
+ corresponden al atributo de la aceleración.
+ Se utiliza un conjunto 
+\begin_inset Formula $S=\left\{ s_{0}\right\} $
+\end_inset
+
+ con 
+\begin_inset Formula $k=1$
+\end_inset
+
+, donde 
+\begin_inset Formula $s_{0}$
+\end_inset
+
+ corresponde a la magnitud del vector resultante de las medidas de fuerza
+ ejercida en los tres ejes según la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq4:magnitud"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lVert a\rVert=\sqrt{a_{x}^{2}+a_{y}^{2}+a_{z}^{2}}\label{eq4:magnitud}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se eligió utilizar la magnitud 
+\begin_inset Formula $\lVert a\rVert$
+\end_inset
+
+ del vector excluyendo los valores unitarios en cada dimensión 
+\begin_inset Formula $a_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{y}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{z}$
+\end_inset
+
+ por los siguientes motivos:
+\end_layout
+
+\begin_layout Itemize
+Simplicidad para utilizar la técnica de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{DT}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Para cancelar el efecto de variaciones en la orientación del teléfono 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schneider2014"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Reducir la dimensión de características (Ej.
+ a un tercio) evitando sobre-ajustes (
+\emph on
+overfitting
+\emph default
+).
+\end_layout
+
+\begin_layout Standard
+El proceso de extracción transforma una ventana 
 \begin_inset Formula $w_{j}$
 \end_inset
 
- de señales originales en un vector característico 
+ con señales originales en un vector característico 
 \begin_inset Formula $F_{j}$
 \end_inset
 
  de dimensión 
-\begin_inset Formula $m$
+\begin_inset Formula $p$
 \end_inset
 
- representada como ejemplo en la 
+ como es representado en el ejemplo de la 
 \begin_inset ERT
 status open
 
@@ -3245,6 +3191,15 @@ tabref{tab4:features}
 \end_inset
 
 .
+ Cada valor 
+\begin_inset Formula $\mathrm{f}_{0},\mathrm{f}_{1},\ldots,\mathrm{f}_{p}$
+\end_inset
+
+ donde 
+\begin_inset Formula $p=14$
+\end_inset
+
+ son obtenidos con una métrica particular enumerada anteriormente.
 \end_layout
 
 \begin_layout Standard
@@ -3279,7 +3234,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $f_{0}$
+\begin_inset Formula $\mathrm{f}_{0}$
 \end_inset
 
 
@@ -3303,7 +3258,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $f_{m}$
+\begin_inset Formula $\mathrm{f}_{p}$
 \end_inset
 
 
@@ -3465,7 +3420,7 @@ status open
 \begin_layout Plain Layout
 
 \family typewriter
-\begin_inset Formula $-2.11$
+\begin_inset Formula $-4.11$
 \end_inset
 
 
@@ -3533,7 +3488,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $k-1$
+\begin_inset Formula $m-1$
 \end_inset
 
 
@@ -3573,7 +3528,7 @@ status open
 \begin_layout Plain Layout
 
 \family typewriter
-\begin_inset Formula $-2.56$
+\begin_inset Formula $-5.56$
 \end_inset
 
 
@@ -3601,7 +3556,7 @@ name "tab4:features"
 
 
 \begin_inset Argument 1
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Métricas de proceso de extracción
@@ -3620,6 +3575,31 @@ Métricas procesadas a partir de las medidas de entrenamiento
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Por último, se considera que tanto 
+\begin_inset Formula $S_{j}$
+\end_inset
+
+ como 
+\begin_inset Formula $F_{j\ensuremath{}}$
+\end_inset
+
+ tienen relación con al menos una etiqueta 
+\begin_inset Formula $\mathrm{a}_{k}$
+\end_inset
+
+ particular del conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ ya sea debido a la función 
+\begin_inset Formula $f(S_{j})$
+\end_inset
+
+ como resultado de la evaluación, o como parte de los datos y el conjunto
+ de entrenamiento.
 \end_layout
 
 \begin_layout Section

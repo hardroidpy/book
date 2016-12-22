@@ -919,11 +919,11 @@ abbr{HAR}
 
  ventanas de tiempo del mismo tamaño, donde cada una está total o parcialmente
  etiquetada, y que cada 
-\begin_inset Formula $w_{i}$
+\begin_inset Formula $w_{j}$
 \end_inset
 
  contiene un conjunto de series de tiempo 
-\begin_inset Formula $S_{i}=\{s_{i,0},...,s_{i,k-1}\}$
+\begin_inset Formula $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$
 \end_inset
 
  para cada 
@@ -931,23 +931,23 @@ abbr{HAR}
 \end_inset
 
  atributos medidos, y (2) un conjunto 
-\begin_inset Formula $A\text{=}\{a_{0},...,a_{n-1}\}$
+\begin_inset Formula $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$
 \end_inset
 
  de etiquetas de actividades, el objetivo es encontrar una función 
-\begin_inset Formula $f\colon S_{i}\rightarrow A$
+\begin_inset Formula $f\colon S_{j}\rightarrow A$
 \end_inset
 
  que sea evaluada para todos los valores posibles de 
-\begin_inset Formula $S_{i}$
+\begin_inset Formula $S_{j}$
 \end_inset
 
 , tal que 
-\begin_inset Formula $f(S_{i})$
+\begin_inset Formula $f(S_{j})$
 \end_inset
 
  es lo más próximo a la acción realizada durante 
-\begin_inset Formula $w_{i}$
+\begin_inset Formula $w_{j}$
 \end_inset
 
  
@@ -1487,8 +1487,8 @@ semi
 \end_layout
 
 \begin_layout Standard
-Losmodelos de Bayes y basados en frecuencia han sido bien cubiertos en toda
- la literatura del problema 
+Los modelos de Bayes y basados en frecuencia han sido bien cubiertos en
+ toda la literatura del problema 
 \begin_inset ERT
 status open
 

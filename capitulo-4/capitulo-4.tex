@@ -439,100 +439,134 @@ la siguiente sección.
 
 \subsection{Extracción}
 
-\label{ssec44:extraction}Rememorando la definición \ref{def2:harp-rel}
-en la sección \ref{sec261:definicion-har}, la incógnita principal
-consiste en la comparación de las muestras provenientes de dos ventanas
-$w_{1}$ y $w_{2}$, cada muestra con medidas $S_{i}$ que corresponden
-a señales completamente distintas. Estas señales no serán idénticas
-por más que sean obtenidas del mismo individuo realizando la misma
-actividad física. Por lo tanto, para comparar muestras entres sí es
-necesario extraer valores característicos en cada ventana $w_{j}$
-por medio del filtro de información relevante y el calculo de valores
-que identifiquen de cierta manera a las señales. 
+\label{ssec44:extraction}Rememorando la definición del problema relajado
+\ref{def2:harp-rel} en la sección \ref{sec261:definicion-har}, la
+incógnita principal consiste en la comparación de las muestras provenientes
+de dos ventanas $w_{1}$ y $w_{2}$, cada muestra con medidas $S_{j}$
+que corresponden a señales completamente distintas. Estas señales
+no serán idénticas por más que sean obtenidas del mismo individuo
+realizando la misma actividad física. Por lo tanto, para comparar
+muestras entres sí es necesario extraer valores característicos en
+cada ventana $w_{j}$ por medio del filtro de información relevante
+y el calculo de valores que identifiquen de cierta manera a las señales. 
 
 El proceso de extracción se traduce en vectores característicos (\emph{\abbr{FV},
 feature vectors}) con información relevante que componen varias métricas
 calculadas en base a las ventanas $w_{j}$ en el dominio del tiempo.
-Las ventanas también pueden transformarse en el dominio de la frecuencia
-con métodos discretos de \emph{Fourier} utilizando algoritmos \abbr{FFT}
+Las ventanas son transformadas en el dominio de la frecuencia con
+métodos discretos de \emph{Fourier} utilizando algoritmos \abbr{FFT}
 con números reales. 
 
 Los métodos de cálculo pueden ser de tipos estadísticos y estructurales
-\cite{LaraLabrador2013} y en base a lo propuesto ya por otros trabajos
+\cite{LaraLabrador2013} en base a lo propuesto por otros trabajos
 precedentes como \cite{Yang2009,Bao2004}. Las métricas estadísticas
-que son incluidas en este trabajo son la media, el máximo, el mínimo,
-la desviación estándar, energía, entropía, asimetría, curtosis, rango
-intercuantil y coeficientes de autoregresión.
-
-Las métricas son aplicadas a la señal de aceleración utilizando la
-magnitud del vector de aceleración calculada a partir de las medidas
-de fuerza ejercida en los tres ejes. Se eligió utilizar la magnitud
-$\lVert a\rVert$ del vector, y excluir los valores unitarios en cada
-dimensión $a_{x}$, $a_{y}$, $a_{z}$ para simplificar el proceso,
-cancelar el efecto de variaciones en la orientación del teléfono \cite{Schneider2014}
-y reducir la dimensión del vector característico a un tercio ($\frac{1}{3}$).
-En la \tabref{tab4:metricas} se resumen las métricas utilizadas con
-su formulación matemática tomadas de\cite{ReyesOrtiz2015} para la
-señal de ventana $s$ de tamaño $n$ con la magnitud del vector $a$.
+con respecto al tiempo y frecuencia utilizadas en este trabajo son:
+\begin{enumerate}
+\item \textbf{Media aritmética}: medida de tendencia central en la señal.
+\item \textbf{Valor máximo}: medida de valor extremo en la señal.
+\item \textbf{Valor mínimo}: medida de valor extremo en la señal.
+\item \textbf{Desviación estándar}: media de dispersión en la señal.
+\item \textbf{Energía}: promedio de suma de los cuadrados en la señal.
+\item \textbf{Entropía}: (de Shannon) medida de incertidumbre utilizada
+comúnmente en la Teoría de la Información aplicada a la señal en el
+dominio de la frecuencia. Estima la cantidad de información en la
+señal.
+\item \textbf{Asimetría:} medida de distribución de simetría en el dominio
+de la frecuencia.
+\item \textbf{Curtosis:} medida de distribución de concentración en el dominio
+de la frecuencia.
+\item \textbf{Rango inter-cuartíl: }medida de dispersión de la diferencia
+entre el tercer y primer cuartil.
+\item \textbf{Coeficientes autorregresivos: }los coeficientes obtenidos
+utilizando el método de Burg que aplica un modelo autorregresivo para
+encajar en la señal. La operación es aplicada a la señal en el dominio
+del tiempo y produce cuatro (4) valores correspondientes al algoritmo
+de 4to orden.
+\item \textbf{Promedio en frecuencia: }medida de tendencia central en el
+dominio de la frecuencia.
+\end{enumerate}
+En la \tabref{tab4:metricas} se resumen las métricas enumeradas anteriormente
+en el orden establecido junto con el nombre de función y la formulación
+matemática correspondiente para una señal dada $s$ en cualquier ventana
+$w_{j}$ de tamaño $n$.
 
 \begin{table}[!tbph]
 \begin{centering}
-\begin{tabular}{|l|l|l|}
+\begin{tabular}{|l|l|}
 \hline 
-Función & Descripción & Formulación\tabularnewline
+Función & Formulación\tabularnewline
 \hline 
 \hline 
-mag(\textbf{a}) & Magnitud de la aceleración & $\lVert a\rVert=\sqrt{a_{x}^{2}+a_{y}^{2}+a_{z}^{2}}$\tabularnewline
+\texttt{mean(s)} & $\overline{s}=\frac{1}{n}\sum_{i=1}^{n}s_{i}$\tabularnewline
 \hline 
-mean(\textbf{s}) & Media aritmética & $\overline{s}=\frac{1}{n}\sum_{i=1}^{n}s_{i}$\tabularnewline
+\texttt{std(s)} & $\sigma=\sqrt{\frac{1}{n}\sum_{i=1}^{n}\left(s_{i}-\overline{s}\right)}$\tabularnewline
 \hline 
-std(\textbf{s}) & Desviación estándar & $\sigma=\sqrt{\frac{1}{n}\sum_{i=1}^{n}\left(s_{i}-\overline{s}\right)}$\tabularnewline
+\texttt{max(s)} & $\mathrm{max}(s)$\tabularnewline
 \hline 
-max(\textbf{s}) & Valor máximo en \textbf{n} & $\max(s)$\tabularnewline
+\texttt{min(s)} & $\mathrm{min}(s)$\tabularnewline
 \hline 
-min(\textbf{s}) & Valor mínimo en \textbf{n} & $\min\left(s\right)$\tabularnewline
+\texttt{skewness(s)} & $\mathrm{E}\left[\left(\frac{s-\overline{s}}{\sigma}\right)^{3}\right]$\tabularnewline
 \hline 
-skewness(\textbf{s}) & Asimetría de señal en frecuencia & $\mathrm{E}\left[\left(\frac{s-\overline{s}}{\sigma}\right)^{3}\right]$\tabularnewline
+\texttt{kurtosis(s)} & $\frac{\mathrm{E}\left[\left(s-\overline{s}\right)^{4}\right]}{\mathrm{E}\left[\left(s-\overline{s}\right)^{2}\right]^{2}}$\tabularnewline
 \hline 
-kurtosis(\textbf{s}) & Curtosis de señal en frecuencia & $\frac{\mathrm{E}\left[\left(s-\overline{s}\right)^{4}\right]}{\mathrm{E}\left[\left(s-\overline{s}\right)^{2}\right]^{2}}$\tabularnewline
+\texttt{energy(s)} & $\frac{1}{n}\sum_{i=1}^{n}s_{i}^{2}$\tabularnewline
 \hline 
-energy(\textbf{s}) & Energía: Promedio de suma de cuadrados & $s_{rms}=\frac{1}{n}\sum_{i=1}^{n}s_{i}^{2}$\tabularnewline
+\texttt{entropy(s)} & $s_{s}c_{i}=\sum_{i=1}^{n}c_{i}\log\left(c_{i}\right)\mathrm{\mathtt{\mathrm{,}}\,c_{i}}=s_{i}/\sum_{j=1}^{n}s_{j}$\tabularnewline
 \hline 
-entropy(\textbf{s}) & Entropía de la señal & $s_{s}=\sum_{i=1}^{n}c_{i}\log\left(c_{i}\right)\mathrm{\mathtt{,}}c_{i}=s_{i}/\sum_{j=1}^{n}s_{j}$\tabularnewline
+\texttt{irq(s)} & $Q3(s)-Q1(s)$\tabularnewline
 \hline 
-irq(\textbf{s}) & Rango intercuantil & \selectlanguage{english}%
-Q3(\textbf{s}) - Q1(\textbf{s})\selectlanguage{spanish}%
-\tabularnewline
+\texttt{autoregression(s)} & $ar=\mathrm{arburg}\left(s,4\right)\mathrm{,}\,ar\in\mathbb{R}^{4}$\tabularnewline
 \hline 
-autoregression(\textbf{s}) & Coeficientes de autoregresión Burg de 4to orden & $ar=arburg\left(s,4\right)\mathtt{,}ar\in\mathbb{R}^{4}$\tabularnewline
-\hline 
-meanFreq(\textbf{s}) & Promedio ponderado de señal en frecuencia & $\sum_{i=1}^{n}\left(is_{i}\right)/\sum_{j=1}^{n}s_{j}$\tabularnewline
+\texttt{meanFreq(s)} & $\sum_{i=1}^{n}\left(is_{i}\right)/\sum_{j=1}^{n}s_{j}$\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption{Métricas para el calculo de vectores característicos}
+\caption[Métricas de valores característicos]{\label{tab4:metricas}Métricas para el calculo de vectores característicos
+según \cite{ReyesOrtiz2015}.}
 \end{table}
 
-Un ejemplo de un proceso de extracción que mapea una ventana $w_{j}$
-de señales originales en un vector característico $F_{j}$ de dimensión
-$m$ representada como ejemplo en la \tabref{tab4:features}.
+Las señales procesadas del conjunto $S$ corresponden al atributo
+de la aceleración. Se utiliza un conjunto $S=\left\{ s_{0}\right\} $
+con $k=1$, donde $s_{0}$ corresponde a la magnitud del vector resultante
+de las medidas de fuerza ejercida en los tres ejes según la ecuación
+\ref{eq4:magnitud}. 
+
+\begin{equation}
+\lVert a\rVert=\sqrt{a_{x}^{2}+a_{y}^{2}+a_{z}^{2}}\label{eq4:magnitud}
+\end{equation}
+
+Se eligió utilizar la magnitud $\lVert a\rVert$ del vector excluyendo
+los valores unitarios en cada dimensión $a_{x}$, $a_{y}$, $a_{z}$
+por los siguientes motivos:
+\begin{itemize}
+\item Simplicidad para utilizar la técnica de \abbr{DT}
+\item Para cancelar el efecto de variaciones en la orientación del teléfono
+\cite{Schneider2014} 
+\item Reducir la dimensión de características (Ej. a un tercio) evitando
+sobre-ajustes (\emph{overfitting}).
+\end{itemize}
+El proceso de extracción transforma una ventana $w_{j}$ con señales
+originales en un vector característico $F_{j}$ de dimensión $p$
+como es representado en el ejemplo de la \tabref{tab4:features}.
+Cada valor $\mathrm{f}_{0},\mathrm{f}_{1},\ldots,\mathrm{f}_{p}$
+donde $p=14$ son obtenidos con una métrica particular enumerada anteriormente.
 
 \begin{table}[!tbph]
 \begin{centering}
 \begin{tabular}{|c|c|c|c|}
 \hline 
-$w$ & $f_{0}$ & $\ldots$ & $f_{m}$\tabularnewline
+$w$ & $\mathrm{f}_{0}$ & $\ldots$ & $\mathrm{f}_{p}$\tabularnewline
 \hline 
 \hline 
 $0$ & $2.71$ & \texttt{$\ldots$} & \texttt{$-2.30$}\tabularnewline
 \hline 
 $\ldots$ & $\ldots$ & \texttt{$\ldots$} & \texttt{$\ldots$}\tabularnewline
 \hline 
-$j$ & $2.91$ & \texttt{$\ldots$} & \texttt{$-2.11$}\tabularnewline
+$j$ & $2.91$ & \texttt{$\ldots$} & \texttt{$-4.11$}\tabularnewline
 \hline 
 $\ldots$ & $\ldots$ & \texttt{$\ldots$} & \texttt{$\ldots$}\tabularnewline
 \hline 
-$k-1$ & $2.56$ & \texttt{$\ldots$} & \texttt{$-2.56$}\tabularnewline
+$m-1$ & $2.56$ & \texttt{$\ldots$} & \texttt{$-5.56$}\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -540,6 +574,10 @@ $k-1$ & $2.56$ & \texttt{$\ldots$} & \texttt{$-2.56$}\tabularnewline
 de entrenamiento}
 \end{table}
 
+Por último, se considera que tanto $S_{j}$ como $F_{j\ensuremath{}}$
+tienen relación con al menos una etiqueta $\mathrm{a}_{k}$ particular
+del conjunto $A$ ya sea debido a la función $f(S_{j})$ como resultado
+de la evaluación, o como parte de los datos y el conjunto de entrenamiento.
 
 \section{Clasificador de actividades }
 
