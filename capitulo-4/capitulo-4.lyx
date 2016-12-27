@@ -446,7 +446,20 @@ name "fig4:componentes-har"
 status open
 
 \begin_layout Plain Layout
-Arquitectura de sistema HAR
+Arquitectura de sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1211,15 +1224,6 @@ Señales del Ambiente
 \end_layout
 
 \begin_layout Standard
-Los sensores de ambiente miden varios atributos del entorno que rodea al
- usuario.
- Algunas señales como la temperatura del aire, presión atmosférica, iluminación,
- humedad, y el ruido pueden proveer información de utilidad para conocer
- mejor el habitad particular de un usuario.
- En esta categoría están los barómetros, fotómetros, termómetros y micrófonos.
-\end_layout
-
-\begin_layout Standard
 Los sensores de ambiente solos no proveen información suficiente ya que
  los individuos pueden realizar las actividades bajo diversas circunstancias
  contextuales en términos de clima, ruido o iluminación.
@@ -1234,6 +1238,15 @@ key "LaraLabrador2013"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Los sensores de ambiente miden varios atributos del entorno que rodea al
+ usuario.
+ Algunas señales como la temperatura del aire, presión atmosférica, iluminación,
+ humedad, y el ruido pueden proveer información de utilidad para conocer
+ mejor el habitad particular de un usuario.
+ En esta categoría están los barómetros, fotómetros, termómetros y micrófonos.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1632,11 +1645,8 @@ newtheorem{defi}{Definición}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2480,7 +2490,7 @@ name "ssec44:extraction"
 
 \end_inset
 
-Rememorando la definición del problema relajado 
+Rememorando la definición del problema relajado
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def2:harp-rel"
@@ -2545,7 +2555,7 @@ abbr{FV}
 
  en el dominio del tiempo.
  Las ventanas son transformadas en el dominio de la frecuencia con métodos
- discretos de 
+ discretos de
 \emph on
 Fourier
 \emph default
@@ -2575,7 +2585,7 @@ key "LaraLabrador2013"
 
 \end_inset
 
- en base a lo propuesto por otros trabajos precedentes como 
+ en base a lo propuesto por otros trabajos precedentes como
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Yang2009,Bao2004"
@@ -2656,7 +2666,7 @@ Curtosis:
 \begin_layout Enumerate
 
 \series bold
-Rango inter-cuartíl: 
+Rango inter-cuartíl:
 \series default
 medida de dispersión de la diferencia entre el tercer y primer cuartil.
 \end_layout
@@ -2664,7 +2674,7 @@ medida de dispersión de la diferencia entre el tercer y primer cuartil.
 \begin_layout Enumerate
 
 \series bold
-Coeficientes autorregresivos: 
+Coeficientes autorregresivos:
 \series default
 los coeficientes obtenidos utilizando el método de Burg que aplica un modelo
  autorregresivo para encajar en la señal.
@@ -2675,13 +2685,13 @@ los coeficientes obtenidos utilizando el método de Burg que aplica un modelo
 \begin_layout Enumerate
 
 \series bold
-Promedio en frecuencia: 
+Promedio en frecuencia:
 \series default
 medida de tendencia central en el dominio de la frecuencia.
 \end_layout
 
 \begin_layout Standard
-En la 
+En la
 \begin_inset ERT
 status open
 
@@ -2696,15 +2706,15 @@ tabref{tab4:metricas}
 
  se resumen las métricas enumeradas anteriormente en el orden establecido
  junto con el nombre de función y la formulación matemática correspondiente
- para una señal dada 
+ para una señal dada
 \begin_inset Formula $s$
 \end_inset
 
- en cualquier ventana 
+ en cualquier ventana
 \begin_inset Formula $w_{j}$
 \end_inset
 
- de tamaño 
+ de tamaño
 \begin_inset Formula $n$
 \end_inset
 
@@ -3038,7 +3048,7 @@ name "tab4:metricas"
 
 
 \begin_inset Argument 1
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Métricas de valores característicos
@@ -3046,7 +3056,7 @@ Métricas de valores característicos
 
 \end_inset
 
-Métricas para el calculo de vectores característicos según 
+Métricas para el calculo de vectores característicos según
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ReyesOrtiz2015"
@@ -3072,7 +3082,7 @@ Las señales procesadas del conjunto
 \end_inset
 
  corresponden al atributo de la aceleración.
- Se utiliza un conjunto 
+ Se utiliza un conjunto
 \begin_inset Formula $S=\left\{ s_{0}\right\} $
 \end_inset
 
@@ -3085,7 +3095,7 @@ Las señales procesadas del conjunto
 \end_inset
 
  corresponde a la magnitud del vector resultante de las medidas de fuerza
- ejercida en los tres ejes según la ecuación 
+ ejercida en los tres ejes según la ecuación
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq4:magnitud"
@@ -3093,7 +3103,6 @@ reference "eq4:magnitud"
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -3116,11 +3125,11 @@ Se eligió utilizar la magnitud
 \begin_inset Formula $a_{x}$
 \end_inset
 
-, 
+,
 \begin_inset Formula $a_{y}$
 \end_inset
 
-, 
+,
 \begin_inset Formula $a_{z}$
 \end_inset
 
@@ -3128,7 +3137,7 @@ Se eligió utilizar la magnitud
 \end_layout
 
 \begin_layout Itemize
-Simplicidad para utilizar la técnica de 
+Simplicidad para utilizar la técnica de
 \begin_inset ERT
 status open
 
@@ -3145,14 +3154,14 @@ abbr{DT}
 \end_layout
 
 \begin_layout Itemize
-Para cancelar el efecto de variaciones en la orientación del teléfono 
+Para cancelar el efecto de variaciones en la orientación del teléfono
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schneider2014"
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Itemize
@@ -3195,7 +3204,7 @@ tabref{tab4:features}
 \begin_inset Formula $\mathrm{f}_{0},\mathrm{f}_{1},\ldots,\mathrm{f}_{p}$
 \end_inset
 
- donde 
+ donde
 \begin_inset Formula $p=14$
 \end_inset
 
@@ -3564,7 +3573,7 @@ Métricas de proceso de extracción
 
 \end_inset
 
-Métricas procesadas a partir de las medidas de entrenamiento
+Métricas procesadas a partir de las medidas de señales
 \end_layout
 
 \end_inset
@@ -3613,16 +3622,787 @@ name "sec45:clasificador"
 
 \end_inset
 
-Utiliza las muestras extraídas para construir un modelo e predecir qué actividad
- probable está realizando un individuo en un determinado instante.
+Un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ es similar a cualquier aplicación de aprendizaje automático 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ donde depende de un algoritmo diseñado para extraer información desde los
+ datos.
+ En este contexto los patrones son descubiertos a partir de un conjunto
+ de observaciones denominadas instancias
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
+ El propósito principal del algoritmo es de clasificar los datos que serán
+ obtenidos a futuro.
+ La entrada aplicada a un algoritmo de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ es un conjunto de entrenamiento (
+\emph on
+training set
+\emph default
+) y el resultado del mismo es un clasificador (
+\emph on
+classifier
+\emph default
+)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rajaraman2011"
+
+\end_inset
+
+.
+ En esta sección se trata sobre clasificadores supervisados donde el conjunto
+ de entrenamiento incluye información acerca de la manera correcta de clasificar
+ un subconjunto de datos.
 \end_layout
 
 \begin_layout Subsubsection
 Clasificación
 \end_layout
 
+\begin_layout Standard
+Es parte esencial de todo algoritmo de aprendizaje automático supervisado
+ contar con un conjunto de instancias de entrenamiento con información adicional
+ de clasificación.
+ Cada instancia es un vector característico 
+\begin_inset Formula $F_{j}$
+\end_inset
+
+ calculado a partir de las señales
+\begin_inset Formula $s$
+\end_inset
+
+ contenidas en una ventana de tiempo 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+.
+ Como es requerido para todo clasificador supervisado el conjunto de entrenamien
+to debe estar etiquetado con una clase conocida así como se muestra en la
+ tabla 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab4:labeled}
+\end_layout
+
+\end_inset
+
+.
+ La tarea de etiquetado debe ser realizado de forma manual como en la sección
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ssec44:labeling"
+
+\end_inset
+
+ o si es posible de forma automática.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{f}_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathrm{f}_{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actividad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.71$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-2.30$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size small
+Desconocido
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $j$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.91$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-2.11$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size small
+Corriendo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k-1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.56$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\begin_inset Formula $-2.56$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size small
+Caminando
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab4:labeled"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Etiquetado de instancias
+\end_layout
+
+\end_inset
+
+Etiquetado de instancias de entrenamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación se define formalmente el marco para algoritmos de aprendizaje
+ automático supervisados
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rajaraman2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "def4:clasificacion"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{defi}{Definición}
+\backslash
+begin{defi}
+\end_layout
+
+\end_inset
+
+(Clasificador
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+) Un algoritmo
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ recibe un conjunto entrenamiento compuesto por un conjunto de pares 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ conocidas como muestras de entrenamiento, donde
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ es un
+\emph on
+ vector
+\emph default
+ de valores, llamado vector característico.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $y$
+\end_inset
+
+ es la
+\emph on
+ etiqueta
+\emph default
+, el valor de clasificación para
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El objetivo del proceso
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ es encontrar una función 
+\begin_inset Formula $y=f(\boldsymbol{x})$
+\end_inset
+
+ cuya predicción de
+\begin_inset Formula $y$
+\end_inset
+
+ asociada a valores desconocidos de
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ sea la mejor.
+ En el problema de clasificación multi-clase 
+\begin_inset Formula $y$
+\end_inset
+
+ es un miembro de un conjunto finito de clases y cada miembro representa
+ un clase particular.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defi}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el capítulo
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap3:Aprendizaje-Automatico"
+
+\end_inset
+
+ se construye la función
+\begin_inset Formula $f$
+\end_inset
+
+ por medio de un algoritmo con un enfoque basado en arboles de decisión
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{DT}
+\end_layout
+
+\end_inset
+
+).
+ La forma de 
+\begin_inset Formula $f$
+\end_inset
+
+ es un árbol, y cada nodo del árbol tiene una función de 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ que determina que sobre qué nodo hijo la búsqueda procede, cada nodo puede
+ tener cualquier número de nodos hijos.
+ Los árboles de decisión son preferibles para las clasificación binaria
+ o de multi-clases, especialmente cuando la dimensión del vector característicos
+ no es muy grande
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rajaraman2011"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsubsection
 Reconocimiento
+\end_layout
+
+\begin_layout Standard
+Explicar la utilización de la función f para clasificar y poder retroalimentar
+ el modelo de forma online o offline.
 \end_layout
 
 \begin_layout Section

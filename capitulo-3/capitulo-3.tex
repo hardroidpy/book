@@ -1,6 +1,6 @@
 
 \chapter{Aprendizaje Automático}
-\label{chap:Aprendizaje-Automatico}
+\label{chap3:Aprendizaje-Automatico}
 
 \section{Introducción}
 En el contexto de aprendizaje automático, los patrones deben ser descubierto a partir de una serie de ejemplos que son denominados instancias. Tal conjunto de entrada se denomina conjunto de entrenamiento. En nuestro caso específico, cada instancia es un vector de características extraída de señales en una determinada ventana de tiempo. Los ejemplos en el conjunto de entrenamiento pueden o no pueden ser etiquetados, es decir, asociada a una clase conocida (por ejemplo, caminar, correr, etc.). En algunos casos, tener datos etiquetados no es factible, ya que puede requerir un experto para examinar manualmente los ejemplos y asignar una etiqueta en base a su experiencia.
@@ -163,4 +163,48 @@ De la misma manera, se puede calcular $Gain(ingreso)$ = 0.029 bits, $Gain(estudi
 	\label{fig:arbolPartEdad}
 \end{figure}
 
-\section{Matriz de Confusión}
+\section{Métricas de evaluación y Matriz de Confusión}
+En general, la selección del algoritmos de clasificación para HAR ha sido apoyada meramente por evidencias empíricas. La gran mayoría de los estudios utilizar una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado, como se visualiza en la \ref{fig:evaluacion}.
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/training-test}
+	\caption[Diagrama de Evaluación de Clasificación]{Diagrama de Evaluación de Clasificación}
+	\label{fig:evaluacion}
+\end{figure}
+	
+Los resultados de una clasificación de un métodos en particular se suelen organizar en una matriz de confusión $M_{n \times n}$ para un problema de  clasificación con $N$ clases.
+Esta es una matriz, tal que el elemento $M_{ij}$ es el numero instancias de la clase $i$ que realmente fueron clasificados como clase $j$.
+Los siguientes valores se pueden obtener de la matriz de confusión en un problema de clasificación primaria:
+
+\begin{itemize}
+	\item Verdaderos Positivo (TP): El número de casos positivos que fueron clasificados como positivos.
+	\item Verdaderos Negativo (TN): El número de casos negativos que fueron clasificados como negativos.
+	\item Falso Positivo (FP): El número de casos negativos que fueron clasificados como positivos.
+	\item Falso Negativo (FN): El número de casos positivos que fueron clasificados como negativos.
+\end{itemize}
+
+La precisión es la métrica más estándar para resumir el rendimiento general de la clasificación para todas las clases y se define de la siguiente manera:
+
+\begin{equation}
+Exactitud = \frac{TP + TN}{TP + TN + FP + FN}
+\end{equation}
+
+La precisión, a menudo denominada valor predictivo positivo, es la proporción de casos positivos clasificados correctamente al número total de casos clasificados como positivos:
+\begin{equation}
+\mbox{Precisión} = \frac{TP}{TP + FP}
+\end{equation}
+
+La exhaustividad, también llamado tasa positiva verdadera, es la proporción de instancias positivas correctamente clasificadas al número total de instancias positivas:
+\begin{equation}
+Exhaustividad = \frac{TP}{TP + FN}
+\end{equation}
+
+
+El Valor-F combina precisión y exhaustividad en un solo valor:
+\begin{equation}
+Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión} + Exhaustividad}
+\end{equation}
+
+
+Aunque se definen para la clasificación binaria, estas métricas pueden generalizarse para un problema con n clases. En tal caso, una instancia podría ser positiva o negativa según una clase particular, por ejemplo, los positivos podrían ser todas las instancias de ejecución mientras que los negativos serían todas las instancias distintas de la ejecución.
