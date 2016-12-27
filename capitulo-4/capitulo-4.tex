@@ -219,13 +219,6 @@ el consentimiento del usuario para que este pueda ser rastreado \cite{LaraLabrad
 
 \subsubsection{Señales del Ambiente}
 
-Los sensores de ambiente miden varios atributos del entorno que rodea
-al usuario. Algunas señales como la temperatura del aire, presión
-atmosférica, iluminación, humedad, y el ruido pueden proveer información
-de utilidad para conocer mejor el habitad particular de un usuario.
-En esta categoría están los barómetros, fotómetros, termómetros y
-micrófonos.
-
 Los sensores de ambiente solos no proveen información suficiente ya
 que los individuos pueden realizar las actividades bajo diversas circunstancias
 contextuales en términos de clima, ruido o iluminación. Por lo tanto
@@ -233,6 +226,13 @@ estos sensores pueden utilizarse de manera complementaria para detectar
 sugestiones adicionales, Ej. el usuario está en el exterior de acuerdo
 a la luminosidad, o se encuentra descansando debido a un nivel de
 sonido y luminosidad baja \cite{LaraLabrador2013}.
+
+Los sensores de ambiente miden varios atributos del entorno que rodea
+al usuario. Algunas señales como la temperatura del aire, presión
+atmosférica, iluminación, humedad, y el ruido pueden proveer información
+de utilidad para conocer mejor el habitad particular de un usuario.
+En esta categoría están los barómetros, fotómetros, termómetros y
+micrófonos.
 
 \subsubsection{Señales de Fisiológicas}
 
@@ -333,9 +333,8 @@ promedios variables debido a su simplicidad y aplicabilidad basado
 en otros trabajos como \cite{Yang2009}. El filtro de señal se puede
 definir con la siguiente función $M$ descrita a continuación:
 
-\label{def4:moving-average}\newtheorem{defi}{Definición}
-
-\begin{defi}(\emph{Moving average}) Dada una secuencia $\left\{ a_{i}\right\} _{i=1}^{N}$,
+\label{def4:moving-average}\newtheorem{defi}{Definición}\begin{defi}(\emph{Moving
+average}) Dada una secuencia $\left\{ a_{i}\right\} _{i=1}^{N}$,
 un $n$-\emph{moving average} es una nueva secuencia $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
 definida a partir de $a_{i}$ tomando la media aritmética de las \emph{sub}-secuencias
 de tamaño $n$ donde,
@@ -521,7 +520,7 @@ $m$ representada como ejemplo en la \tabref{tab4:features}.
 \begin{centering}
 \begin{tabular}{|c|c|c|c|}
 \hline 
-$w$ & $f_{0}$ & $\ldots$ & $f_{m}$\tabularnewline
+$w$ & $\mathrm{f}_{0}$ & $\ldots$ & $\mathrm{f}_{m}$\tabularnewline
 \hline 
 \hline 
 $0$ & $2.71$ & \texttt{$\ldots$} & \texttt{$-2.30$}\tabularnewline
@@ -537,19 +536,89 @@ $k-1$ & $2.56$ & \texttt{$\ldots$} & \texttt{$-2.56$}\tabularnewline
 \end{tabular}
 \par\end{centering}
 \caption[Métricas de proceso de extracción]{\label{tab4:features}Métricas procesadas a partir de las medidas
-de entrenamiento}
+de señales}
 \end{table}
 
 
 \section{Clasificador de actividades }
 
-\label{sec45:clasificador}Utiliza las muestras extraídas para construir
-un modelo e predecir qué actividad probable está realizando un individuo
-en un determinado instante.
+\label{sec45:clasificador}Un sistema \abbr{HAR} es similar a cualquier
+aplicación de aprendizaje automático \abbr{ML} donde depende de un
+algoritmo diseñado para extraer información desde los datos. En este
+contexto los patrones son descubiertos a partir de un conjunto de
+observaciones denominadas instancias \cite{LaraLabrador2013}. El
+propósito principal del algoritmo es de clasificar los datos que serán
+obtenidos a futuro. La entrada aplicada a un algoritmo de \abbr{ML}
+es un conjunto de entrenamiento (\emph{training set}) y el resultado
+del mismo es un clasificador (\emph{classifier}) \cite{Rajaraman2011}.
+En esta sección se trata sobre clasificadores supervisados donde el
+conjunto de entrenamiento incluye información acerca de la manera
+correcta de clasificar un subconjunto de datos.
 
 \subsubsection{Clasificación}
 
+Es parte esencial de todo algoritmo de aprendizaje automático supervisado
+contar con un conjunto de instancias de entrenamiento con información
+adicional de clasificación. Cada instancia es un vector característico
+$F_{j}$ calculado a partir de las señales $s$ contenidas en una
+ventana de tiempo $w_{j}$. Como es requerido para todo clasificador
+supervisado el conjunto de entrenamiento debe estar etiquetado con
+una clase conocida así como se muestra en la tabla \tabref{tab4:labeled}.
+La tarea de etiquetado debe ser realizado de forma manual como en
+la sección \ref{ssec44:labeling} o si es posible de forma automática.
+
+\begin{table}[!tbph]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+$w$ & $\mathrm{f}_{0}$ & $\ldots$ & $\mathrm{f}_{m}$ & \emph{Actividad}\tabularnewline
+\hline 
+\hline 
+$0$ & $2.71$ & \texttt{$\ldots$} & \texttt{$-2.30$} & \texttt{\small{}Desconocido}\tabularnewline
+\hline 
+$\ldots$ & $\ldots$ & \texttt{$\ldots$} & \texttt{$\ldots$} & \texttt{$\ldots$}\tabularnewline
+\hline 
+$j$ & $2.91$ & \texttt{$\ldots$} & \texttt{$-2.11$} & \texttt{\small{}Corriendo}\tabularnewline
+\hline 
+$\ldots$ & $\ldots$ & \texttt{$\ldots$} & \texttt{$\ldots$} & \texttt{$\ldots$}\tabularnewline
+\hline 
+$k-1$ & $2.56$ & \texttt{$\ldots$} & \texttt{$-2.56$} & \texttt{\small{}Caminando}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption[Etiquetado de instancias]{\label{tab4:labeled}Etiquetado de instancias de entrenamiento}
+\end{table}
+
+A continuación se define formalmente el marco para algoritmos de aprendizaje
+automático supervisados \abbr{ML} \cite{Rajaraman2011}.
+
+\label{def4:clasificacion}\newtheorem{defi}{Definición}\begin{defi}(Clasificador
+\abbr{ML}) Un algoritmo \abbr{ML} recibe un conjunto entrenamiento
+compuesto por un conjunto de pares $(x,y)$ conocidas como muestras
+de entrenamiento, donde
+\begin{itemize}
+\item $\boldsymbol{x}$ es un \emph{vector} de valores, llamado vector característico.
+\item $y$ es la \emph{etiqueta}, el valor de clasificación para $\boldsymbol{x}$.
+\end{itemize}
+El objetivo del proceso \abbr{ML} es encontrar una función $y=f(\boldsymbol{x})$
+cuya predicción de $y$ asociada a valores desconocidos de $\boldsymbol{x}$
+sea la mejor. En el problema de clasificación multi-clase $y$ es
+un miembro de un conjunto finito de clases y cada miembro representa
+un clase particular.\end{defi}
+
+En el capítulo \ref{chap3:Aprendizaje-Automatico} se construye la
+función $f$ por medio de un algoritmo con un enfoque basado en arboles
+de decisión (\abbr{DT}). La forma de f es un árbol, y cada nodo del
+árbol tiene una función de x que determina que sobre qué nodo hijo
+la búsqueda procede, cada nodo puede tener cualquier número de nodos
+hijos. Los árboles de decisión son preferibles para las clasificación
+binaria o de multi-clases, especialmente cuando la dimensión del vector
+característicos no es muy grande \cite{Rajaraman2011}.
+
 \subsubsection{Reconocimiento}
+
+Explicar la utilización de la funcion F para clasificar y poder retroalimentar
+el modelo de forma online o offline.
 
 \section{Capacidades deseables}
 
