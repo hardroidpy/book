@@ -204,10 +204,11 @@ de estudio del problema \abbr{HAR} en este apartado se describe una
 definición formal del problema. Considerando el objetivo y los elementos
 de reconocimiento podemos definir el problema como\cite{LaraLabrador2013}:
 
-\label{def2:harp}\newtheorem{defi}{Definición}\begin{defi}(Problema
-\abbr{HAR}) Dado un conjunto $S=\{s_{0},...,s_{k-1}\}$ de $k$ series
-de tiempo, cada una con una medida particular de cada atributo, y
-definidas en el intervalo de tiempo $I=\left[t_{\alpha},t_{\omega}\right]$,
+\label{def2:harp}\newtheorem{defs}{Definición}
+
+\begin{defs}(Problema \abbr{HAR}) Dado un conjunto $S=\{s_{0},...,s_{k-1}\}$
+de $k$ series de tiempo, cada una con una medida particular de cada
+atributo, y definidas en el intervalo de tiempo $I=\left[t_{\alpha},t_{\omega}\right]$,
 el objetivo es encontrar una partición temporal (\emph{sub}-intervalo
 de tiempo) $\left\langle I_{0},...,I_{r-1}\right\rangle $ en $I$,
 basado en los datos de $S$ y el conjunto de etiquetas que representan
@@ -216,7 +217,7 @@ corriendo, etc.).
 
 Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos,
 no superpuestos y que ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
-\end{defi}
+\end{defs}
 
 Se asumen que las acciones consideradas no son realizadas simultáneamente,
 es decir la persona no realiza la acción de correr y caminar al mismo
@@ -232,16 +233,17 @@ de la técnica clasificación. Debido a la utilización de aprendizaje
 automático para la resolución del problema, se requiere la siguiente
 definición relajada del problema \abbr{HAR} descrito anteriormente: 
 
-\label{def2:harp-rel}\newtheorem{defi}{Definición}\begin{defi}(Problema
-\abbr{HAR} relajado) Dado (1) un conjunto $W=\{w_{0},...,w_{m-1}\}$
-de $m$ ventanas de tiempo del mismo tamaño, donde cada una está total
-o parcialmente etiquetada, y que cada $w_{j}$ contiene un conjunto
-de series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$ para cada $k$
-atributos medidos, y (2) un conjunto $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$
+\label{def2:harp-rel}\newtheorem{defs}{Definición}
+
+\begin{defs}(Problema \abbr{HAR} relajado) Dado (1) un conjunto
+$W=\{w_{0},...,w_{m-1}\}$ de $m$ ventanas de tiempo del mismo tamaño,
+donde cada una está total o parcialmente etiquetada, y que cada $w_{j}$
+contiene un conjunto de series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$
+para cada $k$ atributos medidos, y (2) un conjunto $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$
 de etiquetas de actividades, el objetivo es encontrar una función
 $f\colon S_{j}\rightarrow A$ que sea evaluada para todos los valores
 posibles de $S_{j}$, tal que $f(S_{j})$ es lo más próximo a la acción
-realizada durante $w_{j}$ \end{defi}
+realizada durante $w_{j}$ \end{defs}
 
 Considerar la utilización de esta definición relajada introduce un
 error en el modelo durante las ventanas de transición entre actividades,
@@ -377,17 +379,17 @@ pudiendo ser en tiempo y frecuencia.
 Varios enfoques de aprendizaje automático se han desarrollado a lo
 largo de los años para resolver el problema de \abbr{HAR}. En su
 mayoría a través de algoritmos de aprendizaje supervisado aunque también
-se han propuesto métodos \emph{semi}-supervisados y no supervisados.
+se han propuesto métodos semisupervisados y no supervisados.
 
 La diferencia entre el aprendizaje supervisado y no supervisado consiste
 en la utilización de datos etiquetados y no etiquetados respectivamente.
-Debido a que el objetivo de un sistema\abbr{HAR} es encontrar una
+Debido a que el objetivo de un sistema \abbr{HAR} es encontrar una
 actividad etiquetada como caminando, corriendo, quieto, etc., la mayoría
-de los sistemas\abbr{HAR} utilizan un enfoque supervisado.
+de los sistemas \abbr{HAR} utilizan un enfoque supervisado.
 
 El aprendizaje automático supervisado, referido como clasificación
 para problemas de clases discretas, ha sido un área bastante productiva
-con varios algoritmos efectivos sumarizados en la tabla\tabref{tab2:metodos-aprendizaje}.
+con varios algoritmos efectivos resumidos en la tabla \tabref{tab2:metodos-aprendizaje}.
 Estas técnicas resuelven otras tareas además de la clasificación como
 la regresión y el agrupamiento.
 

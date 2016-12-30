@@ -446,7 +446,7 @@ name "fig4:componentes-har"
 status open
 
 \begin_layout Plain Layout
-Arquitectura de sistema 
+Componentes 
 \begin_inset ERT
 status open
 
@@ -1107,7 +1107,8 @@ abbr{Android}
 
 \end_inset
 
- que muestra el proceso de triangulación por satélites del sistema 
+ que obtiene la estimación de coordenadas globales al triangular satélites
+ del 
 \begin_inset ERT
 status open
 
@@ -1120,7 +1121,7 @@ abbr{GPS}
 
 \end_inset
 
-, donde el resultado es la estimación de las coordenadas globales.
+.
  
 \end_layout
 
@@ -1156,13 +1157,38 @@ name "fig4:gps"
 status open
 
 \begin_layout Plain Layout
-Coordenadas por GPS.
+Coordenadas por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
 \end_layout
 
 \end_inset
 
-Visualización de satélites y coordenadas globales basada en triagulación
- GPS.
+.
+\end_layout
+
+\end_inset
+
+Visualización de satélites y coordenadas globales basada en 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1639,12 +1665,15 @@ status open
 
 
 \backslash
-newtheorem{defi}{Definición}
+newtheorem{defs}{Definición}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1652,7 +1681,7 @@ status open
 
 
 \backslash
-begin{defi}
+begin{defs}
 \end_layout
 
 \end_inset
@@ -1750,7 +1779,7 @@ status open
 
 
 \backslash
-end{defi}
+end{defs}
 \end_layout
 
 \end_inset
@@ -2533,20 +2562,7 @@ reference "sec261:definicion-har"
 \begin_layout Standard
 El proceso de extracción se traduce en vectores característicos (
 \emph on
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{FV}
-\end_layout
-
-\end_inset
-
-, feature vectors
+feature vectors
 \emph default
 ) con información relevante que componen varias métricas calculadas en base
  a las ventanas 
@@ -2557,7 +2573,7 @@ abbr{FV}
  Las ventanas son transformadas en el dominio de la frecuencia con métodos
  discretos de
 \emph on
-Fourier
+ Fourier
 \emph default
  utilizando algoritmos 
 \begin_inset ERT
@@ -2691,7 +2707,7 @@ medida de tendencia central en el dominio de la frecuencia.
 \end_layout
 
 \begin_layout Standard
-En la
+En la 
 \begin_inset ERT
 status open
 
@@ -3137,7 +3153,7 @@ Se eligió utilizar la magnitud
 \end_layout
 
 \begin_layout Itemize
-Simplicidad para utilizar la técnica de
+Simplicidad para utilizar la técnica de 
 \begin_inset ERT
 status open
 
@@ -3565,7 +3581,7 @@ name "tab4:features"
 
 
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Métricas de proceso de extracción
@@ -3607,8 +3623,8 @@ Por último, se considera que tanto
 \begin_inset Formula $f(S_{j})$
 \end_inset
 
- como resultado de la evaluación, o como parte de los datos y el conjunto
- de entrenamiento.
+ como resultado de una evaluación, o como información en los datos del conjunto
+ entrenamiento.
 \end_layout
 
 \begin_layout Section
@@ -3707,7 +3723,7 @@ Es parte esencial de todo algoritmo de aprendizaje automático supervisado
 \begin_inset Formula $F_{j}$
 \end_inset
 
- calculado a partir de las señales
+ calculado a partir de las señales 
 \begin_inset Formula $s$
 \end_inset
 
@@ -3732,14 +3748,15 @@ tabref{tab4:labeled}
 \end_inset
 
 .
- La tarea de etiquetado debe ser realizado de forma manual como en la sección
+ La tarea de etiquetado debe ser realizada de forma manual como lo citado
+ en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "ssec44:labeling"
 
 \end_inset
 
- o si es posible de forma automática.
+, o aunque difícil pero no imposible manera automática.
 \end_layout
 
 \begin_layout Standard
@@ -4196,19 +4213,6 @@ Etiquetado de instancias de entrenamiento
 \begin_layout Standard
 A continuación se define formalmente el marco para algoritmos de aprendizaje
  automático supervisados
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{ML}
-\end_layout
-
-\end_inset
-
-
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"
@@ -4233,9 +4237,23 @@ status open
 
 
 \backslash
-newtheorem{defi}{Definición}
+newtheorem{defs}{Definición}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
-begin{defi}
+begin{defs}
 \end_layout
 
 \end_inset
@@ -4266,11 +4284,11 @@ abbr{ML}
 
 \end_inset
 
- recibe un conjunto entrenamiento compuesto por un conjunto de pares 
-\begin_inset Formula $(x,y)$
+ recibe un conjunto entrenamiento se compone de varios pares 
+\begin_inset Formula $(\boldsymbol{x},y)$
 \end_inset
 
- conocidas como muestras de entrenamiento, donde
+ conocidos como muestras de entrenamiento, donde
 \end_layout
 
 \begin_layout Itemize
@@ -4292,7 +4310,7 @@ abbr{ML}
 \emph on
  etiqueta
 \emph default
-, el valor de clasificación para
+, el valor de clasificación para 
 \begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
@@ -4317,21 +4335,23 @@ abbr{ML}
 \begin_inset Formula $y=f(\boldsymbol{x})$
 \end_inset
 
- cuya predicción de
+ cuya predicción de 
 \begin_inset Formula $y$
 \end_inset
 
- asociada a valores desconocidos de
+ asociada a valores desconocidos de 
 \begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
  sea la mejor.
- En el problema de clasificación multi-clase 
+ El valor de y corresponden a valores arbitrarios de la siguiente naturaleza.
+ Si 
 \begin_inset Formula $y$
 \end_inset
 
- es un miembro de un conjunto finito de clases y cada miembro representa
- un clase particular.
+ es miembro de un conjunto finito donde cada valor representa una clase
+ particular.
+ El problema es llamado de clasificación de múltiples clases.
 \begin_inset ERT
 status open
 
@@ -4339,7 +4359,7 @@ status open
 
 
 \backslash
-end{defi}
+end{defs}
 \end_layout
 
 \end_inset
@@ -4348,19 +4368,21 @@ end{defi}
 \end_layout
 
 \begin_layout Standard
-En el capítulo
+En el capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "chap3:Aprendizaje-Automatico"
 
 \end_inset
 
- se construye la función
-\begin_inset Formula $f$
+ se explica el algoritmo C4.5 (sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec3:algo-c45"
+
 \end_inset
 
- por medio de un algoritmo con un enfoque basado en arboles de decisión
- (
+) con enfoque basado en arboles de decisión (
 \begin_inset ERT
 status open
 
@@ -4373,20 +4395,25 @@ abbr{DT}
 
 \end_inset
 
-).
- La forma de 
+) para construir la función 
 \begin_inset Formula $f$
 \end_inset
 
- es un árbol, y cada nodo del árbol tiene una función de 
+.
+ La función 
+\begin_inset Formula $f$
+\end_inset
+
+ corresponde a un árbol de múltiples niveles donde cada nodo aplica una
+ función a 
 \begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
- que determina que sobre qué nodo hijo la búsqueda procede, cada nodo puede
- tener cualquier número de nodos hijos.
+ y determina sobre qué nodo hijo procede la búsqueda.
+ Cada nodo posee cualquier número de nodos hijos.
  Los árboles de decisión son preferibles para las clasificación binaria
- o de multi-clases, especialmente cuando la dimensión del vector característicos
- no es muy grande
+ o de múltiples clases, especialmente cuando la dimensión del vector característ
+icos no es muy grande
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"
@@ -4401,8 +4428,61 @@ Reconocimiento
 \end_layout
 
 \begin_layout Standard
-Explicar la utilización de la función f para clasificar y poder retroalimentar
- el modelo de forma online o offline.
+Uno de los temas importantes acerca de los algoritmos de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ es la manera en que los datos son tratados y utilizados para construir
+ un modelo de reconocimiento efectivo al clasificar datos desconocidos.
+ Al tratar con los datos, es una buena estrategia partir el conjunto de
+ entrenamiento (
+\emph on
+training set
+\emph default
+) disponible y separar un remanente conocido como conjunto de validación
+ (
+\emph on
+test set
+\emph default
+).
+ El problema de los algoritmos de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ es el sobre ajuste (
+\emph on
+overfit
+\emph default
+), es decir, la clasificación resulta como se espera en el conjunto de entrenami
+ento pero ante la mínima variación en datos desconocidos de una población
+ más grande el resultado es atípico o con errores de clasificación 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rajaraman2011"
+
+\end_inset
+
+.
+ Con este conjunto de validación se puede evaluar el clasificador determinando
+ si se sobre ajustan los resultados.
 \end_layout
 
 \begin_layout Section

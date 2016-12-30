@@ -70,7 +70,7 @@ de los componentes y sus interrelaciones. Las funcionalidades de cada
 componente se describen a continuación. 
 
 \begin{figure}[!tbph]
-\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption[Arquitectura de sistema \abbr{HAR}]{\label{fig4:componentes-har}Componentes de los sistemas \abbr{HAR}}
+\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption[Componentes \abbr{HAR}]{\label{fig4:componentes-har}Componentes de los sistemas \abbr{HAR}}
 \end{figure}
 
 
@@ -196,16 +196,15 @@ coordenadas del \abbr{WGS} cuyos valores globales oscilan entre -180
 a 180 en longitud, y -90 a 90 en latitud.
 
 En la \figref{fig4:gps} se muestra una aplicación móvil para \abbr{Android}
-que muestra el proceso de triangulación por satélites del sistema
-\abbr{GPS}, donde el resultado es la estimación de las coordenadas
-globales. 
+que obtiene la estimación de coordenadas globales al triangular satélites
+del \abbr{GPS}. 
 
 \begin{figure}[!tbph]
 \begin{centering}
 \includegraphics[scale=0.8]{capitulo-4/graphics/gps}
 \par\end{centering}
-\caption[Coordenadas por GPS.]{\label{fig4:gps}Visualización de satélites y coordenadas globales
-basada en triagulación GPS.}
+\caption[Coordenadas por \abbr{GPS}.]{\label{fig4:gps}Visualización de satélites y coordenadas globales
+basada en \abbr{GPS}.}
 \end{figure}
 
 Sin embargo, los \abbr{GPS} tienen cobertura limitada por la dificultad
@@ -333,8 +332,9 @@ promedios variables debido a su simplicidad y aplicabilidad basado
 en otros trabajos como \cite{Yang2009}. El filtro de señal se puede
 definir con la siguiente función $M$ descrita a continuación:
 
-\label{def4:moving-average}\newtheorem{defi}{Definición}\begin{defi}(\emph{Moving
-average}) Dada una secuencia $\left\{ a_{i}\right\} _{i=1}^{N}$,
+\label{def4:moving-average}\newtheorem{defs}{Definición}
+
+\begin{defs}(\emph{Moving average}) Dada una secuencia $\left\{ a_{i}\right\} _{i=1}^{N}$,
 un $n$-\emph{moving average} es una nueva secuencia $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
 definida a partir de $a_{i}$ tomando la media aritmética de las \emph{sub}-secuencias
 de tamaño $n$ donde,
@@ -354,7 +354,7 @@ S_{2} & = & \frac{1}{2}(a_{1}+a_{2},a_{2}+a_{3},...,a_{n-1}+a_{n})
 S_{3}=\frac{1}{3}(a_{1}+a_{2}+a_{3},a_{2}+a_{3}+a_{4},...,a_{n-2}+a_{n-1}+a_{n})
 \end{equation}
 
-y así sucesivamente.\end{defi}
+y así sucesivamente.\end{defs}
 
 Como ejemplo, en la \figref{fig4:filter-maf} se despliegan las gráficas
 de una señal de aceleración $a_{y}$ para la dimensión $y$ y su correspondiente
@@ -449,12 +449,11 @@ necesario extraer valores característicos en cada ventana $w_{j}$
 por medio del filtro de información relevante y el calculo de valores
 que identifiquen de cierta manera a las señales. 
 
-El proceso de extracción se traduce en vectores característicos (\emph{\abbr{FV},
-feature vectors}) con información relevante que componen varias métricas
-calculadas en base a las ventanas $w_{j}$ en el dominio del tiempo.
-Las ventanas son transformadas en el dominio de la frecuencia con
-métodos discretos de\emph{Fourier} utilizando algoritmos \abbr{FFT}
-con números reales. 
+El proceso de extracción se traduce en vectores característicos (\emph{feature
+vectors}) con información relevante que componen varias métricas calculadas
+en base a las ventanas $w_{j}$ en el dominio del tiempo. Las ventanas
+son transformadas en el dominio de la frecuencia con métodos discretos
+de\emph{ Fourier} utilizando algoritmos \abbr{FFT} con números reales. 
 
 Los métodos de cálculo pueden ser de tipos estadísticos y estructurales
 \cite{LaraLabrador2013} en base a lo propuesto por otros trabajos
@@ -484,7 +483,7 @@ de 4to orden.
 \item \textbf{Promedio en frecuencia:}medida de tendencia central en el
 dominio de la frecuencia.
 \end{enumerate}
-En la\tabref{tab4:metricas} se resumen las métricas enumeradas anteriormente
+En la \tabref{tab4:metricas} se resumen las métricas enumeradas anteriormente
 en el orden establecido junto con el nombre de función y la formulación
 matemática correspondiente para una señal dada$s$ en cualquier ventana$w_{j}$
 de tamaño$n$.
@@ -537,7 +536,7 @@ Se eligió utilizar la magnitud $\lVert a\rVert$ del vector excluyendo
 los valores unitarios en cada dimensión $a_{x}$,$a_{y}$,$a_{z}$
 por los siguientes motivos:
 \begin{itemize}
-\item Simplicidad para utilizar la técnica de\abbr{DT}
+\item Simplicidad para utilizar la técnica de \abbr{DT}
 \item Para cancelar el efecto de variaciones en la orientación del teléfono\cite{Schneider2014}
 \item Reducir la dimensión de características (Ej. a un tercio) evitando
 sobre-ajustes (\emph{overfitting}).
@@ -574,7 +573,7 @@ de señales}
 Por último, se considera que tanto $S_{j}$ como $F_{j\ensuremath{}}$
 tienen relación con al menos una etiqueta $\mathrm{a}_{k}$ particular
 del conjunto $A$ ya sea debido a la función $f(S_{j})$ como resultado
-de la evaluación, o como parte de los datos y el conjunto de entrenamiento.
+de una evaluación, o como información en los datos del conjunto entrenamiento.
 
 \section{Clasificador de actividades }
 
@@ -596,12 +595,13 @@ de clasificar un subconjunto de datos.
 Es parte esencial de todo algoritmo de aprendizaje automático supervisado
 contar con un conjunto de instancias de entrenamiento con información
 adicional de clasificación. Cada instancia es un vector característico
-$F_{j}$ calculado a partir de las señales$s$ contenidas en una ventana
-de tiempo $w_{j}$. Como es requerido para todo clasificador supervisado
-el conjunto de entrenamiento debe estar etiquetado con una clase conocida
-así como se muestra en la tabla \tabref{tab4:labeled}. La tarea de
-etiquetado debe ser realizado de forma manual como en la sección\ref{ssec44:labeling}
-o si es posible de forma automática.
+$F_{j}$ calculado a partir de las señales $s$ contenidas en una
+ventana de tiempo $w_{j}$. Como es requerido para todo clasificador
+supervisado el conjunto de entrenamiento debe estar etiquetado con
+una clase conocida así como se muestra en la tabla \tabref{tab4:labeled}.
+La tarea de etiquetado debe ser realizada de forma manual como lo
+citado en la sección \ref{ssec44:labeling}, o aunque difícil pero
+no imposible manera automática.
 
 \begin{table}[!tbph]
 \begin{centering}
@@ -626,35 +626,49 @@ $k-1$ & $2.56$ & \texttt{$\ldots$} & \texttt{$-2.56$} & \texttt{\small{}Caminand
 \end{table}
 
 A continuación se define formalmente el marco para algoritmos de aprendizaje
-automático supervisados\abbr{ML}\cite{Rajaraman2011}.
+automático supervisados\cite{Rajaraman2011}.
 
-\label{def4:clasificacion}\newtheorem{defi}{Definición}\begin{defi}(Clasificador\abbr{ML})
-Un algoritmo\abbr{ML} recibe un conjunto entrenamiento compuesto
-por un conjunto de pares $(x,y)$ conocidas como muestras de entrenamiento,
-donde
+\label{def4:clasificacion}\newtheorem{defs}{Definición}
+
+\begin{defs}(Clasificador\abbr{ML}) Un algoritmo\abbr{ML} recibe
+un conjunto entrenamiento se compone de varios pares $(\boldsymbol{x},y)$
+conocidos como muestras de entrenamiento, donde
 \begin{itemize}
 \item $\boldsymbol{x}$ es un\emph{ vector} de valores, llamado vector característico.
-\item $y$ es la\emph{ etiqueta}, el valor de clasificación para$\boldsymbol{x}$.
+\item $y$ es la\emph{ etiqueta}, el valor de clasificación para $\boldsymbol{x}$.
 \end{itemize}
 El objetivo del proceso\abbr{ML} es encontrar una función $y=f(\boldsymbol{x})$
-cuya predicción de$y$ asociada a valores desconocidos de$\boldsymbol{x}$
-sea la mejor. En el problema de clasificación multi-clase $y$ es
-un miembro de un conjunto finito de clases y cada miembro representa
-un clase particular.\end{defi}
+cuya predicción de $y$ asociada a valores desconocidos de $\boldsymbol{x}$
+sea la mejor. El valor de y corresponden a valores arbitrarios de
+la siguiente naturaleza. Si $y$ es miembro de un conjunto finito
+donde cada valor representa una clase particular. El problema es llamado
+de clasificación de múltiples clases.\end{defs}
 
-En el capítulo\ref{chap3:Aprendizaje-Automatico} se construye la
-función$f$ por medio de un algoritmo con un enfoque basado en arboles
-de decisión (\abbr{DT}). La forma de $f$ es un árbol, y cada nodo
-del árbol tiene una función de $\boldsymbol{x}$ que determina que
-sobre qué nodo hijo la búsqueda procede, cada nodo puede tener cualquier
-número de nodos hijos. Los árboles de decisión son preferibles para
-las clasificación binaria o de multi-clases, especialmente cuando
-la dimensión del vector característicos no es muy grande\cite{Rajaraman2011}.
+En el capítulo \ref{chap3:Aprendizaje-Automatico} se explica el algoritmo
+C4.5 (sección \ref{sec3:algo-c45}) con enfoque basado en arboles
+de decisión (\abbr{DT}) para construir la función $f$. La función
+$f$ corresponde a un árbol de múltiples niveles donde cada nodo aplica
+una función a $\boldsymbol{x}$ y determina sobre qué nodo hijo procede
+la búsqueda. Cada nodo posee cualquier número de nodos hijos. Los
+árboles de decisión son preferibles para las clasificación binaria
+o de múltiples clases, especialmente cuando la dimensión del vector
+característicos no es muy grande\cite{Rajaraman2011}.
 
 \subsubsection{Reconocimiento}
 
-Explicar la utilización de la función f para clasificar y poder retroalimentar
-el modelo de forma online o offline.
+Uno de los temas importantes acerca de los algoritmos de \abbr{ML}
+es la manera en que los datos son tratados y utilizados para construir
+un modelo de reconocimiento efectivo al clasificar datos desconocidos.
+Al tratar con los datos, es una buena estrategia partir el conjunto
+de entrenamiento (\emph{training set}) disponible y separar un remanente
+conocido como conjunto de validación (\emph{test set}). El problema
+de los algoritmos de \abbr{ML} es el sobre ajuste (\emph{overfit}),
+es decir, la clasificación resulta como se espera en el conjunto de
+entrenamiento pero ante la mínima variación en datos desconocidos
+de una población más grande el resultado es atípico o con errores
+de clasificación \cite{Rajaraman2011}. Con este conjunto de validación
+se puede evaluar el clasificador determinando si se sobre ajustan
+los resultados.
 
 \section{Capacidades deseables}
 

@@ -768,9 +768,23 @@ status open
 
 
 \backslash
-newtheorem{defi}{Definición}
+newtheorem{defs}{Definición}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
-begin{defi}
+begin{defs}
 \end_layout
 
 \end_inset
@@ -838,13 +852,13 @@ Esto implica que cada intervalo
 
  
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-end{defi}
+end{defs}
 \end_layout
 
 \end_inset
@@ -911,9 +925,23 @@ status open
 
 
 \backslash
-newtheorem{defi}{Definición}
+newtheorem{defs}{Definición}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
-begin{defi}
+begin{defs}
 \end_layout
 
 \end_inset
@@ -974,13 +1002,13 @@ abbr{HAR}
 
  
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-end{defi}
+end{defs}
 \end_layout
 
 \end_inset
@@ -1514,17 +1542,13 @@ abbr{HAR}
 
 .
  En su mayoría a través de algoritmos de aprendizaje supervisado aunque
- también se han propuesto métodos 
-\emph on
-semi
-\emph default
--supervisados y no supervisados.
+ también se han propuesto métodos semisupervisados y no supervisados.
 \end_layout
 
 \begin_layout Standard
 La diferencia entre el aprendizaje supervisado y no supervisado consiste
  en la utilización de datos etiquetados y no etiquetados respectivamente.
- Debido a que el objetivo de un sistema
+ Debido a que el objetivo de un sistema 
 \begin_inset ERT
 status open
 
@@ -1538,7 +1562,7 @@ abbr{HAR}
 \end_inset
 
  es encontrar una actividad etiquetada como caminando, corriendo, quieto,
- etc., la mayoría de los sistemas
+ etc., la mayoría de los sistemas 
 \begin_inset ERT
 status open
 
@@ -1557,7 +1581,7 @@ abbr{HAR}
 \begin_layout Standard
 El aprendizaje automático supervisado, referido como clasificación para
  problemas de clases discretas, ha sido un área bastante productiva con
- varios algoritmos efectivos sumarizados en la tabla
+ varios algoritmos efectivos resumidos en la tabla 
 \begin_inset ERT
 status open
 
