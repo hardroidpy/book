@@ -7,9 +7,9 @@ Hace apenas una década, que los teléfonos móviles pasaron de ser simples
 aparatos de comunicación, a ser dispositivos de información que se
 han extendido en todo el mundo como el dispositivo electrónico más
 utilizado de manera diaria. Desde la aparición de los teléfonos móviles
-modernos (\emph{Smartphones}, o teléfonos inteligentes) con pantalla
-táctil, la convergencia en el uso de teléfonos móviles, las redes
-de datos e Internet ha ido aumentando gradualmente \cite{Fling2009}.
+modernos (\abbr{Smartphones}) con pantalla táctil, la convergencia
+en el uso de teléfonos móviles, las redes de datos e Internet ha ido
+aumentando gradualmente \cite{Fling2009}.
 
 La capacidad y prestaciones de los teléfonos móviles modernos han
 mejorado drásticamente, ya que fusiona los aspectos de teléfonos móviles
@@ -29,19 +29,19 @@ por la acción que el usuario realizar en su entorno \cite{Fling2009}.
 En este último caso, el contexto físico de un usuario involucra a
 su ubicación y su actividad humana. 
 
-El reconocimiento de actividades humanas (\abbr{HAR}, \emph{Human
-Activity Recognition}) es un tópico de investigación que busca diseñar
-algoritmos que provean información acerca del contexto de uno o más
-individuos a partir de datos ambiguos capturados en su entorno \cite{Bao2004}.
-Reconocer el contexto es un componente primordial de los sistemas
-inteligentes y cognitivos, este forma parte de un proceso más complejo,
-donde contribuye en las etapas de análisis y captura de datos a través
-de sensores externos o adjuntos a los individuos \cite{ReyesOrtiz2015,Chen2012}.
-Los avances recientes en las tecnologías de computación móvil y sensores
-tales como: la miniaturización, bajo consumo, buenas prestaciones,
-buena conectividad y el procesamiento de datos, hizo que proliferara
-el uso de los teléfonos móviles modernos con sistemas inteligentes
-que monitorizan las acciones del usuario en su vida diaria. 
+El reconocimiento de actividades humanas (\abbr{HAR}) es un tópico
+de investigación que busca diseñar algoritmos que provean información
+acerca del contexto de uno o más individuos a partir de datos ambiguos
+capturados en su entorno \cite{Bao2004}. Reconocer el contexto es
+un componente primordial de los sistemas inteligentes y cognitivos,
+este forma parte de un proceso más complejo, donde contribuye en las
+etapas de análisis y captura de datos a través de sensores externos
+o adjuntos a los individuos \cite{ReyesOrtiz2015,Chen2012}. Los avances
+recientes en las tecnologías de computación móvil y sensores tales
+como: la miniaturización, bajo consumo, buenas prestaciones, buena
+conectividad y el procesamiento de datos, hizo que proliferara el
+uso de los teléfonos móviles modernos con sistemas inteligentes que
+monitorizan las acciones del usuario en su vida diaria. 
 
 Diseñar sistemas móviles inteligentes, o aplicaciones móviles de contexto,
 que reconozcan las actividades de un individuo, Ej. Si está caminando,
@@ -76,14 +76,14 @@ estas conducen a la expansión y el crecimiento de aplicaciones contextuales
 \cite{Tanenbaum2010}. Sin embargo, a pesar de promoverse plataformas
 abiertas, existe aún una carencia de proyectos colaborativos de código
 abierto que contribuyan al desarrollo de sistemas inteligentes de
-contexto, a excepción de ciertos precedentes (véase \cite{Kwapisz2011,LaraLabrador2013})
-que han hecho esfuerzos iniciales u otras iniciativas como \cite{FUNF2016}
-y \cite{SensingKit2016} orientados a la colaboración.
+contexto, a excepción de ciertos precedentes (como \cite{Kwapisz2011,LaraLabrador2013})
+u otras iniciativas como \cite{FUNF2016} y \cite{SensingKit2016}
+más orientados a la colaboración.
 
-Desde que los teléfonos móviles modernos conectados constantemente
+Desde que los teléfonos móviles modernos están conectados constantemente
 Internet el acceso a la Web\footnote{World Wide Web} se ha popularizando.
 Esto impulsó a que la computación móvil haya crecido enormemente,
-y también ha crecido el uso de la Web (cfr. \cite{NYTimes2008iph}).
+y también haya crecido el uso de la Web (cfr. \cite{NYTimes2008iph}).
 Esto fomenta un ámbito de trabajo colaborativo, distribuido y móvil
 donde un grupo masivo de personas pueden aportar a un propósito común,
 ya sea como sujetos de estudio en el reconocimiento de actividades
@@ -92,18 +92,17 @@ contextuales.
 
 \section{Planteamiento del problema}
 
-\label{sec11:planteamiento}
-
-El reconocimiento de actividades humanas es un tópico de investigación
-que data desde los noventa (90), y a la actualidad sigue atrayendo
-bastante interés ya que abarca varias áreas de estudio con aplicaciones
-novedosas. Algunas de estas áreas son la computación ubicua, la computación
-móvil, y la computación contextual; también la seguridad por vigilancia,
-las viviendas asistidas y los ambientes inteligentes, etc.\cite{Chen2012}. 
+\label{sec11:planteamiento}El reconocimiento de actividades humanas
+es un tópico de investigación que data desde los noventa (90), y a
+la actualidad sigue atrayendo bastante interés ya que abarca varias
+áreas de estudio con aplicaciones novedosas. Algunas de estas áreas
+son la computación ubicua, la computación móvil, y la computación
+contextual; también la seguridad por vigilancia, las viviendas asistidas
+y los ambientes inteligentes, etc.\cite{Chen2012}. 
 
 Reconocer actividades humanas consiste en comprender las acciones
 e interacciones de las personas con su entorno a través de la integración
-de sensores y el razonamiento\cite{ReyesOrtiz2015}. Las actividades
+de sensores y el razonamiento \cite{ReyesOrtiz2015}. Las actividades
 humanas se pueden catalogar en diferentes tipos y según el nivel de
 detalle \cite{Chen2012}. Poniendo énfasis en las actividades básicas
 que un individuo puede realizar, podemos destacar las acciones físicas
@@ -115,14 +114,13 @@ etc. \cite{LaraLabrador2013}.
 
 El problema del reconocimiento de actividades humanas conlleva un
 proceso complejo que se resume en la utilización de técnicas de aprendizaje
-automático supervisado (\abbr{ML}, \emph{Machine Learning}), con
-un modelo de inferencia construido en dos etapas: entrenamiento y
-evaluación \cite{LaraLabrador2013,Kwapisz2011}. El proceso se puede
-resumir en un flujo iterativo que consiste en \cite{Bao2004}:
+automático (\abbr{ML}), donde se utiliza un modelo de inferencia
+construido en dos etapas: entrenamiento y evaluación \cite{LaraLabrador2013,Kwapisz2011}.
+El proceso se puede resumir en un flujo iterativo que consiste en
+\cite{Bao2004}:
 \begin{itemize}
-\item Recolectar datos etiquetados de un conjunto de individuos de forma
-supervisada. 
-\item Extraer variables predictoras con atributos relevantes al estudio.
+\item Recolectar datos etiquetados de un conjunto de individuos. 
+\item Extraer variables con atributos relevantes al estudio.
 \item Construir un modelo de predicción de actividades humanas.
 \item Detectar con cierta precisión el conjunto de actividades previamente
 etiquetadas utilizando como entrada un conjunto de datos no etiquetados.
@@ -147,70 +145,68 @@ humanas.
 
 \section{Justificación}
 
-\label{sec12:justificaciuxf3n}
+\label{sec12:justificaciuxf3n}Construir un sistema \abbr{HAR} requiere
+uno o más sensores que observen oportunamente a sus usuarios. Los
+teléfonos móviles modernos con múltiples sensores de bajo consumo
+tiene el tamaño y las condiciones adecuadas para capturar datos de
+manera ubicua. Comúnmente los teléfonos modernos se componen de varios
+sensores como: localización (\abbr{GPS}), brújula, aceleración, audio
+(micrófonos), vídeo (cámaras), luminosidad, temperatura, barómetro
+y otros \cite{Kwapisz2011}.
 
-Para construir sistemas \abbr{HAR} se requiere utilizar uno o más
-sensores que midan datos del entorno de un usuario. Los teléfonos
-móviles modernos poseen múltiples sensores de bajo consumo, con el
-tamaño y las condiciones adecuadas para la capturar datos de manera
-ubicua. Comúnmente los teléfonos modernos se componen de sensores
-de: localización (\abbr{GPS}, \emph{Global Positioning System}),
-brújula, aceleración, audio (micrófonos) y vídeo (cámaras), luminosidad,
-temperatura, barómetro y otros \cite{Kwapisz2011}.
-
-El sensor de aceleración\footnote{acelerómetro} mide el movimiento
-en dos o tres dimensiones y que al ser combinado con otros sensores
-puede detectar la orientación del dispositivo. Estas medidas inerciales
+El sensor de aceleración\footnote{acelerómetro} es el que mide el
+movimiento en varias dimensiones, y siendo combinado con otros puede
+detectar la orientación del dispositivo. Las medidas de movimiento
 proveen información crucial para el reconocimiento de actividades
-humanas con un bajo consumo de energía. El sensor de localización
-y podómetro (contador de pasos) también son útiles pero poseen limitaciones
-adicionales como la disponibilidad, cobertura y consumo de energía.
-Adicionalmente, los teléfonos modernos tienen capacidad de almacenamiento
-y procesamiento, una buena conectividad por lo que son plataformas
-ideales para construir sistemas de reconocimiento autónomos.
+humanas con un bajo consumo de energía. Los sensores de localización
+y podómetro (contador de pasos) también son utilizados pero con ciertas
+limitantes tales como la disponibilidad, cobertura y consumo de energía.
+Adicionalmente, los teléfonos modernos poseen capacidades de almacenamiento
+y procesamiento, además de buena conectividad por lo que son instrumentos
+ideales para construir sistemas autónomos.
 
-La combinación de capacidad, tamaño diminuto y bajo costo hace que
-estos dispositivos sean portados en cualquier lugar por sus usuarios,
-esto permitiría recolectar los datos bajo condiciones realistas, una
-ventaja ideal sobre obtener muestras supervisadas durante un experimento
-de laboratorio \cite{Bao2004}. 
+La capacidad, tamaño diminuto y bajo costo cooperan a bien a los dispositivos
+sean portados en cualquier momento y lugar por los usuarios, esto
+permitiría recolectar información de manera oportuna y bajo condiciones
+realistas, una ventaja bastante ideal a que obtener muestras bajo
+supervisión como un experimento de laboratorio \cite{Bao2004}. 
 
-La conocimiento acerca del estado de los sistemas \abbr{HAR} es bastante
-extensa, esta abarca las técnicas de reconocimiento, los métodos de
-captura y el procesamiento de datos sensoriales\cite{LaraLabrador2012,Kwapisz2011}.
-Sin embargo, a pesar de estar definida la arquitectura de los sistemas
-\abbr{HAR} aún existen escasez de componentes de software para teléfonos
-móviles que puedan ser utilizados sin depender de librerías privadas,
-Ej. \emph{Google Play Services} (\abbr{API}, \emph{Application Programming
-Interface}) \cite{Google2016l}, o servicios alojados en Internet
-(\abbr{SaaS}, \emph{Software as a Service}), o aplicaciones distribuidas
-por terceros, Ej. \emph{Lifelog}.
+El cuerpo de conocimiento acerca de los sistemas \abbr{HAR} es bastante
+extensa, se abarcan varias técnicas de reconocimiento, métodos de
+recolección y procesamiento de señales sensoriales \cite{LaraLabrador2012,Kwapisz2011}.
+Sin embargo, a pesar de la buena literatura en la arquitectura de
+los sistemas \abbr{HAR}, aún es escasa la disponibilidad del software
+como un componente abierto que puedan ser utilizados y extendidos
+sin depender de librerías (\abbr{API}) privadas, Ej. \emph{Google
+Play Services} \cite{Google2016l}, o servicios en Internet (\abbr{SaaS}),
+o aplicaciones distribuidas por terceros, Ej. \emph{Sony Lifelog}
+\cite{Sony2016l}.
 
-Las iniciativas de desarrollo de software libre hacen posible un enfoque
-colaborativo en dos dimensiones, por un lado la construcción y disponibilidad
-del software como una librería de reconocimiento, y por otro de los
-datos utilizados para el entrenamiento de un modelo de predicción
-de actividades.
+Cualquier iniciativa de software libre hace posible un enfoque colaborativo
+varias dimensiones, por un lado la colaboración en construir un componente
+de software como una librería, la disponibilidad utilización del mismo,
+y también compartir los datos de entrenamiento y evaluación del modelo
+de predicción de actividades para una mejora continua.
 
 \section{Alcance y Objetivos}
 
-\label{sec13:alcance-y-objetivos}
-
-Este trabajo se centra en el reconocimiento de actividades humanas
-con teléfonos móviles modernos utilizando sensores y aportar una componente
-de software en formato de librería de código abierto que sea libremente
-distribuida. Durante la recolección de datos y las pruebas se desarrollará
-adicionalmente una aplicación móvil que demuestre la efectividad de
-la librería como componente de software independiente. También se
-evaluará el sistema de reconocimiento de actividades basado en aprendizaje
-automático en comparación con otras soluciones equivalentes.
+\label{sec13:alcance-y-objetivos}Este trabajo se centra en el reconocimiento
+de actividades humanas (\abbr{HAR}) con teléfonos móviles modernos
+(\{Smartphones}) basados en \abbr{Android} utilizando sensores,
+donde se busca aportar un componente de software en forma de librería
+de código abierto que sea libremente distribuida. Durante la recolección
+de datos y las pruebas se desarrollará adicionalmente una aplicación
+móvil que demuestre la efectividad de la librería como componente
+de software independiente. También se evaluará el sistema de reconocimiento
+de actividades basado en aprendizaje automático en comparación con
+otras soluciones equivalentes.
 
 Se abarca la revisión del marco teórico de los sistemas \abbr{HAR}
 con el objetivo de exponer las metodologías empleadas en la actualidad.
 El contenido principal del trabajo se compone de la construcción y
 diseño de una librería cliente y un servicio para la plataforma \emph{\abbr{Android}}
-que atienda a las llamadas de procedimiento del sistema (\abbr{IPC},
-\emph{Inter Process Communication}) de reconocimiento de actividades. 
+que atienda a las llamadas de procedimiento del sistema (\abbr{IPC})
+de reconocimiento de actividades. 
 
 Dentro de la implementación del sistema \abbr{HAR} se incluirá un
 modelo colaborativo capaz de actualizarse constantemente, a nuestro
@@ -221,18 +217,17 @@ de forma anónima y en condiciones reales.
 Además se implementará un servicio en Internet de captura de muestras
 y predicciones para evaluar y/o actualizar el modelo de predicción
 para futuras versiones. El modelo de aprendizaje automático se basará
-en la técnica por árboles de decisión (\abbr{DT}, \emph{Decision
-Trees}). Finalmente, para evaluar el componente se creará una aplicación
-móvil para recolectar muestras y evaluar el resultado de predicción
-utilizando el sistema de reconocimiento propuesto.
+en la técnica por árboles de decisión (\abbr{DT}). Finalmente, para
+evaluar el componente se creará una aplicación móvil para recolectar
+muestras y evaluar el resultado de predicción utilizando el sistema
+de reconocimiento propuesto.
 
 \subsection{Objetivo General}
 
-\label{sec13:objetivo-general}
-
-Implementar un sistema de reconocimiento de actividades humanas con
-teléfonos móviles cuyo principal aporte sea un componente de software
-en forma de librería de código abierto y libremente distribuido.
+\label{sec13:objetivo-general}Implementar un sistema de reconocimiento
+de actividades humanas con teléfonos móviles cuyo principal aporte
+sea un componente de software en forma de librería de código abierto
+y libremente distribuido.
 
 \subsection{Objetivos Específicos}
 
@@ -255,33 +250,31 @@ para uso en teléfonos móviles modernos con la plataforma \abbr{Android}.
 
 \section{Organización del trabajo}
 
-\label{sec14:organizaciuxf3n-del-trabajo}
-
-Este trabajo se centra en el diseño e implementación de un sistema
-\abbr{HAR} utilizando teléfonos móviles modernos basados en \abbr{Android}.
-El trabajo está organizado en las siguientes partes: en el Capítulo
-\ref{chap2:marco-teorico} se definen las ideas generales relevantes
-al área de estudio para crear sistemas \abbr{HAR} con miras a generalizar
-la perspectiva acerca del problema de abordado. El Capítulo \ref{chap3:Aprendizaje-Automatico}
+\label{sec14:organizaciuxf3n-del-trabajo}Este trabajo se centra en
+el diseño e implementación de un sistema \abbr{HAR} utilizando teléfonos
+móviles modernos (\{Smartphones}) basados en \abbr{Android}. El
+trabajo está organizado en las siguientes partes: en el Capítulo \ref{chap2:marco-teorico}
+se definen las ideas generales relevantes al área de estudio para
+crear sistemas \abbr{HAR} con miras a generalizar la perspectiva
+acerca del problema de abordado. El Capítulo \ref{chap3:Aprendizaje-Automatico}
 examina los detalles acerca de las practicas sobre el aprendizaje
 automático, los tipos de aprendizajes, las distintas técnicas o enfoques
 aplicados, dando un énfasis especial en los arboles de decisión. Estos
 capítulos resumen el estado del arte en el área de los sistemas \abbr{HAR}.
 
 El Capítulo \ref{chap4:sistemas-de-reconocimiento} explica en detalle
-la arquitectura de los sistema \abbr{HAR} para dispositivos móviles
+la arquitectura de los sistemas \abbr{HAR} para dispositivos móviles
 junto con las consideraciones generales de diseño e implementación
 tomadas en cuenta en este trabajo. En el Capítulo \ref{chap5:hardroid}
-se introduce la propuesta de implementación de un reconocedor de actividades
+se detalla la propuesta de implementación de un reconocedor de actividades
 humanas colaborativo y en linea utilizando la plataforma \abbr{Android}.
 
-El Capítulo \ref{chap6:experimentos} presenta los protocolos realizados
-para obtener datos experimentales necesarios para conducir los experimentos
+El Capítulo \ref{chap6:evaluaci=0000F3n} presentan los protocolos
+realizados para obtener datos de entrenamiento para conducir los experimentos
 de este trabajo, se incluyen las pruebas supervisadas y la validación
-de los datos. En el Capítulo \ref{chap7:resultados} se expone la
-evaluación en base a los resultados obtenidos durante las pruebas
-del sistema \abbr{HAR} propuesto instalado en teléfonos móviles y
-utilizado en condiciones reales. 
+de los datos. También se expone la evaluación en base a los resultados
+obtenidos durante las pruebas del sistema \abbr{HAR} propuesto: instalado
+en teléfonos móviles y utilizado en condiciones reales. 
 
 Para finalizar, en el Capítulo \ref{cap8:conclusiones-y-trabajos-futuros}
 se resumen los logros y los posibles trabajos futuros relacionados

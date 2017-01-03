@@ -82,7 +82,7 @@ son un conjunto de dispositivos que se ubican en el entorno y miden
 propiedades físicas del mismo, a las personas que rodean, y la interacción
 entre los mismos. Existe una amplia variedad de sensores ambientales,
 como micrófonos, cámaras de vídeo, sensores de presencia, termómetros
-y sensores de profundidad (Ej. el sensor\abbr{Kinect}). 
+y sensores de profundidad (Ej. el sensor \abbr{Kinect}). 
 
 Varios trabajos exploran el uso de sensores ambientales para el reconocimiento
 de actividades humanas de acciones cotidianas. Entre ellos lo expuesto
@@ -107,7 +107,7 @@ algunos cuentan con conexiones inalámbricas (Ej. \abbr{WIFI}/\abbr{Bluetooth})
 para la transmisión de las señales. Las señales de movimiento y fisiológicas
 obtenidas por los sensores pueden ser temperatura de la piel, frecuencia
 cardíaca, conductividad, posicionamiento por \abbr{GPS} y también
-los movimientos del cuerpo. Todos estas mediciones son útiles para
+los movimientos del cuerpo. Todas estas mediciones son útiles para
 tener una constante información del estado de un individuo en cualquier
 momento.
 
@@ -124,8 +124,8 @@ los satélites de navegación \abbr{GPS}. Provee información de contexto
 bastante relevante acerca de la posición del individuo, además de
 ciertas medidas de movimiento pero con un consumo moderado de energía.
 \item [{Fisiología}] miden signos vitales del individuo como el ritmo cardíaco
-(\abbr{HRM}, \emph{Hearth Rate Monitor}), la temperatura del cuerpo,
-el ritmo de respiración, entre otros.
+(\abbr{HRM}), la temperatura del cuerpo, el ritmo de respiración,
+entre otros.
 \item [{Ambiente}] miden datos externos que rodean al individuo como el
 nivel de ruido, la humedad y/o la temperatura. Los sensores de luz,
 cámara, micrófonos y termómetros miden estas señales. 
@@ -164,7 +164,7 @@ Es decir, es necesario utilizar algoritmos de aprendizaje automático
 (\abbr{ML}) como herramientas construir, analizar e inferir actividades
 por medio de un modelo que utiliza una gran cantidad de datos medidos
 con anterioridad en conjunto con el comportamiento observado en los
-individuos\cite{Chen2012}. Esta técnica involucra la creación de
+individuos \cite{Chen2012}. Esta técnica involucra la creación de
 modelos de clasificación probabilistas o estadísticos, seguido de
 los procesos de entrenamiento y aprendizaje.
 
@@ -184,7 +184,7 @@ sobre un individuo no se aplique a otra persona de distintas características.
 
 El estado del arte de los\abbr{HAR} define las metodologías para
 comprender el comportamiento humano a partir de la interpretación
-de atributos derivados de fuentes que rodean al individuo\cite{Bao2004,Poppe2007},
+de atributos derivados de fuentes que rodean al individuo \cite{Bao2004,Poppe2007},
 por ejemplo el movimiento detectado utilizando sensores, la ubicación
 u otras señales fisiológicas. 
 
@@ -267,7 +267,7 @@ Humanas}
 \end{figure}
 
 En la \figref{fig2:harsystem} se visualiza las fases comunes de estas
-dos etapas\cite{LaraLabrador2013}. La etapa de entrenamiento requiere
+dos etapas \cite{LaraLabrador2013}. La etapa de entrenamiento requiere
 inicialmente un conjunto de datos recolectados en una serie de tiempo
 con los atributos medidos a partir de individuos que realizan cada
 actividad. Las series se dividen en ventanas de tiempo para aplicar
@@ -389,9 +389,9 @@ de los sistemas \abbr{HAR} utilizan un enfoque supervisado.
 
 El aprendizaje automático supervisado, referido como clasificación
 para problemas de clases discretas, ha sido un área bastante productiva
-con varios algoritmos efectivos resumidos en la tabla \tabref{tab2:metodos-aprendizaje}.
-Estas técnicas resuelven otras tareas además de la clasificación como
-la regresión y el agrupamiento.
+con varios algoritmos efectivos resumidos en la tabla \tabref{tab2:metodos-aprendizaje}
+\cite{James2013}. Estas técnicas resuelven otras tareas además de
+la clasificación como la regresión y el agrupamiento.
 
 \begin{table}
 \begin{centering}
@@ -400,19 +400,19 @@ la regresión y el agrupamiento.
 \textbf{Grupo}  & \textbf{Actividades} \tabularnewline
 \hline 
 \hline 
-Basados en Reglas & Árboles de decisión (\abbr{DT}, \emph{Decision Trees})
+Basados en Reglas & Árboles de decisión (\abbr{DT})
 
-Selvas aleatorias (\abbr{RF}, \emph{Random Forest})\tabularnewline
+Selvas aleatorias (\abbr{RF})\tabularnewline
 \hline 
-Enfoques Geométricos  & Vecinos cercanos (\abbr{k-NN}, \emph{k Nearest Neighbourhood})
+Enfoques Geométricos  & Vecinos cercanos (\abbr{k-NN})
 
-Redes neuronales (\abbr{ANN}, \emph{Artificial Neural Network})
+Redes neuronales (\abbr{ANN})
 
-Máquinas de soporte-vector (\abbr{SVM}, \emph{Support Vector Machines})\tabularnewline
+Máquinas de soporte-vector (\abbr{SVM})\tabularnewline
 \hline 
-Clasificación Probabilista & Clasificadores de Bayes (\abbr{NB}, \emph{Naive Bayes}), 
+Clasificación Probabilista & Clasificadores de Bayes (\abbr{NB}), 
 
-Modelos de Markov (\abbr{HMM}, \emph{Hidden Markov Models})\tabularnewline
+Modelos de Markov (\abbr{HMM})\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}

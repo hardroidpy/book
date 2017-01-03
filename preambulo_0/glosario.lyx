@@ -272,6 +272,17 @@ description "Wireless Fidelity, permite tener acceso o conectarse a una red util
 \begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
+symbol "Bluetooth"
+description "Estándar para red personal"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
 symbol "GPRS"
 description "General Packet Radio Service, servicio de datos moviles en comunicaciones celulares 2G/3G"
 
@@ -329,6 +340,28 @@ description "Fast Fourier Transform"
 LatexCommand nomenclature
 symbol "FV"
 description "Feature Vectors"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Smartphones"
+description "Teléfonos inteligentes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "IPC"
+description "Inter Process Communication"
 
 \end_inset
 

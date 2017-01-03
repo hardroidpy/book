@@ -312,7 +312,7 @@ Los sensores ambientales, también denominados externos o de entorno, son
  Existe una amplia variedad de sensores ambientales, como micrófonos, cámaras
  de vídeo, sensores de presencia, termómetros y sensores de profundidad
  (Ej.
- el sensor
+ el sensor 
 \begin_inset ERT
 status open
 
@@ -429,7 +429,7 @@ abbr{GPS}
 \end_inset
 
  y también los movimientos del cuerpo.
- Todos estas mediciones son útiles para tener una constante información
+ Todas estas mediciones son útiles para tener una constante información
  del estado de un individuo en cualquier momento.
 \end_layout
 
@@ -495,10 +495,6 @@ abbr{HRM}
 
 \end_inset
 
-, 
-\emph on
-Hearth Rate Monitor
-\emph default
 ), la temperatura del cuerpo, el ritmo de respiración, entre otros.
 \end_layout
 
@@ -590,7 +586,7 @@ abbr{ML}
 
 ) como herramientas construir, analizar e inferir actividades por medio
  de un modelo que utiliza una gran cantidad de datos medidos con anterioridad
- en conjunto con el comportamiento observado en los individuos
+ en conjunto con el comportamiento observado en los individuos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chen2012"
@@ -681,6 +677,7 @@ abbr{HAR}
 
  define las metodologías para comprender el comportamiento humano a partir
  de la interpretación de atributos derivados de fuentes que rodean al individuo
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004,Poppe2007"
@@ -1047,7 +1044,7 @@ Al igual que en otras aplicaciones de aprendizaje automático, el proceso
 placement !htbp
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1118,7 +1115,7 @@ figref{fig2:harsystem}
 
 \end_inset
 
- se visualiza las fases comunes de estas dos etapas
+ se visualiza las fases comunes de estas dos etapas 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -1594,6 +1591,13 @@ tabref{tab2:metodos-aprendizaje}
 
 \end_inset
 
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "James2013"
+
+\end_inset
+
 .
  Estas técnicas resuelven otras tareas además de la clasificación como la
  regresión y el agrupamiento.
@@ -1667,10 +1671,6 @@ abbr{DT}
 
 \end_inset
 
-, 
-\emph on
-Decision Trees
-\emph default
 )
 \end_layout
 
@@ -1688,10 +1688,6 @@ abbr{RF}
 
 \end_inset
 
-, 
-\emph on
-Random Forest
-\emph default
 )
 \end_layout
 
@@ -1725,10 +1721,6 @@ abbr{k-NN}
 
 \end_inset
 
-, 
-\emph on
-k Nearest Neighbourhood
-\emph default
 )
 \end_layout
 
@@ -1746,10 +1738,6 @@ abbr{ANN}
 
 \end_inset
 
-, 
-\emph on
-Artificial Neural Network
-\emph default
 )
 \end_layout
 
@@ -1767,10 +1755,6 @@ abbr{SVM}
 
 \end_inset
 
-, 
-\emph on
-Support Vector Machines
-\emph default
 )
 \end_layout
 
@@ -1804,10 +1788,6 @@ abbr{NB}
 
 \end_inset
 
-, 
-\emph on
-Naive Bayes
-\emph default
 ), 
 \end_layout
 
@@ -1825,10 +1805,6 @@ abbr{HMM}
 
 \end_inset
 
-, 
-\emph on
-Hidden Markov Models
-\emph default
 )
 \end_layout
 

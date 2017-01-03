@@ -263,7 +263,7 @@ llamada etiquetado. A continuación se detallan cada tarea.
 de una cantidad moderada de datos recolectados a partir de usuarios
 mientras realizan actividades humanas objetivas a nuestro estudio.
 Estos datos deben ser recolectadas y etiquetados utilizando un teléfono
-móvil inteligente con una aplicación diseñada para el caso. Ej. Utilizando
+móvil inteligente con una aplicación diseñada para el caso, Ej. Utilizando
 un teléfono con \abbr{Android} y la aplicación \emph{SensorLog} \cite{SLog2016}. 
 
 El protocolo de recolección consiste en alistar un grupo de personas
@@ -449,8 +449,8 @@ necesario extraer valores característicos en cada ventana $w_{j}$
 por medio del filtro de información relevante y el calculo de valores
 que identifiquen de cierta manera a las señales. 
 
-El proceso de extracción se traduce en vectores característicos (\emph{feature
-vectors}) con información relevante que componen varias métricas calculadas
+El proceso de extracción se traduce en vectores característicos (\abbr{feature vectors})
+con información relevante que componen varias métricas calculadas
 en base a las ventanas $w_{j}$ en el dominio del tiempo. Las ventanas
 son transformadas en el dominio de la frecuencia con métodos discretos
 de\emph{ Fourier} utilizando algoritmos \abbr{FFT} con números reales. 
@@ -474,7 +474,7 @@ de la frecuencia.
 \item \textbf{Curtosis:} medida de distribución de concentración en el dominio
 de la frecuencia.
 \item \textbf{Rango inter-cuartíl:}medida de dispersión de la diferencia
-entre el tercer y primer cuartil.
+entre el tercer y primer cuartíl.
 \item \textbf{Coeficientes autorregresivos:}los coeficientes obtenidos utilizando
 el método de Burg que aplica un modelo autorregresivo para encajar
 en la señal. La operación es aplicada a la señal en el dominio del
@@ -538,8 +538,8 @@ por los siguientes motivos:
 \begin{itemize}
 \item Simplicidad para utilizar la técnica de \abbr{DT}
 \item Para cancelar el efecto de variaciones en la orientación del teléfono\cite{Schneider2014}
-\item Reducir la dimensión de características (Ej. a un tercio) evitando
-sobre-ajustes (\emph{overfitting}).
+\item Reducir la dimensión de características (a un tercio) evitando sobre-ajustes
+(\abbr{overfitting}).
 \end{itemize}
 El proceso de extracción transforma una ventana $w_{j}$ con señales
 originales en un vector característico $F_{j}$ de dimensión $p$
@@ -578,17 +578,17 @@ de una evaluación, o como información en los datos del conjunto entrenamiento.
 \section{Clasificador de actividades }
 
 \label{sec45:clasificador}Un sistema \abbr{HAR} es similar a cualquier
-aplicación de aprendizaje automático \abbr{ML} donde depende de un
-algoritmo diseñado para extraer información desde los datos. En este
-contexto los patrones son descubiertos a partir de un conjunto de
-observaciones denominadas instancias\cite{LaraLabrador2013}. El propósito
-principal del algoritmo es de clasificar los datos que serán obtenidos
-a futuro. La entrada aplicada a un algoritmo de \abbr{ML} es un conjunto
-de entrenamiento (\emph{training set}) y el resultado del mismo es
-un clasificador (\emph{classifier})\cite{Rajaraman2011}. En esta
-sección se trata sobre clasificadores supervisados donde el conjunto
-de entrenamiento incluye información acerca de la manera correcta
-de clasificar un subconjunto de datos.
+aplicación de aprendizaje automático (\abbr{ML}) donde se requiere
+de un algoritmo diseñado para extraer información desde los datos.
+En este contexto los patrones son descubiertos a partir de un conjunto
+de observaciones denominadas instancias \cite{LaraLabrador2013}.
+El propósito principal del algoritmo es de clasificar los datos que
+serán obtenidos a futuro. La entrada aplicada a un algoritmo de \abbr{ML}
+es un conjunto de entrenamiento (\abbr{training set}) y el resultado
+del mismo es un clasificador (\abbr{classifier}) \cite{Rajaraman2011}.
+En esta sección se trata sobre clasificadores supervisados donde el
+conjunto de entrenamiento incluye información acerca de la manera
+correcta de clasificar un subconjunto de datos.
 
 \subsubsection{Clasificación}
 
@@ -660,9 +660,9 @@ Uno de los temas importantes acerca de los algoritmos de \abbr{ML}
 es la manera en que los datos son tratados y utilizados para construir
 un modelo de reconocimiento efectivo al clasificar datos desconocidos.
 Al tratar con los datos, es una buena estrategia partir el conjunto
-de entrenamiento (\emph{training set}) disponible y separar un remanente
-conocido como conjunto de validación (\emph{test set}). El problema
-de los algoritmos de \abbr{ML} es el sobre ajuste (\emph{overfit}),
+de entrenamiento (\abbr{training set}) disponible y separar un remanente
+conocido como conjunto de validación (\abbr{test set}). El problema
+de los algoritmos de \abbr{ML} es el sobre ajuste (\abbr{overfit}),
 es decir, la clasificación resulta como se espera en el conjunto de
 entrenamiento pero ante la mínima variación en datos desconocidos
 de una población más grande el resultado es atípico o con errores

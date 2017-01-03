@@ -443,7 +443,7 @@ name "fig4:componentes-har"
 
 
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Componentes 
@@ -1339,8 +1339,7 @@ El proceso de aprendizaje automático requiere de una cantidad moderada de
  datos recolectados a partir de usuarios mientras realizan actividades humanas
  objetivas a nuestro estudio.
  Estos datos deben ser recolectadas y etiquetados utilizando un teléfono
- móvil inteligente con una aplicación diseñada para el caso.
- Ej.
+ móvil inteligente con una aplicación diseñada para el caso, Ej.
  Utilizando un teléfono con 
 \begin_inset ERT
 status open
@@ -2561,9 +2560,18 @@ reference "sec261:definicion-har"
 
 \begin_layout Standard
 El proceso de extracción se traduce en vectores característicos (
-\emph on
-feature vectors
-\emph default
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{feature vectors}
+\end_layout
+
+\end_inset
+
 ) con información relevante que componen varias métricas calculadas en base
  a las ventanas 
 \begin_inset Formula $w_{j}$
@@ -2684,7 +2692,7 @@ Curtosis:
 \series bold
 Rango inter-cuartíl:
 \series default
-medida de dispersión de la diferencia entre el tercer y primer cuartil.
+medida de dispersión de la diferencia entre el tercer y primer cuartíl.
 \end_layout
 
 \begin_layout Enumerate
@@ -3181,11 +3189,20 @@ key "Schneider2014"
 \end_layout
 
 \begin_layout Itemize
-Reducir la dimensión de características (Ej.
- a un tercio) evitando sobre-ajustes (
-\emph on
-overfitting
-\emph default
+Reducir la dimensión de características (a un tercio) evitando sobre-ajustes
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{overfitting}
+\end_layout
+
+\end_inset
+
 ).
 \end_layout
 
@@ -3651,7 +3668,7 @@ abbr{HAR}
 
 \end_inset
 
- es similar a cualquier aplicación de aprendizaje automático 
+ es similar a cualquier aplicación de aprendizaje automático (
 \begin_inset ERT
 status open
 
@@ -3664,10 +3681,10 @@ abbr{ML}
 
 \end_inset
 
- donde depende de un algoritmo diseñado para extraer información desde los
- datos.
+) donde se requiere de un algoritmo diseñado para extraer información desde
+ los datos.
  En este contexto los patrones son descubiertos a partir de un conjunto
- de observaciones denominadas instancias
+ de observaciones denominadas instancias 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -3691,14 +3708,32 @@ abbr{ML}
 \end_inset
 
  es un conjunto de entrenamiento (
-\emph on
-training set
-\emph default
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{training set}
+\end_layout
+
+\end_inset
+
 ) y el resultado del mismo es un clasificador (
-\emph on
-classifier
-\emph default
-)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{classifier}
+\end_layout
+
+\end_inset
+
+) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"
@@ -4445,14 +4480,32 @@ abbr{ML}
  un modelo de reconocimiento efectivo al clasificar datos desconocidos.
  Al tratar con los datos, es una buena estrategia partir el conjunto de
  entrenamiento (
-\emph on
-training set
-\emph default
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{training set}
+\end_layout
+
+\end_inset
+
 ) disponible y separar un remanente conocido como conjunto de validación
  (
-\emph on
-test set
-\emph default
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{test set}
+\end_layout
+
+\end_inset
+
 ).
  El problema de los algoritmos de 
 \begin_inset ERT
@@ -4468,9 +4521,18 @@ abbr{ML}
 \end_inset
 
  es el sobre ajuste (
-\emph on
-overfit
-\emph default
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{overfit}
+\end_layout
+
+\end_inset
+
 ), es decir, la clasificación resulta como se espera en el conjunto de entrenami
 ento pero ante la mínima variación en datos desconocidos de una población
  más grande el resultado es atípico o con errores de clasificación 
