@@ -206,5 +206,55 @@ El Valor-F combina precisión y exhaustividad en un solo valor:
 Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión} + Exhaustividad}
 \end{equation}
 
-
 Aunque se definen para la clasificación binaria, estas métricas pueden generalizarse para un problema con n clases. En tal caso, una instancia podría ser positiva o negativa según una clase particular, por ejemplo, los positivos podrían ser todas las instancias de ejecución mientras que los negativos serían todas las instancias distintas de la ejecución.
+
+\section{Ejemplo: Evaluación}
+
+Utilizando el ejemplo anterior en la tabla \ref{tabla:sencilla2}, se tomo una muestra de 10.000 tuplas, teniendo como resultado la tabla \ref{tabla:MatrizConfusion}
+
+
+\begin{table}[htbp]
+	\caption{Matriz de Confusión}
+	\label{tabla:MatrizConfusion}
+	\begin{tabular}{|l|c|c|c|}
+		\hline 
+		\textit{Clase} & \textit{Com. Computador = SI}    &\textit{Com. Computador = NO} & \textit{Total}  \\
+		\hline 
+		\textit{Com. Computador = SI}	& 6,954   	& 46    	& 7,000     \\ 
+		\textit{Com. Computador = NO}	& 412		& 2,588		& 3,000    	\\ 
+		\hline
+		\textit{Total}					& 7,366		& 2,634    	& 10,000	\\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+
+Tomando este ejemplo, para la clase \textit{Compra Computador = SI} tenemos lo siguiente:
+
+\begin{itemize}
+	\item Verdaderos Positivo (TP): 6,954
+	\item Verdaderos Negativo (TN): 2,588
+	\item Falso Positivo (FP): 412
+	\item Falso Negativo (FN): 46
+\end{itemize}
+
+Con estos datos podemos calcular el resto de las métricas:
+
+\begin{equation*}
+Exactitud = \frac{TP + TN}{TP + TN + FP + FN} = \frac{6,954 + 2,588}{6,954 + 2,588 + 412 + 46} = \frac{9542}{10000} = 0,9542
+\end{equation*}
+
+\begin{equation*}
+\mbox{Precisión} = \frac{TP}{TP + FP} = \frac{6,954}{6,954 + 412} = 0,9440
+\end{equation*}
+
+\begin{equation*}
+Exhaustividad = \frac{TP}{TP + FN} = \frac{6,954}{6,954 + 46} = 0,9934
+\end{equation*}
+
+\begin{equation*}
+Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión} + Exhaustividad} 
+		= 2 \cdot \frac{\mbox{0,9440} \cdot 0,9934}{\mbox{0,9440} + 0,9934}
+		= 0,4840
+\end{equation*}
+
