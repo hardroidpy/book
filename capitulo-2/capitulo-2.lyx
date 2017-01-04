@@ -255,7 +255,7 @@ name "sec23:sensores"
  de los temas principales es la elección de los sensores utilizados para
  recolectar datos.
  Se han utilizando varios sensores para extraer información acerca de las
- actividades que un individuo realiza
+ actividades que un individuo realiza 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chen2012,LaraLabrador2012"
@@ -272,7 +272,7 @@ key "Chen2012,LaraLabrador2012"
 
 \begin_layout Standard
 Si clasificamos los sensores con respecto a la disposición en relación a
- los usuarios, los autores
+ los usuarios, los autores 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ReyesOrtiz2015,LaraLabrador2013"
@@ -368,7 +368,7 @@ abbr{Wearables}
 
 \emph default
 ) obtienen señales directamente de los usuarios, estos pueden estar anexos
- a varias partes del cuerpo, como la cintura, la muñeca, el pecho, la pierna,
+ a varias partes del cuerpo, como la cintura, la muñeca, el pecho, la pierna
  y la cabeza
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -377,29 +377,16 @@ key "Bao2004"
 \end_inset
 
 .
- También pueden formar parte de alguna vestimenta o estar embebidos en un
- accesorio de uso común, como relojes, anteojos y los mismos teléfonos móviles.
+ También pueden formar parte de alguna vestimenta o estar embebidos en algún
+ accesorio de uso común como relojes, anteojos y los mismos teléfonos móviles.
  
 \end_layout
 
 \begin_layout Standard
-Una característica adicional de los mismos es su autonomía gracias al uso
- de baterías que proporcionan energía para poder operar, y además algunos
- cuentan con conexiones inalámbricas (Ej.
+Una característica peculiar de los sensores es su autonomía debido a la
+ utilización de baterías que proporcionan la energía para operar, y además
+ pueden operar en conjunto con conexiones inalámbricas (Ej.
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{WIFI}
-\end_layout
-
-\end_inset
-
-/
 \begin_inset ERT
 status open
 
@@ -412,23 +399,9 @@ abbr{Bluetooth}
 
 \end_inset
 
-) para la transmisión de las señales.
- Las señales de movimiento y fisiológicas obtenidas por los sensores pueden
- ser temperatura de la piel, frecuencia cardíaca, conductividad, posicionamiento
- por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{GPS}
-\end_layout
-
-\end_inset
-
- y también los movimientos del cuerpo.
+) para la transmisión de señales.
+ Las señales obtenidas varían desde la temperatura de la piel, la frecuencia
+ cardíaca, posicionamiento y hasta el movimiento.
  Todas estas mediciones son útiles para tener una constante información
  del estado de un individuo en cualquier momento.
 \end_layout
@@ -461,8 +434,20 @@ key "Bao2004,LaraLabrador2012"
 \end_layout
 
 \begin_layout Description
-Ubicación miden datos obtenidos con las redes celulares 3G y los satélites
- de navegación 
+Ubicación miden datos obtenidos con las redes celulares 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{3G}
+\end_layout
+
+\end_inset
+
+ y los satélites de navegación 
 \begin_inset ERT
 status open
 
@@ -508,12 +493,13 @@ Ambiente miden datos externos que rodean al individuo como el nivel de ruido,
 \begin_layout Standard
 A diferencia de los sensores ubicados fijamente en el ambiente, estos tienen
  la ventaja de preservar la privacidad y el área de operación.
- La información capturada no es sensible como las imágenes y vídeo.
- Además gracias a la miniaturización, los usuarios pueden llevar consigo
- a todas partes los sensores haciéndolos ubicuos, portables y con una cobertura
+ La información capturada no es tan sensible como información en imágenes
+ y vídeo.
+ Además, debido a la miniaturización, los sensores pueden ser llevados a
+ todas partes por sus usuarios haciéndolos ubicuos, portables y con cobertura
  sin limitaciones.
- Aún así se tiene desafíos como la utilización eficiente de energía y también
- que sean de uso confortable al estar anexos a una vestimenta y sin cables.
+ Aún así existen desafíos ha superar como la utilización eficiente de energía
+ y el uso confortable al estar anexos a una vestimenta sin utilizar cables.
 \end_layout
 
 \begin_layout Section
@@ -527,33 +513,380 @@ name "sec24:dispositivos-moviles"
 
 \end_inset
 
- Los dispositivos móviles, tales como teléfonos móviles, reproductores de
- música o relojes inteligentes, han comenzado ya hace un par de años en
- incorporar diversos sensores.
- Debido a su tamaño reducido de estos dispositivos inteligentes, su enorme
- capacidad de procesamiento, la posibilidad de recibir y enviar datos; y
- su omnipresencia en nuestra sociedad de hoy, lo hacen dispositivos de preferenc
-ia para utilizarlo en la vida diaria de un usuario.
+ Desde la aparición de los primeros teléfonos móviles disponibles en el
+ mercado a principio de los ochenta (80) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Tanenbaum2010"
+
+\end_inset
+
+, la masificación de uso y producción de estos dispositivos ha crecido exponenci
+almente.
+ Se estima que esta tendencia continuará (cfr.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ekholm2011"
+
+\end_inset
+
+) incluso hasta podría sobrepasar la población mundial.
 \end_layout
 
 \begin_layout Standard
-En este trabajo, investigamos posibilidades y viabilidades de tener un servicio
- para obtener el contexto de la actividad física diaria de los usuarios
- con teléfonos móviles.
-\end_layout
-
-\begin_layout Standard
+Básicamente los teléfonos móviles celulares ofrecen los servicios de comunicació
+n por voz y datos sin utilizar cables, practicamente desde cualquier lugar
+ siempre y cuando esté disponible la cobertura de red celular.
+ Entre los servicios adicionales podemos destacar el envío de mensajes de
+ texto (
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-%% TODO: Definir mejor los teléfonos móviles, no tanto los sensores
+
+\backslash
+abbr{SMS}
+\end_layout
+
+\end_inset
+
+) y multimedia (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{MMS}
+\end_layout
+
+\end_inset
+
+).
+ Debido a la mejora continua de las capacidades de procesamiento y comunicación,
+ los usuarios elevaron sus requisitos de acceso a la información de manera
+ instantánea y sofisticada llevando a la aparición de los teléfonos móviles
+ inteligentes.
+ 
+\end_layout
+
+\begin_layout Subsection
+Teléfonos móviles inteligentes
+\end_layout
+
+\begin_layout Standard
+Los dispositivos móviles, principalmente las últimas generaciones teléfonos
+ móviles, en comparación con los móviles convencionales han incorporado
+ más capacidad de computación (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{CPU}
+\end_layout
+
+\end_inset
+
+), más 
+\emph on
+hardware
+\emph default
+ integrado, servicios y comunicación inalámbrica.
+ Los teléfonos móviles inteligentes proveen a sus usuarios mejores característic
+as como acceso a la Web, multimedia, juegos, servicios basados en ubicación,
+ captura de imágenes y vídeos.
+ En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab2:capacidad-movil}
+\end_layout
+
+\end_inset
+
+ se listan las características comunes en un teléfono móvil inteligente
+ de gama media.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" width="9cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Capacidad
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Elementos
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Hardware
+\emph default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{CPU}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPU}
+\end_layout
+
+\end_inset
+
+, Pantalla táctil, Memoria, Batería
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comunicación 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WIFI}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Bluetooth}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{3G}
+\end_layout
+
+\end_inset
+
+/
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{4G}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Servicios 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Internet, Aplicaciones
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensores
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Acelerómetro, Giroscopio, Brújula, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{GPS}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab2:capacidad-movil"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Capacidades de Teléfonos Modernos
+\end_layout
+
+\end_inset
+
+Capacidades de teléfonos móviles inteligentes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tanto los teléfono móviles, como también los reproductores de música o relojes
+ inteligentes, han incluido desde ya hace un par de años diversos sensores
+ con miras a enriquecer la experiencia de interacción humano-computador.
+ Aún así, la utilización de sensores han tenido además diversos usos para
+ aplicaciones que capturan datos de medidas de sus usuarios 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lane2010"
+
+\end_inset
+
+.
+ Debido a la combinación del tamaño reducido, su capacidad de procesamiento,
+ la posibilidad de recibir y enviar datos; y su omnipresencia en nuestra
+ sociedad actual, estos dispositivos móviles son de uso preferente en la
+ vida diaria diaria.
 \end_layout
 
 \begin_layout Section
@@ -1186,7 +1519,7 @@ os siete grupos distintos de actividades agrupados en la siguiente tabla.
 placement htbp
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center

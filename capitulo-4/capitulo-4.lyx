@@ -2692,7 +2692,7 @@ Curtosis:
 \series bold
 Rango inter-cuartíl:
 \series default
-medida de dispersión de la diferencia entre el tercer y primer cuartíl.
+ medida de dispersión de la diferencia entre el tercer y primer cuartíl.
 \end_layout
 
 \begin_layout Enumerate
@@ -2700,7 +2700,7 @@ medida de dispersión de la diferencia entre el tercer y primer cuartíl.
 \series bold
 Coeficientes autorregresivos:
 \series default
-los coeficientes obtenidos utilizando el método de Burg que aplica un modelo
+ los coeficientes obtenidos utilizando el método de Burg que aplica un modelo
  autorregresivo para encajar en la señal.
  La operación es aplicada a la señal en el dominio del tiempo y produce
  cuatro (4) valores correspondientes al algoritmo de 4to orden.

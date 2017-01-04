@@ -62,14 +62,14 @@ de aplicaciones escoger el contexto más relevante para su uso.
 de actividades humanas uno de los temas principales es la elección
 de los sensores utilizados para recolectar datos. Se han utilizando
 varios sensores para extraer información acerca de las actividades
-que un individuo realiza\cite{Chen2012,LaraLabrador2012}. Los sensores
+que un individuo realiza \cite{Chen2012,LaraLabrador2012}. Los sensores
 pueden medir signos vitales (ritmo cardíaco, temperatura del cuerpo,
 presión arterial), señales de ambiente (intensidad de luz, temperatura,
 niveles de sonido, vídeo), movimiento (aceleración, velocidad), y
 la ubicación (localización global o en interiores). 
 
 Si clasificamos los sensores con respecto a la disposición en relación
-a los usuarios, los autores\cite{ReyesOrtiz2015,LaraLabrador2013}
+a los usuarios, los autores \cite{ReyesOrtiz2015,LaraLabrador2013}
 diferencian los mismos entre ambientales, los sensores están ubicados
 de manera fija en el entorno que rodea al individuo, y de atuendo
 (\emph{\abbr{Wearables}}) cuando los sensores están sujetos o anexados
@@ -96,19 +96,18 @@ de los usuarios.
 
 Los sensores de atuendo (\emph{\abbr{Wearables}}) obtienen señales
 directamente de los usuarios, estos pueden estar anexos a varias partes
-del cuerpo, como la cintura, la muñeca, el pecho, la pierna, y la
-cabeza\cite{Bao2004}. También pueden formar parte de alguna vestimenta
-o estar embebidos en un accesorio de uso común, como relojes, anteojos
-y los mismos teléfonos móviles. 
+del cuerpo, como la cintura, la muñeca, el pecho, la pierna y la cabeza\cite{Bao2004}.
+También pueden formar parte de alguna vestimenta o estar embebidos
+en algún accesorio de uso común como relojes, anteojos y los mismos
+teléfonos móviles. 
 
-Una característica adicional de los mismos es su autonomía gracias
-al uso de baterías que proporcionan energía para poder operar, y además
-algunos cuentan con conexiones inalámbricas (Ej. \abbr{WIFI}/\abbr{Bluetooth})
-para la transmisión de las señales. Las señales de movimiento y fisiológicas
-obtenidas por los sensores pueden ser temperatura de la piel, frecuencia
-cardíaca, conductividad, posicionamiento por \abbr{GPS} y también
-los movimientos del cuerpo. Todas estas mediciones son útiles para
-tener una constante información del estado de un individuo en cualquier
+Una característica peculiar de los sensores es su autonomía debido
+a la utilización de baterías que proporcionan la energía para operar,
+y además pueden operar en conjunto con conexiones inalámbricas (Ej.
+\abbr{Bluetooth}) para la transmisión de señales. Las señales obtenidas
+varían desde la temperatura de la piel, la frecuencia cardíaca, posicionamiento
+y hasta el movimiento. Todas estas mediciones son útiles para tener
+una constante información del estado de un individuo en cualquier
 momento.
 
 Los sensores anexos directamente a un individuo miden señales que
@@ -119,8 +118,8 @@ respecto a un marco de referencia relativo al dispositivo que contiene
 los sensores. El acelerómetro y el giroscopio son los más comúnmente
 utilizados para reconocimiento de actividades con un bajo consumo
 de energía y buena precisión de reconocimiento\cite{Bao2004,LaraLabrador2012}.
-\item [{Ubicación}] miden datos obtenidos con las redes celulares 3G y
-los satélites de navegación \abbr{GPS}. Provee información de contexto
+\item [{Ubicación}] miden datos obtenidos con las redes celulares \abbr{3G}
+y los satélites de navegación \abbr{GPS}. Provee información de contexto
 bastante relevante acerca de la posición del individuo, además de
 ciertas medidas de movimiento pero con un consumo moderado de energía.
 \item [{Fisiología}] miden signos vitales del individuo como el ritmo cardíaco
@@ -132,28 +131,71 @@ cámara, micrófonos y termómetros miden estas señales.
 \end{description}
 A diferencia de los sensores ubicados fijamente en el ambiente, estos
 tienen la ventaja de preservar la privacidad y el área de operación.
-La información capturada no es sensible como las imágenes y vídeo.
-Además gracias a la miniaturización, los usuarios pueden llevar consigo
-a todas partes los sensores haciéndolos ubicuos, portables y con una
-cobertura sin limitaciones. Aún así se tiene desafíos como la utilización
-eficiente de energía y también que sean de uso confortable al estar
-anexos a una vestimenta y sin cables.
+La información capturada no es tan sensible como información en imágenes
+y vídeo. Además, debido a la miniaturización, los sensores pueden
+ser llevados a todas partes por sus usuarios haciéndolos ubicuos,
+portables y con cobertura sin limitaciones. Aún así existen desafíos
+ha superar como la utilización eficiente de energía y el uso confortable
+al estar anexos a una vestimenta sin utilizar cables.
 
 \section{Dispositivos móviles}
 
-\label{sec24:dispositivos-moviles} Los dispositivos móviles, tales
-como teléfonos móviles, reproductores de música o relojes inteligentes,
-han comenzado ya hace un par de años en incorporar diversos sensores.
-Debido a su tamaño reducido de estos dispositivos inteligentes, su
-enorme capacidad de procesamiento, la posibilidad de recibir y enviar
-datos; y su omnipresencia en nuestra sociedad de hoy, lo hacen dispositivos
-de preferencia para utilizarlo en la vida diaria de un usuario.
+\label{sec24:dispositivos-moviles} Desde la aparición de los primeros
+teléfonos móviles disponibles en el mercado a principio de los ochenta
+(80) \cite{Tanenbaum2010}, la masificación de uso y producción de
+estos dispositivos ha crecido exponencialmente. Se estima que esta
+tendencia continuará (cfr. \cite{Ekholm2011}) incluso hasta podría
+sobrepasar la población mundial.
 
-En este trabajo, investigamos posibilidades y viabilidades de tener
-un servicio para obtener el contexto de la actividad física diaria
-de los usuarios con teléfonos móviles.
+Básicamente los teléfonos móviles celulares ofrecen los servicios
+de comunicación por voz y datos sin utilizar cables, practicamente
+desde cualquier lugar siempre y cuando esté disponible la cobertura
+de red celular. Entre los servicios adicionales podemos destacar el
+envío de mensajes de texto (\abbr{SMS}) y multimedia (\abbr{MMS}).
+Debido a la mejora continua de las capacidades de procesamiento y
+comunicación, los usuarios elevaron sus requisitos de acceso a la
+información de manera instantánea y sofisticada llevando a la aparición
+de los teléfonos móviles inteligentes. 
 
-%% TODO: Definir mejor los teléfonos móviles, no tanto los sensores
+\subsection{Teléfonos móviles inteligentes}
+
+Los dispositivos móviles, principalmente las últimas generaciones
+teléfonos móviles, en comparación con los móviles convencionales han
+incorporado más capacidad de computación (\abbr{CPU}), más \emph{hardware}
+integrado, servicios y comunicación inalámbrica. Los teléfonos móviles
+inteligentes proveen a sus usuarios mejores características como acceso
+a la Web, multimedia, juegos, servicios basados en ubicación, captura
+de imágenes y vídeos. En la \tabref{tab2:capacidad-movil} se listan
+las características comunes en un teléfono móvil inteligente de gama
+media.
+
+\begin{table}[htbp]
+\centering{}%
+\begin{tabular}{|l|p{9cm}|}
+\hline 
+\textbf{Capacidad}  & \textbf{Elementos} \tabularnewline
+\hline 
+\hline 
+\emph{Hardware}  & \abbr{CPU}, \abbr{GPU}, Pantalla táctil, Memoria, Batería\tabularnewline
+\hline 
+Comunicación  & \abbr{WIFI}, \abbr{Bluetooth}, \abbr{3G}/\abbr{4G}\tabularnewline
+\hline 
+Servicios  & Internet, Aplicaciones\tabularnewline
+\hline 
+Sensores & Acelerómetro, Giroscopio, Brújula, \abbr{GPS}\tabularnewline
+\hline 
+\end{tabular}\caption[Capacidades de Teléfonos Modernos]{\label{tab2:capacidad-movil}Capacidades de teléfonos móviles inteligentes}
+\end{table}
+
+Tanto los teléfono móviles, como también los reproductores de música
+o relojes inteligentes, han incluido desde ya hace un par de años
+diversos sensores con miras a enriquecer la experiencia de interacción
+humano-computador. Aún así, la utilización de sensores han tenido
+además diversos usos para aplicaciones que capturan datos de medidas
+de sus usuarios \cite{Lane2010}. Debido a la combinación del tamaño
+reducido, su capacidad de procesamiento, la posibilidad de recibir
+y enviar datos; y su omnipresencia en nuestra sociedad actual, estos
+dispositivos móviles son de uso preferente en la vida diaria diaria.
 
 \section{Aprendizaje Automático}
 

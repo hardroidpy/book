@@ -305,6 +305,50 @@ description "Global System for Mobile, sistema de comunicación celular global."
 \begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
+symbol "3G"
+description "Tercera generación de sistema de comunicación celular."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "4G"
+description "Cuarta generación de sistema de comunicación celular."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SMS"
+description "Short Message Service"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "MMS"
+description "Multimedia Messaging Service"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
 symbol "Kinect"
 description "Sensor de profundidad de Microsoft"
 
@@ -362,6 +406,28 @@ description "Teléfonos inteligentes"
 LatexCommand nomenclature
 symbol "IPC"
 description "Inter Process Communication"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CPU"
+description "Central Processing Unit"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "GPU"
+description "Graphical Processing Unit.\\\\"
 
 \end_inset
 
