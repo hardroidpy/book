@@ -78,7 +78,7 @@ Aprendizaje Automático
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "chap3:Aprendizaje-Automatico"
+name "chap:Aprendizaje-Automatico"
 
 \end_inset
 
@@ -90,13 +90,13 @@ Introducción
 \end_layout
 
 \begin_layout Standard
-En el contexto de aprendizaje automático, los patrones deben ser descubierto
- a partir de una serie de ejemplos que son denominados instancias.
- Tal conjunto de entrada se denomina conjunto de entrenamiento.
+En el contexto de aprendizaje automático, los patrones deben ser descubiertos
+ a partir de una serie de muestras que son denominadas instancias.
+ El conjunto de entrada se denomina conjunto de entrenamiento.
  En nuestro caso específico, cada instancia es un vector de características
  extraída de señales en una determinada ventana de tiempo.
- Los ejemplos en el conjunto de entrenamiento pueden o no pueden ser etiquetados
-, es decir, asociada a una clase conocida (por ejemplo, caminar, correr,
+ Las muestras en el conjunto de entrenamiento pueden o no ser etiquetadas,
+ es decir, tener asociada a una clase conocida (por ejemplo, caminar, correr,
  etc.).
  En algunos casos, tener datos etiquetados no es factible, ya que puede
  requerir un experto para examinar manualmente los ejemplos y asignar una
@@ -110,8 +110,21 @@ Este proceso es generalmente tedioso, caro y consume mucho tiempo en muchas
  y no supervisado, que se ocupan de datos etiquetados y no etiquetados,
  respectivamente.
  Puesto que un sistema de reconocimiento de la actividad humana debe devolver
- un marcador tal como caminar, sentarse, correr, etc., la mayoría de los
- sistemas de HAR utilizan modelos de aprendizaje supervisados.
+ un resultado como caminar, sentarse, correr, etc., la mayoría de los sistemas
+ de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ utilizan algoritmos de aprendizaje supervisados.
  De hecho, podría ser muy difícil de discriminar actividades en un contexto
  completamente sin supervisión.
  Algunos otros sistemas funcionan de una manera semisupervisada en donde
@@ -120,6 +133,200 @@ Este proceso es generalmente tedioso, caro y consume mucho tiempo en muchas
 
 \begin_layout Section
 Aprendizaje supervisado
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec3:aprendizaje"
+
+\end_inset
+
+De manera a establecer un marco teórico para los algoritmos de aprendizaje
+ automático supervisados 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rajaraman2011"
+
+\end_inset
+
+ se incluye la siguiente definición formal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "def3:clasificacion"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newtheorem{defs}{Definición}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{defs}
+\end_layout
+
+\end_inset
+
+(Clasificador
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+) Un algoritmo
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ recibe un conjunto entrenamiento se compone de varios pares 
+\begin_inset Formula $(\boldsymbol{x},y)$
+\end_inset
+
+ conocidos como muestras de entrenamiento, donde
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ es un
+\emph on
+ vector
+\emph default
+ de valores, llamado vector característico.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $y$
+\end_inset
+
+ es la
+\emph on
+ etiqueta
+\emph default
+, el valor de clasificación para 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El objetivo del proceso
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+ es encontrar una función 
+\begin_inset Formula $y=f(\boldsymbol{x})$
+\end_inset
+
+ cuya predicción de 
+\begin_inset Formula $y$
+\end_inset
+
+ asociada a valores desconocidos de 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ sea la mejor.
+ El valor de y corresponden a valores arbitrarios pero es común encontrase
+ con los siguientes casos:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $y$
+\end_inset
+
+ es un número del conjunto de reales.
+ Este caso corresponde a un problema de regresión.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $y$
+\end_inset
+
+ es un valor booleano verdadero-falso, también representado como 
+\begin_inset Formula $+1$
+\end_inset
+
+ y 
+\begin_inset Formula $−1$
+\end_inset
+
+.
+ Este caso corresponde a una clasificación binaria.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $y$
+\end_inset
+
+ es miembro de un conjunto finito donde cada valor representa una clase
+ particular.
+ El problema es llamado de clasificación de múltiples clases.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{defs}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -148,8 +355,46 @@ El aprendizaje supervisado ha sido un campo muy productivo, dando lugar
 \end_layout
 
 \begin_layout Standard
-En las siguientes secciones nos concentramos en el árbol de decisión, el
- cual fue utilizado para este trabajo.
+En las siguientes secciones nos concentramos en un enfoque basado en arboles
+ de decisión (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{DT}
+\end_layout
+
+\end_inset
+
+) para construir la función 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ La función 
+\begin_inset Formula $f$
+\end_inset
+
+ corresponde a un árbol de múltiples niveles donde cada nodo aplica una
+ función a 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ y determina sobre qué nodo hijo procede la búsqueda.
+ Cada nodo posee cualquier número de nodos hijos.
+ Los árboles de decisión son preferibles para las clasificación binaria
+ o de múltiples clases, especialmente cuando la dimensión del vector característ
+icos no es muy grande
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rajaraman2011"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -170,13 +415,24 @@ El árbol de decisión es un método de aprendizaje predictivo de una conjunto
 placement !htbp
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
-\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
  
 \begin_inset Graphics
-	filename graphics/ad_1.png
+	filename graphics/ad_2.png
 	width 70line%
 
 \end_inset
@@ -202,7 +458,7 @@ status collapsed
 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig31:arbolEjemplo"
+name "fig:arbolEjemplo"
 
 \end_inset
 
@@ -543,7 +799,7 @@ En otras palabras,
 .
  Esto equivale a decir que queremos particionar en el atributo A que haría
  la mejor clasificación, por lo que la cantidad de información aun necesaria
- para clasificar las tuplas sea mínima, 
+ para clasificar las tuplas sea minima, 
 \begin_inset Formula $InfoA(D)$
 \end_inset
 
@@ -558,7 +814,7 @@ Algoritmo
 \begin_inset Float algorithm
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -576,163 +832,2162 @@ name "algoC45"
 
 \end_inset
 
-
+ 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-	
+
 \backslash
-begin{algorithmic}[1]
+begin{algorithmic}
 \end_layout
+
+\end_inset
+
+[1] 
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
 
-		
+
 \backslash
-Require Conjunto de datos etiquetados $D$
+Require
 \end_layout
+
+\end_inset
+
+ Conjunto de datos etiquetados 
+\begin_inset Formula $D$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
-		
+
 \backslash
-Procedure{C4.5}{$ D $}
+Procedure
 \end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
-			
-\backslash
-If {$D > 
-\backslash
-textit{es puro o cumple el criterio de parada} $} 
+{
 \end_layout
+
+\end_inset
+
+C4.5
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
-				
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $D$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+If
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $D>\textit{es puro o cumple el criterio de parada}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
 \backslash
 State
-\backslash
-textit{Termina}
 \end_layout
+
+\end_inset
+
+
+\shape italic
+Termina
+\shape default
+ 
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
-			
+
 \backslash
 EndIf
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-			
+
 \backslash
-ForAll{$a 
-\backslash
-in D $}
+ForAll
 \end_layout
 
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-				
-\backslash
-State $
-\backslash
-textit{Computar información de division en a }$
+{
 \end_layout
 
+\end_inset
+
+
+\begin_inset Formula $a\in D$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-			
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\textit{Computar información de division en a }$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
 \backslash
 EndFor
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-			
+
 \backslash
-State $ a_{best} =$ Mejor atributo de división respecto al criterio 
+State
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset Formula $a_{best}=$
+\end_inset
+
+ Mejor atributo de división respecto al criterio 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-			
+
 \backslash
-State $ Arbol =$ Crear un nodo de decisión con $ a_{best} $ en la raíz 
+State
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset Formula $Arbol=$
+\end_inset
+
+ Crear un nodo de decisión con 
+\begin_inset Formula $a_{best}$
+\end_inset
+
+ en la raíz 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-			
+
 \backslash
-State $ D_{v} =$ Introducir sub-conjunto de $D$ basado en división $ a_{best}
- $
+State
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset Formula $D_{v}=$
+\end_inset
+
+ Introducir sub-conjunto de 
+\begin_inset Formula $D$
+\end_inset
+
+ basado en división 
+\begin_inset Formula $a_{best}$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-			
+
 \backslash
-ForAll{$ D_{v} $}
+ForAll
 \end_layout
 
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-				
-\backslash
-State $ Arbol_{v} = C4.5(D_{v}) $
+{
 \end_layout
 
+\end_inset
+
+
+\begin_inset Formula $D_{v}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-				
-\backslash
-State Unir $ Arbol_{v} $ al correspondiente arco del Árbol
+}
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-			
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $Arbol_{v}=C4.5(D_{v})$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ Unir 
+\begin_inset Formula $Arbol_{v}$
+\end_inset
+
+ al correspondiente arco del Árbol 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
 \backslash
 EndFor
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-			
+
 \backslash
-State 
+State
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-			
+
 \backslash
-Return $ Arbol $
+Return
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset Formula $Arbol$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-		
+
 \backslash
 EndProcedure
 \end_layout
 
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
 \begin_layout Plain Layout
 
-	
+
 \backslash
 end{algorithmic}
 \end_layout
 
 \end_inset
 
+ 
+\end_layout
+
+\end_inset
+
 
 \end_layout
+
+\begin_layout Section
+Ejemplo 1
+\end_layout
+
+\begin_layout Standard
+En la siguiente tabla se presenta un conjunto de entrenamiento 
+\begin_inset Formula $D$
+\end_inset
+
+, con la clase etiquetada, de una base de datos de compra de productos electróni
+cos.
+ En este ejemplo, cada atributo tiene un valor discreto, los atributos de
+ valores continuos fueron generalizados.
+ La clase 
+\shape italic
+Compra Computador
+\shape default
+ tiene dos valores posible 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Si, No
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, por lo tanto dos clases distintas (es decir, 
+\begin_inset Formula $m=2$
+\end_inset
+
+).
+ Tenemos 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ que corresponde a 
+\begin_inset Formula $Si$
+\end_inset
+
+ y 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+ corresponde a 
+\begin_inset Formula $No$
+\end_inset
+
+.
+ Existen nueve tuplas de la clase "Si", y cinco de la clase "No".
+ Para encontrar el criterio de división para las tuplas debemos calcular
+ la ganancia de información de cada atributo.
+ Primero usamos la ecuación 3.1 para calcular esperada necesaria para clasificar
+ una tupla en 
+\begin_inset Formula $D$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Info(D)=-\frac{9}{14}\log_{2}(\frac{9}{14})-\frac{5}{14}\log_{2}(\frac{5}{14})=0.940bits
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo de conjunto de entrenamiento
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla:sencilla2"
+
+\end_inset
+
+ 
+\begin_inset Tabular
+<lyxtabular version="3" rows="15" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Rid
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Edad
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Ingreso
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Estudiante
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Rating Crediticio
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Compra Computador?
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Joven 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alto 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Justa 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NO 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Joven 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alto 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Excelente 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NO 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediana 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alto 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Justa 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SI 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adulto 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medio 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Justa 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SI 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adulto 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bajo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Justa 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SI 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adulto 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bajo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Excelente 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NO 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediana 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bajo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Excelente 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SI 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Joven 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medio 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Justa 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NO 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Joven 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bajo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Yes 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Justa 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SI 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adulto 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medio 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Justa 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SI 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Joven 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medio 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Excelente 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SI 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediana 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medio 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Excelente 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SI 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediana 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alto 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Justa 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SI 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Adulto 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medio 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Excelente 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+NO 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego, necesitamos calcular la información requerida por cada atributo.
+ Comenzamos con el atributo 
+\begin_inset Formula $Edad$
+\end_inset
+
+, necesitamos observar la distribución de 
+\begin_inset Formula $Si$
+\end_inset
+
+ y 
+\begin_inset Formula $No$
+\end_inset
+
+ por cada categoría o valor del atributo 
+\begin_inset Formula $Edad$
+\end_inset
+
+.
+ Para la categoría 
+\begin_inset Formula $Joven$
+\end_inset
+
+ de edad, hay dos tuplas 
+\begin_inset Formula $Si$
+\end_inset
+
+ y tres tuplas 
+\begin_inset Formula $No$
+\end_inset
+
+.
+ Para la categoría 
+\begin_inset Formula $mediana$
+\end_inset
+
+ edad, hay cuatro tuplas 
+\begin_inset Formula $Si$
+\end_inset
+
+ y cero tuplas 
+\begin_inset Formula $No$
+\end_inset
+
+.
+ Para la categoría 
+\begin_inset Formula $Adulto$
+\end_inset
+
+, hay tres tuplas 
+\begin_inset Formula $Si$
+\end_inset
+
+ y dos tuplas 
+\begin_inset Formula $No$
+\end_inset
+
+.
+ Usando la ecuación (3.2), la información esperada necesaria para clasificar
+ una tupla en 
+\begin_inset Formula $D$
+\end_inset
+
+ si las tuplas son divididas según el atributo 
+\begin_inset Formula $edad$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{split}Info_{edad}(D) & =\frac{5}{14}\times(-\frac{2}{5}\log_{2}(\frac{2}{5})-\frac{3}{5}\log_{2}(\frac{3}{5}))\\
+ & +\frac{4}{14}\times(-\frac{4}{4}\log_{2}(\frac{4}{4})-\frac{0}{4}\log_{2}(\frac{0}{4}))\\
+ & +\frac{5}{14}\times(-\frac{3}{5}\log_{2}(\frac{3}{5})-\frac{2}{5}\log_{2}(\frac{2}{5}))\\
+ & =0.694bits.
+\end{split}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, la ganancia esperada de realizar tal partición seria:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Gain(edad)=Info(D)-Info_{edad}(D)=0.940-0.694=0.246bits
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De la misma manera, se puede calcular 
+\begin_inset Formula $Gain(ingreso)$
+\end_inset
+
+ = 0.029 bits, 
+\begin_inset Formula $Gain(estudiante)$
+\end_inset
+
+ = 0.151 bits, y 
+\begin_inset Formula $Gain(RatingCrediticio)$
+\end_inset
+
+ = 0.048 bits.
+ Debido a que el atributo 
+\begin_inset Formula $edad$
+\end_inset
+
+ tiene mayor ganancia de información, es seleccionado para realizar la partición.
+ El nodo 
+\begin_inset Formula $N$
+\end_inset
+
+ es etiquetado con 
+\begin_inset Formula $edad$
+\end_inset
+
+, y se crean una rama por cada valor del atributo.
+ Las tuplas se divinen en consecuencia, como se muestra en la figura .
+ Notese que las tuplas en la partición 
+\begin_inset Formula $Edad=Mediana$
+\end_inset
+
+ perteneces todas a la clase 
+\begin_inset Formula $Si$
+\end_inset
+
+, por lo tanto en esta rama se crea una hoja con etiqueta 
+\begin_inset Formula $Si$
+\end_inset
+
+.
+ El árbol de decisión final devuelto por el algoritmo se muestra en la figura
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:arbolEjemplo"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement !htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename graphics/dtree_parti.png
+	width 70line%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Árbol de decisión
+\end_layout
+
+\end_inset
+
+Árbol de decisión: Particionado en el atributo 'Edad'
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:arbolPartEdad"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Métricas de evaluación y Matriz de Confusión
+\end_layout
+
+\begin_layout Standard
+En general, la selección del algoritmos de clasificación para HAR ha sido
+ apoyada meramente por evidencias empíricas.
+ La gran mayoría de los estudios utilizar una validación cruzada con pruebas
+ estadísticas para comparar el rendimiento de los clasificadores para un
+ conjunto de datos determinado, como se visualiza en la 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:evaluacion"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement !htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename graphics/training-test.png
+	width 70line%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de Evaluación de Clasificación
+\end_layout
+
+\end_inset
+
+Diagrama de Evaluación de Clasificación
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:evaluacion"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los resultados de una clasificación de un métodos en particular se suelen
+ organizar en una matriz de confusión 
+\begin_inset Formula $M_{n\times n}$
+\end_inset
+
+ para un problema de clasificación con 
+\begin_inset Formula $N$
+\end_inset
+
+ clases.
+ Esta es una matriz, tal que el elemento 
+\begin_inset Formula $M_{ij}$
+\end_inset
+
+ es el numero instancias de la clase 
+\begin_inset Formula $i$
+\end_inset
+
+ que realmente fueron clasificados como clase 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ Los siguientes valores se pueden obtener de la matriz de confusión en un
+ problema de clasificación primaria:
+\end_layout
+
+\begin_layout Itemize
+Verdaderos Positivo (TP): El número de casos positivos que fueron clasificados
+ como positivos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Verdaderos Negativo (TN): El número de casos negativos que fueron clasificados
+ como negativos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Falso Positivo (FP): El número de casos negativos que fueron clasificados
+ como positivos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Falso Negativo (FN): El número de casos positivos que fueron clasificados
+ como negativos.
+ 
+\end_layout
+
+\begin_layout Standard
+La precisión es la métrica más estándar para resumir el rendimiento general
+ de la clasificación para todas las clases y se define de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Exactitud=\frac{TP+TN}{TP+TN+FP+FN}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La precisión, a menudo denominada valor predictivo positivo, es la proporción
+ de casos positivos clasificados correctamente al número total de casos
+ clasificados como positivos: 
+\begin_inset Formula 
+\begin{equation}
+\mbox{Precisión}=\frac{TP}{TP+FP}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La exhaustividad, también llamado tasa positiva verdadera, es la proporción
+ de instancias positivas correctamente clasificadas al número total de instancia
+s positivas: 
+\begin_inset Formula 
+\begin{equation}
+Exhaustividad=\frac{TP}{TP+FN}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El Valor-F combina precisión y exhaustividad en un solo valor: 
+\begin_inset Formula 
+\begin{equation}
+Valor-F=2\cdot\frac{\mbox{Precisión}\cdot Exhaustividad}{\mbox{Precisión}+Exhaustividad}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aunque se definen para la clasificación binaria, estas métricas pueden generaliz
+arse para un problema con n clases.
+ En tal caso, una instancia podría ser positiva o negativa según una clase
+ particular, por ejemplo, los positivos podrían ser todas las instancias
+ de ejecución mientras que los negativos serían todas las instancias distintas
+ de la ejecución.
+\end_layout
+
+\begin_layout Section
+Ejemplo: Evaluación
+\end_layout
+
+\begin_layout Standard
+Utilizando el ejemplo anterior en la tabla 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tabla:sencilla2"
+
+\end_inset
+
+, se tomo una muestra de 10.000 tuplas, teniendo como resultado la tabla
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tabla:MatrizConfusion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement htbp
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Matriz de Confusión
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla:MatrizConfusion"
+
+\end_inset
+
+ 
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Clase
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Com.
+ Computador = SI
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Com.
+ Computador = NO
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Total
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Com.
+ Computador = SI
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6,954 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+46 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,000 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Com.
+ Computador = NO
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+412 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,588 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,000 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Total
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,366 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,634 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10,000 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tomando este ejemplo, para la clase 
+\shape italic
+Compra Computador = SI
+\shape default
+ tenemos lo siguiente:
+\end_layout
+
+\begin_layout Itemize
+Verdaderos Positivo (TP): 6,954 
+\end_layout
+
+\begin_layout Itemize
+Verdaderos Negativo (TN): 2,588 
+\end_layout
+
+\begin_layout Itemize
+Falso Positivo (FP): 412 
+\end_layout
+
+\begin_layout Itemize
+Falso Negativo (FN): 46 
+\end_layout
+
+\begin_layout Standard
+Con estos datos podemos calcular el resto de las métricas: 
+\begin_inset Formula 
+\[
+Exactitud=\frac{TP+TN}{TP+TN+FP+FN}=\frac{6,954+2,588}{6,954+2,588+412+46}=\frac{9542}{10000}=0,9542
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mbox{Precisión}=\frac{TP}{TP+FP}=\frac{6,954}{6,954+412}=0,9440
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Exhaustividad=\frac{TP}{TP+FN}=\frac{6,954}{6,954+46}=0,9934
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Valor-F=2\cdot\frac{\mbox{Precisión}\cdot Exhaustividad}{\mbox{Precisión}+Exhaustividad}=2\cdot\frac{\mbox{0,9440}\cdot0,9934}{\mbox{0,9440}+0,9934}=0,4840
+\]
 
 \end_inset
 

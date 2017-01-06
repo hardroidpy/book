@@ -3694,7 +3694,14 @@ key "LaraLabrador2013"
 .
  El propósito principal del algoritmo es de clasificar los datos que serán
  obtenidos a futuro.
- La entrada aplicada a un algoritmo de 
+ Rememorando el 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Aprendizaje-Automatico"
+
+\end_inset
+
+, la entrada aplicada a un algoritmo de 
 \begin_inset ERT
 status open
 
@@ -3708,31 +3715,13 @@ abbr{ML}
 \end_inset
 
  es un conjunto de entrenamiento (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{training set}
-\end_layout
-
-\end_inset
-
+\emph on
+training set
+\emph default
 ) y el resultado del mismo es un clasificador (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{classifier}
-\end_layout
-
-\end_inset
-
+\emph on
+classifier
+\emph default
 ) 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3741,9 +3730,10 @@ key "Rajaraman2011"
 \end_inset
 
 .
- En esta sección se trata sobre clasificadores supervisados donde el conjunto
- de entrenamiento incluye información acerca de la manera correcta de clasificar
- un subconjunto de datos.
+ En esta sección se detalla más sobre cómo se construye un clasificador
+ supervisados a partir del conjunto de entrenamiento de vectores característicos
+ e información acerca de la manera correcta de clasificar un subconjunto
+ de datos.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3752,8 +3742,8 @@ Clasificación
 
 \begin_layout Standard
 Es parte esencial de todo algoritmo de aprendizaje automático supervisado
- contar con un conjunto de instancias de entrenamiento con información adicional
- de clasificación.
+ contar con un conjunto de instancias de entrenamiento y la información
+ adicional de clasificación.
  Cada instancia es un vector característico 
 \begin_inset Formula $F_{j}$
 \end_inset
@@ -3767,9 +3757,13 @@ Es parte esencial de todo algoritmo de aprendizaje automático supervisado
 \end_inset
 
 .
- Como es requerido para todo clasificador supervisado el conjunto de entrenamien
-to debe estar etiquetado con una clase conocida así como se muestra en la
- tabla 
+ 
+\end_layout
+
+\begin_layout Standard
+Como es requerido para todo clasificador supervisado el conjunto de entrenamient
+o debe estar etiquetado con la clase conocida así como se muestra en la
+ 
 \begin_inset ERT
 status open
 
@@ -4224,55 +4218,15 @@ name "tab4:labeled"
 
 
 \begin_inset Argument 1
-status collapsed
-
-\begin_layout Plain Layout
-Etiquetado de instancias
-\end_layout
-
-\end_inset
-
-Etiquetado de instancias de entrenamiento
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A continuación se define formalmente el marco para algoritmos de aprendizaje
- automático supervisados
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rajaraman2011"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "def4:clasificacion"
-
-\end_inset
-
-
-\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
+Instancias etiquetadas
+\end_layout
 
+\end_inset
 
-\backslash
-newtheorem{defs}{Definición}
+Conjunto de entrenamiento etiquetado con información de clasificación.
 \end_layout
 
 \end_inset
@@ -4280,182 +4234,9 @@ newtheorem{defs}{Definición}
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{defs}
-\end_layout
-
-\end_inset
-
-(Clasificador
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{ML}
-\end_layout
-
-\end_inset
-
-) Un algoritmo
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{ML}
-\end_layout
-
-\end_inset
-
- recibe un conjunto entrenamiento se compone de varios pares 
-\begin_inset Formula $(\boldsymbol{x},y)$
-\end_inset
-
- conocidos como muestras de entrenamiento, donde
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\boldsymbol{x}$
-\end_inset
-
- es un
-\emph on
- vector
-\emph default
- de valores, llamado vector característico.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $y$
-\end_inset
-
- es la
-\emph on
- etiqueta
-\emph default
-, el valor de clasificación para 
-\begin_inset Formula $\boldsymbol{x}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-El objetivo del proceso
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{ML}
-\end_layout
-
-\end_inset
-
- es encontrar una función 
-\begin_inset Formula $y=f(\boldsymbol{x})$
-\end_inset
-
- cuya predicción de 
-\begin_inset Formula $y$
-\end_inset
-
- asociada a valores desconocidos de 
-\begin_inset Formula $\boldsymbol{x}$
-\end_inset
-
- sea la mejor.
- El valor de y corresponden a valores arbitrarios de la siguiente naturaleza.
- Si 
-\begin_inset Formula $y$
-\end_inset
-
- es miembro de un conjunto finito donde cada valor representa una clase
- particular.
- El problema es llamado de clasificación de múltiples clases.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{defs}
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-En el capítulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap3:Aprendizaje-Automatico"
-
-\end_inset
-
- se explica el algoritmo C4.5 (sección 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec3:algo-c45"
-
-\end_inset
-
-) con enfoque basado en arboles de decisión (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{DT}
-\end_layout
-
-\end_inset
-
-) para construir la función 
-\begin_inset Formula $f$
-\end_inset
-
-.
- La función 
-\begin_inset Formula $f$
-\end_inset
-
- corresponde a un árbol de múltiples niveles donde cada nodo aplica una
- función a 
-\begin_inset Formula $\boldsymbol{x}$
-\end_inset
-
- y determina sobre qué nodo hijo procede la búsqueda.
- Cada nodo posee cualquier número de nodos hijos.
- Los árboles de decisión son preferibles para las clasificación binaria
- o de múltiples clases, especialmente cuando la dimensión del vector característ
-icos no es muy grande
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Rajaraman2011"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4463,7 +4244,7 @@ Reconocimiento
 \end_layout
 
 \begin_layout Standard
-Uno de los temas importantes acerca de los algoritmos de 
+Uno de los tópicos primordiales de los algoritmos de 
 \begin_inset ERT
 status open
 
@@ -4476,38 +4257,20 @@ abbr{ML}
 
 \end_inset
 
- es la manera en que los datos son tratados y utilizados para construir
- un modelo de reconocimiento efectivo al clasificar datos desconocidos.
- Al tratar con los datos, es una buena estrategia partir el conjunto de
- entrenamiento (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{training set}
-\end_layout
-
-\end_inset
-
+ es la manera en que los datos son tratados al clasificar datos desconocidos
+ y utilizados para construir un modelo de reconocimiento efectivo.
+ Al tratar con los datos, es buena estrategia partir el conjunto de entrenamient
+o (
+\emph on
+training set
+\emph default
 ) disponible y separar un remanente conocido como conjunto de validación
  (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{test set}
-\end_layout
-
-\end_inset
-
+\emph on
+test set
+\emph default
 ).
- El problema de los algoritmos de 
+ El problema común de los algoritmos de 
 \begin_inset ERT
 status open
 
@@ -4520,22 +4283,14 @@ abbr{ML}
 
 \end_inset
 
- es el sobre ajuste (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{overfit}
-\end_layout
-
-\end_inset
-
+ es el error asociado al sobre ajuste (
+\emph on
+overfit
+\emph default
 ), es decir, la clasificación resulta como se espera en el conjunto de entrenami
-ento pero ante la mínima variación en datos desconocidos de una población
- más grande el resultado es atípico o con errores de clasificación 
+ento pero ante la mínima variación con datos desconocidos en una población
+ más grande el resultado se vuelve atípico o con errores de clasificación
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"

@@ -583,12 +583,13 @@ de un algoritmo diseñado para extraer información desde los datos.
 En este contexto los patrones son descubiertos a partir de un conjunto
 de observaciones denominadas instancias \cite{LaraLabrador2013}.
 El propósito principal del algoritmo es de clasificar los datos que
-serán obtenidos a futuro. La entrada aplicada a un algoritmo de \abbr{ML}
-es un conjunto de entrenamiento (\abbr{training set}) y el resultado
-del mismo es un clasificador (\abbr{classifier}) \cite{Rajaraman2011}.
-En esta sección se trata sobre clasificadores supervisados donde el
-conjunto de entrenamiento incluye información acerca de la manera
-correcta de clasificar un subconjunto de datos.
+serán obtenidos a futuro. Rememorando el \ref{chap:Aprendizaje-Automatico},
+la entrada aplicada a un algoritmo de \abbr{ML} es un conjunto de
+entrenamiento (\emph{training set}) y el resultado del mismo es un
+clasificador (\emph{classifier}) \cite{Rajaraman2011}. En esta sección
+se detalla más sobre cómo los clasificadores supervisados son construidos
+a partir del conjunto de entrenamiento que incluye información acerca
+de la manera correcta de clasificar un subconjunto de datos.
 
 \subsubsection{Clasificación}
 
@@ -625,34 +626,6 @@ $k-1$ & $2.56$ & \texttt{$\ldots$} & \texttt{$-2.56$} & \texttt{\small{}Caminand
 \caption[Etiquetado de instancias]{\label{tab4:labeled}Etiquetado de instancias de entrenamiento}
 \end{table}
 
-A continuación se define formalmente el marco para algoritmos de aprendizaje
-automático supervisados\cite{Rajaraman2011}.
-
-\label{def4:clasificacion}\newtheorem{defs}{Definición}
-
-\begin{defs}(Clasificador\abbr{ML}) Un algoritmo\abbr{ML} recibe
-un conjunto entrenamiento se compone de varios pares $(\boldsymbol{x},y)$
-conocidos como muestras de entrenamiento, donde
-\begin{itemize}
-\item $\boldsymbol{x}$ es un\emph{ vector} de valores, llamado vector característico.
-\item $y$ es la\emph{ etiqueta}, el valor de clasificación para $\boldsymbol{x}$.
-\end{itemize}
-El objetivo del proceso\abbr{ML} es encontrar una función $y=f(\boldsymbol{x})$
-cuya predicción de $y$ asociada a valores desconocidos de $\boldsymbol{x}$
-sea la mejor. El valor de y corresponden a valores arbitrarios de
-la siguiente naturaleza. Si $y$ es miembro de un conjunto finito
-donde cada valor representa una clase particular. El problema es llamado
-de clasificación de múltiples clases.\end{defs}
-
-En el capítulo \ref{chap3:Aprendizaje-Automatico} se explica el algoritmo
-C4.5 (sección \ref{sec3:algo-c45}) con enfoque basado en arboles
-de decisión (\abbr{DT}) para construir la función $f$. La función
-$f$ corresponde a un árbol de múltiples niveles donde cada nodo aplica
-una función a $\boldsymbol{x}$ y determina sobre qué nodo hijo procede
-la búsqueda. Cada nodo posee cualquier número de nodos hijos. Los
-árboles de decisión son preferibles para las clasificación binaria
-o de múltiples clases, especialmente cuando la dimensión del vector
-característicos no es muy grande\cite{Rajaraman2011}.
 
 \subsubsection{Reconocimiento}
 
@@ -660,9 +633,9 @@ Uno de los temas importantes acerca de los algoritmos de \abbr{ML}
 es la manera en que los datos son tratados y utilizados para construir
 un modelo de reconocimiento efectivo al clasificar datos desconocidos.
 Al tratar con los datos, es una buena estrategia partir el conjunto
-de entrenamiento (\abbr{training set}) disponible y separar un remanente
-conocido como conjunto de validación (\abbr{test set}). El problema
-de los algoritmos de \abbr{ML} es el sobre ajuste (\abbr{overfit}),
+de entrenamiento (\emph{training set}) disponible y separar un remanente
+conocido como conjunto de validación (\emph{test set}). El problema
+de los algoritmos de \abbr{ML} es el sobre ajuste (\emph{overfit}),
 es decir, la clasificación resulta como se espera en el conjunto de
 entrenamiento pero ante la mínima variación en datos desconocidos
 de una población más grande el resultado es atípico o con errores
