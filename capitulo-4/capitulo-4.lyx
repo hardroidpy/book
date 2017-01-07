@@ -73,7 +73,7 @@
 \begin_body
 
 \begin_layout Chapter
-Sistemas HAR móviles 
+Sistemas HAR 
 \end_layout
 
 \begin_layout Standard
@@ -209,7 +209,7 @@ hardware
 
 \end_inset
 
- de implementación.
+.
 \end_layout
 
 \begin_layout Section
@@ -305,7 +305,7 @@ abbr{ML}
 
 \end_inset
 
- en-linea (
+ en linea (
 \emph on
 On-line learning
 \emph default
@@ -328,7 +328,7 @@ abbr{ML}
 
 \end_inset
 
- y usualmente se realiza bajo demanda (
+ y usualmente se realiza según la necesidad (
 \emph on
 Off-line learning
 \emph default
@@ -607,7 +607,7 @@ reference "sec23:sensores"
 
 \end_inset
 
-, según movimiento, posición, entorno y fisiológicas.
+, según movimiento, posición, ambiente y fisiológicas.
  A continuación se describen en detalle cada grupo.
 \end_layout
 
@@ -1276,7 +1276,7 @@ Los sensores de ambiente miden varios atributos del entorno que rodea al
 \end_layout
 
 \begin_layout Subsubsection
-Señales de Fisiológicas
+Señales de Fisionomía
 \end_layout
 
 \begin_layout Standard
@@ -1452,12 +1452,14 @@ name "fig4:sensor-log"
 status collapsed
 
 \begin_layout Plain Layout
-Aplicación de entrenamiento SensorLog
+Aplicación de recolección 
+\emph on
+SensorLog
 \end_layout
 
 \end_inset
 
-Aplicación de entrenamiento 
+Aplicación de recolección 
 \emph on
 SensorLog 
 \emph default
@@ -3191,18 +3193,9 @@ key "Schneider2014"
 \begin_layout Itemize
 Reducir la dimensión de características (a un tercio) evitando sobre-ajustes
  (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{overfitting}
-\end_layout
-
-\end_inset
-
+\emph on
+overfitting
+\emph default
 ).
 \end_layout
 
@@ -3692,8 +3685,7 @@ key "LaraLabrador2013"
 \end_inset
 
 .
- El propósito principal del algoritmo es de clasificar los datos que serán
- obtenidos a futuro.
+ El propósito principal del algoritmo es de clasificar los datos desconocidos.
  Rememorando el 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3730,21 +3722,66 @@ key "Rajaraman2011"
 \end_inset
 
 .
- En esta sección se detalla más sobre cómo se construye un clasificador
- supervisados a partir del conjunto de entrenamiento de vectores característicos
- e información acerca de la manera correcta de clasificar un subconjunto
- de datos.
+ En esta sección se detallan los pasos comunes de construcción de un clasificado
+r supervisado los cuales se listan a continuación :
+\end_layout
+
+\begin_layout Itemize
+Preparación
+\end_layout
+
+\begin_layout Itemize
+Aprendizaje
+\end_layout
+
+\begin_layout Itemize
+Evaluación
+\end_layout
+
+\begin_layout Itemize
+Clasificación
 \end_layout
 
 \begin_layout Subsubsection
-Clasificación
+Preparación
 \end_layout
 
 \begin_layout Standard
 Es parte esencial de todo algoritmo de aprendizaje automático supervisado
  contar con un conjunto de instancias de entrenamiento y la información
  adicional de clasificación.
- Cada instancia es un vector característico 
+ Durante las secciones precedentes se abarcaron las tareas de preparación
+ de los datos utilizados en el entrenamiento y la clasificación.
+ Las preparación se compone de varias tareas que inciden en la mejora del
+ clasificador resultante, las cuales se listan a continuación:
+\end_layout
+
+\begin_layout Itemize
+Limpieza y formateo de datos
+\end_layout
+
+\begin_layout Itemize
+Extracción de vectores característicos
+\end_layout
+
+\begin_layout Itemize
+Omitir instancias duplicadas o altamente correlativas
+\end_layout
+
+\begin_layout Itemize
+Reducir la cantidad de instancias de entrada
+\end_layout
+
+\begin_layout Itemize
+Normalizar el domino de los datos de las instancias
+\end_layout
+
+\begin_layout Itemize
+Separar las instancias de entrada: en conjunto de entrenamiento y evaluación
+\end_layout
+
+\begin_layout Standard
+Cada instancia es un vector característico 
 \begin_inset Formula $F_{j}$
 \end_inset
 
@@ -3757,13 +3794,9 @@ Es parte esencial de todo algoritmo de aprendizaje automático supervisado
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-Como es requerido para todo clasificador supervisado el conjunto de entrenamient
-o debe estar etiquetado con la clase conocida así como se muestra en la
- 
+ Todo clasificador supervisado requiere de un conjunto de entrenamiento
+ etiquetado con la información de clasificación conocida, así como se muestra
+ en la 
 \begin_inset ERT
 status open
 
@@ -3777,15 +3810,7 @@ tabref{tab4:labeled}
 \end_inset
 
 .
- La tarea de etiquetado debe ser realizada de forma manual como lo citado
- en la sección 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "ssec44:labeling"
-
-\end_inset
-
-, o aunque difícil pero no imposible manera automática.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4239,8 +4264,153 @@ Conjunto de entrenamiento etiquetado con información de clasificación.
 
 \end_layout
 
+\begin_layout Standard
+La tarea de etiquetado puede ser realizada de manera manual (como en la
+ sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ssec44:labeling"
+
+\end_inset
+
+), como también de manera automatizada.
+ El etiquetado de datos detectados a partir de individuos que realizan diferente
+s actividades es una tarea relativamente fácil.
+ Algunos sistemas guardan datos del sensor en medios no volátiles mientras
+ que una persona del equipo de investigación supervisa el proceso de recolección
+ y registra de forma manual la etiqueta de actividad en cada intervalo de
+ tiempo.
+ Otros sistemas se caracterizan por una aplicación móvil que permite al
+ usuario seleccionar la actividad que se realiza a partir de una lista,
+ de esta manera, cada muestra se corresponde con una etiqueta de actividad.
+ Este ultimo enfoque es utilizado en este trabajo.
+\end_layout
+
+\begin_layout Standard
+Es importante considerar las etiquetas asignadas a los datos originales
+ de la señal en cada ventana de tiempo.
+ Las etiquetas asignadas a los datos definen la relación 
+\begin_inset Formula $(F_{j},a_{k})$
+\end_inset
+
+, entre etiquetas y cada vector característico.
+ 
+\end_layout
+
 \begin_layout Subsubsection
-Reconocimiento
+Aprendizaje
+\end_layout
+
+\begin_layout Standard
+El requisito primordial para la tarea de aprendizaje es escoger al algoritmo
+ adecuado para la clasificación.
+ Así como se presenta en el capitulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Aprendizaje-Automatico"
+
+\end_inset
+
+ la elección es el algoritmo C4.5 (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "algoC45"
+
+\end_inset
+
+) basado en el enfoque de arboles de decisión.
+ El proceso de aprendizaje puede realizarse en base a tres métodos 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rajaraman2011"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El aprendizaje 
+\emph on
+basado en lotes
+\emph default
+ consiste en contar con la mayor cantidad de datos de entrenamiento al principio
+ del proceso y utilizarlo completo para construir un modelo una sola vez.
+ Por otro lado el aprendizaje 
+\emph on
+en linea
+\emph default
+ puede contar con los datos de entrenamiento a medida que se disponen los
+ mismos, como en un flujo de datos son examinados una sola vez y que no
+ pueden ser re-visitados.
+ Con este método se mantiene el modelo constantemente, a medida que nuevas
+ instancias de entrenamiento son recibidas, se tiene la elección de modificar
+ el modelo para mejorarlo con nuevas instancias.
+ 
+\end_layout
+
+\begin_layout Standard
+Las ventajas de realizar el aprendizaje en linea se pueden apreciar a simple
+ vista.
+ Se puede manejar un conjunto de entrenamiento de gran tamaño sin necesidad
+ de acceder a mas de una instancia al mismo tiempo.
+ También se puede adaptar a los cambios en la población de las instancias
+ de entrenamiento a medida que transcurre el tiempo.
+\end_layout
+
+\begin_layout Standard
+Una mejora al aprendizaje en linea es el aprendizaje 
+\emph on
+activo
+\emph default
+.
+ El clasificador se construye utilizando instancias de entrenamiento, pero
+ también puede recibir datos no clasificados para que el modelo los clasifique.
+ Si el clasificador realiza una clasificación con mucha incertidumbre, el
+ clasificador puede requerir que la instancia sea verificada para aseverar
+ su clasificación verdadera a un costo significativo.
+ 
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, la instancia puede ser retenida y verificada manualmente por
+ medio de una encuesta a personas reales.
+ De esta manera las instancias verificadas pueden ser luego utilizadas para
+ mejorar el clasificador (ver la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig4:componentes-har}
+\end_layout
+
+\end_inset
+
+).
+ En este trabajo se busca tener nuevas instancias de entrenamiento por medio
+ de un proceso colaborativo, partiendo inicialmente de un conjunto de instancias
+ de entrenamiento e ir mejorando la población con una encuesta dirigida
+ por medio del uso del clasificador de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Evaluación
 \end_layout
 
 \begin_layout Standard
@@ -4259,13 +4429,12 @@ abbr{ML}
 
  es la manera en que los datos son tratados al clasificar datos desconocidos
  y utilizados para construir un modelo de reconocimiento efectivo.
- Al tratar con los datos, es buena estrategia partir el conjunto de entrenamient
-o (
+ Al tratar con los datos, es buena estrategia dividir las instancias de
+ entrada disponibles en un conjunto de entrenamiento (
 \emph on
 training set
 \emph default
-) disponible y separar un remanente conocido como conjunto de validación
- (
+) y un remanente conocido como conjunto de validación (
 \emph on
 test set
 \emph default
@@ -4288,9 +4457,8 @@ abbr{ML}
 overfit
 \emph default
 ), es decir, la clasificación resulta como se espera en el conjunto de entrenami
-ento pero ante la mínima variación con datos desconocidos en una población
- más grande el resultado se vuelve atípico o con errores de clasificación
- 
+ento pero ante la mínima variación con datos desconocidos de una población
+ mayor el resultado se torna atípico o con errores de clasificación 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"
@@ -4298,8 +4466,26 @@ key "Rajaraman2011"
 \end_inset
 
 .
- Con este conjunto de validación se puede evaluar el clasificador determinando
- si se sobre ajustan los resultados.
+ 
+\end_layout
+
+\begin_layout Standard
+El conjunto de validación permite evaluar el clasificador determinando si
+ se sobre ajustan los resultados y cuanta precisión posee el modelo.
+ La precisión consiste es la proporción de instancias correctamente clasificadas.
+ El sobre ajuste es una medida del error en base a la precisión del algoritmo
+ con instancias en el conjunto de evaluación.
+\end_layout
+
+\begin_layout Standard
+Evaluar métricas permite realizar ajustes a los parámetros al construir
+ el algoritmo de aprendizaje automático.
+ Por ejemplo, si se construyen árboles de decisión, se pueden limitar la
+ cantidad de niveles del árbol.
+\end_layout
+
+\begin_layout Subsubsection
+Reconocimiento
 \end_layout
 
 \begin_layout Section

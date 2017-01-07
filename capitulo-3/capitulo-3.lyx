@@ -219,7 +219,7 @@ abbr{ML}
 \begin_inset Formula $(\boldsymbol{x},y)$
 \end_inset
 
- conocidos como muestras de entrenamiento, donde
+ conocidos como instancias de entrenamiento, donde
 \end_layout
 
 \begin_layout Itemize
@@ -283,7 +283,7 @@ abbr{ML}
 \begin_inset Formula $y$
 \end_inset
 
- es un número del conjunto de reales.
+ es un número del conjunto de los reales.
  Este caso corresponde a un problema de regresión.
 \end_layout
 
@@ -330,28 +330,246 @@ end{defs}
 \end_layout
 
 \begin_layout Standard
-El etiquetado de datos detectados a partir de individuos que realizan diferentes
- actividades es una tarea relativamente fácil.
- Algunos sistemas guardan datos del sensor en medios no volátiles mientras
- que una persona del equipo de investigación supervisa el proceso de recolección
- y de forma manual registra y etiqueta la actividad en cada intervalo de
- tiempo.
- Otros sistemas se caracterizan por una aplicación móvil que permite al
- usuario seleccionar la actividad que se realiza a partir de una lista,
- de esta manera, cada muestra se corresponde con una etiqueta de actividad
- y, a continuación, se almacena en el servidor.
- Este ultimo utilizado en este trabajo.
+El aprendizaje supervisado, comúnmente conocido como clasificación de múltiples
+ clases discretas, ha sido un campo muy productivo que da lugar a un gran
+ número de algoritmos.
+ En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab3:clasificadores}
 \end_layout
 
-\begin_layout Standard
-El aprendizaje supervisado ha sido un campo muy productivo, dando lugar
- a un gran número de algoritmos.
- La Tabla V resume los clasificadores más importantes en el reconocimiento
- de la actividad humana y su descripción se incluye a continuación.
+\end_inset
+
+ se resumen los clasificadores más importantes en el estudio de las 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
 \end_layout
 
-\begin_layout Standard
-**insertar listado de algoritmos**
+\end_inset
+
+ según su tipo.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tipo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clasificador
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arboles de Decisión
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C4.5, ID3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clasificadores de Bayes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Redes de Bayes, 
+\emph on
+Naïve
+\emph default
+ Bayes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Basados en Instancia
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+k-vecinos proximos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transformación de dominio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Máquinas de soporte-vector
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Redes neuronales
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Perceptron de múltiples capas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modelos de Markov
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modelos ocultos de Markov
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab3:clasificadores"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Algoritmos de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Algoritmos de aprendizaje automático
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -485,12 +703,20 @@ Algoritmo C4.5
 J.R Quinlan propone un mejora, una extensión al algoritmo ID3, al que denomina
  C4.5, este algoritmo genera un árbol de decisión a partir de los datos mediante
  particiones realizadas recursivamente.
- El árbol se construye mediante la estrategia profundidad-primero (depth-first).
+ El árbol se construye mediante la estrategia profundidad-primero (
+\emph on
+depth-first
+\emph default
+).
 \end_layout
 
 \begin_layout Standard
 El algoritmo C4.5 utiliza técnica heurística conocida como proporción de
- ganancia (gain-ratio).
+ ganancia (
+\emph on
+gain-ratio
+\emph default
+).
  Es una medida basada en información que considera diferentes números y
  probabilidades de los resultados de las pruebas.
 \end_layout
@@ -499,8 +725,15 @@ El algoritmo C4.5 utiliza técnica heurística conocida como proporción de
 El algoritmo considera todas las pruebas posibles que puede dividir el conjunto
  de datos, seleccionar la prueba que le haya generado mayor ganancia de
  información.
- Para cada atributo discreto, se considera una prueba con N resultados,
- siendo N el numero de valores posibles que puede tomar el atributo.
+ Para cada atributo discreto, se considera una prueba con 
+\begin_inset Formula $N$
+\end_inset
+
+ resultados, siendo 
+\begin_inset Formula $N$
+\end_inset
+
+ el numero de valores posibles que puede tomar el atributo.
  Para cada atributo continuo, se realiza la prueba binaria (1,0) sobre cada
  uno de los valores que puede tomar el atributo de los datos.
 \end_layout
@@ -531,7 +764,7 @@ Los arboles son menos frondosos, ya que cada hoja cubre una distribución
 
 \begin_layout Itemize
 Utiliza el método 'divide y vencerás' para generar el árbol de decisión
- incial a partir de un conjunto de datos de entrenamiento.
+ inicial a partir de un conjunto de datos de entrenamiento.
  
 \end_layout
 

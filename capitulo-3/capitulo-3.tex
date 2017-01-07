@@ -11,24 +11,42 @@ Este proceso es generalmente tedioso, caro y consume mucho tiempo en muchas apli
 \label{sec3:aprendizaje}De manera a establecer un marco teórico para los algoritmos de aprendizaje automático supervisados \cite{Rajaraman2011} se incluye la siguiente definición formal.
 
 \label{def3:clasificacion}\newtheorem{defs}{Definición}
-\begin{defs}(Clasificador\abbr{ML}) Un algoritmo\abbr{ML} recibe un conjunto entrenamiento se compone de varios pares $(\boldsymbol{x},y)$ conocidos como muestras de entrenamiento, donde
+\begin{defs}(Clasificador\abbr{ML}) Un algoritmo\abbr{ML} recibe un conjunto entrenamiento se compone de varios pares $(\boldsymbol{x},y)$ conocidos como instancias de entrenamiento, donde
 \begin{itemize}
-\item $\boldsymbol{x}$ es un \emph{vector} de valores, llamado vector característico.
-\item $y$ es la \emph{etiqueta}, el valor de clasificación para $\boldsymbol{x}$.
+\item $\boldsymbol{x}$ es un\emph{vector} de valores, llamado vector característico.
+\item $y$ es la\emph{etiqueta}, el valor de clasificación para $\boldsymbol{x}$.
 \end{itemize}
 El objetivo del proceso\abbr{ML} es encontrar una función $y=f(\boldsymbol{x})$ cuya predicción de $y$ asociada a valores desconocidos de $\boldsymbol{x}$ sea la mejor. El valor de y corresponden a valores arbitrarios pero es común encontrase con los siguientes casos:
 \begin{enumerate}
-\item $y$ es un número del conjunto de reales. Este caso corresponde a un problema de regresión.
-\item $y$ es un valor booleano verdadero-falso, también representado como $+1$ y $−1$. Este caso corresponde a una clasificación binaria. 
+\item $y$ es un número del conjunto de los reales. Este caso corresponde a un problema de regresión.
+\item $y$ es un valor booleano verdadero-falso, también representado como $+1$ y $-1$. Este caso corresponde a una clasificación binaria. 
 \item $y$ es miembro de un conjunto finito donde cada valor representa una clase particular. El problema es llamado de clasificación de múltiples clases.
 \end{enumerate}
 \end{defs}
 
-El etiquetado de datos detectados a partir de individuos que realizan diferentes actividades es una tarea relativamente fácil. Algunos sistemas guardan datos del sensor en medios no volátiles mientras que una persona del equipo de investigación supervisa el proceso de recolección y de forma manual registra y etiqueta la actividad en cada intervalo de tiempo. Otros sistemas se caracterizan por una aplicación móvil que permite al usuario seleccionar la actividad que se realiza a partir de una lista, de esta manera, cada muestra se corresponde con una etiqueta de actividad y, a continuación, se almacena en el servidor. Este ultimo utilizado en este trabajo.
-
-El aprendizaje supervisado ha sido un campo muy productivo, dando lugar a un gran número de algoritmos. La Tabla V resume los clasificadores más importantes en el reconocimiento de la actividad humana y su descripción se incluye a continuación.
-
-**insertar listado de algoritmos**
+El aprendizaje supervisado, comúnmente conocido como clasificación de múltiples clases discretas, ha sido un campo muy productivo que da lugar a un gran número de algoritmos. En la \tabref{tab3:clasificadores} se resumen los clasificadores más importantes en el estudio de las \abbr{HAR} según su tipo.
+\begin{table}
+\begin{centering}
+\begin{tabular}{|l|l|}
+\hline 
+Tipo & Clasificador\tabularnewline
+\hline 
+\hline 
+Arboles de Decisión & C4.5, ID3\tabularnewline
+\hline 
+Clasificadores de Bayes & Redes de Bayes, \emph{Naïve} Bayes\tabularnewline
+\hline 
+Basados en Instancia & k-vecinos proximos\tabularnewline
+\hline 
+Transformación de dominio & Máquinas de soporte-vector\tabularnewline
+\hline 
+Redes neuronales & Perceptron de múltiples capas\tabularnewline
+\hline 
+Modelos de Markov & Modelos ocultos de Markov\tabularnewline
+\end{tabular}
+\par\end{centering}
+\caption[Algoritmos de \abbr{ML}]{\label{tab3:clasificadores} Algoritmos de aprendizaje automático}
+\end{table}
 
 En las siguientes secciones nos concentramos en un enfoque basado en arboles de decisión (\abbr{DT}) para construir la función $f$. La función $f$ corresponde a un árbol de múltiples niveles donde cada nodo aplica una función a $\boldsymbol{x}$ y determina sobre qué nodo hijo procede la búsqueda. Cada nodo posee cualquier número de nodos hijos. Los árboles de decisión son preferibles para las clasificación binaria o de múltiples clases, especialmente cuando la dimensión del vector característicos no es muy grande\cite{Rajaraman2011}.
 
@@ -45,17 +63,17 @@ El árbol de decisión es un método de aprendizaje predictivo de una conjunto d
 En la figura por ejemplo un típico árbol de decisión que representa el concepto de jugar o no Golf, teniendo en cuenta variables climática representadas en los nodos internos, y los nodos hojas denotan las decisiones de jugar o no golf. 
 
 \section{Algoritmo C4.5}
-J.R Quinlan propone un mejora, una extensión al algoritmo ID3, al que denomina C4.5, este algoritmo genera un árbol de decisión a partir de los datos mediante particiones realizadas recursivamente. El árbol se construye mediante la estrategia profundidad-primero (depth-first).
+J.R Quinlan propone un mejora, una extensión al algoritmo ID3, al que denomina C4.5, este algoritmo genera un árbol de decisión a partir de los datos mediante particiones realizadas recursivamente. El árbol se construye mediante la estrategia profundidad-primero (\emph{depth-first}).
 
-El algoritmo C4.5 utiliza técnica heurística conocida como proporción de ganancia (gain-ratio). Es una medida basada en información que considera diferentes números y probabilidades de los resultados de las pruebas. 
+El algoritmo C4.5 utiliza técnica heurística conocida como proporción de ganancia (\emph{gain-ratio}). Es una medida basada en información que considera diferentes números y probabilidades de los resultados de las pruebas. 
 
-El algoritmo considera todas las pruebas posibles que puede dividir el conjunto de datos, seleccionar la prueba que le haya generado mayor ganancia de información. Para cada atributo discreto, se considera una prueba con N resultados, siendo N el numero de valores posibles que puede tomar el atributo. Para cada atributo continuo, se realiza la prueba binaria (1,0) sobre cada uno de los valores que puede tomar el atributo de los datos.
+El algoritmo considera todas las pruebas posibles que puede dividir el conjunto de datos, seleccionar la prueba que le haya generado mayor ganancia de información. Para cada atributo discreto, se considera una prueba con $N$ resultados, siendo $N$ el numero de valores posibles que puede tomar el atributo. Para cada atributo continuo, se realiza la prueba binaria (1,0) sobre cada uno de los valores que puede tomar el atributo de los datos.
 
 \section{Características del algoritmo C4.5}
 \begin{itemize}
 	\item Permite trabaja con valores continuos para los atributos, separando los posibles resultados en dos ramas $ A_{i} <= N $ y $ A_{i} > N $ . 
 	\item Los arboles son menos frondosos, ya que cada hoja cubre una distribución de clases no una clase en particular.
-	\item Utiliza el método 'divide y vencerás' para generar el árbol de decisión incial a partir de un conjunto de datos de entrenamiento.
+	\item Utiliza el método 'divide y vencerás' para generar el árbol de decisión inicial a partir de un conjunto de datos de entrenamiento.
 	\item Se basan en la utilización del criterio de proporción de ganancia, definido como $ I(X_{i},C) / I(X_{i})  $. De esta manera se consigue evitar que la variables con mayor numero de categorías salgan beneficiadas en la selección. 
 	\item Es recursivo.
 \end{itemize}

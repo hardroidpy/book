@@ -2041,7 +2041,7 @@ Enfoques Geométricos
 \begin_inset Text
 
 \begin_layout Plain Layout
-Vecinos cercanos (
+Vecinos proximos (
 \begin_inset ERT
 status open
 
@@ -2217,7 +2217,7 @@ key "ReyesOrtiz2015"
 En el capitulo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap3:Aprendizaje-Automatico"
+reference "chap:Aprendizaje-Automatico"
 
 \end_inset
 
