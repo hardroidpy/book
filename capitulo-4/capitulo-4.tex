@@ -30,11 +30,9 @@ contextuales. Las funciones principales de los componentes descritos
 en la primera sección exponen los mecanismos para implementar los
 mismos en base trabajos relacionados de \abbr{HAR} \cite{Choudhury2008,ReyesOrtiz2015}. 
 
-La última sección, enumera los requisitos no funcionales para lograr
-una aplicación de contexto móvil y ubicua. Por un lado, las características
-esperadas en una aplicación de esta naturaleza, y por el otro los
-requisitos técnicos de los dispositivos móviles y los sensores empotrados
-utilizados como instrumentos\footnote{\emph{hardware}}.
+La última sección cita los requisitos no funcionales para lograr una
+aplicación de contexto móvil y ubicua con características especiales
+esperadas para este tipo de solución.
 
 \section{Componentes}
 
@@ -50,11 +48,11 @@ se divide en dos etapas: la etapa de entrenamiento y la de evaluación
 Ambas etapas requieren la implementación de los mismos componentes,
 pero un sistema \abbr{HAR} práctico debe contemplar principalmente
 la fase de evaluación, ya que el reconocimiento de actividades resulta
-de una \emph{predicción} basado en un algoritmo de \abbr{ML} en linea
+de una \emph{predicción} basado en un modelo de \abbr{ML} en linea
 (\emph{On-line learning}). Sin embargo, la etapa de entrenamiento
 es un elemento clave para el sistema ya que es el punto de partida
-para el \emph{aprendizaje} basado en modelo de \abbr{ML} y usualmente
-se realiza según la necesidad (\emph{Off-line learning}).
+para el \emph{aprendizaje} utilizando algoritmos de \abbr{ML} y usualmente
+se realiza según sea necesario (\emph{Off-line learning}).
 
 Bajo el marco teórico de los sistemas \abbr{HAR} basados en \abbr{ML},
 se han identificado unos componentes comunes para realizar las funcionalidades
@@ -70,7 +68,7 @@ de los componentes y sus interrelaciones. Las funcionalidades de cada
 componente se describen a continuación. 
 
 \begin{figure}[!tbph]
-\centering{}\includegraphics[width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption[Componentes \abbr{HAR}]{\label{fig4:componentes-har}Componentes de los sistemas \abbr{HAR}}
+\centering{}\includegraphics[width=1\columnwidth,width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption[Componentes \abbr{HAR}]{\label{fig4:componentes-har}Componentes de los sistemas \abbr{HAR}}
 \end{figure}
 
 
@@ -302,9 +300,9 @@ como parte del estudio}
 la orientación del teléfono}
 \end{itemize}
 La recolección se realiza obteniendo medidas a una razón de 60 a 100
-\emph{mili}segundos por lo que se registran aproximadamente 60 a 100
-muestras por segundo. Para asegurar la calidad de la recolección inicial
-de datos las primeras sesiones de entrenamiento son supervisadas para
+milisegundos por lo que se registran aproximadamente 60 a 100 muestras
+por segundo. Para asegurar la calidad de la recolección inicial de
+datos las primeras sesiones de entrenamiento son supervisadas para
 preparar las condiciones adecuadas del entrenamiento físico a elección
 del participante.
 
@@ -324,7 +322,7 @@ registrar ruido en los datos, Ej. errores del orden de $\pm0.005$.
 
 Entonces, para reducir ruido de la señal se debe aplicar uno o más
 filtros. El filtro permite suavizar la señal por medio de una función
-simple como la del cálculo de promedios variables (\emph{moving average})
+simple como la del cálculo de promedios variables\footnote{\emph{moving average}}
 o por un método como el de \emph{Butterworth} \cite{ReyesOrtiz2015}. 
 
 Para el análisis de este trabajo se utilizó el filtro de señal de
@@ -473,7 +471,7 @@ señal.
 de la frecuencia.
 \item \textbf{Curtosis:} medida de distribución de concentración en el dominio
 de la frecuencia.
-\item \textbf{Rango inter-cuartíl:} medida de dispersión de la diferencia
+\item \textbf{Rango intercuartíl:} medida de dispersión de la diferencia
 entre el tercer y primer cuartíl.
 \item \textbf{Coeficientes autorregresivos:} los coeficientes obtenidos
 utilizando el método de Burg que aplica un modelo autorregresivo para
@@ -536,10 +534,10 @@ Se eligió utilizar la magnitud $\lVert a\rVert$ del vector excluyendo
 los valores unitarios en cada dimensión $a_{x}$,$a_{y}$,$a_{z}$
 por los siguientes motivos:
 \begin{itemize}
-\item Simplicidad para utilizar la técnica de \abbr{DT}
-\item Para cancelar el efecto de variaciones en la orientación del teléfono\cite{Schneider2014}
-\item Reducir la dimensión de características (a un tercio) evitando sobre-ajustes
-(\emph{overfitting}).
+\item Simplicidad para utilizar la técnica de \abbr{DT}.
+\item Para cancelar el efecto de variaciones en la orientación del teléfono
+\cite{Schneider2014}.
+\item Reducir la dimensión de características (a un tercio) evitando sobreajustes\footnote{\emph{overfitting}}.
 \end{itemize}
 El proceso de extracción transforma una ventana $w_{j}$ con señales
 originales en un vector característico $F_{j}$ de dimensión $p$
@@ -584,17 +582,22 @@ En este contexto los patrones son descubiertos a partir de un conjunto
 de observaciones denominadas instancias \cite{LaraLabrador2013}.
 El propósito principal del algoritmo es de clasificar los datos desconocidos.
 Rememorando el \ref{chap:Aprendizaje-Automatico}, la entrada aplicada
-a un algoritmo de \abbr{ML} es un conjunto de entrenamiento (\emph{training
-set}) y el resultado del mismo es un clasificador (\emph{classifier})
-\cite{Rajaraman2011}. En esta sección se detallan los pasos comunes
-de construcción de un clasificador supervisado los cuales se listan
-a continuación :
-\begin{itemize}
-\item Preparación
-\item Aprendizaje
-\item Evaluación
-\item Clasificación
-\end{itemize}
+a un algoritmo de \abbr{ML} es un conjunto de entrenamiento\footnote{\emph{training set}}
+y el resultado del mismo es un clasificador\footnote{\emph{classifier}}
+\cite{Rajaraman2011}. En la \figref{fig4:clasificador} se muestra
+una gráfico esquemático adaptado al problema \abbr{HAR} del proceso
+de extracción de conocimiento con algoritmos de aprendizaje automático
+\cite{Raschka2014}.
+
+\begin{figure}[!tbph]
+\includegraphics[width=1\columnwidth]{capitulo-4/graphics/clasificacion}
+
+\caption[Modelo de aprendizaje automático]{\label{fig4:clasificador}Construcción de modelo \abbr{HAR} basado
+en técnicas de aprendizaje automático.}
+\end{figure}
+
+En esta sección se detallan los pasos del proceso común de aprendizaje
+automático.
 
 \subsubsection{Preparación}
 
@@ -666,40 +669,43 @@ El requisito primordial para la tarea de aprendizaje es escoger al
 algoritmo adecuado para la clasificación. Así como se presenta en
 el capitulo \ref{chap:Aprendizaje-Automatico} la elección es el algoritmo
 C4.5 (\ref{algoC45}) basado en el enfoque de arboles de decisión.
-El proceso de aprendizaje puede realizarse en base a tres métodos
+El proceso de aprendizaje puede realizarse en base a tres metodologías
 \cite{Rajaraman2011}.
 
 El aprendizaje \emph{basado en lotes} consiste en contar con la mayor
 cantidad de datos de entrenamiento al principio del proceso y utilizarlo
-completo para construir un modelo una sola vez. Por otro lado el aprendizaje
-\emph{en linea} puede contar con los datos de entrenamiento a medida
-que se disponen los mismos, como en un flujo de datos son examinados
-una sola vez y que no pueden ser re-visitados. Con este método se
-mantiene el modelo constantemente, a medida que nuevas instancias
-de entrenamiento son recibidas, se tiene la elección de modificar
-el modelo para mejorarlo con nuevas instancias. 
+íntegramente para construir el modelo una sola vez. Por otro lado
+el aprendizaje \emph{en linea} puede contar con los datos de entrenamiento
+a medida que se disponen de los mismos, como en un flujo de datos,
+estos son examinados una sola vez y no pueden ser revisados. Con este
+método se mantiene el modelo constantemente, a medida que nuevas instancias
+de entrenamiento son recibidas, se puede elegir modificar el modelo
+y mejorarlo con nuevas instancias. 
 
 Las ventajas de realizar el aprendizaje en linea se pueden apreciar
-a simple vista. Se puede manejar un conjunto de entrenamiento de gran
-tamaño sin necesidad de acceder a mas de una instancia al mismo tiempo.
-También se puede adaptar a los cambios en la población de las instancias
-de entrenamiento a medida que transcurre el tiempo.
+a simple vista. El conjunto de entrenamiento de entrada puede ser
+de gran tamaño sin necesidad de acceder a más de una instancia la
+vez. También, el modelo puede adaptarse a los cambios que emerjan
+en la población de instancias de entrenamiento a medida que transcurre
+el tiempo.
 
-Una mejora al aprendizaje en linea es el aprendizaje \emph{activo}.
-El clasificador se construye utilizando instancias de entrenamiento,
-pero también puede recibir datos no clasificados para que el modelo
-los clasifique. Si el clasificador realiza una clasificación con mucha
-incertidumbre, el clasificador puede requerir que la instancia sea
-verificada para aseverar su clasificación verdadera a un costo significativo. 
+Una mejora aplicada al aprendizaje en linea es el aprendizaje \emph{activo}.
+El clasificador se construye primeramente utilizando un conjunto de
+entrenamiento, pero a la par se pueden recibir datos no clasificados
+para que el modelo los clasifique. Si el modelo realiza una clasificación
+con mucha incertidumbre, se puede requerir que la instancia sea verificada
+para aseverar la clasificación a un costo significativo. 
 
 Por ejemplo, la instancia puede ser retenida y verificada manualmente
-por medio de una encuesta a personas reales. De esta manera las instancias
-verificadas pueden ser luego utilizadas para mejorar el clasificador
-(ver la \figref{fig4:componentes-har}). En este trabajo se busca
-tener nuevas instancias de entrenamiento por medio de un proceso colaborativo,
-partiendo inicialmente de un conjunto de instancias de entrenamiento
-e ir mejorando la población con una encuesta dirigida por medio del
-uso del clasificador de \abbr{HAR}.
+por medio de una encuesta en terreno a personas reales. De esta manera
+las instancias verificadas pueden luego ser utilizadas para mejorar
+el modelo clasificador (véase en la \figref{fig4:componentes-har}
+la retroalimentación). 
+
+En este trabajo se busca tener nuevas instancias de entrenamiento
+por medio de un proceso colaborativo, partiendo inicialmente de un
+conjunto de instancias de entrenamiento e ir mejorando la población
+con una encuesta dirigida por medio del uso del sistema \abbr{HAR}.
 
 \subsubsection{Evaluación}
 
@@ -707,26 +713,26 @@ Uno de los tópicos primordiales de los algoritmos de \abbr{ML} es
 la manera en que los datos son tratados al clasificar datos desconocidos
 y utilizados para construir un modelo de reconocimiento efectivo.
 Al tratar con los datos, es buena estrategia dividir las instancias
-de entrada disponibles en un conjunto de entrenamiento (\emph{training
-set}) y un remanente conocido como conjunto de validación (\emph{test
-set}). El problema común de los algoritmos de \abbr{ML} es el error
-asociado al sobre ajuste (\emph{overfit}), es decir, la clasificación
-resulta como se espera en el conjunto de entrenamiento pero ante la
-mínima variación con datos desconocidos de una población mayor el
-resultado se torna atípico o con errores de clasificación \cite{Rajaraman2011}. 
+de entrada disponibles en un conjunto de entrenamiento y un remanente
+conocido como conjunto de validación\emph{}\footnote{\emph{test set}}.
+El problema común de los algoritmos de \abbr{ML} es el error asociado
+al sobreajuste, es decir, la clasificación resulta como se espera
+en el conjunto de entrenamiento pero ante la mínima variación con
+datos desconocidos de una población mayor el resultado se torna atípico
+o con errores de clasificación \cite{Rajaraman2011}. 
 
 El conjunto de validación permite evaluar el clasificador determinando
-si se sobre ajustan los resultados y cuanta precisión posee el modelo.
-La precisión consiste es la proporción de instancias correctamente
-clasificadas. El sobre ajuste es una medida del error en base a la
-precisión del algoritmo con instancias en el conjunto de evaluación.
+si se sobreajustan los resultados y con cuanta precisión es efectivo
+el modelo. La precisión es la proporción de instancias correctamente
+clasificadas. El sobreajuste es una medida del error en base a la
+precisión del modelo con instancias en el conjunto de evaluación.
 
 Evaluar métricas permite realizar ajustes a los parámetros al construir
 el algoritmo de aprendizaje automático. Por ejemplo, si se construyen
 árboles de decisión, se pueden limitar la cantidad de niveles del
 árbol.
 
-\subsubsection{Reconocimiento}
+\subsubsection{Clasificación}
 
 \section{Capacidades deseables}
 
@@ -736,7 +742,7 @@ el algoritmo de aprendizaje automático. Por ejemplo, si se construyen
 deseables que deben ser satisfechas para la construcción efectiva
 de los sistemas de reconocimiento. Estas características abordan cuestiones
 de diseño importantes que conciernen a la calidad y al funcionamiento
-del sistema:
+del sistema. Las características se listan a continuación:
 \begin{enumerate}
 \item Portabilidad, el sistema utiliza sensores adjuntos a los individuos
 (Ej. el acelerómetro) y no deben obstruir las actividades cotidianas
@@ -764,27 +770,13 @@ además de alertar sobre la utilización de datos sensibles que requieran
 el consentimiento del usuario.
 \end{enumerate}
 
-\subsection{Dispositivos móviles}
-
-\label{ssec46:dispositivos-moviles}Descripción técnica de dispositivos
-móviles: procesador, memoria, sensores y almacenamiento
-
-\subsubsection{Teléfonos móviles}
-
-\subsubsection{Relojes inteligentes}
-
-\subsection{Sensores empotrados}
-
-\label{ssec46:sensores-empotrados}Descripción técnica de los sensores
-de aceleración, variables, orientación en dispositivo, unidades de
-medida, precisión vs consumo.
-
-\subsubsection{Acelerómetro}
-
-\subsubsection{Giroscopio}
-
-\subsubsection{GPS/WIFI}
-
 \section{Conclusión}
 
-Resumen
+En este capítulo se abarcaron en detalle los aspectos prácticos de
+los sistemas de reconocimiento de actividades humanas en base a la
+fundamentos teóricos y las técnicas existentes en la literatura. Principalmente
+se enmarco una estructura de un sistema \abbr{HAR} con sus componentes
+principales, el proceso general de reconocimiento y las tareas responsables
+para las funcionalidades operacionales básicas. Finalmente, se citan
+algunos aspectos de características esperadas de una aplicación de
+contexto aplicadas a nuestro problema en particular.

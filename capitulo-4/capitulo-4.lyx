@@ -193,23 +193,9 @@ key "Choudhury2008,ReyesOrtiz2015"
 \end_layout
 
 \begin_layout Standard
-La última sección, enumera los requisitos no funcionales para lograr una
- aplicación de contexto móvil y ubicua.
- Por un lado, las características esperadas en una aplicación de esta naturaleza
-, y por el otro los requisitos técnicos de los dispositivos móviles y los
- sensores empotrados utilizados como instrumentos
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-hardware
-\end_layout
-
-\end_inset
-
-.
+La última sección cita los requisitos no funcionales para lograr una aplicación
+ de contexto móvil y ubicua con características especiales esperadas para
+ este tipo de solución.
 \end_layout
 
 \begin_layout Section
@@ -292,7 +278,7 @@ abbr{HAR}
 \emph on
 predicción
 \emph default
- basado en un algoritmo de 
+ basado en un modelo de 
 \begin_inset ERT
 status open
 
@@ -315,7 +301,7 @@ On-line learning
 \emph on
 aprendizaje
 \emph default
- basado en modelo de 
+ utilizando algoritmos de 
 \begin_inset ERT
 status open
 
@@ -328,7 +314,7 @@ abbr{ML}
 
 \end_inset
 
- y usualmente se realiza según la necesidad (
+ y usualmente se realiza según sea necesario (
 \emph on
 Off-line learning
 \emph default
@@ -427,6 +413,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename graphics/diagrama_4_1.jpg
+	width 100col%
 	special width=1\linewidth
 
 \end_inset
@@ -1549,11 +1536,8 @@ n del teléfono
 \end_layout
 
 \begin_layout Standard
-La recolección se realiza obteniendo medidas a una razón de 60 a 100 
-\emph on
-mili
-\emph default
-segundos por lo que se registran aproximadamente 60 a 100 muestras por segundo.
+La recolección se realiza obteniendo medidas a una razón de 60 a 100 milisegundo
+s por lo que se registran aproximadamente 60 a 100 muestras por segundo.
  Para asegurar la calidad de la recolección inicial de datos las primeras
  sesiones de entrenamiento son supervisadas para preparar las condiciones
  adecuadas del entrenamiento físico a elección del participante.
@@ -1614,11 +1598,19 @@ jitter
 \begin_layout Standard
 Entonces, para reducir ruido de la señal se debe aplicar uno o más filtros.
  El filtro permite suavizar la señal por medio de una función simple como
- la del cálculo de promedios variables (
+ la del cálculo de promedios variables
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
 \emph on
 moving average
-\emph default
-) o por un método como el de 
+\end_layout
+
+\end_inset
+
+ o por un método como el de 
 \emph on
 Butterworth
 \emph default
@@ -2692,7 +2684,7 @@ Curtosis:
 \begin_layout Enumerate
 
 \series bold
-Rango inter-cuartíl:
+Rango intercuartíl:
 \series default
  medida de dispersión de la diferencia entre el tercer y primer cuartíl.
 \end_layout
@@ -3176,27 +3168,34 @@ abbr{DT}
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Itemize
-Para cancelar el efecto de variaciones en la orientación del teléfono
+Para cancelar el efecto de variaciones en la orientación del teléfono 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schneider2014"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Itemize
-Reducir la dimensión de características (a un tercio) evitando sobre-ajustes
- (
+Reducir la dimensión de características (a un tercio) evitando sobreajustes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
 \emph on
 overfitting
-\emph default
-).
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3706,15 +3705,31 @@ abbr{ML}
 
 \end_inset
 
- es un conjunto de entrenamiento (
+ es un conjunto de entrenamiento
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
 \emph on
 training set
-\emph default
-) y el resultado del mismo es un clasificador (
+\end_layout
+
+\end_inset
+
+ y el resultado del mismo es un clasificador
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
 \emph on
 classifier
-\emph default
-) 
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"
@@ -3722,24 +3737,108 @@ key "Rajaraman2011"
 \end_inset
 
 .
- En esta sección se detallan los pasos comunes de construcción de un clasificado
-r supervisado los cuales se listan a continuación :
+ En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig4:clasificador}
 \end_layout
 
-\begin_layout Itemize
-Preparación
+\end_inset
+
+ se muestra una gráfico esquemático adaptado al problema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
 \end_layout
 
-\begin_layout Itemize
-Aprendizaje
+\end_inset
+
+ del proceso de extracción de conocimiento con algoritmos de aprendizaje
+ automático 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Raschka2014"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
-Evaluación
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphics/clasificacion.png
+	width 100col%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-Clasificación
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig4:clasificador"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Modelo de aprendizaje automático
+\end_layout
+
+\end_inset
+
+Construcción de modelo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ basado en técnicas de aprendizaje automático.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En esta sección se detallan los pasos del proceso común de aprendizaje automátic
+o.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4319,7 +4418,8 @@ reference "algoC45"
 \end_inset
 
 ) basado en el enfoque de arboles de decisión.
- El proceso de aprendizaje puede realizarse en base a tres métodos 
+ El proceso de aprendizaje puede realizarse en base a tres metodologías
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"
@@ -4335,48 +4435,50 @@ El aprendizaje
 basado en lotes
 \emph default
  consiste en contar con la mayor cantidad de datos de entrenamiento al principio
- del proceso y utilizarlo completo para construir un modelo una sola vez.
+ del proceso y utilizarlo íntegramente para construir el modelo una sola
+ vez.
  Por otro lado el aprendizaje 
 \emph on
 en linea
 \emph default
- puede contar con los datos de entrenamiento a medida que se disponen los
- mismos, como en un flujo de datos son examinados una sola vez y que no
- pueden ser re-visitados.
+ puede contar con los datos de entrenamiento a medida que se disponen de
+ los mismos, como en un flujo de datos, estos son examinados una sola vez
+ y no pueden ser revisados.
  Con este método se mantiene el modelo constantemente, a medida que nuevas
- instancias de entrenamiento son recibidas, se tiene la elección de modificar
- el modelo para mejorarlo con nuevas instancias.
+ instancias de entrenamiento son recibidas, se puede elegir modificar el
+ modelo y mejorarlo con nuevas instancias.
  
 \end_layout
 
 \begin_layout Standard
 Las ventajas de realizar el aprendizaje en linea se pueden apreciar a simple
  vista.
- Se puede manejar un conjunto de entrenamiento de gran tamaño sin necesidad
- de acceder a mas de una instancia al mismo tiempo.
- También se puede adaptar a los cambios en la población de las instancias
- de entrenamiento a medida que transcurre el tiempo.
+ El conjunto de entrenamiento de entrada puede ser de gran tamaño sin necesidad
+ de acceder a más de una instancia la vez.
+ También, el modelo puede adaptarse a los cambios que emerjan en la población
+ de instancias de entrenamiento a medida que transcurre el tiempo.
 \end_layout
 
 \begin_layout Standard
-Una mejora al aprendizaje en linea es el aprendizaje 
+Una mejora aplicada al aprendizaje en linea es el aprendizaje 
 \emph on
 activo
 \emph default
 .
- El clasificador se construye utilizando instancias de entrenamiento, pero
- también puede recibir datos no clasificados para que el modelo los clasifique.
- Si el clasificador realiza una clasificación con mucha incertidumbre, el
- clasificador puede requerir que la instancia sea verificada para aseverar
- su clasificación verdadera a un costo significativo.
+ El clasificador se construye primeramente utilizando un conjunto de entrenamien
+to, pero a la par se pueden recibir datos no clasificados para que el modelo
+ los clasifique.
+ Si el modelo realiza una clasificación con mucha incertidumbre, se puede
+ requerir que la instancia sea verificada para aseverar la clasificación
+ a un costo significativo.
  
 \end_layout
 
 \begin_layout Standard
 Por ejemplo, la instancia puede ser retenida y verificada manualmente por
- medio de una encuesta a personas reales.
- De esta manera las instancias verificadas pueden ser luego utilizadas para
- mejorar el clasificador (ver la 
+ medio de una encuesta en terreno a personas reales.
+ De esta manera las instancias verificadas pueden luego ser utilizadas para
+ mejorar el modelo clasificador (véase en la 
 \begin_inset ERT
 status open
 
@@ -4389,11 +4491,15 @@ figref{fig4:componentes-har}
 
 \end_inset
 
-).
- En este trabajo se busca tener nuevas instancias de entrenamiento por medio
+ la retroalimentación).
+ 
+\end_layout
+
+\begin_layout Standard
+En este trabajo se busca tener nuevas instancias de entrenamiento por medio
  de un proceso colaborativo, partiendo inicialmente de un conjunto de instancias
  de entrenamiento e ir mejorando la población con una encuesta dirigida
- por medio del uso del clasificador de 
+ por medio del uso del sistema 
 \begin_inset ERT
 status open
 
@@ -4430,15 +4536,24 @@ abbr{ML}
  es la manera en que los datos son tratados al clasificar datos desconocidos
  y utilizados para construir un modelo de reconocimiento efectivo.
  Al tratar con los datos, es buena estrategia dividir las instancias de
- entrada disponibles en un conjunto de entrenamiento (
+ entrada disponibles en un conjunto de entrenamiento y un remanente conocido
+ como conjunto de validación
 \emph on
-training set
-\emph default
-) y un remanente conocido como conjunto de validación (
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
 \emph on
 test set
+\end_layout
+
+\end_inset
+
+
 \emph default
-).
+.
  El problema común de los algoritmos de 
 \begin_inset ERT
 status open
@@ -4452,13 +4567,10 @@ abbr{ML}
 
 \end_inset
 
- es el error asociado al sobre ajuste (
-\emph on
-overfit
-\emph default
-), es decir, la clasificación resulta como se espera en el conjunto de entrenami
-ento pero ante la mínima variación con datos desconocidos de una población
- mayor el resultado se torna atípico o con errores de clasificación 
+ es el error asociado al sobreajuste, es decir, la clasificación resulta
+ como se espera en el conjunto de entrenamiento pero ante la mínima variación
+ con datos desconocidos de una población mayor el resultado se torna atípico
+ o con errores de clasificación 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"
@@ -4471,9 +4583,9 @@ key "Rajaraman2011"
 
 \begin_layout Standard
 El conjunto de validación permite evaluar el clasificador determinando si
- se sobre ajustan los resultados y cuanta precisión posee el modelo.
- La precisión consiste es la proporción de instancias correctamente clasificadas.
- El sobre ajuste es una medida del error en base a la precisión del algoritmo
+ se sobreajustan los resultados y con cuanta precisión es efectivo el modelo.
+ La precisión es la proporción de instancias correctamente clasificadas.
+ El sobreajuste es una medida del error en base a la precisión del modelo
  con instancias en el conjunto de evaluación.
 \end_layout
 
@@ -4485,7 +4597,7 @@ Evaluar métricas permite realizar ajustes a los parámetros al construir
 \end_layout
 
 \begin_layout Subsubsection
-Reconocimiento
+Clasificación
 \end_layout
 
 \begin_layout Section
@@ -4506,7 +4618,8 @@ name "ssec46:caracteristicas"
 Existen un conjunto de características deseables que deben ser satisfechas
  para la construcción efectiva de los sistemas de reconocimiento.
  Estas características abordan cuestiones de diseño importantes que conciernen
- a la calidad y al funcionamiento del sistema:
+ a la calidad y al funcionamiento del sistema.
+ Las características se listan a continuación:
 \end_layout
 
 \begin_layout Enumerate
@@ -4554,62 +4667,31 @@ os y/o producidos durante la adopción masiva del sistema, además de alertar
  del usuario.
 \end_layout
 
-\begin_layout Subsection
-Dispositivos móviles
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "ssec46:dispositivos-moviles"
-
-\end_inset
-
-Descripción técnica de dispositivos móviles: procesador, memoria, sensores
- y almacenamiento
-\end_layout
-
-\begin_layout Subsubsection
-Teléfonos móviles
-\end_layout
-
-\begin_layout Subsubsection
-Relojes inteligentes
-\end_layout
-
-\begin_layout Subsection
-Sensores empotrados
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "ssec46:sensores-empotrados"
-
-\end_inset
-
-Descripción técnica de los sensores de aceleración, variables, orientación
- en dispositivo, unidades de medida, precisión vs consumo.
-\end_layout
-
-\begin_layout Subsubsection
-Acelerómetro
-\end_layout
-
-\begin_layout Subsubsection
-Giroscopio
-\end_layout
-
-\begin_layout Subsubsection
-GPS/WIFI
-\end_layout
-
 \begin_layout Section
 Conclusión
 \end_layout
 
 \begin_layout Standard
-Resumen
+En este capítulo se abarcaron en detalle los aspectos prácticos de los sistemas
+ de reconocimiento de actividades humanas en base a la fundamentos teóricos
+ y las técnicas existentes en la literatura.
+ Principalmente se enmarco una estructura de un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ con sus componentes principales, el proceso general de reconocimiento y
+ las tareas responsables para las funcionalidades operacionales básicas.
+ Finalmente, se citan algunos aspectos de características esperadas de una
+ aplicación de contexto aplicadas a nuestro problema en particular.
 \end_layout
 
 \end_body
