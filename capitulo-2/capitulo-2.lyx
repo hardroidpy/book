@@ -131,8 +131,8 @@ abbr{HAR}
 \end_layout
 
 \begin_layout Standard
-La primera sección, se introducen las aplicaciones de contexto que son el
- principal marco de trabajo del estudio de sistemas 
+En la primera sección, se introducen las aplicaciones de contexto que son
+ el principal marco de trabajo del estudio de sistemas 
 \begin_inset ERT
 status open
 
@@ -147,10 +147,10 @@ abbr{HAR}
 
 .
  En síntesis, nuestro enfoque es detectar las actividades físicas para dar
- información de contexto en las actividades diarias de un individuo durante
+ información de contexto en las acciones diarias de un individuo durante
  su locomoción.
- Las siguientes secciones dan todos los elementos requeridos para implementar
- los sistemas 
+ Las siguientes secciones abarcan todos los elementos requeridos para implementa
+r los sistemas 
 \begin_inset ERT
 status open
 
@@ -167,7 +167,7 @@ abbr{HAR}
  Desde el punto de vista de implementación se discuten los sensores y los
  teléfonos móviles inteligentes.
  La última sección define el marco teórico del reconocimiento de actividades
- humanas en base al estado de arte.
+ humanas de acuerdo al estado de arte.
 \end_layout
 
 \begin_layout Section
@@ -181,12 +181,12 @@ name "sec22:contexto"
 
 \end_inset
 
-En la actualidad construir aplicaciones interactivas requieren tener en
- cuenta el aspecto del contexto del usuario principalmente por la importancia
- de este asunto debido a que este cambia con mucha frecuencia, como ocurren
- en la computación móvil y ubicua.
- El contexto de un usuario es un medio adicional para la interacción entre
- computadora y humano, además de otros los métodos convencionales de entrada
+En la actualidad, construir aplicaciones interactivas requiere que se tenga
+ en cuenta el aspecto del contexto del usuario, principalmente por la importanci
+a que este asunto tiene debido al cambio frecuente que afecta el contexto
+ debido a la computación móvil y ubicua.
+ El contexto de un usuario es un medio adicional de interacción entre humano
+ y computadora, adicional a los otros métodos convencionales de ingesta
  de datos.
  Este nuevo medio abre nuevas posibilidades de comunicación y producción
  de nuevos servicios en computación.
@@ -194,7 +194,7 @@ En la actualidad construir aplicaciones interactivas requieren tener en
 \end_layout
 
 \begin_layout Standard
-Pero, ¿qué es el contexto?, citando otras fuentes podemos definir el contexto
+Pero, ¿qué es el contexto?, citando a otras fuentes podemos definir el contexto
  como: "
 \emph on
 ...
@@ -212,24 +212,32 @@ key "Dey2000"
 \end_inset
 
 .
- De manera específica, el contexto de un usuario es el estado de su información
- física, emocional o social, sin dejar de lado cualquier otra situación
- en que el usuario esté involucrado y sea relevante para la aplicación.
+ De manera específica, el contexto de un usuario es el estado acerca de
+ la información física, emocional o social, sin dejar de lado cualquier
+ otra situación en la que el usuario esté involucrado y además sea relevante
+ para la aplicación.
 \end_layout
 
 \begin_layout Standard
 Debido a la libertad de movilidad presentes en la computación móvil y ubicua,
- es primordial construir aplicaciones que conozcan el contexto de sus usuarios
- (
+ es primordial construir aplicaciones que conozcan el contexto de sus usuarios,
+ dicho de otro modo aplicaciones de contexto
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
 \emph on
 context-aware
-\emph default
-, o aplicaciones de contexto).
+\end_layout
+
+\end_inset
+
+.
  Debido a que el entorno de ejecución cambia con cierto dinamismo, el rango
- de situaciones posibles del usuario se amplia y por lo tanto se requiere
- que los servicios proveídos por una aplicación se adapten para mejorar
- la interacción entre el usuario y el computador.
- 
+ de situaciones posibles que el usuario experimenta se amplia y por lo tanto
+ es necesario que los servicios proveídos por una aplicación se adapten
+ para mejorar la interacción entre el usuario y el computador.
 \end_layout
 
 \begin_layout Standard
@@ -280,24 +288,19 @@ key "ReyesOrtiz2015,LaraLabrador2013"
 \end_inset
 
  diferencian los mismos entre ambientales, los sensores están ubicados de
- manera fija en el entorno que rodea al individuo, y de atuendo (
-\emph on
-
-\begin_inset ERT
+ manera fija en el entorno que rodea al individuo, y de atuendo
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-abbr{Wearables}
+\emph on
+wearables
 \end_layout
 
 \end_inset
 
-
-\emph default
-) cuando los sensores están sujetos o anexados al cuerpo del individuo.
+ cuando los sensores están sujetos o anexados al cuerpo del individuo.
 \end_layout
 
 \begin_layout Subsection
@@ -332,7 +335,7 @@ abbr{Kinect}
 \begin_layout Standard
 Varios trabajos exploran el uso de sensores ambientales para el reconocimiento
  de actividades humanas de acciones cotidianas.
- Entre ellos lo expuesto por
+ Entre ellos lo expuesto por 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Poppe2007"
@@ -352,7 +355,7 @@ Sensores de Atuendo
 \begin_layout Standard
 Los sensores de atuendo (
 \emph on
-
+véase 
 \begin_inset ERT
 status open
 
@@ -369,7 +372,7 @@ abbr{Wearables}
 \emph default
 ) obtienen señales directamente de los usuarios, estos pueden estar anexos
  a varias partes del cuerpo, como la cintura, la muñeca, el pecho, la pierna
- y la cabeza
+ y la cabeza 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004"
@@ -408,7 +411,7 @@ abbr{Bluetooth}
 
 \begin_layout Standard
 Los sensores anexos directamente a un individuo miden señales que se clasifican
- comúnmente según los siguientes grupos
+ comúnmente según los siguientes grupos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -423,7 +426,7 @@ Movimiento miden datos inerciales como la aceleración y la orientación respect
  a un marco de referencia relativo al dispositivo que contiene los sensores.
  El acelerómetro y el giroscopio son los más comúnmente utilizados para
  reconocimiento de actividades con un bajo consumo de energía y buena precisión
- de reconocimiento
+ de reconocimiento 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004,LaraLabrador2012"
@@ -536,7 +539,7 @@ key "Ekholm2011"
 
 \begin_layout Standard
 Básicamente los teléfonos móviles celulares ofrecen los servicios de comunicació
-n por voz y datos sin utilizar cables, practicamente desde cualquier lugar
+n por voz y datos sin utilizar cables, prácticamente desde cualquier lugar
  siempre y cuando esté disponible la cobertura de red celular.
  Entre los servicios adicionales podemos destacar el envío de mensajes de
  texto (
@@ -1073,7 +1076,7 @@ abbr{HAR}
 
  en este apartado se describe una definición formal del problema.
  Considerando el objetivo y los elementos de reconocimiento podemos definir
- el problema como
+ el problema como 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2013"
@@ -1519,7 +1522,7 @@ os siete grupos distintos de actividades agrupados en la siguiente tabla.
 placement htbp
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2041,7 +2044,7 @@ Enfoques Geométricos
 \begin_inset Text
 
 \begin_layout Plain Layout
-Vecinos proximos (
+Vecinos próximos (
 \begin_inset ERT
 status open
 
@@ -2204,6 +2207,7 @@ abbr{SVM}
 \end_inset
 
  para aplicaciones que requieran un alto rendimiento pero con mayor complejidad
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ReyesOrtiz2015"
@@ -2236,10 +2240,10 @@ name "sec27:conclusion"
 
 \end_inset
 
-Este capitulo abarcó los tópicos primordiales del estudio del reconocimiento
+Este capitulo abarcó tópicos primordiales del estudio del reconocimiento
  de las actividades humanas.
- Los conceptos descritos sirven de base de conocimiento para entender el
- problema de 
+ Los conceptos descritos son un fundamento para comprender el problema de
+ 
 \begin_inset ERT
 status open
 
@@ -2252,12 +2256,12 @@ abbr{HAR}
 
 \end_inset
 
- y además permiten tener una vista general de los componentes principales
- para resolver el problema.
- Primeramente se cubre la motivación en base a las aplicaciones, luego los
- medios disponibles para construir estos sistemas: sensores, teléfonos móviles
- y aprendizaje automático, y finalmente la definición metodológica y teórica
- del problema.
+ y además dan una vista general de los asuntos principales a tratar para
+ resolver el problema.
+ Primeramente, se fija la motivación en base a las aplicaciones potenciales
+ de la tecnología, para luego repasar los medios disponibles para construir
+ estos sistemas: sensores, teléfonos móviles y aprendizaje automático.
+ Finalmente se repasa la definición metodológica y teórica del problema.
  
 \end_layout
 

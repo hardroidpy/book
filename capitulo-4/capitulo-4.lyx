@@ -274,11 +274,8 @@ abbr{HAR}
 \end_inset
 
  práctico debe contemplar principalmente la fase de evaluación, ya que el
- reconocimiento de actividades resulta de una 
-\emph on
-predicción
-\emph default
- basado en un modelo de 
+ reconocimiento de actividades resulta de una predicción basado en un modelo
+ de 
 \begin_inset ERT
 status open
 
@@ -297,11 +294,8 @@ On-line learning
 \emph default
 ).
  Sin embargo, la etapa de entrenamiento es un elemento clave para el sistema
- ya que es el punto de partida para el 
-\emph on
-aprendizaje
-\emph default
- utilizando algoritmos de 
+ ya que es el punto de partida para el aprendizaje utilizando algoritmos
+ de 
 \begin_inset ERT
 status open
 
@@ -494,20 +488,7 @@ nte a los usuarios.
  Además, se procede a realizar un registro de manera organizada e indexada
  con respecto al tiempo.
  Para capturar los datos se requieren instrumentos de medición apropiados
- como los sensores (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{Wearables}
-\end_layout
-
-\end_inset
-
-, véase 
+ como los sensores (véase 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec23:sensores"
@@ -4672,10 +4653,10 @@ Conclusión
 \end_layout
 
 \begin_layout Standard
-En este capítulo se abarcaron en detalle los aspectos prácticos de los sistemas
- de reconocimiento de actividades humanas en base a la fundamentos teóricos
+En este capítulo se abarcaron los aspectos prácticos en detalle de los sistemas
+ de reconocimiento de actividades humanas partiendo de los fundamentos teóricos
  y las técnicas existentes en la literatura.
- Principalmente se enmarco una estructura de un sistema 
+ Principalmente, se enmarco la estructura del sistema 
 \begin_inset ERT
 status open
 
@@ -4689,9 +4670,10 @@ abbr{HAR}
 \end_inset
 
  con sus componentes principales, el proceso general de reconocimiento y
- las tareas responsables para las funcionalidades operacionales básicas.
- Finalmente, se citan algunos aspectos de características esperadas de una
- aplicación de contexto aplicadas a nuestro problema en particular.
+ las tareas funcionalidades básicas.
+ Finalmente, se citan algunos aspectos que tienen que ver con características
+ esperadas en una aplicación de contexto aplicadas a nuestro problema en
+ particular.
 \end_layout
 
 \end_body

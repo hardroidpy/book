@@ -72,13 +72,13 @@
 \begin_body
 
 \begin_layout Chapter
-Experimentos realizados
+Evaluación
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "chap6:evaluación"
+name "chap6:evaluacion"
 
 \end_inset
 
@@ -87,6 +87,14 @@ name "chap6:evaluación"
 
 \begin_layout Section
 Introducción
+\end_layout
+
+\begin_layout Section
+Experimentos realizados
+\end_layout
+
+\begin_layout Section
+Resultados obtenidos
 \end_layout
 
 \begin_layout Section

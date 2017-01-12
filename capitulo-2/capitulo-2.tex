@@ -12,44 +12,46 @@ humanas desde un punto de vista teórico. La descripción de estas áreas
 detallan las aplicaciones que motivan los sistemas \abbr{HAR} y también
 los mecanismos que llevan a una implementación factible. 
 
-La primera sección, se introducen las aplicaciones de contexto que
-son el principal marco de trabajo del estudio de sistemas \abbr{HAR}.
+En la primera sección, se introducen las aplicaciones de contexto
+que son el principal marco de trabajo del estudio de sistemas \abbr{HAR}.
 En síntesis, nuestro enfoque es detectar las actividades físicas para
-dar información de contexto en las actividades diarias de un individuo
-durante su locomoción. Las siguientes secciones dan todos los elementos
-requeridos para implementar los sistemas \abbr{HAR}. Desde el punto
-de vista de implementación se discuten los sensores y los teléfonos
-móviles inteligentes. La última sección define el marco teórico del
-reconocimiento de actividades humanas en base al estado de arte.
+dar información de contexto en las acciones diarias de un individuo
+durante su locomoción. Las siguientes secciones abarcan todos los
+elementos requeridos para implementar los sistemas \abbr{HAR}. Desde
+el punto de vista de implementación se discuten los sensores y los
+teléfonos móviles inteligentes. La última sección define el marco
+teórico del reconocimiento de actividades humanas de acuerdo al estado
+de arte.
 
 \section{Aplicaciones de contexto}
 
-\label{sec22:contexto}En la actualidad construir aplicaciones interactivas
-requieren tener en cuenta el aspecto del contexto del usuario principalmente
-por la importancia de este asunto debido a que este cambia con mucha
-frecuencia, como ocurren en la computación móvil y ubicua. El contexto
-de un usuario es un medio adicional para la interacción entre computadora
-y humano, además de otros los métodos convencionales de entrada de
-datos. Este nuevo medio abre nuevas posibilidades de comunicación
-y producción de nuevos servicios en computación. 
+\label{sec22:contexto}En la actualidad, construir aplicaciones interactivas
+requiere que se tenga en cuenta el aspecto del contexto del usuario,
+principalmente por la importancia que este asunto tiene debido al
+cambio frecuente que afecta el contexto debido a la computación móvil
+y ubicua. El contexto de un usuario es un medio adicional de interacción
+entre humano y computadora, adicional a los otros métodos convencionales
+de ingesta de datos. Este nuevo medio abre nuevas posibilidades de
+comunicación y producción de nuevos servicios en computación. 
 
-Pero, ¿qué es el contexto?, citando otras fuentes podemos definir
+Pero, ¿qué es el contexto?, citando a otras fuentes podemos definir
 el contexto como: \textquotedbl{}\emph{... cualquier información que
 pueda ser utilizada para caracterizar la situación de una entidad.
 Un entidad es una persona, lugar, o objeto que es considerado relevante
 en la interacción entre el usuario y la aplicación, incluyendo al
 usuario y la aplicación}\textquotedbl{} \cite{Dey2000}. De manera
-específica, el contexto de un usuario es el estado de su información
+específica, el contexto de un usuario es el estado acerca de la información
 física, emocional o social, sin dejar de lado cualquier otra situación
-en que el usuario esté involucrado y sea relevante para la aplicación.
+en la que el usuario esté involucrado y además sea relevante para
+la aplicación.
 
 Debido a la libertad de movilidad presentes en la computación móvil
 y ubicua, es primordial construir aplicaciones que conozcan el contexto
-de sus usuarios (\emph{context-aware}, o aplicaciones de contexto).
+de sus usuarios, dicho de otro modo aplicaciones de contexto\footnote{\emph{context-aware}}.
 Debido a que el entorno de ejecución cambia con cierto dinamismo,
-el rango de situaciones posibles del usuario se amplia y por lo tanto
-se requiere que los servicios proveídos por una aplicación se adapten
-para mejorar la interacción entre el usuario y el computador. 
+el rango de situaciones posibles que el usuario experimenta se amplia
+y por lo tanto es necesario que los servicios proveídos por una aplicación
+se adapten para mejorar la interacción entre el usuario y el computador.
 
 Los tipos de contexto prácticos más importantes en las aplicaciones
 de contexto con computación móvil son la ubicación, la identidad,
@@ -71,9 +73,8 @@ la ubicación (localización global o en interiores).
 Si clasificamos los sensores con respecto a la disposición en relación
 a los usuarios, los autores \cite{ReyesOrtiz2015,LaraLabrador2013}
 diferencian los mismos entre ambientales, los sensores están ubicados
-de manera fija en el entorno que rodea al individuo, y de atuendo
-(\emph{\abbr{Wearables}}) cuando los sensores están sujetos o anexados
-al cuerpo del individuo.
+de manera fija en el entorno que rodea al individuo, y de atuendo\footnote{\emph{wearables}}
+cuando los sensores están sujetos o anexados al cuerpo del individuo.
 
 \subsection{Sensores de Ambiente}
 
@@ -86,7 +87,7 @@ y sensores de profundidad (Ej. el sensor \abbr{Kinect}).
 
 Varios trabajos exploran el uso de sensores ambientales para el reconocimiento
 de actividades humanas de acciones cotidianas. Entre ellos lo expuesto
-por\cite{Poppe2007} que realiza un análisis de movimientos humanos
+por \cite{Poppe2007} que realiza un análisis de movimientos humanos
 utilizando cámaras de vídeo. A pesar de ser bastantes efectivos los
 sistemas basados en vídeos existen limitaciones para el procesamiento
 en tiempo real de la información y la exposición de la privacidad
@@ -94,12 +95,12 @@ de los usuarios.
 
 \subsection{Sensores de Atuendo}
 
-Los sensores de atuendo (\emph{\abbr{Wearables}}) obtienen señales
-directamente de los usuarios, estos pueden estar anexos a varias partes
-del cuerpo, como la cintura, la muñeca, el pecho, la pierna y la cabeza\cite{Bao2004}.
-También pueden formar parte de alguna vestimenta o estar embebidos
-en algún accesorio de uso común como relojes, anteojos y los mismos
-teléfonos móviles. 
+Los sensores de atuendo (\emph{véase \abbr{Wearables}}) obtienen
+señales directamente de los usuarios, estos pueden estar anexos a
+varias partes del cuerpo, como la cintura, la muñeca, el pecho, la
+pierna y la cabeza \cite{Bao2004}. También pueden formar parte de
+alguna vestimenta o estar embebidos en algún accesorio de uso común
+como relojes, anteojos y los mismos teléfonos móviles. 
 
 Una característica peculiar de los sensores es su autonomía debido
 a la utilización de baterías que proporcionan la energía para operar,
@@ -111,13 +112,13 @@ una constante información del estado de un individuo en cualquier
 momento.
 
 Los sensores anexos directamente a un individuo miden señales que
-se clasifican comúnmente según los siguientes grupos\cite{LaraLabrador2013}:
+se clasifican comúnmente según los siguientes grupos \cite{LaraLabrador2013}:
 \begin{description}
 \item [{Movimiento}] miden datos inerciales como la aceleración y la orientación
 respecto a un marco de referencia relativo al dispositivo que contiene
 los sensores. El acelerómetro y el giroscopio son los más comúnmente
 utilizados para reconocimiento de actividades con un bajo consumo
-de energía y buena precisión de reconocimiento\cite{Bao2004,LaraLabrador2012}.
+de energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
 \item [{Ubicación}] miden datos obtenidos con las redes celulares \abbr{3G}
 y los satélites de navegación \abbr{GPS}. Provee información de contexto
 bastante relevante acerca de la posición del individuo, además de
@@ -148,7 +149,7 @@ tendencia continuará (cfr. \cite{Ekholm2011}) incluso hasta podría
 sobrepasar la población mundial.
 
 Básicamente los teléfonos móviles celulares ofrecen los servicios
-de comunicación por voz y datos sin utilizar cables, practicamente
+de comunicación por voz y datos sin utilizar cables, prácticamente
 desde cualquier lugar siempre y cuando esté disponible la cobertura
 de red celular. Entre los servicios adicionales podemos destacar el
 envío de mensajes de texto (\abbr{SMS}) y multimedia (\abbr{MMS}).
@@ -244,7 +245,7 @@ estándar, las actividades estudiadas y las técnicas de aprendizaje.
 \label{sec261:definicion-har}De manera a establecer el marco teórico
 de estudio del problema \abbr{HAR} en este apartado se describe una
 definición formal del problema. Considerando el objetivo y los elementos
-de reconocimiento podemos definir el problema como\cite{LaraLabrador2013}:
+de reconocimiento podemos definir el problema como \cite{LaraLabrador2013}:
 
 \label{def2:harp}\newtheorem{defs}{Definición}
 
@@ -446,7 +447,7 @@ Basados en Reglas & Árboles de decisión (\abbr{DT})
 
 Selvas aleatorias (\abbr{RF})\tabularnewline
 \hline 
-Enfoques Geométricos  & Vecinos proximos (\abbr{k-NN})
+Enfoques Geométricos  & Vecinos próximos (\abbr{k-NN})
 
 Redes neuronales (\abbr{ANN})
 
@@ -468,7 +469,7 @@ de computo e interpretación, etc. Estos aspectos se agudizan si se
 utilizan dispositivos móviles inteligentes. Por ejemplo, los árboles
 de decisión podría ser el método preferido cuando se requiere simplicidad
 en la implementación y métodos \abbr{SVM} para aplicaciones que requieran
-un alto rendimiento pero con mayor complejidad\cite{ReyesOrtiz2015}.
+un alto rendimiento pero con mayor complejidad \cite{ReyesOrtiz2015}.
 
 En el capitulo \ref{chap:Aprendizaje-Automatico} se detalla la base
 teórica referente a las técnicas de aprendizaje automático supervisados
@@ -476,11 +477,12 @@ y el método de árboles de decisión electo para este trabajo.
 
 \section{Conclusión}
 
-\label{sec27:conclusion}Este capitulo abarcó los tópicos primordiales
+\label{sec27:conclusion}Este capitulo abarcó tópicos primordiales
 del estudio del reconocimiento de las actividades humanas. Los conceptos
-descritos sirven de base de conocimiento para entender el problema
-de \abbr{HAR} y además permiten tener una vista general de los componentes
-principales para resolver el problema. Primeramente se cubre la motivación
-en base a las aplicaciones, luego los medios disponibles para construir
-estos sistemas: sensores, teléfonos móviles y aprendizaje automático,
-y finalmente la definición metodológica y teórica del problema. 
+descritos son un fundamento para comprender el problema de \abbr{HAR}
+y además dan una vista general de los asuntos principales a tratar
+para resolver el problema. Primeramente, se fija la motivación en
+base a las aplicaciones potenciales de la tecnología, para luego repasar
+los medios disponibles para construir estos sistemas: sensores, teléfonos
+móviles y aprendizaje automático. Finalmente se repasa la definición
+metodológica y teórica del problema. 

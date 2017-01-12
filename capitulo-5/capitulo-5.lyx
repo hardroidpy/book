@@ -72,7 +72,7 @@
 \begin_body
 
 \begin_layout Chapter
-HARDroid: HAR en Android
+HARDroid: Reconocimiento de Actividades Humanas en Android
 \end_layout
 
 \begin_layout Standard
@@ -87,6 +87,10 @@ name "chap5:hardroid"
 
 \begin_layout Section
 Introducción
+\end_layout
+
+\begin_layout Section
+Teléfonos Móviles Inteligentes
 \end_layout
 
 \begin_layout Subsection
