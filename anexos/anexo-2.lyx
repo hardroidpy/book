@@ -72,97 +72,61 @@
 \begin_body
 
 \begin_layout Chapter
-HARDroid: Reconocedor de Actividades Humanas
+Instrumentación
+\end_layout
+
+\begin_layout Section
+Dispositivos móviles
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "chap5:hardroid"
+name "ssec46:dispositivos-moviles"
 
 \end_inset
 
+Descripción técnica de dispositivos móviles: procesador, memoria, sensores
+ y almacenamiento
+\end_layout
 
+\begin_layout Subsection
+Teléfonos móviles
+\end_layout
+
+\begin_layout Subsection
+Relojes inteligentes
+\end_layout
+
+\begin_layout Subsection
+Correas inteligentes
 \end_layout
 
 \begin_layout Section
-Introducción
-\end_layout
-
-\begin_layout Section
-Diseño y Metodología
-\end_layout
-
-\begin_layout Subsection
-Criterios de diseño
-\end_layout
-
-\begin_layout Subsubsection
-Basado en componentes
-\end_layout
-
-\begin_layout Subsubsection
-Cliente Servidor
-\end_layout
-
-\begin_layout Subsubsection
-Enfoque Descendente
-\end_layout
-
-\begin_layout Subsection
-Metodología de desarrollo
-\end_layout
-
-\begin_layout Subsection
-Tecnología
-\end_layout
-
-\begin_layout Subsection
-Android
-\end_layout
-
-\begin_layout Subsubsection
-Arquitectura
-\end_layout
-
-\begin_layout Subsubsection
-Componentes
-\end_layout
-
-\begin_layout Subsubsection
-BINDER
-\end_layout
-
-\begin_layout Section
-Arquitectura del proyecto
+Sensores empotrados
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec46:sensores-empotrados"
 
-\end_layout
+\end_inset
 
-\begin_layout Section
-HARDroid: Servicio de Reconocimiento de Actividades
-\end_layout
-
-\begin_layout Subsection
-Librería API
-\end_layout
-
-\begin_layout Subsection
-Servicio BINDER
+Descripción técnica de los sensores de aceleración, variables, orientación
+ en dispositivo, unidades de medida, precisión vs consumo.
 \end_layout
 
 \begin_layout Subsection
-Clasificador DEX
+Acelerómetro
 \end_layout
 
-\begin_layout Section
-ActivitySurvey: Aplicación de Encuesta
+\begin_layout Subsection
+Giroscopio
 \end_layout
 
-\begin_layout Section
-Conclusión
+\begin_layout Subsection
+GPS/WIFI
 \end_layout
 
 \end_body

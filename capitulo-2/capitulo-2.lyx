@@ -600,7 +600,7 @@ abbr{CPU}
 \emph on
 hardware
 \emph default
- integrado, servicios y comunicación inalámbrica.
+ integrado, servicios y comunicación inalámbricas.
  Los teléfonos móviles inteligentes proveen a sus usuarios mejores característic
 as como acceso a la Web, multimedia, juegos, servicios basados en ubicación,
  captura de imágenes y vídeos.
@@ -877,8 +877,8 @@ Capacidades de teléfonos móviles inteligentes
 Tanto los teléfono móviles, como también los reproductores de música o relojes
  inteligentes, han incluido desde ya hace un par de años diversos sensores
  con miras a enriquecer la experiencia de interacción humano-computador.
- Aún así, la utilización de sensores han tenido además diversos usos para
- aplicaciones que capturan datos de medidas de sus usuarios 
+ Aún así, la utilización de sensores han conseguido diversos usos para aplicacio
+nes que capturan datos medidos de sus usuarios 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lane2010"
@@ -889,7 +889,7 @@ key "Lane2010"
  Debido a la combinación del tamaño reducido, su capacidad de procesamiento,
  la posibilidad de recibir y enviar datos; y su omnipresencia en nuestra
  sociedad actual, estos dispositivos móviles son de uso preferente en la
- vida diaria diaria.
+ vida diaria.
 \end_layout
 
 \begin_layout Section
@@ -906,8 +906,8 @@ name "sec25:aprendizaje-automatico"
 Una de las técnicas de reconocimiento de actividades humanas consiste en
  utilizar un modelo para descubrir información a partir de los datos en
  bruto (Ej.
- señales de aceleración).
- Es decir, es necesario utilizar algoritmos de aprendizaje automático (
+ señales de movimiento).
+ Es decir, utilizar algoritmos de aprendizaje automático (
 \begin_inset ERT
 status open
 
@@ -920,9 +920,9 @@ abbr{ML}
 
 \end_inset
 
-) como herramientas construir, analizar e inferir actividades por medio
+) como herramientas para construir, analizar e inferir actividades por medio
  de un modelo que utiliza una gran cantidad de datos medidos con anterioridad
- en conjunto con el comportamiento observado en los individuos 
+ acompañados con el comportamiento observado en los individuos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chen2012"

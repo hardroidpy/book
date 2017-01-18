@@ -72,97 +72,19 @@
 \begin_body
 
 \begin_layout Chapter
-HARDroid: Reconocedor de Actividades Humanas
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "chap5:hardroid"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Introducción
-\end_layout
-
-\begin_layout Section
-Diseño y Metodología
+Distribución
 \end_layout
 
 \begin_layout Subsection
-Criterios de diseño
-\end_layout
-
-\begin_layout Subsubsection
-Basado en componentes
-\end_layout
-
-\begin_layout Subsubsection
-Cliente Servidor
-\end_layout
-
-\begin_layout Subsubsection
-Enfoque Descendente
+Publicación
 \end_layout
 
 \begin_layout Subsection
-Metodología de desarrollo
+Código Fuente
 \end_layout
 
 \begin_layout Subsection
-Tecnología
-\end_layout
-
-\begin_layout Subsection
-Android
-\end_layout
-
-\begin_layout Subsubsection
-Arquitectura
-\end_layout
-
-\begin_layout Subsubsection
-Componentes
-\end_layout
-
-\begin_layout Subsubsection
-BINDER
-\end_layout
-
-\begin_layout Section
-Arquitectura del proyecto
-\end_layout
-
-\begin_layout Standard
-
-\end_layout
-
-\begin_layout Section
-HARDroid: Servicio de Reconocimiento de Actividades
-\end_layout
-
-\begin_layout Subsection
-Librería API
-\end_layout
-
-\begin_layout Subsection
-Servicio BINDER
-\end_layout
-
-\begin_layout Subsection
-Clasificador DEX
-\end_layout
-
-\begin_layout Section
-ActivitySurvey: Aplicación de Encuesta
-\end_layout
-
-\begin_layout Section
-Conclusión
+Documentación
 \end_layout
 
 \end_body
