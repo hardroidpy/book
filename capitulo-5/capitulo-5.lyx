@@ -89,8 +89,215 @@ name "chap5:hardroid"
 Introducción
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec51:intro"
+
+\end_inset
+
+En este capítulo introducimos un sistema que clasifica la actividades humanas
+ ambulatorias utilizando teléfonos móviles inteligentes con la plataforma
+ 
+\emph on
+Android
+\emph default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttrademark
+\end_layout
+
+\end_inset
+
+: 
+\emph on
+HARDroid
+\emph default
+.
+ El sistema es una adaptación del diseño de 
+\emph on
+Google Play Services
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google2013l"
+
+\end_inset
+
+ para reconocer actividades humanas utilizando los conceptos y técnicas
+ expuestos en capítulos precedentes.
+ 
+\end_layout
+
+\begin_layout Standard
+El sistema 
+\emph on
+HARDroid
+\emph default
+ está implementado en base a dos componentes principales: una interfaz de
+ programación que expone las facilidades y un servicio en ejecución que
+ realiza las funciones principales del sistema.
+ La interfaz (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{API}
+\end_layout
+
+\end_inset
+
+ para programadores) proporciona una firma de contratos bien definidos de
+ uso con la documentación adecuada para que toda aplicación móvil de terceros
+ utilice como un componente externo la solución de un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+ El servicio de trasfondo en la plataforma 
+\emph on
+Android
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttrademark
+\end_layout
+
+\end_inset
+
+
+\emph default
+ es una aplicación móvil independiente que realiza la ejecución de los algoritmo
+s de reconocimiento.
+\end_layout
+
+\begin_layout Standard
+La propuesta de este trabajo se basa en un diseño desacoplado para contar
+ con una implementación genérica y extensible de un sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+ Como en todo sistema de 
+\emph on
+software
+\emph default
+, el diseño adecuado posibilita la evolución y mantenimiento del mismo sin
+ afectar el funcionamiento de otras aplicaciones móviles clientes.
+ 
+\end_layout
+
+\begin_layout Standard
+Las siguientes secciones se organizan de la siguiente manera: primeramente
+ en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec52:diseño"
+
+\end_inset
+
+ damos una introducción de las consideraciones de diseño y metodología utilizada
+s para la construcción de los componentes de software.
+ Se empieza con los conceptos generales de Ingeniería de Software hasta
+ concluir con los detalles técnicos de la plataforma 
+\emph on
+Android
+\emph default
+.
+ La siguiente sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec53:arquitectura"
+
+\end_inset
+
+ incluye una vista general del sistema explicando su arquitectura.
+ La sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec54:hardroid"
+
+\end_inset
+
+ conforma el núcleo principal de este proyecto donde una implementación
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ en forma de aplicación móvil desacoplado es presentado.
+ También, en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec55:activity"
+
+\end_inset
+
+ se explica el desenvolvimiento de una herramienta para realizar experimentos
+ y evaluar los resultados asociados a la solución.
+ Por último, en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec56:conclusion"
+
+\end_inset
+
+ se discuten los resultados preliminar obtenidos como motivo de los componentes
+ de software construidos.
+\end_layout
+
 \begin_layout Section
 Diseño y Metodología
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec52:diseño"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -119,6 +326,19 @@ Tecnología
 
 \begin_layout Subsection
 Android
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttrademark
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -130,7 +350,7 @@ Componentes
 \end_layout
 
 \begin_layout Subsubsection
-BINDER
+Android Binder
 \end_layout
 
 \begin_layout Section
@@ -138,11 +358,27 @@ Arquitectura del proyecto
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec53:arquitectura"
+
+\end_inset
+
 
 \end_layout
 
 \begin_layout Section
 HARDroid: Servicio de Reconocimiento de Actividades
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec54:hardroid"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -161,8 +397,28 @@ Clasificador DEX
 ActivitySurvey: Aplicación de Encuesta
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec55:activity"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Conclusión
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec56:conclusion"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
