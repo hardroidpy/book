@@ -120,7 +120,8 @@ texttrademark
 HARDroid
 \emph default
 .
- El sistema es una adaptación del diseño de 
+ El sistema es una adaptación del diseño utilizado por sistemas existentes
+ como 
 \emph on
 Google Play Services
 \emph default
@@ -131,8 +132,8 @@ key "Google2013l"
 
 \end_inset
 
- para reconocer actividades humanas utilizando los conceptos y técnicas
- expuestos en capítulos precedentes.
+, específicamente la funcionalidad para reconocer actividades humanas utilizando
+ los conceptos y técnicas expuestos en capítulos precedentes.
  
 \end_layout
 
@@ -144,7 +145,7 @@ HARDroid
  está implementado en base a dos componentes principales: una interfaz de
  programación que expone las facilidades y un servicio en ejecución que
  realiza las funciones principales del sistema.
- La interfaz (
+ La interfaz para programadores (
 \begin_inset ERT
 status open
 
@@ -157,9 +158,9 @@ abbr{API}
 
 \end_inset
 
- para programadores) proporciona una firma de contratos bien definidos de
- uso con la documentación adecuada para que toda aplicación móvil de terceros
- utilice como un componente externo la solución de un sistema 
+) proporciona una firma de funciones bien definidas junto con la documentación
+ adecuada para que toda aplicación móvil de terceros utilice como un componente
+ externo la solución de un sistema 
 \begin_inset ERT
 status open
 
@@ -190,8 +191,8 @@ texttrademark
 
 
 \emph default
- es una aplicación móvil independiente que realiza la ejecución de los algoritmo
-s de reconocimiento.
+ es una aplicación para teléfonos móvil independiente que implementa algoritmos
+ de reconocimiento de actividades humanas.
 \end_layout
 
 \begin_layout Standard
@@ -215,7 +216,7 @@ abbr{HAR}
 software
 \emph default
 , el diseño adecuado posibilita la evolución y mantenimiento del mismo sin
- afectar el funcionamiento de otras aplicaciones móviles clientes.
+ afectar el funcionamiento de otras aplicaciones móviles clientes dependientes.
  
 \end_layout
 
@@ -287,7 +288,7 @@ reference "sec56:conclusion"
 \end_layout
 
 \begin_layout Section
-Diseño y Metodología
+Diseño General
 \end_layout
 
 \begin_layout Standard
@@ -297,23 +298,685 @@ name "sec52:diseño"
 
 \end_inset
 
+La construcción del sistema 
+\emph on
+HARDroid 
+\emph default
+está enmarcado dentro del ecosistema de aplicaciones móviles.
+ Desde el punto de vista conceptual del desarrollo de aplicaciones móviles
+ es necesario enfocarse en dos aspectos principales para el diseño: el medio
+ y el contexto.
+\end_layout
 
+\begin_layout Standard
+Una aplicación móvil puede presentarse en diversos medios que corresponden
+ con el enfoque técnico 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fling2009"
+
+\end_inset
+
+, es decir: un sitio Web Móvil, una aplicación Web Móvil, SMS, Juegos, herramien
+tas
+\emph on
+ Widgets
+\emph default
+ y aplicaciones nativas.
+ Las aplicaciones nativas son uno de los medios más utilizados debido a
+ la rica experiencia de usuario y capacidades que pueden ser explotadas
+ en los dispositivos, ya que disponen de gran soporte en la plataforma subyacent
+e.
+ Por ejemplo, en la plataforma para teléfonos móviles 
+\emph on
+Android 
+\emph default
+se dispone de las capacidades disponibles del dispositivo como almacenamiento,
+ ubicación, sensores y además un medio de distribución certificado como
+ ser el 
+\emph on
+Google Play Store
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google2016p"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, está el contexto de la aplicación que se refiere a la experiencia
+ que el usuario final obtiene al utilizar el sistema móvil.
+ Para esto el sistema móvil procesa la información de contexto que rodea
+ al usuario dando una interacción distinta a los sistemas convencionales.
+ A continuación se listan los tipos de contexto comunes utilizados en las
+ aplicaciones móviles y un breve ejemplo de su funcionalidad 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fling2009"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Utilidad
+\emph default
+: Calculadora, Conversión de monedas.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Localización
+\emph default
+: Mapas, Registro de actividades físicas.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Informativo
+\emph default
+: Buscar información relevante.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Productividad
+\emph default
+: Comprar productos y pagar servicios
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Inmersión
+\emph default
+: Juegos 
+\end_layout
+
+\begin_layout Standard
+Estos tipos de contexto se pueden combinar para crear mejores experiencias
+ de uso de la aplicación móvil.
+ El trabajo desarrollado en esta tesis se adecua al modelo de aplicaciones
+ móviles de contexto.
+ Se busca proveer un componente de 
+\emph on
+Utilidad
+\emph default
+ que puede ser combinado con diferentes aplicaciones móviles desarrollados
+ por terceros y pueda ser mantenido de forma colaborativa.
+ 
 \end_layout
 
 \begin_layout Subsection
 Criterios de diseño
 \end_layout
 
-\begin_layout Subsubsection
-Basado en componentes
+\begin_layout Standard
+La implementación de este trabajo, así como la mayoría de los sistemas de
+ información, se rige bajo el principio de diseño 
+\emph on
+basado en componentes
+\emph default
+ donde se busca separar la complejidad de un sistema en módulos y que estos
+ interactúen entre sí.
+ Los módulos en el diseño de sistemas mejoran la flexibilidad y comprensión
+ mientras se reduce el tiempo de desarrollo de los mismos 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Parnas1972"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Una de las técnicas más comunes de diseño de sistemas
+\emph on
+ 
+\emph default
+es la separación por capas (
+\emph on
+Layering
+\emph default
+) para dividir un sistema complejo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+ en diferentes niveles.
+ 
 \end_layout
 
 \begin_layout Subsubsection
-Cliente Servidor
+Arquitecturas en capas
+\end_layout
+
+\begin_layout Standard
+Cuando un sistema se construye en términos de capas, los módulos se organizan
+ en niveles apilados como en un pastel, donde cada capa se soporta sobre
+ la capa baja subyacente.
+ En este sentido, la capa superior utiliza varios servicios definidos en
+ capas inferiores, pero la capa inferior desconoce y no depende de las capas
+ en niveles superiores.
+ Las capas definen concretamente las responsabilidades y encapsulan las
+ funcionalidades soportadas en cada nivel.
+\end_layout
+
+\begin_layout Standard
+La popularidad de la división de sistemas en módulos por capas se volvió
+ más relevante con el auge de los sistemas tipo 
+\emph on
+Cliente-Servidor
+\emph default
+.
+ Estos sistemas fueron inicialmente concebidos como de dos (2) capas: el
+ cliente se encarga de la interfaz de usuario y la lógica de la aplicación,
+ y el servidor usualmente es una bases de datos relacional.
+ En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:cliente_servidor}
+\end_layout
+
+\end_inset
+
+ se muestra una representación de la arquitectura en dos capas.
+ Para sistemas sencillos que desplieguen información y actualicen datos,
+ este modelo es el más adecuado.
+ Sin embargo, a medida que se construyen sistemas más complejos, el problema
+ radica mantener la lógica central del sistema: las reglas de negocio, validacio
+nes, cálculos, etc.
+ El modelo de dos capas propone ubicar la lógica central embebida en la
+ interacciones de la Interfaz de Usuario (capa cliente) o almacenar los
+ mismos en procedimientos almacenados en la basa de datos (capa servidor).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/cliente_servidor.png
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:cliente_servidor"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Modelo de dos capas
+\end_layout
+
+\end_inset
+
+Modelo de dos capas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Debido a las limitaciones del enfoque Cliente-Servidor, se puede extender
+ el mismo con la ayuda del paradigma de Orientación a Objetos para construir
+ sistemas con arquitecturas de tres (3) capas.
+ Estas capas son comúnmente conocidas como 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+: Presentación, Dominio y Recursos.
+ En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab5:tres_capas}
+\end_layout
+
+\end_inset
+
+ se definen las responsabilidades correspondientes a cada capa.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top" width="50col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Capa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Responsabilidades
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Presentación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Provisión de servicios a sistemas externos, despliegue de información e
+ interacción con el usuario.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dominio
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lógica y procesamiento del sistema.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recursos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comunicación con bases de datos, sistemas externos, integración, transacciones
+ y otros componentes.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab5:tres_capas"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Modelo de tres capas
+\end_layout
+
+\end_inset
+
+Modelo de tres capas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Independientemente del tipo de sistema de información a ser construido dividir
+ el mismo en capas lógicas, dividir el sistema en partes separadas, permite
+ reducir el acoplamiento entre diferentes módulos, inclusive si todos los
+ módulos se ejecutan en la misma máquina física.
+ En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:tres_capas}
+\end_layout
+
+\end_inset
+
+ se muestra la arquitectura de tres capas discutida anteriormente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/arqui_tres_capas.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:tres_capas"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Modelo de tres capas
+\end_layout
+
+\end_inset
+
+Modelo de tres capas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-Enfoque Descendente
+Patrones de diseño
+\end_layout
+
+\begin_layout Standard
+Los patrones de diseño son parte del paradigma de orientación a objetos
+ ideados para solucionar problemas comunes determinados en un contexto particula
+r 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Shalloway2004"
+
+\end_inset
+
+.
+ Una definición acertada se cita a continuación.
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Quotes fld
+\end_inset
+
+
+\emph on
+Cada patrón describe un problema que ocurre una y otra vez en nuestro entorno,
+ y también describe la solución principal al problema, de tal manera que
+ la solución pueda ser utilizada millares de veces, sin tener que duplicar
+ el trabajo de pensar cómo resolver el problema.
+\begin_inset Quotes frd
+\end_inset
+
+
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Alexander1977"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para nuestro objetivo de implementación, se utilizan los patrones de diseño
+ para organizar el 
+\emph on
+Dominio
+\emph default
+, la lógica principal del sistema.
+ La metodología de dividir el
+\emph on
+ Dominio
+\emph default
+ por medio de los patrones 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fowler2002"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Service Layer
+\emph default
+: capa de servicios
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Domain Model
+\emph default
+: modelo del dominio
+\end_layout
+
+\begin_layout Standard
+La capa de servicios es el punto de interacción entre la 
+\emph on
+Presentación
+\emph default
+ y el
+\emph on
+ Dominio
+\emph default
+, por lo que actúa como proveedor de una interfaz clara (comúnmente una
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{API}
+\end_layout
+
+\end_inset
+
+).
+ Este patrón define los límites del sistema con una capa de servicios que
+ establece el conjunto de operaciones disponibles y coordina el proceso
+ de cada operación.
+ La capa de servicios puede ser tan gruesa como tan fina como se requiera,
+ esta puede contener objetos de servicio con reglas de negocio, manejo de
+ transacciones y seguridad.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el modelo del dominio da soporte a la capa de servicios.
+ Este patrón define objetos de dominio que tienen incorporados datos y comportam
+iento, estos representan de manera significativa el dominio del problema
+ a resolver.
+ Debido a que la lógica de negocio de un sistema puede ser bastante compleja.
+ Estos objetos están diseñados para manejar las diversas combinaciones de
+ reglas y lógica del sistema.
+\end_layout
+
+\begin_layout Subsubsection
+Guías Generales
+\end_layout
+
+\begin_layout Standard
+En general las guías generales para construcción de sistemas orientados
+ a objetos fueron utilizados en este trabajo.
+ Algunos de los principios más relevantes que han sido considerados son
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Albin2003"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Modularidad
+\end_layout
+
+\begin_layout Itemize
+Orientación a Objetos
+\end_layout
+
+\begin_layout Itemize
+Reusabilidad
+\end_layout
+
+\begin_layout Itemize
+Ocultamiento de Información
+\end_layout
+
+\begin_layout Itemize
+Abstracción
+\end_layout
+
+\begin_layout Standard
+Siguiendo estos principios se ha logrado un desarrollo exitoso en la implementac
+ión de los componentes y aplicaciones móviles.
+ Además, se ha enfocado el desarrollo con miras a la colaboración basada
+ en la comunidad de código abierto Licencia Pública Apache, Versión 2.0 (
+\emph on
+Apache License, Version 2.0
+\emph default
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GimenezYegros2016c"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -321,10 +984,10 @@ Metodología de desarrollo
 \end_layout
 
 \begin_layout Subsection
-Tecnología
+Tecnología 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Android
 \begin_inset ERT
 status open
@@ -341,16 +1004,16 @@ texttrademark
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Arquitectura
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Componentes
 \end_layout
 
-\begin_layout Subsubsection
-Android Binder
+\begin_layout Subsection
+Binder IPC
 \end_layout
 
 \begin_layout Section

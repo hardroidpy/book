@@ -195,7 +195,14 @@ a que este asunto tiene debido al cambio frecuente que afecta el contexto
 
 \begin_layout Standard
 Pero, ¿qué es el contexto?, citando a otras fuentes podemos definir el contexto
- como: "
+ como: 
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Quotes fld
+\end_inset
+
+
 \emph on
 ...
  cualquier información que pueda ser utilizada para caracterizar la situación
@@ -204,7 +211,11 @@ Pero, ¿qué es el contexto?, citando a otras fuentes podemos definir el context
  en la interacción entre el usuario y la aplicación, incluyendo al usuario
  y la aplicación
 \emph default
-" 
+
+\begin_inset Quotes frd
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Dey2000"
@@ -212,9 +223,13 @@ key "Dey2000"
 \end_inset
 
 .
- De manera específica, el contexto de un usuario es el estado acerca de
- la información física, emocional o social, sin dejar de lado cualquier
- otra situación en la que el usuario esté involucrado y además sea relevante
+ 
+\end_layout
+
+\begin_layout Standard
+De manera específica, el contexto de un usuario es el estado acerca de la
+ información física, emocional o social, sin dejar de lado cualquier otra
+ situación en la que el usuario esté involucrado y además sea relevante
  para la aplicación.
 \end_layout
 
