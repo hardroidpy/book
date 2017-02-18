@@ -7,7 +7,7 @@
 
 \label{sec51:intro}En este capítulo introducimos un sistema que clasifica
 la actividades humanas ambulatorias utilizando teléfonos móviles inteligentes
-con la plataforma \emph{Android}\texttrademark: \emph{HARDroid}.
+con la plataforma \abbr{Android}\texttrademark: \emph{HARDroid}.
 El sistema es una adaptación del diseño utilizado por sistemas existentes
 como \emph{Google Play Services} \cite{Google2013l}, específicamente
 la funcionalidad para reconocer actividades humanas utilizando los
@@ -20,9 +20,9 @@ sistema. La interfaz para programadores (\abbr{API}) proporciona
 una firma de funciones bien definidas junto con la documentación adecuada
 para que toda aplicación móvil de terceros utilice como un componente
 externo la solución de un sistema \abbr{HAR}. El servicio de trasfondo
-en la plataforma \emph{Android\texttrademark} es una aplicación para
-teléfonos móvil independiente que implementa algoritmos de reconocimiento
-de actividades humanas.
+en la plataforma \abbr{Android} es una aplicación para teléfonos
+móvil independiente que implementa algoritmos de reconocimiento de
+actividades humanas.
 
 La propuesta de este trabajo se basa en un diseño desacoplado para
 contar con una implementación genérica y extensible de un sistema
@@ -35,7 +35,7 @@ en la sección \ref{sec52:dise=0000F1o} damos una introducción de
 las consideraciones de diseño y metodología utilizadas para la construcción
 de los componentes de software. Se empieza con los conceptos generales
 de Ingeniería de Software hasta concluir con los detalles técnicos
-de la plataforma \emph{Android}. La siguiente sección \ref{sec53:arquitectura}
+de la plataforma \abbr{Android\emph{}}. La siguiente sección \ref{sec53:arquitectura}
 incluye una vista general del sistema explicando su arquitectura.
 La sección \ref{sec54:hardroid} conforma el núcleo principal de este
 proyecto donde una implementación \abbr{HAR} en forma de aplicación
@@ -55,12 +55,12 @@ el medio y el contexto.
 
 Una aplicación móvil puede presentarse en diversos medios que corresponden
 con el enfoque técnico \cite{Fling2009}, es decir: un sitio Web Móvil,
-una aplicación Web Móvil, SMS, Juegos, herramientas\emph{ Widgets}
+una aplicación Web Móvil, SMS, Juegos, controles utilitarios\footnote{\emph{Widgets}}
 y aplicaciones nativas. Las aplicaciones nativas son uno de los medios
 más utilizados debido a la rica experiencia de usuario y capacidades
 que pueden ser explotadas en los dispositivos, ya que disponen de
 gran soporte en la plataforma subyacente. Por ejemplo, en la plataforma
-para teléfonos móviles \emph{Android }se dispone de las capacidades
+para teléfonos móviles \abbr{Android}\emph{ }se dispone de las capacidades
 disponibles del dispositivo como almacenamiento, ubicación, sensores
 y además un medio de distribución certificado como ser el \emph{Google
 Play Store} \cite{Google2016p}. 
@@ -96,8 +96,8 @@ de sistemas mejoran la flexibilidad y comprensión mientras se reduce
 el tiempo de desarrollo de los mismos \cite{Parnas1972}.
 
 Una de las técnicas más comunes de diseño de sistemas\emph{ }es la
-separación por capas (\emph{Layering}) para dividir un sistema complejo
-\cite{Fowler2002} en diferentes niveles. 
+separación por capas (\emph{Layering}, en inglés\emph{)} para dividir
+un sistema complejo \cite{Fowler2002} en diferentes niveles. 
 
 \subsubsection{Arquitecturas en capas}
 
@@ -120,13 +120,13 @@ información y actualicen datos, este modelo es el más adecuado. Sin
 embargo, a medida que se construyen sistemas más complejos, el problema
 radica mantener la lógica central del sistema: las reglas de negocio,
 validaciones, cálculos, etc. El modelo de dos capas propone ubicar
-la lógica central embebida en la interacciones de la Interfaz de Usuario
-(capa cliente) o almacenar los mismos en procedimientos almacenados
-en la basa de datos (capa servidor).
+la lógica central embebida en la interacciones de la Interfaz de Usuario,
+la capa cliente, o almacenar los mismos en procedimientos almacenados
+en la basa de datos, la capa servidor.
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[width=0.5\columnwidth]{capitulo-5/graphics/cliente_servidor}
+\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/cliente_servidor}
 \par\end{centering}
 \caption[Modelo de dos capas]{\label{fig5:cliente_servidor}Modelo de dos capas}
 \end{figure}
@@ -167,7 +167,7 @@ discutida anteriormente.
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[width=0.8\textwidth]{capitulo-5/graphics/arqui_tres_capas}
+\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/arqui_tres_capas}
 \par\end{centering}
 \caption[Modelo de tres capas]{\label{fig5:tres_capas}Modelo de tres capas}
 
@@ -197,25 +197,26 @@ los patrones \cite{Fowler2002}:
 \end{enumerate}
 La capa de servicios es el punto de interacción entre la \emph{Presentación}
 y el\emph{ Dominio}, por lo que actúa como proveedor de una interfaz
-clara (comúnmente una \abbr{API}). Este patrón define los límites
-del sistema con una capa de servicios que establece el conjunto de
-operaciones disponibles y coordina el proceso de cada operación. La
-capa de servicios puede ser tan gruesa como tan fina como se requiera,
-esta puede contener objetos de servicio con reglas de negocio, manejo
-de transacciones y seguridad.
+clara (comúnmente una \abbr{API} de programación). Este patrón define
+los límites del sistema con una capa de servicios que establece el
+conjunto de operaciones disponibles y coordina el proceso de cada
+operación. La capa de servicios puede ser tan gruesa o tan fina como
+se requiera, puede contener objetos de servicio con reglas de negocio,
+manejo de transacciones y seguridad.
 
 Por otro lado, el modelo del dominio da soporte a la capa de servicios.
 Este patrón define objetos de dominio que tienen incorporados datos
 y comportamiento, estos representan de manera significativa el dominio
 del problema a resolver. Debido a que la lógica de negocio de un sistema
-puede ser bastante compleja. Estos objetos están diseñados para manejar
+puede ser bastante compleja, estos objetos están diseñados para manejar
 las diversas combinaciones de reglas y lógica del sistema.
 
 \subsubsection{Guías Generales}
 
-En general las guías generales para construcción de sistemas orientados
-a objetos fueron utilizados en este trabajo. Algunos de los principios
-más relevantes que han sido considerados son \cite{Albin2003}:
+En este trabajo fueron utilizadas las guías generales para construcción
+de sistemas orientados a objetos. Algunos de los principios más relevantes
+que han sido considerados durante el diseño de nuestra solución son
+\cite{Albin2003}:
 \begin{itemize}
 \item Modularidad
 \item Orientación a Objetos
@@ -223,23 +224,129 @@ más relevantes que han sido considerados son \cite{Albin2003}:
 \item Ocultamiento de Información
 \item Abstracción
 \end{itemize}
-Siguiendo estos principios se ha logrado un desarrollo exitoso en
-la implementación de los componentes y aplicaciones móviles. Además,
-se ha enfocado el desarrollo con miras a la colaboración basada en
-la comunidad de código abierto Licencia Pública Apache, Versión 2.0
-(\emph{Apache License, Version 2.0}) \cite{GimenezYegros2016c}.
+Siguiendo estos principios se ha logrado una implementación exitosa
+de los componentes y aplicaciones móviles clientes de verificación.
+Además, se ha enfocado el desarrollo con miras a la colaboración basada
+en la comunidad de código abierto por medio de una Licencia Pública
+Apache, Versión 2.0 (\emph{Apache License Version 2.0}, en inglés)
+\cite{GimenezYegros2016c}.
 
 \subsection{Metodología de desarrollo}
 
-\subsection{Tecnología }
+\subsection{Tecnología Móvil}
 
-\subsubsection{Android\texttrademark}
+Esta sección está dedicada a describir la tecnología principal utilizada
+para la implementación del diseño de este capítulo, y la mayor parte
+del desarrollo de este trabajo. Uno de los criterios claves para la
+selección de teléfonos móviles inteligentes apropiados para este trabajo,
+además de los sensores, es el sistema operativo (\abbr{OS}, en inglés)
+móvil. 
 
-\paragraph{Arquitectura}
+El sistema operativo móvil se encarga del manejo de recursos del dispositivo
+y el control de operación de la aplicaciones móviles. Estos sistemas
+tiene características similares a los convencionales utilizados en
+las computadoras de escritorio (\abbr{PC}, en inglés) , su función
+principal es proveer servicios comunes a las aplicaciones y programas,
+y además administrar los recursos de \emph{hardware}. Adicionalmente,
+los sistemas operativos para teléfonos móviles están orientados al
+uso eficiente de energía debido a las limitaciones de batería y características
+de movilidad. 
 
-\paragraph{Componentes}
+En este trabajo se propone una herramienta que está dirigida a los
+teléfonos móviles inteligentes basados en \abbr{Android}.
 
-\subsection{Binder IPC}
+\subsubsection{Plataforma}
+
+El sistema operativo móvil \abbr{Android} es una plataforma de código
+abierto con un entorno de desarrollo de distribución publica que además
+incluye una interfaz de programación (\abbr{API}, en inglés) completa
+con acceso al \emph{hardware} del teléfono y los sensores internos.
+Esto facilidad permite que las herramientas de aprendizaje automático
+y sus procedimientos puedan ser construidos de manera más simple. 
+
+\abbr{Android} es una plataforma abierta para dispositivos móviles
+encabezada por \emph{Google} en junto con la \emph{Open Handset Alliance
+\cite{OHA2008}} con el objetivo de innovar en el entorno móvil, mejorando
+la experiencia de usuario a un menor costo \cite{Gargenta2014}. El
+principal aporte que ha hecho la plataforma es que por primera vez
+una plataforma abierta logra separar el \emph{software} y el \emph{hardware}
+subyacente. Esto permite que un gran número diverso de dispositivos
+ejecuten las mismas aplicaciones, creando un ecosistema más variado
+para desarrolladores y consumidores. 
+
+\subsubsection{Arquitectura}
+
+La plataforma \abbr{Android} está soportada sobre el núcleo (\abbr{Kernel},
+en inglés) de \abbr{Linux} como se muestra en la \figref{fig5:android-stack}.
+El proyecto \abbr{Linux} es una iniciativa de código abierto utilizado
+ampliamente en el ámbito de tecnología desde hace más de una década.
+La capa más baja de la arquitectura hereda las principales funcionalidades
+esperadas en los sistemas operativos modernos: portabilidad, seguridad
+y las capacidades funcionales.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/android_stack}
+\par\end{centering}
+\caption[Arquitectura de Android]{\label{fig5:android-stack}Arquitectura de \abbr{Android}}
+\end{figure}
+
+Adicionalmente, la plataforma ha mejorado el núcleo introduciendo
+un número de extensiones especiales para el entorno móvil. Las extensiones
+agregan capacidades funcionales mejoradas para administrar la energía,
+ya que los móviles utilizan batería, mecanismos para llamados a procedimientos
+remotos rápidos, y aislamiento de aplicaciones para mejor seguridad
+\cite{Gargenta2014}. Las extensiones son módulos que fueron agregados
+y son listados a continuación con su nomenclatura en inglés \cite{Schreiber2011}: 
+\begin{itemize}
+\item \emph{Alarm }
+\item \emph{Ashmem}
+\item \emph{Binder}
+\item \emph{Power Management}
+\item \emph{Low Memory Killer}
+\item \emph{Kernel debugger} y \emph{Kernel} \emph{logger}
+\end{itemize}
+En la siguiente sección se detallan otros componentes que hacen parte
+de la plataforma.
+
+\subsubsection{Componentes}
+
+Los componentes de la plataforma citados en la \figref{fig5:android-stack}
+son agrupados y definidos en las siguientes partes \cite{Gargenta2014}:
+\begin{itemize}
+\item \textbf{Native Layer}: Este componente llamado capa nativa, es un
+conjunto base de funcionalidades implementadas en \texttt{C/C++} que
+no forman parte del núcleo sino del espacio de usuario del sistema.
+Este grupo está compuesto de varias partes como: abstracciones de
+\emph{hardware} (\abbr{HAL}), librerías nativas, servicios del sistema
+y herramientas básicas utilitarias.
+\item \textbf{Dalvik}: Es una máquina virtual (\abbr{DVM}) de propósito
+específico diseñada especialmente para \abbr{Android} para correr
+aplicaciones programadas en el lenguaje \abbr{Java} \cite{Ehringer2010}.
+A diferencia de la máquina virtual de Java estándar (\abbr{JVM}),
+el diseño se hizo pensando en restricciones específicas de los entornos
+móviles, como consumo de energía y capacidad limitada de recursos
+como \abbr{CPU} y Memoria. Además, la \abbr{JVM} posee restricciones
+de licencia comercial.
+\item \textbf{Application Framework}: Este componente provee un entorno
+de programación con varias librerías y servicios para construir aplicaciones
+nativas. Este componente es el mejor documentado y mejor cubierto
+en toda la plataforma ya que permite a los desarrolladores ser creativos
+y construir aplicaciones que puedan ser distribuirlas al mercado.
+Son parte de este componente las librerías \abbr{Java} genéricas
+y específicas para \abbr{Android} \cite{OHA2008r}, como también
+servicios (o gestores de recursos) que facilitan las capacidades útiles
+de la plataforma como ubicación, sensores, conectividad, etc. 
+\item \textbf{Applications}: Las aplicaciones son el punto de acceso principal
+de la plataforma y se soporta sobre los componentes arriba mencionados.
+La función principal de la aplicación es proveer una utilidad al usuario
+final según lo descrito inicialmente en la sección \ref{sec52:dise=0000F1o}.
+Las aplicaciones pueden estar instaladas de fábrica en los teléfonos
+móviles o pueden ser adquiridos por los usuarios en los mercados de
+distribución de aplicaciones \abbr{Android}.
+\end{itemize}
+
+\subsubsection{Binder}
 
 \section{Arquitectura del proyecto}
 

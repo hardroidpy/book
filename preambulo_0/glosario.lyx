@@ -434,5 +434,71 @@ description "Graphical Processing Unit.\\\\"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Kernel"
+description "Núcleo principal de un sistema operativo moderno."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Linux"
+description "Proyecto de software libre para producir un núcleo de sistema operativo basado en Unix"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HAL"
+description "Hardware Abstraction Layer"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "DVM"
+description "Dalvik Virtual Machine"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "JVM"
+description "Java Virtual Machine"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "Java"
+description "Lenguaje de programación orientado a objetos"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

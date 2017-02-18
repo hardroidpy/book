@@ -99,16 +99,14 @@ name "sec51:intro"
 En este capítulo introducimos un sistema que clasifica la actividades humanas
  ambulatorias utilizando teléfonos móviles inteligentes con la plataforma
  
-\emph on
-Android
-\emph default
-
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 
+\backslash
+abbr{Android}
 \backslash
 texttrademark
 \end_layout
@@ -175,8 +173,6 @@ abbr{HAR}
 
 .
  El servicio de trasfondo en la plataforma 
-\emph on
-Android
 \begin_inset ERT
 status open
 
@@ -184,13 +180,11 @@ status open
 
 
 \backslash
-texttrademark
+abbr{Android}
 \end_layout
 
 \end_inset
 
-
-\emph default
  es una aplicación para teléfonos móvil independiente que implementa algoritmos
  de reconocimiento de actividades humanas.
 \end_layout
@@ -233,9 +227,20 @@ reference "sec52:diseño"
 s para la construcción de los componentes de software.
  Se empieza con los conceptos generales de Ingeniería de Software hasta
  concluir con los detalles técnicos de la plataforma 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android
 \emph on
-Android
-\emph default
+}
+\end_layout
+
+\end_inset
+
 .
  La siguiente sección 
 \begin_inset CommandInset ref
@@ -317,19 +322,40 @@ key "Fling2009"
 
 \end_inset
 
-, es decir: un sitio Web Móvil, una aplicación Web Móvil, SMS, Juegos, herramien
-tas
+, es decir: un sitio Web Móvil, una aplicación Web Móvil, SMS, Juegos, controles
+ utilitarios
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
 \emph on
- Widgets
-\emph default
+Widgets
+\end_layout
+
+\end_inset
+
  y aplicaciones nativas.
  Las aplicaciones nativas son uno de los medios más utilizados debido a
  la rica experiencia de usuario y capacidades que pueden ser explotadas
  en los dispositivos, ya que disponen de gran soporte en la plataforma subyacent
 e.
  Por ejemplo, en la plataforma para teléfonos móviles 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+
 \emph on
-Android 
+ 
 \emph default
 se dispone de las capacidades disponibles del dispositivo como almacenamiento,
  ubicación, sensores y además un medio de distribución certificado como
@@ -450,7 +476,11 @@ es la separación por capas (
 \emph on
 Layering
 \emph default
-) para dividir un sistema complejo 
+, en inglés
+\emph on
+)
+\emph default
+ para dividir un sistema complejo 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fowler2002"
@@ -506,8 +536,8 @@ figref{fig5:cliente_servidor}
  radica mantener la lógica central del sistema: las reglas de negocio, validacio
 nes, cálculos, etc.
  El modelo de dos capas propone ubicar la lógica central embebida en la
- interacciones de la Interfaz de Usuario (capa cliente) o almacenar los
- mismos en procedimientos almacenados en la basa de datos (capa servidor).
+ interacciones de la Interfaz de Usuario, la capa cliente, o almacenar los
+ mismos en procedimientos almacenados en la basa de datos, la capa servidor.
 \end_layout
 
 \begin_layout Standard
@@ -521,7 +551,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename graphics/cliente_servidor.png
-	width 50col%
+	width 80col%
 
 \end_inset
 
@@ -757,7 +787,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename graphics/arqui_tres_capas.png
-	width 80text%
+	width 80col%
 
 \end_inset
 
@@ -904,13 +934,13 @@ abbr{API}
 
 \end_inset
 
-).
+ de programación).
  Este patrón define los límites del sistema con una capa de servicios que
  establece el conjunto de operaciones disponibles y coordina el proceso
  de cada operación.
- La capa de servicios puede ser tan gruesa como tan fina como se requiera,
- esta puede contener objetos de servicio con reglas de negocio, manejo de
- transacciones y seguridad.
+ La capa de servicios puede ser tan gruesa o tan fina como se requiera,
+ puede contener objetos de servicio con reglas de negocio, manejo de transaccion
+es y seguridad.
 \end_layout
 
 \begin_layout Standard
@@ -918,8 +948,8 @@ Por otro lado, el modelo del dominio da soporte a la capa de servicios.
  Este patrón define objetos de dominio que tienen incorporados datos y comportam
 iento, estos representan de manera significativa el dominio del problema
  a resolver.
- Debido a que la lógica de negocio de un sistema puede ser bastante compleja.
- Estos objetos están diseñados para manejar las diversas combinaciones de
+ Debido a que la lógica de negocio de un sistema puede ser bastante compleja,
+ estos objetos están diseñados para manejar las diversas combinaciones de
  reglas y lógica del sistema.
 \end_layout
 
@@ -928,10 +958,10 @@ Guías Generales
 \end_layout
 
 \begin_layout Standard
-En general las guías generales para construcción de sistemas orientados
- a objetos fueron utilizados en este trabajo.
- Algunos de los principios más relevantes que han sido considerados son
- 
+En este trabajo fueron utilizadas las guías generales para construcción
+ de sistemas orientados a objetos.
+ Algunos de los principios más relevantes que han sido considerados durante
+ el diseño de nuestra solución son 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Albin2003"
@@ -962,14 +992,15 @@ Abstracción
 \end_layout
 
 \begin_layout Standard
-Siguiendo estos principios se ha logrado un desarrollo exitoso en la implementac
-ión de los componentes y aplicaciones móviles.
+Siguiendo estos principios se ha logrado una implementación exitosa de los
+ componentes y aplicaciones móviles clientes de verificación.
  Además, se ha enfocado el desarrollo con miras a la colaboración basada
- en la comunidad de código abierto Licencia Pública Apache, Versión 2.0 (
+ en la comunidad de código abierto por medio de una Licencia Pública Apache,
+ Versión 2.0 (
 \emph on
-Apache License, Version 2.0
+Apache License Version 2.0
 \emph default
-) 
+, en inglés) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GimenezYegros2016c"
@@ -984,11 +1015,16 @@ Metodología de desarrollo
 \end_layout
 
 \begin_layout Subsection
-Tecnología 
+Tecnología Móvil
 \end_layout
 
-\begin_layout Subsubsection
-Android
+\begin_layout Standard
+Esta sección está dedicada a describir la tecnología principal utilizada
+ para la implementación del diseño de este capítulo, y la mayor parte del
+ desarrollo de este trabajo.
+ Uno de los criterios claves para la selección de teléfonos móviles inteligentes
+ apropiados para este trabajo, además de los sensores, es el sistema operativo
+ (
 \begin_inset ERT
 status open
 
@@ -996,7 +1032,282 @@ status open
 
 
 \backslash
-texttrademark
+abbr{OS}
+\end_layout
+
+\end_inset
+
+, en inglés) móvil.
+ 
+\end_layout
+
+\begin_layout Standard
+El sistema operativo móvil se encarga del manejo de recursos del dispositivo
+ y el control de operación de la aplicaciones móviles.
+ Estos sistemas tiene características similares a los convencionales utilizados
+ en las computadoras de escritorio (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{PC}
+\end_layout
+
+\end_inset
+
+, en inglés) , su función principal es proveer servicios comunes a las aplicacio
+nes y programas, y además administrar los recursos de 
+\emph on
+hardware
+\emph default
+.
+ Adicionalmente, los sistemas operativos para teléfonos móviles están orientados
+ al uso eficiente de energía debido a las limitaciones de batería y característi
+cas de movilidad.
+ 
+\end_layout
+
+\begin_layout Standard
+En este trabajo se propone una herramienta que está dirigida a los teléfonos
+ móviles inteligentes basados en 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Plataforma
+\end_layout
+
+\begin_layout Standard
+El sistema operativo móvil 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ es una plataforma de código abierto con un entorno de desarrollo de distribució
+n publica que además incluye una interfaz de programación (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{API}
+\end_layout
+
+\end_inset
+
+, en inglés) completa con acceso al 
+\emph on
+hardware
+\emph default
+ del teléfono y los sensores internos.
+ Esto facilidad permite que las herramientas de aprendizaje automático y
+ sus procedimientos puedan ser construidos de manera más simple.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ es una plataforma abierta para dispositivos móviles encabezada por 
+\emph on
+Google
+\emph default
+ en junto con la 
+\emph on
+Open Handset Alliance 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OHA2008"
+
+\end_inset
+
+
+\emph default
+ con el objetivo de innovar en el entorno móvil, mejorando la experiencia
+ de usuario a un menor costo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gargenta2014"
+
+\end_inset
+
+.
+ El principal aporte que ha hecho la plataforma es que por primera vez una
+ plataforma abierta logra separar el 
+\emph on
+software
+\emph default
+ y el 
+\emph on
+hardware
+\emph default
+ subyacente.
+ Esto permite que un gran número diverso de dispositivos ejecuten las mismas
+ aplicaciones, creando un ecosistema más variado para desarrolladores y
+ consumidores.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Arquitectura
+\end_layout
+
+\begin_layout Standard
+La plataforma 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ está soportada sobre el núcleo (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Kernel}
+\end_layout
+
+\end_inset
+
+, en inglés) de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Linux}
+\end_layout
+
+\end_inset
+
+ como se muestra en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:android-stack}
+\end_layout
+
+\end_inset
+
+.
+ El proyecto 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Linux}
+\end_layout
+
+\end_inset
+
+ es una iniciativa de código abierto utilizado ampliamente en el ámbito
+ de tecnología desde hace más de una década.
+ La capa más baja de la arquitectura hereda las principales funcionalidades
+ esperadas en los sistemas operativos modernos: portabilidad, seguridad
+ y las capacidades funcionales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/android_stack.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:android-stack"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Arquitectura de Android
+\end_layout
+
+\end_inset
+
+Arquitectura de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
 \end_layout
 
 \end_inset
@@ -1004,16 +1315,330 @@ texttrademark
 
 \end_layout
 
-\begin_layout Paragraph
-Arquitectura
+\end_inset
+
+
 \end_layout
 
-\begin_layout Paragraph
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Adicionalmente, la plataforma ha mejorado el núcleo introduciendo un número
+ de extensiones especiales para el entorno móvil.
+ Las extensiones agregan capacidades funcionales mejoradas para administrar
+ la energía, ya que los móviles utilizan batería, mecanismos para llamados
+ a procedimientos remotos rápidos, y aislamiento de aplicaciones para mejor
+ seguridad 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gargenta2014"
+
+\end_inset
+
+.
+ Las extensiones son módulos que fueron agregados y son listados a continuación
+ con su nomenclatura en inglés 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schreiber2011"
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Alarm 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Ashmem
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Binder
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Power Management
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Low Memory Killer
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Kernel debugger
+\emph default
+ y 
+\emph on
+Kernel
+\emph default
+ 
+\emph on
+logger
+\end_layout
+
+\begin_layout Standard
+En la siguiente sección se detallan otros componentes que hacen parte de
+ la plataforma.
+\end_layout
+
+\begin_layout Subsubsection
 Componentes
 \end_layout
 
-\begin_layout Subsection
-Binder IPC
+\begin_layout Standard
+Los componentes de la plataforma citados en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:android-stack}
+\end_layout
+
+\end_inset
+
+ son agrupados y definidos en las siguientes partes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gargenta2014"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Native Layer
+\series default
+: Este componente llamado capa nativa, es un conjunto base de funcionalidades
+ implementadas en 
+\family typewriter
+C/C++
+\family default
+ que no forman parte del núcleo sino del espacio de usuario del sistema.
+ Este grupo está compuesto de varias partes como: abstracciones de 
+\emph on
+hardware
+\emph default
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAL}
+\end_layout
+
+\end_inset
+
+), librerías nativas, servicios del sistema y herramientas básicas utilitarias.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Dalvik
+\series default
+: Es una máquina virtual (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{DVM}
+\end_layout
+
+\end_inset
+
+) de propósito específico diseñada especialmente para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ para correr aplicaciones programadas en el lenguaje 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Java}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ehringer2010"
+
+\end_inset
+
+.
+ A diferencia de la máquina virtual de Java estándar (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{JVM}
+\end_layout
+
+\end_inset
+
+), el diseño se hizo pensando en restricciones específicas de los entornos
+ móviles, como consumo de energía y capacidad limitada de recursos como
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{CPU}
+\end_layout
+
+\end_inset
+
+ y Memoria.
+ Además, la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{JVM}
+\end_layout
+
+\end_inset
+
+ posee restricciones de licencia comercial.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Application Framework
+\series default
+: Este componente provee un entorno de programación con varias librerías
+ y servicios para construir aplicaciones nativas.
+ Este componente es el mejor documentado y mejor cubierto en toda la plataforma
+ ya que permite a los desarrolladores ser creativos y construir aplicaciones
+ que puedan ser distribuirlas al mercado.
+ Son parte de este componente las librerías 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Java}
+\end_layout
+
+\end_inset
+
+ genéricas y específicas para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OHA2008r"
+
+\end_inset
+
+, como también servicios (o gestores de recursos) que facilitan las capacidades
+ útiles de la plataforma como ubicación, sensores, conectividad, etc.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Applications
+\series default
+: Las aplicaciones son el punto de acceso principal de la plataforma y se
+ soporta sobre los componentes arriba mencionados.
+ La función principal de la aplicación es proveer una utilidad al usuario
+ final según lo descrito inicialmente en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec52:diseño"
+
+\end_inset
+
+.
+ Las aplicaciones pueden estar instaladas de fábrica en los teléfonos móviles
+ o pueden ser adquiridos por los usuarios en los mercados de distribución
+ de aplicaciones 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Binder
 \end_layout
 
 \begin_layout Section

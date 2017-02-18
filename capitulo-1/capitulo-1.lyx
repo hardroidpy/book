@@ -1115,7 +1115,7 @@ status open
 
 
 \backslash
-{Smartphones}
+abbr{Smartphones}
 \end_layout
 
 \end_inset
@@ -1159,7 +1159,7 @@ abbr{HAR}
  El Capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap3:Aprendizaje-Automatico"
+reference "chap:Aprendizaje-Automatico"
 
 \end_inset
 
@@ -1233,7 +1233,7 @@ abbr{Android}
 El Capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap6:evaluación"
+reference "chap6:evaluacion"
 
 \end_inset
 

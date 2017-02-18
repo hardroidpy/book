@@ -186,8 +186,8 @@ En la actualidad, construir aplicaciones interactivas requiere que se tenga
 a que este asunto tiene debido al cambio frecuente que afecta el contexto
  debido a la computación móvil y ubicua.
  El contexto de un usuario es un medio adicional de interacción entre humano
- y computadora, adicional a los otros métodos convencionales de ingesta
- de datos.
+ y computadora, adicional a los otros métodos convencionales de toma de
+ datos.
  Este nuevo medio abre nuevas posibilidades de comunicación y producción
  de nuevos servicios en computación.
  
@@ -207,7 +207,7 @@ Pero, ¿qué es el contexto?, citando a otras fuentes podemos definir el context
 ...
  cualquier información que pueda ser utilizada para caracterizar la situación
  de una entidad.
- Un entidad es una persona, lugar, o objeto que es considerado relevante
+ Una entidad es una persona, lugar, u objeto que es considerado relevante
  en la interacción entre el usuario y la aplicación, incluyendo al usuario
  y la aplicación
 \emph default
@@ -891,7 +891,7 @@ Capacidades de teléfonos móviles inteligentes
 \begin_layout Standard
 Tanto los teléfono móviles, como también los reproductores de música o relojes
  inteligentes, han incluido desde ya hace un par de años diversos sensores
- con miras a enriquecer la experiencia de interacción humano-computador.
+ con miras a enriquecer la experiencia de interacción humano computador.
  Aún así, la utilización de sensores han conseguido diversos usos para aplicacio
 nes que capturan datos medidos de sus usuarios 
 \begin_inset CommandInset citation
