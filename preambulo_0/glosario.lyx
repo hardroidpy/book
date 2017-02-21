@@ -500,5 +500,38 @@ description "Lenguaje de programación orientado a objetos"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "SQL"
+description "Structured Query Language"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "CRUD"
+description "Create, Read, Update, Delete"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "URI"
+description "Universal Resource Identifier"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

@@ -233,7 +233,41 @@ Apache, Versión 2.0 (\emph{Apache License Version 2.0}, en inglés)
 
 \subsection{Metodología de desarrollo}
 
-\subsection{Tecnología Móvil}
+En toda labor de construcción de sistemas de información es necesario
+definir una metodología de diseño para encarar problemas y tecnologías
+complejas. La metodología utilizada en este trabajo es el diseño descendente
+(\emph{top-down desing}), que permite organizar el diseño del sistema
+en niveles de abstracción para reducir la complejidad general del
+sistema \cite{Albin2003}. 
+
+En esta metodología se empieza definiendo la funcionalidad esperada
+del sistema como lo requiere el cliente, la capa más alta, y sigue
+paso a paso hasta refinar el diseño en capas más bajas a medida que
+se avanzan con detalles específicos. El diseño empieza poniendo énfasis
+en las funcionalidades esperadas del sistema cuando este se encuentre
+en operación. Luego, se continua con el diseño de la lógica de negocios
+que soportan a estas funcionalidades, y para por ultimo enfocarse
+en los recursos necesarios por la capa lógica del sistema.
+
+Como aspecto práctica de la metodología se han identificado las siguientes
+tareas específicas de diseño que ayudan a comprender y describir mejor
+el desarrollo de este trabajo:
+\begin{enumerate}
+\item Diseñar la arquitectura de la solución.
+\item Diseñar la capa de servicios, o interfaz del sistema enfocada para
+programadores (\abbr{API}) con un conjunto de llamadas a exponer.
+\item Diseño de los recursos que conforman el dominio al servicio.
+\item Implementación del servicio reconocedor.
+\item Implementación de un componente de evaluación de la solución.
+\end{enumerate}
+Parte de la metodología consistió en definir la interfaz del sistema
+en base a las mejores prácticas de la industria y de aplicaciones
+móviles basadas en contexto basados en el lenguaje de programación
+\abbr{Java} y la tecnología basada en \abbr{Android}. Se basó la
+solución en implementaciones existentes \cite{Google2016m} ya que
+las buenas prácticas y mejores diseños se heredan con ventajas.
+
+\subsection{Tecnología}
 
 Esta sección está dedicada a describir la tecnología principal utilizada
 para la implementación del diseño de este capítulo, y la mayor parte
@@ -253,7 +287,9 @@ uso eficiente de energía debido a las limitaciones de batería y característic
 de movilidad. 
 
 En este trabajo se propone una herramienta que está dirigida a los
-teléfonos móviles inteligentes basados en \abbr{Android}.
+teléfonos móviles inteligentes basados en \abbr{Android}. En los
+siguientes apartados se da una vista general de \abbr{Android} como
+componente tecnológico de este trabajo.
 
 \subsubsection{Plataforma}
 
@@ -306,13 +342,15 @@ y son listados a continuación con su nomenclatura en inglés \cite{Schreiber201
 \item \emph{Low Memory Killer}
 \item \emph{Kernel debugger} y \emph{Kernel} \emph{logger}
 \end{itemize}
-En la siguiente sección se detallan otros componentes que hacen parte
-de la plataforma.
+Parte de la arquitectura de la plataforma son los componentes que
+están soportados sobre el núcleo y en la siguiente sección se habla
+con más detalles acerca de los mismos.
 
 \subsubsection{Componentes}
 
-Los componentes de la plataforma citados en la \figref{fig5:android-stack}
-son agrupados y definidos en las siguientes partes \cite{Gargenta2014}:
+Los componentes de la plataforma mostrados en la \figref{fig5:android-stack}
+se agrupan en las siguientes partes \cite{Gargenta2014} con su nomenclatura
+en inglés:
 \begin{itemize}
 \item \textbf{Native Layer}: Este componente llamado capa nativa, es un
 conjunto base de funcionalidades implementadas en \texttt{C/C++} que
@@ -346,7 +384,75 @@ móviles o pueden ser adquiridos por los usuarios en los mercados de
 distribución de aplicaciones \abbr{Android}.
 \end{itemize}
 
-\subsubsection{Binder}
+\subsection{Entorno Android}
+
+En esta sección, se exponen las facilidades de \abbr{Android} desde
+el punto de vista del entorno de programación que ofrece, con énfasis
+en las características que este ofrece para crear aplicaciones contextuales.
+Este apartado es una vista general de alto nivel acerca de los modelos
+de computación y comunicación disponibles para el desarrollador.
+
+\subsubsection{Componentes de Computación}
+
+Los bloques principales de una aplicación móvil son componentes que
+\abbr{Android} provee para construir una aplicación contextual de
+utilidad. La idea de este apartado es presentar a grandes rasgos los
+componentes disponibles y como estos se combinan entre sí para formar
+una aplicación. Cada aplicación está compuesta de cuatro (4) componentes
+distintos, donde cada uno tiene un tema en especial \cite{Gargenta2014}
+y son descritos a continuación con su nomenclatura en inglés:
+\begin{itemize}
+\item \textbf{\emph{Activity}}: Este componente representa la interfaz de
+usuario de la aplicación, responsable de desplegar la información
+y capturar las interacciones del usuario. Este componente no persiste
+información, son tareas de computo efímeros de corta duración en primer
+plano donde el sistema operativo puede requerir parar su ejecución
+y pasarlos a un modo de reposo frecuentemente.
+\item \textbf{\emph{Service}}: Este componente ofrece un mecanismo para
+ejecutar tareas de computo de larga duración que se realicen en segundo
+plano, sin una interfaz de usuario asociada. Un servicio solo puede
+ser parado si el sistema se queda sin recursos de memoria.
+\item \textbf{\emph{Content Provider}}: Este componente provee una interfaz
+para compartir datos entre aplicaciones. Su función es la persistencia
+de datos por medio de una \abbr{API} que sigue el principio \abbr{CRUD},
+una forma de acceso parecida al de bases de datos \abbr{SQL}. Los
+datos pueden ser persistidos en archivos locales o recursos remotos
+en red.
+\item \textbf{\emph{Broadcast Receiver}}: Este componente provee un mecanismo
+para publicación y suscripción a eventos del sistema basado en el
+patrón de diseño \emph{Observer} \cite{Shalloway2004}. El receptor
+es una tarea de computo latente que se activa con la ocurrencia de
+un evento para lo cual el receptor está suscrito. Los eventos tienen
+la forma de un concepto descrito en la parte de componentes de comunicación.
+\end{itemize}
+Estos componentes en su conjunto conforman una aplicación móvil. Estos
+son bloques básicos que están conectados de manera suelta y están
+contenidos en un entorno de aplicación que corresponde a un proceso
+del sistema operativo que comparten los mismos recursos: memoria,
+archivos, \abbr{CPU}, etc..
+
+\paragraph{Componente de Comunicación}
+
+El intercambio de datos es una necesidad común entre partes de un
+sistema. Este intercambio es posible en \abbr{Android} por medio
+de un mecanismo de comunicación entre procesos (\abbr{IPC}), o comunicación
+entre componentes si son partes de la misma aplicación \cite{Schreiber2011}. 
+
+La comunicación opera por medio del componente (de nomenclatura inglesa)
+\emph{Intent} que es una representación de las operaciones a ser realizadas.
+Este consiste en una estructura que contiene un identificador en formato
+\abbr{URI}, una acción asociada y datos anexos que son enviados en
+un mensajes al sistema de comunicación entre procesos para su procesamiento. 
+
+\begin{figure}
+\caption[Componentes de Computo y Comunicación]{\label{fig5:mensajes-ipc}Componentes de Computo y Comunicación}
+\end{figure}
+
+En la \figref{fig5:mensajes-ipc} se muestran los mensajes de interacción
+comunes entre los componentes del entorno \abbr{Android}. El sistema
+de comunicación se basa en el mecanismo de \emph{IPC Binder \cite{Schreiber2011}}
+que se discute con más detalle durante la descripción del desenvolvimiento
+de este trabajo\emph{.}
 
 \section{Arquitectura del proyecto}
 
