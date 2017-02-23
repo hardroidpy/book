@@ -35,7 +35,7 @@ en la sección \ref{sec52:dise=0000F1o} damos una introducción de
 las consideraciones de diseño y metodología utilizadas para la construcción
 de los componentes de software. Se empieza con los conceptos generales
 de Ingeniería de Software hasta concluir con los detalles técnicos
-de la plataforma \abbr{Android\emph{}}. La siguiente sección \ref{sec53:arquitectura}
+de la plataforma \abbr{Android}. La siguiente sección \ref{sec53:arquitectura}
 incluye una vista general del sistema explicando su arquitectura.
 La sección \ref{sec54:hardroid} conforma el núcleo principal de este
 proyecto donde una implementación \abbr{HAR} en forma de aplicación
@@ -88,12 +88,13 @@ ser mantenido de forma colaborativa.
 
 \subsection{Criterios de diseño}
 
-La implementación de este trabajo, así como la mayoría de los sistemas
-de información, se rige bajo el principio de diseño \emph{basado en
-componentes} donde se busca separar la complejidad de un sistema en
-módulos y que estos interactúen entre sí. Los módulos en el diseño
-de sistemas mejoran la flexibilidad y comprensión mientras se reduce
-el tiempo de desarrollo de los mismos \cite{Parnas1972}.
+\label{ssec52:criterios-dise=0000F1o}La implementación de este trabajo,
+así como la mayoría de los sistemas de información, se rige bajo el
+principio de diseño \emph{basado en componentes} donde se busca separar
+la complejidad de un sistema en módulos y que estos interactúen entre
+sí. Los módulos en el diseño de sistemas mejoran la flexibilidad y
+comprensión mientras se reduce el tiempo de desarrollo de los mismos
+\cite{Parnas1972}.
 
 Una de las técnicas más comunes de diseño de sistemas\emph{ }es la
 separación por capas (\emph{Layering}, en inglés\emph{)} para dividir
@@ -124,7 +125,7 @@ la lógica central embebida en la interacciones de la Interfaz de Usuario,
 la capa cliente, o almacenar los mismos en procedimientos almacenados
 en la basa de datos, la capa servidor.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
 \includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/cliente_servidor}
 \par\end{centering}
@@ -138,7 +139,7 @@ son comúnmente conocidas como \cite{Fowler2002}: Presentación, Dominio
 y Recursos. En la \tabref{tab5:tres_capas} se definen las responsabilidades
 correspondientes a cada capa. 
 
-\begin{table}
+\begin{table}[H]
 \begin{centering}
 \begin{tabular}[t]{|l|>{\raggedright}p{0.5\columnwidth}|}
 \hline 
@@ -165,7 +166,7 @@ si todos los módulos se ejecutan en la misma máquina física. En la
 \figref{fig5:tres_capas} se muestra la arquitectura de tres capas
 discutida anteriormente.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
 \includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/arqui_tres_capas}
 \par\end{centering}
@@ -176,10 +177,10 @@ discutida anteriormente.
 
 \subsubsection{Patrones de diseño}
 
-Los patrones de diseño son parte del paradigma de orientación a objetos
-ideados para solucionar problemas comunes determinados en un contexto
-particular \cite{Shalloway2004}. Una definición acertada se cita
-a continuación.
+Los patrones de diseño son concepto importante del paradigma de orientación
+a objetos, que han sido ideados para solucionar problemas comunes
+determinados en un contexto particular \cite{Shalloway2004}. Una
+definición acertada es la que se cita a continuación.
 \begin{quotation}
 <<\emph{Cada patrón describe un problema que ocurre una y otra vez
 en nuestro entorno, y también describe la solución principal al problema,
@@ -187,13 +188,13 @@ de tal manera que la solución pueda ser utilizada millares de veces,
 sin tener que duplicar el trabajo de pensar cómo resolver el problema.>>}
 \cite{Alexander1977}
 \end{quotation}
-Para nuestro objetivo de implementación, se utilizan los patrones
-de diseño para organizar el \emph{Dominio}, la lógica principal del
-sistema. La metodología de dividir el\emph{ Dominio} por medio de
-los patrones \cite{Fowler2002}:
+Para nuestro objetivo de diseño se utilizan los siguientes patrones
+de diseño para organizar la capa de \emph{Dominio} cuya responsabilidad
+es la lógica principal del sistema. Se sigue la técnica de dividir
+la capa de\emph{ Dominio} por medio de los siguientes patrones \cite{Fowler2002}:
 \begin{enumerate}
-\item \emph{Service Layer}: capa de servicios
-\item \emph{Domain Model}: modelo del dominio
+\item \emph{Service Layer}: Capa de servicios
+\item \emph{Domain Model}: Modelo del dominio
 \end{enumerate}
 La capa de servicios es el punto de interacción entre la \emph{Presentación}
 y el\emph{ Dominio}, por lo que actúa como proveedor de una interfaz
@@ -233,25 +234,26 @@ Apache, Versión 2.0 (\emph{Apache License Version 2.0}, en inglés)
 
 \subsection{Metodología de desarrollo}
 
-En toda labor de construcción de sistemas de información es necesario
-definir una metodología de diseño para encarar problemas y tecnologías
-complejas. La metodología utilizada en este trabajo es el diseño descendente
-(\emph{top-down desing}), que permite organizar el diseño del sistema
-en niveles de abstracción para reducir la complejidad general del
-sistema \cite{Albin2003}. 
+\label{ssec52:metodologia}En toda labor de construcción de sistemas
+de información es necesario definir una metodología de diseño para
+encarar problemas y tecnologías complejas. La metodología utilizada
+en este trabajo es el diseño descendente (\emph{top-down desing}),
+que permite organizar el diseño del sistema en niveles de abstracción
+para reducir la complejidad general del sistema \cite{Albin2003}. 
 
 En esta metodología se empieza definiendo la funcionalidad esperada
 del sistema como lo requiere el cliente, la capa más alta, y sigue
 paso a paso hasta refinar el diseño en capas más bajas a medida que
-se avanzan con detalles específicos. El diseño empieza poniendo énfasis
-en las funcionalidades esperadas del sistema cuando este se encuentre
-en operación. Luego, se continua con el diseño de la lógica de negocios
-que soportan a estas funcionalidades, y para por ultimo enfocarse
-en los recursos necesarios por la capa lógica del sistema.
+se avanzan con detalles específicos. 
 
-Como aspecto práctica de la metodología se han identificado las siguientes
-tareas específicas de diseño que ayudan a comprender y describir mejor
-el desarrollo de este trabajo:
+El diseño empieza poniendo énfasis en las funcionalidades esperadas
+del sistema cuando este se encuentre en operación. Luego, se continua
+con el diseño de la lógica de negocios que soportan a estas funcionalidades,
+y por ultimo se enfoca en los recursos necesarios por la capa lógica.
+
+Como aspecto práctico de esta metodología se han identificado las
+siguientes tareas específicas de diseño que ayudan a comprender y
+describir mejor el desarrollo de este trabajo:
 \begin{enumerate}
 \item Diseñar la arquitectura de la solución.
 \item Diseñar la capa de servicios, o interfaz del sistema enfocada para
@@ -261,64 +263,63 @@ programadores (\abbr{API}) con un conjunto de llamadas a exponer.
 \item Implementación de un componente de evaluación de la solución.
 \end{enumerate}
 Parte de la metodología consistió en definir la interfaz del sistema
-en base a las mejores prácticas de la industria y de aplicaciones
-móviles basadas en contexto basados en el lenguaje de programación
-\abbr{Java} y la tecnología basada en \abbr{Android}. Se basó la
-solución en implementaciones existentes \cite{Google2016m} ya que
-las buenas prácticas y mejores diseños se heredan con ventajas.
+en base a las mejores prácticas de la industria para aplicaciones
+móviles de contexto, utilizando el lenguaje de programación \abbr{Java}
+y la tecnología basada en \abbr{Android}. El diseño se basa en implementaciones
+existentes \cite{Google2016m} para heredar las buenas prácticas de
+programación y obtener la ventaja de familiaridad de la \abbr{API}
+para desarrolladores.
 
 \subsection{Tecnología}
 
-Esta sección está dedicada a describir la tecnología principal utilizada
-para la implementación del diseño de este capítulo, y la mayor parte
-del desarrollo de este trabajo. Uno de los criterios claves para la
-selección de teléfonos móviles inteligentes apropiados para este trabajo,
-además de los sensores, es el sistema operativo (\abbr{OS}, en inglés)
-móvil. 
+\label{ssec52:tecnologia}Esta sección está dedicada a describir la
+tecnología utilizada para la implementación del diseño de este trabajo.
+Uno de los criterios claves para la selección de teléfonos móviles
+inteligentes apropiados para el reconocimiento de actividades, además
+de los sensores, es el sistema operativo (abreviado \abbr{OS}) móvil. 
 
 El sistema operativo móvil se encarga del manejo de recursos del dispositivo
 y el control de operación de la aplicaciones móviles. Estos sistemas
-tiene características similares a los convencionales utilizados en
-las computadoras de escritorio (\abbr{PC}, en inglés) , su función
-principal es proveer servicios comunes a las aplicaciones y programas,
-y además administrar los recursos de \emph{hardware}. Adicionalmente,
-los sistemas operativos para teléfonos móviles están orientados al
-uso eficiente de energía debido a las limitaciones de batería y características
-de movilidad. 
+tiene características similares a los sistemas operativos convencionales
+utilizados en las computadoras de escritorio (\abbr{PC}). La función
+principal de un sistema operativo es proveer servicios comunes a las
+aplicaciones y administrar los recursos de \emph{hardware}. Adicionalmente,
+los sistemas operativos móviles están diseñados para el uso eficiente
+de energía, debido a las limitaciones de batería, y características
+especiales de movilidad. 
 
 En este trabajo se propone una herramienta que está dirigida a los
 teléfonos móviles inteligentes basados en \abbr{Android}. En los
 siguientes apartados se da una vista general de \abbr{Android} como
-componente tecnológico de este trabajo.
+plataforma tecnológica de este capítulo.
 
 \subsubsection{Plataforma}
 
 El sistema operativo móvil \abbr{Android} es una plataforma de código
-abierto con un entorno de desarrollo de distribución publica que además
-incluye una interfaz de programación (\abbr{API}, en inglés) completa
+abierto con un entorno de programación de distribución publica, que
+además incluye una interfaz de programación (\abbr{API}) completa
 con acceso al \emph{hardware} del teléfono y los sensores internos.
-Esto facilidad permite que las herramientas de aprendizaje automático
+Esta facilidad permite que las herramientas de aprendizaje automático
 y sus procedimientos puedan ser construidos de manera más simple. 
 
 \abbr{Android} es una plataforma abierta para dispositivos móviles
-encabezada por \emph{Google} en junto con la \emph{Open Handset Alliance
-\cite{OHA2008}} con el objetivo de innovar en el entorno móvil, mejorando
-la experiencia de usuario a un menor costo \cite{Gargenta2014}. El
-principal aporte que ha hecho la plataforma es que por primera vez
-una plataforma abierta logra separar el \emph{software} y el \emph{hardware}
-subyacente. Esto permite que un gran número diverso de dispositivos
-ejecuten las mismas aplicaciones, creando un ecosistema más variado
-para desarrolladores y consumidores. 
+encabezada por \emph{Google} y la \emph{Open Handset Alliance \cite{OHA2008}}
+con el objetivo de innovar en el entorno móvil, mejorando la experiencia
+de usuario a un menor costo \cite{Gargenta2014}. El principal aporte
+que logró \abbr{Android} es que por primera vez una plataforma abierta
+consigue separar el \emph{software} y el \emph{hardware} subyacente.
+Esto permite que un gran número diverso de dispositivos ejecuten las
+mismas aplicaciones, creando un ecosistema más variado para desarrolladores
+y consumidores. 
 
 \subsubsection{Arquitectura}
 
-La plataforma \abbr{Android} está soportada sobre el núcleo (\abbr{Kernel},
-en inglés) de \abbr{Linux} como se muestra en la \figref{fig5:android-stack}.
-El proyecto \abbr{Linux} es una iniciativa de código abierto utilizado
-ampliamente en el ámbito de tecnología desde hace más de una década.
-La capa más baja de la arquitectura hereda las principales funcionalidades
-esperadas en los sistemas operativos modernos: portabilidad, seguridad
-y las capacidades funcionales.
+La plataforma \abbr{Android} está soportada sobre el núcleo (\abbr{Kernel})
+de \abbr{Linux} cuyo proyecto al igual es una iniciativa de código
+abierto utilizado ampliamente en el ámbito de tecnología de la información
+desde hace más de una década. La capa más baja de la arquitectura
+hereda las principales funcionalidades esperadas en los sistemas operativos
+modernos: portabilidad, seguridad y las capacidades funcionales.
 
 \begin{figure}[H]
 \begin{centering}
@@ -329,11 +330,11 @@ y las capacidades funcionales.
 
 Adicionalmente, la plataforma ha mejorado el núcleo introduciendo
 un número de extensiones especiales para el entorno móvil. Las extensiones
-agregan capacidades funcionales mejoradas para administrar la energía,
+agregan capacidades funcionales mejoradas para administrar la energía;
 ya que los móviles utilizan batería, mecanismos para llamados a procedimientos
-remotos rápidos, y aislamiento de aplicaciones para mejor seguridad
-\cite{Gargenta2014}. Las extensiones son módulos que fueron agregados
-y son listados a continuación con su nomenclatura en inglés \cite{Schreiber2011}: 
+remotos y aislamiento para mejorar la seguridad \cite{Gargenta2014}.
+Las extensiones fueron módulos agregados cuya lista se detalla a continuación
+con su nomenclatura en inglés \cite{Schreiber2011}: 
 \begin{itemize}
 \item \emph{Alarm }
 \item \emph{Ashmem}
@@ -342,25 +343,25 @@ y son listados a continuación con su nomenclatura en inglés \cite{Schreiber201
 \item \emph{Low Memory Killer}
 \item \emph{Kernel debugger} y \emph{Kernel} \emph{logger}
 \end{itemize}
-Parte de la arquitectura de la plataforma son los componentes que
-están soportados sobre el núcleo y en la siguiente sección se habla
-con más detalles acerca de los mismos.
+En la \figref{fig5:android-stack} se muestra la plataforma \abbr{Android}
+con todos los componentes que están soportados sobre el núcleo y que
+en la siguiente sección se detallan.
 
 \subsubsection{Componentes}
 
 Los componentes de la plataforma mostrados en la \figref{fig5:android-stack}
-se agrupan en las siguientes partes \cite{Gargenta2014} con su nomenclatura
-en inglés:
+se agrupan en las siguientes partes \cite{Gargenta2014} (con nomenclatura
+inglesa):
 \begin{itemize}
-\item \textbf{Native Layer}: Este componente llamado capa nativa, es un
-conjunto base de funcionalidades implementadas en \texttt{C/C++} que
-no forman parte del núcleo sino del espacio de usuario del sistema.
-Este grupo está compuesto de varias partes como: abstracciones de
-\emph{hardware} (\abbr{HAL}), librerías nativas, servicios del sistema
-y herramientas básicas utilitarias.
+\item \textbf{Native Layer}: Este componente llamado capa nativa es un conjunto
+base de funcionalidades implementadas en \texttt{C/C++} que no forman
+parte del núcleo sino del espacio de usuario del sistema. Este grupo
+está compuesto de varias partes como: abstracciones de \emph{hardware}
+(\abbr{HAL}), librerías nativas, servicios del sistema y herramientas
+básicas utilitarias.
 \item \textbf{Dalvik}: Es una máquina virtual (\abbr{DVM}) de propósito
-específico diseñada especialmente para \abbr{Android} para correr
-aplicaciones programadas en el lenguaje \abbr{Java} \cite{Ehringer2010}.
+específico diseñada especialmente para \abbr{Android} de manera que
+este corra aplicaciones programadas en el lenguaje \abbr{Java} \cite{Ehringer2010}.
 A diferencia de la máquina virtual de Java estándar (\abbr{JVM}),
 el diseño se hizo pensando en restricciones específicas de los entornos
 móviles, como consumo de energía y capacidad limitada de recursos
@@ -368,11 +369,11 @@ como \abbr{CPU} y Memoria. Además, la \abbr{JVM} posee restricciones
 de licencia comercial.
 \item \textbf{Application Framework}: Este componente provee un entorno
 de programación con varias librerías y servicios para construir aplicaciones
-nativas. Este componente es el mejor documentado y mejor cubierto
+nativas. Este componente es el que está mejor documentado y cubierto
 en toda la plataforma ya que permite a los desarrolladores ser creativos
 y construir aplicaciones que puedan ser distribuirlas al mercado.
 Son parte de este componente las librerías \abbr{Java} genéricas
-y específicas para \abbr{Android} \cite{OHA2008r}, como también
+y las específicas de \abbr{Android} \cite{OHA2008r}, como también
 servicios (o gestores de recursos) que facilitan las capacidades útiles
 de la plataforma como ubicación, sensores, conectividad, etc. 
 \item \textbf{Applications}: Las aplicaciones son el punto de acceso principal
@@ -384,13 +385,14 @@ móviles o pueden ser adquiridos por los usuarios en los mercados de
 distribución de aplicaciones \abbr{Android}.
 \end{itemize}
 
-\subsection{Entorno Android}
+\subsection{Marco de Trabajo}
 
-En esta sección, se exponen las facilidades de \abbr{Android} desde
-el punto de vista del entorno de programación que ofrece, con énfasis
-en las características que este ofrece para crear aplicaciones contextuales.
-Este apartado es una vista general de alto nivel acerca de los modelos
-de computación y comunicación disponibles para el desarrollador.
+\label{ssec52:framework}En esta sección, se exponen las facilidades
+de \abbr{Android} como marco de trabajo (\emph{framework}), es decir,
+desde el punto de vista del entorno de programación que ofrece, con
+énfasis en las características disponibles para crear aplicaciones
+contextuales. Este apartado presenta una vista de alto nivel acerca
+de los modelos de computación y comunicación disponibles en la plataforma.
 
 \subsubsection{Componentes de Computación}
 
@@ -399,76 +401,105 @@ Los bloques principales de una aplicación móvil son componentes que
 utilidad. La idea de este apartado es presentar a grandes rasgos los
 componentes disponibles y como estos se combinan entre sí para formar
 una aplicación. Cada aplicación está compuesta de cuatro (4) componentes
-distintos, donde cada uno tiene un tema en especial \cite{Gargenta2014}
-y son descritos a continuación con su nomenclatura en inglés:
+distintos, donde cada uno cubre un tópico en específico \cite{Gargenta2014}.
+Los componentes son descritos a continuación (con nomenclatura inglesa):
 \begin{itemize}
-\item \textbf{\emph{Activity}}: Este componente representa la interfaz de
-usuario de la aplicación, responsable de desplegar la información
-y capturar las interacciones del usuario. Este componente no persiste
-información, son tareas de computo efímeros de corta duración en primer
-plano donde el sistema operativo puede requerir parar su ejecución
-y pasarlos a un modo de reposo frecuentemente.
-\item \textbf{\emph{Service}}: Este componente ofrece un mecanismo para
-ejecutar tareas de computo de larga duración que se realicen en segundo
-plano, sin una interfaz de usuario asociada. Un servicio solo puede
-ser parado si el sistema se queda sin recursos de memoria.
-\item \textbf{\emph{Content Provider}}: Este componente provee una interfaz
-para compartir datos entre aplicaciones. Su función es la persistencia
-de datos por medio de una \abbr{API} que sigue el principio \abbr{CRUD},
-una forma de acceso parecida al de bases de datos \abbr{SQL}. Los
-datos pueden ser persistidos en archivos locales o recursos remotos
-en red.
-\item \textbf{\emph{Broadcast Receiver}}: Este componente provee un mecanismo
-para publicación y suscripción a eventos del sistema basado en el
-patrón de diseño \emph{Observer} \cite{Shalloway2004}. El receptor
-es una tarea de computo latente que se activa con la ocurrencia de
-un evento para lo cual el receptor está suscrito. Los eventos tienen
-la forma de un concepto descrito en la parte de componentes de comunicación.
+\item \textbf{\emph{Activity}}: El componente actividad representa la interfaz
+de usuario de la aplicación responsable de desplegar la información
+y capturar las interacciones. Este componente no persiste información,
+sino que son tareas de computo de corta duración y en primer plano
+donde el sistema operativo puede requerir pararlos y pasarlos a un
+modo de reposo frecuentemente.
+\item \textbf{\emph{Service}}: El componente servicio ofrece un mecanismo
+para ejecutar tareas de computo de larga duración en segundo plano
+sin interfaz de usuario asociada. Un servicio solo puede ser parado
+si el sistema se queda sin recursos de memoria.
+\item \textbf{\emph{Content Provider}}: El componente proveedor de contenido
+provee una interfaz para compartir datos entre aplicaciones. Su función
+es la persistencia de datos por medio de una \abbr{API} que sigue
+el principio \abbr{CRUD}, una forma de acceso parecida al de bases
+de datos \abbr{SQL}. Los datos pueden ser persistidos en archivos
+locales o recursos remotos en red.
+\item \textbf{\emph{Broadcast Receiver}}: El componente receptor de mensajes
+provee un mecanismo para publicación y suscripción a eventos del sistema
+basado en el patrón de diseño \emph{Observer} \cite{Shalloway2004}.
+El receptor ejecuta una tarea de computo latente que se activa con
+la ocurrencia de un evento para lo cual está suscrito. Los eventos
+tienen la forma de mensajes que es descrito en la siguiente sección.
 \end{itemize}
 Estos componentes en su conjunto conforman una aplicación móvil. Estos
 son bloques básicos que están conectados de manera suelta y están
-contenidos en un entorno de aplicación que corresponde a un proceso
-del sistema operativo que comparten los mismos recursos: memoria,
-archivos, \abbr{CPU}, etc..
+contenidos en un entorno de aplicación que comparten un proceso del
+sistema operativo y compiten por los mismos recursos: memoria, archivos,
+\abbr{CPU}, etc..
 
-\paragraph{Componente de Comunicación}
+\subsubsection{Componente de Comunicación}
 
-El intercambio de datos es una necesidad común entre partes de un
-sistema. Este intercambio es posible en \abbr{Android} por medio
-de un mecanismo de comunicación entre procesos (\abbr{IPC}), o comunicación
-entre componentes si son partes de la misma aplicación \cite{Schreiber2011}. 
+El intercambio de datos es una necesidad común entre componentes de
+un sistema (o entre sistemas diferentes). En \abbr{Android}, el intercambio
+es realizado por medio de un mecanismo \abbr{IPC}: una comunicación
+entre procesos, o comunicación entre componentes si forman parte de
+la misma aplicación \cite{Schreiber2011}. 
 
-La comunicación opera por medio del componente (de nomenclatura inglesa)
-\emph{Intent} que es una representación de las operaciones a ser realizadas.
-Este consiste en una estructura que contiene un identificador en formato
-\abbr{URI}, una acción asociada y datos anexos que son enviados en
-un mensajes al sistema de comunicación entre procesos para su procesamiento. 
-
-\begin{figure}
-\caption[Componentes de Computo y Comunicación]{\label{fig5:mensajes-ipc}Componentes de Computo y Comunicación}
+Cada aplicación dispone de dos (2) componentes que resuelven un tópico
+en particular y son descritos a continuación (con nomenclatura inglesa):
+\begin{itemize}
+\item \textbf{\emph{Intent}}: El componente mensaje es una representación
+de las operaciones a ser realizadas. Consiste en una estructura de
+datos que contiene un identificador en formato \abbr{URI}, una acción
+asociada y datos anexos que son procesados por el sistema de comunicación
+entre procesos. 
+\item \textbf{\emph{IPC Binder}}: El componente procesador que implementa
+el mecanismo de comunicación entre procesos \emph{\cite{Schreiber2011}}
+y se discute con más detalle durante el desenvolvimiento de este trabajo\emph{.
+}El sistema operativo \abbr{Android} junto con su marco de trabajo
+operan como un sistema distribuido y la tecnología para lograr su
+diseño se basa completamente en este componente.
+\end{itemize}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/mensajes_ipc}
+\par\end{centering}
+\caption[\emph{Framework Android}]{\label{fig5:mensajes-ipc}Marco de Trabajo \abbr{Android}}
 \end{figure}
 
-En la \figref{fig5:mensajes-ipc} se muestran los mensajes de interacción
-comunes entre los componentes del entorno \abbr{Android}. El sistema
-de comunicación se basa en el mecanismo de \emph{IPC Binder \cite{Schreiber2011}}
-que se discute con más detalle durante la descripción del desenvolvimiento
-de este trabajo\emph{.}
+En la \figref{fig5:mensajes-ipc} se muestran las diferentes formas
+de interacción entre los componentes \abbr{Android} citados anteriormente.
+Como se puede apreciar, el mecanismo principal para todas las interacciones
+son llevadas acabo por llamadas \abbr{IPC}. 
+
+Una actividad se inicia por medio de un mensaje y puede lanzar otra
+actividad en pantalla. Un servicio se inicia, se para y se asocia
+por el mecanismo \abbr{IPC} como también las llamadas a métodos y
+retorno de resultados son realizados por el mismo medio. Un proveedor
+de contenidos es consultado con llamadas \abbr{IPC} y retorna los
+resultados por el mismo medio. Todos los eventos son recibidos por
+el receptor de mensajes por medio del \abbr{IPC}. Como es manifiesto
+en la gráfica, el marco de trabajo de \emph{IPC Binder} se basa el
+modelo \emph{Cliente-Servidor} (ver \ref{ssec52:criterios-dise=0000F1o})
+y el patrón de diseño \emph{Proxy} \cite{Shalloway2004}.
 
 \section{Arquitectura del proyecto}
 
 \label{sec53:arquitectura}
 
-\section{HARDroid: Servicio de Reconocimiento de Actividades}
+\section{HARDroid: Servicio de Reconocimiento}
 
 \label{sec54:hardroid}
 
-\subsection{Librería API}
+\subsection{Librería }
 
-\subsection{Servicio BINDER}
+\subsubsection{API}
 
-\subsection{Clasificador DEX}
+\subsection{Servicio }
 
-\section{ActivitySurvey: Aplicación de Encuesta}
+\subsubsection{BINDER}
+
+\subsection{Clasificador }
+
+\subsubsection{DEX}
+
+\section{ActivitySurvey: Encuesta de Evaluación}
 
 \label{sec55:activity}
 

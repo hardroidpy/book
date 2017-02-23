@@ -103,12 +103,14 @@ para su posterior procesamiento.
 La marca de tiempo usualmente se mide \emph{mili}-segundos y dependiendo
 del sensor el intervalo entre medidas puede variar en el mismo orden,
 Ej. con tasa de salida de \texttt{60 \abbr{Hz} }se tendrían 60 medidas
-en un segundo. 
+en un segundo. Las señales de sensores pueden clasificarse de la misma
+manera que los grupos citados en la sección \ref{sec23:sensores},
+según movimiento, posición, ambiente y fisiológicas. 
 
-Las señales de sensores pueden clasificarse de la misma manera que
-los grupos citados en la sección \ref{sec23:sensores}, según movimiento,
-posición, ambiente y fisiológicas. A continuación se describen en
-detalle cada grupo.
+A continuación se describen dos grupos de señales capturadas por medio
+de un sensor específico.
+
+\subsection{Señales Principales}
 
 \subsubsection{Señales de Movimiento}
 
@@ -212,6 +214,8 @@ en tiempo real. Además, la ubicación de un individuo es particularmente
 información sensible para la mayoría de los usuarios y se debe tener
 especial atención a no comprometer la privacidad de los datos y tener
 el consentimiento del usuario para que este pueda ser rastreado \cite{LaraLabrador2013}.
+
+\subsection{Señales Complementarias}
 
 \subsubsection{Señales del Ambiente}
 
@@ -589,7 +593,7 @@ de extracción de conocimiento con algoritmos de aprendizaje automático
 \cite{Raschka2014}.
 
 \begin{figure}[!tbph]
-\includegraphics[width=1\columnwidth]{capitulo-4/graphics/clasificacion}
+\includegraphics[width=0.8\columnwidth]{capitulo-4/graphics/clasificacion}
 
 \caption[Modelo de aprendizaje automático]{\label{fig4:clasificador}Construcción de modelo \abbr{HAR} basado
 en técnicas de aprendizaje automático.}
@@ -598,7 +602,7 @@ en técnicas de aprendizaje automático.}
 En esta sección se detallan los pasos del proceso común de aprendizaje
 automático.
 
-\subsubsection{Preparación}
+\subsection{Preparación}
 
 Es parte esencial de todo algoritmo de aprendizaje automático supervisado
 contar con un conjunto de instancias de entrenamiento y la información
@@ -662,7 +666,7 @@ de la señal en cada ventana de tiempo. Las etiquetas asignadas a los
 datos definen la relación $(F_{j},a_{k})$, entre etiquetas y cada
 vector característico. 
 
-\subsubsection{Aprendizaje}
+\subsection{Aprendizaje}
 
 El requisito primordial para la tarea de aprendizaje es escoger al
 algoritmo adecuado para la clasificación. Así como se presenta en
@@ -706,7 +710,7 @@ por medio de un proceso colaborativo, partiendo inicialmente de un
 conjunto de instancias de entrenamiento e ir mejorando la población
 con una encuesta dirigida por medio del uso del sistema \abbr{HAR}.
 
-\subsubsection{Evaluación}
+\subsection{Evaluación}
 
 Uno de los tópicos primordiales de los algoritmos de \abbr{ML} es
 la manera en que los datos son tratados al clasificar datos desconocidos
@@ -731,7 +735,9 @@ el algoritmo de aprendizaje automático. Por ejemplo, si se construyen
 árboles de decisión, se pueden limitar la cantidad de niveles del
 árbol.
 
-\subsubsection{Clasificación}
+\subsection{Clasificación}
+
+TODO:
 
 \section{Capacidades deseables}
 

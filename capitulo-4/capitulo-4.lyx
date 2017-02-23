@@ -563,12 +563,8 @@ abbr{Hz}
  
 \family default
 se tendrían 60 medidas en un segundo.
- 
-\end_layout
-
-\begin_layout Standard
-Las señales de sensores pueden clasificarse de la misma manera que los grupos
- citados en la sección 
+ Las señales de sensores pueden clasificarse de la misma manera que los
+ grupos citados en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec23:sensores"
@@ -576,7 +572,16 @@ reference "sec23:sensores"
 \end_inset
 
 , según movimiento, posición, ambiente y fisiológicas.
- A continuación se describen en detalle cada grupo.
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación se describen dos grupos de señales capturadas por medio de
+ un sensor específico.
+\end_layout
+
+\begin_layout Subsection
+Señales Principales
 \end_layout
 
 \begin_layout Subsubsection
@@ -1211,6 +1216,10 @@ key "LaraLabrador2013"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection
+Señales Complementarias
 \end_layout
 
 \begin_layout Subsubsection
@@ -3764,7 +3773,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename graphics/clasificacion.png
-	width 100col%
+	width 80col%
 
 \end_inset
 
@@ -3822,7 +3831,7 @@ En esta sección se detallan los pasos del proceso común de aprendizaje automá
 o.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Preparación
 \end_layout
 
@@ -4377,7 +4386,7 @@ Es importante considerar las etiquetas asignadas a los datos originales
  
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Aprendizaje
 \end_layout
 
@@ -4496,7 +4505,7 @@ abbr{HAR}
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Evaluación
 \end_layout
 
@@ -4577,8 +4586,12 @@ Evaluar métricas permite realizar ajustes a los parámetros al construir
  cantidad de niveles del árbol.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Clasificación
+\end_layout
+
+\begin_layout Standard
+TODO:
 \end_layout
 
 \begin_layout Section

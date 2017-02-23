@@ -234,9 +234,7 @@ status open
 
 
 \backslash
-abbr{Android
-\emph on
-}
+abbr{Android}
 \end_layout
 
 \end_inset
@@ -449,6 +447,12 @@ Criterios de diseño
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec52:criterios-diseño"
+
+\end_inset
+
 La implementación de este trabajo, así como la mayoría de los sistemas de
  información, se rige bajo el principio de diseño 
 \emph on
@@ -542,7 +546,7 @@ nes, cálculos, etc.
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status collapsed
@@ -622,6 +626,7 @@ tabref{tab5:tres_capas}
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status collapsed
@@ -778,7 +783,7 @@ figref{fig5:tres_capas}
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status collapsed
@@ -836,9 +841,9 @@ Patrones de diseño
 \end_layout
 
 \begin_layout Standard
-Los patrones de diseño son parte del paradigma de orientación a objetos
- ideados para solucionar problemas comunes determinados en un contexto particula
-r 
+Los patrones de diseño son concepto importante del paradigma de orientación
+ a objetos, que han sido ideados para solucionar problemas comunes determinados
+ en un contexto particular 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Shalloway2004"
@@ -846,7 +851,7 @@ key "Shalloway2004"
 \end_inset
 
 .
- Una definición acertada se cita a continuación.
+ Una definición acertada es la que se cita a continuación.
 \end_layout
 
 \begin_layout Quotation
@@ -875,17 +880,17 @@ key "Alexander1977"
 \end_layout
 
 \begin_layout Standard
-Para nuestro objetivo de implementación, se utilizan los patrones de diseño
- para organizar el 
+Para nuestro objetivo de diseño se utilizan los siguientes patrones de diseño
+ para organizar la capa de 
 \emph on
 Dominio
 \emph default
-, la lógica principal del sistema.
- La metodología de dividir el
+ cuya responsabilidad es la lógica principal del sistema.
+ Se sigue la técnica de dividir la capa de
 \emph on
  Dominio
 \emph default
- por medio de los patrones 
+ por medio de los siguientes patrones 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fowler2002"
@@ -900,7 +905,7 @@ key "Fowler2002"
 \emph on
 Service Layer
 \emph default
-: capa de servicios
+: Capa de servicios
 \end_layout
 
 \begin_layout Enumerate
@@ -908,7 +913,7 @@ Service Layer
 \emph on
 Domain Model
 \emph default
-: modelo del dominio
+: Modelo del dominio
 \end_layout
 
 \begin_layout Standard
@@ -1015,6 +1020,12 @@ Metodología de desarrollo
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec52:metodologia"
+
+\end_inset
+
 En toda labor de construcción de sistemas de información es necesario definir
  una metodología de diseño para encarar problemas y tecnologías complejas.
  La metodología utilizada en este trabajo es el diseño descendente (
@@ -1038,15 +1049,19 @@ En esta metodología se empieza definiendo la funcionalidad esperada del
  sistema como lo requiere el cliente, la capa más alta, y sigue paso a paso
  hasta refinar el diseño en capas más bajas a medida que se avanzan con
  detalles específicos.
- El diseño empieza poniendo énfasis en las funcionalidades esperadas del
- sistema cuando este se encuentre en operación.
- Luego, se continua con el diseño de la lógica de negocios que soportan
- a estas funcionalidades, y para por ultimo enfocarse en los recursos necesarios
- por la capa lógica del sistema.
+ 
 \end_layout
 
 \begin_layout Standard
-Como aspecto práctica de la metodología se han identificado las siguientes
+El diseño empieza poniendo énfasis en las funcionalidades esperadas del
+ sistema cuando este se encuentre en operación.
+ Luego, se continua con el diseño de la lógica de negocios que soportan
+ a estas funcionalidades, y por ultimo se enfoca en los recursos necesarios
+ por la capa lógica.
+\end_layout
+
+\begin_layout Standard
+Como aspecto práctico de esta metodología se han identificado las siguientes
  tareas específicas de diseño que ayudan a comprender y describir mejor
  el desarrollo de este trabajo:
 \end_layout
@@ -1087,8 +1102,8 @@ Implementación de un componente de evaluación de la solución.
 
 \begin_layout Standard
 Parte de la metodología consistió en definir la interfaz del sistema en
- base a las mejores prácticas de la industria y de aplicaciones móviles
- basadas en contexto basados en el lenguaje de programación 
+ base a las mejores prácticas de la industria para aplicaciones móviles
+ de contexto, utilizando el lenguaje de programación 
 \begin_inset ERT
 status open
 
@@ -1115,14 +1130,28 @@ abbr{Android}
 \end_inset
 
 .
- Se basó la solución en implementaciones existentes 
+ El diseño se basa en implementaciones existentes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Google2016m"
 
 \end_inset
 
- ya que las buenas prácticas y mejores diseños se heredan con ventajas.
+ para heredar las buenas prácticas de programación y obtener la ventaja
+ de familiaridad de la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{API}
+\end_layout
+
+\end_inset
+
+ para desarrolladores.
 \end_layout
 
 \begin_layout Subsection
@@ -1130,12 +1159,17 @@ Tecnología
 \end_layout
 
 \begin_layout Standard
-Esta sección está dedicada a describir la tecnología principal utilizada
- para la implementación del diseño de este capítulo, y la mayor parte del
- desarrollo de este trabajo.
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec52:tecnologia"
+
+\end_inset
+
+Esta sección está dedicada a describir la tecnología utilizada para la implement
+ación del diseño de este trabajo.
  Uno de los criterios claves para la selección de teléfonos móviles inteligentes
- apropiados para este trabajo, además de los sensores, es el sistema operativo
- (
+ apropiados para el reconocimiento de actividades, además de los sensores,
+ es el sistema operativo (abreviado 
 \begin_inset ERT
 status open
 
@@ -1148,15 +1182,15 @@ abbr{OS}
 
 \end_inset
 
-, en inglés) móvil.
+) móvil.
  
 \end_layout
 
 \begin_layout Standard
 El sistema operativo móvil se encarga del manejo de recursos del dispositivo
  y el control de operación de la aplicaciones móviles.
- Estos sistemas tiene características similares a los convencionales utilizados
- en las computadoras de escritorio (
+ Estos sistemas tiene características similares a los sistemas operativos
+ convencionales utilizados en las computadoras de escritorio (
 \begin_inset ERT
 status open
 
@@ -1169,15 +1203,16 @@ abbr{PC}
 
 \end_inset
 
-, en inglés) , su función principal es proveer servicios comunes a las aplicacio
-nes y programas, y además administrar los recursos de 
+).
+ La función principal de un sistema operativo es proveer servicios comunes
+ a las aplicaciones y administrar los recursos de 
 \emph on
 hardware
 \emph default
 .
- Adicionalmente, los sistemas operativos para teléfonos móviles están orientados
- al uso eficiente de energía debido a las limitaciones de batería y característi
-cas de movilidad.
+ Adicionalmente, los sistemas operativos móviles están diseñados para el
+ uso eficiente de energía, debido a las limitaciones de batería, y característic
+as especiales de movilidad.
  
 \end_layout
 
@@ -1210,7 +1245,7 @@ abbr{Android}
 
 \end_inset
 
- como componente tecnológico de este trabajo.
+ como plataforma tecnológica de este capítulo.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1231,8 +1266,8 @@ abbr{Android}
 
 \end_inset
 
- es una plataforma de código abierto con un entorno de desarrollo de distribució
-n publica que además incluye una interfaz de programación (
+ es una plataforma de código abierto con un entorno de programación de distribuc
+ión publica, que además incluye una interfaz de programación (
 \begin_inset ERT
 status open
 
@@ -1245,12 +1280,12 @@ abbr{API}
 
 \end_inset
 
-, en inglés) completa con acceso al 
+) completa con acceso al 
 \emph on
 hardware
 \emph default
  del teléfono y los sensores internos.
- Esto facilidad permite que las herramientas de aprendizaje automático y
+ Esta facilidad permite que las herramientas de aprendizaje automático y
  sus procedimientos puedan ser construidos de manera más simple.
  
 \end_layout
@@ -1272,7 +1307,7 @@ abbr{Android}
 \emph on
 Google
 \emph default
- en junto con la 
+ y la 
 \emph on
 Open Handset Alliance 
 \begin_inset CommandInset citation
@@ -1292,8 +1327,20 @@ key "Gargenta2014"
 \end_inset
 
 .
- El principal aporte que ha hecho la plataforma es que por primera vez una
- plataforma abierta logra separar el 
+ El principal aporte que logró 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ es que por primera vez una plataforma abierta consigue separar el 
 \emph on
 software
 \emph default
@@ -1339,7 +1386,7 @@ abbr{Kernel}
 
 \end_inset
 
-, en inglés) de 
+) de 
 \begin_inset ERT
 status open
 
@@ -1352,35 +1399,8 @@ abbr{Linux}
 
 \end_inset
 
- como se muestra en la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-figref{fig5:android-stack}
-\end_layout
-
-\end_inset
-
-.
- El proyecto 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{Linux}
-\end_layout
-
-\end_inset
-
- es una iniciativa de código abierto utilizado ampliamente en el ámbito
- de tecnología desde hace más de una década.
+ cuyo proyecto al igual es una iniciativa de código abierto utilizado ampliament
+e en el ámbito de tecnología de la información desde hace más de una década.
  La capa más baja de la arquitectura hereda las principales funcionalidades
  esperadas en los sistemas operativos modernos: portabilidad, seguridad
  y las capacidades funcionales.
@@ -1454,9 +1474,8 @@ abbr{Android}
 Adicionalmente, la plataforma ha mejorado el núcleo introduciendo un número
  de extensiones especiales para el entorno móvil.
  Las extensiones agregan capacidades funcionales mejoradas para administrar
- la energía, ya que los móviles utilizan batería, mecanismos para llamados
- a procedimientos remotos rápidos, y aislamiento de aplicaciones para mejor
- seguridad 
+ la energía; ya que los móviles utilizan batería, mecanismos para llamados
+ a procedimientos remotos y aislamiento para mejorar la seguridad 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gargenta2014"
@@ -1464,7 +1483,7 @@ key "Gargenta2014"
 \end_inset
 
 .
- Las extensiones son módulos que fueron agregados y son listados a continuación
+ Las extensiones fueron módulos agregados cuya lista se detalla a continuación
  con su nomenclatura en inglés 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1520,9 +1539,34 @@ logger
 \end_layout
 
 \begin_layout Standard
-Parte de la arquitectura de la plataforma son los componentes que están
- soportados sobre el núcleo y en la siguiente sección se habla con más detalles
- acerca de los mismos.
+En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:android-stack}
+\end_layout
+
+\end_inset
+
+ se muestra la plataforma 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ con todos los componentes que están soportados sobre el núcleo y que en
+ la siguiente sección se detallan.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1550,7 +1594,7 @@ key "Gargenta2014"
 
 \end_inset
 
- con su nomenclatura en inglés:
+ (con nomenclatura inglesa):
 \end_layout
 
 \begin_layout Itemize
@@ -1558,7 +1602,7 @@ key "Gargenta2014"
 \series bold
 Native Layer
 \series default
-: Este componente llamado capa nativa, es un conjunto base de funcionalidades
+: Este componente llamado capa nativa es un conjunto base de funcionalidades
  implementadas en 
 \family typewriter
 C/C++
@@ -1615,7 +1659,7 @@ abbr{Android}
 
 \end_inset
 
- para correr aplicaciones programadas en el lenguaje 
+ de manera que este corra aplicaciones programadas en el lenguaje 
 \begin_inset ERT
 status open
 
@@ -1688,9 +1732,9 @@ Application Framework
 \series default
 : Este componente provee un entorno de programación con varias librerías
  y servicios para construir aplicaciones nativas.
- Este componente es el mejor documentado y mejor cubierto en toda la plataforma
- ya que permite a los desarrolladores ser creativos y construir aplicaciones
- que puedan ser distribuirlas al mercado.
+ Este componente es el que está mejor documentado y cubierto en toda la
+ plataforma ya que permite a los desarrolladores ser creativos y construir
+ aplicaciones que puedan ser distribuirlas al mercado.
  Son parte de este componente las librerías 
 \begin_inset ERT
 status open
@@ -1704,7 +1748,7 @@ abbr{Java}
 
 \end_inset
 
- genéricas y específicas para 
+ genéricas y las específicas de 
 \begin_inset ERT
 status open
 
@@ -1764,10 +1808,16 @@ abbr{Android}
 \end_layout
 
 \begin_layout Subsection
-Entorno Android
+Marco de Trabajo
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec52:framework"
+
+\end_inset
+
 En esta sección, se exponen las facilidades de 
 \begin_inset ERT
 status open
@@ -1781,10 +1831,15 @@ abbr{Android}
 
 \end_inset
 
- desde el punto de vista del entorno de programación que ofrece, con énfasis
- en las características que este ofrece para crear aplicaciones contextuales.
- Este apartado es una vista general de alto nivel acerca de los modelos
- de computación y comunicación disponibles para el desarrollador.
+ como marco de trabajo (
+\emph on
+framework
+\emph default
+), es decir, desde el punto de vista del entorno de programación que ofrece,
+ con énfasis en las características disponibles para crear aplicaciones
+ contextuales.
+ Este apartado presenta una vista de alto nivel acerca de los modelos de
+ computación y comunicación disponibles en la plataforma.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1809,14 +1864,15 @@ abbr{Android}
  La idea de este apartado es presentar a grandes rasgos los componentes
  disponibles y como estos se combinan entre sí para formar una aplicación.
  Cada aplicación está compuesta de cuatro (4) componentes distintos, donde
- cada uno tiene un tema en especial 
+ cada uno cubre un tópico en específico 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gargenta2014"
 
 \end_inset
 
- y son descritos a continuación con su nomenclatura en inglés:
+.
+ Los componentes son descritos a continuación (con nomenclatura inglesa):
 \end_layout
 
 \begin_layout Itemize
@@ -1826,11 +1882,11 @@ key "Gargenta2014"
 Activity
 \series default
 \emph default
-: Este componente representa la interfaz de usuario de la aplicación, responsabl
-e de desplegar la información y capturar las interacciones del usuario.
- Este componente no persiste información, son tareas de computo efímeros
- de corta duración en primer plano donde el sistema operativo puede requerir
- parar su ejecución y pasarlos a un modo de reposo frecuentemente.
+: El componente actividad representa la interfaz de usuario de la aplicación
+ responsable de desplegar la información y capturar las interacciones.
+ Este componente no persiste información, sino que son tareas de computo
+ de corta duración y en primer plano donde el sistema operativo puede requerir
+ pararlos y pasarlos a un modo de reposo frecuentemente.
 \end_layout
 
 \begin_layout Itemize
@@ -1840,9 +1896,8 @@ e de desplegar la información y capturar las interacciones del usuario.
 Service
 \series default
 \emph default
-: Este componente ofrece un mecanismo para ejecutar tareas de computo de
- larga duración que se realicen en segundo plano, sin una interfaz de usuario
- asociada.
+: El componente servicio ofrece un mecanismo para ejecutar tareas de computo
+ de larga duración en segundo plano sin interfaz de usuario asociada.
  Un servicio solo puede ser parado si el sistema se queda sin recursos de
  memoria.
 \end_layout
@@ -1854,7 +1909,8 @@ Service
 Content Provider
 \series default
 \emph default
-: Este componente provee una interfaz para compartir datos entre aplicaciones.
+: El componente proveedor de contenido provee una interfaz para compartir
+ datos entre aplicaciones.
  Su función es la persistencia de datos por medio de una 
 \begin_inset ERT
 status open
@@ -1906,8 +1962,8 @@ abbr{SQL}
 Broadcast Receiver
 \series default
 \emph default
-: Este componente provee un mecanismo para publicación y suscripción a eventos
- del sistema basado en el patrón de diseño 
+: El componente receptor de mensajes provee un mecanismo para publicación
+ y suscripción a eventos del sistema basado en el patrón de diseño 
 \emph on
 Observer
 \emph default
@@ -1919,18 +1975,17 @@ key "Shalloway2004"
 \end_inset
 
 .
- El receptor es una tarea de computo latente que se activa con la ocurrencia
- de un evento para lo cual el receptor está suscrito.
- Los eventos tienen la forma de un concepto descrito en la parte de componentes
- de comunicación.
+ El receptor ejecuta una tarea de computo latente que se activa con la ocurrenci
+a de un evento para lo cual está suscrito.
+ Los eventos tienen la forma de mensajes que es descrito en la siguiente
+ sección.
 \end_layout
 
 \begin_layout Standard
 Estos componentes en su conjunto conforman una aplicación móvil.
  Estos son bloques básicos que están conectados de manera suelta y están
- contenidos en un entorno de aplicación que corresponde a un proceso del
- sistema operativo que comparten los mismos recursos: memoria, archivos,
- 
+ contenidos en un entorno de aplicación que comparten un proceso del sistema
+ operativo y compiten por los mismos recursos: memoria, archivos, 
 \begin_inset ERT
 status open
 
@@ -1946,13 +2001,14 @@ abbr{CPU}
 , etc..
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Componente de Comunicación
 \end_layout
 
 \begin_layout Standard
-El intercambio de datos es una necesidad común entre partes de un sistema.
- Este intercambio es posible en 
+El intercambio de datos es una necesidad común entre componentes de un sistema
+ (o entre sistemas diferentes).
+ En 
 \begin_inset ERT
 status open
 
@@ -1965,7 +2021,7 @@ abbr{Android}
 
 \end_inset
 
- por medio de un mecanismo de comunicación entre procesos (
+, el intercambio es realizado por medio de un mecanismo 
 \begin_inset ERT
 status open
 
@@ -1978,8 +2034,8 @@ abbr{IPC}
 
 \end_inset
 
-), o comunicación entre componentes si son partes de la misma aplicación
- 
+: una comunicación entre procesos, o comunicación entre componentes si forman
+ parte de la misma aplicación 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schreiber2011"
@@ -1991,13 +2047,20 @@ key "Schreiber2011"
 \end_layout
 
 \begin_layout Standard
-La comunicación opera por medio del componente (de nomenclatura inglesa)
- 
+Cada aplicación dispone de dos (2) componentes que resuelven un tópico en
+ particular y son descritos a continuación (con nomenclatura inglesa):
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
 \emph on
 Intent
+\series default
 \emph default
- que es una representación de las operaciones a ser realizadas.
- Este consiste en una estructura que contiene un identificador en formato
+: El componente mensaje es una representación de las operaciones a ser realizada
+s.
+ Consiste en una estructura de datos que contiene un identificador en formato
  
 \begin_inset ERT
 status open
@@ -2011,16 +2074,69 @@ abbr{URI}
 
 \end_inset
 
-, una acción asociada y datos anexos que son enviados en un mensajes al
- sistema de comunicación entre procesos para su procesamiento.
+, una acción asociada y datos anexos que son procesados por el sistema de
+ comunicación entre procesos.
  
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+IPC Binder
+\series default
+\emph default
+: El componente procesador que implementa el mecanismo de comunicación entre
+ procesos 
+\emph on
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schreiber2011"
+
+\end_inset
+
+
+\emph default
+ y se discute con más detalle durante el desenvolvimiento de este trabajo
+\emph on
+.
+ 
+\emph default
+El sistema operativo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ junto con su marco de trabajo operan como un sistema distribuido y la tecnologí
+a para lograr su diseño se basa completamente en este componente.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/mensajes_ipc.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2037,12 +2153,27 @@ name "fig5:mensajes-ipc"
 status open
 
 \begin_layout Plain Layout
-Componentes de Computo y Comunicación
+
+\emph on
+Framework Android
 \end_layout
 
 \end_inset
 
-Componentes de Computo y Comunicación
+Marco de Trabajo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2069,8 +2200,8 @@ figref{fig5:mensajes-ipc}
 
 \end_inset
 
- se muestran los mensajes de interacción comunes entre los componentes del
- entorno 
+ se muestran las diferentes formas de interacción entre los componentes
+ 
 \begin_inset ERT
 status open
 
@@ -2083,21 +2214,98 @@ abbr{Android}
 
 \end_inset
 
-.
- El sistema de comunicación se basa en el mecanismo de 
-\emph on
-IPC Binder 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Schreiber2011"
+ citados anteriormente.
+ Como se puede apreciar, el mecanismo principal para todas las interacciones
+ son llevadas acabo por llamadas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{IPC}
+\end_layout
 
 \end_inset
 
+.
+ 
+\end_layout
 
-\emph default
- que se discute con más detalle durante la descripción del desenvolvimiento
- de este trabajo
+\begin_layout Standard
+Una actividad se inicia por medio de un mensaje y puede lanzar otra actividad
+ en pantalla.
+ Un servicio se inicia, se para y se asocia por el mecanismo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{IPC}
+\end_layout
+
+\end_inset
+
+ como también las llamadas a métodos y retorno de resultados son realizados
+ por el mismo medio.
+ Un proveedor de contenidos es consultado con llamadas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{IPC}
+\end_layout
+
+\end_inset
+
+ y retorna los resultados por el mismo medio.
+ Todos los eventos son recibidos por el receptor de mensajes por medio del
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{IPC}
+\end_layout
+
+\end_inset
+
+.
+ Como es manifiesto en la gráfica, el marco de trabajo de 
 \emph on
+IPC Binder
+\emph default
+ se basa el modelo 
+\emph on
+Cliente-Servidor
+\emph default
+ (ver 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ssec52:criterios-diseño"
+
+\end_inset
+
+) y el patrón de diseño 
+\emph on
+Proxy
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Shalloway2004"
+
+\end_inset
+
 .
 \end_layout
 
@@ -2116,7 +2324,7 @@ name "sec53:arquitectura"
 \end_layout
 
 \begin_layout Section
-HARDroid: Servicio de Reconocimiento de Actividades
+HARDroid: Servicio de Reconocimiento
 \end_layout
 
 \begin_layout Standard
@@ -2130,19 +2338,31 @@ name "sec54:hardroid"
 \end_layout
 
 \begin_layout Subsection
-Librería API
+Librería 
+\end_layout
+
+\begin_layout Subsubsection
+API
 \end_layout
 
 \begin_layout Subsection
-Servicio BINDER
+Servicio 
+\end_layout
+
+\begin_layout Subsubsection
+BINDER
 \end_layout
 
 \begin_layout Subsection
-Clasificador DEX
+Clasificador 
+\end_layout
+
+\begin_layout Subsubsection
+DEX
 \end_layout
 
 \begin_layout Section
-ActivitySurvey: Aplicación de Encuesta
+ActivitySurvey: Encuesta de Evaluación
 \end_layout
 
 \begin_layout Standard
