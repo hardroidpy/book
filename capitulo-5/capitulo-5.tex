@@ -481,27 +481,88 @@ y el patrón de diseño \emph{Proxy} \cite{Shalloway2004}.
 
 \section{Arquitectura del proyecto}
 
-\label{sec53:arquitectura}
+\label{sec53:arquitectura}La solución presentada en este trabajo
+puede describirse partiendo el mismo en tres componentes principales:
+\begin{itemize}
+\item \textbf{\emph{HARDroid}}: Es un servicio de reconocimiento de actividades
+humanas específico para \abbr{Android}. El componente tiene cabida
+dentro de la capa de \emph{Application Framework} descrita en \ref{ssec52:tecnologia}
+como un servicio utilitario. El algoritmo reconocedor de actividades
+es un componente dinámico capaz de actualizar su clasificador continuamente.
+\item \textbf{\emph{ActivitySurvey}}: Es una aplicación móvil de encuesta
+que permite utilizar el servicio de reconocimiento y además evaluar
+el resultado con el consentimiento del usuario. El resultado evaluado
+puede ser utilizado para mejorar el clasificador de aprendizaje automático.
+\item \textbf{\emph{Backend C4.5}}: Es un servicio web \abbr{REST} que
+recolecta las evaluaciones del usuario que utiliza la aplicación de
+encuesta. Además, almacena los resultados que surgen debido a la utilización
+del reconocedor con el objetivo de crear el modelo de aprendizaje
+automático de manera manual. 
+\end{itemize}
+En la \figref{fig5:arqui-general} se muestra la vista general de
+la arquitectura del proyecto donde se muestran los dos aportes principales
+de este trabajo junto con sus partes relevantes. El diagrama se describe
+en lenguaje \abbr{UML} donde los paquetes representan las aplicaciones
+móviles distribuidas de manera independiente.
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/arqui_general}
+\par\end{centering}
+\caption[Arquitectura del Proyecto]{\label{fig5:arqui-general}Arquitectura del Proyecto}
+
+\end{figure}
+
 
 \section{HARDroid: Servicio de Reconocimiento}
 
-\label{sec54:hardroid}
+\label{sec54:hardroid}Para poder operar este se distribuye como una
+aplicación móvil pero requiere de una librería cliente dispuesta como
+JAR disponible para MAVEN/GRADLE.
 
-\subsection{Librería }
+\subsection{Algoritmo de Reconocimiento}
 
-\subsubsection{API}
+\subsection{Módulos Funcionales}
 
-\subsection{Servicio }
+\subsection{Módulos de Integración}
 
-\subsubsection{BINDER}
+\subsubsection{Librería }
 
-\subsection{Clasificador }
-
-\subsubsection{DEX}
+\subsubsection{Clasificador}
 
 \section{ActivitySurvey: Encuesta de Evaluación}
 
-\label{sec55:activity}
+\label{sec55:activity}La aplicación \emph{ActivitySurvey} es un utilitario
+cuyo fin principal es realizar una encuesta para evaluar el servicio
+\abbr{HAR} en \abbr{Android}. Permite obtener la perspectiva del
+usuario final a medida que se detecta alguna acción realizada por
+el mismo. 
+
+\subsection{Casos de Uso}
+
+\subsection{Módulos Funcionales}
+
+Debido a que la aplicación móvil en \abbr{Android} debe ser fácil
+e intuitivo de utilizar se dividió las funcionalidades principales
+en los siguientes módulos:
+\begin{itemize}
+\item SurveyApplication
+\item FeedActivity
+\item SettingsActivity
+\item DetectorService
+\item DetectedActivitiesService
+\item NotificationReceiver
+\item HumanActivityFeed
+\item UpdateActionReceiver
+\end{itemize}
+
+\subsection{Persistencia}
+
+\subsubsection{Base de datos}
+
+\subsubsection{Preferencia}
+
+\subsection{Interfaz de Usuario}
 
 \section{Conclusión}
 

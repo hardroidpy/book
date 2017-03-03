@@ -533,5 +533,27 @@ description "Universal Resource Identifier"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "REST"
+description "Representational State Transfer"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "UML"
+description "Unified Modeling Language"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

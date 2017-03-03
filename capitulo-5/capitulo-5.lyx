@@ -2320,6 +2320,174 @@ name "sec53:arquitectura"
 
 \end_inset
 
+La solución presentada en este trabajo puede describirse partiendo el mismo
+ en tres componentes principales:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+HARDroid
+\series default
+\emph default
+: Es un servicio de reconocimiento de actividades humanas específico para
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+.
+ El componente tiene cabida dentro de la capa de 
+\emph on
+Application Framework
+\emph default
+ descrita en 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ssec52:tecnologia"
+
+\end_inset
+
+ como un servicio utilitario.
+ El algoritmo reconocedor de actividades es un componente dinámico capaz
+ de actualizar su clasificador continuamente.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+ActivitySurvey
+\series default
+\emph default
+: Es una aplicación móvil de encuesta que permite utilizar el servicio de
+ reconocimiento y además evaluar el resultado con el consentimiento del
+ usuario.
+ El resultado evaluado puede ser utilizado para mejorar el clasificador
+ de aprendizaje automático.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\emph on
+Backend C4.5
+\series default
+\emph default
+: Es un servicio web 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{REST}
+\end_layout
+
+\end_inset
+
+ que recolecta las evaluaciones del usuario que utiliza la aplicación de
+ encuesta.
+ Además, almacena los resultados que surgen debido a la utilización del
+ reconocedor con el objetivo de crear el modelo de aprendizaje automático
+ de manera manual.
+ 
+\end_layout
+
+\begin_layout Standard
+En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:arqui-general}
+\end_layout
+
+\end_inset
+
+ se muestra la vista general de la arquitectura del proyecto donde se muestran
+ los dos aportes principales de este trabajo junto con sus partes relevantes.
+ El diagrama se describe en lenguaje 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{UML}
+\end_layout
+
+\end_inset
+
+ donde los paquetes representan las aplicaciones móviles distribuidas de
+ manera independiente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/arqui_general.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:arqui-general"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Arquitectura del Proyecto
+\end_layout
+
+\end_inset
+
+Arquitectura del Proyecto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -2334,31 +2502,28 @@ name "sec54:hardroid"
 
 \end_inset
 
-
+Para poder operar este se distribuye como una aplicación móvil pero requiere
+ de una librería cliente dispuesta como JAR disponible para MAVEN/GRADLE.
 \end_layout
 
 \begin_layout Subsection
+Algoritmo de Reconocimiento
+\end_layout
+
+\begin_layout Subsection
+Módulos Funcionales
+\end_layout
+
+\begin_layout Subsection
+Módulos de Integración
+\end_layout
+
+\begin_layout Subsubsection
 Librería 
 \end_layout
 
 \begin_layout Subsubsection
-API
-\end_layout
-
-\begin_layout Subsection
-Servicio 
-\end_layout
-
-\begin_layout Subsubsection
-BINDER
-\end_layout
-
-\begin_layout Subsection
-Clasificador 
-\end_layout
-
-\begin_layout Subsubsection
-DEX
+Clasificador
 \end_layout
 
 \begin_layout Section
@@ -2372,7 +2537,115 @@ name "sec55:activity"
 
 \end_inset
 
+La aplicación 
+\emph on
+ActivitySurvey
+\emph default
+ es un utilitario cuyo fin principal es realizar una encuesta para evaluar
+ el servicio 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ en 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+.
+ Permite obtener la perspectiva del usuario final a medida que se detecta
+ alguna acción realizada por el mismo.
+ 
+\end_layout
+
+\begin_layout Subsection
+Casos de Uso
+\end_layout
+
+\begin_layout Subsection
+Módulos Funcionales
+\end_layout
+
+\begin_layout Standard
+Debido a que la aplicación móvil en 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ debe ser fácil e intuitivo de utilizar se dividió las funcionalidades principal
+es en los siguientes módulos:
+\end_layout
+
+\begin_layout Itemize
+SurveyApplication
+\end_layout
+
+\begin_layout Itemize
+FeedActivity
+\end_layout
+
+\begin_layout Itemize
+SettingsActivity
+\end_layout
+
+\begin_layout Itemize
+DetectorService
+\end_layout
+
+\begin_layout Itemize
+DetectedActivitiesService
+\end_layout
+
+\begin_layout Itemize
+NotificationReceiver
+\end_layout
+
+\begin_layout Itemize
+HumanActivityFeed
+\end_layout
+
+\begin_layout Itemize
+UpdateActionReceiver
+\end_layout
+
+\begin_layout Subsection
+Persistencia
+\end_layout
+
+\begin_layout Subsubsection
+Base de datos
+\end_layout
+
+\begin_layout Subsubsection
+Preferencia
+\end_layout
+
+\begin_layout Subsection
+Interfaz de Usuario
 \end_layout
 
 \begin_layout Section
