@@ -2346,7 +2346,7 @@ abbr{Android}
 \end_inset
 
 .
- El componente tiene cabida dentro de la capa de 
+ Este componente tiene cabida dentro de la capa de 
 \emph on
 Application Framework
 \emph default
@@ -2372,6 +2372,18 @@ ActivitySurvey
 : Es una aplicación móvil de encuesta que permite utilizar el servicio de
  reconocimiento y además evaluar el resultado con el consentimiento del
  usuario.
+ Este componente está ubicado en la capa de 
+\emph on
+Applications
+\emph default
+ descrita en 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ssec52:tecnologia"
+
+\end_inset
+
+.
  El resultado evaluado puede ser utilizado para mejorar el clasificador
  de aprendizaje automático.
 \end_layout
@@ -2439,9 +2451,10 @@ abbr{UML}
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2466,7 +2479,7 @@ name "fig5:arqui-general"
 
 
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Arquitectura del Proyecto
@@ -2502,28 +2515,634 @@ name "sec54:hardroid"
 
 \end_inset
 
-Para poder operar este se distribuye como una aplicación móvil pero requiere
- de una librería cliente dispuesta como JAR disponible para MAVEN/GRADLE.
+El servicio 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
 \end_layout
 
-\begin_layout Subsection
-Algoritmo de Reconocimiento
+\end_inset
+
+ fue diseñado para ajustarse a las características generales de los gestores
+ y/o servicios en la capa de 
+\emph on
+Application Framework
+\emph default
+ de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+, Ej.
+ 
+\emph on
+Location Manager
+\emph default
+ o 
+\emph on
+Google Play Services
+\emph default
+.
+ La ventaja del servicio 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+ para las aplicaciones móviles hechas por terceros es que aprovechan las
+ últimas mejoras del motor de reconocimiento de actividades, con actualización
+ automática de la plataforma distribuida como un 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{APK}
+\end_layout
+
+\end_inset
+
+ independiente a través de la tienda 
+\emph on
+Google Play
+\emph default
+.
+ Esto permite a los usuarios estar actualizados y los desarrolladores poseen
+ mecanismos fáciles para integrarse al servicio 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/hardroid_func.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:hardroid-func"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Servicio HARDroid
+\end_layout
+
+\end_inset
+
+Servicio 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:hardroid-func}
+\end_layout
+
+\end_inset
+
+ se muestra el esquema de funcionamiento del servicio 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+ en base al diseño expuesto en el párrafo anterior.
+ Este esquema de diseño es el más apropiado para crear aplicaciones móviles
+ distribuidas en 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+, semejante a la arquitectura de servicios de 
+\emph on
+Google Play Services
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google2016l"
+
+\end_inset
+
+.
+ Las aplicaciones móviles están confinadas en procesos separados del sistema
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+, en su entorno 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{DVM}
+\end_layout
+
+\end_inset
+
+ correspondiente, y la comunicación entre distintos procesos se lleva acabo
+ por medio de una interfaz 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{AIDL}
+\end_layout
+
+\end_inset
+
+ y facilitado por el mecanismo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{IPC}
+\end_layout
+
+\end_inset
+
+ 
+\emph on
+Binder
+\emph default
+.
 \end_layout
 
 \begin_layout Subsection
 Módulos Funcionales
 \end_layout
 
-\begin_layout Subsection
-Módulos de Integración
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec54:modulos"
+
+\end_inset
+
+Desde el punto de vista conceptual el servicio 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+ puede ser dividido en cuatro módulos principales que cumplen con las caracterís
+ticas específicas que se describen a continuación.
 \end_layout
 
 \begin_layout Subsubsection
-Librería 
+Interfaz de Servicio
+\end_layout
+
+\begin_layout Standard
+Este módulo define el modelo dominio y la interfaz del para integración
+ (a través de una 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{API}
+\end_layout
+
+\end_inset
+
+).
+ En el dominio del problema se identificaron los siguientes conceptos definidos:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Cliente
+\emph default
+: Un cliente es un proceso remoto que requiere reconocer actividades humanas
+ con cierta periodicidad.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Conexión
+\emph default
+:
+\emph on
+ 
+\emph default
+Es una entidad que mantiene la información de estado del servicio como sesión
+ del cliente.
+ Posee un ciclo de vida de conexión y cierre.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Actividad Humana
+\emph default
+: Es una entidad que modela una actividad humana reconocida.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Vector Característico
+\emph default
+: Es una entidad que modela el conjunto de valores característicos utilizados
+ durante el procesamiento de la señal de los sensores.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Resultado de Reconocimiento
+\emph default
+: Es un conjunto de actividades humanas reconocidas junto con la precisión
+ estimada y los datos complementarios generados durante el calculo en forma
+ de vector característico.
+\end_layout
+
+\begin_layout Standard
+En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:domain}
+\end_layout
+
+\end_inset
+
+ se muestra el diagrama de clases con los artefactos construidos para el
+ manejo del dominio del problema.
+ Las clases se definieron con semejanza a los conceptos de 
+\emph on
+Google Play Services
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Google2016l"
+
+\end_inset
+
+ y la documentación se describe en (véase 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GimenezYegros2016d"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/class_domain.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:domain"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de clases del dominio del problema
+\end_layout
+
+\end_inset
+
+Diagrama de clases del dominio del problema.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La interfaz del servicio se compone de una conjunto de llamadas para que
+ un cliente pueda realizar con las siguientes acciones:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Conectarse
+\emph default
+ al servicio
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Desconectarse
+\emph default
+ del servicio
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Subscribirse
+\emph default
+ estableciendo la periodicidad de los resultados de actividades humanas
+ esperados.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Obtener
+\emph default
+ un resultado de actividades humanas al instante.
+\end_layout
+
+\begin_layout Standard
+Teniendo en consideración el modelo de dominio citado anteriormente y las
+ acciones requeridas se presenta la interfaz proveída por el servicio en
+ la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:service}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/class_service.png
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:service"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de clases de la capa de servicio
+\end_layout
+
+\end_inset
+
+Diagrama de clases de la capa de servicio.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Servidor
+\end_layout
+
+\begin_layout Standard
+El módulo se encarga de recibir las llamadas a procedimientos remotos desde
+ los clientes distribuidos en otros procesos e implementar la lógica del
+ negocio en base a las acciones requeridas.
+ 
+\end_layout
+
+\begin_layout Itemize
+ActivityRecognitionManager
+\end_layout
+
+\begin_layout Itemize
+ActivityRecognitionService
+\end_layout
+
+\begin_layout Subsubsection
+Procesamiento
+\end_layout
+
+\begin_layout Standard
+El módulo se encarga de recolectar las datos de sensores, procesar los mismos
+ para obtener vectores característicos y producir como resultado una actividad
+ humana en la ventana de tiempo que corresponda.
+\end_layout
+
+\begin_layout Itemize
+ActivityRecognitionWorker
 \end_layout
 
 \begin_layout Subsubsection
 Clasificador
+\end_layout
+
+\begin_layout Standard
+El módulo se encarga de realizar una clasificación en base a un vector caracterí
+stico y producir una estimación de la actividad humana correspondiente.
+ La implementación del clasificador puede un Clasificador Ingenuo y un Clasifica
+dor Basado en Árboles de Decisión.
+\end_layout
+
+\begin_layout Itemize
+ActivityClassifier
+\end_layout
+
+\begin_layout Subsection
+Algoritmo de Reconocimiento
 \end_layout
 
 \begin_layout Section
@@ -2541,7 +3160,7 @@ La aplicación
 \emph on
 ActivitySurvey
 \emph default
- es un utilitario cuyo fin principal es realizar una encuesta para evaluar
+ es una utilitario cuyo principal fin es realizar una encuesta para evaluar
  el servicio 
 \begin_inset ERT
 status open

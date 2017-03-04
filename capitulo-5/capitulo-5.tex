@@ -485,14 +485,16 @@ y el patrón de diseño \emph{Proxy} \cite{Shalloway2004}.
 puede describirse partiendo el mismo en tres componentes principales:
 \begin{itemize}
 \item \textbf{\emph{HARDroid}}: Es un servicio de reconocimiento de actividades
-humanas específico para \abbr{Android}. El componente tiene cabida
+humanas específico para \abbr{Android}. Este componente tiene cabida
 dentro de la capa de \emph{Application Framework} descrita en \ref{ssec52:tecnologia}
 como un servicio utilitario. El algoritmo reconocedor de actividades
 es un componente dinámico capaz de actualizar su clasificador continuamente.
 \item \textbf{\emph{ActivitySurvey}}: Es una aplicación móvil de encuesta
 que permite utilizar el servicio de reconocimiento y además evaluar
-el resultado con el consentimiento del usuario. El resultado evaluado
-puede ser utilizado para mejorar el clasificador de aprendizaje automático.
+el resultado con el consentimiento del usuario. Este componente está
+ubicado en la capa de \emph{Applications} descrita en \ref{ssec52:tecnologia}.
+El resultado evaluado puede ser utilizado para mejorar el clasificador
+de aprendizaje automático.
 \item \textbf{\emph{Backend C4.5}}: Es un servicio web \abbr{REST} que
 recolecta las evaluaciones del usuario que utiliza la aplicación de
 encuesta. Además, almacena los resultados que surgen debido a la utilización
@@ -505,7 +507,7 @@ de este trabajo junto con sus partes relevantes. El diagrama se describe
 en lenguaje \abbr{UML} donde los paquetes representan las aplicaciones
 móviles distribuidas de manera independiente.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{centering}
 \includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/arqui_general}
 \par\end{centering}
@@ -516,27 +518,136 @@ móviles distribuidas de manera independiente.
 
 \section{HARDroid: Servicio de Reconocimiento}
 
-\label{sec54:hardroid}Para poder operar este se distribuye como una
-aplicación móvil pero requiere de una librería cliente dispuesta como
-JAR disponible para MAVEN/GRADLE.
+\label{sec54:hardroid}El servicio \abbr{HARDroid} fue diseñado para
+ajustarse a las características generales de los gestores y/o servicios
+en la capa de \emph{Application Framework} de \abbr{Android}, Ej.
+\emph{Location Manager} o \emph{Google Play Services}. La ventaja
+del servicio \abbr{HARDroid} para las aplicaciones móviles hechas
+por terceros es que aprovechan las últimas mejoras del motor de reconocimiento
+de actividades, con actualización automática de la plataforma distribuida
+como un \abbr{APK} independiente a través de la tienda \emph{Google
+Play}. Esto permite a los usuarios estar actualizados y los desarrolladores
+poseen mecanismos fáciles para integrarse al servicio \abbr{HAR}.
 
-\subsection{Algoritmo de Reconocimiento}
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/hardroid_func}
+\par\end{centering}
+\caption[Servicio HARDroid]{\label{fig5:hardroid-func}Servicio \abbr{HARDroid}}
+
+\end{figure}
+
+En la \figref{fig5:hardroid-func} se muestra el esquema de funcionamiento
+del servicio \abbr{HARDroid} en base al diseño expuesto en el párrafo
+anterior. Este esquema de diseño es el más apropiado para crear aplicaciones
+móviles distribuidas en \abbr{Android}, semejante a la arquitectura
+de servicios de \emph{Google Play Services} \cite{Google2016l}. Las
+aplicaciones móviles están confinadas en procesos separados del sistema
+\abbr{Android}, en su entorno \abbr{DVM} correspondiente, y la comunicación
+entre distintos procesos se lleva acabo por medio de una interfaz
+\abbr{AIDL} y facilitado por el mecanismo \abbr{IPC} \emph{Binder}.
 
 \subsection{Módulos Funcionales}
 
-\subsection{Módulos de Integración}
+\label{ssec54:modulos}Desde el punto de vista conceptual el servicio
+\abbr{HARDroid} puede ser dividido en cuatro módulos principales
+que cumplen con las características específicas que se describen a
+continuación.
 
-\subsubsection{Librería }
+\subsubsection{Interfaz de Servicio}
+
+Este módulo define el modelo dominio y la interfaz del para integración
+(a través de una \abbr{API}). En el dominio del problema se identificaron
+los siguientes conceptos definidos:
+\begin{itemize}
+\item \emph{Cliente}: Un cliente es un proceso remoto que requiere reconocer
+actividades humanas con cierta periodicidad.
+\item \emph{Conexión}:\emph{ }Es una entidad que mantiene la información
+de estado del servicio como sesión del cliente. Posee un ciclo de
+vida de conexión y cierre.
+\item \emph{Actividad Humana}: Es una entidad que modela una actividad humana
+reconocida.
+\item \emph{Vector Característico}: Es una entidad que modela el conjunto
+de valores característicos utilizados durante el procesamiento de
+la señal de los sensores.
+\item \emph{Resultado de Reconocimiento}: Es un conjunto de actividades
+humanas reconocidas junto con la precisión estimada y los datos complementarios
+generados durante el calculo en forma de vector característico.
+\end{itemize}
+En la \figref{fig5:domain} se muestra el diagrama de clases con los
+artefactos construidos para el manejo del dominio del problema. Las
+clases se definieron con semejanza a los conceptos de \emph{Google
+Play Services} \cite{Google2016l} y la documentación se describe
+en (véase \cite{GimenezYegros2016d}).
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/class_domain}
+\par\end{centering}
+\caption[Diagrama de clases del dominio del problema]{\label{fig5:domain}Diagrama de clases del dominio del problema.}
+
+\end{figure}
+
+La interfaz del servicio se compone de una conjunto de llamadas para
+que un cliente pueda realizar con las siguientes acciones:
+\begin{itemize}
+\item \emph{Conectarse} al servicio
+\item \emph{Desconectarse} del servicio
+\item \emph{Subscribirse} estableciendo la periodicidad de los resultados
+de actividades humanas esperados. 
+\item \emph{Obtener} un resultado de actividades humanas al instante.
+\end{itemize}
+Teniendo en consideración el modelo de dominio citado anteriormente
+y las acciones requeridas se presenta la interfaz proveída por el
+servicio en la \figref{fig5:service}.
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/class_service}
+\par\end{centering}
+\caption[Diagrama de clases de la capa de servicio]{\label{fig5:service}Diagrama de clases de la capa de servicio.}
+
+\end{figure}
+
+
+\subsubsection{Servidor}
+
+El módulo se encarga de recibir las llamadas a procedimientos remotos
+desde los clientes distribuidos en otros procesos e implementar la
+lógica del negocio en base a las acciones requeridas. 
+\begin{itemize}
+\item ActivityRecognitionManager
+\item ActivityRecognitionService
+\end{itemize}
+
+\subsubsection{Procesamiento}
+
+El módulo se encarga de recolectar las datos de sensores, procesar
+los mismos para obtener vectores característicos y producir como resultado
+una actividad humana en la ventana de tiempo que corresponda.
+\begin{itemize}
+\item ActivityRecognitionWorker
+\end{itemize}
 
 \subsubsection{Clasificador}
 
+El módulo se encarga de realizar una clasificación en base a un vector
+característico y producir una estimación de la actividad humana correspondiente.
+La implementación del clasificador puede un Clasificador Ingenuo y
+un Clasificador Basado en Árboles de Decisión.
+\begin{itemize}
+\item ActivityClassifier
+\end{itemize}
+
+\subsection{Algoritmo de Reconocimiento}
+
 \section{ActivitySurvey: Encuesta de Evaluación}
 
-\label{sec55:activity}La aplicación \emph{ActivitySurvey} es un utilitario
-cuyo fin principal es realizar una encuesta para evaluar el servicio
-\abbr{HAR} en \abbr{Android}. Permite obtener la perspectiva del
-usuario final a medida que se detecta alguna acción realizada por
-el mismo. 
+\label{sec55:activity}La aplicación \emph{ActivitySurvey} es una
+utilitario cuyo principal fin es realizar una encuesta para evaluar
+el servicio \abbr{HAR} en \abbr{Android}. Permite obtener la perspectiva
+del usuario final a medida que se detecta alguna acción realizada
+por el mismo. 
 
 \subsection{Casos de Uso}
 
