@@ -566,5 +566,16 @@ description "Android Interface Definition Language"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "JAR"
+description "Java ARchive"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

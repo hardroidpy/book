@@ -3766,14 +3766,16 @@ key "Raschka2014"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename graphics/clasificacion.png
-	width 80col%
+	width 100col%
 
 \end_inset
 
@@ -3792,7 +3794,7 @@ name "fig4:clasificador"
 
 
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Modelo de aprendizaje automático

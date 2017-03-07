@@ -2131,7 +2131,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename graphics/mensajes_ipc.png
-	width 80col%
+	width 100col%
 
 \end_inset
 
@@ -2417,39 +2417,6 @@ abbr{REST}
 \end_layout
 
 \begin_layout Standard
-En la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-figref{fig5:arqui-general}
-\end_layout
-
-\end_inset
-
- se muestra la vista general de la arquitectura del proyecto donde se muestran
- los dos aportes principales de este trabajo junto con sus partes relevantes.
- El diagrama se describe en lenguaje 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{UML}
-\end_layout
-
-\end_inset
-
- donde los paquetes representan las aplicaciones móviles distribuidas de
- manera independiente.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -2502,6 +2469,40 @@ Arquitectura del Proyecto
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:arqui-general}
+\end_layout
+
+\end_inset
+
+ se muestra la vista general de la arquitectura del proyecto donde se muestran
+ los dos aportes principales de este trabajo junto con sus partes relevantes.
+ El diagrama se describe en lenguaje 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{UML}
+\end_layout
+
+\end_inset
+
+ donde los componentes representan las aplicaciones móviles distribuidas
+ de manera independiente y un componente de servidor para recolectar datos
+ experimentales.
 \end_layout
 
 \begin_layout Section
@@ -2742,7 +2743,7 @@ abbr{Android}
 
 \end_inset
 
-, en su entorno 
+, cada cual en su entorno 
 \begin_inset ERT
 status open
 
@@ -2755,7 +2756,7 @@ abbr{DVM}
 
 \end_inset
 
- correspondiente, y la comunicación entre distintos procesos se lleva acabo
+ correspondiente, donde la comunicación entre procesos es llevado acabo
  por medio de una interfaz 
 \begin_inset ERT
 status open
@@ -2769,24 +2770,55 @@ abbr{AIDL}
 
 \end_inset
 
- y facilitado por el mecanismo 
-\begin_inset ERT
+ parte del mecanismo 
+\emph on
+IPC Binder
+\emph default
+ (ver sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ssec52:framework"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Algoritmo de Reconocimiento
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
 
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg5:reconocimiento"
 
-\backslash
-abbr{IPC}
+\end_inset
+
+Procedimiento de detección de actividades humanas
 \end_layout
 
 \end_inset
 
- 
-\emph on
-Binder
-\emph default
-.
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2845,7 +2877,13 @@ abbr{API}
 \emph on
 Cliente
 \emph default
-: Un cliente es un proceso remoto que requiere reconocer actividades humanas
+ (
+\family typewriter
+\size small
+ActivityRecognitionClient
+\family default
+\size default
+): Un cliente es un proceso remoto que requiere reconocer actividades humanas
  con cierta periodicidad.
 \end_layout
 
@@ -2854,7 +2892,13 @@ Cliente
 \emph on
 Conexión
 \emph default
-:
+ (
+\family typewriter
+\size small
+ServiceConnection
+\family default
+\size default
+):
 \emph on
  
 \emph default
@@ -2868,7 +2912,13 @@ Es una entidad que mantiene la información de estado del servicio como sesión
 \emph on
 Actividad Humana
 \emph default
-: Es una entidad que modela una actividad humana reconocida.
+ (
+\family typewriter
+\size small
+HumanActivity
+\family default
+\size default
+): Es una entidad que modela una actividad humana reconocida.
 \end_layout
 
 \begin_layout Itemize
@@ -2876,7 +2926,13 @@ Actividad Humana
 \emph on
 Vector Característico
 \emph default
-: Es una entidad que modela el conjunto de valores característicos utilizados
+ (
+\family typewriter
+\size small
+Feature
+\family default
+\size default
+): Es una entidad que modela el conjunto de valores característicos utilizados
  durante el procesamiento de la señal de los sensores.
 \end_layout
 
@@ -2885,7 +2941,13 @@ Vector Característico
 \emph on
 Resultado de Reconocimiento
 \emph default
-: Es un conjunto de actividades humanas reconocidas junto con la precisión
+ (
+\family typewriter
+\size small
+ActivityRecognitionResult
+\family default
+\size default
+): Es un conjunto de actividades humanas reconocidas junto con la precisión
  estimada y los datos complementarios generados durante el calculo en forma
  de vector característico.
 \end_layout
@@ -2899,7 +2961,7 @@ status open
 
 
 \backslash
-figref{fig5:domain}
+figref{fig5:domain-model}
 \end_layout
 
 \end_inset
@@ -2929,15 +2991,16 @@ key "GimenezYegros2016d"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename graphics/class_domain.png
-	width 80col%
+	width 100col%
 
 \end_inset
 
@@ -2950,7 +3013,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig5:domain"
+name "fig5:domain-model"
 
 \end_inset
 
@@ -2982,8 +3045,8 @@ Diagrama de clases del dominio del problema.
 \end_layout
 
 \begin_layout Standard
-La interfaz del servicio se compone de una conjunto de llamadas para que
- un cliente pueda realizar con las siguientes acciones:
+La interfaz del servicio se compone de un conjunto de llamadas para que
+ cualquier cliente pueda realizar con las siguientes acciones:
 \end_layout
 
 \begin_layout Itemize
@@ -3031,7 +3094,7 @@ status open
 
 
 \backslash
-figref{fig5:service}
+figref{fig5:service-layer}
 \end_layout
 
 \end_inset
@@ -3041,15 +3104,16 @@ figref{fig5:service}
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename graphics/class_service.png
-	width 80col%
+	width 100col%
 
 \end_inset
 
@@ -3062,7 +3126,7 @@ status collapsed
 \begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
-name "fig5:service"
+name "fig5:service-layer"
 
 \end_inset
 
@@ -3093,23 +3157,332 @@ Diagrama de clases de la capa de servicio.
 
 \end_layout
 
+\begin_layout Standard
+Para poder clarificar la interfaz proveída por la capa de servicios se describe
+ textualmente el contrato definido para la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{API}
+\end_layout
+
+\end_inset
+
+ para subscribirse a eventos de detección actividades humanas:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size footnotesize
+requestSingleUpdate(callbackIntent: PendingIntent): void public
+\family default
+\size default
+ 
+\begin_inset Newline newline
+\end_inset
+
+Se subscribe a un evento de detección de actividad 
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size footnotesize
+requestActivityUpdates(detectionIntervalMillis: long, 
+\begin_inset Newline newline
+\end_inset
+
+listener: ActivityRecognitionListener): void public
+\family default
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+Se suscribe a un evento de detección de actividad durante un intervalo de
+ mili-segundos.
+ Espera la respuesta con un observador.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size footnotesize
+requestActivityUpdates(detectionIntervalMillis: long, 
+\begin_inset Newline newline
+\end_inset
+
+callbackIntent: PendingIntent): void public
+\family default
+\size default
+ 
+\begin_inset Newline newline
+\end_inset
+
+Se suscribe a un evento de detección de actividad durante un intervalo de
+ mili-segundos.
+ Espera la respuesta con una función diferida.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size footnotesize
+removeActivityUpdates(listener: ActivityRecognitionListener): void public
+\family default
+\size default
+ 
+\begin_inset Newline newline
+\end_inset
+
+Se desuscribe a un evento de detección de actividad dado su observador.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size footnotesize
+removeActivityUpdates(callbackIntent: PendingIntent): void public
+\family default
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+Se desuscribe a un evento de detección de actividad dado su función diferida.
+\end_layout
+
+\begin_layout Standard
+En las siguientes secciones se detallan los módulos encargados de implementar
+ la lógica de negocio y funcionalidades bases de la interfaz de servicio
+ del motor reconocedor.
+\end_layout
+
 \begin_layout Subsubsection
 Servidor
 \end_layout
 
 \begin_layout Standard
-El módulo se encarga de recibir las llamadas a procedimientos remotos desde
- los clientes distribuidos en otros procesos e implementar la lógica del
- negocio en base a las acciones requeridas.
+Este módulo implementa las llamadas a procedimientos remotos desde clientes
+ distribuidos en otros procesos.
+ La lógica del servicio esta dividido en dos responsabilidades que manejan
+ la conexión y la suscripción.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size small
+ActivityRecognitionService
+\family default
+\size default
+: Es la función principal del servicio ya que implementa el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{IPC}
+\end_layout
+
+\end_inset
+
+ de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ para establecer la conexión con el cliente.
+ Además se encarga de coordinar las suscripción de clientes y publicar los
+ resultados de detección de actividades.
  
 \end_layout
 
 \begin_layout Itemize
-ActivityRecognitionManager
+
+\family typewriter
+\size small
+ActivityRecognitionManagerImpl
+\family default
+\size default
+: Es un utilitario que hace de mediador entre las llamadas remotas a la
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{API}
+\end_layout
+
+\end_inset
+
+ de la interfaz y la ejecución de la lógica del servicio.
 \end_layout
 
 \begin_layout Itemize
-ActivityRecognitionService
+
+\family typewriter
+\size small
+ActivityRecognitionSubscription
+\family default
+\size default
+: Es una estructura para memorizar las preferencias de suscripción de los
+ clientes manejado por la función principal del servicio.
+\end_layout
+
+\begin_layout Standard
+La interacción que ocurre durante la conexión de un cliente al servidor
+ de reconocimiento se muestra en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:service-subs}
+\end_layout
+
+\end_inset
+
+.
+ Para representar la interacción se utiliza un diagrama de secuencia 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{UML}
+\end_layout
+
+\end_inset
+
+ donde las clases en amarillo representan objetos en el proceso del cliente,
+ a través de la librería cliente 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+.
+ Las clases en azul son objetos en el proceso del servidor, a través de
+ la aplicación móvil 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/service_subs.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:service-subs"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Interacción cliente y servidor de HARDroid
+\end_layout
+
+\end_inset
+
+Interacción cliente y servidor de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El servidor mantiene una lista de suscripciones con los tiempos de preferencia
+ de notificación de eventualidad de cada cliente.
+ Ante la eventualidad de un nuevo resultado de reconocimiento emitido por
+ el módulo de procesamiento se realiza un envío del resultado a los clientes
+ correspondientes.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3117,13 +3490,132 @@ Procesamiento
 \end_layout
 
 \begin_layout Standard
-El módulo se encarga de recolectar las datos de sensores, procesar los mismos
- para obtener vectores característicos y producir como resultado una actividad
- humana en la ventana de tiempo que corresponda.
+Este módulo se encarga de ejecutar el motor de reconocimiento de actividades
+ humanas a intervalos periódicos de tiempo siempre que hayan suscripciones
+ memorizadas.
+ La ejecución del motor produce siempre un resultado global de actividad
+ humana.
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 ActivityRecognitionWorker
+\family default
+\size default
+: Es la función principal del motor de reconocimiento que programa una tarea
+ periódica de recolección de datos sensoriales, calculo de vectores característi
+cos y clasificación de actividad para producir y emitir un nuevo resultado.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size small
+FeatureProcessing
+\family default
+\size default
+: Es un utilitario que calcula los vectores característicos.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size small
+SignalProcessing
+\family default
+\size default
+: Es un utilitario con funciones de procesamiento de señales.
+ 
+\end_layout
+
+\begin_layout Standard
+La ejecución del motor de reconocimiento que empieza durante el inicio del
+ servidor de reconocimiento se muestra en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:service-worker}
+\end_layout
+
+\end_inset
+
+.
+ El motor realiza las tareas en un intervalo de tiempo definido por el menor
+ tiempo memorizado en las suscripciones de clientes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/service_worker.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:service-worker"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Procesamiento y publicación de resultados de HARDroid
+\end_layout
+
+\end_inset
+
+Procesamiento y publicación de resultados de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -3131,18 +3623,162 @@ Clasificador
 \end_layout
 
 \begin_layout Standard
-El módulo se encarga de realizar una clasificación en base a un vector caracterí
-stico y producir una estimación de la actividad humana correspondiente.
- La implementación del clasificador puede un Clasificador Ingenuo y un Clasifica
-dor Basado en Árboles de Decisión.
+Este módulo se encarga de la clasificación de un vector característico y
+ emite una estimación de la actividad humana detectada.
+ Posee dos implementaciones principales y complementarias.
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 ActivityClassifier
+\family default
+\size default
+: Es una clase genérica que define los métodos comunes de los clasificadores
+ de actividades humanas.
 \end_layout
 
-\begin_layout Subsection
-Algoritmo de Reconocimiento
+\begin_layout Itemize
+
+\family typewriter
+\size small
+DecisionTreeClassifier
+\family default
+\size default
+: Es la implementación de un clasificador de actividades humanas basado
+ en arboles de decisión generados por el 
+\emph on
+software
+\emph default
+ 
+\family typewriter
+WEKA
+\family default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Frank2016"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size small
+DumbClassifier
+\family default
+\size default
+: Es la implementación de un clasificador de actividades humanas simple
+ que no emite un resultado válido.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\size small
+DexModelLoader
+\family default
+\size default
+: Es un utilitario para descargar de Internet de manera segura un clasificador
+ generado por 
+\family typewriter
+WEKA
+\family default
+.
+ El clasificador está implementado en una clase contenida en un artefacto
+ de 
+\emph on
+software
+\emph default
+ en formato 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{JAR}
+\end_layout
+
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+La actualización dinámica del modelo se muestra en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:service-classi}
+\end_layout
+
+\end_inset
+
+.
+ Para la actualización al modelo clasificador más reciente generado por
+ medio de WEKA se depende de la conexión a Internet y un recurso publicado
+ remotamente.
+ El mecanismo de descarga detallado se describe en el apéndice 2.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/service_classi.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:service-classi"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Actualización del clasificador WEKA
+\end_layout
+
+\end_inset
+
+Mecanismo de actualización del dinámica del clasificador basado en WEKA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

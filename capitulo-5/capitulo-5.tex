@@ -458,7 +458,7 @@ diseño se basa completamente en este componente.
 \end{itemize}
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/mensajes_ipc}
+\includegraphics[width=1\columnwidth]{capitulo-5/graphics/mensajes_ipc}
 \par\end{centering}
 \caption[\emph{Framework Android}]{\label{fig5:mensajes-ipc}Marco de Trabajo \abbr{Android}}
 \end{figure}
@@ -501,12 +501,6 @@ encuesta. Además, almacena los resultados que surgen debido a la utilización
 del reconocedor con el objetivo de crear el modelo de aprendizaje
 automático de manera manual. 
 \end{itemize}
-En la \figref{fig5:arqui-general} se muestra la vista general de
-la arquitectura del proyecto donde se muestran los dos aportes principales
-de este trabajo junto con sus partes relevantes. El diagrama se describe
-en lenguaje \abbr{UML} donde los paquetes representan las aplicaciones
-móviles distribuidas de manera independiente.
-
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/arqui_general}
@@ -515,6 +509,12 @@ móviles distribuidas de manera independiente.
 
 \end{figure}
 
+En la \figref{fig5:arqui-general} se muestra la vista general de
+la arquitectura del proyecto donde se muestran los dos aportes principales
+de este trabajo junto con sus partes relevantes. El diagrama se describe
+en lenguaje \abbr{UML} donde los componentes representan las aplicaciones
+móviles distribuidas de manera independiente y un componente de servidor
+para recolectar datos experimentales.
 
 \section{HARDroid: Servicio de Reconocimiento}
 
@@ -543,9 +543,19 @@ anterior. Este esquema de diseño es el más apropiado para crear aplicaciones
 móviles distribuidas en \abbr{Android}, semejante a la arquitectura
 de servicios de \emph{Google Play Services} \cite{Google2016l}. Las
 aplicaciones móviles están confinadas en procesos separados del sistema
-\abbr{Android}, en su entorno \abbr{DVM} correspondiente, y la comunicación
-entre distintos procesos se lleva acabo por medio de una interfaz
-\abbr{AIDL} y facilitado por el mecanismo \abbr{IPC} \emph{Binder}.
+\abbr{Android}, cada cual en su entorno \abbr{DVM} correspondiente,
+donde la comunicación entre procesos es llevado acabo por medio de
+una interfaz \abbr{AIDL} parte del mecanismo \emph{IPC Binder} (ver
+sección \ref{ssec52:framework}).
+
+\subsection{Algoritmo de Reconocimiento}
+
+\begin{algorithm}
+\caption{\label{alg5:reconocimiento}Procedimiento de detección de actividades
+humanas}
+
+\end{algorithm}
+
 
 \subsection{Módulos Funcionales}
 
@@ -560,36 +570,38 @@ Este módulo define el modelo dominio y la interfaz del para integración
 (a través de una \abbr{API}). En el dominio del problema se identificaron
 los siguientes conceptos definidos:
 \begin{itemize}
-\item \emph{Cliente}: Un cliente es un proceso remoto que requiere reconocer
-actividades humanas con cierta periodicidad.
-\item \emph{Conexión}:\emph{ }Es una entidad que mantiene la información
-de estado del servicio como sesión del cliente. Posee un ciclo de
-vida de conexión y cierre.
-\item \emph{Actividad Humana}: Es una entidad que modela una actividad humana
-reconocida.
-\item \emph{Vector Característico}: Es una entidad que modela el conjunto
-de valores característicos utilizados durante el procesamiento de
-la señal de los sensores.
-\item \emph{Resultado de Reconocimiento}: Es un conjunto de actividades
-humanas reconocidas junto con la precisión estimada y los datos complementarios
-generados durante el calculo en forma de vector característico.
+\item \emph{Cliente} (\texttt{\small{}ActivityRecognitionClient}): Un cliente
+es un proceso remoto que requiere reconocer actividades humanas con
+cierta periodicidad.
+\item \emph{Conexión} (\texttt{\small{}ServiceConnection}):\emph{ }Es una
+entidad que mantiene la información de estado del servicio como sesión
+del cliente. Posee un ciclo de vida de conexión y cierre.
+\item \emph{Actividad Humana} (\texttt{\small{}HumanActivity}): Es una entidad
+que modela una actividad humana reconocida.
+\item \emph{Vector Característico} (\texttt{\small{}Feature}): Es una entidad
+que modela el conjunto de valores característicos utilizados durante
+el procesamiento de la señal de los sensores.
+\item \emph{Resultado de Reconocimiento} (\texttt{\small{}ActivityRecognitionResult}):
+Es un conjunto de actividades humanas reconocidas junto con la precisión
+estimada y los datos complementarios generados durante el calculo
+en forma de vector característico.
 \end{itemize}
-En la \figref{fig5:domain} se muestra el diagrama de clases con los
-artefactos construidos para el manejo del dominio del problema. Las
-clases se definieron con semejanza a los conceptos de \emph{Google
+En la \figref{fig5:domain-model} se muestra el diagrama de clases
+con los artefactos construidos para el manejo del dominio del problema.
+Las clases se definieron con semejanza a los conceptos de \emph{Google
 Play Services} \cite{Google2016l} y la documentación se describe
 en (véase \cite{GimenezYegros2016d}).
 
-\begin{figure}
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/class_domain}
+\includegraphics[width=1\columnwidth]{capitulo-5/graphics/class_domain}
 \par\end{centering}
-\caption[Diagrama de clases del dominio del problema]{\label{fig5:domain}Diagrama de clases del dominio del problema.}
+\caption[Diagrama de clases del dominio del problema]{\label{fig5:domain-model}Diagrama de clases del dominio del problema.}
 
 \end{figure}
 
-La interfaz del servicio se compone de una conjunto de llamadas para
-que un cliente pueda realizar con las siguientes acciones:
+La interfaz del servicio se compone de un conjunto de llamadas para
+que cualquier cliente pueda realizar con las siguientes acciones:
 \begin{itemize}
 \item \emph{Conectarse} al servicio
 \item \emph{Desconectarse} del servicio
@@ -599,47 +611,150 @@ de actividades humanas esperados.
 \end{itemize}
 Teniendo en consideración el modelo de dominio citado anteriormente
 y las acciones requeridas se presenta la interfaz proveída por el
-servicio en la \figref{fig5:service}.
+servicio en la \figref{fig5:service-layer}.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/class_service}
+\includegraphics[width=1\columnwidth]{capitulo-5/graphics/class_service}
 \par\end{centering}
-\caption[Diagrama de clases de la capa de servicio]{\label{fig5:service}Diagrama de clases de la capa de servicio.}
+\caption[Diagrama de clases de la capa de servicio]{\label{fig5:service-layer}Diagrama de clases de la capa de servicio.}
+
+\end{figure}
+
+Para poder clarificar la interfaz proveída por la capa de servicios
+se describe textualmente el contrato definido para la \abbr{API}
+para subscribirse a eventos de detección actividades humanas:
+\begin{itemize}
+\item \texttt{\footnotesize{}requestSingleUpdate(callbackIntent: PendingIntent): void
+public} \\
+Se subscribe a un evento de detección de actividad 
+\item \texttt{\footnotesize{}requestActivityUpdates(detectionIntervalMillis: long,
+}~\\
+\texttt{\footnotesize{}listener: ActivityRecognitionListener): void
+public}\\
+Se suscribe a un evento de detección de actividad durante un intervalo
+de mili-segundos. Espera la respuesta con un observador.
+\item \texttt{\footnotesize{}requestActivityUpdates(detectionIntervalMillis: long,
+}~\\
+\texttt{\footnotesize{}callbackIntent: PendingIntent): void public}
+\\
+Se suscribe a un evento de detección de actividad durante un intervalo
+de mili-segundos. Espera la respuesta con una función diferida.
+\item \texttt{\footnotesize{}removeActivityUpdates(listener: ActivityRecognitionListener): void
+public} \\
+Se desuscribe a un evento de detección de actividad dado su observador.
+\item \texttt{\footnotesize{}removeActivityUpdates(callbackIntent: PendingIntent): void
+public}\\
+Se desuscribe a un evento de detección de actividad dado su función
+diferida.
+\end{itemize}
+En las siguientes secciones se detallan los módulos encargados de
+implementar la lógica de negocio y funcionalidades bases de la interfaz
+de servicio del motor reconocedor.
+
+\subsubsection{Servidor}
+
+Este módulo implementa las llamadas a procedimientos remotos desde
+clientes distribuidos en otros procesos. La lógica del servicio esta
+dividido en dos responsabilidades que manejan la conexión y la suscripción.
+\begin{itemize}
+\item \texttt{\small{}ActivityRecognitionService}: Es la función principal
+del servicio ya que implementa el \abbr{IPC} de \abbr{Android} para
+establecer la conexión con el cliente. Además se encarga de coordinar
+las suscripción de clientes y publicar los resultados de detección
+de actividades. 
+\item \texttt{\small{}ActivityRecognitionManagerImpl}: Es un utilitario
+que hace de mediador entre las llamadas remotas a la \abbr{API} de
+la interfaz y la ejecución de la lógica del servicio.
+\item \texttt{\small{}ActivityRecognitionSubscription}: Es una estructura
+para memorizar las preferencias de suscripción de los clientes manejado
+por la función principal del servicio.
+\end{itemize}
+La interacción que ocurre durante la conexión de un cliente al servidor
+de reconocimiento se muestra en la \figref{fig5:service-subs}. Para
+representar la interacción se utiliza un diagrama de secuencia \abbr{UML}
+donde las clases en amarillo representan objetos en el proceso del
+cliente, a través de la librería cliente \abbr{HARDroid}. Las clases
+en azul son objetos en el proceso del servidor, a través de la aplicación
+móvil \abbr{HARDroid}.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=1\columnwidth]{capitulo-5/graphics/service_subs}
+\par\end{centering}
+\caption[Interacción cliente y servidor de HARDroid]{\label{fig5:service-subs}Interacción cliente y servidor de \abbr{HARDroid}}
+
+\end{figure}
+
+El servidor mantiene una lista de suscripciones con los tiempos de
+preferencia de notificación de eventualidad de cada cliente. Ante
+la eventualidad de un nuevo resultado de reconocimiento emitido por
+el módulo de procesamiento se realiza un envío del resultado a los
+clientes correspondientes.
+
+\subsubsection{Procesamiento}
+
+Este módulo se encarga de ejecutar el motor de reconocimiento de actividades
+humanas a intervalos periódicos de tiempo siempre que hayan suscripciones
+memorizadas. La ejecución del motor produce siempre un resultado global
+de actividad humana.
+\begin{itemize}
+\item \texttt{\small{}ActivityRecognitionWorker}: Es la función principal
+del motor de reconocimiento que programa una tarea periódica de recolección
+de datos sensoriales, calculo de vectores característicos y clasificación
+de actividad para producir y emitir un nuevo resultado.
+\item \texttt{\small{}FeatureProcessing}: Es un utilitario que calcula los
+vectores característicos.
+\item \texttt{\small{}SignalProcessing}: Es un utilitario con funciones
+de procesamiento de señales. 
+\end{itemize}
+La ejecución del motor de reconocimiento que empieza durante el inicio
+del servidor de reconocimiento se muestra en la \figref{fig5:service-worker}.
+El motor realiza las tareas en un intervalo de tiempo definido por
+el menor tiempo memorizado en las suscripciones de clientes.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=1\columnwidth]{capitulo-5/graphics/service_worker}
+\par\end{centering}
+\caption[Procesamiento y publicación de resultados de HARDroid]{\label{fig5:service-worker}Procesamiento y publicación de resultados
+de \abbr{HARDroid}}
 
 \end{figure}
 
 
-\subsubsection{Servidor}
-
-El módulo se encarga de recibir las llamadas a procedimientos remotos
-desde los clientes distribuidos en otros procesos e implementar la
-lógica del negocio en base a las acciones requeridas. 
-\begin{itemize}
-\item ActivityRecognitionManager
-\item ActivityRecognitionService
-\end{itemize}
-
-\subsubsection{Procesamiento}
-
-El módulo se encarga de recolectar las datos de sensores, procesar
-los mismos para obtener vectores característicos y producir como resultado
-una actividad humana en la ventana de tiempo que corresponda.
-\begin{itemize}
-\item ActivityRecognitionWorker
-\end{itemize}
-
 \subsubsection{Clasificador}
 
-El módulo se encarga de realizar una clasificación en base a un vector
-característico y producir una estimación de la actividad humana correspondiente.
-La implementación del clasificador puede un Clasificador Ingenuo y
-un Clasificador Basado en Árboles de Decisión.
+Este módulo se encarga de la clasificación de un vector característico
+y emite una estimación de la actividad humana detectada. Posee dos
+implementaciones principales y complementarias.
 \begin{itemize}
-\item ActivityClassifier
+\item \texttt{\small{}ActivityClassifier}: Es una clase genérica que define
+los métodos comunes de los clasificadores de actividades humanas.
+\item \texttt{\small{}DecisionTreeClassifier}: Es la implementación de un
+clasificador de actividades humanas basado en arboles de decisión
+generados por el \emph{software} \texttt{WEKA} \cite{Frank2016}.
+\item \texttt{\small{}DumbClassifier}: Es la implementación de un clasificador
+de actividades humanas simple que no emite un resultado válido.
+\item \texttt{\small{}DexModelLoader}: Es un utilitario para descargar de
+Internet de manera segura un clasificador generado por \texttt{WEKA}.
+El clasificador está implementado en una clase contenida en un artefacto
+de \emph{software} en formato \abbr{JAR},
 \end{itemize}
+La actualización dinámica del modelo se muestra en la \figref{fig5:service-classi}.
+Para la actualización al modelo clasificador más reciente generado
+por medio de WEKA se depende de la conexión a Internet y un recurso
+publicado remotamente. El mecanismo de descarga detallado se describe
+en el apéndice 2.
 
-\subsection{Algoritmo de Reconocimiento}
+\begin{figure}
+\begin{centering}
+\includegraphics[width=1\columnwidth]{capitulo-5/graphics/service_classi}
+\par\end{centering}
+\caption[Actualización del clasificador WEKA]{\label{fig5:service-classi}Mecanismo de actualización del dinámica
+del clasificador basado en WEKA}
+\end{figure}
+
 
 \section{ActivitySurvey: Encuesta de Evaluación}
 

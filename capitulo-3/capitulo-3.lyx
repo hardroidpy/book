@@ -362,7 +362,7 @@ abbr{HAR}
  según su tipo.
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -1050,22 +1050,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Árbol de Decisión - C4.5
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "algoC45"
-
-\end_inset
-
- 
 \begin_inset ERT
 status open
 
@@ -1073,422 +1057,143 @@ status open
 
 
 \backslash
-begin{algorithmic}
+begin{algorithmic}[1]
 \end_layout
-
-\end_inset
-
-[1] 
-\begin_inset ERT
-status open
 
 \begin_layout Plain Layout
 
-
+	
 \backslash
-Require
+Require Conjunto de datos etiquetados $D$
 \end_layout
-
-\end_inset
-
- Conjunto de datos etiquetados 
-\begin_inset Formula $D$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+	
 \backslash
-Procedure
+Procedure{C4.5}{$ D $}
 \end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-{
-\end_layout
-
-\end_inset
-
-C4.5
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $D$
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
+		
 \backslash
-If
+If {$D > 
+\backslash
+textit{es puro o cumple el criterio de parada} $}
 \end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $D>\textit{es puro o cumple el criterio de parada}$
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
+ 			
 \backslash
 State
+\backslash
+textit{Termina}
 \end_layout
-
-\end_inset
-
-
-\shape italic
-Termina
-\shape default
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+		
 \backslash
 EndIf
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+		
 \backslash
-ForAll
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $a\in D$
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
+ForAll{$a 
 \backslash
-State
+in D $}
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $\textit{Computar información de division en a }$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
+			
+\backslash
+State $
+\backslash
+textit{Computar información de division en a }$
+\end_layout
 
+\begin_layout Plain Layout
+
+		
 \backslash
 EndFor
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+		
 \backslash
-State
+State $ a_{best} =$ Mejor atributo de división respecto al criterio
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $a_{best}=$
-\end_inset
-
- Mejor atributo de división respecto al criterio 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+		
 \backslash
-State
+State $ Arbol =$ Crear un nodo de decisión con $ a_{best} $ en la raíz
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $Arbol=$
-\end_inset
-
- Crear un nodo de decisión con 
-\begin_inset Formula $a_{best}$
-\end_inset
-
- en la raíz 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+		
 \backslash
-State
+State $ D_{v} =$ Introducir sub-conjunto de $D$ basado en división $ a_{best}
+ $
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $D_{v}=$
-\end_inset
-
- Introducir sub-conjunto de 
-\begin_inset Formula $D$
-\end_inset
-
- basado en división 
-\begin_inset Formula $a_{best}$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+		
 \backslash
-ForAll
+ForAll{$ D_{v} $}
 \end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $D_{v}$
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
+			
 \backslash
-State
+State $ Arbol_{v} = C4.5(D_{v}) $
 \end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $Arbol_{v}=C4.5(D_{v})$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+			
 \backslash
-State
+State Unir $ Arbol_{v} $ al correspondiente arco del Árbol
 \end_layout
-
-\end_inset
-
- Unir 
-\begin_inset Formula $Arbol_{v}$
-\end_inset
-
- al correspondiente arco del Árbol 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
-
+		
 \backslash
 EndFor
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+		
 \backslash
 State
 \end_layout
 
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+ 		
 \backslash
-Return
+Return $ Arbol $
 \end_layout
 
-\end_inset
-
- 
-\begin_inset Formula $Arbol$
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
+	
 \backslash
 EndProcedure
 \end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
 
@@ -1499,7 +1204,25 @@ end{algorithmic}
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "algoC45"
+
+\end_inset
+
+Árbol de Decisión - C4.5
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
