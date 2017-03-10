@@ -548,15 +548,6 @@ donde la comunicación entre procesos es llevado acabo por medio de
 una interfaz \abbr{AIDL} parte del mecanismo \emph{IPC Binder} (ver
 sección \ref{ssec52:framework}).
 
-\subsection{Algoritmo de Reconocimiento}
-
-\begin{algorithm}
-\caption{\label{alg5:reconocimiento}Procedimiento de detección de actividades
-humanas}
-
-\end{algorithm}
-
-
 \subsection{Módulos Funcionales}
 
 \label{ssec54:modulos}Desde el punto de vista conceptual el servicio
@@ -683,14 +674,10 @@ móvil \abbr{HARDroid}.
 \includegraphics[width=1\columnwidth]{capitulo-5/graphics/service_subs}
 \par\end{centering}
 \caption[Interacción cliente y servidor de HARDroid]{\label{fig5:service-subs}Interacción cliente y servidor de \abbr{HARDroid}}
-
 \end{figure}
 
 El servidor mantiene una lista de suscripciones con los tiempos de
-preferencia de notificación de eventualidad de cada cliente. Ante
-la eventualidad de un nuevo resultado de reconocimiento emitido por
-el módulo de procesamiento se realiza un envío del resultado a los
-clientes correspondientes.
+preferencia de notificación de eventualidad de cada cliente. 
 
 \subsubsection{Procesamiento}
 
@@ -719,11 +706,43 @@ el menor tiempo memorizado en las suscripciones de clientes.
 \par\end{centering}
 \caption[Procesamiento y publicación de resultados de HARDroid]{\label{fig5:service-worker}Procesamiento y publicación de resultados
 de \abbr{HARDroid}}
-
 \end{figure}
 
+Ante la eventualidad de un nuevo resultado de reconocimiento emitido
+por el motor de reconocimiento se realiza una publicación de resultados
+a los clientes correspondientes. El algoritmo de reconocimiento se
+describe a continuación.
 
-\subsubsection{Clasificador}
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+    \Require Conjunto de tiempos de subscripción de clientes $S$
+	\Procedure{Reconocimiento}{$ S $}
+		\If {$S \textit{ está vacio } $}
+ 			\State\textit{Terminar}
+		\EndIf
+		\State $t_w \leftarrow 10$
+\rcomment{Esta es la ventana de tiempo necesaria para el reconocimiento}
+		\State $t_{min} \leftarrow \min_{\forall s \in S} s$
+		\State Esperar $t_{min} - t_w$ segundos 
+		\State $ a_{xyz} = $ Leer datos de asceleracion por $t_w$ segundos o 512 muestras
+		\State $ C = \emptyset$
+		\For{$i := 1 \to 512$}
+			\State $ v_f = $ Calcular vector caracteristicos de $a_{xyz}$ con valores entre $[i, i + 127]$
+			\State $ c_a = $ Clasificar $v_f$ con el algoritmo \textit{C4.5}
+			\State $ C = C \cup \{c_a\}$ 
+			\State $i := i + 64$
+        \EndFor
+        \State $ M = $ Calcular matriz de confusión de $C$ 
+		\State
+		\Return $ M $
+	\EndProcedure
+\end{algorithmic}
+
+\caption{\label{alg5:reconocimiento}Detección de actividades humanas}
+\end{algorithm}
+
+
+\paragraph{Clasificador}
 
 Este módulo se encarga de la clasificación de un vector característico
 y emite una estimación de la actividad humana detectada. Posee dos
@@ -733,26 +752,26 @@ implementaciones principales y complementarias.
 los métodos comunes de los clasificadores de actividades humanas.
 \item \texttt{\small{}DecisionTreeClassifier}: Es la implementación de un
 clasificador de actividades humanas basado en arboles de decisión
-generados por el \emph{software} \texttt{WEKA} \cite{Frank2016}.
+generados por el \emph{software} \texttt{\abbr{WEKA}} \cite{Frank2016}.
 \item \texttt{\small{}DumbClassifier}: Es la implementación de un clasificador
 de actividades humanas simple que no emite un resultado válido.
 \item \texttt{\small{}DexModelLoader}: Es un utilitario para descargar de
-Internet de manera segura un clasificador generado por \texttt{WEKA}.
+Internet de manera segura un clasificador generado por \abbr{WEKA}.
 El clasificador está implementado en una clase contenida en un artefacto
 de \emph{software} en formato \abbr{JAR},
 \end{itemize}
 La actualización dinámica del modelo se muestra en la \figref{fig5:service-classi}.
 Para la actualización al modelo clasificador más reciente generado
-por medio de WEKA se depende de la conexión a Internet y un recurso
-publicado remotamente. El mecanismo de descarga detallado se describe
-en el apéndice 2.
+por medio de \abbr{WEKA} se depende de la conexión a Internet y un
+recurso publicado remotamente. El mecanismo detallado se describe
+en el apéndice \ref{chapb:carga-dinamica}.
 
 \begin{figure}
 \begin{centering}
 \includegraphics[width=1\columnwidth]{capitulo-5/graphics/service_classi}
 \par\end{centering}
 \caption[Actualización del clasificador WEKA]{\label{fig5:service-classi}Mecanismo de actualización del dinámica
-del clasificador basado en WEKA}
+del clasificador basado en \abbr{WEKA}}
 \end{figure}
 
 

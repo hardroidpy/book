@@ -2785,43 +2785,6 @@ reference "ssec52:framework"
 \end_layout
 
 \begin_layout Subsection
-Algoritmo de Reconocimiento
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "alg5:reconocimiento"
-
-\end_inset
-
-Procedimiento de detección de actividades humanas
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
 Módulos Funcionales
 \end_layout
 
@@ -3468,10 +3431,6 @@ abbr{HARDroid}
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -3480,9 +3439,7 @@ abbr{HARDroid}
 \begin_layout Standard
 El servidor mantiene una lista de suscripciones con los tiempos de preferencia
  de notificación de eventualidad de cada cliente.
- Ante la eventualidad de un nuevo resultado de reconocimiento emitido por
- el módulo de procesamiento se realiza un envío del resultado a los clientes
- correspondientes.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -3555,7 +3512,7 @@ figref{fig5:service-worker}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3609,7 +3566,238 @@ abbr{HARDroid}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ante la eventualidad de un nuevo resultado de reconocimiento emitido por
+ el motor de reconocimiento se realiza una publicación de resultados a los
+ clientes correspondientes.
+ El algoritmo de reconocimiento se describe a continuación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+Require Conjunto de tiempos de subscripción de clientes $S$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Procedure{Reconocimiento}{$ S $}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+If {$S 
+\backslash
+textit{ está vacio } $}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 			
+\backslash
+State
+\backslash
+textit{Terminar}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $t_w 
+\backslash
+leftarrow 10$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+rcomment{Esta es la ventana de tiempo necesaria para el reconocimiento}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $t_{min} 
+\backslash
+leftarrow 
+\backslash
+min_{
+\backslash
+forall s 
+\backslash
+in S} s$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State Esperar $t_{min} - t_w$ segundos 
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $ a_{xyz} = $ Leer datos de asceleracion por $t_w$ segundos o 512
+ muestras
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State $ C = 
+\backslash
+emptyset$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+For{$i := 1 
+\backslash
+to 512$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $ v_f = $ Calcular vector caracteristicos de $a_{xyz}$ con valores
+ entre $[i, i + 127]$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $ c_a = $ Clasificar $v_f$ con el algoritmo 
+\backslash
+textit{C4.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $ C = C 
+\backslash
+cup 
+\backslash
+{c_a
+\backslash
+}$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+State $i := i + 64$
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+State $ M = $ Calcular matriz de confusión de $C$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+Return $ M $
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "alg5:reconocimiento"
+
+\end_inset
+
+Detección de actividades humanas
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -3618,7 +3806,7 @@ abbr{HARDroid}
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Paragraph
 Clasificador
 \end_layout
 
@@ -3653,7 +3841,20 @@ software
 \emph default
  
 \family typewriter
-WEKA
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WEKA}
+\end_layout
+
+\end_inset
+
+
 \family default
  
 \begin_inset CommandInset citation
@@ -3685,9 +3886,18 @@ DexModelLoader
 \size default
 : Es un utilitario para descargar de Internet de manera segura un clasificador
  generado por 
-\family typewriter
-WEKA
-\family default
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WEKA}
+\end_layout
+
+\end_inset
+
 .
  El clasificador está implementado en una clase contenida en un artefacto
  de 
@@ -3726,9 +3936,28 @@ figref{fig5:service-classi}
 
 .
  Para la actualización al modelo clasificador más reciente generado por
- medio de WEKA se depende de la conexión a Internet y un recurso publicado
- remotamente.
- El mecanismo de descarga detallado se describe en el apéndice 2.
+ medio de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WEKA}
+\end_layout
+
+\end_inset
+
+ se depende de la conexión a Internet y un recurso publicado remotamente.
+ El mecanismo detallado se describe en el apéndice 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chapb:carga-dinamica"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3768,7 +3997,20 @@ Actualización del clasificador WEKA
 
 \end_inset
 
-Mecanismo de actualización del dinámica del clasificador basado en WEKA
+Mecanismo de actualización del dinámica del clasificador basado en 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WEKA}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

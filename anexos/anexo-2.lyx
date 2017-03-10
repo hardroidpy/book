@@ -72,61 +72,22 @@
 \begin_body
 
 \begin_layout Chapter
-Instrumentación
-\end_layout
+Carga Dinámica de Modelo 
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Section
-Dispositivos móviles
-\end_layout
 
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "ssec46:dispositivos-moviles"
+name "chapb:carga-dinamica"
 
 \end_inset
 
-Descripción técnica de dispositivos móviles: procesador, memoria, sensores
- y almacenamiento
-\end_layout
 
-\begin_layout Subsection
-Teléfonos móviles
-\end_layout
-
-\begin_layout Subsection
-Relojes inteligentes
-\end_layout
-
-\begin_layout Subsection
-Correas inteligentes
 \end_layout
 
 \begin_layout Section
-Sensores empotrados
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "ssec46:sensores-empotrados"
-
-\end_inset
-
-Descripción técnica de los sensores de aceleración, variables, orientación
- en dispositivo, unidades de medida, precisión vs consumo.
-\end_layout
-
-\begin_layout Subsection
-Acelerómetro
-\end_layout
-
-\begin_layout Subsection
-Giroscopio
-\end_layout
-
-\begin_layout Subsection
-GPS/WIFI
+DEX
 \end_layout
 
 \end_body
