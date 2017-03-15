@@ -75,16 +75,18 @@
 Distribución
 \end_layout
 
-\begin_layout Subsection
-Publicación
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "chapA:rest-api"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Código Fuente
-\end_layout
-
-\begin_layout Subsection
-Documentación
+Firma
 \end_layout
 
 \end_body

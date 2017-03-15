@@ -1882,8 +1882,12 @@ key "Gargenta2014"
 Activity
 \series default
 \emph default
-: El componente actividad representa la interfaz de usuario de la aplicación
- responsable de desplegar la información y capturar las interacciones.
+: El componente 
+\emph on
+actividad
+\emph default
+ representa la interfaz de usuario de la aplicación responsable de desplegar
+ la información y capturar las interacciones.
  Este componente no persiste información, sino que son tareas de computo
  de corta duración y en primer plano donde el sistema operativo puede requerir
  pararlos y pasarlos a un modo de reposo frecuentemente.
@@ -1896,8 +1900,12 @@ Activity
 Service
 \series default
 \emph default
-: El componente servicio ofrece un mecanismo para ejecutar tareas de computo
- de larga duración en segundo plano sin interfaz de usuario asociada.
+: El componente 
+\emph on
+servicio
+\emph default
+ ofrece un mecanismo para ejecutar tareas de computo de larga duración en
+ segundo plano sin interfaz de usuario asociada.
  Un servicio solo puede ser parado si el sistema se queda sin recursos de
  memoria.
 \end_layout
@@ -1909,8 +1917,11 @@ Service
 Content Provider
 \series default
 \emph default
-: El componente proveedor de contenido provee una interfaz para compartir
- datos entre aplicaciones.
+: El componente 
+\emph on
+proveedor
+\emph default
+ de contenido provee una interfaz para compartir datos entre aplicaciones.
  Su función es la persistencia de datos por medio de una 
 \begin_inset ERT
 status open
@@ -1962,8 +1973,12 @@ abbr{SQL}
 Broadcast Receiver
 \series default
 \emph default
-: El componente receptor de mensajes provee un mecanismo para publicación
- y suscripción a eventos del sistema basado en el patrón de diseño 
+: El componente 
+\emph on
+receptor
+\emph default
+ de mensajes provee un mecanismo para publicación y suscripción a eventos
+ del sistema basado en el patrón de diseño 
 \emph on
 Observer
 \emph default
@@ -2957,7 +2972,7 @@ key "GimenezYegros2016d"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3070,7 +3085,7 @@ figref{fig5:service-layer}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3377,7 +3392,7 @@ abbr{HARDroid}
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3583,7 +3598,7 @@ Ante la eventualidad de un nuevo resultado de reconocimiento emitido por
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -3953,7 +3968,7 @@ abbr{WEKA}
  El mecanismo detallado se describe en el apéndice 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chapb:carga-dinamica"
+reference "chapB:carga-dinamica"
 
 \end_inset
 
@@ -4034,12 +4049,8 @@ name "sec55:activity"
 
 \end_inset
 
-La aplicación 
-\emph on
-ActivitySurvey
-\emph default
- es una utilitario cuyo principal fin es realizar una encuesta para evaluar
- el servicio 
+Con el objetivo principal de encuestar a los usuarios finales a medida que
+ utilizan el servicio 
 \begin_inset ERT
 status open
 
@@ -4065,9 +4076,29 @@ abbr{Android}
 
 \end_inset
 
+ y evaluar los resultados producidos al detectar alguna acción realizada
+ por el usuario se creó la aplicación móvil 
+\emph on
+ActivitySurvey.
+ 
+\emph default
+El diseño de la aplicación es bastante sencillo pero con varios complementos
+ necesarios para poder validar el funcionamiento de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
 .
- Permite obtener la perspectiva del usuario final a medida que se detecta
- alguna acción realizada por el mismo.
+ En esta sección se presenta la vista general de la aplicación explicada
+ por medio de artefactos que describen las funcionalidades básicas construidas.
  
 \end_layout
 
@@ -4075,12 +4106,24 @@ abbr{Android}
 Casos de Uso
 \end_layout
 
+\begin_layout Standard
+Las especificaciones funcionales describen el comportamiento de la aplicación
+ desde el punto de vista del usuario final.
+\end_layout
+
 \begin_layout Subsection
-Módulos Funcionales
+Diseño Detallado
 \end_layout
 
 \begin_layout Standard
-Debido a que la aplicación móvil en 
+El diseño del proyecto se basa en lo expuesto en 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "ssec52:framework"
+
+\end_inset
+
+, donde una aplicación móvil en 
 \begin_inset ERT
 status open
 
@@ -4093,55 +4136,303 @@ abbr{Android}
 
 \end_inset
 
- debe ser fácil e intuitivo de utilizar se dividió las funcionalidades principal
-es en los siguientes módulos:
+ es una colección desacoplada de Actividades, Servicios, Proveedores y Receptore
+s que se describe a continuación.
+\end_layout
+
+\begin_layout Subsubsection
+Módulos Funcionales
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 SurveyApplication
+\family default
+\size default
+: Es el contexto de la aplicación que mantiene acceso a las preferencias,
+ los servicios y las suscripciones a mensajes.
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 FeedActivity
+\family default
+\size default
+: Es la vista principal de la aplicación que despliega la lista de actividades
+ detectadas en una línea de tiempo como tarjetas de preguntas.
+ Cada pregunta puede ser obviada, corregida o aseverada.
+ 
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 SettingsActivity
+\family default
+\size default
+: Es la vista de configuración de la aplicación que modifica las preferencias
+ del usuario final y las almacena en el dispositivo móvil.
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 DetectorService
+\family default
+\size default
+: Es un servicio que mantiene una conexión persistente con el servicio 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+ El servicio es iniciado o parado dependiendo de la necesidad del usuario
+ en ser encuestado.
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 DetectedActivitiesService
+\family default
+\size default
+: Es un servicio de función diferida que permite recibir actualizaciones
+ de resultados detectados por el servicio 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
+ Por cada actividad humana detectada, persiste la información y notifica
+ por mensaje que existen nuevos resultados.
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 NotificationReceiver
+\family default
+\size default
+: Es un receptor de mensajes para crear alertas auditivas en el momento
+ que se detectan nuevos resultados.
+ Sirven para avisar al usuario final que debe contestar una nueva encuesta.
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 HumanActivityFeed
+\family default
+\size default
+: Es el proveedor de contenidos que persiste los resultados a ser evaluados
+ durante la encuesta.
 \end_layout
 
 \begin_layout Itemize
+
+\family typewriter
+\size small
 UpdateActionReceiver
+\family default
+\size default
+: Es un receptor de mensajes para sincronizar los resultados evaluados en
+ la encuesta con el servidor remoto de usuarios encuestados.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:act-surv-diag}
+\end_layout
+
+\end_inset
+
+ se muestran los módulos funcionales que hacen a la aplicación con una notación
+ en base a los componentes comunes de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ y su interacción.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/act_surv_diag.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:act-surv-diag"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de diseño de ActivitySurvey
+\end_layout
+
+\end_inset
+
+Diagrama de diseño de 
+\emph on
+ActivitySurvey
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
 Persistencia
 \end_layout
 
-\begin_layout Subsubsection
-Base de datos
+\begin_layout Standard
+Los resultados de las encuestas se guardan en una base de datos personal
+ en la aplicación móvil y posee el siguiente esquema sencillo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:act-surv-er}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/act_surv_er.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:act-surv-er"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Modelo de datos de ActivitySurvey
+\end_layout
+
+\end_inset
+
+Modelo de datos de 
+\emph on
+ActivitySurvey
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-Preferencia
-\end_layout
-
-\begin_layout Subsection
 Interfaz de Usuario
 \end_layout
 
