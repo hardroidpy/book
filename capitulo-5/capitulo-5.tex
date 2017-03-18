@@ -777,27 +777,33 @@ del clasificador basado en \abbr{WEKA}}
 
 \section{ActivitySurvey: Encuesta de Evaluación}
 
-\label{sec55:activity}Con el objetivo principal de encuestar a los
-usuarios finales a medida que utilizan el servicio \abbr{HAR} en
-\abbr{Android} y evaluar los resultados producidos al detectar alguna
-acción realizada por el usuario se creó la aplicación móvil \emph{ActivitySurvey.
-}El diseño de la aplicación es bastante sencillo pero con varios complementos
-necesarios para poder validar el funcionamiento de \abbr{HARDroid}.
-En esta sección se presenta la vista general de la aplicación explicada
-por medio de artefactos que describen las funcionalidades básicas
-construidas. 
+\label{sec55:activity}Con el objetivo probar el funcionamiento del
+servicio \abbr{HAR} en \abbr{Android} y evaluar los resultados producidos
+al detectar las actividades realizadas por el usuario, se creó la
+aplicación \emph{ActivitySurvey. }El diseño de la aplicación móvil
+es bastante sencillo pero con los complementos necesarios que permitan
+validar el funcionamiento de \abbr{HARDroid} y encuestar a los usuarios
+finales durante una sesión de entrenamiento físico. En esta sección
+se presenta la vista general de la aplicación explicada por medio
+de artefactos que describen las funcionalidades básicas construidas. 
 
 \subsection{Casos de Uso}
 
 Las especificaciones funcionales describen el comportamiento de la
-aplicación desde el punto de vista del usuario final.
+aplicación desde el punto de vista del usuario final. Los casos de
+uso son:
+\begin{itemize}
+\item Registrarse
+\item Responder Encuesta
+\item Cambiar preferencias
+\end{itemize}
 
 \subsection{Diseño Detallado}
 
-El diseño del proyecto se basa en lo expuesto en \ref{ssec52:framework},
-donde una aplicación móvil en \abbr{Android} es una colección desacoplada
-de Actividades, Servicios, Proveedores y Receptores que se describe
-a continuación.
+El diseño del proyecto se basa en los componentes comunes de una aplicación
+móvil \abbr{Android} según lo expuesto en \ref{ssec52:framework}.
+El diseño se compone de una colección desacoplada de Actividades,
+Servicios, Proveedores y Receptores que se describen a continuación.
 
 \subsubsection{Módulos Funcionales}
 \begin{itemize}
@@ -844,20 +850,71 @@ comunes de \abbr{Android} y su interacción.
 
 \paragraph{Persistencia}
 
-Los resultados de las encuestas se guardan en una base de datos personal
-en la aplicación móvil y posee el siguiente esquema sencillo \figref{fig5:act-surv-er}.
+Las actividades humanas detectadas durante una sesión deben ser almacenadas
+en el teléfono móvil para luego transmitirlas a un servidor central.
+Los resultados de cálculos del reconocedor y las encuestas respondidas
+por los usuarios se persisten en una base de datos personal perteneciente
+a la aplicación. El diagrama desplegado en la \figref{fig5:act-surv-er}
+representa el modelo de datos utilizado. Esta información se sincroniza
+por medio un servicio Web externo para un posterior análisis y mejoras
+al algoritmo de clasificación.
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[width=1\columnwidth]{capitulo-5/graphics/act_surv_er}
 \par\end{centering}
 \caption[Modelo de datos de ActivitySurvey]{\label{fig5:act-surv-er}Modelo de datos de \emph{ActivitySurvey}}
-
 \end{figure}
 
 
 \subsubsection{Interfaz de Usuario}
 
+En base al modelo de información se presentan los contextos que permiten
+a los usuarios navegar y descubrir las vistas y acciones disponibles
+en la aplicación móvil. El diagrama de navegación en la \figref{fig5:navega}
+muestra la lista completa de pantallas necesarias para que los usuarios
+interactúen con los datos. 
+
+En la aplicación de encuesta, los usuarios tienen la capacidad de
+ver sus actividades reconocidas, responder a la encuesta confirmando
+la actividad o corrigiendo la misma. 
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width=1\columnwidth]{capitulo-5/graphics/navegacion}
+\par\end{centering}
+\caption[Mapa de navegación de pantallas de ActivitySurvey]{\label{fig5:navega}Mapa de navegación de pantallas de \emph{ActivitySurvey}}
+
+\end{figure}
+
+El diagrama de navegación de pantallas muestra la relación directa
+entre pantallas por medio de cuadros y flechas. Una flecha que va
+desde la pantalla \emph{Bienvenida} a otra pantalla \emph{Datos Personales}
+ocurre por medio de una interacción del usuario en la pantalla \emph{Bienvenida}. 
+
 \section{Conclusión}
 
-\label{sec56:conclusion}
+\label{sec56:conclusion}En esta sección presentamos un servicio de
+reconocimiento de actividades humanas (\abbr{HAR}) para la plataforma
+\abbr{Android}. Está construido en base a las mejores prácticas de
+servicios de utilitarios existentes de propiedad intelectual privada
+como\emph{ Google Play Services}. Esta herramienta permite que aplicaciones
+móviles desarrolladas por terceros no dependan de implementaciones
+privativas sino de un componente de software libre. Bajo un modelo
+colaborativo, cualquier solución que utilice esta alternativa obtiene
+beneficios como adaptarlo a sus necesidades o gozar de las mejoras
+evolutivas. 
+
+Además, esta implementación fue probada por medio de una aplicación
+móvil independiente donde se evaluó el funcionamiento desacoplado
+proveído por el marco de trabajo de \abbr{Android}. Los resultados
+obtenidos fueron satisfactorios en cuanto a la integración entre aplicación
+móvil y servicio utilitario en procesos independientes. Los resultados
+experimentales confirmaron que es posible recolectar información en
+terreno a través de la aplicación de encuesta y luego esta información
+pueda ser validada, limpiada y utilizada para mejorar el algoritmo
+de clasificación basado en árboles de decisión de forma ininterrumpida.
+Se requieren experimentación adicional para evaluar el servicio bajo
+condiciones más realistas cuando el servicio es instalado en diferentes
+teléfonos móviles y en interacción con otras aplicaciones distintas
+para su evaluación.
