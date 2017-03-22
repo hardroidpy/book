@@ -555,7 +555,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename graphics/cliente_servidor.png
-	width 80col%
+	width 60col%
 
 \end_inset
 
@@ -1417,7 +1417,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename graphics/android_stack.png
-	width 80col%
+	width 70col%
 
 \end_inset
 
@@ -2442,7 +2442,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename graphics/arqui_general.png
-	width 80col%
+	width 100col%
 
 \end_inset
 
@@ -2633,7 +2633,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename graphics/hardroid_func.png
-	width 80col%
+	width 70col%
 
 \end_inset
 
@@ -3977,9 +3977,10 @@ reference "chapB:carga-dinamica"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4082,7 +4083,7 @@ ActivitySurvey.
  
 \emph default
 El diseño de la aplicación móvil es bastante sencillo pero con los complementos
- necesarios que permitan validar el funcionamiento de 
+ necesarios que permiten validar las funcionalidades de 
 \begin_inset ERT
 status open
 
@@ -4095,7 +4096,7 @@ abbr{HARDroid}
 
 \end_inset
 
- y encuestar a los usuarios finales durante una sesión de entrenamiento
+ y además encuestar a usuarios reales durante una sesión de entrenamiento
  físico.
  En esta sección se presenta la vista general de la aplicación explicada
  por medio de artefactos que describen las funcionalidades básicas construidas.
@@ -4103,25 +4104,424 @@ abbr{HARDroid}
 \end_layout
 
 \begin_layout Subsection
-Casos de Uso
+Requerimientos Funcionales
 \end_layout
 
 \begin_layout Standard
-Las especificaciones funcionales describen el comportamiento de la aplicación
- desde el punto de vista del usuario final.
- Los casos de uso son:
+En esta sección se incluyen las especificaciones funcionales que describen
+ el comportamiento de la aplicación desde el punto de vista del actor principal:
+ el usuario final.
+ Los asuntos identificados que forman parte de los requisitos son agrupados
+ en los siguientes puntos.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Subsubsection
 Registrarse
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
+Este requerimiento implica que el usuario accede por primera vez a la aplicación
+ y debe registrar sus datos personales para poder identificar a las muestras
+ generadas por una persona en particular.
+ En la siguiente 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:uc-registro}
+\end_layout
+
+\end_inset
+
+ se listan los casos de uso correspondientes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/caso_registro.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:uc-registro"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de Caso de Uso: Registro
+\end_layout
+
+\end_inset
+
+Diagrama de Caso de Uso: Registro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+CU01-Leer
+\begin_inset space ~
+\end_inset
+
+instrucciones El usuario verifica la tarjeta inicial con notas de bienvenida
+ e instrucciones básicas de uso para luego accionar el botón 
+\begin_inset Quotes fld
+\end_inset
+
+ENTENDIDO
+\begin_inset Quotes frd
+\end_inset
+
+.
+ El sistema oculta la tarjeta permanentemente y dirige a la vista de registro.
+\end_layout
+
+\begin_layout Description
+CU02-Registrar
+\begin_inset space ~
+\end_inset
+
+datos
+\begin_inset space ~
+\end_inset
+
+personales El usuario visualiza la pantalla de registro inicial y completa
+ sus datos personales: correo electrónico, edad e intervalo de detección.
+ El sistema guarda la información en las preferencias básicas del usuario.
+\end_layout
+
+\begin_layout Subsubsection
 Responder Encuesta
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
+Este requerimiento implica la funcionalidad principal de encuesta donde
+ el usuario debe realizar sesiones de entrenamiento físico que resultan
+ en registros de señales y la predicción de la actividad física probable
+ que debe ser aseverada.
+ En la siguiente 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:uc-encuesta}
+\end_layout
+
+\end_inset
+
+ se listan los casos de uso correspondientes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/caso_encuesta.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:uc-encuesta"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de Caso de Uso: Encuesta
+\end_layout
+
+\end_inset
+
+Diagrama de Caso de Uso: Encuesta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+CU03-Iniciar
+\begin_inset space ~
+\end_inset
+
+Encuesta El usuario acciona un botón para iniciar una nueva sesión de entrenamie
+nto.
+ 
+\begin_inset Newline newline
+\end_inset
+
+El sistema se suscribe al servicio de reconocimiento de actividades teniendo
+ en cuenta las preferencias del usuario y se generan tarjetas visuales de
+ encuesta periódicamente.
+\end_layout
+
+\begin_layout Description
+CU04-Para
+\begin_inset space ~
+\end_inset
+
+Encuesta El usuario acciona un botón para para la sesión de entrenamiento
+ activa.
+ 
+\begin_inset Newline newline
+\end_inset
+
+El sistema se desconecta del servicio de reconocimiento de actividades.
+\end_layout
+
+\begin_layout Description
+CU05-Ver
+\begin_inset space ~
+\end_inset
+
+actividades
+\begin_inset space ~
+\end_inset
+
+detectadas El usuario dispone de una lista de tarjetas visuales de encuesta
+ con los resultados recientes de una sesión de entrenamiento.
+ 
+\end_layout
+
+\begin_layout Description
+CU06-Confirmar
+\begin_inset space ~
+\end_inset
+
+actividad El usuario responde positivamente a la tarjeta visual de encuesta
+ aseverando el resultado de la actividad humana detectada por medio del
+ botón 
+\begin_inset Quotes fld
+\end_inset
+
+CORRECTO
+\begin_inset Quotes frd
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+El sistema actualiza la tarjeta de encuesta como detectada correctamente.
+\end_layout
+
+\begin_layout Description
+CU07-Corregir
+\begin_inset space ~
+\end_inset
+
+respuesta El usuario responde negativamente a la tarjeta visual de encuesta
+ negando el resultado de la actividad humana detectada por medio del botón
+ 
+\begin_inset Quotes fld
+\end_inset
+
+INCORRECTO
+\begin_inset Quotes frd
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+El sistema despliega un dialogo para obtener la actividad humana declarada
+ por el usuario y al seleccionar una actividad se actualiza la tarjeta de
+ encuesta.
+\end_layout
+
+\begin_layout Subsubsection
 Cambiar preferencias
+\end_layout
+
+\begin_layout Standard
+Este requerimiento implica una acción complementaria de cambiar las preferencias
+ internas que modifican el comportamiento de la aplicación móvil.
+ En la siguiente 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig5:uc-preferencia}
+\end_layout
+
+\end_inset
+
+ se listan los casos de uso correspondientes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/caso_preferencia.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:uc-preferencia"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de Caso de Uso: Preferencia
+\end_layout
+
+\end_inset
+
+Diagrama de Caso de Uso: Preferencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+CU08-Cambiar
+\begin_inset space ~
+\end_inset
+
+preferencias El usuario dispone de una lista de preferencias de edición
+ agrupados por categorías.
+ 
+\end_layout
+
+\begin_layout Description
+CU09-Cambiar
+\begin_inset space ~
+\end_inset
+
+correo
+\begin_inset space ~
+\end_inset
+
+y
+\begin_inset space ~
+\end_inset
+
+edad El usuario edita sus datos personales: correo electrónico y edad.
+ El sistema guarda la información en las preferencias del usuario.
+\end_layout
+
+\begin_layout Description
+CU10-Cambiar
+\begin_inset space ~
+\end_inset
+
+intervalo El usuario edita el intervalo de detección de actividades.
+ El sistema guarda la información en las preferencias del usuario y se reinicia
+ la suscripción al servicio de detección de actividades.
+\end_layout
+
+\begin_layout Description
+CU11-Cambiar
+\begin_inset space ~
+\end_inset
+
+sincronizar El usuario modifica el comportamiento y el método de sincronizar
+ de datos por red.
+ El sistema guarda la información en las preferencias del usuario y activa/desac
+tiva sincronizar datos por medio del método seleccionado.
+\end_layout
+
+\begin_layout Description
+CU12-Cambiar
+\begin_inset space ~
+\end_inset
+
+notificación El usuario modifica el comportamiento de notificación de nuevas
+ actividades detectadas.
+ El sistema guarda la información en las preferencias del usuario y activa/desac
+tiva la notificación.
 \end_layout
 
 \begin_layout Subsection
@@ -4368,7 +4768,7 @@ ActivitySurvey
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Persistencia
 \end_layout
 
@@ -4484,6 +4884,7 @@ En la aplicación de encuesta, los usuarios tienen la capacidad de ver sus
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -4492,7 +4893,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename graphics/navegacion.png
-	width 100col%
+	width 70col%
 
 \end_inset
 

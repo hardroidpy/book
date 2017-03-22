@@ -127,7 +127,7 @@ en la basa de datos, la capa servidor.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/cliente_servidor}
+\includegraphics[width=0.6\columnwidth]{capitulo-5/graphics/cliente_servidor}
 \par\end{centering}
 \caption[Modelo de dos capas]{\label{fig5:cliente_servidor}Modelo de dos capas}
 \end{figure}
@@ -323,7 +323,7 @@ modernos: portabilidad, seguridad y las capacidades funcionales.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/android_stack}
+\includegraphics[width=0.7\columnwidth]{capitulo-5/graphics/android_stack}
 \par\end{centering}
 \caption[Arquitectura de Android]{\label{fig5:android-stack}Arquitectura de \abbr{Android}}
 \end{figure}
@@ -503,7 +503,7 @@ automático de manera manual.
 \end{itemize}
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/arqui_general}
+\includegraphics[width=1\columnwidth]{capitulo-5/graphics/arqui_general}
 \par\end{centering}
 \caption[Arquitectura del Proyecto]{\label{fig5:arqui-general}Arquitectura del Proyecto}
 
@@ -531,7 +531,7 @@ poseen mecanismos fáciles para integrarse al servicio \abbr{HAR}.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/hardroid_func}
+\includegraphics[width=0.7\columnwidth]{capitulo-5/graphics/hardroid_func}
 \par\end{centering}
 \caption[Servicio HARDroid]{\label{fig5:hardroid-func}Servicio \abbr{HARDroid}}
 
@@ -766,7 +766,7 @@ por medio de \abbr{WEKA} se depende de la conexión a Internet y un
 recurso publicado remotamente. El mecanismo detallado se describe
 en el apéndice \ref{chapB:carga-dinamica}.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{centering}
 \includegraphics[width=1\columnwidth]{capitulo-5/graphics/service_classi}
 \par\end{centering}
@@ -781,22 +781,117 @@ del clasificador basado en \abbr{WEKA}}
 servicio \abbr{HAR} en \abbr{Android} y evaluar los resultados producidos
 al detectar las actividades realizadas por el usuario, se creó la
 aplicación \emph{ActivitySurvey. }El diseño de la aplicación móvil
-es bastante sencillo pero con los complementos necesarios que permitan
-validar el funcionamiento de \abbr{HARDroid} y encuestar a los usuarios
-finales durante una sesión de entrenamiento físico. En esta sección
-se presenta la vista general de la aplicación explicada por medio
-de artefactos que describen las funcionalidades básicas construidas. 
+es bastante sencillo pero con los complementos necesarios que permiten
+validar las funcionalidades de \abbr{HARDroid} y además encuestar
+a usuarios reales durante una sesión de entrenamiento físico. En esta
+sección se presenta la vista general de la aplicación explicada por
+medio de artefactos que describen las funcionalidades básicas construidas. 
 
-\subsection{Casos de Uso}
+\subsection{Requerimientos Funcionales}
 
-Las especificaciones funcionales describen el comportamiento de la
-aplicación desde el punto de vista del usuario final. Los casos de
-uso son:
-\begin{itemize}
-\item Registrarse
-\item Responder Encuesta
-\item Cambiar preferencias
-\end{itemize}
+En esta sección se incluyen las especificaciones funcionales que describen
+el comportamiento de la aplicación desde el punto de vista del actor
+principal: el usuario final. Los asuntos identificados que forman
+parte de los requisitos son agrupados en los siguientes puntos.
+
+\subsubsection{Registrarse}
+
+Este requerimiento implica que el usuario accede por primera vez a
+la aplicación y debe registrar sus datos personales para poder identificar
+a las muestras generadas por una persona en particular. En la siguiente
+\figref{fig5:uc-registro} se listan los casos de uso correspondientes.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{capitulo-5/graphics/caso_registro}
+\par\end{centering}
+\caption[Diagrama de Caso de Uso: Registro]{\label{fig5:uc-registro}Diagrama de Caso de Uso: Registro}
+\end{figure}
+
+\begin{description}
+\item [{CU01-Leer~instrucciones}] El usuario verifica la tarjeta inicial
+con notas de bienvenida e instrucciones básicas de uso para luego
+accionar el botón <<ENTENDIDO>>. El sistema oculta la tarjeta permanentemente
+y dirige a la vista de registro.
+\item [{CU02-Registrar~datos~personales}] El usuario visualiza la pantalla
+de registro inicial y completa sus datos personales: correo electrónico,
+edad e intervalo de detección. El sistema guarda la información en
+las preferencias básicas del usuario.
+\end{description}
+
+\subsubsection{Responder Encuesta}
+
+Este requerimiento implica la funcionalidad principal de encuesta
+donde el usuario debe realizar sesiones de entrenamiento físico que
+resultan en registros de señales y la predicción de la actividad física
+probable que debe ser aseverada. En la siguiente \figref{fig5:uc-encuesta}
+se listan los casos de uso correspondientes.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{capitulo-5/graphics/caso_encuesta}
+\par\end{centering}
+\caption[Diagrama de Caso de Uso: Encuesta]{\label{fig5:uc-encuesta}Diagrama de Caso de Uso: Encuesta}
+
+\end{figure}
+
+\begin{description}
+\item [{CU03-Iniciar~Encuesta}] El usuario acciona un botón para iniciar
+una nueva sesión de entrenamiento. \\
+El sistema se suscribe al servicio de reconocimiento de actividades
+teniendo en cuenta las preferencias del usuario y se generan tarjetas
+visuales de encuesta periódicamente.
+\item [{CU04-Para~Encuesta}] El usuario acciona un botón para para la
+sesión de entrenamiento activa. \\
+El sistema se desconecta del servicio de reconocimiento de actividades.
+\item [{CU05-Ver~actividades~detectadas}] El usuario dispone de una lista
+de tarjetas visuales de encuesta con los resultados recientes de una
+sesión de entrenamiento. 
+\item [{CU06-Confirmar~actividad}] El usuario responde positivamente a
+la tarjeta visual de encuesta aseverando el resultado de la actividad
+humana detectada por medio del botón <<CORRECTO>>. \\
+El sistema actualiza la tarjeta de encuesta como detectada correctamente.
+\item [{CU07-Corregir~respuesta}] El usuario responde negativamente a
+la tarjeta visual de encuesta negando el resultado de la actividad
+humana detectada por medio del botón <<INCORRECTO>>. \\
+El sistema despliega un dialogo para obtener la actividad humana declarada
+por el usuario y al seleccionar una actividad se actualiza la tarjeta
+de encuesta.
+\end{description}
+
+\subsubsection{Cambiar preferencias}
+
+Este requerimiento implica una acción complementaria de cambiar las
+preferencias internas que modifican el comportamiento de la aplicación
+móvil. En la siguiente \figref{fig5:uc-preferencia} se listan los
+casos de uso correspondientes.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics{capitulo-5/graphics/caso_preferencia}
+\par\end{centering}
+\caption[Diagrama de Caso de Uso: Preferencia]{\label{fig5:uc-preferencia}Diagrama de Caso de Uso: Preferencia}
+\end{figure}
+
+\begin{description}
+\item [{CU08-Cambiar~preferencias}] El usuario dispone de una lista de
+preferencias de edición agrupados por categorías. 
+\item [{CU09-Cambiar~correo~y~edad}] El usuario edita sus datos personales:
+correo electrónico y edad. El sistema guarda la información en las
+preferencias del usuario.
+\item [{CU10-Cambiar~intervalo}] El usuario edita el intervalo de detección
+de actividades. El sistema guarda la información en las preferencias
+del usuario y se reinicia la suscripción al servicio de detección
+de actividades.
+\item [{CU11-Cambiar~sincronizar}] El usuario modifica el comportamiento
+y el método de sincronizar de datos por red. El sistema guarda la
+información en las preferencias del usuario y activa/desactiva sincronizar
+datos por medio del método seleccionado.
+\item [{CU12-Cambiar~notificación}] El usuario modifica el comportamiento
+de notificación de nuevas actividades detectadas. El sistema guarda
+la información en las preferencias del usuario y activa/desactiva
+la notificación.
+\end{description}
 
 \subsection{Diseño Detallado}
 
@@ -848,7 +943,7 @@ comunes de \abbr{Android} y su interacción.
 \end{figure}
 
 
-\paragraph{Persistencia}
+\subsubsection{Persistencia}
 
 Las actividades humanas detectadas durante una sesión deben ser almacenadas
 en el teléfono móvil para luego transmitirlas a un servidor central.
@@ -879,9 +974,9 @@ En la aplicación de encuesta, los usuarios tienen la capacidad de
 ver sus actividades reconocidas, responder a la encuesta confirmando
 la actividad o corrigiendo la misma. 
 
-\begin{figure}
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[width=1\columnwidth]{capitulo-5/graphics/navegacion}
+\includegraphics[width=0.7\columnwidth]{capitulo-5/graphics/navegacion}
 \par\end{centering}
 \caption[Mapa de navegación de pantallas de ActivitySurvey]{\label{fig5:navega}Mapa de navegación de pantallas de \emph{ActivitySurvey}}
 
