@@ -115,23 +115,24 @@ momento.
 
 Los sensores anexos directamente a un individuo miden señales que
 se clasifican comúnmente según los siguientes grupos \cite{LaraLabrador2013}:
-\begin{description}
-\item [{Movimiento}] miden datos inerciales como la aceleración y la orientación
-respecto a un marco de referencia relativo al dispositivo que contiene
-los sensores. El acelerómetro y el giroscopio son los más comúnmente
-utilizados para reconocimiento de actividades con un bajo consumo
-de energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
-\item [{Ubicación}] miden datos obtenidos con las redes celulares \abbr{3G}
-y los satélites de navegación \abbr{GPS}. Provee información de contexto
-bastante relevante acerca de la posición del individuo, además de
-ciertas medidas de movimiento pero con un consumo moderado de energía.
-\item [{Fisiología}] miden signos vitales del individuo como el ritmo cardíaco
-(\abbr{HRM}), la temperatura del cuerpo, el ritmo de respiración,
+\begin{itemize}
+\item \textbf{Movimiento}: miden datos inerciales como la aceleración y
+la orientación respecto a un marco de referencia relativo al dispositivo
+que contiene los sensores. El acelerómetro y el giroscopio son los
+más comúnmente utilizados para reconocimiento de actividades con un
+bajo consumo de energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
+\item \textbf{Ubicación}: miden datos obtenidos con las redes celulares
+\abbr{3G} y los satélites de navegación \abbr{GPS}. Provee información
+de contexto bastante relevante acerca de la posición del individuo,
+además de ciertas medidas de movimiento pero con un consumo moderado
+de energía.
+\item \textbf{Fisiología}: miden signos vitales del individuo como el ritmo
+cardíaco (\abbr{HRM}), la temperatura del cuerpo, el ritmo de respiración,
 entre otros.
-\item [{Ambiente}] miden datos externos que rodean al individuo como el
-nivel de ruido, la humedad y/o la temperatura. Los sensores de luz,
-cámara, micrófonos y termómetros miden estas señales. 
-\end{description}
+\item \textbf{Ambiente}: miden datos externos que rodean al individuo como
+el nivel de ruido, la humedad y/o la temperatura. Los sensores de
+luz, cámara, micrófonos y termómetros miden estas señales. 
+\end{itemize}
 A diferencia de los sensores ubicados fijamente en el ambiente, estos
 tienen la ventaja de preservar la privacidad y el área de operación.
 La información capturada no es tan sensible como información en imágenes
@@ -221,9 +222,9 @@ y otros \cite{Rajaraman2011} (véase siguiente sección). Las ventajas
 de utilizar este enfoque es la capacidad de manejar incertidumbre
 e información temporal, pero su desventaja es que requiere una cantidad
 grande de datos de entrenamiento, por lo que puede sufrir de problemas
-de inicio lento y escasez de datos. En algunos casos puede presentarse
-falta de escalabilidad y reusabilidad porque un entrenamiento hecho
-sobre un individuo no se aplique a otra persona de distintas características.
+de inicio lento y escasez de datos. En algunos casos puede no ser
+escalable y reutilizable porque un entrenamiento hecho sobre un individuo
+puede no aplicarse a otro individuo de distintas características.
 
 \section{Reconocimiento de Actividades Humanas}
 

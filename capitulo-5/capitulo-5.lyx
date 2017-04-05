@@ -2832,8 +2832,8 @@ Interfaz de Servicio
 \end_layout
 
 \begin_layout Standard
-Este módulo define el modelo dominio y la interfaz del para integración
- (a través de una 
+Este módulo define el modelo dominio y la interfaz de integración (a través
+ de una 
 \begin_inset ERT
 status open
 
@@ -2847,7 +2847,7 @@ abbr{API}
 \end_inset
 
 ).
- En el dominio del problema se identificaron los siguientes conceptos definidos:
+ En el dominio del problema se identificaron los siguientes conceptos:
 \end_layout
 
 \begin_layout Itemize
@@ -2957,7 +2957,7 @@ key "Google2016l"
 
 \end_inset
 
- y la documentación se describe en (véase 
+ y la documentación se detalla en (véase 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GimenezYegros2016d"
@@ -3024,7 +3024,7 @@ Diagrama de clases del dominio del problema.
 
 \begin_layout Standard
 La interfaz del servicio se compone de un conjunto de llamadas para que
- cualquier cliente pueda realizar con las siguientes acciones:
+ cualquier cliente disponga de las siguientes acciones:
 \end_layout
 
 \begin_layout Itemize
@@ -3048,8 +3048,7 @@ Desconectarse
 \emph on
 Subscribirse
 \emph default
- estableciendo la periodicidad de los resultados de actividades humanas
- esperados.
+ con cierta periodicidad a resultados de actividades humanas detectados.
  
 \end_layout
 
@@ -3058,13 +3057,12 @@ Subscribirse
 \emph on
 Obtener
 \emph default
- un resultado de actividades humanas al instante.
+ el resultado de actividades humanas detectado más reciente.
 \end_layout
 
 \begin_layout Standard
-Teniendo en consideración el modelo de dominio citado anteriormente y las
- acciones requeridas se presenta la interfaz proveída por el servicio en
- la 
+Teniendo en consideración el modelo de dominio y las acciones requeridas
+ se presenta la interfaz del servicio en el diagrama de clases de la 
 \begin_inset ERT
 status open
 
@@ -3137,7 +3135,7 @@ Diagrama de clases de la capa de servicio.
 
 \begin_layout Standard
 Para poder clarificar la interfaz proveída por la capa de servicios se describe
- textualmente el contrato definido para la 
+ textualmente el contrato definido por la 
 \begin_inset ERT
 status open
 
@@ -3164,7 +3162,7 @@ requestSingleUpdate(callbackIntent: PendingIntent): void public
 \begin_inset Newline newline
 \end_inset
 
-Se subscribe a un evento de detección de actividad 
+Obtiene el resultado de detección de actividad más reciente 
 \end_layout
 
 \begin_layout Itemize
@@ -3182,7 +3180,7 @@ listener: ActivityRecognitionListener): void public
 \begin_inset Newline newline
 \end_inset
 
-Se suscribe a un evento de detección de actividad durante un intervalo de
+Se suscribe a eventos de detección de actividad a intervalos regulares en
  mili-segundos.
  Espera la respuesta con un observador.
 \end_layout
@@ -3202,7 +3200,7 @@ callbackIntent: PendingIntent): void public
 \begin_inset Newline newline
 \end_inset
 
-Se suscribe a un evento de detección de actividad durante un intervalo de
+Se suscribe a eventos de detección de actividad a intervalos regulares en
  mili-segundos.
  Espera la respuesta con una función diferida.
 \end_layout
@@ -3218,7 +3216,8 @@ removeActivityUpdates(listener: ActivityRecognitionListener): void public
 \begin_inset Newline newline
 \end_inset
 
-Se desuscribe a un evento de detección de actividad dado su observador.
+Se desuscribe a eventos de detección de actividad teniendo en cuenta el
+ observador registrado.
 \end_layout
 
 \begin_layout Itemize
@@ -3232,13 +3231,13 @@ removeActivityUpdates(callbackIntent: PendingIntent): void public
 \begin_inset Newline newline
 \end_inset
 
-Se desuscribe a un evento de detección de actividad dado su función diferida.
+Se desuscribe a eventos de detección de actividad tendiendo en cuenta la
+ función diferida registrada.
 \end_layout
 
 \begin_layout Standard
 En las siguientes secciones se detallan los módulos encargados de implementar
- la lógica de negocio y funcionalidades bases de la interfaz de servicio
- del motor reconocedor.
+ la lógica de negocio y las funcionalidades esta interfaz.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3246,10 +3245,10 @@ Servidor
 \end_layout
 
 \begin_layout Standard
-Este módulo implementa las llamadas a procedimientos remotos desde clientes
- distribuidos en otros procesos.
- La lógica del servicio esta dividido en dos responsabilidades que manejan
- la conexión y la suscripción.
+Este módulo implementa el servidor de llamadas a procedimientos remotos
+ desde clientes distribuidos en otros procesos.
+ La lógica de negocio se divide en dos responsabilidades para manejar la
+ conexión y la suscripción por medio de los siguientes artefactos:
 \end_layout
 
 \begin_layout Itemize
@@ -3259,7 +3258,7 @@ Este módulo implementa las llamadas a procedimientos remotos desde clientes
 ActivityRecognitionService
 \family default
 \size default
-: Es la función principal del servicio ya que implementa el 
+: Es la función principal que implementa el servidor 
 \begin_inset ERT
 status open
 
@@ -3285,9 +3284,9 @@ abbr{Android}
 
 \end_inset
 
- para establecer la conexión con el cliente.
- Además se encarga de coordinar las suscripción de clientes y publicar los
- resultados de detección de actividades.
+ para atender las conexiones con los clientes.
+ Además se encarga de registrar las suscripciones y emitir los resultados
+ de detección de acuerdo a las preferencias de los clientes.
  
 \end_layout
 
@@ -3312,7 +3311,7 @@ abbr{API}
 
 \end_inset
 
- de la interfaz y la ejecución de la lógica del servicio.
+ y el servidor en ejecución.
 \end_layout
 
 \begin_layout Itemize
@@ -3322,8 +3321,8 @@ abbr{API}
 ActivityRecognitionSubscription
 \family default
 \size default
-: Es una estructura para memorizar las preferencias de suscripción de los
- clientes manejado por la función principal del servicio.
+: Es una estructura de datos para memorizar las preferencias de suscripción
+ de los clientes administrado por el servidor.
 \end_layout
 
 \begin_layout Standard
@@ -3452,8 +3451,10 @@ abbr{HARDroid}
 \end_layout
 
 \begin_layout Standard
-El servidor mantiene una lista de suscripciones con los tiempos de preferencia
- de notificación de eventualidad de cada cliente.
+La primeras dos interacciones corresponde a la conexión de clientes y la
+ tercera interacción es la suscripción.
+ El servidor administra una lista de suscripciones para cada cliente con
+ los tiempos de preferencia de notificación registrados ante una eventualidad.
  
 \end_layout
 
@@ -3462,11 +3463,11 @@ Procesamiento
 \end_layout
 
 \begin_layout Standard
-Este módulo se encarga de ejecutar el motor de reconocimiento de actividades
- humanas a intervalos periódicos de tiempo siempre que hayan suscripciones
- memorizadas.
+Este módulo es el motor de reconocimiento de actividades humanas que se
+ ejecuta a intervalos periódicos de tiempo siempre que existan suscripciones
+ registradas.
  La ejecución del motor produce siempre un resultado global de actividad
- humana.
+ humana detectada por medio de los siguientes artefactos: 
 \end_layout
 
 \begin_layout Itemize
@@ -3476,9 +3477,11 @@ Este módulo se encarga de ejecutar el motor de reconocimiento de actividades
 ActivityRecognitionWorker
 \family default
 \size default
-: Es la función principal del motor de reconocimiento que programa una tarea
- periódica de recolección de datos sensoriales, calculo de vectores característi
-cos y clasificación de actividad para producir y emitir un nuevo resultado.
+: Es la función principal que ejecuta una tarea periódica de recolección
+ de datos sensoriales, calculo de vectores característicos y clasificación
+ de actividad para producir un nuevo resultado.
+ La producción de un nuevo resultado dispara un evento de publicación a
+ través del servidor.
 \end_layout
 
 \begin_layout Itemize
@@ -3503,8 +3506,8 @@ SignalProcessing
 \end_layout
 
 \begin_layout Standard
-La ejecución del motor de reconocimiento que empieza durante el inicio del
- servidor de reconocimiento se muestra en la 
+La ejecución del motor de reconocimiento empieza al iniciar servidor y se
+ muestra en la 
 \begin_inset ERT
 status open
 
@@ -3519,7 +3522,7 @@ figref{fig5:service-worker}
 
 .
  El motor realiza las tareas en un intervalo de tiempo definido por el menor
- tiempo memorizado en las suscripciones de clientes.
+ tiempo registrado de acuerdo a las suscripciones de clientes.
 \end_layout
 
 \begin_layout Standard
@@ -3587,9 +3590,8 @@ abbr{HARDroid}
 \end_layout
 
 \begin_layout Standard
-Ante la eventualidad de un nuevo resultado de reconocimiento emitido por
- el motor de reconocimiento se realiza una publicación de resultados a los
- clientes correspondientes.
+Ante la eventualidad de un nuevo resultado detectado por el motor de reconocimie
+nto se realiza una publicación de resultados a los clientes correspondientes.
  El algoritmo de reconocimiento se describe a continuación.
 \end_layout
 
@@ -3663,7 +3665,7 @@ leftarrow 10$
 
 
 \backslash
-rcomment{Esta es la ventana de tiempo necesaria para el reconocimiento}
+rcomment{Ventana de tiempo estándar de reconocimiento}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3692,8 +3694,7 @@ State Esperar $t_{min} - t_w$ segundos
 
 		
 \backslash
-State $ a_{xyz} = $ Leer datos de asceleracion por $t_w$ segundos o 512
- muestras
+State $ a_{xyz} = $ Leer sensor por $t_w$ segundos o 512 muestras
 \end_layout
 
 \begin_layout Plain Layout
@@ -3821,14 +3822,15 @@ Detección de actividades humanas
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Clasificador
 \end_layout
 
 \begin_layout Standard
-Este módulo se encarga de la clasificación de un vector característico y
- emite una estimación de la actividad humana detectada.
- Posee dos implementaciones principales y complementarias.
+Este módulo es el clasificador de actividades humanas a partir de un vector
+ característico y produce una estimación de la actividad humana detectada.
+ Posee dos implementaciones principales y complementarias de acuerdo a los
+ siguientes artefactos:
 \end_layout
 
 \begin_layout Itemize
@@ -3838,7 +3840,7 @@ Este módulo se encarga de la clasificación de un vector característico y
 ActivityClassifier
 \family default
 \size default
-: Es una clase genérica que define los métodos comunes de los clasificadores
+: Es una clase genérica que define los métodos comunes para los clasificadores
  de actividades humanas.
 \end_layout
 
@@ -3889,7 +3891,7 @@ DumbClassifier
 \family default
 \size default
 : Es la implementación de un clasificador de actividades humanas simple
- que no emite un resultado válido.
+ que no produce un resultado válido.
 \end_layout
 
 \begin_layout Itemize
@@ -3900,7 +3902,7 @@ DexModelLoader
 \family default
 \size default
 : Es un utilitario para descargar de Internet de manera segura un clasificador
- generado por 
+ dinámico generado con 
 \begin_inset ERT
 status open
 
@@ -3914,7 +3916,7 @@ abbr{WEKA}
 \end_inset
 
 .
- El clasificador está implementado en una clase contenida en un artefacto
+ El clasificador está implementado en una clase contenida en una librería
  de 
 \emph on
 software
@@ -3936,7 +3938,7 @@ abbr{JAR}
 \end_layout
 
 \begin_layout Standard
-La actualización dinámica del modelo se muestra en la 
+La actualización dinámica del clasificador se muestra en la 
 \begin_inset ERT
 status open
 
@@ -3950,8 +3952,7 @@ figref{fig5:service-classi}
 \end_inset
 
 .
- Para la actualización al modelo clasificador más reciente generado por
- medio de 
+ Cada nueva versión del clasificador se genera por medio de 
 \begin_inset ERT
 status open
 
@@ -3964,7 +3965,8 @@ abbr{WEKA}
 
 \end_inset
 
- se depende de la conexión a Internet y un recurso publicado remotamente.
+ y se construye para luego disponerlo como una librería remota ha ser descargado
+ de Internet.
  El mecanismo detallado se describe en el apéndice 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3980,7 +3982,7 @@ reference "chapB:carga-dinamica"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4008,12 +4010,12 @@ name "fig5:service-classi"
 status collapsed
 
 \begin_layout Plain Layout
-Actualización del clasificador WEKA
+Actualización del clasificador C4.5
 \end_layout
 
 \end_inset
 
-Mecanismo de actualización del dinámica del clasificador basado en 
+Actualización dinámica del clasificador C4.5 basado en 
 \begin_inset ERT
 status open
 
@@ -4099,7 +4101,8 @@ abbr{HARDroid}
  y además encuestar a usuarios reales durante una sesión de entrenamiento
  físico.
  En esta sección se presenta la vista general de la aplicación explicada
- por medio de artefactos que describen las funcionalidades básicas construidas.
+ por medio de los artefactos que describen las funcionalidades básicas construid
+as.
  
 \end_layout
 
@@ -4317,11 +4320,11 @@ El sistema se suscribe al servicio de reconocimiento de actividades teniendo
 \end_layout
 
 \begin_layout Description
-CU04-Para
+CU04-Parar
 \begin_inset space ~
 \end_inset
 
-Encuesta El usuario acciona un botón para para la sesión de entrenamiento
+Encuesta El usuario acciona un botón para parar la sesión de entrenamiento
  activa.
  
 \begin_inset Newline newline
@@ -4388,8 +4391,16 @@ INCORRECTO
 \end_inset
 
 El sistema despliega un dialogo para obtener la actividad humana declarada
- por el usuario y al seleccionar una actividad se actualiza la tarjeta de
- encuesta.
+ por el usuario.
+\begin_inset Newline newline
+\end_inset
+
+El usuario selecciona la actividad humana que corresponde.
+ 
+\begin_inset Newline newline
+\end_inset
+
+El sistema actualiza la tarjeta de encuesta con la respuesta del usuario.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4489,7 +4500,11 @@ y
 \end_inset
 
 edad El usuario edita sus datos personales: correo electrónico y edad.
- El sistema guarda la información en las preferencias del usuario.
+ 
+\begin_inset Newline newline
+\end_inset
+
+El sistema guarda la información en las preferencias del usuario.
 \end_layout
 
 \begin_layout Description
@@ -4498,7 +4513,11 @@ CU10-Cambiar
 \end_inset
 
 intervalo El usuario edita el intervalo de detección de actividades.
- El sistema guarda la información en las preferencias del usuario y se reinicia
+ 
+\begin_inset Newline newline
+\end_inset
+
+El sistema guarda la información en las preferencias del usuario y se reinicia
  la suscripción al servicio de detección de actividades.
 \end_layout
 
@@ -4509,8 +4528,12 @@ CU11-Cambiar
 
 sincronizar El usuario modifica el comportamiento y el método de sincronizar
  de datos por red.
- El sistema guarda la información en las preferencias del usuario y activa/desac
-tiva sincronizar datos por medio del método seleccionado.
+ 
+\begin_inset Newline newline
+\end_inset
+
+El sistema guarda la información en las preferencias del usuario y activa/desact
+iva sincronizar datos por medio del método seleccionado.
 \end_layout
 
 \begin_layout Description
@@ -4520,8 +4543,12 @@ CU12-Cambiar
 
 notificación El usuario modifica el comportamiento de notificación de nuevas
  actividades detectadas.
- El sistema guarda la información en las preferencias del usuario y activa/desac
-tiva la notificación.
+ 
+\begin_inset Newline newline
+\end_inset
+
+El sistema guarda la información en las preferencias del usuario y activa/desact
+iva la notificación.
 \end_layout
 
 \begin_layout Subsection
@@ -4566,7 +4593,7 @@ Módulos Funcionales
 SurveyApplication
 \family default
 \size default
-: Es el contexto de la aplicación que mantiene acceso a las preferencias,
+: Es el contexto global de la aplicación que mantiene acceso a las preferencias,
  los servicios y las suscripciones a mensajes.
 \end_layout
 
@@ -4616,7 +4643,7 @@ abbr{HAR}
 
 .
  El servicio es iniciado o parado dependiendo de la necesidad del usuario
- en ser encuestado.
+ encuestado.
 \end_layout
 
 \begin_layout Itemize
@@ -4654,7 +4681,7 @@ NotificationReceiver
 \size default
 : Es un receptor de mensajes para crear alertas auditivas en el momento
  que se detectan nuevos resultados.
- Sirven para avisar al usuario final que debe contestar una nueva encuesta.
+ Permite avisar al usuario final que debe contestar una nueva encuesta.
 \end_layout
 
 \begin_layout Itemize
@@ -4675,8 +4702,8 @@ HumanActivityFeed
 UpdateActionReceiver
 \family default
 \size default
-: Es un receptor de mensajes para sincronizar los resultados evaluados en
- la encuesta con el servidor remoto de usuarios encuestados.
+: Es un receptor de mensajes que sincroniza los resultados evaluados por
+ los usuarios encuestados con un servicio remoto.
 \end_layout
 
 \begin_layout Standard
@@ -4694,7 +4721,7 @@ figref{fig5:act-surv-diag}
 \end_inset
 
  se muestran los módulos funcionales que hacen a la aplicación con una notación
- en base a los componentes comunes de 
+ de los componentes de la plataforma 
 \begin_inset ERT
 status open
 
@@ -4997,13 +5024,13 @@ abbr{Android}
 \end_inset
 
 .
- Está construido en base a las mejores prácticas de servicios de utilitarios
- existentes de propiedad intelectual privada como
+ Está construido en base a las mejores prácticas de servicios utilitarios
+ de implementación privada existentes como
 \emph on
  Google Play Services
 \emph default
 .
- Esta herramienta permite que aplicaciones móviles desarrolladas por terceros
+ Este utilitario permite que aplicaciones móviles desarrolladas por terceros
  no dependan de implementaciones privativas sino de un componente de software
  libre.
  Bajo un modelo colaborativo, cualquier solución que utilice esta alternativa
@@ -5029,15 +5056,17 @@ abbr{Android}
 \end_inset
 
 .
- Los resultados obtenidos fueron satisfactorios en cuanto a la integración
- entre aplicación móvil y servicio utilitario en procesos independientes.
- Los resultados experimentales confirmaron que es posible recolectar información
- en terreno a través de la aplicación de encuesta y luego esta información
- pueda ser validada, limpiada y utilizada para mejorar el algoritmo de clasifica
-ción basado en árboles de decisión de forma ininterrumpida.
- Se requieren experimentación adicional para evaluar el servicio bajo condicione
-s más realistas cuando el servicio es instalado en diferentes teléfonos
- móviles y en interacción con otras aplicaciones distintas para su evaluación.
+ Los resultados obtenidos fueron satisfactorios teniendo en cuenta la integració
+n entre implementaciones de aplicación móvil y servidor utilitario separados
+ en procesos independientes.
+ Los resultados experimentales confirmaron la posibilidad de recolectar
+ información en terreno a través de la aplicación de encuesta y que luego
+ esta información pueda ser validada, limpiada y utilizada para mejorar
+ el algoritmo de clasificación basado en árboles de decisión de forma ininterrum
+pida.
+ Se requiere experimentación adicional para evaluar el servicio bajo condiciones
+ realistas cuando es instalado en diferentes teléfonos móviles y en conjunción
+ con aplicaciones distintas para su uso.
 \end_layout
 
 \end_body

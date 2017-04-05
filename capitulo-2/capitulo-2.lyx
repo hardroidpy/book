@@ -436,9 +436,13 @@ key "LaraLabrador2013"
 :
 \end_layout
 
-\begin_layout Description
-Movimiento miden datos inerciales como la aceleración y la orientación respecto
- a un marco de referencia relativo al dispositivo que contiene los sensores.
+\begin_layout Itemize
+
+\series bold
+Movimiento
+\series default
+: miden datos inerciales como la aceleración y la orientación respecto a
+ un marco de referencia relativo al dispositivo que contiene los sensores.
  El acelerómetro y el giroscopio son los más comúnmente utilizados para
  reconocimiento de actividades con un bajo consumo de energía y buena precisión
  de reconocimiento 
@@ -451,8 +455,12 @@ key "Bao2004,LaraLabrador2012"
 .
 \end_layout
 
-\begin_layout Description
-Ubicación miden datos obtenidos con las redes celulares 
+\begin_layout Itemize
+
+\series bold
+Ubicación
+\series default
+: miden datos obtenidos con las redes celulares 
 \begin_inset ERT
 status open
 
@@ -484,8 +492,12 @@ abbr{GPS}
  moderado de energía.
 \end_layout
 
-\begin_layout Description
-Fisiología miden signos vitales del individuo como el ritmo cardíaco (
+\begin_layout Itemize
+
+\series bold
+Fisiología
+\series default
+: miden signos vitales del individuo como el ritmo cardíaco (
 \begin_inset ERT
 status open
 
@@ -501,9 +513,13 @@ abbr{HRM}
 ), la temperatura del cuerpo, el ritmo de respiración, entre otros.
 \end_layout
 
-\begin_layout Description
-Ambiente miden datos externos que rodean al individuo como el nivel de ruido,
- la humedad y/o la temperatura.
+\begin_layout Itemize
+
+\series bold
+Ambiente
+\series default
+: miden datos externos que rodean al individuo como el nivel de ruido, la
+ humedad y/o la temperatura.
  Los sensores de luz, cámara, micrófonos y termómetros miden estas señales.
  
 \end_layout
@@ -1003,9 +1019,9 @@ key "Rajaraman2011"
  e información temporal, pero su desventaja es que requiere una cantidad
  grande de datos de entrenamiento, por lo que puede sufrir de problemas
  de inicio lento y escasez de datos.
- En algunos casos puede presentarse falta de escalabilidad y reusabilidad
- porque un entrenamiento hecho sobre un individuo no se aplique a otra persona
- de distintas características.
+ En algunos casos puede no ser escalable y reutilizable porque un entrenamiento
+ hecho sobre un individuo puede no aplicarse a otro individuo de distintas
+ características.
 \end_layout
 
 \begin_layout Section

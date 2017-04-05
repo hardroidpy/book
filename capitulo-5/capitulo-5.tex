@@ -557,9 +557,9 @@ continuación.
 
 \subsubsection{Interfaz de Servicio}
 
-Este módulo define el modelo dominio y la interfaz del para integración
+Este módulo define el modelo dominio y la interfaz de integración
 (a través de una \abbr{API}). En el dominio del problema se identificaron
-los siguientes conceptos definidos:
+los siguientes conceptos:
 \begin{itemize}
 \item \emph{Cliente} (\texttt{\small{}ActivityRecognitionClient}): Un cliente
 es un proceso remoto que requiere reconocer actividades humanas con
@@ -580,8 +580,8 @@ en forma de vector característico.
 En la \figref{fig5:domain-model} se muestra el diagrama de clases
 con los artefactos construidos para el manejo del dominio del problema.
 Las clases se definieron con semejanza a los conceptos de \emph{Google
-Play Services} \cite{Google2016l} y la documentación se describe
-en (véase \cite{GimenezYegros2016d}).
+Play Services} \cite{Google2016l} y la documentación se detalla en
+(véase \cite{GimenezYegros2016d}).
 
 \begin{figure}[H]
 \begin{centering}
@@ -592,17 +592,17 @@ en (véase \cite{GimenezYegros2016d}).
 \end{figure}
 
 La interfaz del servicio se compone de un conjunto de llamadas para
-que cualquier cliente pueda realizar con las siguientes acciones:
+que cualquier cliente disponga de las siguientes acciones:
 \begin{itemize}
 \item \emph{Conectarse} al servicio
 \item \emph{Desconectarse} del servicio
-\item \emph{Subscribirse} estableciendo la periodicidad de los resultados
-de actividades humanas esperados. 
-\item \emph{Obtener} un resultado de actividades humanas al instante.
+\item \emph{Subscribirse} con cierta periodicidad a resultados de actividades
+humanas detectados. 
+\item \emph{Obtener} el resultado de actividades humanas detectado más reciente.
 \end{itemize}
-Teniendo en consideración el modelo de dominio citado anteriormente
-y las acciones requeridas se presenta la interfaz proveída por el
-servicio en la \figref{fig5:service-layer}.
+Teniendo en consideración el modelo de dominio y las acciones requeridas
+se presenta la interfaz del servicio en el diagrama de clases de la
+\figref{fig5:service-layer}.
 
 \begin{figure}[H]
 \begin{centering}
@@ -613,53 +613,54 @@ servicio en la \figref{fig5:service-layer}.
 \end{figure}
 
 Para poder clarificar la interfaz proveída por la capa de servicios
-se describe textualmente el contrato definido para la \abbr{API}
-para subscribirse a eventos de detección actividades humanas:
+se describe textualmente el contrato definido por la \abbr{API} para
+subscribirse a eventos de detección actividades humanas:
 \begin{itemize}
 \item \texttt{\footnotesize{}requestSingleUpdate(callbackIntent: PendingIntent): void
 public} \\
-Se subscribe a un evento de detección de actividad 
+Obtiene el resultado de detección de actividad más reciente 
 \item \texttt{\footnotesize{}requestActivityUpdates(detectionIntervalMillis: long,
 }~\\
 \texttt{\footnotesize{}listener: ActivityRecognitionListener): void
 public}\\
-Se suscribe a un evento de detección de actividad durante un intervalo
-de mili-segundos. Espera la respuesta con un observador.
+Se suscribe a eventos de detección de actividad a intervalos regulares
+en mili-segundos. Espera la respuesta con un observador.
 \item \texttt{\footnotesize{}requestActivityUpdates(detectionIntervalMillis: long,
 }~\\
 \texttt{\footnotesize{}callbackIntent: PendingIntent): void public}
 \\
-Se suscribe a un evento de detección de actividad durante un intervalo
-de mili-segundos. Espera la respuesta con una función diferida.
+Se suscribe a eventos de detección de actividad a intervalos regulares
+en mili-segundos. Espera la respuesta con una función diferida.
 \item \texttt{\footnotesize{}removeActivityUpdates(listener: ActivityRecognitionListener): void
 public} \\
-Se desuscribe a un evento de detección de actividad dado su observador.
+Se desuscribe a eventos de detección de actividad teniendo en cuenta
+el observador registrado.
 \item \texttt{\footnotesize{}removeActivityUpdates(callbackIntent: PendingIntent): void
 public}\\
-Se desuscribe a un evento de detección de actividad dado su función
-diferida.
+Se desuscribe a eventos de detección de actividad tendiendo en cuenta
+la función diferida registrada.
 \end{itemize}
 En las siguientes secciones se detallan los módulos encargados de
-implementar la lógica de negocio y funcionalidades bases de la interfaz
-de servicio del motor reconocedor.
+implementar la lógica de negocio y las funcionalidades esta interfaz.
 
 \subsubsection{Servidor}
 
-Este módulo implementa las llamadas a procedimientos remotos desde
-clientes distribuidos en otros procesos. La lógica del servicio esta
-dividido en dos responsabilidades que manejan la conexión y la suscripción.
+Este módulo implementa el servidor de llamadas a procedimientos remotos
+desde clientes distribuidos en otros procesos. La lógica de negocio
+se divide en dos responsabilidades para manejar la conexión y la suscripción
+por medio de los siguientes artefactos:
 \begin{itemize}
 \item \texttt{\small{}ActivityRecognitionService}: Es la función principal
-del servicio ya que implementa el \abbr{IPC} de \abbr{Android} para
-establecer la conexión con el cliente. Además se encarga de coordinar
-las suscripción de clientes y publicar los resultados de detección
-de actividades. 
+que implementa el servidor \abbr{IPC} de \abbr{Android} para atender
+las conexiones con los clientes. Además se encarga de registrar las
+suscripciones y emitir los resultados de detección de acuerdo a las
+preferencias de los clientes. 
 \item \texttt{\small{}ActivityRecognitionManagerImpl}: Es un utilitario
-que hace de mediador entre las llamadas remotas a la \abbr{API} de
-la interfaz y la ejecución de la lógica del servicio.
+que hace de mediador entre las llamadas remotas a la \abbr{API} y
+el servidor en ejecución.
 \item \texttt{\small{}ActivityRecognitionSubscription}: Es una estructura
-para memorizar las preferencias de suscripción de los clientes manejado
-por la función principal del servicio.
+de datos para memorizar las preferencias de suscripción de los clientes
+administrado por el servidor.
 \end{itemize}
 La interacción que ocurre durante la conexión de un cliente al servidor
 de reconocimiento se muestra en la \figref{fig5:service-subs}. Para
@@ -676,29 +677,32 @@ móvil \abbr{HARDroid}.
 \caption[Interacción cliente y servidor de HARDroid]{\label{fig5:service-subs}Interacción cliente y servidor de \abbr{HARDroid}}
 \end{figure}
 
-El servidor mantiene una lista de suscripciones con los tiempos de
-preferencia de notificación de eventualidad de cada cliente. 
+La primeras dos interacciones corresponde a la conexión de clientes
+y la tercera interacción es la suscripción. El servidor administra
+una lista de suscripciones para cada cliente con los tiempos de preferencia
+de notificación registrados ante una eventualidad. 
 
 \subsubsection{Procesamiento}
 
-Este módulo se encarga de ejecutar el motor de reconocimiento de actividades
-humanas a intervalos periódicos de tiempo siempre que hayan suscripciones
-memorizadas. La ejecución del motor produce siempre un resultado global
-de actividad humana.
+Este módulo es el motor de reconocimiento de actividades humanas que
+se ejecuta a intervalos periódicos de tiempo siempre que existan suscripciones
+registradas. La ejecución del motor produce siempre un resultado global
+de actividad humana detectada por medio de los siguientes artefactos: 
 \begin{itemize}
 \item \texttt{\small{}ActivityRecognitionWorker}: Es la función principal
-del motor de reconocimiento que programa una tarea periódica de recolección
-de datos sensoriales, calculo de vectores característicos y clasificación
-de actividad para producir y emitir un nuevo resultado.
+que ejecuta una tarea periódica de recolección de datos sensoriales,
+calculo de vectores característicos y clasificación de actividad para
+producir un nuevo resultado. La producción de un nuevo resultado dispara
+un evento de publicación a través del servidor.
 \item \texttt{\small{}FeatureProcessing}: Es un utilitario que calcula los
 vectores característicos.
 \item \texttt{\small{}SignalProcessing}: Es un utilitario con funciones
 de procesamiento de señales. 
 \end{itemize}
-La ejecución del motor de reconocimiento que empieza durante el inicio
-del servidor de reconocimiento se muestra en la \figref{fig5:service-worker}.
-El motor realiza las tareas en un intervalo de tiempo definido por
-el menor tiempo memorizado en las suscripciones de clientes.
+La ejecución del motor de reconocimiento empieza al iniciar servidor
+y se muestra en la \figref{fig5:service-worker}. El motor realiza
+las tareas en un intervalo de tiempo definido por el menor tiempo
+registrado de acuerdo a las suscripciones de clientes.
 
 \begin{figure}[H]
 \begin{centering}
@@ -708,10 +712,9 @@ el menor tiempo memorizado en las suscripciones de clientes.
 de \abbr{HARDroid}}
 \end{figure}
 
-Ante la eventualidad de un nuevo resultado de reconocimiento emitido
-por el motor de reconocimiento se realiza una publicación de resultados
-a los clientes correspondientes. El algoritmo de reconocimiento se
-describe a continuación.
+Ante la eventualidad de un nuevo resultado detectado por el motor
+de reconocimiento se realiza una publicación de resultados a los clientes
+correspondientes. El algoritmo de reconocimiento se describe a continuación.
 
 \begin{algorithm}[H]
 \begin{algorithmic}[1]
@@ -721,10 +724,10 @@ describe a continuación.
  			\State\textit{Terminar}
 		\EndIf
 		\State $t_w \leftarrow 10$
-\rcomment{Esta es la ventana de tiempo necesaria para el reconocimiento}
+\rcomment{Ventana de tiempo estándar de reconocimiento}
 		\State $t_{min} \leftarrow \min_{\forall s \in S} s$
 		\State Esperar $t_{min} - t_w$ segundos 
-		\State $ a_{xyz} = $ Leer datos de asceleracion por $t_w$ segundos o 512 muestras
+		\State $ a_{xyz} = $ Leer sensor por $t_w$ segundos o 512 muestras
 		\State $ C = \emptyset$
 		\For{$i := 1 \to 512$}
 			\State $ v_f = $ Calcular vector caracteristicos de $a_{xyz}$ con valores entre $[i, i + 127]$
@@ -742,36 +745,37 @@ describe a continuación.
 \end{algorithm}
 
 
-\paragraph{Clasificador}
+\subsubsection{Clasificador}
 
-Este módulo se encarga de la clasificación de un vector característico
-y emite una estimación de la actividad humana detectada. Posee dos
-implementaciones principales y complementarias.
+Este módulo es el clasificador de actividades humanas a partir de
+un vector característico y produce una estimación de la actividad
+humana detectada. Posee dos implementaciones principales y complementarias
+de acuerdo a los siguientes artefactos:
 \begin{itemize}
 \item \texttt{\small{}ActivityClassifier}: Es una clase genérica que define
-los métodos comunes de los clasificadores de actividades humanas.
+los métodos comunes para los clasificadores de actividades humanas.
 \item \texttt{\small{}DecisionTreeClassifier}: Es la implementación de un
 clasificador de actividades humanas basado en arboles de decisión
 generados por el \emph{software} \texttt{\abbr{WEKA}} \cite{Frank2016}.
 \item \texttt{\small{}DumbClassifier}: Es la implementación de un clasificador
-de actividades humanas simple que no emite un resultado válido.
+de actividades humanas simple que no produce un resultado válido.
 \item \texttt{\small{}DexModelLoader}: Es un utilitario para descargar de
-Internet de manera segura un clasificador generado por \abbr{WEKA}.
-El clasificador está implementado en una clase contenida en un artefacto
+Internet de manera segura un clasificador dinámico generado con \abbr{WEKA}.
+El clasificador está implementado en una clase contenida en una librería
 de \emph{software} en formato \abbr{JAR},
 \end{itemize}
-La actualización dinámica del modelo se muestra en la \figref{fig5:service-classi}.
-Para la actualización al modelo clasificador más reciente generado
-por medio de \abbr{WEKA} se depende de la conexión a Internet y un
-recurso publicado remotamente. El mecanismo detallado se describe
-en el apéndice \ref{chapB:carga-dinamica}.
+La actualización dinámica del clasificador se muestra en la \figref{fig5:service-classi}.
+Cada nueva versión del clasificador se genera por medio de \abbr{WEKA}
+y se construye para luego disponerlo como una librería remota ha ser
+descargado de Internet. El mecanismo detallado se describe en el apéndice
+\ref{chapB:carga-dinamica}.
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[width=1\columnwidth]{capitulo-5/graphics/service_classi}
 \par\end{centering}
-\caption[Actualización del clasificador WEKA]{\label{fig5:service-classi}Mecanismo de actualización del dinámica
-del clasificador basado en \abbr{WEKA}}
+\caption[Actualización del clasificador C4.5]{\label{fig5:service-classi}Actualización dinámica del clasificador
+C4.5 basado en \abbr{WEKA}}
 \end{figure}
 
 
@@ -785,7 +789,8 @@ es bastante sencillo pero con los complementos necesarios que permiten
 validar las funcionalidades de \abbr{HARDroid} y además encuestar
 a usuarios reales durante una sesión de entrenamiento físico. En esta
 sección se presenta la vista general de la aplicación explicada por
-medio de artefactos que describen las funcionalidades básicas construidas. 
+medio de los artefactos que describen las funcionalidades básicas
+construidas. 
 
 \subsection{Requerimientos Funcionales}
 
@@ -841,7 +846,7 @@ una nueva sesión de entrenamiento. \\
 El sistema se suscribe al servicio de reconocimiento de actividades
 teniendo en cuenta las preferencias del usuario y se generan tarjetas
 visuales de encuesta periódicamente.
-\item [{CU04-Para~Encuesta}] El usuario acciona un botón para para la
+\item [{CU04-Parar~Encuesta}] El usuario acciona un botón para parar la
 sesión de entrenamiento activa. \\
 El sistema se desconecta del servicio de reconocimiento de actividades.
 \item [{CU05-Ver~actividades~detectadas}] El usuario dispone de una lista
@@ -855,8 +860,9 @@ El sistema actualiza la tarjeta de encuesta como detectada correctamente.
 la tarjeta visual de encuesta negando el resultado de la actividad
 humana detectada por medio del botón <<INCORRECTO>>. \\
 El sistema despliega un dialogo para obtener la actividad humana declarada
-por el usuario y al seleccionar una actividad se actualiza la tarjeta
-de encuesta.
+por el usuario.\\
+El usuario selecciona la actividad humana que corresponde. \\
+El sistema actualiza la tarjeta de encuesta con la respuesta del usuario.
 \end{description}
 
 \subsubsection{Cambiar preferencias}
@@ -877,20 +883,20 @@ casos de uso correspondientes.
 \item [{CU08-Cambiar~preferencias}] El usuario dispone de una lista de
 preferencias de edición agrupados por categorías. 
 \item [{CU09-Cambiar~correo~y~edad}] El usuario edita sus datos personales:
-correo electrónico y edad. El sistema guarda la información en las
-preferencias del usuario.
+correo electrónico y edad. \\
+El sistema guarda la información en las preferencias del usuario.
 \item [{CU10-Cambiar~intervalo}] El usuario edita el intervalo de detección
-de actividades. El sistema guarda la información en las preferencias
-del usuario y se reinicia la suscripción al servicio de detección
-de actividades.
+de actividades. \\
+El sistema guarda la información en las preferencias del usuario y
+se reinicia la suscripción al servicio de detección de actividades.
 \item [{CU11-Cambiar~sincronizar}] El usuario modifica el comportamiento
-y el método de sincronizar de datos por red. El sistema guarda la
-información en las preferencias del usuario y activa/desactiva sincronizar
-datos por medio del método seleccionado.
+y el método de sincronizar de datos por red. \\
+El sistema guarda la información en las preferencias del usuario y
+activa/desactiva sincronizar datos por medio del método seleccionado.
 \item [{CU12-Cambiar~notificación}] El usuario modifica el comportamiento
-de notificación de nuevas actividades detectadas. El sistema guarda
-la información en las preferencias del usuario y activa/desactiva
-la notificación.
+de notificación de nuevas actividades detectadas. \\
+El sistema guarda la información en las preferencias del usuario y
+activa/desactiva la notificación.
 \end{description}
 
 \subsection{Diseño Detallado}
@@ -902,7 +908,7 @@ Servicios, Proveedores y Receptores que se describen a continuación.
 
 \subsubsection{Módulos Funcionales}
 \begin{itemize}
-\item \texttt{\small{}SurveyApplication}: Es el contexto de la aplicación
+\item \texttt{\small{}SurveyApplication}: Es el contexto global de la aplicación
 que mantiene acceso a las preferencias, los servicios y las suscripciones
 a mensajes.
 \item \texttt{\small{}FeedActivity}: Es la vista principal de la aplicación
@@ -914,7 +920,7 @@ la aplicación que modifica las preferencias del usuario final y las
 almacena en el dispositivo móvil.
 \item \texttt{\small{}DetectorService}: Es un servicio que mantiene una
 conexión persistente con el servicio \abbr{HAR}. El servicio es iniciado
-o parado dependiendo de la necesidad del usuario en ser encuestado.
+o parado dependiendo de la necesidad del usuario encuestado.
 \item \texttt{\small{}DetectedActivitiesService}: Es un servicio de función
 diferida que permite recibir actualizaciones de resultados detectados
 por el servicio \abbr{HAR}. Por cada actividad humana detectada,
@@ -922,17 +928,17 @@ persiste la información y notifica por mensaje que existen nuevos
 resultados.
 \item \texttt{\small{}NotificationReceiver}: Es un receptor de mensajes
 para crear alertas auditivas en el momento que se detectan nuevos
-resultados. Sirven para avisar al usuario final que debe contestar
-una nueva encuesta.
+resultados. Permite avisar al usuario final que debe contestar una
+nueva encuesta.
 \item \texttt{\small{}HumanActivityFeed}: Es el proveedor de contenidos
 que persiste los resultados a ser evaluados durante la encuesta.
 \item \texttt{\small{}UpdateActionReceiver}: Es un receptor de mensajes
-para sincronizar los resultados evaluados en la encuesta con el servidor
-remoto de usuarios encuestados.
+que sincroniza los resultados evaluados por los usuarios encuestados
+con un servicio remoto.
 \end{itemize}
 En la \figref{fig5:act-surv-diag} se muestran los módulos funcionales
-que hacen a la aplicación con una notación en base a los componentes
-comunes de \abbr{Android} y su interacción. 
+que hacen a la aplicación con una notación de los componentes de la
+plataforma \abbr{Android} y su interacción. 
 
 \begin{figure}[H]
 \begin{centering}
@@ -992,24 +998,23 @@ ocurre por medio de una interacción del usuario en la pantalla \emph{Bienvenida
 \label{sec56:conclusion}En esta sección presentamos un servicio de
 reconocimiento de actividades humanas (\abbr{HAR}) para la plataforma
 \abbr{Android}. Está construido en base a las mejores prácticas de
-servicios de utilitarios existentes de propiedad intelectual privada
-como\emph{ Google Play Services}. Esta herramienta permite que aplicaciones
-móviles desarrolladas por terceros no dependan de implementaciones
-privativas sino de un componente de software libre. Bajo un modelo
-colaborativo, cualquier solución que utilice esta alternativa obtiene
-beneficios como adaptarlo a sus necesidades o gozar de las mejoras
-evolutivas. 
+servicios utilitarios de implementación privada existentes como\emph{
+Google Play Services}. Este utilitario permite que aplicaciones móviles
+desarrolladas por terceros no dependan de implementaciones privativas
+sino de un componente de software libre. Bajo un modelo colaborativo,
+cualquier solución que utilice esta alternativa obtiene beneficios
+como adaptarlo a sus necesidades o gozar de las mejoras evolutivas. 
 
 Además, esta implementación fue probada por medio de una aplicación
 móvil independiente donde se evaluó el funcionamiento desacoplado
 proveído por el marco de trabajo de \abbr{Android}. Los resultados
-obtenidos fueron satisfactorios en cuanto a la integración entre aplicación
-móvil y servicio utilitario en procesos independientes. Los resultados
-experimentales confirmaron que es posible recolectar información en
-terreno a través de la aplicación de encuesta y luego esta información
-pueda ser validada, limpiada y utilizada para mejorar el algoritmo
-de clasificación basado en árboles de decisión de forma ininterrumpida.
-Se requieren experimentación adicional para evaluar el servicio bajo
-condiciones más realistas cuando el servicio es instalado en diferentes
-teléfonos móviles y en interacción con otras aplicaciones distintas
-para su evaluación.
+obtenidos fueron satisfactorios teniendo en cuenta la integración
+entre implementaciones de aplicación móvil y servidor utilitario separados
+en procesos independientes. Los resultados experimentales confirmaron
+la posibilidad de recolectar información en terreno a través de la
+aplicación de encuesta y que luego esta información pueda ser validada,
+limpiada y utilizada para mejorar el algoritmo de clasificación basado
+en árboles de decisión de forma ininterrumpida. Se requiere experimentación
+adicional para evaluar el servicio bajo condiciones realistas cuando
+es instalado en diferentes teléfonos móviles y en conjunción con aplicaciones
+distintas para su uso.

@@ -258,7 +258,7 @@ abbr{Android}
  construida fue publicada para que los participantes del estudio la descarguen
  y colaboren aportando los datos asociados a las actividades reconocidas
  mientras utilizan el sistema de reconocimiento.
- El objetivo de este ejercicio es retro-alimentar el modelo de aprendizaje
+ El objetivo de este ejercicio es retroalimentar el modelo de aprendizaje
  automático periódicamente.
  La información recolectada se comparte a través de Internet para que se
  evalúe y eventualmente sirva como entrada para construir un nuevo el modelo
@@ -313,8 +313,8 @@ Realizar una comparación de distintos métodos de aprendizaje automático.
 \end_layout
 
 \begin_layout Enumerate
-Utilizar más variables Incluir más variables en el procesamiento de la señal
- para mejorar las predicciones teniendo en cuenta la orientación del dispositivo.
+Incluir más variables en el procesamiento de la señal para mejorar las prediccio
+nes teniendo en cuenta la orientación del dispositivo.
  
 \end_layout
 
@@ -325,9 +325,18 @@ Identificar otras actividades aplicado a otras disciplinas o contextos.
 
 \begin_layout Enumerate
 Utilizar un reloj inteligente (
-\emph on
-Smartwatch
-\emph default
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Smartwatches}
+\end_layout
+
+\end_inset
+
 ) u otros accesorios que agreguen variables relevantes en el reconocimiento
  de actividades dependiendo del contexto.
  
@@ -345,7 +354,7 @@ Se propone generar modelos segmentados por distintas características de
 
 \begin_layout Standard
 Entre los métodos de aprendizaje automático existen varias opciones por
- explorar, como las técnicas de (
+ explorar, como las técnicas de vectores de soporte (
 \begin_inset ERT
 status open
 
@@ -358,12 +367,21 @@ abbr{SVM}
 
 \end_inset
 
-, 
-\emph on
-Support Vector Machine
-\emph default
-) o Redes Neuronales, explorando cual obtiene mejores resultados en contrapartid
-a con el consumo de batería del dispositivo móvil.
+) o redes neuronales (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ANN}
+\end_layout
+
+\end_inset
+
+), y explorar cual obtiene mejores resultados en contrapartida con el consumo
+ de batería del dispositivo móvil.
 \end_layout
 
 \begin_layout Standard

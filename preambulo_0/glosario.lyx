@@ -404,6 +404,17 @@ description "Teléfonos inteligentes"
 \begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
+symbol "Smarthwatches"
+description "Relojes Inteligentes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
 symbol "IPC"
 description "Inter Process Communication"
 

@@ -678,33 +678,30 @@ El proceso de aprendizaje puede realizarse en base a tres metodologías
 
 El aprendizaje \emph{basado en lotes} consiste en contar con la mayor
 cantidad de datos de entrenamiento al principio del proceso y utilizarlo
-íntegramente para construir el modelo una sola vez. Por otro lado
-el aprendizaje \emph{en linea} puede contar con los datos de entrenamiento
-a medida que se disponen de los mismos, como en un flujo de datos,
-estos son examinados una sola vez y no pueden ser revisados. Con este
-método se mantiene el modelo constantemente, a medida que nuevas instancias
-de entrenamiento son recibidas, se puede elegir modificar el modelo
-y mejorarlo con nuevas instancias. 
+íntegramente para construir el modelo una sola vez y para siempre. 
 
-Las ventajas de realizar el aprendizaje en linea se pueden apreciar
-a simple vista. El conjunto de entrenamiento de entrada puede ser
-de gran tamaño sin necesidad de acceder a más de una instancia la
-vez. También, el modelo puede adaptarse a los cambios que emerjan
-en la población de instancias de entrenamiento a medida que transcurre
-el tiempo.
-
-Una mejora aplicada al aprendizaje en linea es el aprendizaje \emph{activo}.
+Por otro lado el aprendizaje \emph{en linea} puede contar con los
+datos de entrenamiento a medida que se disponen de los mismos, como
+en un flujo de datos, estos son examinados una sola vez sin revisión.
+El modelo es mantenido de forma continua, a medida que nuevas instancias
+de entrenamiento son recibidas, se puede optar por modificar el modelo
+y mejorarlo con nuevas instancias. Las ventajas de este enfoque son: 
+\begin{enumerate}
+\item El conjunto de entrenamiento de entrada puede ser de gran tamaño sin
+necesidad de acceder a más de una instancia la vez. 
+\item El modelo puede adaptarse a los cambios que emerjan en la población
+de instancias de entrenamiento a medida que transcurre el tiempo.
+\end{enumerate}
+Una mejora del aprendizaje \emph{en linea} es el aprendizaje \emph{activo}.
 El clasificador se construye primeramente utilizando un conjunto de
 entrenamiento, pero a la par se pueden recibir datos no clasificados
 para que el modelo los clasifique. Si el modelo realiza una clasificación
 con mucha incertidumbre, se puede requerir que la instancia sea verificada
-para aseverar la clasificación a un costo significativo. 
-
-Por ejemplo, la instancia puede ser retenida y verificada manualmente
-por medio de una encuesta en terreno a personas reales. De esta manera
-las instancias verificadas pueden luego ser utilizadas para mejorar
-el modelo clasificador (véase en la \figref{fig4:componentes-har}
-la retroalimentación). 
+para aseverar la clasificación a un costo significativo. Por ejemplo,
+la instancia puede ser retenida y verificada manualmente por medio
+de una encuesta en terreno a personas reales. De esta manera las instancias
+verificadas pueden luego ser utilizadas para mejorar el modelo clasificador
+(véase en la \figref{fig4:componentes-har} la retroalimentación). 
 
 En este trabajo se busca tener nuevas instancias de entrenamiento
 por medio de un proceso colaborativo, partiendo inicialmente de un
@@ -738,7 +735,16 @@ el algoritmo de aprendizaje automático. Por ejemplo, si se construyen
 
 \subsection{Clasificación}
 
-TODO:
+El propósito de crear un modelo clasificador es no solamente clasificar
+el conjunto entrenamiento sino clasificar datos con cierta precisión
+cuya etiqueta no es conocida. Nuevamente la preparación es una requisito
+primordial para transformar datos de entrada en instancias que puedan
+ser evaluadas por el modelo y emitir una etiqueta resultado particular
+para cada instancia desconocida.
+
+Este trabajo clasifica instancias desconocidas por medio de un modelo
+construido con el algoritmo C4.5 (\ref{algoC45}) basado en el enfoque
+de arboles de decisión descrito en el capitulo \ref{chap:Aprendizaje-Automatico}.
 
 \section{Capacidades deseables}
 
