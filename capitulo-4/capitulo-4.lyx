@@ -1337,7 +1337,7 @@ SensorLog
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "SLog2016"
+key "Alan2014s"
 
 \end_inset
 
@@ -4648,46 +4648,46 @@ Existen un conjunto de características deseables que deben ser satisfechas
  Las características se listan a continuación:
 \end_layout
 
-\begin_layout Enumerate
-Portabilidad, el sistema utiliza sensores adjuntos a los individuos (Ej.
+\begin_layout Itemize
+Portabilidad: el sistema utiliza sensores adjuntos a los individuos (Ej.
  el acelerómetro) y no deben obstruir las actividades cotidianas de los
  usuarios durante su uso.
  El fin es de evitar que se afecte la adopción masiva del sistema.
  
 \end_layout
 
-\begin_layout Enumerate
-Conectividad, el sistema debe transmitir de manera confiable los datos recolecta
+\begin_layout Itemize
+Conectividad: el sistema debe transmitir de manera confiable los datos recolecta
 dos y/o procesados a algún componente desplegado de forma remota.
  
 \end_layout
 
-\begin_layout Enumerate
-Almacenamiento, el sistema debe persistir los datos recolectados y/o procesados
+\begin_layout Itemize
+Almacenamiento: el sistema debe persistir los datos recolectados y/o procesados
  de manera local en el dispositivo móvil con el fin de mantener la calidad
  y minimizar la cantidad transferida a otros componentes.
 \end_layout
 
-\begin_layout Enumerate
-Procesamiento, el sistema debe procesar y transformar los datos en bruto
+\begin_layout Itemize
+Procesamiento: el sistema debe procesar y transformar los datos en bruto
  para producir información relevante para el reconocimiento de actividades.
 \end_layout
 
-\begin_layout Enumerate
-Ubiquidad, el sistema debe operar en cualquier condición y contexto en que
+\begin_layout Itemize
+Ubiquidad: el sistema debe operar en cualquier condición y contexto en que
  la persona se encuentre sin interferir u obligar al usuario a interactuar
  con el sistema.
 \end_layout
 
-\begin_layout Enumerate
-Uso de energía, el sistema debe preservar el uso de energía en los dispositivos
+\begin_layout Itemize
+Uso de energía: el sistema debe preservar el uso de energía en los dispositivos
  móviles que están implementados.
  La lectura de datos, el procesamiento y la conectividad no deben incurrir
  en gastos excesivos de energía para que el sistema pueda operar.
 \end_layout
 
-\begin_layout Enumerate
-Privacidad, el sistema debe mantener de manera confidencial los datos recolectad
+\begin_layout Itemize
+Privacidad: el sistema debe mantener de manera confidencial los datos recolectad
 os y/o producidos durante la adopción masiva del sistema, además de alertar
  sobre la utilización de datos sensibles que requieran el consentimiento
  del usuario.
