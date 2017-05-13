@@ -401,7 +401,7 @@ figref{fig4:componentes-har}
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1950,7 +1950,7 @@ tabref{tab4:ex-signal}
 \begin_inset Formula $r$
 \end_inset
 
-asociada al sensor.
+ asociada al sensor.
 \end_layout
 
 \begin_layout Standard
@@ -2416,17 +2416,10 @@ Las ventanas de tiempo hacen que las señales queden segmentadas en muestras
  discretas utilizadas como unidades de reconocimiento de actividad.
  De esta manera, cada ventana tiene inequívocamente una actividad humana
  asociada y de esta manera podemos satisfacer el requisito planteado por
- la definición del problema 
+ la definición del problema en 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def2:harp-rel"
-
-\end_inset
-
- en la sección 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec261:definicion-har"
 
 \end_inset
 
@@ -2502,17 +2495,10 @@ name "ssec44:extraction"
 
 \end_inset
 
-Rememorando la definición del problema relajado
+Rememorando la definición del problema relajado en 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def2:harp-rel"
-
-\end_inset
-
- en la sección 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec261:definicion-har"
 
 \end_inset
 
@@ -2718,11 +2704,11 @@ tabref{tab4:metricas}
 \begin_inset Formula $s$
 \end_inset
 
- en cualquier ventana
+ en cualquier ventana 
 \begin_inset Formula $w_{j}$
 \end_inset
 
- de tamaño
+ de tamaño 
 \begin_inset Formula $n$
 \end_inset
 
@@ -3056,7 +3042,7 @@ name "tab4:metricas"
 
 
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Métricas de valores característicos
@@ -3064,7 +3050,7 @@ Métricas de valores característicos
 
 \end_inset
 
-Métricas para el calculo de vectores característicos según
+Métricas para el calculo de vectores característicos según 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ReyesOrtiz2015"
@@ -3090,7 +3076,7 @@ Las señales procesadas del conjunto
 \end_inset
 
  corresponden al atributo de la aceleración.
- Se utiliza un conjunto
+ Se utiliza un conjunto 
 \begin_inset Formula $S=\left\{ s_{0}\right\} $
 \end_inset
 
@@ -3769,7 +3755,7 @@ key "Raschka2014"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4334,7 +4320,7 @@ name "tab4:labeled"
 
 
 \begin_inset Argument 1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Instancias etiquetadas
@@ -4402,7 +4388,7 @@ reference "chap:Aprendizaje-Automatico"
 
 \end_inset
 
- la elección es el algoritmo C4.5 (
+ la elección es el algoritmo C4.5 (algoritmo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "algoC45"
