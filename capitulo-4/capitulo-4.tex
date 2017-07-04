@@ -388,7 +388,7 @@ de tiempo $w$ en vez de utilizar una sola medida instantánea en $t$.
 
 En la \tabref{tab4:ex-signal} se muestra una tabla con posibles medidas
 instantáneas para la señal de aceleración $a(t)$ en una ventana de
-tiempo $w_{j}$ con una taza de muestreo $r$asociada al sensor.
+tiempo $w_{j}$ con una taza de muestreo $r$ asociada al sensor.
 
 \begin{table}[!tbph]
 \begin{centering}
@@ -417,8 +417,7 @@ Las ventanas de tiempo hacen que las señales queden segmentadas en
 muestras discretas utilizadas como unidades de reconocimiento de actividad.
 De esta manera, cada ventana tiene inequívocamente una actividad humana
 asociada y de esta manera podemos satisfacer el requisito planteado
-por la definición del problema \ref{def2:harp-rel} en la sección
-\ref{sec261:definicion-har}. 
+por la definición del problema en \ref{def2:harp-rel}. 
 
 Para incrementar la cantidad de muestras se utiliza una superposición
 de $50\%$ con ventanas consecutivas y con tamaño de $2.56$ segundos,
@@ -439,16 +438,15 @@ la siguiente sección.
 
 \subsection{Extracción}
 
-\label{ssec44:extraction}Rememorando la definición del problema relajado\ref{def2:harp-rel}
-en la sección \ref{sec261:definicion-har}, la incógnita principal
-consiste en la comparación de las muestras provenientes de dos ventanas
-$w_{1}$ y $w_{2}$, cada muestra con medidas $S_{j}$ que corresponden
-a señales completamente distintas. Estas señales no serán idénticas
-por más que sean obtenidas del mismo individuo realizando la misma
-actividad física. Por lo tanto, para comparar muestras entres sí es
-necesario extraer valores característicos en cada ventana $w_{j}$
-por medio del filtro de información relevante y el calculo de valores
-que identifiquen de cierta manera a las señales. 
+\label{ssec44:extraction}Rememorando la definición del problema relajado
+en \ref{def2:harp-rel}, la incógnita principal consiste en la comparación
+de las muestras provenientes de dos ventanas $w_{1}$ y $w_{2}$,
+cada muestra con medidas $S_{j}$ que corresponden a señales completamente
+distintas. Estas señales no serán idénticas por más que sean obtenidas
+del mismo individuo realizando la misma actividad física. Por lo tanto,
+para comparar muestras entres sí es necesario extraer valores característicos
+en cada ventana $w_{j}$ por medio del filtro de información relevante
+y el calculo de valores que identifiquen de cierta manera a las señales. 
 
 El proceso de extracción se traduce en vectores característicos (\abbr{feature vectors})
 con información relevante que componen varias métricas calculadas
@@ -486,8 +484,8 @@ dominio de la frecuencia.
 \end{enumerate}
 En la \tabref{tab4:metricas} se resumen las métricas enumeradas anteriormente
 en el orden establecido junto con el nombre de función y la formulación
-matemática correspondiente para una señal dada$s$ en cualquier ventana$w_{j}$
-de tamaño$n$.
+matemática correspondiente para una señal dada$s$ en cualquier ventana
+$w_{j}$ de tamaño $n$.
 
 \begin{table}[!tbph]
 \begin{centering}
@@ -521,11 +519,11 @@ Función & Formulación\tabularnewline
 \end{tabular}
 \par\end{centering}
 \caption[Métricas de valores característicos]{\label{tab4:metricas}Métricas para el calculo de vectores característicos
-según\cite{ReyesOrtiz2015}.}
+según \cite{ReyesOrtiz2015}.}
 \end{table}
 
 Las señales procesadas del conjunto $S$ corresponden al atributo
-de la aceleración. Se utiliza un conjunto$S=\left\{ s_{0}\right\} $
+de la aceleración. Se utiliza un conjunto $S=\left\{ s_{0}\right\} $
 con $k=1$, donde $s_{0}$ corresponde a la magnitud del vector resultante
 de las medidas de fuerza ejercida en los tres ejes según la ecuación\ref{eq4:magnitud}.
 
@@ -672,9 +670,9 @@ vector característico.
 El requisito primordial para la tarea de aprendizaje es escoger al
 algoritmo adecuado para la clasificación. Así como se presenta en
 el capitulo \ref{chap:Aprendizaje-Automatico} la elección es el algoritmo
-C4.5 (\ref{algoC45}) basado en el enfoque de arboles de decisión.
-El proceso de aprendizaje puede realizarse en base a tres metodologías
-\cite{Rajaraman2011}.
+C4.5 (algoritmo \ref{algoC45}) basado en el enfoque de arboles de
+decisión. El proceso de aprendizaje puede realizarse en base a tres
+metodologías \cite{Rajaraman2011}.
 
 El aprendizaje \emph{basado en lotes} consiste en contar con la mayor
 cantidad de datos de entrenamiento al principio del proceso y utilizarlo

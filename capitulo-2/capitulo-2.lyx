@@ -72,7 +72,7 @@
 \begin_body
 
 \begin_layout Chapter
-Marco Teórico
+Fundamentos HAR
 \end_layout
 
 \begin_layout Standard
@@ -147,10 +147,13 @@ abbr{HAR}
 
 .
  En síntesis, nuestro enfoque es detectar las actividades físicas para dar
- información de contexto en las acciones diarias de un individuo durante
- su locomoción.
- Las siguientes secciones abarcan todos los elementos requeridos para implementa
-r los sistemas 
+ información de contexto en las acciones diarias de un individuo.
+ 
+\end_layout
+
+\begin_layout Standard
+Las siguientes secciones abarcan todos los elementos requeridos para implementar
+ los sistemas 
 \begin_inset ERT
 status open
 
@@ -182,9 +185,7 @@ name "sec22:contexto"
 \end_inset
 
 En la actualidad, construir aplicaciones interactivas requiere que se tenga
- en cuenta el aspecto del contexto del usuario, principalmente por la importanci
-a que este asunto tiene debido al cambio frecuente que afecta el contexto
- debido a la computación móvil y ubicua.
+ en cuenta el aspecto del contexto del usuario.
  El contexto de un usuario es un medio adicional de interacción entre humano
  y computadora, adicional a los otros métodos convencionales de toma de
  datos.
@@ -252,7 +253,14 @@ context-aware
  Debido a que el entorno de ejecución cambia con cierto dinamismo, el rango
  de situaciones posibles que el usuario experimenta se amplia y por lo tanto
  es necesario que los servicios proveídos por una aplicación se adapten
- para mejorar la interacción entre el usuario y el computador.
+ para mejorar la interacción entre el usuario y el computador 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dey2000"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -275,8 +283,8 @@ name "sec23:sensores"
 \end_inset
 
  Para resolver el problema del reconocimiento de actividades humanas uno
- de los temas principales es la elección de los sensores utilizados para
- recolectar datos.
+ de los temas a abordar es la recolección de datos y posiblemente la elección
+ de los sensores utilizados.
  Se han utilizando varios sensores para extraer información acerca de las
  actividades que un individuo realiza 
 \begin_inset CommandInset citation
@@ -294,8 +302,8 @@ key "Chen2012,LaraLabrador2012"
 \end_layout
 
 \begin_layout Standard
-Si clasificamos los sensores con respecto a la disposición en relación a
- los usuarios, los autores 
+Si clasificamos los sensores con respecto a la disposición de los mismos
+ en relación a los usuarios, los autores 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ReyesOrtiz2015,LaraLabrador2013"
@@ -349,8 +357,8 @@ abbr{Kinect}
 
 \begin_layout Standard
 Varios trabajos exploran el uso de sensores ambientales para el reconocimiento
- de actividades humanas de acciones cotidianas.
- Entre ellos lo expuesto por 
+ de actividades humanas y de acciones cotidianas.
+ Entre ellos el expuesto por 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Poppe2007"
@@ -358,9 +366,10 @@ key "Poppe2007"
 \end_inset
 
  que realiza un análisis de movimientos humanos utilizando cámaras de vídeo.
- A pesar de ser bastantes efectivos los sistemas basados en vídeos existen
- limitaciones para el procesamiento en tiempo real de la información y la
- exposición de la privacidad de los usuarios.
+ En particular, los sistemas basados en vídeo a pesar de ser bastante efectivos,
+ también deben lidiar con cuestiones importantes tales como el procesamiento
+ en tiempo real de la información y la exposición de la privacidad de los
+ usuarios.
 \end_layout
 
 \begin_layout Subsection
@@ -368,9 +377,9 @@ Sensores de Atuendo
 \end_layout
 
 \begin_layout Standard
-Los sensores de atuendo (
+Los sensores de atuendo (comúnmente denominado
 \emph on
-véase 
+ 
 \begin_inset ERT
 status open
 
@@ -498,6 +507,14 @@ abbr{GPS}
 Fisiología
 \series default
 : miden signos vitales del individuo como el ritmo cardíaco (
+\emph on
+Heart Rate Monitor
+\emph default
+,
+\emph on
+ 
+\emph default
+
 \begin_inset ERT
 status open
 
@@ -527,8 +544,8 @@ Ambiente
 \begin_layout Standard
 A diferencia de los sensores ubicados fijamente en el ambiente, estos tienen
  la ventaja de preservar la privacidad y el área de operación.
- La información capturada no es tan sensible como información en imágenes
- y vídeo.
+ La información capturada no es tan sensible como en sensores que capturen
+ imágenes y vídeo.
  Además, debido a la miniaturización, los sensores pueden ser llevados a
  todas partes por sus usuarios haciéndolos ubicuos, portables y con cobertura
  sin limitaciones.
@@ -548,7 +565,7 @@ name "sec24:dispositivos-moviles"
 \end_inset
 
  Desde la aparición de los primeros teléfonos móviles disponibles en el
- mercado a principio de los ochenta (80) 
+ mercado a principio de los años ochenta 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tanenbaum2010"
@@ -612,7 +629,7 @@ Teléfonos móviles inteligentes
 \end_layout
 
 \begin_layout Standard
-Los dispositivos móviles, principalmente las últimas generaciones teléfonos
+Los dispositivos móviles, principalmente las últimas generaciones de teléfonos
  móviles, en comparación con los móviles convencionales han incorporado
  más capacidad de computación (
 \begin_inset ERT
@@ -908,8 +925,8 @@ Capacidades de teléfonos móviles inteligentes
 Tanto los teléfono móviles, como también los reproductores de música o relojes
  inteligentes, han incluido desde ya hace un par de años diversos sensores
  con miras a enriquecer la experiencia de interacción humano computador.
- Aún así, la utilización de sensores han conseguido diversos usos para aplicacio
-nes que capturan datos medidos de sus usuarios 
+ La utilización de sensores ha propiciado el desarrollo de aplicaciones
+ que capturan datos medidos de sus usuarios 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lane2010"
@@ -917,10 +934,7 @@ key "Lane2010"
 \end_inset
 
 .
- Debido a la combinación del tamaño reducido, su capacidad de procesamiento,
- la posibilidad de recibir y enviar datos; y su omnipresencia en nuestra
- sociedad actual, estos dispositivos móviles son de uso preferente en la
- vida diaria.
+ 
 \end_layout
 
 \begin_layout Section
@@ -939,6 +953,10 @@ Una de las técnicas de reconocimiento de actividades humanas consiste en
  bruto (Ej.
  señales de movimiento).
  Es decir, utilizar algoritmos de aprendizaje automático (
+\emph on
+Machine Learning
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -1029,7 +1047,7 @@ Reconocimiento de Actividades Humanas
 \end_layout
 
 \begin_layout Standard
-El estado del arte de los
+El estado del arte de los 
 \begin_inset ERT
 status open
 

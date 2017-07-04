@@ -1,5 +1,5 @@
 
-\chapter{Marco Teórico}
+\chapter{Fundamentos HAR}
 
 \label{chap2:marco-teorico}
 
@@ -15,22 +15,20 @@ los mecanismos que llevan a una implementación factible.
 En la primera sección, se introducen las aplicaciones de contexto
 que son el principal marco de trabajo del estudio de sistemas \abbr{HAR}.
 En síntesis, nuestro enfoque es detectar las actividades físicas para
-dar información de contexto en las acciones diarias de un individuo
-durante su locomoción. Las siguientes secciones abarcan todos los
-elementos requeridos para implementar los sistemas \abbr{HAR}. Desde
-el punto de vista de implementación se discuten los sensores y los
-teléfonos móviles inteligentes. La última sección define el marco
-teórico del reconocimiento de actividades humanas de acuerdo al estado
-de arte.
+dar información de contexto en las acciones diarias de un individuo. 
+
+Las siguientes secciones abarcan todos los elementos requeridos para
+implementar los sistemas \abbr{HAR}. Desde el punto de vista de implementación
+se discuten los sensores y los teléfonos móviles inteligentes. La
+última sección define el marco teórico del reconocimiento de actividades
+humanas de acuerdo al estado de arte.
 
 \section{Aplicaciones de contexto}
 
 \label{sec22:contexto}En la actualidad, construir aplicaciones interactivas
-requiere que se tenga en cuenta el aspecto del contexto del usuario,
-principalmente por la importancia que este asunto tiene debido al
-cambio frecuente que afecta el contexto debido a la computación móvil
-y ubicua. El contexto de un usuario es un medio adicional de interacción
-entre humano y computadora, adicional a los otros métodos convencionales
+requiere que se tenga en cuenta el aspecto del contexto del usuario.
+El contexto de un usuario es un medio adicional de interacción entre
+humano y computadora, adicional a los otros métodos convencionales
 de toma de datos. Este nuevo medio abre nuevas posibilidades de comunicación
 y producción de nuevos servicios en computación. 
 
@@ -53,7 +51,8 @@ de sus usuarios, dicho de otro modo aplicaciones de contexto\footnote{\emph{cont
 Debido a que el entorno de ejecución cambia con cierto dinamismo,
 el rango de situaciones posibles que el usuario experimenta se amplia
 y por lo tanto es necesario que los servicios proveídos por una aplicación
-se adapten para mejorar la interacción entre el usuario y el computador.
+se adapten para mejorar la interacción entre el usuario y el computador
+\cite{Dey2000}.
 
 Los tipos de contexto prácticos más importantes en las aplicaciones
 de contexto con computación móvil son la ubicación, la identidad,
@@ -63,17 +62,17 @@ de aplicaciones escoger el contexto más relevante para su uso.
 \section{Sensores}
 
 \label{sec23:sensores} Para resolver el problema del reconocimiento
-de actividades humanas uno de los temas principales es la elección
-de los sensores utilizados para recolectar datos. Se han utilizando
-varios sensores para extraer información acerca de las actividades
-que un individuo realiza \cite{Chen2012,LaraLabrador2012}. Los sensores
-pueden medir signos vitales (ritmo cardíaco, temperatura del cuerpo,
-presión arterial), señales de ambiente (intensidad de luz, temperatura,
-niveles de sonido, vídeo), movimiento (aceleración, velocidad), y
-la ubicación (localización global o en interiores). 
+de actividades humanas uno de los temas a abordar es la recolección
+de datos y posiblemente la elección de los sensores utilizados. Se
+han utilizando varios sensores para extraer información acerca de
+las actividades que un individuo realiza \cite{Chen2012,LaraLabrador2012}.
+Los sensores pueden medir signos vitales (ritmo cardíaco, temperatura
+del cuerpo, presión arterial), señales de ambiente (intensidad de
+luz, temperatura, niveles de sonido, vídeo), movimiento (aceleración,
+velocidad), y la ubicación (localización global o en interiores). 
 
-Si clasificamos los sensores con respecto a la disposición en relación
-a los usuarios, los autores \cite{ReyesOrtiz2015,LaraLabrador2013}
+Si clasificamos los sensores con respecto a la disposición de los
+mismos en relación a los usuarios, los autores \cite{ReyesOrtiz2015,LaraLabrador2013}
 diferencian los mismos entre ambientales, los sensores están ubicados
 de manera fija en el entorno que rodea al individuo, y de atuendo\footnote{\emph{wearables}}
 cuando los sensores están sujetos o anexados al cuerpo del individuo.
@@ -88,21 +87,21 @@ como micrófonos, cámaras de vídeo, sensores de presencia, termómetros
 y sensores de profundidad (Ej. el sensor \abbr{Kinect}). 
 
 Varios trabajos exploran el uso de sensores ambientales para el reconocimiento
-de actividades humanas de acciones cotidianas. Entre ellos lo expuesto
+de actividades humanas y de acciones cotidianas. Entre ellos el expuesto
 por \cite{Poppe2007} que realiza un análisis de movimientos humanos
-utilizando cámaras de vídeo. A pesar de ser bastantes efectivos los
-sistemas basados en vídeos existen limitaciones para el procesamiento
-en tiempo real de la información y la exposición de la privacidad
-de los usuarios.
+utilizando cámaras de vídeo. En particular, los sistemas basados en
+vídeo a pesar de ser bastante efectivos, también deben lidiar con
+cuestiones importantes tales como el procesamiento en tiempo real
+de la información y la exposición de la privacidad de los usuarios.
 
 \subsection{Sensores de Atuendo}
 
-Los sensores de atuendo (\emph{véase \abbr{Wearables}}) obtienen
-señales directamente de los usuarios, estos pueden estar anexos a
-varias partes del cuerpo, como la cintura, la muñeca, el pecho, la
-pierna y la cabeza \cite{Bao2004}. También pueden formar parte de
-alguna vestimenta o estar embebidos en algún accesorio de uso común
-como relojes, anteojos y los mismos teléfonos móviles. 
+Los sensores de atuendo (comúnmente denominado\emph{ \abbr{Wearables}})
+obtienen señales directamente de los usuarios, estos pueden estar
+anexos a varias partes del cuerpo, como la cintura, la muñeca, el
+pecho, la pierna y la cabeza \cite{Bao2004}. También pueden formar
+parte de alguna vestimenta o estar embebidos en algún accesorio de
+uso común como relojes, anteojos y los mismos teléfonos móviles. 
 
 Una característica peculiar de los sensores es su autonomía debido
 a la utilización de baterías que proporcionan la energía para operar,
@@ -127,17 +126,17 @@ de contexto bastante relevante acerca de la posición del individuo,
 además de ciertas medidas de movimiento pero con un consumo moderado
 de energía.
 \item \textbf{Fisiología}: miden signos vitales del individuo como el ritmo
-cardíaco (\abbr{HRM}), la temperatura del cuerpo, el ritmo de respiración,
-entre otros.
+cardíaco (\emph{Heart Rate Monitor},\emph{ }\abbr{HRM}), la temperatura
+del cuerpo, el ritmo de respiración, entre otros.
 \item \textbf{Ambiente}: miden datos externos que rodean al individuo como
 el nivel de ruido, la humedad y/o la temperatura. Los sensores de
 luz, cámara, micrófonos y termómetros miden estas señales. 
 \end{itemize}
 A diferencia de los sensores ubicados fijamente en el ambiente, estos
 tienen la ventaja de preservar la privacidad y el área de operación.
-La información capturada no es tan sensible como información en imágenes
-y vídeo. Además, debido a la miniaturización, los sensores pueden
-ser llevados a todas partes por sus usuarios haciéndolos ubicuos,
+La información capturada no es tan sensible como en sensores que capturen
+imágenes y vídeo. Además, debido a la miniaturización, los sensores
+pueden ser llevados a todas partes por sus usuarios haciéndolos ubicuos,
 portables y con cobertura sin limitaciones. Aún así existen desafíos
 ha superar como la utilización eficiente de energía y el uso confortable
 al estar anexos a una vestimenta sin utilizar cables.
@@ -145,9 +144,9 @@ al estar anexos a una vestimenta sin utilizar cables.
 \section{Dispositivos móviles}
 
 \label{sec24:dispositivos-moviles} Desde la aparición de los primeros
-teléfonos móviles disponibles en el mercado a principio de los ochenta
-(80) \cite{Tanenbaum2010}, la masificación de uso y producción de
-estos dispositivos ha crecido exponencialmente. Se estima que esta
+teléfonos móviles disponibles en el mercado a principio de los años
+ochenta \cite{Tanenbaum2010}, la masificación de uso y producción
+de estos dispositivos ha crecido exponencialmente. Se estima que esta
 tendencia continuará (cfr. \cite{Ekholm2011}) incluso hasta podría
 sobrepasar la población mundial.
 
@@ -164,8 +163,8 @@ de los teléfonos móviles inteligentes.
 \subsection{Teléfonos móviles inteligentes}
 
 Los dispositivos móviles, principalmente las últimas generaciones
-teléfonos móviles, en comparación con los móviles convencionales han
-incorporado más capacidad de computación (\abbr{CPU}), más \emph{hardware}
+de teléfonos móviles, en comparación con los móviles convencionales
+han incorporado más capacidad de computación (\abbr{CPU}), más \emph{hardware}
 integrado, servicios y comunicación inalámbricas. Los teléfonos móviles
 inteligentes proveen a sus usuarios mejores características como acceso
 a la Web, multimedia, juegos, servicios basados en ubicación, captura
@@ -194,25 +193,21 @@ Sensores & Acelerómetro, Giroscopio, Brújula, \abbr{GPS}\tabularnewline
 Tanto los teléfono móviles, como también los reproductores de música
 o relojes inteligentes, han incluido desde ya hace un par de años
 diversos sensores con miras a enriquecer la experiencia de interacción
-humano computador. Aún así, la utilización de sensores han conseguido
-diversos usos para aplicaciones que capturan datos medidos de sus
-usuarios \cite{Lane2010}. Debido a la combinación del tamaño reducido,
-su capacidad de procesamiento, la posibilidad de recibir y enviar
-datos; y su omnipresencia en nuestra sociedad actual, estos dispositivos
-móviles son de uso preferente en la vida diaria.
+humano computador. La utilización de sensores ha propiciado el desarrollo
+de aplicaciones que capturan datos medidos de sus usuarios \cite{Lane2010}. 
 
 \section{Aprendizaje Automático}
 
 \label{sec25:aprendizaje-automatico}Una de las técnicas de reconocimiento
 de actividades humanas consiste en utilizar un modelo para descubrir
 información a partir de los datos en bruto (Ej. señales de movimiento).
-Es decir, utilizar algoritmos de aprendizaje automático (\abbr{ML})
-como herramientas para construir, analizar e inferir actividades por
-medio de un modelo que utiliza una gran cantidad de datos medidos
-con anterioridad acompañados con el comportamiento observado en los
-individuos \cite{Chen2012}. Esta técnica involucra la creación de
-modelos de clasificación probabilistas o estadísticos, seguido de
-los procesos de entrenamiento y aprendizaje.
+Es decir, utilizar algoritmos de aprendizaje automático (\emph{Machine
+Learning}, \abbr{ML}) como herramientas para construir, analizar
+e inferir actividades por medio de un modelo que utiliza una gran
+cantidad de datos medidos con anterioridad acompañados con el comportamiento
+observado en los individuos \cite{Chen2012}. Esta técnica involucra
+la creación de modelos de clasificación probabilistas o estadísticos,
+seguido de los procesos de entrenamiento y aprendizaje.
 
 El aprendizaje automático implica la utilización de datos como conjunto
 inicial de entrenamiento para entrenar un algoritmo, uno de muchos
@@ -228,7 +223,7 @@ puede no aplicarse a otro individuo de distintas características.
 
 \section{Reconocimiento de Actividades Humanas}
 
-El estado del arte de los\abbr{HAR} define las metodologías para
+El estado del arte de los \abbr{HAR} define las metodologías para
 comprender el comportamiento humano a partir de la interpretación
 de atributos derivados de fuentes que rodean al individuo \cite{Bao2004,Poppe2007},
 por ejemplo el movimiento detectado utilizando sensores, la ubicación
