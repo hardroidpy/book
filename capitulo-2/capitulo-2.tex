@@ -1,16 +1,17 @@
 
-\chapter{Fundamentos HAR}
+\chapter{Marco Teórico}
 
 \label{chap2:marco-teorico}
 
 \section{Introducción}
 
 \label{sec21:introduccion}En este capitulo, se resumen las cuatro
-áreas principales de estudio relacionados a los sistemas \abbr{HAR}
-con miras a definir el problema del reconocimiento de actividades
-humanas desde un punto de vista teórico. La descripción de estas áreas
-detallan las aplicaciones que motivan los sistemas \abbr{HAR} y también
-los mecanismos que llevan a una implementación factible. 
+áreas principales de estudio relacionados a los sistemas (\emph{Human
+Activity Recognition}, \abbr{HAR} ) con miras a definir el problema
+del reconocimiento de actividades humanas desde un punto de vista
+teórico. La descripción de estas áreas detallan las aplicaciones que
+motivan los sistemas \abbr{HAR} y también los mecanismos que llevan
+a una implementación factible. 
 
 En la primera sección, se introducen las aplicaciones de contexto
 que son el principal marco de trabajo del estudio de sistemas \abbr{HAR}.
@@ -121,10 +122,10 @@ que contiene los sensores. El acelerómetro y el giroscopio son los
 más comúnmente utilizados para reconocimiento de actividades con un
 bajo consumo de energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
 \item \textbf{Ubicación}: miden datos obtenidos con las redes celulares
-\abbr{3G} y los satélites de navegación \abbr{GPS}. Provee información
-de contexto bastante relevante acerca de la posición del individuo,
-además de ciertas medidas de movimiento pero con un consumo moderado
-de energía.
+\abbr{3G} y los satélites de navegación (\emph{Global Positioning
+System}, \abbr{GPS}). Provee información de contexto bastante relevante
+acerca de la posición del individuo, además de ciertas medidas de
+movimiento pero con un consumo moderado de energía.
 \item \textbf{Fisiología}: miden signos vitales del individuo como el ritmo
 cardíaco (\emph{Heart Rate Monitor},\emph{ }\abbr{HRM}), la temperatura
 del cuerpo, el ritmo de respiración, entre otros.
@@ -154,11 +155,12 @@ Básicamente los teléfonos móviles celulares ofrecen los servicios
 de comunicación por voz y datos sin utilizar cables, prácticamente
 desde cualquier lugar siempre y cuando esté disponible la cobertura
 de red celular. Entre los servicios adicionales podemos destacar el
-envío de mensajes de texto (\abbr{SMS}) y multimedia (\abbr{MMS}).
-Debido a la mejora continua de las capacidades de procesamiento y
-comunicación, los usuarios elevaron sus requisitos de acceso a la
-información de manera instantánea y sofisticada llevando a la aparición
-de los teléfonos móviles inteligentes. 
+envío de mensajes de texto (\emph{Short Message Service}, \abbr{SMS})
+y multimedia (\emph{Multimedia Messaging Service}, \abbr{MMS}). Debido
+a la mejora continua de las capacidades de procesamiento y comunicación,
+los usuarios elevaron sus requisitos de acceso a la información de
+manera instantánea y sofisticada llevando a la aparición de los teléfonos
+móviles inteligentes. 
 
 \subsection{Teléfonos móviles inteligentes}
 
@@ -211,15 +213,15 @@ seguido de los procesos de entrenamiento y aprendizaje.
 
 El aprendizaje automático implica la utilización de datos como conjunto
 inicial de entrenamiento para entrenar un algoritmo, uno de muchos
-existentes, como redes de Bayes, máquinas de soporte-vector (\abbr{SVM}),
-árboles de decisión (\abbr{DT}), modelos de Markov (\abbr{HMM}),
-y otros \cite{Rajaraman2011} (véase siguiente sección). Las ventajas
-de utilizar este enfoque es la capacidad de manejar incertidumbre
-e información temporal, pero su desventaja es que requiere una cantidad
-grande de datos de entrenamiento, por lo que puede sufrir de problemas
-de inicio lento y escasez de datos. En algunos casos puede no ser
-escalable y reutilizable porque un entrenamiento hecho sobre un individuo
-puede no aplicarse a otro individuo de distintas características.
+existentes, como redes de Bayes, máquinas de soporte-vector, árboles
+de decisión, modelos ocultos de Markov, entre otros \cite{Rajaraman2011}
+(véase siguiente sección). Las ventajas de utilizar este enfoque es
+la capacidad de manejar incertidumbre e información temporal, pero
+su desventaja es que requiere una cantidad grande de datos de entrenamiento,
+por lo que puede sufrir de problemas de inicio lento y escasez de
+datos. En algunos casos puede no ser escalable y reutilizable porque
+un entrenamiento hecho sobre un individuo puede no aplicarse a otro
+individuo de distintas características.
 
 \section{Reconocimiento de Actividades Humanas}
 
@@ -260,13 +262,13 @@ Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos,
 no superpuestos y que ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
 \end{defs}
 
-Se asumen que las acciones consideradas no son realizadas simultáneamente,
+Se asumen que las acciones consideradas no pueden ser realizadas simultáneamente,
 es decir la persona no realiza la acción de correr y caminar al mismo
 tiempo. Además, se debe notar que el problema \abbr{HAR} no es factible
 a ser resuelto con una solución determinista. El numero de combinaciones
 de valores de atributos y acciones puede ser muy grande, inclusive
 infinito; y encontrar los puntos de transición es complejo teniendo
-en cuenta que se desconoce la duración cada acción. 
+en cuenta que se desconoce la duración de cada acción. 
 
 Es por esta razón que las metodologías de aprendizaje automático son
 utilizadas como proceso para reconocer actividades humanas por medio
@@ -298,7 +300,7 @@ aplicaciones.
 
 \label{sec262:proceso-har}Al igual que en otras aplicaciones de aprendizaje
 automático, el proceso de reconocimiento se divide en dos etapas bien
-conocidas, la de entrenamiento y las pruebas (o evaluación).
+conocidas, la de entrenamiento y las de pruebas (o evaluación).
 
 \begin{figure}[!htbp]
 \centering{} \includegraphics[width=0.7\linewidth]{capitulo-2/graphics/harsystem}
@@ -332,11 +334,11 @@ son objeto de la clasificación y las funciones de cada etapa.
 un sistema \abbr{HAR} depende totalmente de las actividades que serán
 reconocidas. Por lo tanto, el cambio del conjunto de actividades que
 un sistema reconoce convierte al problema en uno completamente distinto
-a otro sistema construido con el mismo propósito.
+lo cual normalmente llega a descartar el diseño original.
 
 Teniendo en cuenta esta razón, y de acuerdo a distintas publicaciones,
 presentamos siete grupos distintos de actividades agrupados en la
-siguiente tabla.
+siguiente \tabref{tab2:grupo-actividades} \cite{LaraLabrador2013}.
 
 \begin{table}[htbp]
 \centering{}%
@@ -369,12 +371,13 @@ y la complejidad del evento. Los eventos cortos son movimientos de
 transición y movimientos en base a gestos. Los eventos al que nos
 enfocamos en este trabajo son aquellos que se componen de las actividades
 básicas de larga duración que se caracterizan por las acciones continuas
-y cíclicas de un individuo \cite{ReyesOrtiz2015}. Nuestro estudio
-no se basa en actividades complejas que sean una secuencia de actividades
-básicas y eventos cortos.
+y cíclicas de un individuo \cite{ReyesOrtiz2015}. El estudio en este
+trabajo no se basa en actividades complejas que sean una secuencia
+de actividades básicas y eventos cortos.
 
-Definimos como objetivo de estudio detectar actividades básicas ambulatorias
-y de transporte, de larga duración y sin cambios bruscos de transición.
+Se define como objetivo de estudio la detección de actividades básicas
+ambulatorias y de transporte, de larga duración y sin cambios bruscos
+de transición.
 
 \subsection{Colección de Datos}
 
@@ -429,31 +432,32 @@ actividad etiquetada como caminando, corriendo, quieto, etc., la mayoría
 de los sistemas \abbr{HAR} utilizan un enfoque supervisado.
 
 El aprendizaje automático supervisado, referido como clasificación
-para problemas de clases discretas, ha sido un área bastante productiva
-con varios algoritmos efectivos resumidos en la tabla \tabref{tab2:metodos-aprendizaje}
-\cite{James2013}. Estas técnicas resuelven otras tareas además de
-la clasificación como la regresión y el agrupamiento.
+para problemas de clases discretas, ha sido un área bastante estudiada
+con varios algoritmos propuestos, algunos de los cuales son citados
+en la \tabref{tab2:metodos-aprendizaje} \cite{James2013}. Estas
+técnicas resuelven otras tareas además de la clasificación como la
+regresión y el agrupamiento.
 
-\begin{table}
+\begin{table}[tbph]
 \begin{centering}
 \begin{tabular}{|>{\raggedright}m{4cm}|>{\raggedright}p{9cm}|}
 \hline 
 \textbf{Grupo}  & \textbf{Actividades} \tabularnewline
 \hline 
 \hline 
-Basados en Reglas & Árboles de decisión (\abbr{DT})
+Basados en Reglas & Árboles de decisión (\emph{Decision Tree}, \abbr{DT})
 
-Selvas aleatorias (\abbr{RF})\tabularnewline
+Selvas aleatorias (\emph{Random Forest}, \abbr{RF})\tabularnewline
 \hline 
-Enfoques Geométricos  & Vecinos próximos (\abbr{k-NN})
+Enfoques Geométricos  & Vecinos próximos (\emph{k-Nearest Neighbors}, \abbr{k-NN})
 
-Redes neuronales (\abbr{ANN})
+Redes neuronales (\emph{Artificial Neural Networks}, \abbr{ANN})
 
-Máquinas de soporte-vector (\abbr{SVM})\tabularnewline
+Máquinas de soporte-vector (\emph{Support-Vector Machine}, \abbr{SVM})\tabularnewline
 \hline 
-Clasificación Probabilista & Clasificadores de Bayes (\abbr{NB}), 
+Clasificación Probabilista & Clasificadores de Bayes (\emph{Naive Bayes}, \abbr{NB}), 
 
-Modelos de Markov (\abbr{HMM})\tabularnewline
+Modelos ocultos de Markov (\emph{Hidden Markov Models}, \abbr{HMM})\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -461,26 +465,15 @@ Modelos de Markov (\abbr{HMM})\tabularnewline
 agrupados por tipo}
 \end{table}
 
-Los aspectos relevantes para la selección de un algoritmo de aprendizaje
+Algunos aspectos relevantes para la selección de un algoritmo de aprendizaje
 pueden ser: el consumo de energía, los requisitos de memoria, la complejidad
-de computo e interpretación, etc. Estos aspectos se agudizan si se
-utilizan dispositivos móviles inteligentes. Por ejemplo, los árboles
-de decisión podría ser el método preferido cuando se requiere simplicidad
-en la implementación y métodos \abbr{SVM} para aplicaciones que requieran
-un alto rendimiento pero con mayor complejidad \cite{ReyesOrtiz2015}.
+de computo e interpretación, entre otros. Estos aspectos se agudizan
+si se utilizan dispositivos móviles inteligentes. Por ejemplo, los
+árboles de decisión podría ser el método preferido cuando se requiere
+simplicidad en la implementación, mientras que los métodos \abbr{SVM}
+para aplicaciones que requieran un alto rendimiento pero con mayor
+complejidad \cite{ReyesOrtiz2015}.
 
 En el capitulo \ref{chap:Aprendizaje-Automatico} se detalla la base
 teórica referente a las técnicas de aprendizaje automático supervisados
 y el método de árboles de decisión electo para este trabajo.
-
-\section{Conclusión}
-
-\label{sec27:conclusion}Este capitulo abarcó tópicos primordiales
-del estudio del reconocimiento de las actividades humanas. Los conceptos
-descritos son un fundamento para comprender el problema de \abbr{HAR}
-y además dan una vista general de los asuntos principales a tratar
-para resolver el problema. Primeramente, se fija la motivación en
-base a las aplicaciones potenciales de la tecnología, para luego repasar
-los medios disponibles para construir estos sistemas: sensores, teléfonos
-móviles y aprendizaje automático. Finalmente se repasa la definición
-metodológica y teórica del problema. 

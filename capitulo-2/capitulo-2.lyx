@@ -72,7 +72,7 @@
 \begin_body
 
 \begin_layout Chapter
-Fundamentos HAR
+Marco Teórico
 \end_layout
 
 \begin_layout Standard
@@ -97,7 +97,11 @@ name "sec21:introduccion"
 \end_inset
 
 En este capitulo, se resumen las cuatro áreas principales de estudio relacionado
-s a los sistemas 
+s a los sistemas (
+\emph on
+Human Activity Recognition
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -110,7 +114,7 @@ abbr{HAR}
 
 \end_inset
 
- con miras a definir el problema del reconocimiento de actividades humanas
+ ) con miras a definir el problema del reconocimiento de actividades humanas
  desde un punto de vista teórico.
  La descripción de estas áreas detallan las aplicaciones que motivan los
  sistemas 
@@ -482,7 +486,11 @@ abbr{3G}
 
 \end_inset
 
- y los satélites de navegación 
+ y los satélites de navegación (
+\emph on
+Global Positioning System
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -495,7 +503,7 @@ abbr{GPS}
 
 \end_inset
 
-.
+).
  Provee información de contexto bastante relevante acerca de la posición
  del individuo, además de ciertas medidas de movimiento pero con un consumo
  moderado de energía.
@@ -591,6 +599,10 @@ n por voz y datos sin utilizar cables, prácticamente desde cualquier lugar
  siempre y cuando esté disponible la cobertura de red celular.
  Entre los servicios adicionales podemos destacar el envío de mensajes de
  texto (
+\emph on
+Short Message Service
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -604,6 +616,10 @@ abbr{SMS}
 \end_inset
 
 ) y multimedia (
+\emph on
+Multimedia Messaging Service
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -986,46 +1002,8 @@ key "Chen2012"
 \begin_layout Standard
 El aprendizaje automático implica la utilización de datos como conjunto
  inicial de entrenamiento para entrenar un algoritmo, uno de muchos existentes,
- como redes de Bayes, máquinas de soporte-vector (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{SVM}
-\end_layout
-
-\end_inset
-
-), árboles de decisión (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{DT}
-\end_layout
-
-\end_inset
-
-), modelos de Markov (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HMM}
-\end_layout
-
-\end_inset
-
-), y otros 
+ como redes de Bayes, máquinas de soporte-vector, árboles de decisión, modelos
+ ocultos de Markov, entre otros 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"
@@ -1249,8 +1227,9 @@ end{defs}
 \end_layout
 
 \begin_layout Standard
-Se asumen que las acciones consideradas no son realizadas simultáneamente,
- es decir la persona no realiza la acción de correr y caminar al mismo tiempo.
+Se asumen que las acciones consideradas no pueden ser realizadas simultáneamente
+, es decir la persona no realiza la acción de correr y caminar al mismo
+ tiempo.
  Además, se debe notar que el problema 
 \begin_inset ERT
 status open
@@ -1267,7 +1246,7 @@ abbr{HAR}
  no es factible a ser resuelto con una solución determinista.
  El numero de combinaciones de valores de atributos y acciones puede ser
  muy grande, inclusive infinito; y encontrar los puntos de transición es
- complejo teniendo en cuenta que se desconoce la duración cada acción.
+ complejo teniendo en cuenta que se desconoce la duración de cada acción.
  
 \end_layout
 
@@ -1421,7 +1400,7 @@ name "sec262:proceso-har"
 
 Al igual que en otras aplicaciones de aprendizaje automático, el proceso
  de reconocimiento se divide en dos etapas bien conocidas, la de entrenamiento
- y las pruebas (o evaluación).
+ y las de pruebas (o evaluación).
 \end_layout
 
 \begin_layout Standard
@@ -1557,13 +1536,33 @@ abbr{HAR}
 
  depende totalmente de las actividades que serán reconocidas.
  Por lo tanto, el cambio del conjunto de actividades que un sistema reconoce
- convierte al problema en uno completamente distinto a otro sistema construido
- con el mismo propósito.
+ convierte al problema en uno completamente distinto lo cual normalmente
+ llega a descartar el diseño original.
 \end_layout
 
 \begin_layout Standard
 Teniendo en cuenta esta razón, y de acuerdo a distintas publicaciones, presentam
-os siete grupos distintos de actividades agrupados en la siguiente tabla.
+os siete grupos distintos de actividades agrupados en la siguiente 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab2:grupo-actividades}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaraLabrador2013"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1805,13 +1804,13 @@ key "ReyesOrtiz2015"
 \end_inset
 
 .
- Nuestro estudio no se basa en actividades complejas que sean una secuencia
- de actividades básicas y eventos cortos.
+ El estudio en este trabajo no se basa en actividades complejas que sean
+ una secuencia de actividades básicas y eventos cortos.
 \end_layout
 
 \begin_layout Standard
-Definimos como objetivo de estudio detectar actividades básicas ambulatorias
- y de transporte, de larga duración y sin cambios bruscos de transición.
+Se define como objetivo de estudio la detección de actividades básicas ambulator
+ias y de transporte, de larga duración y sin cambios bruscos de transición.
 \end_layout
 
 \begin_layout Subsection
@@ -1962,8 +1961,8 @@ abbr{HAR}
 
 \begin_layout Standard
 El aprendizaje automático supervisado, referido como clasificación para
- problemas de clases discretas, ha sido un área bastante productiva con
- varios algoritmos efectivos resumidos en la tabla 
+ problemas de clases discretas, ha sido un área bastante estudiada con varios
+ algoritmos propuestos, algunos de los cuales son citados en la 
 \begin_inset ERT
 status open
 
@@ -1990,6 +1989,7 @@ key "James2013"
 
 \begin_layout Standard
 \begin_inset Float table
+placement tbph
 wide false
 sideways false
 status open
@@ -2044,6 +2044,10 @@ Basados en Reglas
 
 \begin_layout Plain Layout
 Árboles de decisión (
+\emph on
+Decision Tree
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -2061,6 +2065,10 @@ abbr{DT}
 
 \begin_layout Plain Layout
 Selvas aleatorias (
+\emph on
+Random Forest
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -2094,6 +2102,10 @@ Enfoques Geométricos
 
 \begin_layout Plain Layout
 Vecinos próximos (
+\emph on
+k-Nearest Neighbors
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -2111,6 +2123,10 @@ abbr{k-NN}
 
 \begin_layout Plain Layout
 Redes neuronales (
+\emph on
+Artificial Neural Networks
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -2128,6 +2144,10 @@ abbr{ANN}
 
 \begin_layout Plain Layout
 Máquinas de soporte-vector (
+\emph on
+Support-Vector Machine
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -2161,6 +2181,10 @@ Clasificación Probabilista
 
 \begin_layout Plain Layout
 Clasificadores de Bayes (
+\emph on
+Naive Bayes
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -2177,7 +2201,11 @@ abbr{NB}
 \end_layout
 
 \begin_layout Plain Layout
-Modelos de Markov (
+Modelos ocultos de Markov (
+\emph on
+Hidden Markov Models
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -2237,12 +2265,13 @@ Resumen de métodos de aprendizaje agrupados por tipo
 \end_layout
 
 \begin_layout Standard
-Los aspectos relevantes para la selección de un algoritmo de aprendizaje
+Algunos aspectos relevantes para la selección de un algoritmo de aprendizaje
  pueden ser: el consumo de energía, los requisitos de memoria, la complejidad
- de computo e interpretación, etc.
+ de computo e interpretación, entre otros.
  Estos aspectos se agudizan si se utilizan dispositivos móviles inteligentes.
  Por ejemplo, los árboles de decisión podría ser el método preferido cuando
- se requiere simplicidad en la implementación y métodos 
+ se requiere simplicidad en la implementación, mientras que los métodos
+ 
 \begin_inset ERT
 status open
 
@@ -2276,42 +2305,6 @@ reference "chap:Aprendizaje-Automatico"
 
  se detalla la base teórica referente a las técnicas de aprendizaje automático
  supervisados y el método de árboles de decisión electo para este trabajo.
-\end_layout
-
-\begin_layout Section
-Conclusión
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "sec27:conclusion"
-
-\end_inset
-
-Este capitulo abarcó tópicos primordiales del estudio del reconocimiento
- de las actividades humanas.
- Los conceptos descritos son un fundamento para comprender el problema de
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
- y además dan una vista general de los asuntos principales a tratar para
- resolver el problema.
- Primeramente, se fija la motivación en base a las aplicaciones potenciales
- de la tecnología, para luego repasar los medios disponibles para construir
- estos sistemas: sensores, teléfonos móviles y aprendizaje automático.
- Finalmente se repasa la definición metodológica y teórica del problema.
- 
 \end_layout
 
 \end_body
