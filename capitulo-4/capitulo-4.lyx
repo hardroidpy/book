@@ -97,9 +97,13 @@ name "sec41:introduccion"
 
 \end_inset
 
-El diseño de sistemas con conocimiento del contexto promueven una interacción
- novedosa con los usuarios y diversas aplicaciones en las áreas de ambientes
- inteligentes, repuesta a emergencias, vigilancia y otros 
+El diseño de 
+\emph on
+sistemas con conocimiento del contexto
+\emph default
+ promueven una interacción novedosa entre los usuarios y diversas aplicaciones
+ que corresponden a áreas tales como ambientes inteligentes, repuesta a
+ emergencias, vigilancia y otros 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Choudhury2008"
@@ -108,8 +112,9 @@ key "Choudhury2008"
 
 .
  Un sistema con la capacidad de reconocer las actividades humanas por medio
- del uso de sensores empotrados posee mecanismos para crear aplicaciones
- de cuidado personal, salud y asistencia inteligente.
+ del uso de sensores empotrados se convierte en un mecanismo para crear
+ aplicaciones de cuidado personal, salud, asistencia inteligente, entre
+ otros.
  El requerimiento primordial de un sistema con una aplicación de contexto
  es que este pueda ser portado continuamente como atuendo de sus usuarios
  (un sistema 
@@ -129,8 +134,7 @@ abbr{Wearable}
  Por lo tanto, un sistema que acompaña continuamente al usuario puede interaccio
 nar oportunamente con el mismo ya que este tiene la capacidad de observar
  en tiempo real las acciones de su portador.
- La ventaja adicional de un sistema de este tipo es que puede ser desactivado
- fácilmente o removido de la actividad diaria de su usuario.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -149,7 +153,7 @@ abbr{HAR}
 \end_inset
 
 ).
- El objetivo principal del sistema 
+ El objetivo principal de un sistema 
 \begin_inset ERT
 status open
 
@@ -162,40 +166,11 @@ abbr{HAR}
 
 \end_inset
 
- en conjunto es proveer módulo base para aplicaciones novedosas de contexto.
- El módulo debe ser capaz de reconocer varias actividades realizadas rutinariame
-nte de diferentes maneras, por diferentes usuarios y en diferentes condiciones
+ es proveer un módulo base para el desarrollo de aplicaciones de contexto.
+ El sistema debe ser capaz de reconocer varias actividades realizadas rutinariam
+ente de diferentes maneras, por diferentes usuarios y en diferentes condiciones
  contextuales.
- Las funciones principales de los componentes descritos en la primera sección
- exponen los mecanismos para implementar los mismos en base trabajos relacionado
-s de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
  
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Choudhury2008,ReyesOrtiz2015"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-La última sección cita los requisitos no funcionales para lograr una aplicación
- de contexto móvil y ubicua con características especiales esperadas para
- este tipo de solución.
 \end_layout
 
 \begin_layout Section
@@ -224,6 +199,10 @@ abbr{HAR}
 
  se rige de acuerdo a las guías de implementación de una aplicación de aprendiza
 je automático (
+\emph on
+Machine Learning
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -471,7 +450,7 @@ abbr{HAR}
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Recolector de medidas
 \end_layout
 
@@ -482,11 +461,10 @@ name "sec43:recolector-datos"
 
 \end_inset
 
-El primer paso en el proceso de reconocimiento primeramente consiste en
- recolectar medidas de señales obtenidas de los sensores que observan continuame
-nte a los usuarios.
+El primer paso en el proceso de reconocimiento consiste en recolectar medidas
+ de señales obtenidas de los sensores que observan continuamente a los usuarios.
  Además, se procede a realizar un registro de manera organizada e indexada
- con respecto al tiempo.
+ de los mismos con respecto al tiempo.
  Para capturar los datos se requieren instrumentos de medición apropiados
  como los sensores (véase 
 \begin_inset CommandInset ref
@@ -506,9 +484,9 @@ key "Bao2004"
 \end_inset
 
 .
- También, los sensores podrían ser portados por el usuario ya están comúnmente
- empotrados en dispositivos de uso regular como los teléfonos móviles modernos,
- en relojes o lentes inteligentes 
+ También, los sensores podrían ser portados por el usuario ya que están
+ comúnmente empotrados en dispositivos de uso regular como los teléfonos
+ móviles modernos, en relojes o lentes inteligentes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "LaraLabrador2012,Choudhury2008"
@@ -524,7 +502,7 @@ A continuación se describe el método común de registro y organización de
  de variables relevantes utilizadas.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Registro
 \end_layout
 
@@ -580,11 +558,11 @@ A continuación se describen dos grupos de señales capturadas por medio de
  un sensor específico.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Paragraph
 Señales Principales
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subparagraph
 Señales de Movimiento
 \end_layout
 
@@ -621,7 +599,7 @@ key "Goehl2007"
 .
  Las variables medidas están expresadas en la magnitud de la aceleración
  ejercida sobre el dispositivo con respecto la orientación del mismo (Ej.
- en reposo mide 
+ un sensor de aceleración en reposo mide el valor
 \begin_inset Formula $-9.8\,m\,s^{-2}$
 \end_inset
 
@@ -630,11 +608,12 @@ key "Goehl2007"
 \begin_inset Formula $a(t)$
 \end_inset
 
- es un vector con respecto al tiempo con tres componentes en cada eje 
+, que es un vector con respecto al tiempo con tres componentes en cada eje
+ 
 \begin_inset Formula $(x,y,z)$
 \end_inset
 
-, cada uno representa una medida 
+, cadde los cuales cada uno representa una medida 
 \begin_inset Formula $a_{x}$
 \end_inset
 
@@ -706,7 +685,20 @@ Señal de aceleración
 
 Señal de aceleración en tres dimensiones.
  Los colores corresponden a los ejes de coordenadas representadas en la
- siguiente figura.
+ figura 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig4:axis-phone}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -731,7 +723,7 @@ key "Goehl2007"
 .
  Las variables medidas están expresadas en velocidad angular de rotación
  del dispositivo con respecto a los ejes de orientación del mismo (Ej.
- en movimiento mide 
+ el sensor de giroscopio en movimiento mide 
 \family roman
 \series medium
 \shape up
@@ -770,7 +762,7 @@ key "Goehl2007"
 \begin_inset Formula $(x,y,z)$
 \end_inset
 
-, cada uno representa una medida 
+, cada uno representa una medida de velocidad angular 
 \begin_inset Formula $w_{x}$
 \end_inset
 
@@ -786,7 +778,7 @@ key "Goehl2007"
  La orientación de los ejes con respecto al dispositivo de medición depende
  del fabricante del mismo.
  Los teléfonos móviles modernos poseen la orientación de los ejes de acuerdo
- a la siguiente 
+ a la 
 \begin_inset ERT
 status open
 
@@ -872,9 +864,13 @@ key "Bao2004,Kwapisz2011,ReyesOrtiz2015"
 \end_inset
 
 .
- Los acelerómetros y giroscopios poseen un bajo costo de fabricación, bajo
- consumo de energía, y además están incluidos comúnmente en los teléfonos
- móviles modernos 
+ 
+\end_layout
+
+\begin_layout Standard
+Los acelerómetros y giroscopios poseen un bajo costo de fabricación, bajo
+ consumo de energía, y además ya se encuentran comúnmente incluidos en los
+ teléfonos móviles modernos 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Google2016s"
@@ -906,7 +902,7 @@ key "Bao2004,LaraLabrador2012"
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subparagraph
 Señales de Posición
 \end_layout
 
@@ -964,8 +960,8 @@ abbr{GPS}
 
 \end_inset
 
- permiten acceder a las coordenadas geográficas globales como el modo de
- transporte de un individuo, de acuerdo a la velocidad estimada.
+ permiten obtener las coordenadas geográficas globales así como el modo
+ de transporte de un individuo, de acuerdo a la velocidad estimada.
  Los teléfonos móviles modernos están equipados con sensores para captar
  señales del sistema 
 \begin_inset ERT
@@ -980,8 +976,8 @@ abbr{GPS}
 
 \end_inset
 
- y también se puede estimar con buena precisión las coordenadas utilizando
- una red celular 
+ y también se puede estimar con buena precisión las coordenadas de ubicación
+ utilizando una red celular 
 \begin_inset ERT
 status open
 
@@ -1036,7 +1032,11 @@ La señal de localización utiliza dos variables, conocidas como latitud y
 \end_inset
 
 ).
- Los valores de latitud y longitud son coordenadas del 
+ Los valores de latitud y longitud son coordenadas según el sistema 
+\emph on
+World Geodetic System
+\emph default
+ (
 \begin_inset ERT
 status open
 
@@ -1049,7 +1049,7 @@ abbr{WGS}
 
 \end_inset
 
- cuyos valores globales oscilan entre -180 a 180 en longitud, y -90 a 90
+) cuyos valores globales oscilan entre -180 a 180 en longitud, y -90 a 90
  en latitud.
 \end_layout
 
@@ -1218,11 +1218,11 @@ key "LaraLabrador2013"
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Paragraph
 Señales Complementarias
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subparagraph
 Señales del Ambiente
 \end_layout
 
@@ -1252,7 +1252,7 @@ Los sensores de ambiente miden varios atributos del entorno que rodea al
  En esta categoría están los barómetros, fotómetros, termómetros y micrófonos.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subparagraph
 Señales de Fisionomía
 \end_layout
 
@@ -1271,8 +1271,8 @@ key "LaraLabrador2013"
 .
 \end_layout
 
-\begin_layout Section
-Procesador de muestras
+\begin_layout Subsection
+Procesamiento de muestras
 \end_layout
 
 \begin_layout Standard
@@ -1294,14 +1294,25 @@ El siguiente paso en el reconocimiento de actividades consiste en procesar
 \end_layout
 
 \begin_layout Standard
-El procesador de muestras depende en tres tareas bien diferenciadas que
- se realizan automáticamente en ambas etapas del proceso de reconocimiento,
- adicionalmente se realiza una tarea manual durante la etapa de entrenamiento
- llamada etiquetado.
- A continuación se detallan cada tarea.
+El procesamiento de muestras depende en tres tareas bien diferenciadas que
+ se realizan automáticamente en ambas etapas del proceso 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
 \end_layout
 
-\begin_layout Subsection
+\end_inset
+
+, adicionalmente se realiza una tarea manual durante la etapa de entrenamiento
+ llamada etiquetado y a continuación se detalla cada tarea.
+\end_layout
+
+\begin_layout Subsubsection
 Etiquetado
 \end_layout
 
@@ -1315,9 +1326,9 @@ name "ssec44:labeling"
 El proceso de aprendizaje automático requiere de una cantidad moderada de
  datos recolectados a partir de usuarios mientras realizan actividades humanas
  objetivas a nuestro estudio.
- Estos datos deben ser recolectadas y etiquetados utilizando un teléfono
- móvil inteligente con una aplicación diseñada para el caso, Ej.
- Utilizando un teléfono con 
+ Estos datos deben ser recolectadas y etiquetados utilizando una aplicación
+ diseñada para el caso, Ej.
+ Utilizando un teléfono 
 \begin_inset ERT
 status open
 
@@ -1359,8 +1370,8 @@ reference "sec263:actividades-humanas"
  deben ser realizadas portando el teléfono en el bolsillo donde cada individuo
  realiza una sesión de caminata, trote, bicicleta o conducir un vehículo
  por un periodo de tiempo de 10 a 15 minutos.
- La recolección de datos llevada a cabo por medio de la aplicación disponible
- para la plataforma 
+ Un ejemplo de recolección de datos llevada a cabo por medio de la aplicación
+ disponible para la plataforma 
 \begin_inset ERT
 status open
 
@@ -1470,9 +1481,10 @@ abbr{GPS}
 \end_inset
 
 , acelerómetro, giroscopio) para la sesión, las acciones de iniciar y parar
- la actividad, y las etiquetas de la actividad que el usuario realiza durante
+ el registro, y las etiquetas de la actividad que el usuario realiza durante
  el entrenamiento.
- Las etiquetas utilizadas en el proceso de recolección son:
+ Para el caso ilustrado las etiquetas utilizadas en el proceso de recolección
+ son:
 \end_layout
 
 \begin_layout Itemize
@@ -1528,12 +1540,12 @@ n del teléfono
 \begin_layout Standard
 La recolección se realiza obteniendo medidas a una razón de 60 a 100 milisegundo
 s por lo que se registran aproximadamente 60 a 100 muestras por segundo.
- Para asegurar la calidad de la recolección inicial de datos las primeras
- sesiones de entrenamiento son supervisadas para preparar las condiciones
- adecuadas del entrenamiento físico a elección del participante.
+ Para asegurar la calidad de la recolección inicial de datos, las primeras
+ sesiones de entrenamiento son supervisadas para asegurar condiciones adecuadas
+ para el registro.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Filtro de Señal
 \end_layout
 
@@ -1549,8 +1561,8 @@ Teóricamente, si un dispositivo equipado con sensores de movimiento está
 \begin_inset Formula $a(t)$
 \end_inset
 
- mediría cero (0) en dos ejes.
- Por ejemplo, en los ejes 
+ mediría valores constantes en todos los ejes.
+ Por ejemplo, en una situación estacionaria, en los ejes 
 \begin_inset Formula $x$
 \end_inset
 
@@ -1558,15 +1570,19 @@ Teóricamente, si un dispositivo equipado con sensores de movimiento está
 \begin_inset Formula $y$
 \end_inset
 
- no habría registro de medidas distintas a cero (0), y el eje 
+ no habría registro de medidas distintas a 
+\begin_inset Formula $0$
+\end_inset
+
+, y en el eje 
 \begin_inset Formula $z$
 \end_inset
 
-mediría en dirección al suelo 
+ se mediría el valor de 
 \begin_inset Formula $-9.8\,m\,s^{-2}$
 \end_inset
 
-.
+, suponiendo que esta última corresponde al eje en dirección al suelo.
  Sin embargo, los sensores electrónicos pueden introducir cierta inestabilidad
  en la señal (conocida como 
 \emph on
@@ -1575,9 +1591,8 @@ jitter
 ) provocando una fluctuación en las lecturas debido a errores en la medición
  afectando la calidad de los datos.
  Por lo tanto, a pesar de que un dispositivo con sensor de movimiento esté
- completamente quieto en la mesa, las lecturas podrían registrar ruido en
- los datos, Ej.
- errores del orden de 
+ completamente estacionario, las lecturas podrían registrar ruido en los
+ datos, por ejemplo errores del orden de 
 \begin_inset Formula $\pm0.005$
 \end_inset
 
@@ -1648,7 +1663,7 @@ status open
 
 
 \backslash
-newtheorem{defs}{Definición}
+newtheorem{defs}{ }
 \end_layout
 
 \end_inset
@@ -1789,10 +1804,14 @@ figref{fig4:filter-maf}
 \end_inset
 
  para la dimensión 
+\series bold
+
 \begin_inset Formula $y$
 \end_inset
 
- y su correspondiente señal filtrada con la función 
+
+\series default
+ junto con su correspondiente señal filtrada con la función 
 \begin_inset Formula $M(a_{y})$
 \end_inset
 
@@ -1851,6 +1870,7 @@ Señal filtrada por la función
 \end_inset
 
 Señal filtrada por promedios variables.
+ (PONER EN COLORES)
 \end_layout
 
 \end_inset
@@ -1863,7 +1883,7 @@ Señal filtrada por promedios variables.
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Muestreo
 \end_layout
 
@@ -2415,8 +2435,8 @@ Ejemplo de medidas instantáneas de aceleración en una ventana de tiempo.
 Las ventanas de tiempo hacen que las señales queden segmentadas en muestras
  discretas utilizadas como unidades de reconocimiento de actividad.
  De esta manera, cada ventana tiene inequívocamente una actividad humana
- asociada y de esta manera podemos satisfacer el requisito planteado por
- la definición del problema en 
+ asociada y de esta forma podemos satisfacer el requisito planteado por
+ la definición del problema en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def2:harp-rel"
@@ -2437,8 +2457,20 @@ Para incrementar la cantidad de muestras se utiliza una superposición de
 \begin_inset Formula $2.56$
 \end_inset
 
- segundos, como es recomendado por otros trabajos con técnicas de reconocimiento
- 
+ segundos, como es recomendado por otros trabajos sobre 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ tales como 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bao2004,ReyesOrtiz2015"
@@ -2484,7 +2516,7 @@ Cada muestra debe ser transformada en vectores característicos al pasar
  sección.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Extracción
 \end_layout
 
@@ -2495,7 +2527,7 @@ name "ssec44:extraction"
 
 \end_inset
 
-Rememorando la definición del problema relajado en 
+Teniendo en cuenta la definición del problema relajado en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "def2:harp-rel"
@@ -2523,13 +2555,15 @@ reference "def2:harp-rel"
 \begin_inset Formula $w_{j}$
 \end_inset
 
- por medio del filtro de información relevante y el calculo de valores que
+ por medio del filtro de información relevante y el cálculo de valores que
  identifiquen de cierta manera a las señales.
  
 \end_layout
 
 \begin_layout Standard
 El proceso de extracción se traduce en vectores característicos (
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2542,14 +2576,16 @@ abbr{feature vectors}
 
 \end_inset
 
+
+\emph default
 ) con información relevante que componen varias métricas calculadas en base
  a las ventanas 
 \begin_inset Formula $w_{j}$
 \end_inset
 
  en el dominio del tiempo.
- Las ventanas son transformadas en el dominio de la frecuencia con métodos
- discretos de
+ Posteriormente también, las ventanas son transformadas en el dominio de
+ la frecuencia con métodos discretos de
 \emph on
  Fourier
 \emph default
@@ -2579,7 +2615,7 @@ key "LaraLabrador2013"
 
 \end_inset
 
- en base a lo propuesto por otros trabajos precedentes como
+ en base a lo propuesto por otros trabajos precedentes como 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Yang2009,Bao2004"
@@ -2588,7 +2624,7 @@ key "Yang2009,Bao2004"
 
 .
  Las métricas estadísticas con respecto al tiempo y frecuencia utilizadas
- en este trabajo son:
+ en este trabajo son (AGREGAR REF DE DEFINICION):
 \end_layout
 
 \begin_layout Enumerate
@@ -2673,7 +2709,7 @@ Coeficientes autorregresivos:
  los coeficientes obtenidos utilizando el método de Burg que aplica un modelo
  autorregresivo para encajar en la señal.
  La operación es aplicada a la señal en el dominio del tiempo y produce
- cuatro (4) valores correspondientes al algoritmo de 4to orden.
+ cuatro valores correspondientes al algoritmo de 4to orden.
 \end_layout
 
 \begin_layout Enumerate
@@ -2681,7 +2717,7 @@ Coeficientes autorregresivos:
 \series bold
 Promedio en frecuencia:
 \series default
-medida de tendencia central en el dominio de la frecuencia.
+ medida de tendencia central en el dominio de la frecuencia.
 \end_layout
 
 \begin_layout Standard
@@ -3089,7 +3125,7 @@ Las señales procesadas del conjunto
 \end_inset
 
  corresponde a la magnitud del vector resultante de las medidas de fuerza
- ejercida en los tres ejes según la ecuación
+ ejercida en los tres ejes según la ecuación 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq4:magnitud"
@@ -3132,6 +3168,10 @@ Se eligió utilizar la magnitud
 
 \begin_layout Itemize
 Simplicidad para utilizar la técnica de 
+\emph on
+Decision Tree
+\emph default
+ (
 \begin_inset ERT
 status open
 
@@ -3144,7 +3184,7 @@ abbr{DT}
 
 \end_inset
 
-.
+).
 \end_layout
 
 \begin_layout Itemize
@@ -3205,7 +3245,7 @@ tabref{tab4:features}
 \begin_inset Formula $\mathrm{f}_{0},\mathrm{f}_{1},\ldots,\mathrm{f}_{p}$
 \end_inset
 
- donde
+ donde 
 \begin_inset Formula $p=14$
 \end_inset
 
@@ -3604,7 +3644,7 @@ Por último, se considera que tanto
 \begin_inset Formula $A$
 \end_inset
 
- ya sea debido a la función 
+, ya sea debido a la función 
 \begin_inset Formula $f(S_{j})$
 \end_inset
 
@@ -3612,7 +3652,7 @@ Por último, se considera que tanto
  entrenamiento.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Clasificador de actividades 
 \end_layout
 
@@ -3637,6 +3677,10 @@ abbr{HAR}
 \end_inset
 
  es similar a cualquier aplicación de aprendizaje automático (
+\emph on
+Machine Learning
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -3660,8 +3704,8 @@ key "LaraLabrador2013"
 \end_inset
 
 .
- El propósito principal del algoritmo es de clasificar los datos desconocidos.
- Rememorando el 
+ El propósito principal del algoritmo es el de clasificar los datos desconocidos.
+ Considerando el capitulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "chap:Aprendizaje-Automatico"
@@ -3819,16 +3863,13 @@ En esta sección se detallan los pasos del proceso común de aprendizaje automá
 o.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Preparación
 \end_layout
 
 \begin_layout Standard
-Es parte esencial de todo algoritmo de aprendizaje automático supervisado
- contar con un conjunto de instancias de entrenamiento y la información
- adicional de clasificación.
- Durante las secciones precedentes se abarcaron las tareas de preparación
- de los datos utilizados en el entrenamiento y la clasificación.
+En esta fase es esencial contar con un conjunto de instancias de entrenamiento
+ y la información adicional de su clasificación.
  Las preparación se compone de varias tareas que inciden en la mejora del
  clasificador resultante, las cuales se listan a continuación:
 \end_layout
@@ -4342,8 +4383,8 @@ Conjunto de entrenamiento etiquetado con información de clasificación.
 \end_layout
 
 \begin_layout Standard
-La tarea de etiquetado puede ser realizada de manera manual (como en la
- sección 
+La tarea de etiquetado puede ser realizada de manera manual (como fue indicado
+ en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "ssec44:labeling"
@@ -4374,7 +4415,7 @@ Es importante considerar las etiquetas asignadas a los datos originales
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Aprendizaje
 \end_layout
 
@@ -4462,7 +4503,7 @@ to, pero a la par se pueden recibir datos no clasificados para que el modelo
  Por ejemplo, la instancia puede ser retenida y verificada manualmente por
  medio de una encuesta en terreno a personas reales.
  De esta manera las instancias verificadas pueden luego ser utilizadas para
- mejorar el modelo clasificador (véase en la 
+ mejorar el modelo clasificador (nótese en la 
 \begin_inset ERT
 status open
 
@@ -4475,15 +4516,15 @@ figref{fig4:componentes-har}
 
 \end_inset
 
- la retroalimentación).
+ la fase de retroalimentación).
  
 \end_layout
 
 \begin_layout Standard
 En este trabajo se busca tener nuevas instancias de entrenamiento por medio
- de un proceso colaborativo, partiendo inicialmente de un conjunto de instancias
- de entrenamiento e ir mejorando la población con una encuesta dirigida
- por medio del uso del sistema 
+ de un proceso colaborativo, partiendo inicialmente con un modelo deducido
+ mediante un conjunto de entrenamiento y que luego es mejorando activamente
+ mediante una encuesta dirigida realizada durante el uso del sistema 
 \begin_inset ERT
 status open
 
@@ -4499,7 +4540,7 @@ abbr{HAR}
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Evaluación
 \end_layout
 
@@ -4580,7 +4621,11 @@ Evaluar métricas permite realizar ajustes a los parámetros al construir
  cantidad de niveles del árbol.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+(EN ESTE TRABAJO LA EVALUACION SE REALIZA UTILIZANDO LO HECHO EN CAP 3)
+\end_layout
+
+\begin_layout Subsubsection
 Clasificación
 \end_layout
 
@@ -4590,7 +4635,7 @@ El propósito de crear un modelo clasificador es no solamente clasificar
  etiqueta no es conocida.
  Nuevamente la preparación es una requisito primordial para transformar
  datos de entrada en instancias que puedan ser evaluadas por el modelo y
- emitir una etiqueta resultado particular para cada instancia desconocida.
+ emitir una etiqueta de resultado particular para cada instancia desconocida.
 \end_layout
 
 \begin_layout Standard
@@ -4613,11 +4658,7 @@ reference "chap:Aprendizaje-Automatico"
 \end_layout
 
 \begin_layout Section
-Capacidades deseables
-\end_layout
-
-\begin_layout Subsection
-Características no funcionales
+Otras Capacidades deseables
 \end_layout
 
 \begin_layout Standard
@@ -4627,67 +4668,9 @@ name "ssec46:caracteristicas"
 
 \end_inset
 
-Existen un conjunto de características deseables que deben ser satisfechas
- para la construcción efectiva de los sistemas de reconocimiento.
- Estas características abordan cuestiones de diseño importantes que conciernen
- a la calidad y al funcionamiento del sistema.
- Las características se listan a continuación:
-\end_layout
-
-\begin_layout Itemize
-Portabilidad: el sistema utiliza sensores adjuntos a los individuos (Ej.
- el acelerómetro) y no deben obstruir las actividades cotidianas de los
- usuarios durante su uso.
- El fin es de evitar que se afecte la adopción masiva del sistema.
- 
-\end_layout
-
-\begin_layout Itemize
-Conectividad: el sistema debe transmitir de manera confiable los datos recolecta
-dos y/o procesados a algún componente desplegado de forma remota.
- 
-\end_layout
-
-\begin_layout Itemize
-Almacenamiento: el sistema debe persistir los datos recolectados y/o procesados
- de manera local en el dispositivo móvil con el fin de mantener la calidad
- y minimizar la cantidad transferida a otros componentes.
-\end_layout
-
-\begin_layout Itemize
-Procesamiento: el sistema debe procesar y transformar los datos en bruto
- para producir información relevante para el reconocimiento de actividades.
-\end_layout
-
-\begin_layout Itemize
-Ubiquidad: el sistema debe operar en cualquier condición y contexto en que
- la persona se encuentre sin interferir u obligar al usuario a interactuar
- con el sistema.
-\end_layout
-
-\begin_layout Itemize
-Uso de energía: el sistema debe preservar el uso de energía en los dispositivos
- móviles que están implementados.
- La lectura de datos, el procesamiento y la conectividad no deben incurrir
- en gastos excesivos de energía para que el sistema pueda operar.
-\end_layout
-
-\begin_layout Itemize
-Privacidad: el sistema debe mantener de manera confidencial los datos recolectad
-os y/o producidos durante la adopción masiva del sistema, además de alertar
- sobre la utilización de datos sensibles que requieran el consentimiento
- del usuario.
-\end_layout
-
-\begin_layout Section
-Conclusión
-\end_layout
-
-\begin_layout Standard
-En este capítulo se abarcaron los aspectos prácticos en detalle de los sistemas
- de reconocimiento de actividades humanas partiendo de los fundamentos teóricos
- y las técnicas existentes en la literatura.
- Principalmente, se enmarco la estructura del sistema 
+Además de las funcionalidades presentadas en las secciones anteriores, existen
+ un conjunto de características deseables que deben ser satisfechas para
+ la construcción efectiva de los sistemas 
 \begin_inset ERT
 status open
 
@@ -4700,11 +4683,99 @@ abbr{HAR}
 
 \end_inset
 
- con sus componentes principales, el proceso general de reconocimiento y
- las tareas funcionalidades básicas.
- Finalmente, se citan algunos aspectos que tienen que ver con características
- esperadas en una aplicación de contexto aplicadas a nuestro problema en
- particular.
+.
+ Estas características abordan cuestiones de diseño importantes que conciernen
+ a la calidad y al funcionamiento del sistema.
+ Algunas de estas características se listan a continuación (PONER REFERENCIAS):
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Portabilidad
+\series default
+: el sistema utiliza sensores adjuntos a los individuos (Ej.
+ el acelerómetro) y no deben obstruir las actividades cotidianas de los
+ usuarios durante su uso.
+ El fin es de evitar que se afecte la adopción masiva del sistema.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Conectividad
+\series default
+: el sistema debe transmitir de manera confiable los datos recolectados
+ y/o procesados a algún componente desplegado de forma remota.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Almacenamiento
+\series default
+: el sistema debe persistir los datos recolectados y/o procesados de manera
+ local en el dispositivo móvil con el fin de mantener la calidad y minimizar
+ la cantidad transferida a otros componentes.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Procesamiento
+\series default
+: el sistema debe procesar y transformar los datos en bruto para producir
+ información relevante para el reconocimiento de actividades.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Ubiquidad
+\series default
+: el sistema debe operar en cualquier condición y contexto en que la persona
+ se encuentre sin interferir u obligar al usuario a interactuar con el sistema.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Uso de energía
+\series default
+: el sistema debe preservar el uso de energía en los dispositivos móviles
+ que están implementados.
+ La lectura de datos, el procesamiento y la conectividad no deben incurrir
+ en gastos excesivos de energía para que el sistema pueda operar.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Privacidad
+\series default
+: el sistema debe mantener de manera confidencial los datos recolectados
+ y/o producidos durante la adopción masiva del sistema, además de alertar
+ sobre la utilización de datos sensibles que requieran el consentimiento
+ del usuario.
+\end_layout
+
+\begin_layout Standard
+En el siguiente capitulo se presenta la implementación del sistema 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_body
