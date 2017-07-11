@@ -66,7 +66,7 @@ El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto
 En la \figref{fig:arbolEjemplo} se muestra un típico ejemplo de árbol de decisión que representa el concepto de jugar o no Golf, teniendo en cuenta variables climática representadas en los nodos internos, y los nodos hojas denotan las decisiones de jugar o no al Golf. 
 
 \section{Algoritmo C4.5}
-El trabajo de J.R. Quinlan (citar y ver referencia para C4.5) propone un algoritmo de construcción de arboles de decisión denominado C4.5, el cual a su vez es una mejora o extensión al algoritmo ID3 (citar la referencia ID3). Este algoritmo genera un árbol de decisión a partir del paticionamiento recursivo de los datos de entrada. El árbol se construye mediante la estrategia \emph{profundidad-primero (depth-first)}.
+El trabajo de J.R. Quinlan \cite{Quinlan:1993:CPM:152181} propone un algoritmo de construcción de arboles de decisión denominado C4.5, el cual a su vez es una mejora o extensión al algoritmo ID3 \cite{Quinlan:1986:IDT:637962.637969}. Este algoritmo genera un árbol de decisión a partir del paticionamiento recursivo de los datos de entrada. El árbol se construye mediante la estrategia \emph{profundidad-primero (depth-first)}.
 
 Además, el algoritmo C4.5 utiliza una técnica heurística conocida como \emph{proporción de ganancia (gain-ratio)}. Que es una medida basada en información que considera diferentes números y probabilidades de los resultados de las pruebas. El algoritmo así, considera todas las pruebas posibles que puede dividir el conjunto de datos para seleccionar la prueba que le haya generado mayor ganancia de información. Para cada atributo discreto, se considera una prueba con $N$ resultados, siendo $N$ el numero de valores posibles que puede tomar el atributo. Para cada atributo continuo, se realiza la prueba binaria (1, 0) sobre cada uno de los valores que puede tomar el atributo de los datos. 
 
@@ -305,6 +305,8 @@ Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión}
 		= 2 \cdot \frac{\mbox{0,9440} \cdot 0,9934}{\mbox{0,9440} + 0,9934}
 		= 0,4840
 \end{equation*}
+
+Teniendo en cuenta estos datos para la muestra de 10.000 tuplas 
 
 (FAlTA UNA CONCLUSION EXPLICANDO LA MAGNITUD DE LOS VALORES Y EVALUAR SI EL SUPUESTO MODELO GENERADO ES BUENO)
 
