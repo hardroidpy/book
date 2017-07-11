@@ -7,12 +7,20 @@ En el contexto de aprendizaje automático, los patrones deben ser descubiertos a
 
 El proceso de aprendizaje es generalmente tedioso, caro y consume mucho tiempo en muchas aplicaciones de minería de datos. Existen dos enfoques de aprendizaje, es decir, aprendizaje supervisado y no supervisado, que se ocupan de datos etiquetados y no etiquetados, respectivamente. Puesto que un sistema de reconocimiento de la actividad humana debe devolver un resultado como caminar, sentarse, correr, etc., la mayoría de los sistemas de \abbr{HAR} utilizan algoritmos de aprendizaje supervisados. De hecho, podría ser muy difícil de discriminar actividades en un contexto completamente sin supervisión. Algunos otros sistemas funcionan de una manera semisupervisada en donde parte de los datos están sin etiqueta.
 
+Muchos autores definen aprendizaje automático de distintas maneras, aunque \cite{Murphy:2012:MLP:2380985} lo define de manera muy clara:
+
+\vspace{5mm}
+
+\label{def3:ml}\newtheorem{defs}{}
+\begin{defs}(Aprendizaje Automático (\emph{Machine Learning}, \abbr{ML})) 
+	Definimos el aprendizaje automático como un conjunto de métodos que pueden detectar automáticamente patrones en los datos y luego utilizar estos patrones descubiertos para predecir los datos futuros o para realizar otros tipos de toma de decisiones bajo incertidumbre.
+\end{defs}
+
 \section{Aprendizaje supervisado}
-(FALTA DEFINICION DE MACHINE LEARNING)
 
 \label{sec3:aprendizaje}De manera a establecer un marco teórico para los algoritmos de aprendizaje automático supervisados \cite{Rajaraman2011} se incluye la siguiente definición formal.
 
-\label{def3:clasificacion}\newtheorem{defs}{Definición}
+\label{def3:clasificacion}\newtheorem{defs}{}
 \begin{defs}(Clasificador (\emph{Machine Learning}, \abbr{ML})) Un algoritmo \abbr{ML} recibe un conjunto entrenamiento que se compone de varios pares $(\boldsymbol{x},y)$ conocidos como instancias de entrenamiento, donde
 \begin{itemize}
 \item $\boldsymbol{x}$ es un \emph{vector} de valores, llamado vector característico, e
@@ -306,7 +314,7 @@ Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión}
 		= 0,4840
 \end{equation*}
 
-Teniendo en cuenta estos datos para la muestra de 10.000 tuplas 
+Teniendo en cuenta estas métricas para la muestra de 10.000 tuplas, podemos suponer el que modelo generado de ejemplo tiene unos altos valores de exactitud, precisión, y exhaustividad, lo cual se puede apreciar por la baja tasa de falsos positivos y negativos. Respecto al Valor-F...
 
 (FAlTA UNA CONCLUSION EXPLICANDO LA MAGNITUD DE LOS VALORES Y EVALUAR SI EL SUPUESTO MODELO GENERADO ES BUENO)
 
