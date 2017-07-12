@@ -404,7 +404,7 @@ description "Teléfonos inteligentes"
 \begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "Smarthwatches"
+symbol "Smartwatches"
 description "Relojes Inteligentes"
 
 \end_inset
@@ -593,6 +593,94 @@ description "Java ARchive"
 LatexCommand nomenclature
 symbol "WEKA"
 description "Waikato Environment for Knowledge Analysis"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "TP"
+description "True Positive"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "TN"
+description "True Negative"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FP"
+description "False Positive"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "FN"
+description "False Negative"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "APK"
+description "Android Application Package"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "PC"
+description "Personal Computer"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "OS"
+description "Operating System"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "HARDroid"
+description "Servicio de Reconocimiento de Actividades para Android"
 
 \end_inset
 

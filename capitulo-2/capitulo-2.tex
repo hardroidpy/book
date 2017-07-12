@@ -48,7 +48,7 @@ relevante para la aplicación.
 
 Debido a la libertad de movilidad presentes en la computación móvil
 y ubicua, es primordial construir aplicaciones que conozcan el contexto
-de sus usuarios, dicho de otro modo aplicaciones de contexto\footnote{\emph{context-aware}}.
+de sus usuarios, dicho de otro modo aplicaciones de contexto (\emph{context-aware}).
 Debido a que el entorno de ejecución cambia con cierto dinamismo,
 el rango de situaciones posibles que el usuario experimenta se amplia
 y por lo tanto es necesario que los servicios proveídos por una aplicación
@@ -75,8 +75,9 @@ velocidad), y la ubicación (localización global o en interiores).
 Si clasificamos los sensores con respecto a la disposición de los
 mismos en relación a los usuarios, los autores \cite{ReyesOrtiz2015,LaraLabrador2013}
 diferencian los mismos entre ambientales, los sensores están ubicados
-de manera fija en el entorno que rodea al individuo, y de atuendo\footnote{\emph{wearables}}
-cuando los sensores están sujetos o anexados al cuerpo del individuo.
+de manera fija en el entorno que rodea al individuo, y de atuendo
+(\emph{wearables}) cuando los sensores están sujetos o anexados al
+cuerpo del individuo.
 
 \subsection{Sensores de Ambiente}
 
@@ -107,11 +108,11 @@ uso común como relojes, anteojos y los mismos teléfonos móviles.
 Una característica peculiar de los sensores es su autonomía debido
 a la utilización de baterías que proporcionan la energía para operar,
 y además pueden operar en conjunto con conexiones inalámbricas (Ej.
-\abbr{Bluetooth}) para la transmisión de señales. Las señales obtenidas
-varían desde la temperatura de la piel, la frecuencia cardíaca, posicionamiento
-y hasta el movimiento. Todas estas mediciones son útiles para tener
-una constante información del estado de un individuo en cualquier
-momento.
+\emph{\abbr{Bluetooth}}) para la transmisión de señales. Las señales
+obtenidas varían desde la temperatura de la piel, la frecuencia cardíaca,
+posicionamiento y hasta el movimiento. Todas estas mediciones son
+útiles para tener una constante información del estado de un individuo
+en cualquier momento.
 
 Los sensores anexos directamente a un individuo miden señales que
 se clasifican comúnmente según los siguientes grupos \cite{LaraLabrador2013}:
@@ -122,10 +123,10 @@ que contiene los sensores. El acelerómetro y el giroscopio son los
 más comúnmente utilizados para reconocimiento de actividades con un
 bajo consumo de energía y buena precisión de reconocimiento \cite{Bao2004,LaraLabrador2012}.
 \item \textbf{Ubicación}: miden datos obtenidos con las redes celulares
-\abbr{3G} y los satélites de navegación (\emph{Global Positioning
-System}, \abbr{GPS}). Provee información de contexto bastante relevante
-acerca de la posición del individuo, además de ciertas medidas de
-movimiento pero con un consumo moderado de energía.
+de tercera generación (\abbr{3G}) y los satélites de navegación (\emph{Global
+Positioning System}, \abbr{GPS}). Provee información de contexto
+bastante relevante acerca de la posición del individuo, además de
+ciertas medidas de movimiento pero con un consumo moderado de energía.
 \item \textbf{Fisiología}: miden signos vitales del individuo como el ritmo
 cardíaco (\emph{Heart Rate Monitor},\emph{ }\abbr{HRM}), la temperatura
 del cuerpo, el ritmo de respiración, entre otros.
@@ -166,13 +167,13 @@ móviles inteligentes.
 
 Los dispositivos móviles, principalmente las últimas generaciones
 de teléfonos móviles, en comparación con los móviles convencionales
-han incorporado más capacidad de computación (\abbr{CPU}), más \emph{hardware}
-integrado, servicios y comunicación inalámbricas. Los teléfonos móviles
-inteligentes proveen a sus usuarios mejores características como acceso
-a la Web, multimedia, juegos, servicios basados en ubicación, captura
-de imágenes y vídeos. En la \tabref{tab2:capacidad-movil} se listan
-las características comunes en un teléfono móvil inteligente de gama
-media.
+han incorporado más capacidad de computación (\emph{Central Processing
+Unit}, \abbr{CPU}), más \emph{hardware} integrado, servicios y comunicación
+inalámbricas. Los teléfonos móviles inteligentes proveen a sus usuarios
+mejores características como acceso a la Web, multimedia, juegos,
+servicios basados en ubicación, captura de imágenes y vídeos. En la
+\tabref{tab2:capacidad-movil} se listan las características comunes
+en un teléfono móvil inteligente de gama media.
 
 \begin{table}[htbp]
 \centering{}%
@@ -181,9 +182,10 @@ media.
 \textbf{Capacidad}  & \textbf{Elementos} \tabularnewline
 \hline 
 \hline 
-\emph{Hardware}  & \abbr{CPU}, \abbr{GPU}, Pantalla táctil, Memoria, Batería\tabularnewline
+\emph{Hardware}  & \abbr{CPU}, \emph{Graphics Processing Unit}, \abbr{GPU}, Pantalla
+táctil, Memoria, Batería\tabularnewline
 \hline 
-Comunicación  & \abbr{WIFI}, \abbr{Bluetooth}, \abbr{3G}/\abbr{4G}\tabularnewline
+Comunicación  & \abbr{WIFI}, \emph{\abbr{Bluetooth}}, \abbr{3G}/\abbr{4G}\tabularnewline
 \hline 
 Servicios  & Internet, Aplicaciones\tabularnewline
 \hline 
@@ -247,20 +249,19 @@ de estudio del problema \abbr{HAR} en este apartado se describe una
 definición formal del problema. Considerando el objetivo y los elementos
 de reconocimiento podemos definir el problema como \cite{LaraLabrador2013}:
 
-\label{def2:harp}\newtheorem{defs}{Definición}
-
-\begin{defs}(Problema \abbr{HAR}) Dado un conjunto $S=\{s_{0},...,s_{k-1}\}$
-de $k$ series de tiempo, cada una con una medida particular de cada
-atributo, y definidas en el intervalo de tiempo $I=\left[t_{\alpha},t_{\omega}\right]$,
-el objetivo es encontrar una partición temporal (\emph{sub}-intervalo
-de tiempo) $\left\langle I_{0},...,I_{r-1}\right\rangle $ en $I$,
-basado en los datos de $S$ y el conjunto de etiquetas que representan
-la acción realizada durante cada intervalo $I_{j}$ (Ej. quieto, caminando,
+\begin{definition}[Problema HAR]\label{def2:harp}Dado un conjunto
+$S=\{s_{0},...,s_{k-1}\}$ de $k$ series de tiempo, cada una con
+una medida particular de cada atributo, y definidas en el intervalo
+de tiempo $I=\left[t_{\alpha},t_{\omega}\right]$, el objetivo es
+encontrar una partición temporal (\emph{sub}-intervalo de tiempo)
+$\left\langle I_{0},...,I_{r-1}\right\rangle $ en $I$, basado en
+los datos de $S$ y el conjunto de etiquetas que representan la acción
+realizada durante cada intervalo $I_{j}$ (Ej. quieto, caminando,
 corriendo, etc.). 
 
 Esto implica que cada intervalo $I_{j}$ son consecutivos, no vacíos,
 no superpuestos y que ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
-\end{defs}
+\end{definition}
 
 Se asumen que las acciones consideradas no pueden ser realizadas simultáneamente,
 es decir la persona no realiza la acción de correr y caminar al mismo
@@ -276,17 +277,15 @@ de la técnica clasificación. Debido a la utilización de aprendizaje
 automático para la resolución del problema, se requiere la siguiente
 definición relajada del problema \abbr{HAR} descrito anteriormente: 
 
-\label{def2:harp-rel}\newtheorem{defs}{Definición}
-
-\begin{defs}(Problema \abbr{HAR} relajado) Dado (1) un conjunto
-$W=\{w_{0},...,w_{m-1}\}$ de $m$ ventanas de tiempo del mismo tamaño,
-donde cada una está total o parcialmente etiquetada, y que cada $w_{j}$
-contiene un conjunto de series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$
+\begin{definition}[Problema HAR relajado]\label{def2:harp-rel}Dado
+(1) un conjunto $W=\{w_{0},...,w_{m-1}\}$ de $m$ ventanas de tiempo
+del mismo tamaño, donde cada una está total o parcialmente etiquetada,
+y que cada $w_{j}$ contiene un conjunto de series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$
 para cada $k$ atributos medidos, y (2) un conjunto $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$
 de etiquetas de actividades, el objetivo es encontrar una función
 $f\colon S_{j}\rightarrow A$ que sea evaluada para todos los valores
 posibles de $S_{j}$, tal que $f(S_{j})$ es lo más próximo a la acción
-realizada durante $w_{j}$ \end{defs}
+realizada durante $w_{j}$ \end{definition}
 
 Considerar la utilización de esta definición relajada introduce un
 error en el modelo durante las ventanas de transición entre actividades,

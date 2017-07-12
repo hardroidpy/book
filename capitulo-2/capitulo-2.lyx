@@ -241,19 +241,11 @@ De manera específica, el contexto de un usuario es el estado acerca de la
 \begin_layout Standard
 Debido a la libertad de movilidad presentes en la computación móvil y ubicua,
  es primordial construir aplicaciones que conozcan el contexto de sus usuarios,
- dicho de otro modo aplicaciones de contexto
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-
+ dicho de otro modo aplicaciones de contexto (
 \emph on
 context-aware
-\end_layout
-
-\end_inset
-
-.
+\emph default
+).
  Debido a que el entorno de ejecución cambia con cierto dinamismo, el rango
  de situaciones posibles que el usuario experimenta se amplia y por lo tanto
  es necesario que los servicios proveídos por una aplicación se adapten
@@ -315,19 +307,11 @@ key "ReyesOrtiz2015,LaraLabrador2013"
 \end_inset
 
  diferencian los mismos entre ambientales, los sensores están ubicados de
- manera fija en el entorno que rodea al individuo, y de atuendo
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-
+ manera fija en el entorno que rodea al individuo, y de atuendo (
 \emph on
 wearables
-\end_layout
-
-\end_inset
-
- cuando los sensores están sujetos o anexados al cuerpo del individuo.
+\emph default
+) cuando los sensores están sujetos o anexados al cuerpo del individuo.
 \end_layout
 
 \begin_layout Subsection
@@ -418,6 +402,8 @@ Una característica peculiar de los sensores es su autonomía debido a la
  utilización de baterías que proporcionan la energía para operar, y además
  pueden operar en conjunto con conexiones inalámbricas (Ej.
  
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -430,6 +416,8 @@ abbr{Bluetooth}
 
 \end_inset
 
+
+\emph default
 ) para la transmisión de señales.
  Las señales obtenidas varían desde la temperatura de la piel, la frecuencia
  cardíaca, posicionamiento y hasta el movimiento.
@@ -473,7 +461,7 @@ key "Bao2004,LaraLabrador2012"
 \series bold
 Ubicación
 \series default
-: miden datos obtenidos con las redes celulares 
+: miden datos obtenidos con las redes celulares de tercera generación (
 \begin_inset ERT
 status open
 
@@ -486,7 +474,7 @@ abbr{3G}
 
 \end_inset
 
- y los satélites de navegación (
+) y los satélites de navegación (
 \emph on
 Global Positioning System
 \emph default
@@ -648,6 +636,10 @@ Teléfonos móviles inteligentes
 Los dispositivos móviles, principalmente las últimas generaciones de teléfonos
  móviles, en comparación con los móviles convencionales han incorporado
  más capacidad de computación (
+\emph on
+Central Processing Unit
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -758,6 +750,10 @@ abbr{CPU}
 \end_inset
 
 , 
+\emph on
+Graphics Processing Unit
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -803,6 +799,8 @@ abbr{WIFI}
 \end_inset
 
 , 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -815,6 +813,8 @@ abbr{Bluetooth}
 
 \end_inset
 
+
+\emph default
 , 
 \begin_inset ERT
 status open
@@ -1114,55 +1114,26 @@ key "LaraLabrador2013"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definition}[Problema HAR]
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "def2:harp"
 
 \end_inset
 
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newtheorem{defs}{Definición}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{defs}
-\end_layout
-
-\end_inset
-
-(Problema 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
-) Dado un conjunto 
+Dado un conjunto 
 \begin_inset Formula $S=\{s_{0},...,s_{k-1}\}$
 \end_inset
 
@@ -1218,7 +1189,7 @@ status open
 
 
 \backslash
-end{defs}
+end{definition}
 \end_layout
 
 \end_inset
@@ -1272,55 +1243,26 @@ abbr{HAR}
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definition}[Problema HAR relajado]
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "def2:harp-rel"
 
 \end_inset
 
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newtheorem{defs}{Definición}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{defs}
-\end_layout
-
-\end_inset
-
-(Problema 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
- relajado) Dado (1) un conjunto 
+Dado (1) un conjunto 
 \begin_inset Formula $W=\{w_{0},...,w_{m-1}\}$
 \end_inset
 
@@ -1369,7 +1311,7 @@ status open
 
 
 \backslash
-end{defs}
+end{definition}
 \end_layout
 
 \end_inset
@@ -2297,9 +2239,15 @@ key "ReyesOrtiz2015"
 
 \begin_layout Standard
 En el capitulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:Aprendizaje-Automatico"
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{chap:Aprendizaje-Automatico}
+\end_layout
 
 \end_inset
 
