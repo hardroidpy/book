@@ -113,8 +113,17 @@ El algoritmo C4.5, ilustrado en el Algoritmo \ref{algoC45}, presenta las siguien
 \end{algorithm}
 
 
-\section{Información de Ganancia / Entropía} (REVISAR COMPLETO)
-Tanto el algoritmo C4.5 como su predecesor el algoritmo ID3 utilizan la entropía como medida de selección para cada atributo.
+\section{Selección de Atributo de división}
+Las medidas de selección de atributos de división se utilizan heurística para seleccionar el criterio de división que mejor separa una partición de datos dada $D$ de tuplas de entrenamiento etiquetadas en clases individuales. Si dividimos $D$ en particiones más pequeñas de acuerdo a un criterio de división dado, idealmente tendríamos cada partición pura, es decir todas la tuplas deben permaneces a la misma clase. Por lo tanto, el mejor medida de selección de atributo es el que se acerque más al escenario mencionado.
+
+La medida de selección de atributo también se conocen como reglas de división porque determinan como se dividen las tuplas en un nodo determinado. Esta proporciona un rating para cada atributo de la tupla de entrenamiento. El atributo con mejor valor en esta medida es el elegido como atributo de división. Si el atributo de división es de valor continuo, el árbol sera binario, también debe determinarse el punto de división o un subconjunto de división como parte del criterio de división.
+
+El nodo raíz es creado para la partición $D$ etiquetado con el criterio de división, se crean ramas para cada resultado del criterio de división, y las tuplas se dividen en consecuencia. 
+
+De aquí en adelante, utilizaremos la siguiente nomenclatura. Sea $D$ una partición de datos, un conjunto de tuplas de entrenamiento etiquetadas. Supongamos que la clase tiene $m$ valores distintos, que definen $m$ clases distintas $C_i$ (Siendo $i=1,..,m$). De modo que $C_{i,D}$ es el conjunto de tuplas de la clase $C_{i}$ en $D$. Por lo tanto $\lvert D \rvert$ y $\lvert C_{i,D} \rvert$ denotan la cantidad de tuplas en $D$ y $C_{i,D}$ respectivamente. 
+
+\subsection{Información de Ganancia / Entropía} (REVISAR COMPLETO)
+El algoritmo ID3 utilizan la entropía como medida de selección para cada atributo.
 En donde, dado un nodo $N$ que representa las tuplas de la partición $D$, el atributo con mayor valor de ganancia es elegido para la división de $N$. Con este enfoque, el atributo reduce al mínimo la información necesaria para clasificar las tuplas de las particiones resultantes y refleja la menor aleatoriedad o impureza de la partición. Este enfoque minimiza el número esperado de ensayos necesarios para clasificar una tupla dada y garantiza un que se encuentre un árbol simple, pero no necesariamente el arbol más simple.
 
 La información de ganancia necesaria para clasificar una tupla en $D$ está dada por:
@@ -141,10 +150,9 @@ Gain(A) = Info(D) - Info_{A}(D)\label{eq3:ganancia}
 
 En otras palabras, $Gain(A)$ nos dice cuanto se ganaría por la ramificación en $A$. Es la reducción esperada en el requisito de información causado por conocer el valor de $A$. El atributo A con ganancia mas alta, $Gain(A)$, se selecciona como atributo de división en el nodo $N$. Esto equivale a decir que queremos particionar en el atributo A que haría la mejor clasificación, por lo que la cantidad de información aun necesaria para clasificar las tuplas sea mínima, $InfoA(D)$.
 
-
 %%\section{Algoritmo}
 
-\section{Ejemplo de deducción de un nodo}
+\subsection{Ejemplo de deducción de un nodo}
 
 En la siguiente \tabref{tabla:sencilla2} se presenta un conjunto de entrenamiento $D$, con la clase etiquetada, de una base de datos de compra de productos electrónicos. Para este ejemplo, cada atributo tiene un valor discreto, y los atributos de valores continuos fueron generalizados. La clase \textit{Compra Computador} tiene dos valores posibles: $SI$ y $NO$, y por lo tanto existen dos clases distintas (es decir, $m=2$). Por lo tanto, tenemos la clase $C_1$ que corresponde a $SI$ y la clase $C_2$ corresponde a $NO$.
 
@@ -223,6 +231,10 @@ Notese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la cl
 	\caption[Árbol de decisión Final]{Árbol de decisión final: Luego de finalizar el proceso del C4.5 }
 	\label{fig:arbolFinal}
 \end{figure}
+
+
+\subsection{Proporción de Ganancia}
+
 
 \section{Métricas de evaluación y Matriz de Confusión}
 En general, la selección del algoritmos de clasificación para HAR ha sido apoyada meramente por evidencias empíricas (referencias). La gran mayoría de los estudios utilizan una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado, como se visualiza en la \figref{fig:evaluacion}.
