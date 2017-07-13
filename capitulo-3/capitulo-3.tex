@@ -115,7 +115,7 @@ El algoritmo C4.5, ilustrado en el Algoritmo \ref{algoC45}, presenta las siguien
 
 \section{Información de Ganancia / Entropía} (REVISAR COMPLETO)
 Tanto el algoritmo C4.5 como su predecesor el algoritmo ID3 utilizan la entropía como medida de selección para cada atributo.
-En donde, dado un nodo $N$ que representa las tuplas de la partición $D$, el atributo con mayor valor de ganancia es elegido para la división de $N$. Con este enfoque, el atributo reduce al mínimo la información necesaria para clasificar las tuplas de las particiones resultantes y refleja la menor aleatoriedad o impureza de la partición. Este enfoque minimiza el número esperado de  ensayos necesarios para clasificar una tupla dada y garantiza un que se encuentre un árbol simple, pero no necesariamente el arbol más simple.
+En donde, dado un nodo $N$ que representa las tuplas de la partición $D$, el atributo con mayor valor de ganancia es elegido para la división de $N$. Con este enfoque, el atributo reduce al mínimo la información necesaria para clasificar las tuplas de las particiones resultantes y refleja la menor aleatoriedad o impureza de la partición. Este enfoque minimiza el número esperado de ensayos necesarios para clasificar una tupla dada y garantiza un que se encuentre un árbol simple, pero no necesariamente el arbol más simple.
 
 La información de ganancia necesaria para clasificar una tupla en $D$ está dada por:
 
@@ -170,7 +170,7 @@ Info(D) = - \frac{9}{14}\log_2(\frac{9}{14}) - \frac{5}{14}\log_2(\frac{5}{14})	
 		6   & Adulto  & Bajo    & Si         & Excelente         & NO                 \\ 
 		7   & Mediana & Bajo    & Si         & Excelente         & SI                 \\ 
 		8   & Joven   & Medio   & No         & Justa             & NO                 \\ 
-		9   & Joven   & Bajo    & Yes        & Justa             & SI                 \\ 
+		9   & Joven   & Bajo    & Si        & Justa              & SI                 \\ 
 		10  & Adulto  & Medio   & Si         & Justa             & SI                 \\
 		11  & Joven   & Medio   & Si         & Excelente         & SI                 \\
 		12  & Mediana & Medio   & No         & Excelente         & SI                 \\
@@ -217,7 +217,12 @@ Dado que el atributo $Edad$ tiene mayor ganancia de información, es seleccionad
 Notese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la clase $SI$, por lo tanto en esta rama se crea una hoja con etiqueta $SI$. Para las particiones $Edad = Joven$ y $Edad = Adulto$, el proceso de deducción se continua hasta que se generen nodos hoja que clasifican las tuplas en una sola clase. El
  árbol de decisión final deducido mediante algoritmo C4.5 se muestra en la \figref{fig:arbolFinal}.
  
-(CREAR FIGURA CON ARBOL FINAL)
+\begin{figure}[!tbph]
+	\centering
+	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/dtree_parti_final}
+	\caption[Árbol de decisión Final]{Árbol de decisión final: Luego de finalizar el proceso del C4.5 }
+	\label{fig:arbolFinal}
+\end{figure}
 
 \section{Métricas de evaluación y Matriz de Confusión}
 En general, la selección del algoritmos de clasificación para HAR ha sido apoyada meramente por evidencias empíricas (referencias). La gran mayoría de los estudios utilizan una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado, como se visualiza en la \figref{fig:evaluacion}.
@@ -311,10 +316,8 @@ Exhaustividad = \frac{TP}{TP + FN} = \frac{6.954}{6.954 + 46} = 0,9934
 \begin{equation*}
 Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión} + Exhaustividad} 
 		= 2 \cdot \frac{\mbox{0,9440} \cdot 0,9934}{\mbox{0,9440} + 0,9934}
-		= 0,4840
+		= 0,9680
 \end{equation*}
 
-Teniendo en cuenta estas métricas para la muestra de 10.000 tuplas, podemos suponer el que modelo generado de ejemplo tiene unos altos valores de exactitud, precisión, y exhaustividad, lo cual se puede apreciar por la baja tasa de falsos positivos y negativos. Respecto al Valor-F...
-
-(FAlTA UNA CONCLUSION EXPLICANDO LA MAGNITUD DE LOS VALORES Y EVALUAR SI EL SUPUESTO MODELO GENERADO ES BUENO)
+Teniendo en cuenta estas métricas para la muestra de 10.000 tuplas, podemos suponer el que modelo generado de ejemplo tiene unos altos valores de exactitud, precisión, y exhaustividad, lo cual se puede apreciar por la baja tasa de falsos positivos y negativos. Respecto al Valor-F, el tener valores altos de precisión y exhaustividad, da un valor muy alto, ya que el Valor-F es de forma general la media armónica de ambos.
 
