@@ -17,7 +17,8 @@
 \usepackage{setspace}
 
 \usepackage{algorithm}
-%\usepackage{algorithmic}
+\usepackage{algorithmic}
+\usepackage{algpseudocode}
 \bibliographystyle{plainnat} % Numeros ordenados por entrada
 \AtBeginDocument{\renewcommand\cite{\citep}}
 

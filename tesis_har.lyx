@@ -89,8 +89,8 @@ customHeadersFooters
 \topmargin 2.5cm
 \rightmargin 1.5cm
 \bottommargin 2cm
-\secnumdepth 2
-\tocdepth 2
+\secnumdepth 3
+\tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language english
@@ -236,7 +236,7 @@ filename "capitulo-2/capitulo-2.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "capitulo-3/capitulo-3.lyx"
+filename "capitulo-3/capitulo-3l.lyx"
 
 \end_inset
 

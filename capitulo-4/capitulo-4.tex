@@ -14,8 +14,8 @@ medio del uso de sensores empotrados se convierte en un mecanismo
 para crear aplicaciones de cuidado personal, salud, asistencia inteligente,
 entre otros. El requerimiento primordial de un sistema con una aplicación
 de contexto es que este pueda ser portado continuamente como atuendo
-de sus usuarios (un sistema \abbr{Wearable}). Por lo tanto, un sistema
-que acompaña continuamente al usuario puede interaccionar oportunamente
+de sus usuarios (\abbr{Wearables}). Por lo tanto, un sistema que
+acompaña continuamente al usuario puede interaccionar oportunamente
 con el mismo ya que este tiene la capacidad de observar en tiempo
 real las acciones de su portador. 
 
@@ -32,7 +32,7 @@ contextuales.
 \label{sec42:componentes}El diseño de la arquitectura de componentes
 de un sistema \abbr{HAR} se rige de acuerdo a las guías de implementación
 de una aplicación de aprendizaje automático (\emph{Machine Learning},
-\abbr{ML}). De acuerdo al proceso definido en la sección \ref{sec262:proceso-har},
+\abbr{ML}). De acuerdo al proceso definido en la \secref{sec262:proceso-har},
 se tiene en cuenta la misma estructura de componentes y las mismas
 fases de procesamiento de información. Además, se debe contemplar
 que el proceso se divide en dos etapas: la etapa de entrenamiento
@@ -61,7 +61,7 @@ de los componentes y sus interrelaciones. Las funcionalidades de cada
 componente se describen a continuación. 
 
 \begin{figure}[!tbph]
-\centering{}\includegraphics[width=1\columnwidth,width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption[Componentes \abbr{HAR}]{\label{fig4:componentes-har}Componentes de los sistemas \abbr{HAR}}
+\centering{}\includegraphics[width=1\columnwidth,width=1\linewidth]{capitulo-4/graphics/diagrama_4_1}\caption[Componentes HAR]{\label{fig4:componentes-har}Componentes de los sistemas \abbr{HAR}}
 \end{figure}
 
 
@@ -72,13 +72,13 @@ consiste en recolectar medidas de señales obtenidas de los sensores
 que observan continuamente a los usuarios. Además, se procede a realizar
 un registro de manera organizada e indexada de los mismos con respecto
 al tiempo. Para capturar los datos se requieren instrumentos de medición
-apropiados como los sensores (véase \ref{sec23:sensores}). Los sensores
-capturan las señales directamente de los usuarios por medio de observaciones
-continuas, al estar anexados al cuerpo; en la cintura, la muñeca,
-el pectoral, los muslos o en la cabeza \cite{Bao2004}. También, los
-sensores podrían ser portados por el usuario ya que están comúnmente
-empotrados en dispositivos de uso regular como los teléfonos móviles
-modernos, en relojes o lentes inteligentes \cite{LaraLabrador2012,Choudhury2008}.
+apropiados como los sensores (véase la \secref{sec23:sensores}).
+Los sensores capturan las señales directamente de los usuarios por
+medio de observaciones continuas, al estar anexados al cuerpo; en
+la cintura, la muñeca, el pectoral, los muslos o en la cabeza \cite{Bao2004}.
+También, los sensores podrían ser portados por el usuario ya que están
+comúnmente empotrados en dispositivos de uso regular como los teléfonos
+móviles modernos, en relojes o lentes inteligentes \cite{LaraLabrador2012,Choudhury2008}.
 
 A continuación se describe el método común de registro y organización
 de los datos obtenidos de las señales continuas, además de algunos
@@ -97,8 +97,8 @@ La marca de tiempo usualmente se mide \emph{mili}-segundos y dependiendo
 del sensor el intervalo entre medidas puede variar en el mismo orden,
 Ej. con tasa de salida de \texttt{60 \abbr{Hz} }se tendrían 60 medidas
 en un segundo. Las señales de sensores pueden clasificarse de la misma
-manera que los grupos citados en la sección \ref{sec23:sensores},
-según movimiento, posición, ambiente y fisiológicas. 
+manera que los grupos citados en la \secref{sec23:sensores}, según
+movimiento, posición, ambiente y fisiológicas. 
 
 A continuación se describen dos grupos de señales capturadas por medio
 de un sensor específico.
@@ -120,8 +120,8 @@ dispositivo con respecto la orientación del mismo (Ej. un sensor de
 aceleración en reposo mide el valor$-9.8\,m\,s^{-2}$ en dirección
 al suelo). La señal de la aceleración dada por $a(t)$, que es un
 vector con respecto al tiempo con tres componentes en cada eje $(x,y,z)$,
-cadde los cuales cada uno representa una medida $a_{x}$, $a_{y}$
-y $a_{z}$. En la \figref{fig4:muestra-ac} se despliegan las medidas
+de los cuales cada uno representa una medida $a_{x}$, $a_{y}$ y
+$a_{z}$. En la \figref{fig4:muestra-ac} se despliegan las medidas
 obtenidas por la señal $a(t)$ durante una actividad física determinada.
 
 \begin{figure}[!tbph]
@@ -198,7 +198,7 @@ del \abbr{GPS}.
 \begin{centering}
 \includegraphics[scale=0.8]{capitulo-4/graphics/gps}
 \par\end{centering}
-\caption[Coordenadas por \abbr{GPS}.]{\label{fig4:gps}Visualización de satélites y coordenadas globales
+\caption[Coordenadas por GPS]{\label{fig4:gps}Visualización de satélites y coordenadas globales
 basada en \abbr{GPS}.}
 \end{figure}
 
@@ -266,7 +266,7 @@ y la aplicación \emph{SensorLog} \cite{Alan2014s}.
 El protocolo de recolección consiste en alistar un grupo de personas
 que porten un teléfono inteligente mientras realizan con conjunto
 específico de actividades y registrar datos por medio de la aplicación.
-Las actividades de interés descritas en la sección \ref{sec263:actividades-humanas}
+Las actividades de interés descritas en la \secref{sec263:actividades-humanas}
 deben ser realizadas portando el teléfono en el bolsillo donde cada
 individuo realiza una sesión de caminata, trote, bicicleta o conducir
 un vehículo por un periodo de tiempo de 10 a 15 minutos. Un ejemplo
@@ -322,7 +322,7 @@ ejemplo errores del orden de $\pm0.005$.
 
 Entonces, para reducir ruido de la señal se debe aplicar uno o más
 filtros. El filtro permite suavizar la señal por medio de una función
-simple como la del cálculo de promedios variables\footnote{\emph{moving average}}
+simple como la del cálculo de promedios variables (\emph{moving average})
 o por un método como el de \emph{Butterworth} \cite{ReyesOrtiz2015}. 
 
 Para el análisis de este trabajo se utilizó el filtro de señal de
@@ -330,10 +330,9 @@ promedios variables debido a su simplicidad y aplicabilidad basado
 en otros trabajos como \cite{Yang2009}. El filtro de señal se puede
 definir con la siguiente función $M$ descrita a continuación:
 
-\label{def4:moving-average}\newtheorem{defs}{ }
-
-\begin{defs}(\emph{Moving average}) Dada una secuencia $\left\{ a_{i}\right\} _{i=1}^{N}$,
-un $n$-\emph{moving average} es una nueva secuencia $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
+\begin{definition}[Moving average]\label{def4:moving-average}Dada
+una secuencia $\left\{ a_{i}\right\} _{i=1}^{N}$, un $n$-\emph{moving
+average} es una nueva secuencia $\left\{ s_{i}\right\} _{i=1}^{N-n+1}$
 definida a partir de $a_{i}$ tomando la media aritmética de las \emph{sub}-secuencias
 de tamaño $n$ donde,
 
@@ -352,7 +351,7 @@ S_{2} & = & \frac{1}{2}(a_{1}+a_{2},a_{2}+a_{3},...,a_{n-1}+a_{n})
 S_{3}=\frac{1}{3}(a_{1}+a_{2}+a_{3},a_{2}+a_{3}+a_{4},...,a_{n-2}+a_{n-1}+a_{n})
 \end{equation}
 
-y así sucesivamente.\end{defs}
+y así sucesivamente.\end{definition}
 
 Como ejemplo, en la \figref{fig4:filter-maf} se despliegan las gráficas
 de una señal de aceleración $a_{y}$ para la dimensión \textbf{$y$}
@@ -366,8 +365,7 @@ de perturbaciones bruscas o ruido en la señal.
 \begin{centering}
 \includegraphics{capitulo-4/graphics/moving_average}
 \par\end{centering}
-\caption[Señal filtrada por la función $M$]{\label{fig4:filter-maf}Señal filtrada por promedios variables. (PONER
-EN COLORES)}
+\caption[Señal filtrada por la función $M$]{\label{fig4:filter-maf}Señal filtrada por promedios variables.}
 \end{figure}
 
 
@@ -415,7 +413,7 @@ Las ventanas de tiempo hacen que las señales queden segmentadas en
 muestras discretas utilizadas como unidades de reconocimiento de actividad.
 De esta manera, cada ventana tiene inequívocamente una actividad humana
 asociada y de esta forma podemos satisfacer el requisito planteado
-por la definición del problema en la sección \ref{def2:harp-rel}. 
+por la definición \ref{def2:harp-rel} de la \secref{sec261:definicion-har}. 
 
 Para incrementar la cantidad de muestras se utiliza una superposición
 de $50\%$ con ventanas consecutivas y con tamaño de $2.56$ segundos,
@@ -437,18 +435,18 @@ la siguiente sección.
 \subsubsection{Extracción}
 
 \label{ssec44:extraction}Teniendo en cuenta la definición del problema
-relajado en la sección \ref{def2:harp-rel}, la incógnita principal
-consiste en la comparación de las muestras provenientes de dos ventanas
-$w_{1}$ y $w_{2}$, cada muestra con medidas $S_{j}$ que corresponden
-a señales completamente distintas. Estas señales no serán idénticas
-por más que sean obtenidas del mismo individuo realizando la misma
-actividad física. Por lo tanto, para comparar muestras entres sí es
-necesario extraer valores característicos en cada ventana $w_{j}$
-por medio del filtro de información relevante y el cálculo de valores
-que identifiquen de cierta manera a las señales. 
+relajado en la definición \ref{def2:harp-rel} de la \secref{sec261:definicion-har},
+la incógnita principal consiste en la comparación de las muestras
+provenientes de dos ventanas $w_{1}$ y $w_{2}$, cada muestra con
+medidas $S_{j}$ que corresponden a señales completamente distintas.
+Estas señales no serán idénticas por más que sean obtenidas del mismo
+individuo realizando la misma actividad física. Por lo tanto, para
+comparar muestras entres sí es necesario extraer valores característicos
+en cada ventana $w_{j}$ por medio del filtro de información relevante
+y el cálculo de valores que identifiquen de cierta manera a las señales. 
 
-El proceso de extracción se traduce en vectores característicos (\emph{\abbr{feature vectors}})
-con información relevante que componen varias métricas calculadas
+El proceso de extracción se traduce en vectores característicos (\emph{feature
+vectors}) con información relevante que componen varias métricas calculadas
 en base a las ventanas $w_{j}$ en el dominio del tiempo. Posteriormente
 también, las ventanas son transformadas en el dominio de la frecuencia
 con métodos discretos de\emph{ Fourier} utilizando algoritmos \abbr{FFT}
@@ -458,7 +456,7 @@ Los métodos de cálculo pueden ser de tipos estadísticos y estructurales
 \cite{LaraLabrador2013} en base a lo propuesto por otros trabajos
 precedentes como \cite{Yang2009,Bao2004}. Las métricas estadísticas
 con respecto al tiempo y frecuencia utilizadas en este trabajo son
-(AGREGAR REF DE DEFINICION):
+\cite{ReyesOrtiz2015}:
 \begin{enumerate}
 \item \textbf{Media aritmética}: medida de tendencia central en la señal.
 \item \textbf{Valor máximo}: medida de valor extremo en la señal.
@@ -527,7 +525,7 @@ Las señales procesadas del conjunto $S$ corresponden al atributo
 de la aceleración. Se utiliza un conjunto $S=\left\{ s_{0}\right\} $
 con $k=1$, donde $s_{0}$ corresponde a la magnitud del vector resultante
 de las medidas de fuerza ejercida en los tres ejes según la ecuación
-\ref{eq4:magnitud}.
+\ref{eq4:magnitud} \cite{Schneider2014}.
 
 \begin{equation}
 \lVert a\rVert=\sqrt{a_{x}^{2}+a_{y}^{2}+a_{z}^{2}}\label{eq4:magnitud}
@@ -537,10 +535,12 @@ Se eligió utilizar la magnitud $\lVert a\rVert$ del vector excluyendo
 los valores unitarios en cada dimensión $a_{x}$,$a_{y}$,$a_{z}$
 por los siguientes motivos:
 \begin{itemize}
-\item Simplicidad para utilizar la técnica de \emph{Decision Tree} (\abbr{DT}).
+\item Simplicidad para utilizar la técnica de árboles de decisión (\emph{Decision
+Tree}, \abbr{DT}).
 \item Para cancelar el efecto de variaciones en la orientación del teléfono
 \cite{Schneider2014}.
-\item Reducir la dimensión de características (a un tercio) evitando sobreajustes\footnote{\emph{overfitting}}.
+\item Reducir la dimensión de características (a un tercio) evitando sobreajustes
+(\emph{overfitting}).
 \end{itemize}
 El proceso de extracción transforma una ventana $w_{j}$ con señales
 originales en un vector característico $F_{j}$ de dimensión $p$
@@ -586,11 +586,11 @@ partir de un conjunto de observaciones denominadas instancias \cite{LaraLabrador
 El propósito principal del algoritmo es el de clasificar los datos
 desconocidos. Considerando el capitulo \ref{chap:Aprendizaje-Automatico},
 la entrada aplicada a un algoritmo de \abbr{ML} es un conjunto de
-entrenamiento\footnote{\emph{training set}} y el resultado del mismo
-es un clasificador\footnote{\emph{classifier}} \cite{Rajaraman2011}.
-En la \figref{fig4:clasificador} se muestra una gráfico esquemático
-adaptado al problema \abbr{HAR} del proceso de extracción de conocimiento
-con algoritmos de aprendizaje automático \cite{Raschka2014}.
+entrenamiento (\emph{training set}) y el resultado del mismo es un
+clasificador (\emph{classifier}) \cite{Rajaraman2011}. En la \figref{fig4:clasificador}
+se muestra una gráfico esquemático adaptado al problema \abbr{HAR}
+del proceso de extracción de conocimiento con algoritmos de aprendizaje
+automático \cite{Raschka2014}.
 
 \begin{figure}[H]
 \begin{centering}
@@ -648,17 +648,17 @@ de clasificación.}
 \end{table}
 
 La tarea de etiquetado puede ser realizada de manera manual (como
-fue indicado en la sección \ref{ssec44:labeling}), como también de
-manera automatizada. El etiquetado de datos detectados a partir de
-individuos que realizan diferentes actividades es una tarea relativamente
-fácil. Algunos sistemas guardan datos del sensor en medios no volátiles
-mientras que una persona del equipo de investigación supervisa el
-proceso de recolección y registra de forma manual la etiqueta de actividad
-en cada intervalo de tiempo. Otros sistemas se caracterizan por una
-aplicación móvil que permite al usuario seleccionar la actividad que
-se realiza a partir de una lista, de esta manera, cada muestra se
-corresponde con una etiqueta de actividad. Este ultimo enfoque es
-utilizado en este trabajo.
+fue indicado en la \secref{ssec44:labeling}), como también de manera
+automatizada. El etiquetado de datos detectados a partir de individuos
+que realizan diferentes actividades es una tarea relativamente fácil.
+Algunos sistemas guardan datos del sensor en medios no volátiles mientras
+que una persona del equipo de investigación supervisa el proceso de
+recolección y registra de forma manual la etiqueta de actividad en
+cada intervalo de tiempo. Otros sistemas se caracterizan por una aplicación
+móvil que permite al usuario seleccionar la actividad que se realiza
+a partir de una lista, de esta manera, cada muestra se corresponde
+con una etiqueta de actividad. Este ultimo enfoque es utilizado en
+este trabajo.
 
 Es importante considerar las etiquetas asignadas a los datos originales
 de la señal en cada ventana de tiempo. Las etiquetas asignadas a los
@@ -669,10 +669,9 @@ vector característico.
 
 El requisito primordial para la tarea de aprendizaje es escoger al
 algoritmo adecuado para la clasificación. Así como se presenta en
-el capitulo \ref{chap:Aprendizaje-Automatico} la elección es el algoritmo
-C4.5 (algoritmo \ref{algoC45}) basado en el enfoque de arboles de
-decisión. El proceso de aprendizaje puede realizarse en base a tres
-metodologías \cite{Rajaraman2011}.
+el capitulo \ref{chap:Aprendizaje-Automatico} basado en el enfoque
+de arboles de decisión. El proceso de aprendizaje puede realizarse
+en base a tres metodologías \cite{Rajaraman2011}.
 
 El aprendizaje \emph{basado en lotes} consiste en contar con la mayor
 cantidad de datos de entrenamiento al principio del proceso y utilizarlo
@@ -714,12 +713,12 @@ la manera en que los datos son tratados al clasificar datos desconocidos
 y utilizados para construir un modelo de reconocimiento efectivo.
 Al tratar con los datos, es buena estrategia dividir las instancias
 de entrada disponibles en un conjunto de entrenamiento y un remanente
-conocido como conjunto de validación\emph{}\footnote{\emph{test set}}.
-El problema común de los algoritmos de \abbr{ML} es el error asociado
-al sobreajuste, es decir, la clasificación resulta como se espera
-en el conjunto de entrenamiento pero ante la mínima variación con
-datos desconocidos de una población mayor el resultado se torna atípico
-o con errores de clasificación \cite{Rajaraman2011}. 
+conocido como conjunto de validación (\emph{test set}). El problema
+común de los algoritmos de \abbr{ML} es el error asociado al sobreajuste,
+es decir, la clasificación resulta como se espera en el conjunto de
+entrenamiento pero ante la mínima variación con datos desconocidos
+de una población mayor el resultado se torna atípico o con errores
+de clasificación \cite{Rajaraman2011}. 
 
 El conjunto de validación permite evaluar el clasificador determinando
 si se sobreajustan los resultados y con cuanta precisión es efectivo
@@ -732,8 +731,10 @@ el algoritmo de aprendizaje automático. Por ejemplo, si se construyen
 árboles de decisión, se pueden limitar la cantidad de niveles del
 árbol.
 
-(EN ESTE TRABAJO LA EVALUACION SE REALIZA UTILIZANDO LO HECHO EN CAP
-3)
+En este trabajo la evaluación se realiza en base a lo descrito en
+el capítulo \ref{chap:Aprendizaje-Automatico} en base a la matriz
+de confusión y las métricas de exactitud, precisión, exhaustividad
+y valor \emph{F}.
 
 \subsubsection{Clasificación}
 
@@ -745,8 +746,8 @@ ser evaluadas por el modelo y emitir una etiqueta de resultado particular
 para cada instancia desconocida.
 
 Este trabajo clasifica instancias desconocidas por medio de un modelo
-construido con el algoritmo C4.5 (\ref{algoC45}) basado en el enfoque
-de arboles de decisión descrito en el capitulo \ref{chap:Aprendizaje-Automatico}.
+construido con el algoritmo C4.5 (\algref{algoC45}) basado en el
+enfoque de arboles de decisión descrito en el capitulo \ref{chap:Aprendizaje-Automatico}.
 
 \section{Otras Capacidades deseables}
 
@@ -755,8 +756,8 @@ en las secciones anteriores, existen un conjunto de características
 deseables que deben ser satisfechas para la construcción efectiva
 de los sistemas \abbr{HAR}. Estas características abordan cuestiones
 de diseño importantes que conciernen a la calidad y al funcionamiento
-del sistema. Algunas de estas características se listan a continuación
-(PONER REFERENCIAS):
+del sistema. Algunas de estas características recopiladas de \cite{Choudhury2008,LaraLabrador2013}
+se listan a continuación:
 \begin{itemize}
 \item \textbf{Portabilidad}: el sistema utiliza sensores adjuntos a los
 individuos (Ej. el acelerómetro) y no deben obstruir las actividades
