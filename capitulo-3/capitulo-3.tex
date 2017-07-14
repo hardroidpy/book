@@ -152,7 +152,7 @@ En otras palabras, $Gain(A)$ nos dice cuanto se ganaría por la ramificación en
 
 %%\section{Algoritmo}
 
-\subsection{Ejemplo de deducción de un nodo}
+\subsection{Ejemplo de deducción de un nodo - ID3}
 
 En la siguiente \tabref{tabla:sencilla2} se presenta un conjunto de entrenamiento $D$, con la clase etiquetada, de una base de datos de compra de productos electrónicos. Para este ejemplo, cada atributo tiene un valor discreto, y los atributos de valores continuos fueron generalizados. La clase \textit{Compra Computador} tiene dos valores posibles: $SI$ y $NO$, y por lo tanto existen dos clases distintas (es decir, $m=2$). Por lo tanto, tenemos la clase $C_1$ que corresponde a $SI$ y la clase $C_2$ corresponde a $NO$.
 
@@ -178,7 +178,7 @@ Info(D) = - \frac{9}{14}\log_2(\frac{9}{14}) - \frac{5}{14}\log_2(\frac{5}{14})	
 		6   & Adulto  & Bajo    & Si         & Excelente         & NO                 \\ 
 		7   & Mediana & Bajo    & Si         & Excelente         & SI                 \\ 
 		8   & Joven   & Medio   & No         & Justa             & NO                 \\ 
-		9   & Joven   & Bajo    & Si        & Justa              & SI                 \\ 
+		9   & Joven   & Bajo    & Si         & Justa             & SI                 \\ 
 		10  & Adulto  & Medio   & Si         & Justa             & SI                 \\
 		11  & Joven   & Medio   & Si         & Excelente         & SI                 \\
 		12  & Mediana & Medio   & No         & Excelente         & SI                 \\
@@ -234,6 +234,40 @@ Notese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la cl
 
 
 \subsection{Proporción de Ganancia}
+La medida de información de ganancia tiene inclinación hacia un particionamiento con muchos resultados, es decir, es propenso a seleccionar atributos que tengan gran numero de valores. Por ejemplo, considerando un atributo que actúa como identificador, como $Rid$; una división en $Rid$ generaría un gran numero de particiones, tantas como valores contenga $Rid$, cada partición con una sola tupla. Debido a que cada partición es pura, la información necesaria para clasificar el conjunto dado $D$ basado en el particionamiento mencionado seria $Info_{Rid}(D)=0$. Por lo tanto, la información de ganancia es la máxima, claramente, tal partición es inútil para la clasificación. 
+
+El algoritmo C4.5, sucesor de ID3, usa una extensión de la información de ganancia conocida como proporción de ganancia, que intenta contrarrestar la inclinación mencionada.	Aplica una normalización a la información de ganancia usando un valor "Informacion de division" definido de manera análoga a $Info(D)$.
+
+\begin{equation}
+SplitInfo_{A}(D) = -\displaystyle\sum_{j=1}^{v} \displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert} \times Info(\frac{\lvert D_{j} \rvert}{\lvert D \rvert})\label{eq3:SplitInfo}
+\end{equation}
+
+Este valor representa la información potencial generada al dividir el conjunto de datos de entrenamiento $D$ en $v$ particiones, correspondientes a los $v$ de una prueba en el atributo $A$.
+Nótese que, para cada resultado, es considerado el numero de tuplas que tienen ese resultado, respecto al numero total de tuplas en $D$. Esto difiere de información de ganancia, que media la información respecto a la clasificación generada basada en la misma partición. La proporción de ganancia se define como:
+
+\begin{equation}
+GainRatio(A) = \frac{Gain(D)}{SplitInfo_{A}(D)}\label{eq3:GainRatio}
+\end{equation}
+
+El atributo con mayor proporción de ganancia es seleccionado como atributo de división. Tener en cuenta, por otro lado, que a medida que la información de división se acerca a cero, la relación se vuelve inestable. 
+
+\subsection{Ejemplo de deducción de un nodo - C4.5}
+De la misma manera que el ejemplo anterior, utilizando la \tabref{tabla:sencilla2}, por ejemplo para el atributo $Ingreso$ una prueba de división divide la tabla en tres particiones, es decir, $alto$, $medio$, $bajo$, las cuales contienen, cuanto, seis, y cuatro tuplas respectivamente. Con estos datos, para calcular la proporción de ganancia del atributo $Ingreso$, debemos calcular primeramente la información de división, utilizando la formula \ref{eq3:SplitInfo}:
+
+
+\begin{equation*}
+SplitInfo_{ingreso}(D) = & - \frac{4}{14} \times \log_2(\frac{4}{14}) \\
+						 & - \frac{6}{14} \times \log_2(\frac{6}{14}) \\
+						 & - \frac{4}{14} \times \log_2(\frac{4}{14}) \\
+						 & = 0.926 bits.
+\end{equation*}
+
+Tomando del ejemplo anterior, la información de ganancia $Gain(Ingreso)$ = 0.029 bits, la proporción de ganancia la calcularíamos:
+
+\begin{equation*}
+GainRatio(Ingreso) = \frac{0.029}{0.926} = 0.031 bits \\
+\end{equation*}
+
 
 
 \section{Métricas de evaluación y Matriz de Confusión}
