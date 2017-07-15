@@ -11,17 +11,15 @@ Muchos autores definen aprendizaje automático de distintas maneras, aunque \cit
 
 \vspace{5mm}
 
-\label{def3:ml}\newtheorem{defs}{}
-\begin{defs}(Aprendizaje Automático (\emph{Machine Learning}, \abbr{ML})) 
-	Definimos el aprendizaje automático como un conjunto de métodos que pueden detectar automáticamente patrones en los datos y luego utilizar estos patrones descubiertos para predecir los datos futuros o para realizar otros tipos de toma de decisiones bajo incertidumbre.
-\end{defs}
+\begin{definition}[Aprendizaje Automático (\emph{Machine Learning}, \abbr{ML})] 
+    \label{def3:ml}Definimos el aprendizaje automático como un conjunto de métodos que pueden detectar automáticamente patrones en los datos y luego utilizar estos patrones descubiertos para predecir los datos futuros o para realizar otros tipos de toma de decisiones bajo incertidumbre.
+\end{definition}
 
-\section{Aprendizaje supervisado}
+\section{Aprendizaje Supervisado}
 
 \label{sec3:aprendizaje}De manera a establecer un marco teórico para los algoritmos de aprendizaje automático supervisados \cite{Rajaraman2011} se incluye la siguiente definición formal.
 
-\label{def3:clasificacion}\newtheorem{defs}{}
-\begin{defs}(Clasificador (\emph{Machine Learning}, \abbr{ML})) Un algoritmo \abbr{ML} recibe un conjunto entrenamiento que se compone de varios pares $(\boldsymbol{x},y)$ conocidos como instancias de entrenamiento, donde
+\begin{definition}[Clasificador (\emph{Machine Learning}, \abbr{ML})]\label{def3:clasificacion}Un algoritmo \abbr{ML} recibe un conjunto entrenamiento que se compone de varios pares $(\boldsymbol{x},y)$ conocidos como instancias de entrenamiento, donde
 \begin{itemize}
 \item $\boldsymbol{x}$ es un \emph{vector} de valores, llamado vector característico, e
 \item $\boldsymbol{y}$ es la \emph{etiqueta}, el valor de clasificación para $\boldsymbol{x}$.
@@ -32,10 +30,10 @@ El objetivo del proceso \abbr{ML} es encontrar una función $y=f(\boldsymbol{x})
 \item $\boldsymbol{y}$ es un valor booleano verdadero-falso, también representado como $+1$ y $-1$. Este caso corresponde a una clasificación binaria. 
 \item $\boldsymbol{y}$ es miembro de un conjunto finito discreto donde cada valor representa una clase particular. El problema es llamado de clasificación de múltiples clases.
 \end{enumerate}
-\end{defs}
+\end{definition}
 
 El aprendizaje supervisado, comúnmente conocido como clasificación de múltiples clases discretas, ha sido un campo muy productivo que da lugar a un gran número de algoritmos. En la \tabref{tab3:clasificadores} se resumen los clasificadores más importantes en el estudio de \abbr{HAR}s según su tipo.
-\begin{table}
+\begin{table}[!htbp]
 \begin{centering}
 \begin{tabular}{|l|l|}
 \hline 
@@ -67,8 +65,7 @@ El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/ad_2}
-	\caption[Árbol de decisión]{Árbol de decisión}
-	\label{fig:arbolEjemplo}
+	\caption[Árbol de decisión]{\label{fig:arbolEjemplo}Árbol de decisión}
 \end{figure}
 
 En la \figref{fig:arbolEjemplo} se muestra un típico ejemplo de árbol de decisión que representa el concepto de jugar o no Golf, teniendo en cuenta variables climática representadas en los nodos internos, y los nodos hojas denotan las decisiones de jugar o no al Golf. 
@@ -113,7 +110,7 @@ El algoritmo C4.5, ilustrado en el Algoritmo \ref{algoC45}, presenta las siguien
 \end{algorithm}
 
 
-\section{Selección de Atributo de división}
+\section{Selección de Atributo de División}
 Las medidas de selección de atributos de división se utilizan heurística para seleccionar el criterio de división que mejor separa una partición de datos dada $D$ de tuplas de entrenamiento etiquetadas en clases individuales. Si dividimos $D$ en particiones más pequeñas de acuerdo a un criterio de división dado, idealmente tendríamos cada partición pura, es decir todas la tuplas deben permaneces a la misma clase. Por lo tanto, el mejor medida de selección de atributo es el que se acerque más al escenario mencionado.
 
 La medida de selección de atributo también se conocen como reglas de división porque determinan como se dividen las tuplas en un nodo determinado. Esta proporciona un rating para cada atributo de la tupla de entrenamiento. El atributo con mejor valor en esta medida es el elegido como atributo de división. Si el atributo de división es de valor continuo, el árbol sera binario, también debe determinarse el punto de división o un subconjunto de división como parte del criterio de división.
@@ -122,7 +119,7 @@ El nodo raíz es creado para la partición $D$ etiquetado con el criterio de div
 
 De aquí en adelante, utilizaremos la siguiente nomenclatura. Sea $D$ una partición de datos, un conjunto de tuplas de entrenamiento etiquetadas. Supongamos que la clase tiene $m$ valores distintos, que definen $m$ clases distintas $C_i$ (Siendo $i=1,..,m$). De modo que $C_{i,D}$ es el conjunto de tuplas de la clase $C_{i}$ en $D$. Por lo tanto $\lvert D \rvert$ y $\lvert C_{i,D} \rvert$ denotan la cantidad de tuplas en $D$ y $C_{i,D}$ respectivamente. 
 
-\subsection{Información de Ganancia / Entropía}
+\subsection{Información de ganancia / entropía}
 El algoritmo ID3 utilizan la entropía como medida de selección para cada atributo.
 En donde, dado un nodo $N$ que representa las tuplas de la partición $D$, el atributo con mayor valor de ganancia es elegido para la división de $N$. Con este enfoque, el atributo reduce al mínimo la información necesaria para clasificar las tuplas de las particiones resultantes y refleja la menor aleatoriedad o impureza de la partición. Este enfoque minimiza el número esperado de ensayos necesarios para clasificar una tupla dada y garantiza un que se encuentre un árbol simple, pero no necesariamente el arbol más simple.
 
@@ -150,8 +147,6 @@ Gain(A) = Info(D) - Info_{A}(D)\label{eq3:ganancia}
 
 En otras palabras, $Gain(A)$ nos dice cuanto se ganaría por la ramificación en $A$. Es la reducción esperada en el requisito de información causado por conocer el valor de $A$. El atributo A con ganancia mas alta, $Gain(A)$, se selecciona como atributo de división en el nodo $N$. Esto equivale a decir que queremos particionar en el atributo A que haría la mejor clasificación, por lo que la cantidad de información aun necesaria para clasificar las tuplas sea mínima, $InfoA(D)$.
 
-%%\section{Algoritmo}
-
 \subsection{Ejemplo de deducción de un nodo - ID3}
 
 En la siguiente \tabref{tabla:sencilla2} se presenta un conjunto de entrenamiento $D$, con la clase etiquetada, de una base de datos de compra de productos electrónicos. Para este ejemplo, cada atributo tiene un valor discreto, y los atributos de valores continuos fueron generalizados. La clase \textit{Compra Computador} tiene dos valores posibles: $SI$ y $NO$, y por lo tanto existen dos clases distintas (es decir, $m=2$). Por lo tanto, tenemos la clase $C_1$ que corresponde a $SI$ y la clase $C_2$ corresponde a $NO$.
@@ -162,9 +157,7 @@ Existen nueve tuplas de la clase $SI$, y cinco de la clase $NO$. Para encontrar 
 Info(D) = - \frac{9}{14}\log_2(\frac{9}{14}) - \frac{5}{14}\log_2(\frac{5}{14})	= 0.940 bits
 \end{equation*}
 
-\begin{table}[htbp]
-	\caption{Ejemplo de conjunto de entrenamiento considerado}
-	\label{tabla:sencilla2}
+\begin{table}[!htbp]
 	\begin{tabular}{|c|l|l|l|l|c|}
 		\hline 
 		\textbf{Rid} & \textbf{Edad}    & \textbf{Ingreso} & \textbf{Estudiante} & \textbf{Rating Crediticio} & \textbf{Compra Computador?} \\
@@ -187,6 +180,7 @@ Info(D) = - \frac{9}{14}\log_2(\frac{9}{14}) - \frac{5}{14}\log_2(\frac{5}{14})	
 		\hline
 		\hline
 	\end{tabular}
+	\caption{\label{tabla:sencilla2}Ejemplo de conjunto de entrenamiento considerado}
 \end{table}
 
 Luego, necesitamos calcular la información requerida por cada atributo. Comenzamos con el atributo $Edad$, necesitamos observar la distribución de $SO$ y $NO$ por cada categoría o valor de este atributo. Para la categoría $Joven$, hay dos tuplas $SI$ y tres tuplas $NO$. Para la categoría $Mediana$, hay cuatro tuplas $SI$ y cero tuplas $NO$. Para la categoría $Adulto$, hay tres tuplas $SI$ y dos tuplas $NO$. Usando la ecuación \ref{eq3:infoA}, la información esperada necesaria para clasificar una tupla en $D$ si las tuplas son divididas según el atributo $Edad$ corresponde a:
@@ -218,8 +212,7 @@ Dado que el atributo $Edad$ tiene mayor ganancia de información, es seleccionad
 \begin{figure}[!tbph]
 	\centering
 	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/dtree_parti}
-	\caption[Árbol de decisión]{Árbol de decisión: Particionado en el atributo 'Edad'}
-	\label{fig:arbolPartEdad}
+	\caption[Árbol de decisión]{\label{fig:arbolPartEdad}Árbol de decisión: Particionado en el atributo 'Edad'}
 \end{figure}
 
 Notese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la clase $SI$, por lo tanto en esta rama se crea una hoja con etiqueta $SI$. Para las particiones $Edad = Joven$ y $Edad = Adulto$, el proceso de deducción se continua hasta que se generen nodos hoja que clasifican las tuplas en una sola clase. El
@@ -228,12 +221,11 @@ Notese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la cl
 \begin{figure}[!tbph]
 	\centering
 	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/dtree_parti_final}
-	\caption[Árbol de decisión Final]{Árbol de decisión final: Luego de finalizar el proceso del C4.5 }
-	\label{fig:arbolFinal}
+	\caption[Árbol de decisión Final]{\label{fig:arbolFinal}Árbol de decisión final: Luego de finalizar el proceso del C4.5 }
 \end{figure}
 
 
-\subsection{Proporción de Ganancia}
+\subsection{Proporción de ganancia}
 La medida de información de ganancia tiene inclinación hacia un particionamiento con muchos resultados, es decir, es propenso a seleccionar atributos que tengan gran numero de valores. Por ejemplo, considerando un atributo que actúa como identificador, como $Rid$; una división en $Rid$ generaría un gran numero de particiones, tantas como valores contenga $Rid$, cada partición con una sola tupla. Debido a que cada partición es pura, la información necesaria para clasificar el conjunto dado $D$ basado en el particionamiento mencionado seria $Info_{Rid}(D)=0$. Por lo tanto, la información de ganancia es la máxima, claramente, tal partición es inútil para la clasificación. 
 
 El algoritmo C4.5, sucesor de ID3, usa una extensión de la información de ganancia conocida como proporción de ganancia, que intenta contrarrestar la inclinación mencionada.	Aplica una normalización a la información de ganancia usando un valor "Informacion de division" definido de manera análoga a $Info(D)$.
@@ -270,14 +262,13 @@ GainRatio(Ingreso) = \frac{0.029}{0.926} = 0.031 bits \\
 
 
 
-\section{Métricas de evaluación y Matriz de Confusión}
+\section{Métricas de Evaluación y Matriz de Confusión}
 En general, la selección del algoritmos de clasificación para HAR ha sido apoyada meramente por evidencias empíricas (referencias). La gran mayoría de los estudios utilizan una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado, como se visualiza en la \figref{fig:evaluacion}.
 
 \begin{figure}[!tbph]
 	\centering
 	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/training-test}
-	\caption[Diagrama de Evaluación de Clasificación]{Diagrama de Evaluación de Clasificación}
-	\label{fig:evaluacion}
+	\caption[Diagrama de Evaluación de Clasificación]{\label{fig:evaluacion}Diagrama de Evaluación de Clasificación}
 \end{figure}
 	
 Los resultados de una clasificación de un método en particular se suelen organizar en una matriz de confusión $M_{n \times n}$ para un problema de clasificación con $N$ clases.
@@ -315,14 +306,12 @@ Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión}
 
 Aunque se definen para la clasificación binaria, estas métricas pueden generalizarse para un problema con $N$ clases. En tal caso, una instancia podría ser positiva o negativa según una mejor clase particular, por ejemplo, los positivos podrían ser todas las instancias de ejecución mientras que los negativos serían todas las instancias distintas de la ejecución.
 
-\section{Evaluación de un modelo}
+\section{Evaluación de un Modelo}
 
 Utilizando el ejemplo anterior en la \tabref{tabla:sencilla2}, supongamos que se tomo una muestra de 10.000 tuplas obteniendose como resultado la \tabref{tabla:MatrizConfusion}.
 
 
-\begin{table}[htbp]
-	\caption{Matriz de Confusión}
-	\label{tabla:MatrizConfusion}
+\begin{table}[!htbp]
 	\begin{tabular}{|l|c|c|c|}
 		\hline 
 		\textit{Clase} & \textit{Com. Computador = SI}    &\textit{Com. Computador = NO} & \textit{Total}  \\
@@ -334,6 +323,7 @@ Utilizando el ejemplo anterior en la \tabref{tabla:sencilla2}, supongamos que se
 		\textit{Total}					& 7.366		& 2.634    	& 10.000	\\ 
 		\hline
 	\end{tabular}
+    \caption{\label{tabla:MatrizConfusion}Matriz de Confusión}
 \end{table}
 
 

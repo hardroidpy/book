@@ -30,10 +30,10 @@ if "%1" == "docx" (
 )
 
 if "%1" == "latex" (
-    pdflatex -interaction nonstopmode tesis 
+    pdflatex -draftmode -interaction nonstopmode tesis 
     bibtex tesis 
     makeindex tesis.nlo -s nomencl.ist -o tesis.nls
-    pdflatex -interaction nonstopmode tesis 
+    pdflatex -draftmode -interaction nonstopmode tesis 
     pdflatex -interaction nonstopmode tesis 
 	if errorlevel 1 exit /b 1
 	echo.

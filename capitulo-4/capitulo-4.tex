@@ -65,7 +65,7 @@ componente se describen a continuación.
 \end{figure}
 
 
-\subsection{Recolector de medidas}
+\subsection{Recolector de Medidas}
 
 \label{sec43:recolector-datos}El primer paso en el proceso de reconocimiento
 consiste en recolectar medidas de señales obtenidas de los sensores
@@ -238,7 +238,7 @@ y temperatura del cuerpo podrían ser combinados para enriquecer el
 contexto durante el reconocimiento en ciertas aplicaciones específicas
 como las orientadas a la salud \cite{LaraLabrador2013}.
 
-\subsection{Procesamiento de muestras}
+\subsection{Procesamiento de Muestras}
 
 \label{sec44:proceso-se=0000F1ales}El siguiente paso en el reconocimiento
 de actividades consiste en procesar las señales obtenidas por sensores
@@ -576,7 +576,7 @@ tienen relación con al menos una etiqueta $\mathrm{a}_{k}$ particular
 del conjunto $A$, ya sea debido a la función $f(S_{j})$ como resultado
 de una evaluación, o como información en los datos del conjunto entrenamiento.
 
-\subsection{Clasificador de actividades }
+\subsection{Clasificador de Actividades }
 
 \label{sec45:clasificador}Un sistema \abbr{HAR} es similar a cualquier
 aplicación de aprendizaje automático (\emph{Machine Learning}, \abbr{ML})
@@ -608,7 +608,7 @@ automático.
 En esta fase es esencial contar con un conjunto de instancias de entrenamiento
 y la información adicional de su clasificación. Las preparación se
 compone de varias tareas que inciden en la mejora del clasificador
-resultante, las cuales se listan a continuación:
+resultante, las cuales se listan a continuación \cite{Raschka2014}:
 \begin{itemize}
 \item Limpieza y formateo de datos
 \item Extracción de vectores característicos
@@ -631,7 +631,7 @@ se muestra en la \tabref{tab4:labeled}.
 $w$ & $\mathrm{f}_{0}$ & $\ldots$ & $\mathrm{f}_{m}$ & \emph{Actividad}\tabularnewline
 \hline 
 \hline 
-$0$ & $2.71$ & \texttt{$\ldots$} & \texttt{$-2.30$} & \texttt{\small{}Desconocido}\tabularnewline
+$0$ & $2.71$ & \texttt{$\ldots$} & \texttt{$-2.30$} & \texttt{\small{}Quieto}\tabularnewline
 \hline 
 $\ldots$ & $\ldots$ & \texttt{$\ldots$} & \texttt{$\ldots$} & \texttt{$\ldots$}\tabularnewline
 \hline 
@@ -732,24 +732,29 @@ el algoritmo de aprendizaje automático. Por ejemplo, si se construyen
 árbol.
 
 En este trabajo la evaluación se realiza en base a lo descrito en
-el capítulo \ref{chap:Aprendizaje-Automatico} en base a la matriz
-de confusión y las métricas de exactitud, precisión, exhaustividad
-y valor \emph{F}.
+el capítulo \ref{chap:Aprendizaje-Automatico}:
+\begin{itemize}
+\item la matriz de confusión 
+\item la exactitud, 
+\item la precisión, 
+\item la exhaustividad y 
+\item el valor \emph{F}.
+\end{itemize}
 
 \subsubsection{Clasificación}
 
-El propósito de crear un modelo clasificador es no solamente clasificar
-el conjunto entrenamiento sino clasificar datos con cierta precisión
-cuya etiqueta no es conocida. Nuevamente la preparación es una requisito
-primordial para transformar datos de entrada en instancias que puedan
-ser evaluadas por el modelo y emitir una etiqueta de resultado particular
-para cada instancia desconocida.
+El propósito de crear un modelo no solamente es clasificar el conjunto
+entrenamiento sino también clasificar datos cuya etiqueta no es conocida
+con cierta precisión. Nuevamente la preparación es una requisito primordial
+para transformar datos de entrada en instancias que puedan ser evaluadas
+por el modelo y emitir una etiqueta de resultado particular para cada
+instancia desconocida.
 
 Este trabajo clasifica instancias desconocidas por medio de un modelo
 construido con el algoritmo C4.5 (\algref{algoC45}) basado en el
-enfoque de arboles de decisión descrito en el capitulo \ref{chap:Aprendizaje-Automatico}.
+enfoque de arboles de decisión descrito en el capítulo \ref{chap:Aprendizaje-Automatico}.
 
-\section{Otras Capacidades deseables}
+\section{Otras Capacidades Deseables}
 
 \label{ssec46:caracteristicas}Además de las funcionalidades presentadas
 en las secciones anteriores, existen un conjunto de características

@@ -444,7 +444,7 @@ abbr{HAR}
 \end_layout
 
 \begin_layout Subsection
-Recolector de medidas
+Recolector de Medidas
 \end_layout
 
 \begin_layout Standard
@@ -1264,7 +1264,7 @@ key "LaraLabrador2013"
 \end_layout
 
 \begin_layout Subsection
-Procesamiento de muestras
+Procesamiento de Muestras
 \end_layout
 
 \begin_layout Standard
@@ -3655,7 +3655,7 @@ Por último, se considera que tanto
 \end_layout
 
 \begin_layout Subsection
-Clasificador de actividades 
+Clasificador de Actividades 
 \end_layout
 
 \begin_layout Standard
@@ -3863,7 +3863,14 @@ Preparación
 En esta fase es esencial contar con un conjunto de instancias de entrenamiento
  y la información adicional de su clasificación.
  Las preparación se compone de varias tareas que inciden en la mejora del
- clasificador resultante, las cuales se listan a continuación:
+ clasificador resultante, las cuales se listan a continuación 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Raschka2014"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Itemize
@@ -4060,7 +4067,7 @@ Actividad
 
 \family typewriter
 \size small
-Desconocido
+Quieto
 \end_layout
 
 \end_inset
@@ -4621,8 +4628,27 @@ ref{chap:Aprendizaje-Automatico}
 
 \end_inset
 
- en base a la matriz de confusión y las métricas de exactitud, precisión,
- exhaustividad y valor 
+:
+\end_layout
+
+\begin_layout Itemize
+la matriz de confusión 
+\end_layout
+
+\begin_layout Itemize
+la exactitud, 
+\end_layout
+
+\begin_layout Itemize
+la precisión, 
+\end_layout
+
+\begin_layout Itemize
+la exhaustividad y 
+\end_layout
+
+\begin_layout Itemize
+el valor 
 \emph on
 F
 \emph default
@@ -4634,9 +4660,9 @@ Clasificación
 \end_layout
 
 \begin_layout Standard
-El propósito de crear un modelo clasificador es no solamente clasificar
- el conjunto entrenamiento sino clasificar datos con cierta precisión cuya
- etiqueta no es conocida.
+El propósito de crear un modelo no solamente es clasificar el conjunto entrenami
+ento sino también clasificar datos cuya etiqueta no es conocida con cierta
+ precisión.
  Nuevamente la preparación es una requisito primordial para transformar
  datos de entrada en instancias que puedan ser evaluadas por el modelo y
  emitir una etiqueta de resultado particular para cada instancia desconocida.
@@ -4657,7 +4683,7 @@ algref{algoC45}
 
 \end_inset
 
-) basado en el enfoque de arboles de decisión descrito en el capitulo 
+) basado en el enfoque de arboles de decisión descrito en el capítulo 
 \begin_inset ERT
 status open
 
@@ -4674,7 +4700,7 @@ ref{chap:Aprendizaje-Automatico}
 \end_layout
 
 \begin_layout Section
-Otras Capacidades deseables
+Otras Capacidades Deseables
 \end_layout
 
 \begin_layout Standard

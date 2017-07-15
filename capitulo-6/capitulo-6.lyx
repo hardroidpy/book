@@ -72,7 +72,7 @@
 \begin_body
 
 \begin_layout Chapter
-Evaluación
+Evaluación y Resultados
 \end_layout
 
 \begin_layout Standard
@@ -89,16 +89,185 @@ name "chap6:evaluacion"
 Introducción
 \end_layout
 
-\begin_layout Section
-Experimentos realizados
+\begin_layout Standard
+En el ámbito de investigación y desarrollo de sistemas 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ existen dos elementos vitales: la recolección de datos experimentales y
+ generación del conjunto de entrenamiento.
+ En este capítulo, describimos de manera general estos elementos organizados
+ en dos secciones.
+ La sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec6:recoleccion"
+
+\end_inset
+
+ describe los aspectos relacionados a la captura de datos, determinando
+ los requisitos mínimos de los teléfonos móviles utilizados para la experimentac
+ión y describiendo el procedimiento guía de pruebas para un grupo de voluntarios.
+ Además, la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec6:clasificacion"
+
+\end_inset
+
+ describe el resultado de aplicar las técnicas descritas en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec44:proceso-señales"
+
+\end_inset
+
+ para manejar datos sensoriales y generar un conjunto de entrenamiento para
+ caracterización de datos.
+ Finalmente, en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec6:resultados"
+
+\end_inset
+
+ los resultados obtenidos utilizando los datos disponibles son presentados.
+ Esto incluye la validación de datos con el algoritmo de 
+\emph on
+Machine Learning
+\emph default
+ (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ML}
+\end_layout
+
+\end_inset
+
+) escogido que confirma su usabilidad en ambientes productivos.
+ También se demuestra la evaluación de los datos producidos por 
+\emph on
+HARDroid 
+\emph default
+en conjunto con la aplicación de prueba 
+\emph on
+ActivitySurvey
+\emph default
+ desarrollada para este trabajo.
 \end_layout
 
 \begin_layout Section
-Resultados obtenidos
+Recolección de Datos
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec6:recoleccion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Instrumentación
+\end_layout
+
+\begin_layout Subsubsection
+Teléfonos inteligentes
+\end_layout
+
+\begin_layout Subsubsection
+Entorno de desarrollo 
+\end_layout
+
+\begin_layout Subsection
+Procedimiento Guía 
+\end_layout
+
+\begin_layout Subsection
+Captura de Datos
 \end_layout
 
 \begin_layout Section
-Conclusión
+Generación del Clasificador 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec6:clasificacion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Etiquetado
+\end_layout
+
+\begin_layout Subsection
+Conjunto Entrenamiento 
+\end_layout
+
+\begin_layout Subsection
+Clasificador de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WEKA}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Resultados 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec6:resultados"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
