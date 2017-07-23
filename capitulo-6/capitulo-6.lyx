@@ -105,8 +105,8 @@ abbr{HAR}
 
  existen dos elementos vitales: la recolección de datos experimentales y
  generación del conjunto de entrenamiento.
- En este capítulo, describimos de manera general estos elementos organizados
- en dos secciones.
+ En este capítulo, describimos de manera general estos elementos en las
+ primeras dos secciones.
  La sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -115,8 +115,8 @@ reference "sec6:recoleccion"
 \end_inset
 
  describe los aspectos relacionados a la captura de datos, determinando
- los requisitos mínimos de los teléfonos móviles utilizados para la experimentac
-ión y describiendo el procedimiento guía de pruebas para un grupo de voluntarios.
+ los requisitos mínimos de los teléfonos móviles utilizados y describiendo
+ el procedimiento guía para experimentación.
  Además, la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -124,15 +124,16 @@ reference "sec6:clasificacion"
 
 \end_inset
 
- describe el resultado de aplicar las técnicas descritas en la sección 
+ describe los resultados obtenidos al aplicar las técnicas descritas en
+ la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec44:proceso-señales"
 
 \end_inset
 
- para manejar datos sensoriales y generar un conjunto de entrenamiento para
- caracterización de datos.
+ para transformar datos sensoriales a un conjunto de entrenamiento para
+ la clasificación de actividades humanas.
  Finalmente, en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -140,8 +141,9 @@ reference "sec6:resultados"
 
 \end_inset
 
- los resultados obtenidos utilizando los datos disponibles son presentados.
- Esto incluye la validación de datos con el algoritmo de 
+ los resultados producidos al utilizar el conjunto entrenamiento disponible
+ son presentados.
+ Esto incluye la validación del modelo construido con el algoritmo de 
 \emph on
 Machine Learning
 \emph default
@@ -159,19 +161,19 @@ abbr{ML}
 \end_inset
 
 ) escogido que confirma su usabilidad en ambientes productivos.
- También se demuestra la evaluación de los datos producidos por 
+ También se expone la evaluación de los resultados producidos por 
 \emph on
 HARDroid 
 \emph default
-en conjunto con la aplicación de prueba 
+con la aplicación 
 \emph on
 ActivitySurvey
 \emph default
- desarrollada para este trabajo.
+ desarrollada para esta tarea.
 \end_layout
 
 \begin_layout Section
-Recolección de Datos
+Datos Experimentales
 \end_layout
 
 \begin_layout Standard
@@ -181,7 +183,39 @@ name "sec6:recoleccion"
 
 \end_inset
 
+En base a trabajos de investigación en 
+\begin_inset ERT
+status open
 
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HAR}
+\end_layout
+
+\end_inset
+
+ realizados, se han dispuesto algunos datos experimentales para entrenar
+ clasificadores de actividades humanas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ReyesOrtiz2013,Anguita2013"
+
+\end_inset
+
+.
+ Estos datos están libremente disponibles como origen para estudios de distintas
+ disciplinas e investigaciones en este ámbito.
+ 
+\end_layout
+
+\begin_layout Standard
+Sin embargo, aún los datos de sensores capturados con teléfonos móviles
+ son limitados.
+ Es por eso, que en este trabajo se requirió realizar una colecta de datos
+ personalizada y adecuada a los objetivos de este estudio.
+ Los datos recolectados por medio de experimentación se describen a continuación.
 \end_layout
 
 \begin_layout Subsection
@@ -257,7 +291,7 @@ abbr{WEKA}
 \end_layout
 
 \begin_layout Section
-Resultados 
+Resultados
 \end_layout
 
 \begin_layout Standard
@@ -267,7 +301,7 @@ name "sec6:resultados"
 
 \end_inset
 
-
+Describir resultados de experimento con HARDroid.
 \end_layout
 
 \end_body

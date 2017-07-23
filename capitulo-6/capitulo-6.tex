@@ -8,25 +8,35 @@
 En el ámbito de investigación y desarrollo de sistemas \abbr{HAR}
 existen dos elementos vitales: la recolección de datos experimentales
 y generación del conjunto de entrenamiento. En este capítulo, describimos
-de manera general estos elementos organizados en dos secciones. La
+de manera general estos elementos en las primeras dos secciones. La
 sección \ref{sec6:recoleccion} describe los aspectos relacionados
 a la captura de datos, determinando los requisitos mínimos de los
-teléfonos móviles utilizados para la experimentación y describiendo
-el procedimiento guía de pruebas para un grupo de voluntarios. Además,
-la sección \ref{sec6:clasificacion} describe el resultado de aplicar
-las técnicas descritas en la sección \ref{sec44:proceso-se=0000F1ales}
-para manejar datos sensoriales y generar un conjunto de entrenamiento
-para caracterización de datos. Finalmente, en la sección \ref{sec6:resultados}
-los resultados obtenidos utilizando los datos disponibles son presentados.
-Esto incluye la validación de datos con el algoritmo de \emph{Machine
-Learning} (\abbr{ML}) escogido que confirma su usabilidad en ambientes
-productivos. También se demuestra la evaluación de los datos producidos
-por \emph{HARDroid }en conjunto con la aplicación de prueba \emph{ActivitySurvey}
-desarrollada para este trabajo.
+teléfonos móviles utilizados y describiendo el procedimiento guía
+para experimentación. Además, la sección \ref{sec6:clasificacion}
+describe los resultados obtenidos al aplicar las técnicas descritas
+en la sección \ref{sec44:proceso-se=0000F1ales} para transformar
+datos sensoriales a un conjunto de entrenamiento para la clasificación
+de actividades humanas. Finalmente, en la sección \ref{sec6:resultados}
+los resultados producidos al utilizar el conjunto entrenamiento disponible
+son presentados. Esto incluye la validación del modelo construido
+con el algoritmo de \emph{Machine Learning} (\abbr{ML}) escogido
+que confirma su usabilidad en ambientes productivos. También se expone
+la evaluación de los resultados producidos por \emph{HARDroid }con
+la aplicación \emph{ActivitySurvey} desarrollada para esta tarea.
 
-\section{Recolección de Datos}
+\section{Datos Experimentales}
 
-\label{sec6:recoleccion}
+\label{sec6:recoleccion}En base a trabajos de investigación en \abbr{HAR}
+realizados, se han dispuesto algunos datos experimentales para entrenar
+clasificadores de actividades humanas \cite{ReyesOrtiz2013,Anguita2013}.
+Estos datos están libremente disponibles como origen para estudios
+de distintas disciplinas e investigaciones en este ámbito. 
+
+Sin embargo, aún los datos de sensores capturados con teléfonos móviles
+son limitados. Es por eso, que en este trabajo se requirió realizar
+una colecta de datos personalizada y adecuada a los objetivos de este
+estudio. Los datos recolectados por medio de experimentación se describen
+a continuación.
 
 \subsection{Instrumentación}
 
@@ -48,6 +58,6 @@ desarrollada para este trabajo.
 
 \subsection{Clasificador de \abbr{WEKA}}
 
-\section{Resultados }
+\section{Resultados}
 
-\label{sec6:resultados}
+\label{sec6:resultados}Describir resultados de experimento con HARDroid.

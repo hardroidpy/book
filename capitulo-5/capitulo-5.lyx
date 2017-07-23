@@ -131,7 +131,7 @@ key "Google2013l"
 \end_inset
 
 , específicamente la funcionalidad para reconocer actividades humanas utilizando
- los conceptos y técnicas expuestos en capítulos precedentes.
+ los conceptos y técnicas del estado del arte expuestos en capítulos precedentes.
  
 \end_layout
 
@@ -144,6 +144,10 @@ HARDroid
  programación que expone las facilidades y un servicio en ejecución que
  realiza las funciones principales del sistema.
  La interfaz para programadores (
+\emph on
+Application Programming Interface
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -172,7 +176,7 @@ abbr{HAR}
 \end_inset
 
 .
- El servicio de trasfondo en la plataforma 
+ El servicio de la plataforma 
 \begin_inset ERT
 status open
 
@@ -185,8 +189,8 @@ abbr{Android}
 
 \end_inset
 
- es una aplicación para teléfonos móvil independiente que implementa algoritmos
- de reconocimiento de actividades humanas.
+ es una aplicación de segundo plano para teléfonos móviles que implementa
+ algoritmos de reconocimiento de actividades humanas.
 \end_layout
 
 \begin_layout Standard
@@ -215,7 +219,7 @@ software
 \end_layout
 
 \begin_layout Standard
-Las siguientes secciones se organizan de la siguiente manera: primeramente
+Las siguientes secciones se encuentran organizadas como sigue: primeramente
  en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -269,7 +273,7 @@ abbr{HAR}
 
 \end_inset
 
- en forma de aplicación móvil desacoplado es presentado.
+ en forma de aplicación móvil desacoplada es presentada.
  También, en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -286,8 +290,8 @@ reference "sec56:conclusion"
 
 \end_inset
 
- se discuten los resultados preliminar obtenidos como motivo de los componentes
- de software construidos.
+ se discuten los resultados preliminares obtenidos como motivo de los componente
+s de software construidos.
 \end_layout
 
 \begin_layout Section
@@ -355,9 +359,9 @@ abbr{Android}
 \emph on
  
 \emph default
-se dispone de las capacidades disponibles del dispositivo como almacenamiento,
- ubicación, sensores y además un medio de distribución certificado como
- ser el 
+se dispone de capacidades tales como almacenamiento, ubicación, acceso a
+ los sensores del dispositivo y además de un medio de distribución certificado
+ como ser 
 \emph on
 Google Play Store
 \emph default
@@ -376,8 +380,8 @@ key "Google2016p"
 Por otro lado, está el contexto de la aplicación que se refiere a la experiencia
  que el usuario final obtiene al utilizar el sistema móvil.
  Para esto el sistema móvil procesa la información de contexto que rodea
- al usuario dando una interacción distinta a los sistemas convencionales.
- A continuación se listan los tipos de contexto comunes utilizados en las
+ al usuario dándose una interacción distinta a los sistemas convencionales.
+ A continuación, se listan los tipos de contexto comunes utilizados en las
  aplicaciones móviles y un breve ejemplo de su funcionalidad 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -437,8 +441,8 @@ Estos tipos de contexto se pueden combinar para crear mejores experiencias
 \emph on
 Utilidad
 \emph default
- que puede ser combinado con diferentes aplicaciones móviles desarrollados
- por terceros y pueda ser mantenido de forma colaborativa.
+ que puede ser combinado con diferentes aplicaciones móviles desarrolladas
+ por terceros y pueda ser mantenidas en forma colaborativa.
  
 \end_layout
 
@@ -502,7 +506,7 @@ Arquitecturas en capas
 \begin_layout Standard
 Cuando un sistema se construye en términos de capas, los módulos se organizan
  en niveles apilados como en un pastel, donde cada capa se soporta sobre
- la capa baja subyacente.
+ las capas inferiores.
  En este sentido, la capa superior utiliza varios servicios definidos en
  capas inferiores, pero la capa inferior desconoce y no depende de las capas
  en niveles superiores.
@@ -539,7 +543,7 @@ figref{fig5:cliente_servidor}
  Sin embargo, a medida que se construyen sistemas más complejos, el problema
  radica mantener la lógica central del sistema: las reglas de negocio, validacio
 nes, cálculos, etc.
- El modelo de dos capas propone ubicar la lógica central embebida en la
+ El modelo de dos capas propone ubicar la lógica central embebida en las
  interacciones de la Interfaz de Usuario, la capa cliente, o almacenar los
  mismos en procedimientos almacenados en la basa de datos, la capa servidor.
 \end_layout
@@ -582,7 +586,7 @@ Modelo de dos capas
 
 \end_inset
 
-Modelo de dos capas
+Modelo de dos capas (CAMBIAR COLORES COMO FIGURA 5.2)
 \end_layout
 
 \end_inset
@@ -761,10 +765,10 @@ Modelo de tres capas
 \end_layout
 
 \begin_layout Standard
-Independientemente del tipo de sistema de información a ser construido dividir
- el mismo en capas lógicas, dividir el sistema en partes separadas, permite
- reducir el acoplamiento entre diferentes módulos, inclusive si todos los
- módulos se ejecutan en la misma máquina física.
+Independientemente del tipo de sistema de información a ser construido,
+ al dividir el mismo en capas lógicas o dividir el sistema en partes separadas
+ se permite reducir el acoplamiento entre diferentes módulos, inclusive
+ si todos los módulos se ejecutan en la misma máquina física.
  En la 
 \begin_inset ERT
 status open
@@ -819,7 +823,7 @@ Modelo de tres capas
 
 \end_inset
 
-Modelo de tres capas
+Modelo de tres capas (PONER FLECHAS DE INTERACCION COMO 5.1)
 \end_layout
 
 \end_inset
@@ -841,7 +845,7 @@ Patrones de diseño
 \end_layout
 
 \begin_layout Standard
-Los patrones de diseño son concepto importante del paradigma de orientación
+Los patrones de diseño son un concepto importante del paradigma de orientación
  a objetos, que han sido ideados para solucionar problemas comunes determinados
  en un contexto particular 
 \begin_inset CommandInset citation
@@ -945,13 +949,13 @@ abbr{API}
  de cada operación.
  La capa de servicios puede ser tan gruesa o tan fina como se requiera,
  puede contener objetos de servicio con reglas de negocio, manejo de transaccion
-es y seguridad.
+es, seguridad, entre otros.
 \end_layout
 
 \begin_layout Standard
 Por otro lado, el modelo del dominio da soporte a la capa de servicios.
  Este patrón define objetos de dominio que tienen incorporados datos y comportam
-iento, estos representan de manera significativa el dominio del problema
+ientos, estos representan de manera significativa el dominio del problema
  a resolver.
  Debido a que la lógica de negocio de un sistema puede ser bastante compleja,
  estos objetos están diseñados para manejar las diversas combinaciones de
@@ -1169,7 +1173,11 @@ Esta sección está dedicada a describir la tecnología utilizada para la implem
 ación del diseño de este trabajo.
  Uno de los criterios claves para la selección de teléfonos móviles inteligentes
  apropiados para el reconocimiento de actividades, además de los sensores,
- es el sistema operativo (abreviado 
+ es el sistema operativo (
+\emph on
+Operating System
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -1189,7 +1197,7 @@ abbr{OS}
 \begin_layout Standard
 El sistema operativo móvil se encarga del manejo de recursos del dispositivo
  y el control de operación de la aplicaciones móviles.
- Estos sistemas tiene características similares a los sistemas operativos
+ Estos sistemas tienen características similares a los sistemas operativos
  convencionales utilizados en las computadoras de escritorio (
 \begin_inset ERT
 status open
@@ -1634,6 +1642,10 @@ abbr{HAL}
 Dalvik
 \series default
 : Es una máquina virtual (
+\emph on
+Dalvik Virtual Machine
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -1681,6 +1693,10 @@ key "Ehringer2010"
 
 .
  A diferencia de la máquina virtual de Java estándar (
+\emph on
+Java Virtual Machine
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -1872,7 +1888,8 @@ key "Gargenta2014"
 \end_inset
 
 .
- Los componentes son descritos a continuación (con nomenclatura inglesa):
+ Los componentes son descritos a continuación (con nomenclatura inglesa)
+ :
 \end_layout
 
 \begin_layout Itemize
@@ -1948,7 +1965,7 @@ abbr{CRUD}
 
 \end_inset
 
-, una forma de acceso parecida al de bases de datos 
+, una forma de acceso parecida al de las bases de datos 
 \begin_inset ERT
 status open
 
@@ -2036,7 +2053,11 @@ abbr{Android}
 
 \end_inset
 
-, el intercambio es realizado por medio de un mecanismo 
+, el intercambio es realizado por medio de un mecanismo denominado 
+\emph on
+Inter-Process Communication
+\emph default
+ (
 \begin_inset ERT
 status open
 
@@ -2049,8 +2070,8 @@ abbr{IPC}
 
 \end_inset
 
-: una comunicación entre procesos, o comunicación entre componentes si forman
- parte de la misma aplicación 
+): una comunicación entre procesos, o comunicación entre componentes si
+ forman parte de la misma aplicación 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schreiber2011"
@@ -2073,8 +2094,11 @@ Cada aplicación dispone de dos (2) componentes que resuelven un tópico en
 Intent
 \series default
 \emph default
-: El componente mensaje es una representación de las operaciones a ser realizada
-s.
+: El componente 
+\emph on
+mensaje
+\emph default
+ es una representación de las operaciones a ser realizadas.
  Consiste en una estructura de datos que contiene un identificador en formato
  
 \begin_inset ERT
@@ -2101,8 +2125,11 @@ abbr{URI}
 IPC Binder
 \series default
 \emph default
-: El componente procesador que implementa el mecanismo de comunicación entre
- procesos 
+: El componente 
+\emph on
+procesador
+\emph default
+ que implementa el mecanismo de comunicación entre procesos 
 \emph on
 
 \begin_inset CommandInset citation
@@ -2133,72 +2160,6 @@ abbr{Android}
 
  junto con su marco de trabajo operan como un sistema distribuido y la tecnologí
 a para lograr su diseño se basa completamente en este componente.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename graphics/mensajes_ipc.png
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig5:mensajes-ipc"
-
-\end_inset
-
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Framework Android
-\end_layout
-
-\end_inset
-
-Marco de Trabajo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{Android}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2245,7 +2206,6 @@ abbr{IPC}
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -2322,6 +2282,72 @@ key "Shalloway2004"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/mensajes_ipc.png
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig5:mensajes-ipc"
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Framework Android
+\end_layout
+
+\end_inset
+
+Marco de Trabajo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2500,8 +2526,17 @@ figref{fig5:arqui-general}
 
 \end_inset
 
- se muestra la vista general de la arquitectura del proyecto donde se muestran
- los dos aportes principales de este trabajo junto con sus partes relevantes.
+ se ilustra la vista general de la arquitectura del proyecto donde se muestran
+ los dos aportes principales de este trabajo junto con sus partes relevantes,
+ que son 
+\emph on
+HARDroid
+\emph default
+ y 
+\emph on
+ActivitySurvey
+\emph default
+.
  El diagrama se describe en lenguaje 
 \begin_inset ERT
 status open
@@ -2516,8 +2551,14 @@ abbr{UML}
 \end_inset
 
  donde los componentes representan las aplicaciones móviles distribuidas
- de manera independiente y un componente de servidor para recolectar datos
- experimentales.
+ de manera independiente y un componente de servidor (es decir que no se
+ ejecuta dentro de los dispositivos móviles, sino que está disponible a
+ los mismos desde la nube) para recolectar datos experimentales, siendo
+ este último el componente 
+\emph on
+Backend C4.5
+\emph default
+.
 \end_layout
 
 \begin_layout Section
@@ -2773,6 +2814,10 @@ abbr{DVM}
 
  correspondiente, donde la comunicación entre procesos es llevado acabo
  por medio de una interfaz 
+\emph on
+Android Interface Definition Language
+\emph default
+ (
 \begin_inset ERT
 status open
 
@@ -2785,7 +2830,7 @@ abbr{AIDL}
 
 \end_inset
 
- parte del mecanismo 
+) parte del mecanismo 
 \emph on
 IPC Binder
 \emph default
@@ -2926,7 +2971,7 @@ ActivityRecognitionResult
 \family default
 \size default
 ): Es un conjunto de actividades humanas reconocidas junto con la precisión
- estimada y los datos complementarios generados durante el calculo en forma
+ estimada y los datos complementarios generados durante el cálculo en forma
  de vector característico.
 \end_layout
 
@@ -2957,14 +3002,52 @@ key "Google2016l"
 
 \end_inset
 
- y la documentación se detalla en (véase 
+ y la documentación se detalla en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GimenezYegros2016d"
 
 \end_inset
 
-).
+.
+\end_layout
+
+\begin_layout Standard
+La interfaz del servicio se compone de un conjunto de llamadas para que
+ cualquier cliente disponga de las siguientes acciones:
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Conectarse
+\emph default
+ al servicio
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Desconectarse
+\emph default
+ del servicio
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Subscribirse
+\emph default
+ con cierta periodicidad a resultados de actividades humanas detectados.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Obtener
+\emph default
+ el resultado de actividades humanas detectado más reciente.
 \end_layout
 
 \begin_layout Standard
@@ -3013,51 +3096,9 @@ Diagrama de clases del dominio del problema.
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-La interfaz del servicio se compone de un conjunto de llamadas para que
- cualquier cliente disponga de las siguientes acciones:
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Conectarse
-\emph default
- al servicio
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Desconectarse
-\emph default
- del servicio
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Subscribirse
-\emph default
- con cierta periodicidad a resultados de actividades humanas detectados.
- 
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Obtener
-\emph default
- el resultado de actividades humanas detectado más reciente.
 \end_layout
 
 \begin_layout Standard
@@ -3237,7 +3278,7 @@ Se desuscribe a eventos de detección de actividad tendiendo en cuenta la
 
 \begin_layout Standard
 En las siguientes secciones se detallan los módulos encargados de implementar
- la lógica de negocio y las funcionalidades esta interfaz.
+ la lógica de negocio y las funcionalidades de esta interfaz.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3478,7 +3519,7 @@ ActivityRecognitionWorker
 \family default
 \size default
 : Es la función principal que ejecuta una tarea periódica de recolección
- de datos sensoriales, calculo de vectores característicos y clasificación
+ de datos sensoriales, cálculo de vectores característicos y clasificación
  de actividad para producir un nuevo resultado.
  La producción de un nuevo resultado dispara un evento de publicación a
  través del servidor.
@@ -3506,8 +3547,8 @@ SignalProcessing
 \end_layout
 
 \begin_layout Standard
-La ejecución del motor de reconocimiento empieza al iniciar servidor y se
- muestra en la 
+La ejecución del motor de reconocimiento empieza al iniciar el servidor
+ y se muestra en la 
 \begin_inset ERT
 status open
 
@@ -3597,7 +3638,7 @@ nto se realiza una publicación de resultados a los clientes correspondientes.
 
 \begin_layout Standard
 \begin_inset Float algorithm
-placement H
+placement h
 wide false
 sideways false
 status collapsed
@@ -3809,7 +3850,7 @@ name "alg5:reconocimiento"
 
 \end_inset
 
-Detección de actividades humanas
+Detección de actividades humanas (VER NUMEROS DE LINEA Y TAMAÑO DEL ALGORITMO)
 \end_layout
 
 \end_inset
@@ -3827,8 +3868,9 @@ Clasificador
 \end_layout
 
 \begin_layout Standard
-Este módulo es el clasificador de actividades humanas a partir de un vector
- característico y produce una estimación de la actividad humana detectada.
+Este módulo es responsable de realizar la clasificación de actividades humanas
+ a partir de un vector característico y produce una estimación de la actividad
+ humana detectada.
  Posee dos implementaciones principales y complementarias de acuerdo a los
  siguientes artefactos:
 \end_layout
@@ -3965,16 +4007,9 @@ abbr{WEKA}
 
 \end_inset
 
- y se construye para luego disponerlo como una librería remota ha ser descargado
+ y se construye para luego disponerlo como una librería remota ha ser descargada
  de Internet.
- El mecanismo detallado se describe en el apéndice 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chapB:carga-dinamica"
-
-\end_inset
-
-.
+ El mecanismo detallado se describe en el [REFERENCIA A GranNRun].
 \end_layout
 
 \begin_layout Standard
@@ -4052,52 +4087,21 @@ name "sec55:activity"
 
 \end_inset
 
-Con el objetivo probar el funcionamiento del servicio 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
- en 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{Android}
-\end_layout
-
-\end_inset
-
- y evaluar los resultados producidos al detectar las actividades realizadas
- por el usuario, se creó la aplicación 
+Con el objetivo de comprobar el funcionamiento del servicio 
+\emph on
+HARDroid
+\emph default
+ desarrollado y evaluar los resultados producidos al detectar las actividades
+ realizadas por el usuario, se creó la aplicación 
 \emph on
 ActivitySurvey.
  
 \emph default
 El diseño de la aplicación móvil es bastante sencillo pero con los complementos
  necesarios que permiten validar las funcionalidades de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HARDroid}
-\end_layout
-
-\end_inset
-
+\emph on
+HARDroid
+\emph default
  y además encuestar a usuarios reales durante una sesión de entrenamiento
  físico.
  En esta sección se presenta la vista general de la aplicación explicada
@@ -4111,7 +4115,7 @@ Requerimientos Funcionales
 \end_layout
 
 \begin_layout Standard
-En esta sección se incluyen las especificaciones funcionales que describen
+A continuación se incluyen las especificaciones funcionales que describen
  el comportamiento de la aplicación desde el punto de vista del actor principal:
  el usuario final.
  Los asuntos identificados que forman parte de los requisitos son agrupados
@@ -4629,18 +4633,9 @@ DetectorService
 \family default
 \size default
 : Es un servicio que mantiene una conexión persistente con el servicio 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
+\emph on
+HARDroid
+\emph default
 .
  El servicio es iniciado o parado dependiendo de la necesidad del usuario
  encuestado.
@@ -4655,18 +4650,9 @@ DetectedActivitiesService
 \size default
 : Es un servicio de función diferida que permite recibir actualizaciones
  de resultados detectados por el servicio 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
+\emph on
+HARDroid
+\emph default
 .
  Por cada actividad humana detectada, persiste la información y notifica
  por mensaje que existen nuevos resultados.
@@ -4734,7 +4720,14 @@ abbr{Android}
 
 \end_inset
 
- y su interacción.
+ y su interacción 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gargenta2014"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -4986,7 +4979,7 @@ Bienvenida
 \end_layout
 
 \begin_layout Section
-Conclusión
+Resumen
 \end_layout
 
 \begin_layout Standard
@@ -4996,7 +4989,7 @@ name "sec56:conclusion"
 
 \end_inset
 
-En esta sección presentamos un servicio de reconocimiento de actividades
+En este capítulo presentamos un servicio de reconocimiento de actividades
  humanas (
 \begin_inset ERT
 status open
@@ -5056,17 +5049,12 @@ abbr{Android}
 \end_inset
 
 .
- Los resultados obtenidos fueron satisfactorios teniendo en cuenta la integració
-n entre implementaciones de aplicación móvil y servidor utilitario separados
- en procesos independientes.
- Los resultados experimentales confirmaron la posibilidad de recolectar
- información en terreno a través de la aplicación de encuesta y que luego
- esta información pueda ser validada, limpiada y utilizada para mejorar
- el algoritmo de clasificación basado en árboles de decisión de forma ininterrum
-pida.
- Se requiere experimentación adicional para evaluar el servicio bajo condiciones
- realistas cuando es instalado en diferentes teléfonos móviles y en conjunción
- con aplicaciones distintas para su uso.
+ Los desarrollos obtenidos han resultado satisfactorios desde el punto de
+ vista de su programación en lo que respecta a la integración entre implementaci
+ones de aplicación móvil y el servidor utilitario separados en procesos
+ independientes.
+ En el siguiente capítulo se tratará de la recolección, validación y análisis
+ de información en terreno a través de la aplicación de encuesta.
 \end_layout
 
 \end_body
