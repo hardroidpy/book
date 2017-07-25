@@ -54,10 +54,10 @@ El aprendizaje supervisado, comúnmente conocido como clasificación de múltipl
 \hline
 \end{tabular}
 \par\end{centering}
-\caption[Algoritmos de \abbr{ML}]{\label{tab3:clasificadores} Algoritmos de aprendizaje automático}
+\caption[Algoritmos de ML]{\label{tab3:clasificadores} Algoritmos de aprendizaje automático}
 \end{table}
 
-En las siguientes secciones nos concentraremos en un enfoque basado en arboles de decisión (Decision Tree, \abbr{DT}) para construir la función $f$. La función $f$, que corresponde a un árbol de múltiples niveles donde cada nodo aplica una función a $\boldsymbol{x}$ y determina sobre qué nodo hijo procede la búsqueda. Cada nodo posee un número arbitrario de nodos hijos. Los árboles de decisión son preferibles para las clasificación binaria o de múltiples clases, especialmente cuando la dimensión del vector característicos no es muy grande \cite{Rajaraman2011}.
+En las siguientes secciones nos concentraremos en un enfoque basado en arboles de decisión (\emph{Decision Tree}, \abbr{DT}) para construir la función $f$. La función $f$, que corresponde a un árbol de múltiples niveles donde cada nodo aplica una función a $\boldsymbol{x}$ y determina sobre qué nodo hijo procede la búsqueda. Cada nodo posee un número arbitrario de nodos hijos. Los árboles de decisión son preferibles para las clasificación binaria o de múltiples clases, especialmente cuando la dimensión del vector característicos no es muy grande \cite{Rajaraman2011}.
 
 \section{Arboles de Decisión}
 El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto de tuplas o instancias etiquetadas. Un árbol de decisión es una estructura de árbol similar a un diagrama de flujo, donde cada nodo interno (nodo no hoja) denota una prueba de un atributo, y cada rama representa el camino de a seguir luego de la evaluación, y cada nodo hoja es una etiqueta o clase.
@@ -65,7 +65,7 @@ El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/ad_2}
-	\caption[Árbol de decisión]{\label{fig:arbolEjemplo}Árbol de decisión}
+	\caption[Ejemplo de árbol de decisión]{\label{fig:arbolEjemplo}Árbol de decisión}
 \end{figure}
 
 En la \figref{fig:arbolEjemplo} se muestra un típico ejemplo de árbol de decisión que representa el concepto de jugar o no Golf, teniendo en cuenta variables climática representadas en los nodos internos, y los nodos hojas denotan las decisiones de jugar o no al Golf. 
@@ -106,7 +106,7 @@ El algoritmo C4.5, ilustrado en el Algoritmo \ref{algoC45}, presenta las siguien
 			\Return $ Arbol $
 		\EndProcedure
 	\end{algorithmic}
-	\caption{\label{algoC45}Árbol de Decisión - C4.5}
+	\caption{\label{algoC45}Algoritmo C4.5}
 \end{algorithm}
 
 
@@ -212,7 +212,7 @@ Dado que el atributo $Edad$ tiene mayor ganancia de información, es seleccionad
 \begin{figure}[!tbph]
 	\centering
 	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/dtree_parti}
-	\caption[Árbol de decisión]{\label{fig:arbolPartEdad}Árbol de decisión: Particionado en el atributo 'Edad'}
+	\caption[Árbol de decisión particionado]{\label{fig:arbolPartEdad}Árbol de decisión: Particionado en el atributo 'Edad'}
 \end{figure}
 
 Notese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la clase $SI$, por lo tanto en esta rama se crea una hoja con etiqueta $SI$. Para las particiones $Edad = Joven$ y $Edad = Adulto$, el proceso de deducción se continua hasta que se generen nodos hoja que clasifican las tuplas en una sola clase. El
@@ -221,7 +221,7 @@ Notese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la cl
 \begin{figure}[!tbph]
 	\centering
 	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/dtree_parti_final}
-	\caption[Árbol de decisión Final]{\label{fig:arbolFinal}Árbol de decisión final: Luego de finalizar el proceso del C4.5 }
+	\caption[Árbol de decisión final]{\label{fig:arbolFinal}Árbol de decisión final: Luego de finalizar el proceso del C4.5 }
 \end{figure}
 
 
@@ -268,7 +268,7 @@ En general, la selección del algoritmos de clasificación para HAR ha sido apoy
 \begin{figure}[!tbph]
 	\centering
 	\includegraphics[width=0.7\linewidth]{capitulo-3/graphics/training-test}
-	\caption[Diagrama de Evaluación de Clasificación]{\label{fig:evaluacion}Diagrama de Evaluación de Clasificación}
+	\caption[Diagrama de evaluación de clasificación]{\label{fig:evaluacion}Diagrama de Evaluación de Clasificación}
 \end{figure}
 	
 Los resultados de una clasificación de un método en particular se suelen organizar en una matriz de confusión $M_{n \times n}$ para un problema de clasificación con $N$ clases.

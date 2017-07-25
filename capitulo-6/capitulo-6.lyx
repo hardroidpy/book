@@ -239,20 +239,7 @@ Captura de Datos
 \end_layout
 
 \begin_layout Section
-Generación del Clasificador 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{HAR}
-\end_layout
-
-\end_inset
-
-
+Generación del Clasificador HAR
 \end_layout
 
 \begin_layout Standard
@@ -274,20 +261,7 @@ Conjunto Entrenamiento
 \end_layout
 
 \begin_layout Subsection
-Clasificador de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{WEKA}
-\end_layout
-
-\end_inset
-
-
+Clasificador de WEKA
 \end_layout
 
 \begin_layout Section
