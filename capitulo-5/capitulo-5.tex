@@ -55,7 +55,7 @@ el medio y el contexto.
 
 Una aplicación móvil puede presentarse en diversos medios que corresponden
 con el enfoque técnico \cite{Fling2009}, es decir: un sitio Web Móvil,
-una aplicación Web Móvil, SMS, Juegos, controles utilitarios\footnote{\emph{Widgets}}
+una aplicación Web Móvil, \abbr{SMS}, Juegos, controles utilitarios\footnote{\emph{Widgets}}
 y aplicaciones nativas. Las aplicaciones nativas son uno de los medios
 más utilizados debido a la rica experiencia de usuario y capacidades
 que pueden ser explotadas en los dispositivos, ya que disponen de
@@ -86,7 +86,7 @@ proveer un componente de \emph{Utilidad} que puede ser combinado con
 diferentes aplicaciones móviles desarrolladas por terceros y pueda
 ser mantenidas en forma colaborativa. 
 
-\subsection{Criterios de diseño}
+\subsection{Criterios de Diseño}
 
 \label{ssec52:criterios-dise=0000F1o}La implementación de este trabajo,
 así como la mayoría de los sistemas de información, se rige bajo el
@@ -97,10 +97,10 @@ comprensión mientras se reduce el tiempo de desarrollo de los mismos
 \cite{Parnas1972}.
 
 Una de las técnicas más comunes de diseño de sistemas\emph{ }es la
-separación por capas (\emph{Layering}, en inglés\emph{)} para dividir
-un sistema complejo \cite{Fowler2002} en diferentes niveles. 
+separación por capas (\emph{Layering)} para dividir un sistema complejo
+\cite{Fowler2002} en diferentes niveles. 
 
-\subsubsection{Arquitecturas en capas}
+\subsubsection{Arquitecturas en Capas}
 
 Cuando un sistema se construye en términos de capas, los módulos se
 organizan en niveles apilados como en un pastel, donde cada capa se
@@ -112,31 +112,30 @@ las funcionalidades soportadas en cada nivel.
 
 La popularidad de la división de sistemas en módulos por capas se
 volvió más relevante con el auge de los sistemas tipo \emph{Cliente-Servidor}.
-Estos sistemas fueron inicialmente concebidos como de dos (2) capas:
-el cliente se encarga de la interfaz de usuario y la lógica de la
-aplicación, y el servidor usualmente es una bases de datos relacional.
-En la \figref{fig5:cliente_servidor} se muestra una representación
-de la arquitectura en dos capas. Para sistemas sencillos que desplieguen
-información y actualicen datos, este modelo es el más adecuado. Sin
-embargo, a medida que se construyen sistemas más complejos, el problema
-radica mantener la lógica central del sistema: las reglas de negocio,
-validaciones, cálculos, etc. El modelo de dos capas propone ubicar
-la lógica central embebida en las interacciones de la Interfaz de
-Usuario, la capa cliente, o almacenar los mismos en procedimientos
-almacenados en la basa de datos, la capa servidor.
+Estos sistemas fueron inicialmente concebidos como de dos capas: el
+cliente se encarga de la interfaz de usuario y la lógica de la aplicación,
+y el servidor usualmente es una bases de datos relacional. En la \figref{fig5:cliente_servidor}
+se muestra una representación de la arquitectura en dos capas. Para
+sistemas sencillos que desplieguen información y actualicen datos,
+este modelo es el más adecuado. Sin embargo, a medida que se construyen
+sistemas más complejos, el problema radica mantener la lógica central
+del sistema: las reglas de negocio, validaciones, cálculos, etc. El
+modelo de dos capas propone ubicar la lógica central embebida en las
+interacciones de la Interfaz de Usuario, la capa cliente, o almacenar
+los mismos en procedimientos almacenados en la basa de datos, la capa
+servidor.
 
 \begin{figure}[H]
 \begin{centering}
 \includegraphics[width=0.6\columnwidth]{capitulo-5/graphics/cliente_servidor}
 \par\end{centering}
-\caption[Modelo de dos capas]{\label{fig5:cliente_servidor}Modelo de dos capas (CAMBIAR COLORES
-COMO FIGURA 5.2)}
+\caption[Modelo de dos capas]{\label{fig5:cliente_servidor}Modelo de dos capas}
 \end{figure}
 
 Debido a las limitaciones del enfoque Cliente-Servidor, se puede extender
 el mismo con la ayuda del paradigma de Orientación a Objetos para
-construir sistemas con arquitecturas de tres (3) capas. Estas capas
-son comúnmente conocidas como \cite{Fowler2002}: Presentación, Dominio
+construir sistemas con arquitecturas de tres capas. Estas capas son
+comúnmente conocidas como \cite{Fowler2002}: Presentación, Dominio
 y Recursos. En la \tabref{tab5:tres_capas} se definen las responsabilidades
 correspondientes a cada capa. 
 
@@ -171,13 +170,12 @@ capas discutida anteriormente.
 \begin{centering}
 \includegraphics[width=0.8\columnwidth]{capitulo-5/graphics/arqui_tres_capas}
 \par\end{centering}
-\caption[Modelo de tres capas]{\label{fig5:tres_capas}Modelo de tres capas (PONER FLECHAS DE INTERACCION
-COMO 5.1)}
+\caption[Modelo de tres capas]{\label{fig5:tres_capas}Modelo de tres capas}
 
 \end{figure}
 
 
-\subsubsection{Patrones de diseño}
+\subsubsection{Patrones de Diseño}
 
 Los patrones de diseño son un concepto importante del paradigma de
 orientación a objetos, que han sido ideados para solucionar problemas
@@ -234,7 +232,7 @@ en la comunidad de código abierto por medio de una Licencia Pública
 Apache, Versión 2.0 (\emph{Apache License Version 2.0}, en inglés)
 \cite{GimenezYegros2016c}.
 
-\subsection{Metodología de desarrollo}
+\subsection{Metodología de Desarrollo}
 
 \label{ssec52:metodologia}En toda labor de construcción de sistemas
 de información es necesario definir una metodología de diseño para
@@ -284,12 +282,12 @@ de los sensores, es el sistema operativo (\emph{Operating System},
 El sistema operativo móvil se encarga del manejo de recursos del dispositivo
 y el control de operación de la aplicaciones móviles. Estos sistemas
 tienen características similares a los sistemas operativos convencionales
-utilizados en las computadoras de escritorio (\abbr{PC}). La función
-principal de un sistema operativo es proveer servicios comunes a las
-aplicaciones y administrar los recursos de \emph{hardware}. Adicionalmente,
-los sistemas operativos móviles están diseñados para el uso eficiente
-de energía, debido a las limitaciones de batería, y características
-especiales de movilidad. 
+utilizados en las computadoras de escritorio (\emph{Personal Computer},
+\abbr{PC}). La función principal de un sistema operativo es proveer
+servicios comunes a las aplicaciones y administrar los recursos de
+\emph{hardware}. Adicionalmente, los sistemas operativos móviles están
+diseñados para el uso eficiente de energía, debido a las limitaciones
+de batería, y características especiales de movilidad. 
 
 En este trabajo se propone una herramienta que está dirigida a los
 teléfonos móviles inteligentes basados en \abbr{Android}. En los
@@ -360,8 +358,8 @@ inglesa):
 base de funcionalidades implementadas en \texttt{C/C++} que no forman
 parte del núcleo sino del espacio de usuario del sistema. Este grupo
 está compuesto de varias partes como: abstracciones de \emph{hardware}
-(\abbr{HAL}), librerías nativas, servicios del sistema y herramientas
-básicas utilitarias.
+(\emph{Hardware Abstraction Layer}, \abbr{HAL}), librerías nativas,
+servicios del sistema y herramientas básicas utilitarias.
 \item \textbf{Dalvik}: Es una máquina virtual (\emph{Dalvik Virtual Machine},
 \abbr{DVM}) de propósito específico diseñada especialmente para \abbr{Android}
 de manera que este corra aplicaciones programadas en el lenguaje \abbr{Java}
@@ -421,9 +419,10 @@ si el sistema se queda sin recursos de memoria.
 \item \textbf{\emph{Content Provider}}: El componente \emph{proveedor} de
 contenido provee una interfaz para compartir datos entre aplicaciones.
 Su función es la persistencia de datos por medio de una \abbr{API}
-que sigue el principio \abbr{CRUD}, una forma de acceso parecida
-al de las bases de datos \abbr{SQL}. Los datos pueden ser persistidos
-en archivos locales o recursos remotos en red.
+que sigue el principio \abbr{CRUD} (\emph{Create, Read, Update and
+Delete}), una forma de acceso parecida al de las bases de datos \abbr{SQL}.
+Los datos pueden ser persistidos en archivos locales o recursos remotos
+en red.
 \item \textbf{\emph{Broadcast Receiver}}: El componente \emph{receptor}
 de mensajes provee un mecanismo para publicación y suscripción a eventos
 del sistema basado en el patrón de diseño \emph{Observer} \cite{Shalloway2004}.
@@ -553,8 +552,9 @@ de servicios de \emph{Google Play Services} \cite{Google2016l}. Las
 aplicaciones móviles están confinadas en procesos separados del sistema
 \abbr{Android}, cada cual en su entorno \abbr{DVM} correspondiente,
 donde la comunicación entre procesos es llevado acabo por medio de
-una interfaz \emph{Android Interface Definition Language} (\abbr{AIDL})
-parte del mecanismo \emph{IPC Binder} (ver sección \ref{ssec52:framework}).
+una interfaz denominada \emph{Android Interface Definition Language}
+(\abbr{AIDL}) que forma parte del mecanismo \emph{IPC Binder} (ver
+sección \ref{ssec52:framework}).
 
 \subsection{Módulos Funcionales}
 
@@ -596,7 +596,7 @@ que cualquier cliente disponga de las siguientes acciones:
 \begin{itemize}
 \item \emph{Conectarse} al servicio
 \item \emph{Desconectarse} del servicio
-\item \emph{Subscribirse} con cierta periodicidad a resultados de actividades
+\item \emph{Suscribirse} con cierta periodicidad a resultados de actividades
 humanas detectados. 
 \item \emph{Obtener} el resultado de actividades humanas detectado más reciente.
 \end{itemize}
@@ -621,7 +621,7 @@ se presenta la interfaz del servicio en el diagrama de clases de la
 
 Para poder clarificar la interfaz proveída por la capa de servicios
 se describe textualmente el contrato definido por la \abbr{API} para
-subscribirse a eventos de detección actividades humanas:
+suscribirse a eventos de detección actividades humanas:
 \begin{itemize}
 \item \texttt{\footnotesize{}requestSingleUpdate(callbackIntent: PendingIntent): void
 public} \\
@@ -748,8 +748,7 @@ correspondientes. El algoritmo de reconocimiento se describe a continuación.
 	\EndProcedure
 \end{algorithmic}
 
-\caption{\label{alg5:reconocimiento}Detección de actividades humanas (VER
-NUMEROS DE LINEA Y TAMAÑO DEL ALGORITMO)}
+\caption{\label{alg5:reconocimiento}Detección de actividades humanas}
 \end{algorithm}
 
 
@@ -770,13 +769,13 @@ de actividades humanas simple que no produce un resultado válido.
 \item \texttt{\small{}DexModelLoader}: Es un utilitario para descargar de
 Internet de manera segura un clasificador dinámico generado con \abbr{WEKA}.
 El clasificador está implementado en una clase contenida en una librería
-de \emph{software} en formato \abbr{JAR},
+de \emph{software} en formato \abbr{JAR}.
 \end{itemize}
 La actualización dinámica del clasificador se muestra en la \figref{fig5:service-classi}.
 Cada nueva versión del clasificador se genera por medio de \abbr{WEKA}
 y se construye para luego disponerlo como una librería remota ha ser
-descargada de Internet. El mecanismo detallado se describe en el {[}REFERENCIA
-A GranNRun{]}.
+descargada de Internet. El mecanismo detallado se describe en detalle
+en \cite{Falsina2014}.
 
 \begin{figure}[H]
 \begin{centering}
@@ -873,7 +872,7 @@ El usuario selecciona la actividad humana que corresponde. \\
 El sistema actualiza la tarjeta de encuesta con la respuesta del usuario.
 \end{description}
 
-\subsubsection{Cambiar preferencias}
+\subsubsection{Cambiar Preferencias}
 
 Este requerimiento implica una acción complementaria de cambiar las
 preferencias internas que modifican el comportamiento de la aplicación

@@ -324,8 +324,20 @@ key "Fling2009"
 
 \end_inset
 
-, es decir: un sitio Web Móvil, una aplicación Web Móvil, SMS, Juegos, controles
- utilitarios
+, es decir: un sitio Web Móvil, una aplicación Web Móvil, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{SMS}
+\end_layout
+
+\end_inset
+
+, Juegos, controles utilitarios
 \begin_inset Foot
 status open
 
@@ -447,7 +459,7 @@ Utilidad
 \end_layout
 
 \begin_layout Subsection
-Criterios de diseño
+Criterios de Diseño
 \end_layout
 
 \begin_layout Standard
@@ -482,11 +494,7 @@ Una de las técnicas más comunes de diseño de sistemas
 \emph default
 es la separación por capas (
 \emph on
-Layering
-\emph default
-, en inglés
-\emph on
-)
+Layering)
 \emph default
  para dividir un sistema complejo 
 \begin_inset CommandInset citation
@@ -500,7 +508,7 @@ key "Fowler2002"
 \end_layout
 
 \begin_layout Subsubsection
-Arquitecturas en capas
+Arquitecturas en Capas
 \end_layout
 
 \begin_layout Standard
@@ -521,9 +529,9 @@ La popularidad de la división de sistemas en módulos por capas se volvió
 Cliente-Servidor
 \emph default
 .
- Estos sistemas fueron inicialmente concebidos como de dos (2) capas: el
- cliente se encarga de la interfaz de usuario y la lógica de la aplicación,
- y el servidor usualmente es una bases de datos relacional.
+ Estos sistemas fueron inicialmente concebidos como de dos capas: el cliente
+ se encarga de la interfaz de usuario y la lógica de la aplicación, y el
+ servidor usualmente es una bases de datos relacional.
  En la 
 \begin_inset ERT
 status open
@@ -586,7 +594,7 @@ Modelo de dos capas
 
 \end_inset
 
-Modelo de dos capas (CAMBIAR COLORES COMO FIGURA 5.2)
+Modelo de dos capas
 \end_layout
 
 \end_inset
@@ -602,7 +610,7 @@ Modelo de dos capas (CAMBIAR COLORES COMO FIGURA 5.2)
 \begin_layout Standard
 Debido a las limitaciones del enfoque Cliente-Servidor, se puede extender
  el mismo con la ayuda del paradigma de Orientación a Objetos para construir
- sistemas con arquitecturas de tres (3) capas.
+ sistemas con arquitecturas de tres capas.
  Estas capas son comúnmente conocidas como 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -823,7 +831,7 @@ Modelo de tres capas
 
 \end_inset
 
-Modelo de tres capas (PONER FLECHAS DE INTERACCION COMO 5.1)
+Modelo de tres capas
 \end_layout
 
 \end_inset
@@ -841,7 +849,7 @@ Modelo de tres capas (PONER FLECHAS DE INTERACCION COMO 5.1)
 \end_layout
 
 \begin_layout Subsubsection
-Patrones de diseño
+Patrones de Diseño
 \end_layout
 
 \begin_layout Standard
@@ -1020,7 +1028,7 @@ key "GimenezYegros2016c"
 \end_layout
 
 \begin_layout Subsection
-Metodología de desarrollo
+Metodología de Desarrollo
 \end_layout
 
 \begin_layout Standard
@@ -1199,6 +1207,10 @@ El sistema operativo móvil se encarga del manejo de recursos del dispositivo
  y el control de operación de la aplicaciones móviles.
  Estos sistemas tienen características similares a los sistemas operativos
  convencionales utilizados en las computadoras de escritorio (
+\emph on
+Personal Computer
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -1621,6 +1633,10 @@ C/C++
 hardware
 \emph default
  (
+\emph on
+Hardware Abstraction Layer
+\emph default
+, 
 \begin_inset ERT
 status open
 
@@ -1965,7 +1981,11 @@ abbr{CRUD}
 
 \end_inset
 
-, una forma de acceso parecida al de las bases de datos 
+ (
+\emph on
+Create, Read, Update and Delete
+\emph default
+), una forma de acceso parecida al de las bases de datos 
 \begin_inset ERT
 status open
 
@@ -2813,7 +2833,7 @@ abbr{DVM}
 \end_inset
 
  correspondiente, donde la comunicación entre procesos es llevado acabo
- por medio de una interfaz 
+ por medio de una interfaz denominada 
 \emph on
 Android Interface Definition Language
 \emph default
@@ -2830,7 +2850,7 @@ abbr{AIDL}
 
 \end_inset
 
-) parte del mecanismo 
+) que forma parte del mecanismo 
 \emph on
 IPC Binder
 \emph default
@@ -3036,7 +3056,7 @@ Desconectarse
 \begin_layout Itemize
 
 \emph on
-Subscribirse
+Suscribirse
 \emph default
  con cierta periodicidad a resultados de actividades humanas detectados.
  
@@ -3189,7 +3209,7 @@ abbr{API}
 
 \end_inset
 
- para subscribirse a eventos de detección actividades humanas:
+ para suscribirse a eventos de detección actividades humanas:
 \end_layout
 
 \begin_layout Itemize
@@ -3850,7 +3870,7 @@ name "alg5:reconocimiento"
 
 \end_inset
 
-Detección de actividades humanas (VER NUMEROS DE LINEA Y TAMAÑO DEL ALGORITMO)
+Detección de actividades humanas
 \end_layout
 
 \end_inset
@@ -3976,7 +3996,7 @@ abbr{JAR}
 
 \end_inset
 
-,
+.
 \end_layout
 
 \begin_layout Standard
@@ -4009,7 +4029,14 @@ abbr{WEKA}
 
  y se construye para luego disponerlo como una librería remota ha ser descargada
  de Internet.
- El mecanismo detallado se describe en el [REFERENCIA A GranNRun].
+ El mecanismo detallado se describe en detalle en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Falsina2014"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4408,7 +4435,7 @@ El sistema actualiza la tarjeta de encuesta con la respuesta del usuario.
 \end_layout
 
 \begin_layout Subsubsection
-Cambiar preferencias
+Cambiar Preferencias
 \end_layout
 
 \begin_layout Standard
