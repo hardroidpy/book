@@ -7,22 +7,22 @@
 
 \label{sec51:intro}En este capítulo introducimos un sistema que clasifica
 la actividades humanas ambulatorias utilizando teléfonos móviles inteligentes
-con la plataforma \abbr{Android}\texttrademark: \emph{HARDroid}.
+con la plataforma \emph{\abbr{Android}\texttrademark}: \emph{\abbr{HARDroid}}.
 El sistema es una adaptación del diseño utilizado por sistemas existentes
 como \emph{Google Play Services} \cite{Google2013l}, específicamente
 la funcionalidad para reconocer actividades humanas utilizando los
 conceptos y técnicas del estado del arte expuestos en capítulos precedentes. 
 
-El sistema \emph{HARDroid} está implementado en base a dos componentes
-principales: una interfaz de programación que expone las facilidades
-y un servicio en ejecución que realiza las funciones principales del
-sistema. La interfaz para programadores (\emph{Application Programming
+El sistema \emph{\abbr{HARDroid}} está implementado en base a dos
+componentes principales: una interfaz de programación que expone las
+facilidades y un servicio en ejecución que realiza las funciones principales
+del sistema. La interfaz para programadores (\emph{Application Programming
 Interface}, \abbr{API}) proporciona una firma de funciones bien definidas
 junto con la documentación adecuada para que toda aplicación móvil
 de terceros utilice como un componente externo la solución de un sistema
-\abbr{HAR}. El servicio de la plataforma \abbr{Android} es una aplicación
-de segundo plano para teléfonos móviles que implementa algoritmos
-de reconocimiento de actividades humanas.
+\abbr{HAR}. El servicio de la plataforma \emph{\abbr{Android}} es
+una aplicación de segundo plano para teléfonos móviles que implementa
+algoritmos de reconocimiento de actividades humanas.
 
 La propuesta de este trabajo se basa en un diseño desacoplado para
 contar con una implementación genérica y extensible de un sistema
@@ -35,7 +35,7 @@ en la sección \ref{sec52:dise=0000F1o} damos una introducción de
 las consideraciones de diseño y metodología utilizadas para la construcción
 de los componentes de software. Se empieza con los conceptos generales
 de Ingeniería de Software hasta concluir con los detalles técnicos
-de la plataforma \abbr{Android}. La siguiente sección \ref{sec53:arquitectura}
+de la plataforma \emph{\abbr{Android}}. La siguiente sección \ref{sec53:arquitectura}
 incluye una vista general del sistema explicando su arquitectura.
 La sección \ref{sec54:hardroid} conforma el núcleo principal de este
 proyecto donde una implementación \abbr{HAR} en forma de aplicación
@@ -47,7 +47,7 @@ obtenidos como motivo de los componentes de software construidos.
 
 \section{Diseño General}
 
-\label{sec52:dise=0000F1o}La construcción del sistema \emph{HARDroid
+\label{sec52:dise=0000F1o}La construcción del sistema \emph{\abbr{HARDroid}
 }está enmarcado dentro del ecosistema de aplicaciones móviles. Desde
 el punto de vista conceptual del desarrollo de aplicaciones móviles
 es necesario enfocarse en dos aspectos principales para el diseño:
@@ -60,7 +60,7 @@ y aplicaciones nativas. Las aplicaciones nativas son uno de los medios
 más utilizados debido a la rica experiencia de usuario y capacidades
 que pueden ser explotadas en los dispositivos, ya que disponen de
 gran soporte en la plataforma subyacente. Por ejemplo, en la plataforma
-para teléfonos móviles \abbr{Android}\emph{ }se dispone de capacidades
+para teléfonos móviles \emph{\abbr{Android} }se dispone de capacidades
 tales como almacenamiento, ubicación, acceso a los sensores del dispositivo
 y además de un medio de distribución certificado como ser \emph{Google
 Play Store} \cite{Google2016p}. 
@@ -264,11 +264,11 @@ programadores (\abbr{API}) con un conjunto de llamadas a exponer.
 \end{enumerate}
 Parte de la metodología consistió en definir la interfaz del sistema
 en base a las mejores prácticas de la industria para aplicaciones
-móviles de contexto, utilizando el lenguaje de programación \abbr{Java}
-y la tecnología basada en \abbr{Android}. El diseño se basa en implementaciones
-existentes \cite{Google2016m} para heredar las buenas prácticas de
-programación y obtener la ventaja de familiaridad de la \abbr{API}
-para desarrolladores.
+móviles de contexto, utilizando el lenguaje de programación \emph{\abbr{Java}}
+y la tecnología basada en \emph{\abbr{Android}}. El diseño se basa
+en implementaciones existentes \cite{Google2016m} para heredar las
+buenas prácticas de programación y obtener la ventaja de familiaridad
+de la \abbr{API} para desarrolladores.
 
 \subsection{Tecnología}
 
@@ -290,37 +290,38 @@ diseñados para el uso eficiente de energía, debido a las limitaciones
 de batería, y características especiales de movilidad. 
 
 En este trabajo se propone una herramienta que está dirigida a los
-teléfonos móviles inteligentes basados en \abbr{Android}. En los
-siguientes apartados se da una vista general de \abbr{Android} como
-plataforma tecnológica de este capítulo.
+teléfonos móviles inteligentes basados en \emph{\abbr{Android}}.
+En los siguientes apartados se da una vista general de \emph{\abbr{Android}
+}como plataforma tecnológica de este capítulo.
 
 \subsubsection{Plataforma}
 
-El sistema operativo móvil \abbr{Android} es una plataforma de código
-abierto con un entorno de programación de distribución publica, que
-además incluye una interfaz de programación (\abbr{API}) completa
+El sistema operativo móvil \emph{\abbr{Android}} es una plataforma
+de código abierto con un entorno de programación de distribución publica,
+que además incluye una interfaz de programación (\abbr{API}) completa
 con acceso al \emph{hardware} del teléfono y los sensores internos.
 Esta facilidad permite que las herramientas de aprendizaje automático
 y sus procedimientos puedan ser construidos de manera más simple. 
 
-\abbr{Android} es una plataforma abierta para dispositivos móviles
-encabezada por \emph{Google} y la \emph{Open Handset Alliance \cite{OHA2008}}
-con el objetivo de innovar en el entorno móvil, mejorando la experiencia
-de usuario a un menor costo \cite{Gargenta2014}. El principal aporte
-que logró \abbr{Android} es que por primera vez una plataforma abierta
-consigue separar el \emph{software} y el \emph{hardware} subyacente.
-Esto permite que un gran número diverso de dispositivos ejecuten las
-mismas aplicaciones, creando un ecosistema más variado para desarrolladores
-y consumidores. 
+\emph{\abbr{Android}} es una plataforma abierta para dispositivos
+móviles encabezada por \emph{Google} y la \emph{Open Handset Alliance
+\cite{OHA2008}} con el objetivo de innovar en el entorno móvil, mejorando
+la experiencia de usuario a un menor costo \cite{Gargenta2014}. El
+principal aporte que logró \emph{\abbr{Android}} es que por primera
+vez una plataforma abierta consigue separar el \emph{software} y el
+\emph{hardware} subyacente. Esto permite que un gran número diverso
+de dispositivos ejecuten las mismas aplicaciones, creando un ecosistema
+más variado para desarrolladores y consumidores. 
 
 \subsubsection{Arquitectura}
 
-La plataforma \abbr{Android} está soportada sobre el núcleo (\abbr{Kernel})
-de \abbr{Linux} cuyo proyecto al igual es una iniciativa de código
-abierto utilizado ampliamente en el ámbito de tecnología de la información
-desde hace más de una década. La capa más baja de la arquitectura
-hereda las principales funcionalidades esperadas en los sistemas operativos
-modernos: portabilidad, seguridad y las capacidades funcionales.
+La plataforma \emph{\abbr{Android}} está soportada sobre el núcleo
+(\emph{\abbr{Kernel}}) de\emph{ \abbr{Linux} }cuyo proyecto al igual
+es una iniciativa de código abierto utilizado ampliamente en el ámbito
+de tecnología de la información desde hace más de una década. La capa
+más baja de la arquitectura hereda las principales funcionalidades
+esperadas en los sistemas operativos modernos: portabilidad, seguridad
+y las capacidades funcionales.
 
 \begin{figure}[H]
 \begin{centering}
@@ -344,7 +345,7 @@ con su nomenclatura en inglés \cite{Schreiber2011}:
 \item \emph{Low Memory Killer}
 \item \emph{Kernel debugger} y \emph{Kernel} \emph{logger}
 \end{itemize}
-En la \figref{fig5:android-stack} se muestra la plataforma \abbr{Android}
+En la \figref{fig5:android-stack} se muestra la plataforma \emph{\abbr{Android}}
 con todos los componentes que están soportados sobre el núcleo y que
 en la siguiente sección se detallan.
 
@@ -361,8 +362,8 @@ está compuesto de varias partes como: abstracciones de \emph{hardware}
 (\emph{Hardware Abstraction Layer}, \abbr{HAL}), librerías nativas,
 servicios del sistema y herramientas básicas utilitarias.
 \item \textbf{Dalvik}: Es una máquina virtual (\emph{Dalvik Virtual Machine},
-\abbr{DVM}) de propósito específico diseñada especialmente para \abbr{Android}
-de manera que este corra aplicaciones programadas en el lenguaje \abbr{Java}
+\abbr{DVM}) de propósito específico diseñada especialmente para \emph{\abbr{Android}}
+de manera que este corra aplicaciones programadas en el lenguaje \emph{\abbr{Java}}
 \cite{Ehringer2010}. A diferencia de la máquina virtual de Java estándar
 (\emph{Java Virtual Machine}, \abbr{JVM}), el diseño se hizo pensando
 en restricciones específicas de los entornos móviles, como consumo
@@ -373,38 +374,40 @@ de programación con varias librerías y servicios para construir aplicaciones
 nativas. Este componente es el que está mejor documentado y cubierto
 en toda la plataforma ya que permite a los desarrolladores ser creativos
 y construir aplicaciones que puedan ser distribuirlas al mercado.
-Son parte de este componente las librerías \abbr{Java} genéricas
-y las específicas de \abbr{Android} \cite{OHA2008r}, como también
-servicios (o gestores de recursos) que facilitan las capacidades útiles
-de la plataforma como ubicación, sensores, conectividad, etc. 
+Son parte de este componente las librerías \emph{\abbr{Java} }genéricas
+y las específicas de \emph{\abbr{Android}} \cite{Android2016r},
+como también servicios (o gestores de recursos) que facilitan las
+capacidades útiles de la plataforma como ubicación, sensores, conectividad,
+etc. 
 \item \textbf{Applications}: Las aplicaciones son el punto de acceso principal
 de la plataforma y se soporta sobre los componentes arriba mencionados.
 La función principal de la aplicación es proveer una utilidad al usuario
 final según lo descrito inicialmente en la sección \ref{sec52:dise=0000F1o}.
 Las aplicaciones pueden estar instaladas de fábrica en los teléfonos
 móviles o pueden ser adquiridos por los usuarios en los mercados de
-distribución de aplicaciones \abbr{Android}.
+distribución de aplicaciones\emph{ \abbr{Android}}.
 \end{itemize}
 
 \subsection{Marco de Trabajo}
 
 \label{ssec52:framework}En esta sección, se exponen las facilidades
-de \abbr{Android} como marco de trabajo (\emph{framework}), es decir,
-desde el punto de vista del entorno de programación que ofrece, con
-énfasis en las características disponibles para crear aplicaciones
-contextuales. Este apartado presenta una vista de alto nivel acerca
-de los modelos de computación y comunicación disponibles en la plataforma.
+de \emph{\abbr{Android}} como marco de trabajo (\emph{framework}),
+es decir, desde el punto de vista del entorno de programación que
+ofrece, con énfasis en las características disponibles para crear
+aplicaciones contextuales. Este apartado presenta una vista de alto
+nivel acerca de los modelos de computación y comunicación disponibles
+en la plataforma.
 
 \subsubsection{Componentes de Computación}
 
 Los bloques principales de una aplicación móvil son componentes que
-\abbr{Android} provee para construir una aplicación contextual de
-utilidad. La idea de este apartado es presentar a grandes rasgos los
-componentes disponibles y como estos se combinan entre sí para formar
-una aplicación. Cada aplicación está compuesta de cuatro (4) componentes
-distintos, donde cada uno cubre un tópico en específico \cite{Gargenta2014}.
-Los componentes son descritos a continuación (con nomenclatura inglesa)
-:
+\emph{\abbr{Android}} provee para construir una aplicación contextual
+de utilidad. La idea de este apartado es presentar a grandes rasgos
+los componentes disponibles y como estos se combinan entre sí para
+formar una aplicación. Cada aplicación está compuesta de cuatro (4)
+componentes distintos, donde cada uno cubre un tópico en específico
+\cite{Gargenta2014}. Los componentes son descritos a continuación
+(con nomenclatura inglesa) :
 \begin{itemize}
 \item \textbf{\emph{Activity}}: El componente \emph{actividad} representa
 la interfaz de usuario de la aplicación responsable de desplegar la
@@ -439,8 +442,8 @@ sistema operativo y compiten por los mismos recursos: memoria, archivos,
 \subsubsection{Componente de Comunicación}
 
 El intercambio de datos es una necesidad común entre componentes de
-un sistema (o entre sistemas diferentes). En \abbr{Android}, el intercambio
-es realizado por medio de un mecanismo denominado \emph{Inter-Process
+un sistema (o entre sistemas diferentes). En \emph{\abbr{Android}},
+el intercambio es realizado por medio de un mecanismo denominado \emph{Inter-Process
 Communication} (\abbr{IPC}): una comunicación entre procesos, o comunicación
 entre componentes si forman parte de la misma aplicación \cite{Schreiber2011}. 
 
@@ -460,9 +463,9 @@ operan como un sistema distribuido y la tecnología para lograr su
 diseño se basa completamente en este componente.
 \end{itemize}
 En la \figref{fig5:mensajes-ipc} se muestran las diferentes formas
-de interacción entre los componentes \abbr{Android} citados anteriormente.
-Como se puede apreciar, el mecanismo principal para todas las interacciones
-son llevadas acabo por llamadas \abbr{IPC}.
+de interacción entre los componentes \emph{\abbr{Android} }citados
+anteriormente. Como se puede apreciar, el mecanismo principal para
+todas las interacciones son llevadas acabo por llamadas \abbr{IPC}.
 
 Una actividad se inicia por medio de un mensaje y puede lanzar otra
 actividad en pantalla. Un servicio se inicia, se para y se asocia
@@ -489,10 +492,11 @@ y el patrón de diseño \emph{Proxy} \cite{Shalloway2004}.
 puede describirse partiendo el mismo en tres componentes principales:
 \begin{itemize}
 \item \textbf{\emph{HARDroid}}: Es un servicio de reconocimiento de actividades
-humanas específico para \abbr{Android}. Este componente tiene cabida
-dentro de la capa de \emph{Application Framework} descrita en \ref{ssec52:tecnologia}
-como un servicio utilitario. El algoritmo reconocedor de actividades
-es un componente dinámico capaz de actualizar su clasificador continuamente.
+humanas específico para \emph{\abbr{Android}}. Este componente tiene
+cabida dentro de la capa de \emph{Application Framework} descrita
+en \ref{ssec52:tecnologia} como un servicio utilitario. El algoritmo
+reconocedor de actividades es un componente dinámico capaz de actualizar
+su clasificador continuamente.
 \item \textbf{\emph{ActivitySurvey}}: Es una aplicación móvil de encuesta
 que permite utilizar el servicio de reconocimiento y además evaluar
 el resultado con el consentimiento del usuario. Este componente está
@@ -525,16 +529,17 @@ siendo este último el componente \emph{Backend C4.5}.
 
 \section{HARDroid: Servicio de Reconocimiento}
 
-\label{sec54:hardroid}El servicio \abbr{HARDroid} fue diseñado para
-ajustarse a las características generales de los gestores y/o servicios
-en la capa de \emph{Application Framework} de \abbr{Android}, Ej.
-\emph{Location Manager} o \emph{Google Play Services}. La ventaja
-del servicio \abbr{HARDroid} para las aplicaciones móviles hechas
-por terceros es que aprovechan las últimas mejoras del motor de reconocimiento
-de actividades, con actualización automática de la plataforma distribuida
-como un \abbr{APK} independiente a través de la tienda \emph{Google
-Play}. Esto permite a los usuarios estar actualizados y los desarrolladores
-poseen mecanismos fáciles para integrarse al servicio \abbr{HAR}.
+\label{sec54:hardroid}El servicio \emph{\abbr{HARDroid} }fue diseñado
+para ajustarse a las características generales de los gestores y/o
+servicios en la capa de \emph{Application Framework} de \emph{\abbr{Android}},
+Ej. \emph{Location Manager} o \emph{Google Play Services}. La ventaja
+del servicio \emph{\abbr{HARDroid}} para las aplicaciones móviles
+hechas por terceros es que aprovechan las últimas mejoras del motor
+de reconocimiento de actividades, con actualización automática de
+la plataforma distribuida como un \abbr{APK} independiente a través
+de la tienda \emph{Google Play}. Esto permite a los usuarios estar
+actualizados y los desarrolladores poseen mecanismos fáciles para
+integrarse al servicio \abbr{HAR}.
 
 \begin{figure}[H]
 \begin{centering}
@@ -545,21 +550,21 @@ poseen mecanismos fáciles para integrarse al servicio \abbr{HAR}.
 \end{figure}
 
 En la \figref{fig5:hardroid-func} se muestra el esquema de funcionamiento
-del servicio \abbr{HARDroid} en base al diseño expuesto en el párrafo
-anterior. Este esquema de diseño es el más apropiado para crear aplicaciones
-móviles distribuidas en \abbr{Android}, semejante a la arquitectura
-de servicios de \emph{Google Play Services} \cite{Google2016l}. Las
-aplicaciones móviles están confinadas en procesos separados del sistema
-\abbr{Android}, cada cual en su entorno \abbr{DVM} correspondiente,
-donde la comunicación entre procesos es llevado acabo por medio de
-una interfaz denominada \emph{Android Interface Definition Language}
-(\abbr{AIDL}) que forma parte del mecanismo \emph{IPC Binder} (ver
-sección \ref{ssec52:framework}).
+del servicio \emph{\abbr{HARDroid}} en base al diseño expuesto en
+el párrafo anterior. Este esquema de diseño es el más apropiado para
+crear aplicaciones móviles distribuidas en \emph{\abbr{Android}},
+semejante a la arquitectura de servicios de \emph{Google Play Services}
+\cite{Google2016l}. Las aplicaciones móviles están confinadas en
+procesos separados del sistema \emph{\abbr{Android}}, cada cual en
+su entorno \abbr{DVM} correspondiente, donde la comunicación entre
+procesos es llevado acabo por medio de una interfaz denominada \emph{Android
+Interface Definition Language} (\abbr{AIDL}) que forma parte del
+mecanismo \emph{IPC Binder} (ver sección \ref{ssec52:framework}).
 
 \subsection{Módulos Funcionales}
 
 \label{ssec54:modulos}Desde el punto de vista conceptual el servicio
-\abbr{HARDroid} puede ser dividido en cuatro módulos principales
+\emph{\abbr{HARDroid}} puede ser dividido en cuatro módulos principales
 que cumplen con las características específicas que se describen a
 continuación.
 
@@ -658,10 +663,10 @@ se divide en dos responsabilidades para manejar la conexión y la suscripción
 por medio de los siguientes artefactos:
 \begin{itemize}
 \item \texttt{\small{}ActivityRecognitionService}: Es la función principal
-que implementa el servidor \abbr{IPC} de \abbr{Android} para atender
-las conexiones con los clientes. Además se encarga de registrar las
-suscripciones y emitir los resultados de detección de acuerdo a las
-preferencias de los clientes. 
+que implementa el servidor \abbr{IPC} de \emph{\abbr{Android} }para
+atender las conexiones con los clientes. Además se encarga de registrar
+las suscripciones y emitir los resultados de detección de acuerdo
+a las preferencias de los clientes. 
 \item \texttt{\small{}ActivityRecognitionManagerImpl}: Es un utilitario
 que hace de mediador entre las llamadas remotas a la \abbr{API} y
 el servidor en ejecución.
@@ -673,9 +678,9 @@ La interacción que ocurre durante la conexión de un cliente al servidor
 de reconocimiento se muestra en la \figref{fig5:service-subs}. Para
 representar la interacción se utiliza un diagrama de secuencia \abbr{UML}
 donde las clases en amarillo representan objetos en el proceso del
-cliente, a través de la librería cliente \abbr{HARDroid}. Las clases
-en azul son objetos en el proceso del servidor, a través de la aplicación
-móvil \abbr{HARDroid}.
+cliente, a través de la librería cliente \emph{\abbr{HARDroid}}.
+Las clases en azul son objetos en el proceso del servidor, a través
+de la aplicación móvil \emph{\abbr{HARDroid}}.
 
 \begin{figure}[H]
 \begin{centering}
@@ -789,15 +794,15 @@ C4.5 basado en \abbr{WEKA}}
 \section{ActivitySurvey: Encuesta de Evaluación}
 
 \label{sec55:activity}Con el objetivo de comprobar el funcionamiento
-del servicio \emph{HARDroid} desarrollado y evaluar los resultados
+del servicio \emph{\abbr{HARDroid}} desarrollado y evaluar los resultados
 producidos al detectar las actividades realizadas por el usuario,
 se creó la aplicación \emph{ActivitySurvey. }El diseño de la aplicación
 móvil es bastante sencillo pero con los complementos necesarios que
-permiten validar las funcionalidades de \emph{HARDroid} y además encuestar
-a usuarios reales durante una sesión de entrenamiento físico. En esta
-sección se presenta la vista general de la aplicación explicada por
-medio de los artefactos que describen las funcionalidades básicas
-construidas. 
+permiten validar las funcionalidades de \emph{\abbr{HARDroid}} y
+además encuestar a usuarios reales durante una sesión de entrenamiento
+físico. En esta sección se presenta la vista general de la aplicación
+explicada por medio de los artefactos que describen las funcionalidades
+básicas construidas. 
 
 \subsection{Requerimientos Funcionales}
 
@@ -909,7 +914,7 @@ activa/desactiva la notificación.
 \subsection{Diseño Detallado}
 
 El diseño del proyecto se basa en los componentes comunes de una aplicación
-móvil \abbr{Android} según lo expuesto en \ref{ssec52:framework}.
+móvil \emph{\abbr{Android} }según lo expuesto en \ref{ssec52:framework}.
 El diseño se compone de una colección desacoplada de Actividades,
 Servicios, Proveedores y Receptores que se describen a continuación.
 
@@ -926,7 +931,7 @@ o aseverada.
 la aplicación que modifica las preferencias del usuario final y las
 almacena en el dispositivo móvil.
 \item \texttt{\small{}DetectorService}: Es un servicio que mantiene una
-conexión persistente con el servicio \emph{HARDroid}. El servicio
+conexión persistente con el servicio \emph{\abbr{HARDroid}}. El servicio
 es iniciado o parado dependiendo de la necesidad del usuario encuestado.
 \item \texttt{\small{}DetectedActivitiesService}: Es un servicio de función
 diferida que permite recibir actualizaciones de resultados detectados
@@ -945,7 +950,7 @@ con un servicio remoto.
 \end{itemize}
 En la \figref{fig5:act-surv-diag} se muestran los módulos funcionales
 que hacen a la aplicación con una notación de los componentes de la
-plataforma \abbr{Android} y su interacción \cite{Gargenta2014}. 
+plataforma \emph{\abbr{Android} }y su interacción \cite{Gargenta2014}. 
 
 \begin{figure}[H]
 \begin{centering}
@@ -1004,8 +1009,8 @@ ocurre por medio de una interacción del usuario en la pantalla \emph{Bienvenida
 
 \label{sec56:conclusion}En este capítulo presentamos un servicio
 de reconocimiento de actividades humanas (\abbr{HAR}) para la plataforma
-\abbr{Android}. Está construido en base a las mejores prácticas de
-servicios utilitarios de implementación privada existentes como\emph{
+\emph{\abbr{Android}}. Está construido en base a las mejores prácticas
+de servicios utilitarios de implementación privada existentes como\emph{
 Google Play Services}. Este utilitario permite que aplicaciones móviles
 desarrolladas por terceros no dependan de implementaciones privativas
 sino de un componente de software libre. Bajo un modelo colaborativo,
@@ -1014,7 +1019,7 @@ como adaptarlo a sus necesidades o gozar de las mejoras evolutivas.
 
 Además, esta implementación fue probada por medio de una aplicación
 móvil independiente donde se evaluó el funcionamiento desacoplado
-proveído por el marco de trabajo de \abbr{Android}. Los desarrollos
+proveído por el marco de trabajo de \emph{\abbr{Android}}. Los desarrollos
 obtenidos han resultado satisfactorios desde el punto de vista de
 su programación en lo que respecta a la integración entre implementaciones
 de aplicación móvil y el servidor utilitario separados en procesos

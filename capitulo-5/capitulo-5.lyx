@@ -99,6 +99,8 @@ name "sec51:intro"
 En este capítulo introducimos un sistema que clasifica la actividades humanas
  ambulatorias utilizando teléfonos móviles inteligentes con la plataforma
  
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -113,9 +115,24 @@ texttrademark
 
 \end_inset
 
+
+\emph default
 : 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
 .
  El sistema es una adaptación del diseño utilizado por sistemas existentes
@@ -138,7 +155,20 @@ key "Google2013l"
 \begin_layout Standard
 El sistema 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
  está implementado en base a dos componentes principales: una interfaz de
  programación que expone las facilidades y un servicio en ejecución que
@@ -177,6 +207,8 @@ abbr{HAR}
 
 .
  El servicio de la plataforma 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -189,6 +221,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  es una aplicación de segundo plano para teléfonos móviles que implementa
  algoritmos de reconocimiento de actividades humanas.
 \end_layout
@@ -231,6 +265,8 @@ reference "sec52:diseño"
 s para la construcción de los componentes de software.
  Se empieza con los conceptos generales de Ingeniería de Software hasta
  concluir con los detalles técnicos de la plataforma 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -243,6 +279,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 .
  La siguiente sección 
 \begin_inset CommandInset ref
@@ -307,7 +345,20 @@ name "sec52:diseño"
 
 La construcción del sistema 
 \emph on
-HARDroid 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+ 
 \emph default
 está enmarcado dentro del ecosistema de aplicaciones móviles.
  Desde el punto de vista conceptual del desarrollo de aplicaciones móviles
@@ -355,6 +406,8 @@ Widgets
  en los dispositivos, ya que disponen de gran soporte en la plataforma subyacent
 e.
  Por ejemplo, en la plataforma para teléfonos móviles 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -367,8 +420,6 @@ abbr{Android}
 
 \end_inset
 
-
-\emph on
  
 \emph default
 se dispone de capacidades tales como almacenamiento, ubicación, acceso a
@@ -1116,6 +1167,8 @@ Implementación de un componente de evaluación de la solución.
 Parte de la metodología consistió en definir la interfaz del sistema en
  base a las mejores prácticas de la industria para aplicaciones móviles
  de contexto, utilizando el lenguaje de programación 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1128,7 +1181,11 @@ abbr{Java}
 
 \end_inset
 
+
+\emph default
  y la tecnología basada en 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1141,6 +1198,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 .
  El diseño se basa en implementaciones existentes 
 \begin_inset CommandInset citation
@@ -1239,6 +1298,8 @@ as especiales de movilidad.
 \begin_layout Standard
 En este trabajo se propone una herramienta que está dirigida a los teléfonos
  móviles inteligentes basados en 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1251,8 +1312,12 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 .
  En los siguientes apartados se da una vista general de 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1265,7 +1330,9 @@ abbr{Android}
 
 \end_inset
 
- como plataforma tecnológica de este capítulo.
+ 
+\emph default
+como plataforma tecnológica de este capítulo.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1274,6 +1341,8 @@ Plataforma
 
 \begin_layout Standard
 El sistema operativo móvil 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1286,6 +1355,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  es una plataforma de código abierto con un entorno de programación de distribuc
 ión publica, que además incluye una interfaz de programación (
 \begin_inset ERT
@@ -1311,6 +1382,8 @@ hardware
 \end_layout
 
 \begin_layout Standard
+
+\emph on
 \begin_inset ERT
 status open
 
@@ -1323,6 +1396,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  es una plataforma abierta para dispositivos móviles encabezada por 
 \emph on
 Google
@@ -1348,6 +1423,8 @@ key "Gargenta2014"
 
 .
  El principal aporte que logró 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1360,6 +1437,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  es que por primera vez una plataforma abierta consigue separar el 
 \emph on
 software
@@ -1381,6 +1460,8 @@ Arquitectura
 
 \begin_layout Standard
 La plataforma 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1393,7 +1474,11 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  está soportada sobre el núcleo (
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1406,7 +1491,11 @@ abbr{Kernel}
 
 \end_inset
 
-) de 
+
+\emph default
+) de
+\emph on
+ 
 \begin_inset ERT
 status open
 
@@ -1419,8 +1508,10 @@ abbr{Linux}
 
 \end_inset
 
- cuyo proyecto al igual es una iniciativa de código abierto utilizado ampliament
-e en el ámbito de tecnología de la información desde hace más de una década.
+ 
+\emph default
+cuyo proyecto al igual es una iniciativa de código abierto utilizado ampliamente
+ en el ámbito de tecnología de la información desde hace más de una década.
  La capa más baja de la arquitectura hereda las principales funcionalidades
  esperadas en los sistemas operativos modernos: portabilidad, seguridad
  y las capacidades funcionales.
@@ -1573,6 +1664,8 @@ figref{fig5:android-stack}
 \end_inset
 
  se muestra la plataforma 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1585,6 +1678,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  con todos los componentes que están soportados sobre el núcleo y que en
  la siguiente sección se detallan.
 \end_layout
@@ -1675,6 +1770,8 @@ abbr{DVM}
 \end_inset
 
 ) de propósito específico diseñada especialmente para 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1687,7 +1784,11 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  de manera que este corra aplicaciones programadas en el lenguaje 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1700,6 +1801,8 @@ abbr{Java}
 
 \end_inset
 
+
+\emph default
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1768,6 +1871,8 @@ Application Framework
  plataforma ya que permite a los desarrolladores ser creativos y construir
  aplicaciones que puedan ser distribuirlas al mercado.
  Son parte de este componente las librerías 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1780,7 +1885,11 @@ abbr{Java}
 
 \end_inset
 
- genéricas y las específicas de 
+ 
+\emph default
+genéricas y las específicas de 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1793,10 +1902,12 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "OHA2008r"
+key "Android2016r"
 
 \end_inset
 
@@ -1823,7 +1934,9 @@ reference "sec52:diseño"
 .
  Las aplicaciones pueden estar instaladas de fábrica en los teléfonos móviles
  o pueden ser adquiridos por los usuarios en los mercados de distribución
- de aplicaciones 
+ de aplicaciones
+\emph on
+ 
 \begin_inset ERT
 status open
 
@@ -1836,6 +1949,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 .
 \end_layout
 
@@ -1851,6 +1966,8 @@ name "ssec52:framework"
 \end_inset
 
 En esta sección, se exponen las facilidades de 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1863,6 +1980,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  como marco de trabajo (
 \emph on
 framework
@@ -1880,6 +1999,8 @@ Componentes de Computación
 
 \begin_layout Standard
 Los bloques principales de una aplicación móvil son componentes que 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1892,6 +2013,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  provee para construir una aplicación contextual de utilidad.
  La idea de este apartado es presentar a grandes rasgos los componentes
  disponibles y como estos se combinan entre sí para formar una aplicación.
@@ -2061,6 +2184,8 @@ Componente de Comunicación
 El intercambio de datos es una necesidad común entre componentes de un sistema
  (o entre sistemas diferentes).
  En 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2073,6 +2198,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 , el intercambio es realizado por medio de un mecanismo denominado 
 \emph on
 Inter-Process Communication
@@ -2198,6 +2325,8 @@ figref{fig5:mensajes-ipc}
 
  se muestran las diferentes formas de interacción entre los componentes
  
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2210,7 +2339,9 @@ abbr{Android}
 
 \end_inset
 
- citados anteriormente.
+ 
+\emph default
+citados anteriormente.
  Como se puede apreciar, el mecanismo principal para todas las interacciones
  son llevadas acabo por llamadas 
 \begin_inset ERT
@@ -2394,6 +2525,8 @@ HARDroid
 \emph default
 : Es un servicio de reconocimiento de actividades humanas específico para
  
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2406,6 +2539,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 .
  Este componente tiene cabida dentro de la capa de 
 \emph on
@@ -2593,6 +2728,8 @@ name "sec54:hardroid"
 \end_inset
 
 El servicio 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2605,12 +2742,16 @@ abbr{HARDroid}
 
 \end_inset
 
- fue diseñado para ajustarse a las características generales de los gestores
+ 
+\emph default
+fue diseñado para ajustarse a las características generales de los gestores
  y/o servicios en la capa de 
 \emph on
 Application Framework
 \emph default
  de 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2623,6 +2764,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 , Ej.
  
 \emph on
@@ -2634,6 +2777,8 @@ Google Play Services
 \emph default
 .
  La ventaja del servicio 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2646,6 +2791,8 @@ abbr{HARDroid}
 
 \end_inset
 
+
+\emph default
  para las aplicaciones móviles hechas por terceros es que aprovechan las
  últimas mejoras del motor de reconocimiento de actividades, con actualización
  automática de la plataforma distribuida como un 
@@ -2766,6 +2913,8 @@ figref{fig5:hardroid-func}
 \end_inset
 
  se muestra el esquema de funcionamiento del servicio 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2778,9 +2927,13 @@ abbr{HARDroid}
 
 \end_inset
 
+
+\emph default
  en base al diseño expuesto en el párrafo anterior.
  Este esquema de diseño es el más apropiado para crear aplicaciones móviles
  distribuidas en 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2793,6 +2946,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 , semejante a la arquitectura de servicios de 
 \emph on
 Google Play Services
@@ -2807,6 +2962,8 @@ key "Google2016l"
 .
  Las aplicaciones móviles están confinadas en procesos separados del sistema
  
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2819,6 +2976,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 , cada cual en su entorno 
 \begin_inset ERT
 status open
@@ -2876,6 +3035,8 @@ name "ssec54:modulos"
 \end_inset
 
 Desde el punto de vista conceptual el servicio 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -2888,6 +3049,8 @@ abbr{HARDroid}
 
 \end_inset
 
+
+\emph default
  puede ser dividido en cuatro módulos principales que cumplen con las caracterís
 ticas específicas que se describen a continuación.
 \end_layout
@@ -3333,6 +3496,8 @@ abbr{IPC}
 \end_inset
 
  de 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -3345,7 +3510,9 @@ abbr{Android}
 
 \end_inset
 
- para atender las conexiones con los clientes.
+ 
+\emph default
+para atender las conexiones con los clientes.
  Además se encarga de registrar las suscripciones y emitir los resultados
  de detección de acuerdo a las preferencias de los clientes.
  
@@ -3417,6 +3584,8 @@ abbr{UML}
 
  donde las clases en amarillo representan objetos en el proceso del cliente,
  a través de la librería cliente 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -3429,9 +3598,13 @@ abbr{HARDroid}
 
 \end_inset
 
+
+\emph default
 .
  Las clases en azul son objetos en el proceso del servidor, a través de
  la aplicación móvil 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -3444,6 +3617,8 @@ abbr{HARDroid}
 
 \end_inset
 
+
+\emph default
 .
 \end_layout
 
@@ -4116,7 +4291,20 @@ name "sec55:activity"
 
 Con el objetivo de comprobar el funcionamiento del servicio 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
  desarrollado y evaluar los resultados producidos al detectar las actividades
  realizadas por el usuario, se creó la aplicación 
@@ -4127,7 +4315,20 @@ ActivitySurvey.
 El diseño de la aplicación móvil es bastante sencillo pero con los complementos
  necesarios que permiten validar las funcionalidades de 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
  y además encuestar a usuarios reales durante una sesión de entrenamiento
  físico.
@@ -4589,6 +4790,8 @@ Diseño Detallado
 \begin_layout Standard
 El diseño del proyecto se basa en los componentes comunes de una aplicación
  móvil 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -4601,7 +4804,9 @@ abbr{Android}
 
 \end_inset
 
- según lo expuesto en 
+ 
+\emph default
+según lo expuesto en 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "ssec52:framework"
@@ -4661,7 +4866,20 @@ DetectorService
 \size default
 : Es un servicio que mantiene una conexión persistente con el servicio 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
 .
  El servicio es iniciado o parado dependiendo de la necesidad del usuario
@@ -4735,6 +4953,8 @@ figref{fig5:act-surv-diag}
 
  se muestran los módulos funcionales que hacen a la aplicación con una notación
  de los componentes de la plataforma 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -4747,7 +4967,9 @@ abbr{Android}
 
 \end_inset
 
- y su interacción 
+ 
+\emph default
+y su interacción 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Gargenta2014"
@@ -5031,6 +5253,8 @@ abbr{HAR}
 \end_inset
 
 ) para la plataforma 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -5043,6 +5267,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 .
  Está construido en base a las mejores prácticas de servicios utilitarios
  de implementación privada existentes como
@@ -5063,6 +5289,8 @@ abbr{Android}
 Además, esta implementación fue probada por medio de una aplicación móvil
  independiente donde se evaluó el funcionamiento desacoplado proveído por
  el marco de trabajo de 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -5075,6 +5303,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 .
  Los desarrollos obtenidos han resultado satisfactorios desde el punto de
  vista de su programación en lo que respecta a la integración entre implementaci

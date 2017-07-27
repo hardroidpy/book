@@ -21,32 +21,146 @@ los resultados producidos al utilizar el conjunto entrenamiento disponible
 son presentados. Esto incluye la validación del modelo construido
 con el algoritmo de \emph{Machine Learning} (\abbr{ML}) escogido
 que confirma su usabilidad en ambientes productivos. También se expone
-la evaluación de los resultados producidos por \emph{HARDroid }con
-la aplicación \emph{ActivitySurvey} desarrollada para esta tarea.
+la evaluación de los resultados producidos por \emph{\abbr{HARDroid}
+}con la aplicación \emph{ActivitySurvey} desarrollada para esta tarea.
 
 \section{Datos Experimentales}
 
-\label{sec6:recoleccion}En base a trabajos de investigación en \abbr{HAR}
-realizados, se han dispuesto algunos datos experimentales para entrenar
-clasificadores de actividades humanas \cite{ReyesOrtiz2013,Anguita2013}.
-Estos datos están libremente disponibles como origen para estudios
-de distintas disciplinas e investigaciones en este ámbito. 
+\label{sec6:recoleccion}En base a trabajos precedentes en sistemas
+\abbr{HAR}, se han dispuesto datos experimentales para entrenar clasificadores
+de actividades humanas tales como en \cite{ReyesOrtiz2013}. Estos
+datos están disponibles como fuente para diversos estudios de investigaciones
+en este ámbito. 
 
-Sin embargo, aún los datos de sensores capturados con teléfonos móviles
-son limitados. Es por eso, que en este trabajo se requirió realizar
-una colecta de datos personalizada y adecuada a los objetivos de este
-estudio. Los datos recolectados por medio de experimentación se describen
+Sin embargo, los datos de sensores capturados con teléfonos móviles
+son escasos. Es por esta razón que este trabajo requirió realizar
+una colecta acorde a los objetivos de estudio del mismo. El procedimiento
+y los datos recolectados por medio de experimentación se describen
 a continuación.
 
 \subsection{Instrumentación}
 
+Como es sabido el desarrollo de \emph{\abbr{HARDroid} }se concreto
+completamente para la plataforma \emph{\abbr{Android} }donde aquí
+se detallan los rasgos técnicos de las herramientas utilizadas para
+su concepción y evaluación.
+
 \subsubsection{Teléfonos inteligentes}
+
+Escoger las herramientas apropiadas para desarrollar un sistema \abbr{HAR}
+requiere de la evaluación de dispositivos móviles disponibles en el
+mercado teniendo en cuenta los criterios citados en la \secref{sec24:dispositivos-moviles}:
+\emph{hardware}, sensores y software de plataforma. En el periodo
+de evaluación de este trabajo (2016), la cantidad de teléfonos inteligentes
+con sensores de aceleración fue vasta, algunos de los cuales se listan
+en la \tabref{tab6:dispositivos} con sus características relevantes.
+
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}{|l|l|l|l|l|}
+\hline 
+Marca/modelo & CPU & RAM/ROM & Sensor\footnote{Sensor de aceleración} & Android\tabularnewline
+\hline 
+\hline 
+{\small{}LG G2} & {\small{}1.2GHz Cortex-A7} & {\small{}1GB/8GB} & {\small{}BMI160} & {\small{}Nougat 7.0}\tabularnewline
+\hline 
+{\small{}LG Nexus 5X} & {\small{}Q1.4Ghz Cortex-A53} & {\small{}2GB/32GB} & {\small{}BMC150} & {\small{}Lollipop 5.0.2}\tabularnewline
+\hline 
+{\small{}Motorola G 2nd} & {\small{}1.2GHz Cortex-A7} & {\small{}1GB/8GB} & {\small{}3-axis Acc} & {\small{}Marshmallow 6.0}\tabularnewline
+\hline 
+{\small{}Huawei Mate 9} & {\small{}Q2.4GHz Cortex-A73} & {\small{}4GB/64GB} & {\small{}LSM6DSM} & {\small{}Nougat 7.0}\tabularnewline
+\hline 
+{\small{}Huawei Mate 8} & {\small{}Q2.3GHz Cortex-A72} & {\small{}3GB/32GB} & {\small{}LSM330 3-axis} & {\small{}Marshmallow 6.0}\tabularnewline
+\hline 
+{\small{}Samsung S6} & {\small{}Q2.1GHz Cortex-A57} & {\small{}3GB/32GB} & {\small{}MPU6500} & {\small{}Nougat 7.0}\tabularnewline
+\hline 
+{\small{}Samsung A5} & {\small{}Q1.2GHz Cortex-A53 } & {\small{}2GB/16GB} & {\small{}BOSCH Acc} & {\small{}Lollipop 5.1.1}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption[Especificaciones de los teléfonos inteligentes]{\label{tab6:dispositivos}Especificaciones de los teléfonos inteligentes
+de entrenamiento.}
+\end{table}
+
+La elección fue en base a los dispositivos móviles disponibles, propiedad
+de los voluntarios durante las sesiones de experimento.
 
 \subsubsection{Entorno de desarrollo }
 
+Las aplicaciones móviles desarrolladas en este trabajo están enteramente
+construidas en la plataforma \emph{\abbr{Android}} donde fueron utilizados
+los programas destinados para el caso \cite{Android2016}:
+\begin{itemize}
+\item \emph{Android Studio}: Entorno de desarrollo integrado para proyectos\emph{
+}de software.
+\item \emph{Android} \emph{Software Development Kit }(\abbr{SDK}): Herramientas
+y librerías \abbr{API} requeridas para construir aplicaciones.
+\item \emph{Gradle}: Programa de automatización de tareas de construcción
+de aplicaciones.
+\end{itemize}
+Las aplicaciones desarrolladas fueron escritas utilizando el lenguaje
+\emph{Java }principalmente. Tanto las interfaces de usuario, servicios
+de aplicación y las tareas de computación intensivas de acceso a sensores,
+procesamiento, algoritmos de \abbr{ML} y almacenamiento de datos
+fueron hechos integramente en Java.
+
 \subsection{Procedimiento Guía }
 
+Con el objetivo de obtener un conjunto de datos adecuado a este estudio
+de \abbr{HAR} se realizó un experimento de entrenamiento con grupo
+de voluntarios. Un grupo de 8 personas entre las edades de 20 y 38
+estuvieron dispuestos para esta tarea donde la edad media de la población
+esta comprendida en $30.5\pm5$ años. 
+
+El procedimiento guía de captura de datos se instruyó con el uso del
+teléfono móvil como prenda sujeta al bolsillo o en la cintura mientras
+se realiza una actividad física predeterminada. El planeamiento del
+experimento consitió en realizar en orden por un periodo de 10 a 15
+minutos las tres actividades básicas y dos de transporte:
+\begin{itemize}
+\item Caminar (WALKING)
+\item Trotar (RUNNING)
+\item Quieto (STILL)
+\item En bicicleta (ON\_BICYCLE)
+\item En auto (ON\_VEHICLE)
+\end{itemize}
+El experimento de entrenamiento se resume en la \tabref{tab6:sesiones},
+donde se incluyen las sesiones de los voluntarios y el tiempo en minutos
+invertido en la actividad etiquetada. Cada persona realizo una sesión
+de entrenamiento al menos una vez.
+
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Sujeto & WALKING & RUNNING & STILL & ON\_BICYLE & ON\_VEHICLE\tabularnewline
+\hline 
+\hline 
+AG & 80 & 33 & 12 & 17 & 7\tabularnewline
+\hline 
+SG & 15 & 15 & - & - & -\tabularnewline
+\hline 
+SF & 43 & 25 & - & 13 & -\tabularnewline
+\hline 
+GA & 30 & 2 & - & - & -\tabularnewline
+\hline 
+BV & - & 17 & - & - & -\tabularnewline
+\hline 
+PV & 17 & 19 & 12 & - & 7\tabularnewline
+\hline 
+SY & 37 & 13 &  & 26 & 11\tabularnewline
+\hline 
+MD & 29 & 4 & - & - & -\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab6:sesiones}Resumen de sesiones de entrenamiento}
+\end{table}
+
+
 \subsection{Captura de Datos}
+
+TODO:
 
 \section{Generación del Clasificador HAR}
 
