@@ -73,9 +73,6 @@
 
 \begin_layout Chapter
 Aprendizaje Automático
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "chap:Aprendizaje-Automatico"
@@ -104,8 +101,8 @@ En el contexto de aprendizaje automático, los patrones deben ser descubiertos
 \end_layout
 
 \begin_layout Standard
-Este proceso es generalmente tedioso, caro y consume mucho tiempo en muchas
- aplicaciones de minería de datos.
+El proceso de aprendizaje es generalmente tedioso, caro y consume mucho
+ tiempo en muchas aplicaciones de minería de datos.
  Existen dos enfoques de aprendizaje, es decir, aprendizaje supervisado
  y no supervisado, que se ocupan de datos etiquetados y no etiquetados,
  respectivamente.
@@ -113,13 +110,35 @@ Este proceso es generalmente tedioso, caro y consume mucho tiempo en muchas
  un resultado como caminar, sentarse, correr, etc., la mayoría de los sistemas
  de 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-abbr{HAR}
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+HAR
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -131,8 +150,106 @@ abbr{HAR}
  parte de los datos están sin etiqueta.
 \end_layout
 
+\begin_layout Standard
+Muchos autores definen aprendizaje automático de distintas maneras, aunque
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Murphy:2012:MLP:2380985"
+
+\end_inset
+
+ lo define de manera muy clara:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 5mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definition}
+\end_layout
+
+\end_inset
+
+[Aprendizaje Automático (
+\emph on
+Machine Learning
+\emph default
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ML
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+)] 
+\begin_inset CommandInset label
+LatexCommand label
+name "def3:ml"
+
+\end_inset
+
+Definimos el aprendizaje automático como un conjunto de métodos que pueden
+ detectar automáticamente patrones en los datos y luego utilizar estos patrones
+ descubiertos para predecir los datos futuros o para realizar otros tipos
+ de toma de decisiones bajo incertidumbre.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definition}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Aprendizaje supervisado
+Aprendizaje Supervisado
 \end_layout
 
 \begin_layout Standard
@@ -154,110 +271,165 @@ key "Rajaraman2011"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definition}
+\end_layout
+
+\end_inset
+
+[Clasificador (
+\emph on
+Machine Learning
+\emph default
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ML
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+)]
 \begin_inset CommandInset label
 LatexCommand label
 name "def3:clasificacion"
 
 \end_inset
 
-
+Un algoritmo 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-newtheorem{defs}{Definición}
+abbr
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
-
-\backslash
-begin{defs}
+{
 \end_layout
 
 \end_inset
 
-(Clasificador
+ML
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
-
-\backslash
-abbr{ML}
+}
 \end_layout
 
 \end_inset
 
-) Un algoritmo
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{ML}
-\end_layout
-
-\end_inset
-
- recibe un conjunto entrenamiento se compone de varios pares 
+ recibe un conjunto entrenamiento que se compone de varios pares 
 \begin_inset Formula $(\boldsymbol{x},y)$
 \end_inset
 
- conocidos como instancias de entrenamiento, donde
+ conocidos como instancias de entrenamiento, donde 
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
- es un
+ es un 
 \emph on
- vector
+vector
 \emph default
- de valores, llamado vector característico.
+ de valores, llamado vector característico, e 
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $y$
+\begin_inset Formula $\boldsymbol{y}$
 \end_inset
 
- es la
+ es la 
 \emph on
- etiqueta
+etiqueta
 \emph default
 , el valor de clasificación para 
 \begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
-El objetivo del proceso
+El objetivo del proceso 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-abbr{ML}
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ML
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -267,7 +439,7 @@ abbr{ML}
 \end_inset
 
  cuya predicción de 
-\begin_inset Formula $y$
+\begin_inset Formula $\boldsymbol{y}$
 \end_inset
 
  asociada a valores desconocidos de 
@@ -275,20 +447,25 @@ abbr{ML}
 \end_inset
 
  sea la mejor.
- El valor de y corresponden a valores arbitrarios pero es común encontrase
- con los siguientes casos:
+ El valor de 
+\begin_inset Formula $\boldsymbol{y}$
+\end_inset
+
+ corresponde a valores arbitrarios pero es común encontrase con los siguientes
+ casos: 
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $y$
+\begin_inset Formula $\boldsymbol{y}$
 \end_inset
 
  es un número del conjunto de los reales.
  Este caso corresponde a un problema de regresión.
+ 
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $y$
+\begin_inset Formula $\boldsymbol{y}$
 \end_inset
 
  es un valor booleano verdadero-falso, también representado como 
@@ -296,7 +473,7 @@ abbr{ML}
 \end_inset
 
  y 
-\begin_inset Formula $−1$
+\begin_inset Formula $-1$
 \end_inset
 
 .
@@ -305,23 +482,24 @@ abbr{ML}
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $y$
+\begin_inset Formula $\boldsymbol{y}$
 \end_inset
 
- es miembro de un conjunto finito donde cada valor representa una clase
- particular.
+ es miembro de un conjunto finito discreto donde cada valor representa una
+ clase particular.
  El problema es llamado de clasificación de múltiples clases.
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-end{defs}
+end{definition}
 \end_layout
 
 \end_inset
@@ -335,35 +513,78 @@ El aprendizaje supervisado, comúnmente conocido como clasificación de múltipl
  número de algoritmos.
  En la 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-tabref{tab3:clasificadores}
+tabref
 \end_layout
 
 \end_inset
 
- se resumen los clasificadores más importantes en el estudio de las 
+
 \begin_inset ERT
-status open
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+tab3:clasificadores
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ se resumen los clasificadores más importantes en el estudio de 
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-abbr{HAR}
+abbr
 \end_layout
 
 \end_inset
 
- según su tipo.
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+HAR
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+s según su tipo.
+ 
 \begin_inset Float table
+placement !htbp
 wide false
 sideways false
 status open
@@ -373,59 +594,59 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0pt">
-<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Tipo
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Clasificador
+Tipo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clasificador 
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Arboles de Decisión
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-C4.5, ID3
+Arboles de Decisión 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C4.5, ID3 
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Clasificadores de Bayes
+Clasificadores de Bayes 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -433,87 +654,87 @@ Redes de Bayes,
 \emph on
 Naïve
 \emph default
- Bayes
+ Bayes 
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Basados en Instancia
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-k-vecinos proximos
+Basados en Instancia 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+k-vecinos proximos 
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Transformación de dominio
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Máquinas de soporte-vector
+Transformación de dominio 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Máquinas de soporte-vector 
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Redes neuronales
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Perceptron de múltiples capas
+Redes neuronales 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Perceptron de múltiples capas 
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Modelos de Markov
+Modelos de Markov 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Modelos ocultos de Markov
+Modelos ocultos de Markov 
 \end_layout
 
 \end_inset
@@ -530,32 +751,54 @@ Modelos ocultos de Markov
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab3:clasificadores"
-
-\end_inset
-
-
 \begin_inset Argument 1
 status collapsed
 
 \begin_layout Plain Layout
 Algoritmos de 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-abbr{ML}
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ML
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
 
 
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab3:clasificadores"
 
 \end_inset
 
@@ -573,16 +816,38 @@ abbr{ML}
 \end_layout
 
 \begin_layout Standard
-En las siguientes secciones nos concentramos en un enfoque basado en arboles
- de decisión (
+En las siguientes secciones nos concentraremos en un enfoque basado en arboles
+ de decisión (Decision Tree, 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-abbr{DT}
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+DT
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -596,16 +861,16 @@ abbr{DT}
 \begin_inset Formula $f$
 \end_inset
 
- corresponde a un árbol de múltiples niveles donde cada nodo aplica una
- función a 
+, que corresponde a un árbol de múltiples niveles donde cada nodo aplica
+ una función a 
 \begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
  y determina sobre qué nodo hijo procede la búsqueda.
- Cada nodo posee cualquier número de nodos hijos.
+ Cada nodo posee un número arbitrario de nodos hijos.
  Los árboles de decisión son preferibles para las clasificación binaria
  o de múltiples clases, especialmente cuando la dimensión del vector característ
-icos no es muy grande
+icos no es muy grande 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Rajaraman2011"
@@ -620,7 +885,7 @@ Arboles de Decisión
 \end_layout
 
 \begin_layout Standard
-El árbol de decisión es un método de aprendizaje predictivo de una conjunto
+El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto
  de tuplas o instancias etiquetadas.
  Un árbol de decisión es una estructura de árbol similar a un diagrama de
  flujo, donde cada nodo interno (nodo no hoja) denota una prueba de un atributo,
@@ -633,7 +898,7 @@ El árbol de decisión es un método de aprendizaje predictivo de una conjunto
 placement !htbp
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -650,7 +915,7 @@ centering
 
  
 \begin_inset Graphics
-	filename graphics/ad_2.png
+	filename capitulo-3/graphics/ad_2
 	width 70line%
 
 \end_inset
@@ -668,11 +933,6 @@ status collapsed
 
 \end_inset
 
-Árbol de decisión
-\end_layout
-
-\end_inset
-
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -680,7 +940,12 @@ name "fig:arbolEjemplo"
 
 \end_inset
 
- 
+Árbol de decisión
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -689,10 +954,45 @@ name "fig:arbolEjemplo"
 \end_layout
 
 \begin_layout Standard
-En la figura por ejemplo un típico árbol de decisión que representa el concepto
+En la 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+fig:arbolEjemplo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ se muestra un típico ejemplo de árbol de decisión que representa el concepto
  de jugar o no Golf, teniendo en cuenta variables climática representadas
  en los nodos internos, y los nodos hojas denotan las decisiones de jugar
- o no golf.
+ o no al Golf.
 \end_layout
 
 \begin_layout Section
@@ -700,31 +1000,43 @@ Algoritmo C4.5
 \end_layout
 
 \begin_layout Standard
-J.R Quinlan propone un mejora, una extensión al algoritmo ID3, al que denomina
- C4.5, este algoritmo genera un árbol de decisión a partir de los datos mediante
- particiones realizadas recursivamente.
- El árbol se construye mediante la estrategia profundidad-primero (
+El trabajo de J.R.
+ Quinlan 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Quinlan:1993:CPM:152181"
+
+\end_inset
+
+ propone un algoritmo de construcción de arboles de decisión denominado
+ C4.5, el cual a su vez es una mejora o extensión al algoritmo ID3 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Quinlan:1986:IDT:637962.637969"
+
+\end_inset
+
+.
+ Este algoritmo genera un árbol de decisión a partir del paticionamiento
+ recursivo de los datos de entrada.
+ El árbol se construye mediante la estrategia 
 \emph on
-depth-first
+profundidad-primero (depth-first)
 \emph default
-).
+.
 \end_layout
 
 \begin_layout Standard
-El algoritmo C4.5 utiliza técnica heurística conocida como proporción de
- ganancia (
+Además, el algoritmo C4.5 utiliza una técnica heurística conocida como 
 \emph on
-gain-ratio
+proporción de ganancia (gain-ratio)
 \emph default
-).
- Es una medida basada en información que considera diferentes números y
- probabilidades de los resultados de las pruebas.
-\end_layout
-
-\begin_layout Standard
-El algoritmo considera todas las pruebas posibles que puede dividir el conjunto
- de datos, seleccionar la prueba que le haya generado mayor ganancia de
- información.
+.
+ Que es una medida basada en información que considera diferentes números
+ y probabilidades de los resultados de las pruebas.
+ El algoritmo así, considera todas las pruebas posibles que puede dividir
+ el conjunto de datos para seleccionar la prueba que le haya generado mayor
+ ganancia de información.
  Para cada atributo discreto, se considera una prueba con 
 \begin_inset Formula $N$
 \end_inset
@@ -734,21 +1046,28 @@ El algoritmo considera todas las pruebas posibles que puede dividir el conjunto
 \end_inset
 
  el numero de valores posibles que puede tomar el atributo.
- Para cada atributo continuo, se realiza la prueba binaria (1,0) sobre cada
- uno de los valores que puede tomar el atributo de los datos.
+ Para cada atributo continuo, se realiza la prueba binaria (1, 0) sobre
+ cada uno de los valores que puede tomar el atributo de los datos.
 \end_layout
 
-\begin_layout Section
-Características del algoritmo C4.5
+\begin_layout Standard
+El algoritmo C4.5, ilustrado en el Algoritmo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "algoC45"
+
+\end_inset
+
+, presenta las siguientes características:
 \end_layout
 
 \begin_layout Itemize
-Permite trabaja con valores continuos para los atributos, separando los
- posibles resultados en dos ramas 
+Permite trabajar con valores continuos para los atributos, en dos ramas
+ según se cumpla una de las siguientes condiciones 
 \begin_inset Formula $A_{i}<=N$
 \end_inset
 
- y 
+ o 
 \begin_inset Formula $A_{i}>N$
 \end_inset
 
@@ -757,14 +1076,19 @@ Permite trabaja con valores continuos para los atributos, separando los
 \end_layout
 
 \begin_layout Itemize
-Los arboles son menos frondosos, ya que cada hoja cubre una distribución
- de clases no una clase en particular.
+Por lo general los arboles generados por el mismo se caracterizan por ser
+ menos frondosos, ya que cada hoja cubre una distribución de clases y no
+ una clase en particular.
  
 \end_layout
 
 \begin_layout Itemize
-Utiliza el método 'divide y vencerás' para generar el árbol de decisión
- inicial a partir de un conjunto de datos de entrenamiento.
+Utiliza el método 
+\emph on
+divide y vencerás
+\emph default
+ para generar el árbol de decisión inicial a partir de un conjunto de datos
+ de entrenamiento.
  
 \end_layout
 
@@ -775,24 +1099,586 @@ Se basan en la utilización del criterio de proporción de ganancia, definido
 \end_inset
 
 .
- De esta manera se consigue evitar que la variables con mayor numero de
- categorías salgan beneficiadas en la selección.
+ De esta manera consigue evitar que variables con mayor numero de categorías
+ salgan beneficiadas en la selección.
  
 \end_layout
 
 \begin_layout Itemize
-Es recursivo.
+Su implementación típica es recursiva.
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}
+\end_layout
+
+\end_inset
+
+[1] 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Require
+\end_layout
+
+\end_inset
+
+ Conjunto de datos etiquetados 
+\begin_inset Formula $D$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Procedure
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+C4.5
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $D$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+If
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $D>\textit{es puro o cumple el criterio de parada}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+
+\shape italic
+Termina
+\shape default
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndIf
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+ForAll
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $a\in D$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\textit{Computar información de division en a }$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndFor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $a_{best}=$
+\end_inset
+
+ Mejor atributo de división respecto al criterio 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $Arbol=$
+\end_inset
+
+ Crear un nodo de decisión con 
+\begin_inset Formula $a_{best}$
+\end_inset
+
+ en la raíz 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $D_{v}=$
+\end_inset
+
+ Introducir sub-conjunto de 
+\begin_inset Formula $D$
+\end_inset
+
+ basado en división 
+\begin_inset Formula $a_{best}$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+ForAll
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $D_{v}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $Arbol_{v}=C4.5(D_{v})$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ Unir 
+\begin_inset Formula $Arbol_{v}$
+\end_inset
+
+ al correspondiente arco del Árbol 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndFor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+State
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+Return
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $Arbol$
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+EndProcedure
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "algoC45"
+
+\end_inset
+
+Árbol de Decisión - C4.5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Información de Ganancia / Entropía 
+Selección de Atributo de División
 \end_layout
 
 \begin_layout Standard
-C4.5 como su predecesor ID3 utiliza la entropía como medida de selección
- para el atributo.
- Dado un nodo 
+Las medidas de selección de atributos de división se utilizan heurística
+ para seleccionar el criterio de división que mejor separa una partición
+ de datos dada 
+\begin_inset Formula $D$
+\end_inset
+
+ de tuplas de entrenamiento etiquetadas en clases individuales.
+ Si dividimos 
+\begin_inset Formula $D$
+\end_inset
+
+ en particiones más pequeñas de acuerdo a un criterio de división dado,
+ idealmente tendríamos cada partición pura, es decir todas la tuplas deben
+ permaneces a la misma clase.
+ Por lo tanto, el mejor medida de selección de atributo es el que se acerque
+ más al escenario mencionado.
+\end_layout
+
+\begin_layout Standard
+La medida de selección de atributo también se conocen como reglas de división
+ porque determinan como se dividen las tuplas en un nodo determinado.
+ Esta proporciona un rating para cada atributo de la tupla de entrenamiento.
+ El atributo con mejor valor en esta medida es el elegido como atributo
+ de división.
+ Si el atributo de división es de valor continuo, el árbol sera binario,
+ también debe determinarse el punto de división o un subconjunto de división
+ como parte del criterio de división.
+\end_layout
+
+\begin_layout Standard
+El nodo raíz es creado para la partición 
+\begin_inset Formula $D$
+\end_inset
+
+ etiquetado con el criterio de división, se crean ramas para cada resultado
+ del criterio de división, y las tuplas se dividen en consecuencia.
+\end_layout
+
+\begin_layout Standard
+De aquí en adelante, utilizaremos la siguiente nomenclatura.
+ Sea 
+\begin_inset Formula $D$
+\end_inset
+
+ una partición de datos, un conjunto de tuplas de entrenamiento etiquetadas.
+ Supongamos que la clase tiene 
+\begin_inset Formula $m$
+\end_inset
+
+ valores distintos, que definen 
+\begin_inset Formula $m$
+\end_inset
+
+ clases distintas 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ (Siendo 
+\begin_inset Formula $i=1,..,m$
+\end_inset
+
+).
+ De modo que 
+\begin_inset Formula $C_{i,D}$
+\end_inset
+
+ es el conjunto de tuplas de la clase 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ en 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Por lo tanto 
+\begin_inset Formula $\lvert D\rvert$
+\end_inset
+
+ y 
+\begin_inset Formula $\lvert C_{i,D}\rvert$
+\end_inset
+
+ denotan la cantidad de tuplas en 
+\begin_inset Formula $D$
+\end_inset
+
+ y 
+\begin_inset Formula $C_{i,D}$
+\end_inset
+
+ respectivamente.
+\end_layout
+
+\begin_layout Subsection
+Información de ganancia / entropía
+\end_layout
+
+\begin_layout Standard
+El algoritmo ID3 utilizan la entropía como medida de selección para cada
+ atributo.
+ En donde, dado un nodo 
 \begin_inset Formula $N$
 \end_inset
 
@@ -800,18 +1686,18 @@ C4.5 como su predecesor ID3 utiliza la entropía como medida de selección
 \begin_inset Formula $D$
 \end_inset
 
-.
- El atributo con mayor valor de ganancia es elegido para la división de
+, el atributo con mayor valor de ganancia es elegido para la división de
  
 \begin_inset Formula $N$
 \end_inset
 
-, el atributo reduce al mínimo la información necesaria para clasificar
- las tuplas de las particiones resultantes y refleja la menos aleatoriedad
- o impureza de la partición.
- Este enfoque minimiza el número esperado de los ensayos necesarios para
- clasificar una tupla dada y garantiza que un árbol simple (pero no necesariamen
-te el más simple) se encuentre.
+.
+ Con este enfoque, el atributo reduce al mínimo la información necesaria
+ para clasificar las tuplas de las particiones resultantes y refleja la
+ menor aleatoriedad o impureza de la partición.
+ Este enfoque minimiza el número esperado de ensayos necesarios para clasificar
+ una tupla dada y garantiza un que se encuentre un árbol simple, pero no
+ necesariamente el arbol más simple.
 \end_layout
 
 \begin_layout Standard
@@ -819,13 +1705,13 @@ La información de ganancia necesaria para clasificar una tupla en
 \begin_inset Formula $D$
 \end_inset
 
- es igual a:
+ está dada por:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-Info(D)=-{\displaystyle \sum_{i=1}^{m}p_{i}\log_{2}(p_{i})}
+Info(D)=-{\displaystyle \sum_{i=1}^{m}p_{i}\log_{2}(p_{i})\label{eq3:info}}
 \end{equation}
 
 \end_inset
@@ -842,17 +1728,15 @@ donde
 \begin_inset Formula $D$
 \end_inset
 
- que pertenece a la clase 
+ pertenezca a la clase 
 \begin_inset Formula $C_{i}$
 \end_inset
 
- se estima que es 
+ y que se estima que es igual a 
 \begin_inset Formula $\lvert C_{i,D}unexpected''inmath\rvert/\lvert D\rvert$
 \end_inset
 
 .
- Se utiliza un logaritmo en base 2 porque la información esta codificada
- en bits.
  
 \begin_inset Formula $Info(D)$
 \end_inset
@@ -864,24 +1748,28 @@ donde
 
 .
  Nótese, que la información que tenemos se basa solamente en las proporciones
- de tuplas de cada clase.
+ de las tuplas de cada clase.
  
 \begin_inset Formula $Info(D)$
 \end_inset
 
- también se conoce como entropía de 
+ también se conoce entonces como entropía de 
 \begin_inset Formula $D$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
-Ahora, supongamos que estábamos para particionar las tuplas en 
+Ahora, supongamos que se requiera particionar las tuplas en 
 \begin_inset Formula $D$
 \end_inset
 
- en algunos atribuyen A teniendo 
+ conforme a los atributos 
+\begin_inset Formula $A$
+\end_inset
+
+ conformados por 
 \begin_inset Formula $v$
 \end_inset
 
@@ -889,9 +1777,13 @@ Ahora, supongamos que estábamos para particionar las tuplas en
 \begin_inset Formula $\{a_{1},a_{2},...,a_{v}\}$
 \end_inset
 
-, como se observa a partir de los datos de entrenamiento.
- Si A tiene valores discretos, estos valores se corresponden directamente
- con los resultados de una prueba de 
+.
+ Si 
+\begin_inset Formula $A$
+\end_inset
+
+ tiene valores discretos, estos valores se corresponderán directamente con
+ los resultados de una prueba de 
 \begin_inset Formula $v$
 \end_inset
 
@@ -924,7 +1816,7 @@ Ahora, supongamos que estábamos para particionar las tuplas en
 \begin_inset Formula $D$
 \end_inset
 
- que tienen 
+ que se corresponden con 
 \begin_inset Formula $a_{j}$
 \end_inset
 
@@ -939,13 +1831,13 @@ Ahora, supongamos que estábamos para particionar las tuplas en
 \end_inset
 
 .
- Idealmente, nos gustaría que esta división para producir una clasificación
+ Idealmente, nos gustaría que esta división pueda producir una clasificación
  exacta de las tuplas.
- Es decir, nos gustaría para cada partición sea pura.
- Sin embargo, es bastante probable que las particiones sea impura (por ejemplo,
- cuando una partición puede contener una colección de tuplas de diferentes
- clases en lugar de una sola clase).
- ¿Cuánto más información sería todavía necesaria (después de la partición)
+ Es decir, nos gustaría que cada partición sea pura.
+ Sin embargo, es bastante probable que el particionamiento sea impuro (por
+ ejemplo, cuando una partición puede contener una colección de tuplas de
+ diferentes clases en lugar de una sola clase).
+ ¿Cuánto más información sería todavía necesaria (luego de la partición)
  con el fin de llegar a una clasificación exacta? Esta cantidad se mide
  por:
 \end_layout
@@ -953,7 +1845,7 @@ Ahora, supongamos que estábamos para particionar las tuplas en
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-Info_{A}(D)={\displaystyle \sum_{j=1}^{v}{\displaystyle \frac{\lvert D_{j}\rvert}{\lvert D\rvert}\times Info(D_{j})}}
+Info_{A}(D)={\displaystyle \sum_{j=1}^{v}{\displaystyle \frac{\lvert D_{j}\rvert}{\lvert D\rvert}\times Info(D_{j})\label{eq3:infoA}}}
 \end{equation}
 
 \end_inset
@@ -997,7 +1889,7 @@ La información de ganancia se define como la diferencia entre lo requerido
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-Gain(A)=Info(D)-Info_{A}(D).
+Gain(A)=Info(D)-Info_{A}(D)\label{eq3:ganancia}
 \end{equation}
 
 \end_inset
@@ -1032,222 +1924,32 @@ En otras palabras,
 .
  Esto equivale a decir que queremos particionar en el atributo A que haría
  la mejor clasificación, por lo que la cantidad de información aun necesaria
- para clasificar las tuplas sea minima, 
+ para clasificar las tuplas sea mínima, 
 \begin_inset Formula $InfoA(D)$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Section
-Algoritmo
+\begin_layout Subsection
+Ejemplo de deducción de un nodo - ID3
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float algorithm
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
+En la siguiente 
 \begin_inset ERT
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 
 \backslash
-begin{algorithmic}[1]
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-Require Conjunto de datos etiquetados $D$
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-Procedure{C4.5}{$ D $}
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-If {$D > 
-\backslash
-textit{es puro o cumple el criterio de parada} $}
-\end_layout
-
-\begin_layout Plain Layout
-
- 			
-\backslash
-State
-\backslash
-textit{Termina}
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-EndIf
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-ForAll{$a 
-\backslash
-in D $}
-\end_layout
-
-\begin_layout Plain Layout
-
-			
-\backslash
-State $
-\backslash
-textit{Computar información de division en a }$
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-EndFor
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-State $ a_{best} =$ Mejor atributo de división respecto al criterio
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-State $ Arbol =$ Crear un nodo de decisión con $ a_{best} $ en la raíz
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-State $ D_{v} =$ Introducir sub-conjunto de $D$ basado en división $ a_{best}
- $
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-ForAll{$ D_{v} $}
-\end_layout
-
-\begin_layout Plain Layout
-
-			
-\backslash
-State $ Arbol_{v} = C4.5(D_{v}) $
-\end_layout
-
-\begin_layout Plain Layout
-
-			
-\backslash
-State Unir $ Arbol_{v} $ al correspondiente arco del Árbol
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-EndFor
-\end_layout
-
-\begin_layout Plain Layout
-
-		
-\backslash
-State
-\end_layout
-
-\begin_layout Plain Layout
-
- 		
-\backslash
-Return $ Arbol $
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\backslash
-EndProcedure
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{algorithmic}
+tabref
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "algoC45"
-
-\end_inset
-
-Árbol de Decisión - C4.5
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Ejemplo 1
-\end_layout
-
-\begin_layout Standard
-En la siguiente tabla se presenta un conjunto de entrenamiento 
-\begin_inset Formula $D$
-\end_inset
-
-, con la clase etiquetada, de una base de datos de compra de productos electróni
-cos.
- En este ejemplo, cada atributo tiene un valor discreto, los atributos de
- valores continuos fueron generalizados.
- La clase 
-\shape italic
-Compra Computador
-\shape default
- tiene dos valores posible 
 \begin_inset ERT
 status collapsed
 
@@ -1258,7 +1960,7 @@ status collapsed
 
 \end_inset
 
-Si, No
+tabla:sencilla2
 \begin_inset ERT
 status collapsed
 
@@ -1269,33 +1971,71 @@ status collapsed
 
 \end_inset
 
-, por lo tanto dos clases distintas (es decir, 
+ se presenta un conjunto de entrenamiento 
+\begin_inset Formula $D$
+\end_inset
+
+, con la clase etiquetada, de una base de datos de compra de productos electróni
+cos.
+ Para este ejemplo, cada atributo tiene un valor discreto, y los atributos
+ de valores continuos fueron generalizados.
+ La clase 
+\shape italic
+Compra Computador
+\shape default
+ tiene dos valores posibles: 
+\begin_inset Formula $SI$
+\end_inset
+
+ y 
+\begin_inset Formula $NO$
+\end_inset
+
+, y por lo tanto existen dos clases distintas (es decir, 
 \begin_inset Formula $m=2$
 \end_inset
 
 ).
- Tenemos 
+ Por lo tanto, tenemos la clase 
 \begin_inset Formula $C_{1}$
 \end_inset
 
  que corresponde a 
-\begin_inset Formula $Si$
+\begin_inset Formula $SI$
 \end_inset
 
- y 
+ y la clase 
 \begin_inset Formula $C_{2}$
 \end_inset
 
  corresponde a 
-\begin_inset Formula $No$
+\begin_inset Formula $NO$
 \end_inset
 
 .
- Existen nueve tuplas de la clase "Si", y cinco de la clase "No".
+\end_layout
+
+\begin_layout Standard
+Existen nueve tuplas de la clase 
+\begin_inset Formula $SI$
+\end_inset
+
+, y cinco de la clase 
+\begin_inset Formula $NO$
+\end_inset
+
+.
  Para encontrar el criterio de división para las tuplas debemos calcular
  la ganancia de información de cada atributo.
- Primero usamos la ecuación 3.1 para calcular esperada necesaria para clasificar
- una tupla en 
+ Primero usamos la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq3:info"
+
+\end_inset
+
+ para calcular la información esperada necesaria para clasificar una tupla
+ en 
 \begin_inset Formula $D$
 \end_inset
 
@@ -1315,28 +2055,12 @@ Info(D)=-\frac{9}{14}\log_{2}(\frac{9}{14})-\frac{5}{14}\log_{2}(\frac{5}{14})=0
 
 \begin_layout Standard
 \begin_inset Float table
-placement htbp
+placement !htbp
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Ejemplo de conjunto de entrenamiento
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "tabla:sencilla2"
-
-\end_inset
-
- 
 \begin_inset Tabular
 <lyxtabular version="3" rows="15" columns="6">
 <features tabularvalignment="middle">
@@ -1906,7 +2630,7 @@ Bajo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Yes 
+Si 
 \end_layout
 
 \end_inset
@@ -2215,6 +2939,21 @@ NO
 \end_inset
 
 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla:sencilla2"
+
+\end_inset
+
+Ejemplo de conjunto de entrenamiento considerado
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2229,41 +2968,37 @@ Luego, necesitamos calcular la información requerida por cada atributo.
 \end_inset
 
 , necesitamos observar la distribución de 
-\begin_inset Formula $Si$
+\begin_inset Formula $SO$
 \end_inset
 
  y 
-\begin_inset Formula $No$
+\begin_inset Formula $NO$
 \end_inset
 
- por cada categoría o valor del atributo 
-\begin_inset Formula $Edad$
-\end_inset
-
-.
+ por cada categoría o valor de este atributo.
  Para la categoría 
 \begin_inset Formula $Joven$
 \end_inset
 
- de edad, hay dos tuplas 
-\begin_inset Formula $Si$
+, hay dos tuplas 
+\begin_inset Formula $SI$
 \end_inset
 
  y tres tuplas 
-\begin_inset Formula $No$
+\begin_inset Formula $NO$
 \end_inset
 
 .
  Para la categoría 
-\begin_inset Formula $mediana$
+\begin_inset Formula $Mediana$
 \end_inset
 
- edad, hay cuatro tuplas 
-\begin_inset Formula $Si$
+, hay cuatro tuplas 
+\begin_inset Formula $SI$
 \end_inset
 
  y cero tuplas 
-\begin_inset Formula $No$
+\begin_inset Formula $NO$
 \end_inset
 
 .
@@ -2272,30 +3007,36 @@ Luego, necesitamos calcular la información requerida por cada atributo.
 \end_inset
 
 , hay tres tuplas 
-\begin_inset Formula $Si$
+\begin_inset Formula $SI$
 \end_inset
 
  y dos tuplas 
-\begin_inset Formula $No$
+\begin_inset Formula $NO$
 \end_inset
 
 .
- Usando la ecuación (3.2), la información esperada necesaria para clasificar
- una tupla en 
+ Usando la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq3:infoA"
+
+\end_inset
+
+, la información esperada necesaria para clasificar una tupla en 
 \begin_inset Formula $D$
 \end_inset
 
  si las tuplas son divididas según el atributo 
-\begin_inset Formula $edad$
+\begin_inset Formula $Edad$
 \end_inset
 
-:
+ corresponde a:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\begin{split}Info_{edad}(D) & =\frac{5}{14}\times(-\frac{2}{5}\log_{2}(\frac{2}{5})-\frac{3}{5}\log_{2}(\frac{3}{5}))\\
+\begin{split}Info_{Edad}(D) & =\frac{5}{14}\times(-\frac{2}{5}\log_{2}(\frac{2}{5})-\frac{3}{5}\log_{2}(\frac{3}{5}))\\
  & +\frac{4}{14}\times(-\frac{4}{4}\log_{2}(\frac{4}{4})-\frac{0}{4}\log_{2}(\frac{0}{4}))\\
  & +\frac{5}{14}\times(-\frac{3}{5}\log_{2}(\frac{3}{5})-\frac{2}{5}\log_{2}(\frac{2}{5}))\\
  & =0.694bits.
@@ -2308,13 +3049,21 @@ Luego, necesitamos calcular la información requerida por cada atributo.
 \end_layout
 
 \begin_layout Standard
-Por lo tanto, la ganancia esperada de realizar tal partición seria:
+Por lo tanto, la ganancia esperada de realizar tal partición seria de acuerdo
+ a la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq3:ganancia"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Gain(edad)=Info(D)-Info_{edad}(D)=0.940-0.694=0.246bits
+Gain(Edad)=Info(D)-Info_{Edad}(D)=0.940-0.694=0.246bits
 \]
 
 \end_inset
@@ -2323,21 +3072,35 @@ Gain(edad)=Info(D)-Info_{edad}(D)=0.940-0.694=0.246bits
 \end_layout
 
 \begin_layout Standard
-De la misma manera, se puede calcular 
-\begin_inset Formula $Gain(ingreso)$
+De la misma manera, se procede a calcular las ganancias para cada atributo:
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Gain(Ingreso)$
 \end_inset
 
  = 0.029 bits, 
-\begin_inset Formula $Gain(estudiante)$
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Gain(Estudiante)$
 \end_inset
 
  = 0.151 bits, y 
+\end_layout
+
+\begin_layout Itemize
 \begin_inset Formula $Gain(RatingCrediticio)$
 \end_inset
 
  = 0.048 bits.
- Debido a que el atributo 
-\begin_inset Formula $edad$
+ 
+\end_layout
+
+\begin_layout Standard
+Dado que el atributo 
+\begin_inset Formula $Edad$
 \end_inset
 
  tiene mayor ganancia de información, es seleccionado para realizar la partición.
@@ -2346,29 +3109,42 @@ De la misma manera, se puede calcular
 \end_inset
 
  es etiquetado con 
-\begin_inset Formula $edad$
+\begin_inset Formula $Edad$
 \end_inset
 
 , y se crean una rama por cada valor del atributo.
- Las tuplas se divinen en consecuencia, como se muestra en la figura .
- Notese que las tuplas en la partición 
-\begin_inset Formula $Edad=Mediana$
+ Las tuplas se divinen en consecuencia, como se muestra en la 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref
+\end_layout
+
 \end_inset
 
- perteneces todas a la clase 
-\begin_inset Formula $Si$
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
 \end_inset
 
-, por lo tanto en esta rama se crea una hoja con etiqueta 
-\begin_inset Formula $Si$
-\end_inset
+fig:arbolPartEdad
+\begin_inset ERT
+status collapsed
 
-.
- El árbol de decisión final devuelto por el algoritmo se muestra en la figura
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:arbolEjemplo"
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -2377,7 +3153,7 @@ reference "fig:arbolEjemplo"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement !htbp
+placement !tbph
 wide false
 sideways false
 status open
@@ -2397,7 +3173,7 @@ centering
 
  
 \begin_inset Graphics
-	filename graphics/dtree_parti.png
+	filename capitulo-3/graphics/dtree_parti
 	width 70line%
 
 \end_inset
@@ -2415,11 +3191,6 @@ status collapsed
 
 \end_inset
 
-Árbol de decisión: Particionado en el atributo 'Edad'
-\end_layout
-
-\end_inset
-
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -2427,7 +3198,7 @@ name "fig:arbolPartEdad"
 
 \end_inset
 
- 
+Árbol de decisión: Particionado en el atributo 'Edad'
 \end_layout
 
 \end_inset
@@ -2435,19 +3206,68 @@ name "fig:arbolPartEdad"
 
 \end_layout
 
-\begin_layout Section
-Métricas de evaluación y Matriz de Confusión
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-En general, la selección del algoritmos de clasificación para HAR ha sido
- apoyada meramente por evidencias empíricas.
- La gran mayoría de los estudios utilizar una validación cruzada con pruebas
- estadísticas para comparar el rendimiento de los clasificadores para un
- conjunto de datos determinado, como se visualiza en la 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:evaluacion"
+Notese que las tuplas en la partición 
+\begin_inset Formula $Edad=Mediana$
+\end_inset
+
+ pertenecen todas a la clase 
+\begin_inset Formula $SI$
+\end_inset
+
+, por lo tanto en esta rama se crea una hoja con etiqueta 
+\begin_inset Formula $SI$
+\end_inset
+
+.
+ Para las particiones 
+\begin_inset Formula $Edad=Joven$
+\end_inset
+
+ y 
+\begin_inset Formula $Edad=Adulto$
+\end_inset
+
+, el proceso de deducción se continua hasta que se generen nodos hoja que
+ clasifican las tuplas en una sola clase.
+ El árbol de decisión final deducido mediante algoritmo C4.5 se muestra en
+ la 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+fig:arbolFinal
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -2456,7 +3276,7 @@ reference "fig:evaluacion"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement !htbp
+placement !tbph
 wide false
 sideways false
 status open
@@ -2476,7 +3296,323 @@ centering
 
  
 \begin_inset Graphics
-	filename graphics/training-test.png
+	filename capitulo-3/graphics/dtree_parti_final
+	width 70line%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Árbol de decisión Final
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:arbolFinal"
+
+\end_inset
+
+Árbol de decisión final: Luego de finalizar el proceso del C4.5 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proporción de ganancia
+\end_layout
+
+\begin_layout Standard
+La medida de información de ganancia tiene inclinación hacia un particionamiento
+ con muchos resultados, es decir, es propenso a seleccionar atributos que
+ tengan gran numero de valores.
+ Por ejemplo, considerando un atributo que actúa como identificador, como
+ 
+\begin_inset Formula $Rid$
+\end_inset
+
+; una división en 
+\begin_inset Formula $Rid$
+\end_inset
+
+ generaría un gran numero de particiones, tantas como valores contenga 
+\begin_inset Formula $Rid$
+\end_inset
+
+, cada partición con una sola tupla.
+ Debido a que cada partición es pura, la información necesaria para clasificar
+ el conjunto dado 
+\begin_inset Formula $D$
+\end_inset
+
+ basado en el particionamiento mencionado seria 
+\begin_inset Formula $Info_{Rid}(D)=0$
+\end_inset
+
+.
+ Por lo tanto, la información de ganancia es la máxima, claramente, tal
+ partición es inútil para la clasificación.
+\end_layout
+
+\begin_layout Standard
+El algoritmo C4.5, sucesor de ID3, usa una extensión de la información de
+ ganancia conocida como proporción de ganancia, que intenta contrarrestar
+ la inclinación mencionada.
+ Aplica una normalización a la información de ganancia usando un valor "Informac
+ion de division" definido de manera análoga a 
+\begin_inset Formula $Info(D)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+SplitInfo_{A}(D)=-{\displaystyle \sum_{j=1}^{v}{\displaystyle \frac{\lvert D_{j}\rvert}{\lvert D\rvert}\times Info(\frac{\lvert D_{j}\rvert}{\lvert D\rvert})\label{eq3:SplitInfo}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este valor representa la información potencial generada al dividir el conjunto
+ de datos de entrenamiento 
+\begin_inset Formula $D$
+\end_inset
+
+ en 
+\begin_inset Formula $v$
+\end_inset
+
+ particiones, correspondientes a los 
+\begin_inset Formula $v$
+\end_inset
+
+ de una prueba en el atributo 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Nótese que, para cada resultado, es considerado el numero de tuplas que
+ tienen ese resultado, respecto al numero total de tuplas en 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Esto difiere de información de ganancia, que media la información respecto
+ a la clasificación generada basada en la misma partición.
+ La proporción de ganancia se define como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+GainRatio(A)=\frac{Gain(D)}{SplitInfo_{A}(D)}\label{eq3:GainRatio}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El atributo con mayor proporción de ganancia es seleccionado como atributo
+ de división.
+ Tener en cuenta, por otro lado, que a medida que la información de división
+ se acerca a cero, la relación se vuelve inestable.
+\end_layout
+
+\begin_layout Subsection
+Ejemplo de deducción de un nodo - C4.5
+\end_layout
+
+\begin_layout Standard
+De la misma manera que el ejemplo anterior, utilizando la 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+tabla:sencilla2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, por ejemplo para el atributo 
+\begin_inset Formula $Ingreso$
+\end_inset
+
+ una prueba de división divide la tabla en tres particiones, es decir, 
+\begin_inset Formula $alto$
+\end_inset
+
+, 
+\begin_inset Formula $medio$
+\end_inset
+
+, 
+\begin_inset Formula $bajo$
+\end_inset
+
+, las cuales contienen, cuanto, seis, y cuatro tuplas respectivamente.
+ Con estos datos, para calcular la proporción de ganancia del atributo 
+\begin_inset Formula $Ingreso$
+\end_inset
+
+, debemos calcular primeramente la información de división, utilizando la
+ formula 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq3:SplitInfo"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+SplitInfo_{ingreso}(D)=-\frac{4}{14}\times\log_{2}(\frac{4}{14})-\frac{6}{14}\times\log_{2}(\frac{6}{14})-\frac{4}{14}\times\log_{2}(\frac{4}{14})=0.926bits.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tomando del ejemplo anterior, la información de ganancia 
+\begin_inset Formula $Gain(Ingreso)$
+\end_inset
+
+ = 0.029 bits, la proporción de ganancia la calcularíamos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+GainRatio(Ingreso)=\frac{0.029}{0.926}=0.031bits
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Métricas de Evaluación y Matriz de Confusión
+\end_layout
+
+\begin_layout Standard
+En general, la selección del algoritmos de clasificación para HAR ha sido
+ apoyada meramente por evidencias empíricas (referencias).
+ La gran mayoría de los estudios utilizan una validación cruzada con pruebas
+ estadísticas para comparar el rendimiento de los clasificadores para un
+ conjunto de datos determinado, como se visualiza en la 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+fig:evaluacion
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement !tbph
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename capitulo-3/graphics/training-test
 	width 70line%
 
 \end_inset
@@ -2494,11 +3630,6 @@ Diagrama de Evaluación de Clasificación
 
 \end_inset
 
-Diagrama de Evaluación de Clasificación
-\end_layout
-
-\end_inset
-
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -2506,7 +3637,12 @@ name "fig:evaluacion"
 
 \end_inset
 
- 
+Diagrama de Evaluación de Clasificación
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2515,7 +3651,7 @@ name "fig:evaluacion"
 \end_layout
 
 \begin_layout Standard
-Los resultados de una clasificación de un métodos en particular se suelen
+Los resultados de una clasificación de un método en particular se suelen
  organizar en una matriz de confusión 
 \begin_inset Formula $M_{n\times n}$
 \end_inset
@@ -2525,7 +3661,7 @@ Los resultados de una clasificación de un métodos en particular se suelen
 \end_inset
 
  clases.
- Esta es una matriz, tal que el elemento 
+ En esta matriz, el elemento 
 \begin_inset Formula $M_{ij}$
 \end_inset
 
@@ -2533,7 +3669,7 @@ Los resultados de una clasificación de un métodos en particular se suelen
 \begin_inset Formula $i$
 \end_inset
 
- que realmente fueron clasificados como clase 
+ que fueron clasificados en la clase 
 \begin_inset Formula $j$
 \end_inset
 
@@ -2543,38 +3679,190 @@ Los resultados de una clasificación de un métodos en particular se suelen
 \end_layout
 
 \begin_layout Itemize
-Verdaderos Positivo (TP): El número de casos positivos que fueron clasificados
- como positivos.
+Verdaderos Positivo (
+\emph on
+True Positive
+\emph default
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+TP
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+): El número de casos positivos que fueron clasificados como positivos.
  
 \end_layout
 
 \begin_layout Itemize
-Verdaderos Negativo (TN): El número de casos negativos que fueron clasificados
- como negativos.
+Verdaderos Negativo (
+\emph on
+True Negative
+\emph default
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+TN
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+): El número de casos negativos que fueron clasificados como negativos.
  
 \end_layout
 
 \begin_layout Itemize
-Falso Positivo (FP): El número de casos negativos que fueron clasificados
- como positivos.
+Falso Positivo (
+\emph on
+False Positive
+\emph default
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+FP
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+): El número de casos negativos que fueron clasificados como positivos.
  
 \end_layout
 
 \begin_layout Itemize
-Falso Negativo (FN): El número de casos positivos que fueron clasificados
- como negativos.
+Falso Negativo (
+\emph on
+False Negative
+\emph default
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+FN
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+): El número de casos positivos que fueron clasificados como negativos.
  
 \end_layout
 
 \begin_layout Standard
-La precisión es la métrica más estándar para resumir el rendimiento general
+La precisión es la métrica más utilizada para resumir el rendimiento general
  de la clasificación para todas las clases y se define de la siguiente manera:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-Exactitud=\frac{TP+TN}{TP+TN+FP+FN}
+Exactitud=\frac{TP+TN}{TP+TN+FP+FN}\label{eq3:exactitud}
 \end{equation}
 
 \end_inset
@@ -2588,7 +3876,7 @@ La precisión, a menudo denominada valor predictivo positivo, es la proporción
  clasificados como positivos: 
 \begin_inset Formula 
 \begin{equation}
-\mbox{Precisión}=\frac{TP}{TP+FP}
+\mbox{Precisión}=\frac{TP}{TP+FP}\label{eq3:precision}
 \end{equation}
 
 \end_inset
@@ -2602,7 +3890,7 @@ La exhaustividad, también llamado tasa positiva verdadera, es la proporción
 s positivas: 
 \begin_inset Formula 
 \begin{equation}
-Exhaustividad=\frac{TP}{TP+FN}
+Exhaustividad=\frac{TP}{TP+FN}\label{eq3:exaustividad}
 \end{equation}
 
 \end_inset
@@ -2614,7 +3902,7 @@ Exhaustividad=\frac{TP}{TP+FN}
 El Valor-F combina precisión y exhaustividad en un solo valor: 
 \begin_inset Formula 
 \begin{equation}
-Valor-F=2\cdot\frac{\mbox{Precisión}\cdot Exhaustividad}{\mbox{Precisión}+Exhaustividad}
+Valor-F=2\cdot\frac{\mbox{Precisión}\cdot Exhaustividad}{\mbox{Precisión}+Exhaustividad}\label{eq3:valorf}
 \end{equation}
 
 \end_inset
@@ -2624,60 +3912,104 @@ Valor-F=2\cdot\frac{\mbox{Precisión}\cdot Exhaustividad}{\mbox{Precisión}+Exha
 
 \begin_layout Standard
 Aunque se definen para la clasificación binaria, estas métricas pueden generaliz
-arse para un problema con n clases.
- En tal caso, una instancia podría ser positiva o negativa según una clase
- particular, por ejemplo, los positivos podrían ser todas las instancias
+arse para un problema con 
+\begin_inset Formula $N$
+\end_inset
+
+ clases.
+ En tal caso, una instancia podría ser positiva o negativa según una mejor
+ clase particular, por ejemplo, los positivos podrían ser todas las instancias
  de ejecución mientras que los negativos serían todas las instancias distintas
  de la ejecución.
 \end_layout
 
 \begin_layout Section
-Ejemplo: Evaluación
+Evaluación de un Modelo
 \end_layout
 
 \begin_layout Standard
-Utilizando el ejemplo anterior en la tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tabla:sencilla2"
+Utilizando el ejemplo anterior en la 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref
+\end_layout
 
 \end_inset
 
-, se tomo una muestra de 10.000 tuplas, teniendo como resultado la tabla
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tabla:MatrizConfusion"
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+tabla:sencilla2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, supongamos que se tomo una muestra de 10.000 tuplas obteniendose como resultado
+ la 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref
+\end_layout
 
 \end_inset
 
 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+tabla:MatrizConfusion
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
-placement htbp
+placement !htbp
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Matriz de Confusión
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "tabla:MatrizConfusion"
-
-\end_inset
-
- 
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features tabularvalignment="middle">
@@ -2760,7 +4092,7 @@ Com.
 \begin_inset Text
 
 \begin_layout Plain Layout
-6,954 
+6.954 
 \end_layout
 
 \end_inset
@@ -2778,14 +4110,14 @@ Com.
 \begin_inset Text
 
 \begin_layout Plain Layout
-7,000 
+7.000 
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2799,7 +4131,7 @@ Com.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2808,20 +4140,20 @@ Com.
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-2,588 
+2.588 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-3,000 
+3.000 
 \end_layout
 
 \end_inset
@@ -2845,7 +4177,7 @@ Total
 \begin_inset Text
 
 \begin_layout Plain Layout
-7,366 
+7.366 
 \end_layout
 
 \end_inset
@@ -2854,7 +4186,7 @@ Total
 \begin_inset Text
 
 \begin_layout Plain Layout
-2,634 
+2.634 
 \end_layout
 
 \end_inset
@@ -2863,7 +4195,7 @@ Total
 \begin_inset Text
 
 \begin_layout Plain Layout
-10,000 
+10.000 
 \end_layout
 
 \end_inset
@@ -2874,6 +4206,21 @@ Total
 \end_inset
 
 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tabla:MatrizConfusion"
+
+\end_inset
+
+Matriz de Confusión
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2882,7 +4229,7 @@ Total
 \end_layout
 
 \begin_layout Standard
-Tomando este ejemplo, para la clase 
+Al evaluar la clase 
 \shape italic
 Compra Computador = SI
 \shape default
@@ -2890,26 +4237,166 @@ Compra Computador = SI
 \end_layout
 
 \begin_layout Itemize
-Verdaderos Positivo (TP): 6,954 
+Verdaderos Positivo (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+TP
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+): 6.954 
 \end_layout
 
 \begin_layout Itemize
-Verdaderos Negativo (TN): 2,588 
+Verdaderos Negativo (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+TN
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+): 2.588 
 \end_layout
 
 \begin_layout Itemize
-Falso Positivo (FP): 412 
+Falso Positivo (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+FP
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+): 412 
 \end_layout
 
 \begin_layout Itemize
-Falso Negativo (FN): 46 
+Falso Negativo (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+FN
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+): 46 
 \end_layout
 
 \begin_layout Standard
-Con estos datos podemos calcular el resto de las métricas: 
+A partir de estos datos podemos calcular el resto de las métricas: 
 \begin_inset Formula 
 \[
-Exactitud=\frac{TP+TN}{TP+TN+FP+FN}=\frac{6,954+2,588}{6,954+2,588+412+46}=\frac{9542}{10000}=0,9542
+Exactitud=\frac{TP+TN}{TP+TN+FP+FN}=\frac{6.954+2.588}{6.954+2.588+412+46}=\frac{9542}{10000}=0,9542
 \]
 
 \end_inset
@@ -2920,7 +4407,7 @@ Exactitud=\frac{TP+TN}{TP+TN+FP+FN}=\frac{6,954+2,588}{6,954+2,588+412+46}=\frac
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\mbox{Precisión}=\frac{TP}{TP+FP}=\frac{6,954}{6,954+412}=0,9440
+\mbox{Precisión}=\frac{TP}{TP+FP}=\frac{6.954}{6.954+412}=0,9440
 \]
 
 \end_inset
@@ -2931,7 +4418,7 @@ Exactitud=\frac{TP+TN}{TP+TN+FP+FN}=\frac{6,954+2,588}{6,954+2,588+412+46}=\frac
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Exhaustividad=\frac{TP}{TP+FN}=\frac{6,954}{6,954+46}=0,9934
+Exhaustividad=\frac{TP}{TP+FN}=\frac{6.954}{6.954+46}=0,9934
 \]
 
 \end_inset
@@ -2942,12 +4429,22 @@ Exhaustividad=\frac{TP}{TP+FN}=\frac{6,954}{6,954+46}=0,9934
 \begin_layout Standard
 \begin_inset Formula 
 \[
-Valor-F=2\cdot\frac{\mbox{Precisión}\cdot Exhaustividad}{\mbox{Precisión}+Exhaustividad}=2\cdot\frac{\mbox{0,9440}\cdot0,9934}{\mbox{0,9440}+0,9934}=0,4840
+Valor-F=2\cdot\frac{\mbox{Precisión}\cdot Exhaustividad}{\mbox{Precisión}+Exhaustividad}=2\cdot\frac{\mbox{0,9440}\cdot0,9934}{\mbox{0,9440}+0,9934}=0,9680
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta estas métricas para la muestra de 10.000 tuplas, podemos
+ suponer el que modelo generado de ejemplo tiene unos altos valores de exactitud
+, precisión, y exhaustividad, lo cual se puede apreciar por la baja tasa
+ de falsos positivos y negativos.
+ Respecto al Valor-F, el tener valores altos de precisión y exhaustividad,
+ da un valor muy alto, ya que el Valor-F es de forma general la media armónica
+ de ambos.
 \end_layout
 
 \end_body
