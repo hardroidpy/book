@@ -110,30 +110,33 @@ Con el objetivo de obtener un conjunto de datos adecuado a este estudio
 de \abbr{HAR} se realizó un experimento de entrenamiento con grupo
 de voluntarios. Un grupo de 8 personas entre las edades de 20 y 38
 estuvieron dispuestos para esta tarea donde la edad media de la población
-esta comprendida en $30.5\pm5$ años. 
+esta comprendida en $30.7\pm5$ años. 
 
 El procedimiento guía de captura de datos se instruyó con el uso del
 teléfono móvil como prenda sujeta al bolsillo o en la cintura mientras
 se realiza una actividad física predeterminada. El planeamiento del
 experimento consitió en realizar en orden por un periodo de 10 a 15
-minutos las tres actividades básicas y dos de transporte:
+minutos alguna de las tres actividades básicas y dos de transporte.
+Las actividades humanas con sus etiquetas correspondientes se listan
+a continuación:
 \begin{itemize}
-\item Caminar (WALKING)
-\item Trotar (RUNNING)
-\item Quieto (STILL)
-\item En bicicleta (ON\_BICYCLE)
-\item En auto (ON\_VEHICLE)
+\item Caminar (\emph{WALKING})
+\item Trotar (\emph{RUNNING})
+\item Estar quieto (\emph{STILL})
+\item Andar en bicicleta (\emph{ON\_BICYCLE})
+\item Andar en automóvil (\emph{ON\_VEHICLE})
 \end{itemize}
-El experimento de entrenamiento se resume en la \tabref{tab6:sesiones},
-donde se incluyen las sesiones de los voluntarios y el tiempo en minutos
-invertido en la actividad etiquetada. Cada persona realizo una sesión
-de entrenamiento al menos una vez.
+El resultado del experimento se resume en la \tabref{tab6:sesiones},
+aquí se incluyen las sesiones hechas por los voluntarios y el tiempo
+en minutos invertido para cada actividad dada. 
 
 \begin{table}[h]
 \begin{centering}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
-Sujeto & WALKING & RUNNING & STILL & ON\_BICYLE & ON\_VEHICLE\tabularnewline
+\multirow{2}{*}{Voluntario} & \multicolumn{5}{c|}{Actividades}\tabularnewline
+\cline{2-6} 
+ & \emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{ON\_BICYLE} & \emph{ON\_VEHICLE}\tabularnewline
 \hline 
 \hline 
 AG & 80 & 33 & 12 & 17 & 7\tabularnewline
@@ -160,17 +163,117 @@ MD & 29 & 4 & - & - & -\tabularnewline
 
 \subsection{Captura de Datos}
 
-TODO:
+El experimento requiere de una cantidad de datos recolectados de los
+voluntarios mientras realizan las actividades humanas dictadas durante
+el entrenamiento. \emph{SensorLog} \cite{Alan2014s} es una aplicación
+\abbr{Android} que se utilizó para la captura y persistencia de las
+señales del sensor de aceleración como se ve en la \figref{fig4:sensor-log}.
+La aplicación permite exportar las señales de sensores almacenadas
+en forma agrupada por sesiones y subirlas a la nube. En la \tabref{tab6:captura}
+se resumen las cantidades de medidas de señales capturadas.
 
-\section{Generación del Clasificador HAR}
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+ & \multicolumn{5}{c|}{Actividades}\tabularnewline
+\hline 
+Cantidades & \emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{ON\_BICYLE} & \emph{ON\_VEHICLE}\tabularnewline
+\hline 
+\hline 
+Medidas & 3.591.788 & 1.604.270 & 387.735 & 819.992 & 365.814\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab6:captura}Resumen de datos capturados}
+\end{table}
 
-\label{sec6:clasificacion}
 
-\subsection{Etiquetado}
+\subsection{Conjunto de Entrenamiento }
 
-\subsection{Conjunto Entrenamiento }
+En la \tabref{tab6:muestras} se resumen las cantidades de las muestras
+calculadas de acuerdo lo descrito en el proceso de la \secref{ssec44:extraction}.
 
-\subsection{Clasificador de WEKA}
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+ & \multicolumn{5}{c|}{Actividades}\tabularnewline
+\hline 
+Cantidades & \emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{ON\_BICYLE} & \emph{ON\_VEHICLE}\tabularnewline
+\hline 
+\hline 
+Muestras & 28.049 & 11.779 & 3.026 & 6.404 & 2.856\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab6:muestras}Resumen de muestras procesadas}
+\end{table}
+
+
+\section{Clasificador de Actividades Humanas}
+
+\label{sec6:clasificacion}En esta sección se describe el procedimiento
+de generación de un clasificador \abbr{HAR} utilizando el conjunto
+de entrenamiento y sometiendo el mismo a prueba y verificación para
+garantizar su usabilidad. Esta tarea se realiza utilizando la herramienta
+\emph{Waikato Environment Knowledge Analysis} \texttt{(\abbr{WEKA})}
+\cite{Frank2016}. 
+
+\subsection{Clasificador de J48}
+
+En el siguiente cuadro se muestra el resultado de árbol generado.
+La evaluación de resultado es un árbol de X nodos y Y ramas .
+
+Number of leaves: 1673 
+
+Size of the tree: 3345
+
+El clasificador generado tiene los siguientes resultados: 
+\begin{itemize}
+\item Correctly Classified Instances 45.086 86,5142 \% 
+\item Incorrectly Classified Instances 7.028 13,4858 \% 
+\item Kappa statistic 0,7871 
+\item Mean absolute error 0,0653 
+\item Root mean squared error 0,2187 
+\item Relative absolute error 25,6021 \% 
+\item Root relative squared error 61,2282 \% 
+\item Total Number of Instances 52.114 
+\end{itemize}
+La evaluación del clasificador resultante se resume en la \tabref{tab6:matriz-confusion}.
+
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+ & \multicolumn{5}{c|}{Matriz de Confusión}\tabularnewline
+\hline 
+Actividad & \emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{ON\_BICYLE} & \emph{ON\_VEHICLE}\tabularnewline
+\hline 
+\hline 
+\emph{WALKING} & 25.334 & 888 & 74 & 1.640 & 113\tabularnewline
+\hline 
+\emph{RUNNING} & 1.103 & 10.545 & 13 & 115 & 3\tabularnewline
+\hline 
+\emph{STILL} & 97 & 23 & 2.557 & 74 & 275\tabularnewline
+\hline 
+\emph{ON\_BICYLE} & 2.018 & 106 & 40 & 4.144 & 96\tabularnewline
+\hline 
+\emph{ON\_VEHICLE} & 88 & 15 & 156 & 91 & 2.506\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab6:matriz-confusion}Matriz de confusión del clasificador
+resultante}
+\end{table}
+
+Los valores calculados de las métricas en la \secref{sec3:metricas}.
+\begin{itemize}
+\item Precisión: 0,8651
+\item Exhaustividad: 0,8651
+\item Exactitud: 0,9461
+\item Valor-F: 0,8651
+\end{itemize}
 
 \section{Resultados}
 

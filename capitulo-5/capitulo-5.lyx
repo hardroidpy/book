@@ -4089,13 +4089,13 @@ DecisionTreeClassifier
 \family default
 \size default
 : Es la implementación de un clasificador de actividades humanas basado
- en arboles de decisión generados por el 
+ en arboles de decisión generados por la herramienta 
 \emph on
-software
+Waikato Environment Knowledge Analysis
 \emph default
  
 \family typewriter
-
+(
 \begin_inset ERT
 status open
 
@@ -4108,7 +4108,7 @@ abbr{WEKA}
 
 \end_inset
 
-
+)
 \family default
  
 \begin_inset CommandInset citation
