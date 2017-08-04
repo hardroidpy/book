@@ -57,13 +57,12 @@ Para crear una session de entrenamiento, se utiliza el metodo POST al recurso \t
 
 \begin{lstlisting}[language=json,firstnumber=1,label={lst:POST}]
 {
-  "imei": "1234567890",
-  "nombre": "Juan 123",
-  "phoneName": "S33 mini",
+  "imei": "ea3fb543-fec3-3bb5-be2b-006082c66b33",
+  "phoneName": "Samsung SM-G925I",
   "sexo": "m",
-  "mail": "soyunmailloco@gmail.com",
-  "edad": "22",
-  "sensorName": "Acelerometro XYZ",
+  "nombre": "joaquinlima@gmail.com",
+  "edad": "35",
+  "sensorName": "MPU6500 Acceleration Sensor Invensense",
   "collaborativefeatureList": [
      {
        "arX1": 0,
@@ -99,35 +98,34 @@ Para recuperar una session de entrenamiento, se utiliza el metodo GET al recurso
 
 \begin{lstlisting}[language=json,firstnumber=1,label={lst:GET}]
 {
-  "imei": "1234567890",
-  "nombre": "Juan 123",
-  "phoneName": "S33 mini",
+  "imei": "ea3fb543-fec3-3bb5-be2b-006082c66b33",
+  "phoneName": "Samsung SM-G925I",
   "sexo": "m",
-  "mail": "soyunmailloco@gmail.com",
-  "edad": "22",
-  "sensorName": "Acelerometro XYZ",
+  "nombre": "joaquinlima@gmail.com",
+  "edad": "35",
+  "sensorName": "MPU6500 Acceleration Sensor Invensense",
   "collaborativefeatureList": [
     {
-      "arX1": 0,
-      "arX2": 0,
-      "arX3": 0,
-      "arX4": 0,
-      "energyX": 0,
-      "entropyX": 0,
+      "arX1": 2.24001,
+      "arX2": -1.56002,
+      "arX3": 0.319989,
+      "arX4": -0.00000347302,
+      "energyX": 95.5371,
+      "entropyX": 6.9375,
+      "idCf": 1439,
+      "iqrX": 0.277481,
+      "kurtosisX": 0.0359763,
+      "maxX": 10.3113,
+      "meanX": 9.77168,
+      "meanfreqX": 9.81451,
+      "minX": 9.2704,
+      "skewnessX": 0.0880117,
+      "stdX": 0.227583,
       "etiqueta": "WALKING",
       "fecha": "2015-12-23T02:33:24-02:00",
-      "idCf": 3,
-      "iqrX": 0,
-      "kurtosisX": 0,
-      "maxX": 0,
-      "meanX": 0,
-      "meanfreqX": 0,
-      "minX": 0,
-      "skewnessX": 0,
-      "stdX": 0,
       "version": "1.0",
       "prediccion": "S",
-      "etiquetaUsuario": "STILL"
+      "etiquetaUsuario": "WALKING"
     },{ 
 	     -- More feature -- 
     }
@@ -141,35 +139,34 @@ Para modificar una session de entrenamiento, se utiliza el metodo PUT al recurso
 
 \begin{lstlisting}[language=json,firstnumber=1,label={lst:PUT}]
 {
-  "imei": "1234567890",
-  "nombre": "Juan 123",
-  "phoneName": "S33 mini",
+  "imei": "ea3fb543-fec3-3bb5-be2b-006082c66b33",
+  "phoneName": "Samsung SM-G925I",
   "sexo": "m",
-  "mail": "soyunmailloco@gmail.com",
-  "edad": "22",
-  "sensorName": "Acelerometro XYZ",
+  "nombre": "joaquinlimaMolinari@gmail.com",
+  "edad": "35",
+  "sensorName": "MPU6500 Acceleration Sensor Invensense",
   "collaborativefeatureList": [
     {
-      "arX1": 0,
-      "arX2": 0,
-      "arX3": 0,
-      "arX4": 0,
-      "energyX": 0,
-      "entropyX": 0,
+      "arX1": 2.24001,
+      "arX2": -1.56002,
+      "arX3": 0.319989,
+      "arX4": -0.00000347302,
+      "energyX": 95.5371,
+      "entropyX": 6.9375,
+      "idCf": 1439,
+      "iqrX": 0.277481,
+      "kurtosisX": 0.0359763,
+      "maxX": 10.3113,
+      "meanX": 9.77168,
+      "meanfreqX": 9.81451,
+      "minX": 9.2704,
+      "skewnessX": 0.0880117,
+      "stdX": 0.227583,
       "etiqueta": "WALKING",
       "fecha": "2015-12-23T02:33:24-02:00",
-      "idCf": 3,
-      "iqrX": 0,
-      "kurtosisX": 0,
-      "maxX": 0,
-      "meanX": 0,
-      "meanfreqX": 0,
-      "minX": 0,
-      "skewnessX": 0,
-      "stdX": 0,
       "version": "1.0",
       "prediccion": "S",
-      "etiquetaUsuario": "STILL"
+      "etiquetaUsuario": "WALKING"
     },{ 
       -- More feature -- 
     }  
