@@ -4,10 +4,10 @@
 \colorlet{numb}{magenta!50!black}
 
 \lstdefinelanguage{json}{
-	basicstyle=\normalfont\ttfamily,
+	basicstyle=\tiny\ttfamily,
 	numberstyle=\scriptsize,
 	stepnumber=1,
-	numbersep=6pt,
+	numbersep=4pt,
 	showstringspaces=false,
 	breaklines=true,
 	frame=lines,
@@ -28,7 +28,7 @@
 
 En este anexo, se proporcionan detalles adicionales los servicios RESP para realizar, incluyendo ejemplos y relación entre los recursos.
 
-El servicio se comprende de dos recursos \textit{Collaborativefeature} y \textit{Collaborativesession}, el primero de estos representa la colección de los 15 feature calculados de una ventana de tiempo, y por otro lado la session de una actividad realizada por el individuo, la cual incluye una lista de features, como se esquematiza en la siguiente figura.
+El servicio se comprende de dos recursos \textit{Collaborativefeature} y \textit{Collaborativesession}, el primero de estos representa la colección de los 15 feature calculados de una ventana de tiempo, y por otro lado la session de una actividad realizada por el individuo, la cual incluye una lista de features, como se esquematiza en la siguiente figura \ref{fig:der} .
 
 \begin{figure}[!htbp]
 	\centering
@@ -51,19 +51,18 @@ Estando publicadas para las pruebas:
 
 \section{Recurso CollaborativeSession}
 
-POST para crear una session de entrenamiento \textit{ARrecolector/webresources/com.fpuna.entities.collaborativesession/}
+\subsection{Creación de Objeto - POST}
 
-\subsection{Request}
+Para crear una session de entrenamiento, se utiliza el metodo POST al recurso \textit{ARrecolector/webresources/com.fpuna.entities.collaborativesession/} con el siguiente ejemplo del request JSON \ref{lst:POST}:
 
-\begin{lstlisting}[language=json,firstnumber=1]
+\begin{lstlisting}[language=json,firstnumber=1,label={lst:POST}]
 {
-  "imei": "1234567890",
-  "nombre": "Juan 123",
-  "phoneName": "S33 mini",
+  "imei": "ea3fb543-fec3-3bb5-be2b-006082c66b33",
+  "phoneName": "Samsung SM-G925I",
   "sexo": "m",
-  "mail": "soyunmailloco@gmail.com",
-  "edad": "22",
-  "sensorName": "Acelerometro XYZ",
+  "nombre": "joaquinlima@gmail.com",
+  "edad": "35",
+  "sensorName": "MPU6500 Acceleration Sensor Invensense",
   "collaborativefeatureList": [
      {
        "arX1": 0,
@@ -86,15 +85,99 @@ POST para crear una session de entrenamiento \textit{ARrecolector/webresources/c
        "version": "1.0",
        "prediccion": "S",
        "etiquetaUsuario": "STILL"
-     }
+     },{ 
+	     -- More feature -- 
+     }  
   ]
 }
 \end{lstlisting}
 
-\subsection{Response}
+\subsection{Obtención de Recurso - GET}
+
+Para recuperar una session de entrenamiento, se utiliza el metodo GET al recurso \textit{ARrecolector/webresources/com.fpuna.entities.collaborativesession/[IDENTIFICADOR]}, siendo el identificador el imei de la session. Obteniendo un response de la siguiente manera:
+
+\begin{lstlisting}[language=json,firstnumber=1,label={lst:GET}]
+{
+  "imei": "ea3fb543-fec3-3bb5-be2b-006082c66b33",
+  "phoneName": "Samsung SM-G925I",
+  "sexo": "m",
+  "nombre": "joaquinlima@gmail.com",
+  "edad": "35",
+  "sensorName": "MPU6500 Acceleration Sensor Invensense",
+  "collaborativefeatureList": [
+    {
+      "arX1": 2.24001,
+      "arX2": -1.56002,
+      "arX3": 0.319989,
+      "arX4": -0.00000347302,
+      "energyX": 95.5371,
+      "entropyX": 6.9375,
+      "idCf": 1439,
+      "iqrX": 0.277481,
+      "kurtosisX": 0.0359763,
+      "maxX": 10.3113,
+      "meanX": 9.77168,
+      "meanfreqX": 9.81451,
+      "minX": 9.2704,
+      "skewnessX": 0.0880117,
+      "stdX": 0.227583,
+      "etiqueta": "WALKING",
+      "fecha": "2015-12-23T02:33:24-02:00",
+      "version": "1.0",
+      "prediccion": "S",
+      "etiquetaUsuario": "WALKING"
+    },{ 
+	     -- More feature -- 
+    }
+  ]
+}
+\end{lstlisting}
+
+\subsection{Modificación de Recurso - PUT}
+
+Para modificar una session de entrenamiento, se utiliza el metodo PUT al recurso \textit{ARrecolector/webresources/com.fpuna.entities.collaborativesession/[IDENTIFICADOR]}, siendo el identificador el imei de la session a modificar. Utilizando un request JSON de la siguiente manera:
+
+\begin{lstlisting}[language=json,firstnumber=1,label={lst:PUT}]
+{
+  "imei": "ea3fb543-fec3-3bb5-be2b-006082c66b33",
+  "phoneName": "Samsung SM-G925I",
+  "sexo": "m",
+  "nombre": "joaquinlimaMolinari@gmail.com",
+  "edad": "35",
+  "sensorName": "MPU6500 Acceleration Sensor Invensense",
+  "collaborativefeatureList": [
+    {
+      "arX1": 2.24001,
+      "arX2": -1.56002,
+      "arX3": 0.319989,
+      "arX4": -0.00000347302,
+      "energyX": 95.5371,
+      "entropyX": 6.9375,
+      "idCf": 1439,
+      "iqrX": 0.277481,
+      "kurtosisX": 0.0359763,
+      "maxX": 10.3113,
+      "meanX": 9.77168,
+      "meanfreqX": 9.81451,
+      "minX": 9.2704,
+      "skewnessX": 0.0880117,
+      "stdX": 0.227583,
+      "etiqueta": "WALKING",
+      "fecha": "2015-12-23T02:33:24-02:00",
+      "version": "1.0",
+      "prediccion": "S",
+      "etiquetaUsuario": "WALKING"
+    },{ 
+      -- More feature -- 
+    }  
+  ]
+}
+\end{lstlisting}
+
+\subsection{Eliminación - DELETE}
+
+Para eliminar una session de entrenamiento, se utiliza el metodo DELETE al recurso \textit{ARrecolector/webresources/com.fpuna.entities.collaborativesession/[IDENTIFICADOR]}, siendo el identificador, el imei de la session que se desea eliminar. 
 
 \section{Recurso CollaborativeFeature}
 
-\subsection{Request}
-
-\subsection{Response}
+De la misma manera que el recurso anterior, están implementados todos los métodos CRUD, con POST, GET, PUT, DELETE, permitiendo el acceso de manera completa a todos los recursos colaborativos.
