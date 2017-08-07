@@ -12,7 +12,7 @@ de manera general estos elementos en las primeras dos secciones. La
 sección \ref{sec6:recoleccion} describe los aspectos relacionados
 a la captura de datos, determinando los requisitos mínimos de los
 teléfonos móviles utilizados y describiendo el procedimiento guía
-para experimentación. Además, la sección \ref{sec6:clasificacion}
+para experimentación. Posteriormente, la sección \ref{sec6:clasificacion}
 describe los resultados obtenidos al aplicar las técnicas descritas
 en la sección \ref{sec44:proceso-se=0000F1ales} para transformar
 datos sensoriales a un conjunto de entrenamiento para la clasificación
@@ -41,7 +41,7 @@ a continuación.
 \subsection{Instrumentación}
 
 Como es sabido el desarrollo de \emph{\abbr{HARDroid} }se concreto
-completamente para la plataforma \emph{\abbr{Android} }donde aquí
+completamente para la plataforma \emph{\abbr{Android} }y a continuación
 se detallan los rasgos técnicos de las herramientas utilizadas para
 su concepción y evaluación.
 
@@ -57,33 +57,33 @@ en la \tabref{tab6:dispositivos} con sus características relevantes.
 
 \begin{table}[h]
 \begin{centering}
-\begin{tabular}{|l|l|l|l|l|}
+\begin{tabular}{|l|>{\raggedright}p{2.5cm}|l|>{\raggedright}p{2cm}|l|}
 \hline 
-Marca/modelo & CPU & RAM/ROM & Sensor\footnote{Sensor de aceleración} & Android\tabularnewline
+Marca/modelo & CPU & RAM/ROM & Sensor & Android\tabularnewline
 \hline 
 \hline 
-{\small{}LG G2} & {\small{}1.2GHz Cortex-A7} & {\small{}1GB/8GB} & {\small{}BMI160} & {\small{}Nougat 7.0}\tabularnewline
+LG G2 & 1.2GHz Cortex-A7 & 1GB/8GB & BMI160 & Nougat 7.0\tabularnewline
 \hline 
-{\small{}LG Nexus 5X} & {\small{}Q1.4Ghz Cortex-A53} & {\small{}2GB/32GB} & {\small{}BMC150} & {\small{}Lollipop 5.0.2}\tabularnewline
+LG Nexus 5X & Q1.4Ghz Cortex-A53 & 2GB/32GB & BMC150 & Lollipop 5.0.2\tabularnewline
 \hline 
-{\small{}Motorola G 2nd} & {\small{}1.2GHz Cortex-A7} & {\small{}1GB/8GB} & {\small{}3-axis Acc} & {\small{}Marshmallow 6.0}\tabularnewline
+Motorola G 2nd & 1.2GHz Cortex-A7 & 1GB/8GB & 3-axis Acc & Marshmallow 6.0\tabularnewline
 \hline 
-{\small{}Huawei Mate 9} & {\small{}Q2.4GHz Cortex-A73} & {\small{}4GB/64GB} & {\small{}LSM6DSM} & {\small{}Nougat 7.0}\tabularnewline
+Huawei Mate 9 & Q2.4GHz Cortex-A73 & 4GB/64GB & LSM6DSM & Nougat 7.0\tabularnewline
 \hline 
-{\small{}Huawei Mate 8} & {\small{}Q2.3GHz Cortex-A72} & {\small{}3GB/32GB} & {\small{}LSM330 3-axis} & {\small{}Marshmallow 6.0}\tabularnewline
+Huawei Mate 8 & Q2.3GHz Cortex-A72 & 3GB/32GB & LSM330  & Marshmallow 6.0\tabularnewline
 \hline 
-{\small{}Samsung S6} & {\small{}Q2.1GHz Cortex-A57} & {\small{}3GB/32GB} & {\small{}MPU6500} & {\small{}Nougat 7.0}\tabularnewline
+Samsung S6 & Q2.1GHz Cortex-A57 & 3GB/32GB & MPU6500 & Nougat 7.0\tabularnewline
 \hline 
-{\small{}Samsung A5} & {\small{}Q1.2GHz Cortex-A53 } & {\small{}2GB/16GB} & {\small{}BOSCH Acc} & {\small{}Lollipop 5.1.1}\tabularnewline
+Samsung A5 & Q1.2GHz Cortex-A53  & 2GB/16GB & BOSCH & Lollipop 5.1.1\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption[Especificaciones de los teléfonos inteligentes]{\label{tab6:dispositivos}Especificaciones de los teléfonos inteligentes
+\caption[Especificaciones de teléfonos inteligentes]{\label{tab6:dispositivos}Especificaciones de los teléfonos inteligentes
 de entrenamiento.}
 \end{table}
 
 La elección fue en base a los dispositivos móviles disponibles, propiedad
-de los voluntarios durante las sesiones de experimento.
+de los voluntarios durante las diferentes sesiones de experimento.
 
 \subsubsection{Entorno de desarrollo }
 
@@ -94,7 +94,7 @@ los programas destinados para el caso \cite{Android2016}:
 \item \emph{Android Studio}: Entorno de desarrollo integrado para proyectos\emph{
 }de software.
 \item \emph{Android} \emph{Software Development Kit }(\abbr{SDK}): Herramientas
-y librerías \abbr{API} requeridas para construir aplicaciones.
+y librerías \abbr{API} requeridas para construir aplicaciones \emph{Android}.
 \item \emph{Gradle}: Programa de automatización de tareas de construcción
 de aplicaciones.
 \end{itemize}
@@ -102,7 +102,7 @@ Las aplicaciones desarrolladas fueron escritas utilizando el lenguaje
 \emph{Java }principalmente. Tanto las interfaces de usuario, servicios
 de aplicación y las tareas de computación intensivas de acceso a sensores,
 procesamiento, algoritmos de \abbr{ML} y almacenamiento de datos
-fueron hechos integramente en Java.
+fueron desarrollados integramente en Java.
 
 \subsection{Procedimiento Guía }
 
@@ -123,37 +123,38 @@ a continuación:
 \item Caminar (\emph{WALKING})
 \item Trotar (\emph{RUNNING})
 \item Estar quieto (\emph{STILL})
-\item Andar en bicicleta (\emph{ON\_BICYCLE})
-\item Andar en automóvil (\emph{ON\_VEHICLE})
+\item Estar inquieto (\emph{TILTING})
+\item Andar en bicicleta (\emph{ON BICYCLE})
+\item Andar en automóvil (\emph{ON VEHICLE})
 \end{itemize}
 El resultado del experimento se resume en la \tabref{tab6:sesiones},
 aquí se incluyen las sesiones hechas por los voluntarios y el tiempo
-en minutos invertido para cada actividad dada. 
+en minutos acumulado que fue invertido en cada actividad. 
 
 \begin{table}[h]
 \begin{centering}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|}
 \hline 
-\multirow{2}{*}{Voluntario} & \multicolumn{5}{c|}{Actividades}\tabularnewline
-\cline{2-6} 
- & \emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{ON\_BICYLE} & \emph{ON\_VEHICLE}\tabularnewline
+\multirow{2}{*}{Individuo} & \multicolumn{6}{c|}{Actividades}\tabularnewline
+\cline{2-7} 
+ & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}ON VEHICLE}\tabularnewline
 \hline 
 \hline 
-AG & 80 & 33 & 12 & 17 & 7\tabularnewline
+AG & 80 & 33 & 12 & - & 17 & 7\tabularnewline
 \hline 
-SG & 15 & 15 & - & - & -\tabularnewline
+SG & 15 & 15 & - & - & - & -\tabularnewline
 \hline 
-SF & 43 & 25 & - & 13 & -\tabularnewline
+SF & 43 & 25 & - & - & 13 & -\tabularnewline
 \hline 
-GA & 30 & 2 & - & - & -\tabularnewline
+GA & 30 & 2 & - & - & - & -\tabularnewline
 \hline 
-BV & - & 17 & - & - & -\tabularnewline
+BV & - & 17 & - & - & - & -\tabularnewline
 \hline 
-PV & 17 & 19 & 12 & - & 7\tabularnewline
+PV & 17 & 19 & 12 & - & - & 7\tabularnewline
 \hline 
-SY & 37 & 13 &  & 26 & 11\tabularnewline
+SY & 37 & 13 &  & - & 26 & 11\tabularnewline
 \hline 
-MD & 29 & 4 & - & - & -\tabularnewline
+MD & 29 & 4 & - & - & - & -\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -176,16 +177,16 @@ se resumen las cantidades de medidas de señales capturadas.
 \begin{centering}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
- & \multicolumn{5}{c|}{Actividades}\tabularnewline
+\multicolumn{6}{|c|}{Actividades}\tabularnewline
 \hline 
-Cantidades & \emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{ON\_BICYLE} & \emph{ON\_VEHICLE}\tabularnewline
+\emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{TILTING} & \emph{ON BICYLE} & \emph{ON VEHICLE}\tabularnewline
 \hline 
 \hline 
-Medidas & 3.591.788 & 1.604.270 & 387.735 & 819.992 & 365.814\tabularnewline
+3.591.788 & 1.604.270 & 387.735 &  & 819.992 & 365.814\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption{\label{tab6:captura}Resumen de datos capturados}
+\caption{\label{tab6:captura}Unidades de datos capturados}
 \end{table}
 
 
@@ -198,68 +199,97 @@ calculadas de acuerdo lo descrito en el proceso de la \secref{ssec44:extraction}
 \begin{centering}
 \begin{tabular}{|c|c|c|c|c|c|}
 \hline 
- & \multicolumn{5}{c|}{Actividades}\tabularnewline
+\multicolumn{6}{|c|}{Actividades}\tabularnewline
 \hline 
-Cantidades & \emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{ON\_BICYLE} & \emph{ON\_VEHICLE}\tabularnewline
+\emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{TILTING} & \emph{ON BICYLE} & \emph{ON VEHICLE}\tabularnewline
 \hline 
 \hline 
-Muestras & 28.049 & 11.779 & 3.026 & 6.404 & 2.856\tabularnewline
+28.049 & 11.779 & 3.026 & - & 6.404 & 2.856\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption{\label{tab6:muestras}Resumen de muestras procesadas}
+\caption{\label{tab6:muestras}Unidades de muestras procesadas}
 \end{table}
+
+El proceso de generación del clasificador está automatizado por medio
+del flujo mostrado en la \figref{fig6:proceso-clasi}.
+
+\begin{figure}[th]
+\begin{centering}
+\includegraphics[width=0.8\textwidth]{\string"capitulo-6/graphics/Proceso de Clasificacion\string".png}
+\par\end{centering}
+\caption{\label{fig6:proceso-clasi}Flujo de generación del clasificador C4.5}
+\end{figure}
 
 
 \section{Clasificador de Actividades Humanas}
 
-\label{sec6:clasificacion}En esta sección se describe el procedimiento
-de generación de un clasificador \abbr{HAR} utilizando el conjunto
-de entrenamiento y sometiendo el mismo a prueba y verificación para
-garantizar su usabilidad. Esta tarea se realiza utilizando la herramienta
-\emph{Waikato Environment Knowledge Analysis} \texttt{(\abbr{WEKA})}
-\cite{Frank2016}. 
+\label{sec6:clasificacion}Un clasificador es .... (DEFINIR que es
+un clasificador ) y tiene que ser generado para ...
 
-\subsection{Clasificador de J48}
+En esta sección se describe el procedimiento de generación de un clasificador
+\abbr{HAR} utilizando el conjunto de entrenamiento y sometiendo el
+mismo a prueba y verificación para garantizar su usabilidad. Esta
+tarea se realiza utilizando la herramienta \emph{Waikato Environment
+Knowledge Analysis} \texttt{(\abbr{WEKA})} \cite{Frank2016}. 
 
-En el siguiente cuadro se muestra el resultado de árbol generado.
-La evaluación de resultado es un árbol de X nodos y Y ramas .
+\subsection{Métricas de evaluación del clasificador}
 
-Number of leaves: 1673 
-
-Size of the tree: 3345
-
-El clasificador generado tiene los siguientes resultados: 
+A continuación se explican las métricas que se tuvieron en cuenta
+para evaluar el clasificador generado. (DEFINIR E INCLUIR LAS FORMULAS)
 \begin{itemize}
-\item Correctly Classified Instances 45.086 86,5142 \% 
-\item Incorrectly Classified Instances 7.028 13,4858 \% 
-\item Kappa statistic 0,7871 
-\item Mean absolute error 0,0653 
-\item Root mean squared error 0,2187 
-\item Relative absolute error 25,6021 \% 
-\item Root relative squared error 61,2282 \% 
-\item Total Number of Instances 52.114 
+\item Instancias correctamente clasificadas
+\item Instancias incorrectamente clasificadas
+\item Estadísticas Kappa
+\item Error medio absoluto
+\item Error cuadrático medio
+\item Error absoluto relativo
+\item Error cuadrático relativo
+\item Número de instancias
 \end{itemize}
-La evaluación del clasificador resultante se resume en la \tabref{tab6:matriz-confusion}.
+
+\subsection{Clasificador C4.5 generado}
+
+A continuación se resume el resultado de evaluación del árbol generado
+utilizando el algoritmo C4.5 y la implementación \emph{Java} J48 \cite{Frank2016b}.
+El tamaño del árbol generado es de 3.345 nodos, de los cuales 1.673
+corresponden a hojas.
+
+El ensayo del clasificador generado con las muestras de entrenamiento
+recolectadas presenta los siguientes resultados: 
+\begin{itemize}
+\item Instancias correctamente clasificadas: 45.086 (86,5142 \%)
+\item Instancias incorrectamente clasificadas: 7.028 (13,4858 \%)
+\item Estadísticas Kappa: 0,7871 
+\item Error medio absoluto: 0,0653 
+\item Error cuadrático medio: 0,2187 
+\item Error absoluto relativo: 25,6021 \% 
+\item Error cuadrático relativo: 61,2282 \% 
+\item Número de instancias: 52.114 
+\end{itemize}
+La evaluación del clasificador resultante se resume en la \tabref{tab6:matriz-confusion}
+que muestra la matriz de confusión explicada en la \secref{sec3:metricas}. 
 
 \begin{table}[h]
 \begin{centering}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\cline{2-7} 
+\multicolumn{1}{c|}{} & \multicolumn{6}{c|}{Matriz de Confusión}\tabularnewline
 \hline 
- & \multicolumn{5}{c|}{Matriz de Confusión}\tabularnewline
-\hline 
-Actividad & \emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{ON\_BICYLE} & \emph{ON\_VEHICLE}\tabularnewline
+Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}ON VEHICLE}\tabularnewline
 \hline 
 \hline 
-\emph{WALKING} & 25.334 & 888 & 74 & 1.640 & 113\tabularnewline
+\emph{\footnotesize{}WALKING} & 25.334 & 888 & 74 & - & 1.640 & 113\tabularnewline
 \hline 
-\emph{RUNNING} & 1.103 & 10.545 & 13 & 115 & 3\tabularnewline
+\emph{\footnotesize{}RUNNING} & 1.103 & 10.545 & 13 & - & 115 & 3\tabularnewline
 \hline 
-\emph{STILL} & 97 & 23 & 2.557 & 74 & 275\tabularnewline
+\emph{\footnotesize{}STILL} & 97 & 23 & 2.557 & - & 74 & 275\tabularnewline
 \hline 
-\emph{ON\_BICYLE} & 2.018 & 106 & 40 & 4.144 & 96\tabularnewline
+\emph{\footnotesize{}TILTING} & - & - & - & - & - & -\tabularnewline
 \hline 
-\emph{ON\_VEHICLE} & 88 & 15 & 156 & 91 & 2.506\tabularnewline
+\emph{\footnotesize{}ON BICYLE} & 2.018 & 106 & 40 & - & 4.144 & 96\tabularnewline
+\hline 
+\emph{\footnotesize{}ON VEHICLE} & 88 & 15 & 156 & - & 91 & 2.506\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -267,7 +297,8 @@ Actividad & \emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{ON\_BICYLE} &
 resultante}
 \end{table}
 
-Los valores calculados de las métricas en la \secref{sec3:metricas}.
+De esta forma, los valores calculados de las métricas presentadas
+en la \secref{sec3:metricas} corresponden a:
 \begin{itemize}
 \item Precisión: 0,8651
 \item Exhaustividad: 0,8651
@@ -275,6 +306,6 @@ Los valores calculados de las métricas en la \secref{sec3:metricas}.
 \item Valor-F: 0,8651
 \end{itemize}
 
-\section{Resultados}
+\section{Resultados Experimentales}
 
 \label{sec6:resultados}Describir resultados de experimento con HARDroid.

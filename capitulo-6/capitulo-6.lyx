@@ -117,7 +117,7 @@ reference "sec6:recoleccion"
  describe los aspectos relacionados a la captura de datos, determinando
  los requisitos mínimos de los teléfonos móviles utilizados y describiendo
  el procedimiento guía para experimentación.
- Además, la sección 
+ Posteriormente, la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec6:clasificacion"
@@ -271,7 +271,7 @@ abbr{Android}
 
  
 \emph default
-donde aquí se detallan los rasgos técnicos de las herramientas utilizadas
+y a continuación se detallan los rasgos técnicos de las herramientas utilizadas
  para su concepción y evaluación.
 \end_layout
 
@@ -343,9 +343,9 @@ status open
 <lyxtabular version="3" rows="8" columns="5">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top">
-<column alignment="left" valignment="top">
-<column alignment="left" valignment="top">
+<column alignment="left" valignment="top" width="2.5cm">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="2cm">
 <column alignment="left" valignment="top">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -357,7 +357,7 @@ Marca/modelo
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -375,21 +375,11 @@ RAM/ROM
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Sensor
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Sensor de aceleración
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -409,19 +399,15 @@ Android
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 LG G2
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1.2GHz Cortex-A7
 \end_layout
 
@@ -431,19 +417,15 @@ LG G2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1GB/8GB
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 BMI160
 \end_layout
 
@@ -453,8 +435,6 @@ BMI160
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Nougat 7.0
 \end_layout
 
@@ -466,19 +446,15 @@ Nougat 7.0
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 LG Nexus 5X
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Q1.4Ghz Cortex-A53
 \end_layout
 
@@ -488,19 +464,15 @@ Q1.4Ghz Cortex-A53
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 2GB/32GB
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 BMC150
 \end_layout
 
@@ -510,8 +482,6 @@ BMC150
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Lollipop 5.0.2
 \end_layout
 
@@ -523,19 +493,15 @@ Lollipop 5.0.2
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Motorola G 2nd
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1.2GHz Cortex-A7
 \end_layout
 
@@ -545,19 +511,15 @@ Motorola G 2nd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 1GB/8GB
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 3-axis Acc
 \end_layout
 
@@ -567,8 +529,6 @@ Motorola G 2nd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Marshmallow 6.0
 \end_layout
 
@@ -580,19 +540,15 @@ Marshmallow 6.0
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Huawei Mate 9
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Q2.4GHz Cortex-A73
 \end_layout
 
@@ -602,19 +558,15 @@ Q2.4GHz Cortex-A73
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 4GB/64GB
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 LSM6DSM
 \end_layout
 
@@ -624,8 +576,6 @@ LSM6DSM
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Nougat 7.0
 \end_layout
 
@@ -637,42 +587,34 @@ Nougat 7.0
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Huawei Mate 8
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Q2.3GHz Cortex-A72
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 3GB/32GB
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
-LSM330 3-axis
+LSM330 
 \end_layout
 
 \end_inset
@@ -681,8 +623,6 @@ LSM330 3-axis
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Marshmallow 6.0
 \end_layout
 
@@ -694,41 +634,33 @@ Marshmallow 6.0
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Samsung S6
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Q2.1GHz Cortex-A57
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 3GB/32GB
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 MPU6500
 \end_layout
 
@@ -738,8 +670,6 @@ MPU6500
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Nougat 7.0
 \end_layout
 
@@ -751,42 +681,34 @@ Nougat 7.0
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Samsung A5
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Q1.2GHz Cortex-A53 
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 2GB/16GB
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
-BOSCH Acc
+BOSCH
 \end_layout
 
 \end_inset
@@ -795,8 +717,6 @@ BOSCH Acc
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size small
 Lollipop 5.1.1
 \end_layout
 
@@ -825,7 +745,7 @@ name "tab6:dispositivos"
 status collapsed
 
 \begin_layout Plain Layout
-Especificaciones de los teléfonos inteligentes
+Especificaciones de teléfonos inteligentes
 \end_layout
 
 \end_inset
@@ -845,7 +765,7 @@ Especificaciones de los teléfonos inteligentes de entrenamiento.
 
 \begin_layout Standard
 La elección fue en base a los dispositivos móviles disponibles, propiedad
- de los voluntarios durante las sesiones de experimento.
+ de los voluntarios durante las diferentes sesiones de experimento.
 \end_layout
 
 \begin_layout Subsubsection
@@ -928,7 +848,11 @@ abbr{API}
 
 \end_inset
 
- requeridas para construir aplicaciones.
+ requeridas para construir aplicaciones 
+\emph on
+Android
+\emph default
+.
 \end_layout
 
 \begin_layout Itemize
@@ -960,7 +884,7 @@ abbr{ML}
 
 \end_inset
 
- y almacenamiento de datos fueron hechos integramente en Java.
+ y almacenamiento de datos fueron desarrollados integramente en Java.
 \end_layout
 
 \begin_layout Subsection
@@ -1028,9 +952,17 @@ STILL
 \end_layout
 
 \begin_layout Itemize
+Estar inquieto (
+\emph on
+TILTING
+\emph default
+)
+\end_layout
+
+\begin_layout Itemize
 Andar en bicicleta (
 \emph on
-ON_BICYCLE
+ON BICYCLE
 \emph default
 )
 \end_layout
@@ -1038,7 +970,7 @@ ON_BICYCLE
 \begin_layout Itemize
 Andar en automóvil (
 \emph on
-ON_VEHICLE
+ON VEHICLE
 \emph default
 )
 \end_layout
@@ -1058,7 +990,7 @@ tabref{tab6:sesiones}
 \end_inset
 
 , aquí se incluyen las sesiones hechas por los voluntarios y el tiempo en
- minutos invertido para cada actividad dada.
+ minutos acumulado que fue invertido en cada actividad.
  
 \end_layout
 
@@ -1072,20 +1004,21 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="10" columns="6">
+<lyxtabular version="3" rows="10" columns="7">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Voluntario
+Individuo
 \end_layout
 
 \end_inset
@@ -1095,6 +1028,15 @@ Voluntario
 
 \begin_layout Plain Layout
 Actividades
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1151,6 +1093,7 @@ Actividades
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 WALKING
 \end_layout
@@ -1162,6 +1105,7 @@ WALKING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 RUNNING
 \end_layout
@@ -1173,6 +1117,7 @@ RUNNING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 STILL
 \end_layout
@@ -1184,8 +1129,21 @@ STILL
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
-ON_BICYLE
+TILTING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\emph on
+ON BICYLE
 \end_layout
 
 \end_inset
@@ -1195,8 +1153,9 @@ ON_BICYLE
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
-ON_VEHICLE
+ON VEHICLE
 \end_layout
 
 \end_inset
@@ -1235,6 +1194,15 @@ AG
 
 \begin_layout Plain Layout
 12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
 \end_layout
 
 \end_inset
@@ -1304,6 +1272,15 @@ SG
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -1338,6 +1315,15 @@ SF
 
 \begin_layout Plain Layout
 25
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
 \end_layout
 
 \end_inset
@@ -1416,6 +1402,15 @@ GA
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -1450,6 +1445,15 @@ BV
 
 \begin_layout Plain Layout
 17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
 \end_layout
 
 \end_inset
@@ -1528,6 +1532,15 @@ PV
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -1579,6 +1592,15 @@ SY
 \begin_inset Text
 
 \begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 26
 \end_layout
 
@@ -1618,6 +1640,15 @@ MD
 
 \begin_layout Plain Layout
 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
 \end_layout
 
 \end_inset
@@ -1763,20 +1794,20 @@ status open
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Actividades
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1823,15 +1854,6 @@ Actividades
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cantidades
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 
 \emph on
 WALKING
@@ -1867,7 +1889,18 @@ STILL
 \begin_layout Plain Layout
 
 \emph on
-ON_BICYLE
+TILTING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+ON BICYLE
 \end_layout
 
 \end_inset
@@ -1878,22 +1911,13 @@ ON_BICYLE
 \begin_layout Plain Layout
 
 \emph on
-ON_VEHICLE
+ON VEHICLE
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Medidas
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -1917,6 +1941,15 @@ Medidas
 
 \begin_layout Plain Layout
 387.735
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -1957,7 +1990,7 @@ name "tab6:captura"
 
 \end_inset
 
-Resumen de datos capturados
+Unidades de datos capturados
 \end_layout
 
 \end_inset
@@ -2024,20 +2057,20 @@ status open
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Actividades
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -2084,15 +2117,6 @@ Actividades
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cantidades
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 
 \emph on
 WALKING
@@ -2128,7 +2152,18 @@ STILL
 \begin_layout Plain Layout
 
 \emph on
-ON_BICYLE
+TILTING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+ON BICYLE
 \end_layout
 
 \end_inset
@@ -2139,22 +2174,13 @@ ON_BICYLE
 \begin_layout Plain Layout
 
 \emph on
-ON_VEHICLE
+ON VEHICLE
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Muestras
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -2178,6 +2204,15 @@ Muestras
 
 \begin_layout Plain Layout
 3.026
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
 \end_layout
 
 \end_inset
@@ -2218,7 +2253,66 @@ name "tab6:muestras"
 
 \end_inset
 
-Resumen de muestras procesadas
+Unidades de muestras procesadas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El proceso de generación del clasificador está automatizado por medio del
+ flujo mostrado en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig6:proceso-clasi}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement th
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/Proceso de Clasificacion.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig6:proceso-clasi"
+
+\end_inset
+
+Flujo de generación del clasificador C4.5
 \end_layout
 
 \end_inset
@@ -2242,6 +2336,11 @@ name "sec6:clasificacion"
 
 \end_inset
 
+Un clasificador es ....
+ (DEFINIR que es un clasificador ) y tiene que ser generado para ...
+\end_layout
+
+\begin_layout Standard
 En esta sección se describe el procedimiento de generación de un clasificador
  
 \begin_inset ERT
@@ -2291,56 +2390,104 @@ key "Frank2016"
 \end_layout
 
 \begin_layout Subsection
-Clasificador de J48
+Métricas de evaluación del clasificador
 \end_layout
 
 \begin_layout Standard
-En el siguiente cuadro se muestra el resultado de árbol generado.
- La evaluación de resultado es un árbol de X nodos y Y ramas .
+A continuación se explican las métricas que se tuvieron en cuenta para evaluar
+ el clasificador generado.
+ (DEFINIR E INCLUIR LAS FORMULAS)
+\end_layout
+
+\begin_layout Itemize
+Instancias correctamente clasificadas
+\end_layout
+
+\begin_layout Itemize
+Instancias incorrectamente clasificadas
+\end_layout
+
+\begin_layout Itemize
+Estadísticas Kappa
+\end_layout
+
+\begin_layout Itemize
+Error medio absoluto
+\end_layout
+
+\begin_layout Itemize
+Error cuadrático medio
+\end_layout
+
+\begin_layout Itemize
+Error absoluto relativo
+\end_layout
+
+\begin_layout Itemize
+Error cuadrático relativo
+\end_layout
+
+\begin_layout Itemize
+Número de instancias
+\end_layout
+
+\begin_layout Subsection
+Clasificador C4.5 generado
 \end_layout
 
 \begin_layout Standard
-Number of leaves: 1673 
+A continuación se resume el resultado de evaluación del árbol generado utilizand
+o el algoritmo C4.5 y la implementación 
+\emph on
+Java
+\emph default
+ J48 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Frank2016b"
+
+\end_inset
+
+.
+ El tamaño del árbol generado es de 3.345 nodos, de los cuales 1.673 corresponden
+ a hojas.
 \end_layout
 
 \begin_layout Standard
-Size of the tree: 3345
-\end_layout
-
-\begin_layout Standard
-El clasificador generado tiene los siguientes resultados: 
+El ensayo del clasificador generado con las muestras de entrenamiento recolectad
+as presenta los siguientes resultados: 
 \end_layout
 
 \begin_layout Itemize
-Correctly Classified Instances 45.086 86,5142 % 
+Instancias correctamente clasificadas: 45.086 (86,5142 %)
 \end_layout
 
 \begin_layout Itemize
-Incorrectly Classified Instances 7.028 13,4858 % 
+Instancias incorrectamente clasificadas: 7.028 (13,4858 %)
 \end_layout
 
 \begin_layout Itemize
-Kappa statistic 0,7871 
+Estadísticas Kappa: 0,7871 
 \end_layout
 
 \begin_layout Itemize
-Mean absolute error 0,0653 
+Error medio absoluto: 0,0653 
 \end_layout
 
 \begin_layout Itemize
-Root mean squared error 0,2187 
+Error cuadrático medio: 0,2187 
 \end_layout
 
 \begin_layout Itemize
-Relative absolute error 25,6021 % 
+Error absoluto relativo: 25,6021 % 
 \end_layout
 
 \begin_layout Itemize
-Root relative squared error 61,2282 % 
+Error cuadrático relativo: 61,2282 % 
 \end_layout
 
 \begin_layout Itemize
-Total Number of Instances 52.114 
+Número de instancias: 52.114 
 \end_layout
 
 \begin_layout Standard
@@ -2357,7 +2504,21 @@ tabref{tab6:matriz-confusion}
 
 \end_inset
 
+ que muestra la matriz de confusión explicada en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+secref{sec3:metricas}
+\end_layout
+
+\end_inset
+
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2370,8 +2531,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="6">
+<lyxtabular version="3" rows="8" columns="7">
 <features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2379,7 +2541,7 @@ status open
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2393,6 +2555,15 @@ status open
 
 \begin_layout Plain Layout
 Matriz de Confusión
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -2449,6 +2620,7 @@ Actividad
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 WALKING
 \end_layout
@@ -2460,6 +2632,7 @@ WALKING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 RUNNING
 \end_layout
@@ -2471,6 +2644,7 @@ RUNNING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 STILL
 \end_layout
@@ -2482,8 +2656,21 @@ STILL
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
-ON_BICYLE
+TILTING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\emph on
+ON BICYLE
 \end_layout
 
 \end_inset
@@ -2493,8 +2680,9 @@ ON_BICYLE
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
-ON_VEHICLE
+ON VEHICLE
 \end_layout
 
 \end_inset
@@ -2506,6 +2694,7 @@ ON_VEHICLE
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 WALKING
 \end_layout
@@ -2543,6 +2732,15 @@ WALKING
 \begin_inset Text
 
 \begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 1.640
 \end_layout
 
@@ -2564,6 +2762,7 @@ WALKING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 RUNNING
 \end_layout
@@ -2601,6 +2800,15 @@ RUNNING
 \begin_inset Text
 
 \begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 115
 \end_layout
 
@@ -2622,6 +2830,7 @@ RUNNING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 STILL
 \end_layout
@@ -2659,6 +2868,15 @@ STILL
 \begin_inset Text
 
 \begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 74
 \end_layout
 
@@ -2680,8 +2898,77 @@ STILL
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
-ON_BICYLE
+TILTING
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\emph on
+ON BICYLE
 \end_layout
 
 \end_inset
@@ -2717,6 +3004,15 @@ ON_BICYLE
 \begin_inset Text
 
 \begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 4.144
 \end_layout
 
@@ -2738,8 +3034,9 @@ ON_BICYLE
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
-ON_VEHICLE
+ON VEHICLE
 \end_layout
 
 \end_inset
@@ -2767,6 +3064,15 @@ ON_VEHICLE
 
 \begin_layout Plain Layout
 156
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
 \end_layout
 
 \end_inset
@@ -2821,7 +3127,8 @@ Matriz de confusión del clasificador resultante
 \end_layout
 
 \begin_layout Standard
-Los valores calculados de las métricas en la 
+De esta forma, los valores calculados de las métricas presentadas en la
+ 
 \begin_inset ERT
 status open
 
@@ -2834,7 +3141,7 @@ secref{sec3:metricas}
 
 \end_inset
 
-.
+ corresponden a:
 \end_layout
 
 \begin_layout Itemize
@@ -2854,7 +3161,7 @@ Valor-F: 0,8651
 \end_layout
 
 \begin_layout Section
-Resultados
+Resultados Experimentales
 \end_layout
 
 \begin_layout Standard
