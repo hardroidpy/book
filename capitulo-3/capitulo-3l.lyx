@@ -817,7 +817,11 @@ name "tab3:clasificadores"
 
 \begin_layout Standard
 En las siguientes secciones nos concentraremos en un enfoque basado en arboles
- de decisión (Decision Tree, 
+ de decisión (
+\emph on
+Decision Tree
+\emph default
+, 
 \begin_inset ERT
 status collapsed
 
@@ -3212,7 +3216,7 @@ name "fig:arbolPartEdad"
 \end_layout
 
 \begin_layout Standard
-Notese que las tuplas en la partición 
+Nótese que las tuplas en la partición 
 \begin_inset Formula $Edad=Mediana$
 \end_inset
 
@@ -3374,8 +3378,8 @@ La medida de información de ganancia tiene inclinación hacia un particionamien
 El algoritmo C4.5, sucesor de ID3, usa una extensión de la información de
  ganancia conocida como proporción de ganancia, que intenta contrarrestar
  la inclinación mencionada.
- Aplica una normalización a la información de ganancia usando un valor "Informac
-ion de division" definido de manera análoga a 
+ Aplica una normalización a la información de ganancia usando un valor "informac
+ion de división" definido de manera análoga a 
 \begin_inset Formula $Info(D)$
 \end_inset
 
@@ -3963,7 +3967,7 @@ status collapsed
 
 \end_inset
 
-, supongamos que se tomo una muestra de 10.000 tuplas obteniendose como resultado
+, supongamos que se tomo una muestra de 10.000 tuplas obteniéndose como resultado
  la 
 \begin_inset ERT
 status collapsed

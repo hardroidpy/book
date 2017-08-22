@@ -1493,9 +1493,9 @@ Trotar
 \end_layout
 
 \begin_layout Itemize
-Quieto
+Estar quieto
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 A pesar de que esta actividad no representa un movimiento se incluye como
@@ -1516,13 +1516,9 @@ En vehículo
 \end_layout
 
 \begin_layout Itemize
-
-\emph on
-Girando
-\emph default
-
+Estar inquieto
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Esta no es una actividad física sino un comportamiento errático de la orientació
@@ -3634,7 +3630,7 @@ Por último, se considera que tanto
 \end_inset
 
  como 
-\begin_inset Formula $F_{j\ensuremath{}}$
+\begin_inset Formula $F_{j}$
 \end_inset
 
  tienen relación con al menos una etiqueta 

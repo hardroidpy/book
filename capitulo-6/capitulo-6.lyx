@@ -884,7 +884,11 @@ abbr{ML}
 
 \end_inset
 
- y almacenamiento de datos fueron desarrollados integramente en Java.
+ y almacenamiento de datos fueron desarrollados integramente en 
+\emph on
+Java
+\emph default
+.
 \end_layout
 
 \begin_layout Subsection
@@ -922,57 +926,57 @@ El procedimiento guía de captura de datos se instruyó con el uso del teléfono
  móvil como prenda sujeta al bolsillo o en la cintura mientras se realiza
  una actividad física predeterminada.
  El planeamiento del experimento consitió en realizar en orden por un periodo
- de 10 a 15 minutos alguna de las tres actividades básicas y dos de transporte.
+ de 2 a 15 minutos alguna de las tres actividades básicas y dos de transporte.
  Las actividades humanas con sus etiquetas correspondientes se listan a
  continuación:
 \end_layout
 
 \begin_layout Itemize
-Caminar (
+
 \emph on
 WALKING
 \emph default
-)
+: Caminar
 \end_layout
 
 \begin_layout Itemize
-Trotar (
+
 \emph on
 RUNNING
 \emph default
-)
+: Trotar
 \end_layout
 
 \begin_layout Itemize
-Estar quieto (
+
 \emph on
 STILL
 \emph default
-)
+: Estar quieto
 \end_layout
 
 \begin_layout Itemize
-Estar inquieto (
+
 \emph on
 TILTING
 \emph default
-)
+: Estar inquieto
 \end_layout
 
 \begin_layout Itemize
-Andar en bicicleta (
+
 \emph on
 ON BICYCLE
 \emph default
-)
+: Andar en bicicleta
 \end_layout
 
 \begin_layout Itemize
-Andar en automóvil (
+
 \emph on
-ON VEHICLE
+IN VEHICLE
 \emph default
-)
+: Andar en automóvil
 \end_layout
 
 \begin_layout Standard
@@ -1155,7 +1159,7 @@ ON BICYLE
 
 \size footnotesize
 \emph on
-ON VEHICLE
+IN VEHICLE
 \end_layout
 
 \end_inset
@@ -1855,6 +1859,7 @@ Actividades
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 WALKING
 \end_layout
@@ -1866,6 +1871,7 @@ WALKING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 RUNNING
 \end_layout
@@ -1877,6 +1883,7 @@ RUNNING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 STILL
 \end_layout
@@ -1888,6 +1895,7 @@ STILL
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 TILTING
 \end_layout
@@ -1899,6 +1907,7 @@ TILTING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 ON BICYLE
 \end_layout
@@ -1910,8 +1919,9 @@ ON BICYLE
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
-ON VEHICLE
+IN VEHICLE
 \end_layout
 
 \end_inset
@@ -1949,7 +1959,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+134.566
 \end_layout
 
 \end_inset
@@ -2118,6 +2128,7 @@ Actividades
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 WALKING
 \end_layout
@@ -2129,6 +2140,7 @@ WALKING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 RUNNING
 \end_layout
@@ -2140,6 +2152,7 @@ RUNNING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 STILL
 \end_layout
@@ -2151,6 +2164,7 @@ STILL
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 TILTING
 \end_layout
@@ -2162,6 +2176,7 @@ TILTING
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
 ON BICYLE
 \end_layout
@@ -2173,8 +2188,9 @@ ON BICYLE
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \emph on
-ON VEHICLE
+IN VEHICLE
 \end_layout
 
 \end_inset
@@ -2185,7 +2201,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-28.049
+5.915
 \end_layout
 
 \end_inset
@@ -2194,7 +2210,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-11.779
+3.019
 \end_layout
 
 \end_inset
@@ -2203,7 +2219,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.026
+645
 \end_layout
 
 \end_inset
@@ -2212,7 +2228,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+485
 \end_layout
 
 \end_inset
@@ -2221,7 +2237,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-6.404
+1.338
 \end_layout
 
 \end_inset
@@ -2230,7 +2246,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-2.856
+610
 \end_layout
 
 \end_inset
@@ -2289,7 +2305,7 @@ figref{fig6:proceso-clasi}
 placement th
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2390,54 +2406,214 @@ key "Frank2016"
 \end_layout
 
 \begin_layout Subsection
-Métricas de evaluación del clasificador
+Métricas de predicción numérica
 \end_layout
 
 \begin_layout Standard
-A continuación se explican las métricas que se tuvieron en cuenta para evaluar
- el clasificador generado.
- (DEFINIR E INCLUIR LAS FORMULAS)
+De manera a evaluar el rendimiento de los clasificadores de aprendizaje
+ supervisado utilizado, se describen las siguientes medidas y métricas de
+ predicción numéricas que dan una noción de cuánto se acercan las predicciones
+ a los datos observados 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Witten2017"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Utilizando la nomenclatura de que los valores 
+\begin_inset Formula $\hat{f}(x_{i})$
+\end_inset
+
+ corresponden a la predicción de una instancia de evaluación 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ e 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ corresponde al valor actual de la 
+\emph on
+
+\begin_inset Formula $i$
+\end_inset
+
+-ésima
+\emph default
+ instancia, se define los siguiente:
 \end_layout
 
 \begin_layout Itemize
-Instancias correctamente clasificadas
-\end_layout
 
-\begin_layout Itemize
-Instancias incorrectamente clasificadas
-\end_layout
-
-\begin_layout Itemize
-Estadísticas Kappa
-\end_layout
-
-\begin_layout Itemize
-Error medio absoluto
-\end_layout
-
-\begin_layout Itemize
-Error cuadrático medio
-\end_layout
-
-\begin_layout Itemize
-Error absoluto relativo
-\end_layout
-
-\begin_layout Itemize
-Error cuadrático relativo
-\end_layout
-
-\begin_layout Itemize
+\emph on
 Número de instancias
+\emph default
+: tamaño de la población de entrada 
+\begin_inset Formula $N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Instancias correctamente clasificadas
+\emph default
+: es una proporción del tamaño de la población de entrada 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Instancias incorrectamente clasificadas
+\emph default
+: es un proporción del tamaño de la población de entrada 
+\begin_inset Formula $I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Estadísticas Kappa
+\emph default
+: el coeficiente 
+\emph on
+kappa
+\emph default
+ de Cohen determina que 
+\begin_inset Formula $1.0$
+\end_inset
+
+ es el coeficiente máximo de concordancia y 
+\begin_inset Formula $0.4$
+\end_inset
+
+ es el límite de confiabilidad.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\kappa\text{=}\frac{p_{o}-p_{e}}{1-p_{e}}
+\]
+
+\end_inset
+
+donde 
+\begin_inset Formula $p_{o}$
+\end_inset
+
+ es el acuerdo observado relativo y 
+\begin_inset Formula $p_{e}$
+\end_inset
+
+ es la probabilidad hipotética de acuerdo.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Error medio absoluto
+\emph default
+: es el promedio de la magnitud de los errores absolutos individuales.
+\begin_inset Formula 
+\[
+\frac{1}{n}\sum_{i\text{=1}}^{n}\bigl|y_{i}-\hat{f}(x_{i})\bigr|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Raíz de Error cuadrático medio
+\emph default
+: es la raíz del promedio de la magnitud de los errores individuales elevados
+ al cuadrado.
+\begin_inset Formula 
+\[
+\sqrt{\frac{1}{n}\sum_{i\text{=1}}^{n}\left(y_{i}-\hat{f}(x_{i})\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Error absoluto relativo
+\emph default
+: es la razón de la suma de los errores absolutos y la suma de las diferencia
+ de los valores exactos con la media.
+ 
+\begin_inset Formula 
+\[
+\sum_{i\text{=1}}^{n}\frac{\bigl|y_{i}-\hat{f}(x_{i})\bigr|}{\bigl|y_{i}-\bar{y}\bigr|}\,\textrm{, donde\,}\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Raíz de Error cuadrático relativo
+\emph default
+: es la raíz de la razón de la suma de los errores individuales elevados
+ al cuadrado y la suma de las diferencia de los valores exactos con la media
+ elevados al cuadrado.
+ 
+\begin_inset Formula 
+\[
+\sqrt{\sum_{i\text{=1}}^{n}\frac{\left(y-\hat{f}(x_{i})\right)^{2}}{\left(y_{i}-\bar{y_{i}}\right)^{2}}}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Clasificador C4.5 generado
+Evaluación del clasificador
 \end_layout
 
 \begin_layout Standard
-A continuación se resume el resultado de evaluación del árbol generado utilizand
-o el algoritmo C4.5 y la implementación 
+El clasificador generado en este trabajo es un árbol de decisión obtenido
+ por medio del algoritmo C4.5 (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+algref{algoC45}
+\end_layout
+
+\end_inset
+
+) y la implementación en 
 \emph on
 Java
 \emph default
@@ -2449,49 +2625,96 @@ key "Frank2016b"
 \end_inset
 
 .
- El tamaño del árbol generado es de 3.345 nodos, de los cuales 1.673 corresponden
- a hojas.
+ El tamaño del árbol generado es de 
+\begin_inset Formula $677$
+\end_inset
+
+ nodos, de los cuales 
+\begin_inset Formula $339$
+\end_inset
+
+ corresponden a hojas.
 \end_layout
 
 \begin_layout Standard
-El ensayo del clasificador generado con las muestras de entrenamiento recolectad
-as presenta los siguientes resultados: 
+A continuación se presenta el resultado de las métricas de evaluación del
+ clasificador generado con las muestras de entrenamiento recolectadas: 
 \end_layout
 
 \begin_layout Itemize
-Instancias correctamente clasificadas: 45.086 (86,5142 %)
+Número de instancias: 
+\begin_inset Formula $12.012$
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Itemize
-Instancias incorrectamente clasificadas: 7.028 (13,4858 %)
+Instancias correctamente clasificadas: 
+\begin_inset Formula $10.942$
+\end_inset
+
+ (en porcentaje 
+\begin_inset Formula $91,0922$
+\end_inset
+
+ %)
 \end_layout
 
 \begin_layout Itemize
-Estadísticas Kappa: 0,7871 
+Instancias incorrectamente clasificadas: 
+\begin_inset Formula $1.070$
+\end_inset
+
+ (en porcentaje 
+\begin_inset Formula $8,9078$
+\end_inset
+
+ %)
 \end_layout
 
 \begin_layout Itemize
-Error medio absoluto: 0,0653 
+Estadísticas Kappa: 
+\begin_inset Formula $0,8678$
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Itemize
-Error cuadrático medio: 0,2187 
+Error medio absoluto: 
+\begin_inset Formula $0,0341$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Error absoluto relativo: 25,6021 % 
+Raíz de Error cuadrático medio: 
+\begin_inset Formula $0,164$
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Itemize
-Error cuadrático relativo: 61,2282 % 
+Error absoluto relativo: 
+\begin_inset Formula $15,1717$
+\end_inset
+
+ % 
 \end_layout
 
 \begin_layout Itemize
-Número de instancias: 52.114 
+Raíz de Error cuadrático relativo: 
+\begin_inset Formula $48,9126$
+\end_inset
+
+ % 
 \end_layout
 
 \begin_layout Standard
-La evaluación del clasificador resultante se resume en la 
+Adicionalmente, en la 
 \begin_inset ERT
 status open
 
@@ -2504,7 +2727,7 @@ tabref{tab6:matriz-confusion}
 
 \end_inset
 
- que muestra la matriz de confusión explicada en la 
+ se muestra la matriz de confusión obtenida así como se detalla en la 
 \begin_inset ERT
 status open
 
@@ -2705,7 +2928,7 @@ WALKING
 \begin_inset Text
 
 \begin_layout Plain Layout
-25.334
+5.643
 \end_layout
 
 \end_inset
@@ -2714,7 +2937,7 @@ WALKING
 \begin_inset Text
 
 \begin_layout Plain Layout
-888
+63
 \end_layout
 
 \end_inset
@@ -2723,7 +2946,7 @@ WALKING
 \begin_inset Text
 
 \begin_layout Plain Layout
-74
+21
 \end_layout
 
 \end_inset
@@ -2732,7 +2955,7 @@ WALKING
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+28
 \end_layout
 
 \end_inset
@@ -2741,7 +2964,7 @@ WALKING
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.640
+156
 \end_layout
 
 \end_inset
@@ -2750,7 +2973,7 @@ WALKING
 \begin_inset Text
 
 \begin_layout Plain Layout
-113
+4
 \end_layout
 
 \end_inset
@@ -2773,7 +2996,7 @@ RUNNING
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.103
+122
 \end_layout
 
 \end_inset
@@ -2782,7 +3005,7 @@ RUNNING
 \begin_inset Text
 
 \begin_layout Plain Layout
-10.545
+2.852
 \end_layout
 
 \end_inset
@@ -2791,7 +3014,7 @@ RUNNING
 \begin_inset Text
 
 \begin_layout Plain Layout
-13
+3
 \end_layout
 
 \end_inset
@@ -2800,7 +3023,7 @@ RUNNING
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+6
 \end_layout
 
 \end_inset
@@ -2809,7 +3032,7 @@ RUNNING
 \begin_inset Text
 
 \begin_layout Plain Layout
-115
+36
 \end_layout
 
 \end_inset
@@ -2818,7 +3041,7 @@ RUNNING
 \begin_inset Text
 
 \begin_layout Plain Layout
-3
+0
 \end_layout
 
 \end_inset
@@ -2841,7 +3064,25 @@ STILL
 \begin_inset Text
 
 \begin_layout Plain Layout
-97
+19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+555
 \end_layout
 
 \end_inset
@@ -2859,25 +3100,7 @@ STILL
 \begin_inset Text
 
 \begin_layout Plain Layout
-2.557
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-74
+15
 \end_layout
 
 \end_inset
@@ -2886,7 +3109,7 @@ STILL
 \begin_inset Text
 
 \begin_layout Plain Layout
-275
+19
 \end_layout
 
 \end_inset
@@ -2909,7 +3132,7 @@ TILTING
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+26
 \end_layout
 
 \end_inset
@@ -2918,7 +3141,7 @@ TILTING
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+3
 \end_layout
 
 \end_inset
@@ -2927,7 +3150,7 @@ TILTING
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+21
 \end_layout
 
 \end_inset
@@ -2936,7 +3159,7 @@ TILTING
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+304
 \end_layout
 
 \end_inset
@@ -2945,7 +3168,7 @@ TILTING
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+46
 \end_layout
 
 \end_inset
@@ -2954,7 +3177,7 @@ TILTING
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+85
 \end_layout
 
 \end_inset
@@ -2977,7 +3200,7 @@ ON BICYLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-2.018
+157
 \end_layout
 
 \end_inset
@@ -2986,7 +3209,7 @@ ON BICYLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-106
+28
 \end_layout
 
 \end_inset
@@ -2995,7 +3218,7 @@ ON BICYLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-40
+7
 \end_layout
 
 \end_inset
@@ -3004,7 +3227,7 @@ ON BICYLE
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+47
 \end_layout
 
 \end_inset
@@ -3013,7 +3236,7 @@ ON BICYLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-4.144
+1.089
 \end_layout
 
 \end_inset
@@ -3022,7 +3245,7 @@ ON BICYLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-96
+10
 \end_layout
 
 \end_inset
@@ -3045,7 +3268,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-88
+2
 \end_layout
 
 \end_inset
@@ -3054,7 +3277,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-15
+2
 \end_layout
 
 \end_inset
@@ -3063,7 +3286,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-156
+14
 \end_layout
 
 \end_inset
@@ -3072,7 +3295,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+86
 \end_layout
 
 \end_inset
@@ -3081,7 +3304,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-91
+7
 \end_layout
 
 \end_inset
@@ -3090,7 +3313,7 @@ ON VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-2.506
+499
 \end_layout
 
 \end_inset
@@ -3127,8 +3350,8 @@ Matriz de confusión del clasificador resultante
 \end_layout
 
 \begin_layout Standard
-De esta forma, los valores calculados de las métricas presentadas en la
- 
+Finalmente, los calculos realizados en base a las métricas principales de
+ clasificación presentadas en la 
 \begin_inset ERT
 status open
 
@@ -3141,23 +3364,43 @@ secref{sec3:metricas}
 
 \end_inset
 
- corresponden a:
+ son:
 \end_layout
 
 \begin_layout Itemize
-Precisión: 0,8651
+Precisión: 
+\begin_inset Formula $0,9174$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Exhaustividad: 0,8651
+Exhaustividad: 
+\begin_inset Formula $0,9109$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Exactitud: 0,9461
+Exactitud: 
+\begin_inset Formula $0,9714$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Valor-F: 0,8651
+
+\emph on
+Valor-F
+\emph default
+: 
+\begin_inset Formula $0,9142$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

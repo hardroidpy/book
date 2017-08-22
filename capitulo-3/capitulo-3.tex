@@ -71,16 +71,16 @@ El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto
 En la \figref{fig:arbolEjemplo} se muestra un típico ejemplo de árbol de decisión que representa el concepto de jugar o no Golf, teniendo en cuenta variables climática representadas en los nodos internos, y los nodos hojas denotan las decisiones de jugar o no al Golf. 
 
 \section{Algoritmo C4.5}
-El trabajo de J.R. Quinlan \cite{Quinlan:1993:CPM:152181} propone un algoritmo de construcción de arboles de decisión denominado C4.5, el cual a su vez es una mejora o extensión al algoritmo ID3 \cite{Quinlan:1986:IDT:637962.637969}. Este algoritmo genera un árbol de decisión a partir del paticionamiento recursivo de los datos de entrada. El árbol se construye mediante la estrategia \emph{profundidad-primero (depth-first)}.
+El trabajo de J.R. Quinlan \cite{Quinlan:1993:CPM:152181} propone un algoritmo de construcción de arboles de decisión denominado C4.5, el cual a su vez es una mejora o extensión al algoritmo ID3 \cite{Quinlan:1986:IDT:637962.637969}. Este algoritmo genera un árbol de decisión a partir del paticionamiento recursivo de los datos de entrada. El árbol se construye mediante la estrategia profundidad primero (\emph{depth-first}).
 
-Además, el algoritmo C4.5 utiliza una técnica heurística conocida como \emph{proporción de ganancia (gain-ratio)}. Que es una medida basada en información que considera diferentes números y probabilidades de los resultados de las pruebas. El algoritmo así, considera todas las pruebas posibles que puede dividir el conjunto de datos para seleccionar la prueba que le haya generado mayor ganancia de información. Para cada atributo discreto, se considera una prueba con $N$ resultados, siendo $N$ el numero de valores posibles que puede tomar el atributo. Para cada atributo continuo, se realiza la prueba binaria (1, 0) sobre cada uno de los valores que puede tomar el atributo de los datos. 
+Además, el algoritmo C4.5 utiliza una técnica heurística conocida como proporción de ganancia (\emph{gain-ratio}). Que es una medida basada en información que considera diferentes números y probabilidades de los resultados de las pruebas. El algoritmo así, considera todas las pruebas posibles que puede dividir el conjunto de datos para seleccionar la prueba que le haya generado mayor ganancia de información. Para cada atributo discreto, se considera una prueba con $N$ resultados, siendo $N$ el numero de valores posibles que puede tomar el atributo. Para cada atributo continuo, se realiza la prueba binaria $(1, 0)$ sobre cada uno de los valores que puede tomar el atributo de los datos. 
 
-El algoritmo C4.5, ilustrado en el Algoritmo \ref{algoC45}, presenta las siguientes características:
+El algoritmo C4.5, ilustrado en el \algref{algoC45}, presenta las siguientes características:
 
 \begin{itemize}
 	\item Permite trabajar con valores continuos para los atributos, en dos ramas según se cumpla una de las siguientes condiciones  $ A_{i} <= N $ o $ A_{i} > N $ . 
 	\item Por lo general los arboles generados por el mismo se caracterizan por ser menos frondosos, ya que cada hoja cubre una distribución de clases y no una clase en particular.
-	\item Utiliza el método \emph{divide y vencerás} para generar el árbol de decisión inicial a partir de un conjunto de datos de entrenamiento.
+	\item Utiliza el método divide y vencerás para generar el árbol de decisión inicial a partir de un conjunto de datos de entrenamiento.
 	\item Se basan en la utilización del criterio de proporción de ganancia, definido como $ I(X_{i},C) / I(X_{i})  $. De esta manera consigue evitar que variables con mayor numero de categorías salgan beneficiadas en la selección. 
 	\item Su implementación típica es recursiva.
 \end{itemize}
@@ -137,7 +137,7 @@ Ahora, supongamos que se requiera particionar las tuplas en $D$ conforme a los a
 Info_{A}(D) = \displaystyle\sum_{j=1}^{v} \displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert} \times Info(D_{j})\label{eq3:infoA}
 \end{equation}
 
-El termino $\displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert}$ actúa como el peso de la j-esima partición. $Info_{A}(D)$ es la información esperada requerida para clasificar la tupla de $D$ basada en la partición de $A$. Cuando menor sea la información esperada, mayor es la pureza de las particiones.
+El término $\displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert}$ actúa como el peso de la j-\emph{esima} partición. $Info_{A}(D)$ es la información esperada requerida para clasificar la tupla de $D$ basada en la partición de $A$. Cuando menor sea la información esperada, mayor es la pureza de las particiones.
 
 La información de ganancia se define como la diferencia entre lo requerido de información original (basado en la proporción de clases) y el nuevo requerimiento, obtenido luego de realizar la partición en $A$. Es decir,
 
@@ -215,7 +215,7 @@ Dado que el atributo $Edad$ tiene mayor ganancia de información, es seleccionad
 	\caption[Árbol de decisión particionado]{\label{fig:arbolPartEdad}Árbol de decisión: Particionado en el atributo 'Edad'}
 \end{figure}
 
-Notese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la clase $SI$, por lo tanto en esta rama se crea una hoja con etiqueta $SI$. Para las particiones $Edad = Joven$ y $Edad = Adulto$, el proceso de deducción se continua hasta que se generen nodos hoja que clasifican las tuplas en una sola clase. El
+Nótese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la clase $SI$, por lo tanto en esta rama se crea una hoja con etiqueta $SI$. Para las particiones $Edad = Joven$ y $Edad = Adulto$, el proceso de deducción se continua hasta que se generen nodos hoja que clasifican las tuplas en una sola clase. El
  árbol de decisión final deducido mediante algoritmo C4.5 se muestra en la \figref{fig:arbolFinal}.
  
 \begin{figure}[!tbph]
@@ -228,7 +228,7 @@ Notese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la cl
 \subsection{Proporción de ganancia}
 La medida de información de ganancia tiene inclinación hacia un particionamiento con muchos resultados, es decir, es propenso a seleccionar atributos que tengan gran numero de valores. Por ejemplo, considerando un atributo que actúa como identificador, como $Rid$; una división en $Rid$ generaría un gran numero de particiones, tantas como valores contenga $Rid$, cada partición con una sola tupla. Debido a que cada partición es pura, la información necesaria para clasificar el conjunto dado $D$ basado en el particionamiento mencionado seria $Info_{Rid}(D)=0$. Por lo tanto, la información de ganancia es la máxima, claramente, tal partición es inútil para la clasificación. 
 
-El algoritmo C4.5, sucesor de ID3, usa una extensión de la información de ganancia conocida como proporción de ganancia, que intenta contrarrestar la inclinación mencionada.	Aplica una normalización a la información de ganancia usando un valor "Informacion de division" definido de manera análoga a $Info(D)$.
+El algoritmo C4.5, sucesor de ID3, usa una extensión de la información de ganancia conocida como proporción de ganancia, que intenta contrarrestar la inclinación mencionada.	Aplica una normalización a la información de ganancia usando un valor "información de división" definido de manera análoga a $Info(D)$.
 
 \begin{equation}
 SplitInfo_{A}(D) = -\displaystyle\sum_{j=1}^{v} \displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert} \times Info(\frac{\lvert D_{j} \rvert}{\lvert D \rvert})\label{eq3:SplitInfo}
@@ -299,7 +299,7 @@ Exhaustividad = \frac{TP}{TP + FN}\label{eq3:exaustividad}
 \end{equation}
 
 
-El Valor-F combina precisión y exhaustividad en un solo valor:
+El \emph{Valor-F} combina precisión y exhaustividad en un solo valor:
 \begin{equation}
 Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión} + Exhaustividad}\label{eq3:valorf}
 \end{equation}
@@ -355,5 +355,5 @@ Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión}
 		= 0,9680
 \end{equation*}
 
-Teniendo en cuenta estas métricas para la muestra de 10.000 tuplas, podemos suponer el que modelo generado de ejemplo tiene unos altos valores de exactitud, precisión, y exhaustividad, lo cual se puede apreciar por la baja tasa de falsos positivos y negativos. Respecto al Valor-F, el tener valores altos de precisión y exhaustividad, da un valor muy alto, ya que el Valor-F es de forma general la media armónica de ambos.
+Teniendo en cuenta estas métricas para la muestra de $10.000$ tuplas, podemos suponer el que modelo generado de ejemplo tiene unos altos valores de exactitud, precisión, y exhaustividad, lo cual se puede apreciar por la baja tasa de falsos positivos y negativos. Respecto al \emph{Valor-F}, el tener valores altos de precisión y exhaustividad, da un valor muy alto, ya que el \emph{Valor-F} es de forma general la media armónica de ambos.
 

@@ -102,7 +102,7 @@ Las aplicaciones desarrolladas fueron escritas utilizando el lenguaje
 \emph{Java }principalmente. Tanto las interfaces de usuario, servicios
 de aplicación y las tareas de computación intensivas de acceso a sensores,
 procesamiento, algoritmos de \abbr{ML} y almacenamiento de datos
-fueron desarrollados integramente en Java.
+fueron desarrollados integramente en \emph{Java}.
 
 \subsection{Procedimiento Guía }
 
@@ -115,17 +115,17 @@ esta comprendida en $30.7\pm5$ años.
 El procedimiento guía de captura de datos se instruyó con el uso del
 teléfono móvil como prenda sujeta al bolsillo o en la cintura mientras
 se realiza una actividad física predeterminada. El planeamiento del
-experimento consitió en realizar en orden por un periodo de 10 a 15
+experimento consitió en realizar en orden por un periodo de 2 a 15
 minutos alguna de las tres actividades básicas y dos de transporte.
 Las actividades humanas con sus etiquetas correspondientes se listan
 a continuación:
 \begin{itemize}
-\item Caminar (\emph{WALKING})
-\item Trotar (\emph{RUNNING})
-\item Estar quieto (\emph{STILL})
-\item Estar inquieto (\emph{TILTING})
-\item Andar en bicicleta (\emph{ON BICYCLE})
-\item Andar en automóvil (\emph{ON VEHICLE})
+\item \emph{WALKING}: Caminar
+\item \emph{RUNNING}: Trotar
+\item \emph{STILL}: Estar quieto
+\item \emph{TILTING}: Estar inquieto
+\item \emph{ON BICYCLE}: Andar en bicicleta
+\item \emph{IN VEHICLE}: Andar en automóvil
 \end{itemize}
 El resultado del experimento se resume en la \tabref{tab6:sesiones},
 aquí se incluyen las sesiones hechas por los voluntarios y el tiempo
@@ -137,7 +137,7 @@ en minutos acumulado que fue invertido en cada actividad.
 \hline 
 \multirow{2}{*}{Individuo} & \multicolumn{6}{c|}{Actividades}\tabularnewline
 \cline{2-7} 
- & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}ON VEHICLE}\tabularnewline
+ & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
 \hline 
 \hline 
 AG & 80 & 33 & 12 & - & 17 & 7\tabularnewline
@@ -179,10 +179,10 @@ se resumen las cantidades de medidas de señales capturadas.
 \hline 
 \multicolumn{6}{|c|}{Actividades}\tabularnewline
 \hline 
-\emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{TILTING} & \emph{ON BICYLE} & \emph{ON VEHICLE}\tabularnewline
+\emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
 \hline 
 \hline 
-3.591.788 & 1.604.270 & 387.735 &  & 819.992 & 365.814\tabularnewline
+3.591.788 & 1.604.270 & 387.735 & 134.566 & 819.992 & 365.814\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -201,10 +201,10 @@ calculadas de acuerdo lo descrito en el proceso de la \secref{ssec44:extraction}
 \hline 
 \multicolumn{6}{|c|}{Actividades}\tabularnewline
 \hline 
-\emph{WALKING} & \emph{RUNNING} & \emph{STILL} & \emph{TILTING} & \emph{ON BICYLE} & \emph{ON VEHICLE}\tabularnewline
+\emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
 \hline 
 \hline 
-28.049 & 11.779 & 3.026 & - & 6.404 & 2.856\tabularnewline
+5.915 & 3.019 & 645 & 485 & 1.338 & 610\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -233,42 +233,79 @@ mismo a prueba y verificación para garantizar su usabilidad. Esta
 tarea se realiza utilizando la herramienta \emph{Waikato Environment
 Knowledge Analysis} \texttt{(\abbr{WEKA})} \cite{Frank2016}. 
 
-\subsection{Métricas de evaluación del clasificador}
+\subsection{Métricas de predicción numérica}
 
-A continuación se explican las métricas que se tuvieron en cuenta
-para evaluar el clasificador generado. (DEFINIR E INCLUIR LAS FORMULAS)
+De manera a evaluar el rendimiento de los clasificadores de aprendizaje
+supervisado utilizado, se describen las siguientes medidas y métricas
+de predicción numéricas que dan una noción de cuánto se acercan las
+predicciones a los datos observados \cite{Witten2017}.
+
+Utilizando la nomenclatura de que los valores $\hat{f}(x_{i})$ corresponden
+a la predicción de una instancia de evaluación $x_{i}$ e $y_{i}$
+corresponde al valor actual de la \emph{$i$-ésima} instancia, se
+define los siguiente:
 \begin{itemize}
-\item Instancias correctamente clasificadas
-\item Instancias incorrectamente clasificadas
-\item Estadísticas Kappa
-\item Error medio absoluto
-\item Error cuadrático medio
-\item Error absoluto relativo
-\item Error cuadrático relativo
-\item Número de instancias
+\item \emph{Número de instancias}: tamaño de la población de entrada $N$.
+\item \emph{Instancias correctamente clasificadas}: es una proporción del
+tamaño de la población de entrada $C$.
+\item \emph{Instancias incorrectamente clasificadas}: es un proporción del
+tamaño de la población de entrada $I$.
+\item \emph{Estadísticas Kappa}: el coeficiente \emph{kappa} de Cohen determina
+que $1.0$ es el coeficiente máximo de concordancia y $0.4$ es el
+límite de confiabilidad. \\
+\[
+\kappa\text{=}\frac{p_{o}-p_{e}}{1-p_{e}}
+\]
+donde $p_{o}$ es el acuerdo observado relativo y $p_{e}$ es la probabilidad
+hipotética de acuerdo.
+\item \emph{Error medio absoluto}: es el promedio de la magnitud de los
+errores absolutos individuales.
+\[
+\frac{1}{n}\sum_{i\text{=1}}^{n}\bigl|y_{i}-\hat{f}(x_{i})\bigr|
+\]
+\item \emph{Raíz de Error cuadrático medio}: es la raíz del promedio de
+la magnitud de los errores individuales elevados al cuadrado.
+\[
+\sqrt{\frac{1}{n}\sum_{i\text{=1}}^{n}\left(y_{i}-\hat{f}(x_{i})\right)^{2}}
+\]
+\item \emph{Error absoluto relativo}: es la razón de la suma de los errores
+absolutos y la suma de las diferencia de los valores exactos con la
+media. 
+\[
+\sum_{i\text{=1}}^{n}\frac{\bigl|y_{i}-\hat{f}(x_{i})\bigr|}{\bigl|y_{i}-\bar{y}\bigr|}\,\textrm{, donde\,}\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}
+\]
+\item \emph{Raíz de Error cuadrático relativo}: es la raíz de la razón de
+la suma de los errores individuales elevados al cuadrado y la suma
+de las diferencia de los valores exactos con la media elevados al
+cuadrado. 
+\[
+\sqrt{\sum_{i\text{=1}}^{n}\frac{\left(y-\hat{f}(x_{i})\right)^{2}}{\left(y_{i}-\bar{y_{i}}\right)^{2}}}
+\]
 \end{itemize}
 
-\subsection{Clasificador C4.5 generado}
+\subsection{Evaluación del clasificador}
 
-A continuación se resume el resultado de evaluación del árbol generado
-utilizando el algoritmo C4.5 y la implementación \emph{Java} J48 \cite{Frank2016b}.
-El tamaño del árbol generado es de 3.345 nodos, de los cuales 1.673
-corresponden a hojas.
+El clasificador generado en este trabajo es un árbol de decisión obtenido
+por medio del algoritmo C4.5 (\algref{algoC45}) y la implementación
+en \emph{Java} J48 \cite{Frank2016b}. El tamaño del árbol generado
+es de $677$ nodos, de los cuales $339$ corresponden a hojas.
 
-El ensayo del clasificador generado con las muestras de entrenamiento
-recolectadas presenta los siguientes resultados: 
+A continuación se presenta el resultado de las métricas de evaluación
+del clasificador generado con las muestras de entrenamiento recolectadas: 
 \begin{itemize}
-\item Instancias correctamente clasificadas: 45.086 (86,5142 \%)
-\item Instancias incorrectamente clasificadas: 7.028 (13,4858 \%)
-\item Estadísticas Kappa: 0,7871 
-\item Error medio absoluto: 0,0653 
-\item Error cuadrático medio: 0,2187 
-\item Error absoluto relativo: 25,6021 \% 
-\item Error cuadrático relativo: 61,2282 \% 
-\item Número de instancias: 52.114 
+\item Número de instancias: $12.012$ 
+\item Instancias correctamente clasificadas: $10.942$ (en porcentaje $91,0922$
+\%)
+\item Instancias incorrectamente clasificadas: $1.070$ (en porcentaje $8,9078$
+\%)
+\item Estadísticas Kappa: $0,8678$ 
+\item Error medio absoluto: $0,0341$
+\item Raíz de Error cuadrático medio: $0,164$ 
+\item Error absoluto relativo: $15,1717$ \% 
+\item Raíz de Error cuadrático relativo: $48,9126$ \% 
 \end{itemize}
-La evaluación del clasificador resultante se resume en la \tabref{tab6:matriz-confusion}
-que muestra la matriz de confusión explicada en la \secref{sec3:metricas}. 
+Adicionalmente, en la \tabref{tab6:matriz-confusion} se muestra la
+matriz de confusión obtenida así como se detalla en la \secref{sec3:metricas}. 
 
 \begin{table}[h]
 \begin{centering}
@@ -279,17 +316,17 @@ que muestra la matriz de confusión explicada en la \secref{sec3:metricas}.
 Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}ON VEHICLE}\tabularnewline
 \hline 
 \hline 
-\emph{\footnotesize{}WALKING} & 25.334 & 888 & 74 & - & 1.640 & 113\tabularnewline
+\emph{\footnotesize{}WALKING} & 5.643 & 63 & 21 & 28 & 156 & 4\tabularnewline
 \hline 
-\emph{\footnotesize{}RUNNING} & 1.103 & 10.545 & 13 & - & 115 & 3\tabularnewline
+\emph{\footnotesize{}RUNNING} & 122 & 2.852 & 3 & 6 & 36 & 0\tabularnewline
 \hline 
-\emph{\footnotesize{}STILL} & 97 & 23 & 2.557 & - & 74 & 275\tabularnewline
+\emph{\footnotesize{}STILL} & 19 & 14 & 555 & 23 & 15 & 19\tabularnewline
 \hline 
-\emph{\footnotesize{}TILTING} & - & - & - & - & - & -\tabularnewline
+\emph{\footnotesize{}TILTING} & 26 & 3 & 21 & 304 & 46 & 85\tabularnewline
 \hline 
-\emph{\footnotesize{}ON BICYLE} & 2.018 & 106 & 40 & - & 4.144 & 96\tabularnewline
+\emph{\footnotesize{}ON BICYLE} & 157 & 28 & 7 & 47 & 1.089 & 10\tabularnewline
 \hline 
-\emph{\footnotesize{}ON VEHICLE} & 88 & 15 & 156 & - & 91 & 2.506\tabularnewline
+\emph{\footnotesize{}ON VEHICLE} & 2 & 2 & 14 & 86 & 7 & 499\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -297,13 +334,13 @@ Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emp
 resultante}
 \end{table}
 
-De esta forma, los valores calculados de las métricas presentadas
-en la \secref{sec3:metricas} corresponden a:
+Finalmente, los calculos realizados en base a las métricas principales
+de clasificación presentadas en la \secref{sec3:metricas} son:
 \begin{itemize}
-\item Precisión: 0,8651
-\item Exhaustividad: 0,8651
-\item Exactitud: 0,9461
-\item Valor-F: 0,8651
+\item Precisión: $0,9174$
+\item Exhaustividad: $0,9109$
+\item Exactitud: $0,9714$
+\item \emph{Valor-F}: $0,9142$
 \end{itemize}
 
 \section{Resultados Experimentales}
