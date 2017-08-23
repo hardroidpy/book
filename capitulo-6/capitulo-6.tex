@@ -118,15 +118,32 @@ se realiza una actividad física predeterminada. El planeamiento del
 experimento consitió en realizar en orden por un periodo de 2 a 15
 minutos alguna de las tres actividades básicas y dos de transporte.
 Las actividades humanas con sus etiquetas correspondientes se listan
-a continuación:
-\begin{itemize}
-\item \emph{WALKING}: Caminar
-\item \emph{RUNNING}: Trotar
-\item \emph{STILL}: Estar quieto
-\item \emph{TILTING}: Estar inquieto
-\item \emph{ON BICYCLE}: Andar en bicicleta
-\item \emph{IN VEHICLE}: Andar en automóvil
-\end{itemize}
+en la siguiente \tabref{tab6:etiquetas}.
+
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}[t]{|c|l|l|}
+\hline 
+Símbolo & Etiqueta & Descripción\tabularnewline
+\hline 
+\hline 
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_walk} & \emph{WALKING} & Caminar\tabularnewline
+\hline 
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_run} & \emph{RUNNING} & Trotar\tabularnewline
+\hline 
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_still} & \emph{STILL} & Estar quieto\tabularnewline
+\hline 
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_tilt} & \emph{TILTING} & Estar inquieto\tabularnewline
+\hline 
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_bike} & \emph{ON BICYCLE}  & Andar en bicicleta\tabularnewline
+\hline 
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_car} & \emph{IN VEHICLE}  & \multirow{1}{*}{Andar en automóvil}\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab6:etiquetas}Actividades humanas etiquetadas}
+\end{table}
+
 El resultado del experimento se resume en la \tabref{tab6:sesiones},
 aquí se incluyen las sesiones hechas por los voluntarios y el tiempo
 en minutos acumulado que fue invertido en cada actividad. 
@@ -140,7 +157,7 @@ en minutos acumulado que fue invertido en cada actividad.
  & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
 \hline 
 \hline 
-AG & 80 & 33 & 12 & - & 17 & 7\tabularnewline
+AG & 80 & 33 & 12 & 10 & 17 & 7\tabularnewline
 \hline 
 SG & 15 & 15 & - & - & - & -\tabularnewline
 \hline 
@@ -152,7 +169,7 @@ BV & - & 17 & - & - & - & -\tabularnewline
 \hline 
 PV & 17 & 19 & 12 & - & - & 7\tabularnewline
 \hline 
-SY & 37 & 13 &  & - & 26 & 11\tabularnewline
+SY & 37 & 13 &  & 10 & 26 & 11\tabularnewline
 \hline 
 MD & 29 & 4 & - & - & - & -\tabularnewline
 \hline 
@@ -224,40 +241,67 @@ del flujo mostrado en la \figref{fig6:proceso-clasi}.
 
 \section{Clasificador de Actividades Humanas}
 
-\label{sec6:clasificacion}Un clasificador es .... (DEFINIR que es
-un clasificador ) y tiene que ser generado para ...
+\label{sec6:clasificacion}Un clasificador de actividades humanas
+es un clasificador de clases discretas que utiliza un algoritmo de
+aprendizaje automático supervisado basado en árboles de decisión.
+Este clasificador evalúa como entrada una instancia sin etiquetar
+obtenida a partir de datos observados y produce como salida una predicción
+de la etiqueta más probable asociada en base a observaciones previas.
 
 En esta sección se describe el procedimiento de generación de un clasificador
-\abbr{HAR} utilizando el conjunto de entrenamiento y sometiendo el
-mismo a prueba y verificación para garantizar su usabilidad. Esta
-tarea se realiza utilizando la herramienta \emph{Waikato Environment
-Knowledge Analysis} \texttt{(\abbr{WEKA})} \cite{Frank2016}. 
+\abbr{HAR} utilizando un conjunto de entrenamiento inicial. Luego
+se evalúa el mismo por medio de pruebas y verificación para garantizar
+su efectividad. Este procedimiento se realiza utilizando la herramienta
+de aprendizaje automático denominado \emph{Waikato Environment Knowledge
+Analysis} \texttt{(\abbr{WEKA})} \cite{Frank2016}. 
 
 \subsection{Métricas de predicción numérica}
 
 De manera a evaluar el rendimiento de los clasificadores de aprendizaje
-supervisado utilizado, se describen las siguientes medidas y métricas
+automático supervisado se describen las siguientes medidas y métricas
 de predicción numéricas que dan una noción de cuánto se acercan las
 predicciones a los datos observados \cite{Witten2017}.
 
-Utilizando la nomenclatura de que los valores $\hat{f}(x_{i})$ corresponden
-a la predicción de una instancia de evaluación $x_{i}$ e $y_{i}$
-corresponde al valor actual de la \emph{$i$-ésima} instancia, se
-define los siguiente:
+Utilizando la siguiente nomenclatura de la definición \ref{def3:clasificacion}
+de la \secref{sec3:aprendizaje} en que $\hat{f}(x_{i})$ corresponde
+a los valores de la predicción de una instancia de evaluación $x_{i}$
+e $y_{i}$ corresponde al valor actual de la \emph{$i$-ésima} instancia,
+se define cuanto sigue:
 \begin{itemize}
-\item \emph{Número de instancias}: tamaño de la población de entrada $N$.
+\item \emph{Número de instancias}: es el tamaño de la población de entrada
+$N$.
 \item \emph{Instancias correctamente clasificadas}: es una proporción del
 tamaño de la población de entrada $C$.
 \item \emph{Instancias incorrectamente clasificadas}: es un proporción del
 tamaño de la población de entrada $I$.
-\item \emph{Estadísticas Kappa}: el coeficiente \emph{kappa} de Cohen determina
-que $1.0$ es el coeficiente máximo de concordancia y $0.4$ es el
-límite de confiabilidad. \\
+\item \emph{Estadísticas Kappa}: es el coeficiente \emph{kappa} de \emph{Cohen}
+que establece el valor de coeficiente de concordancia para confiabilidad
+de los datos. 
 \[
 \kappa\text{=}\frac{p_{o}-p_{e}}{1-p_{e}}
 \]
-donde $p_{o}$ es el acuerdo observado relativo y $p_{e}$ es la probabilidad
-hipotética de acuerdo.
+, donde $p_{o}$ es el acuerdo observado relativo y $p_{e}$ es la
+probabilidad hipotética de acuerdo. Los valores se dividen en los
+siguientes rangos.\\
+\\
+\begin{tabular}{|c|c|c|}
+\hline 
+Valor & Nivel de acuerdo & \% de datos confiables\tabularnewline
+\hline 
+\hline 
+0 - 0.20 & No & 0 - 4\%\tabularnewline
+\hline 
+0.21 - 0.39 & Mínimo & 4 - 15\%\tabularnewline
+\hline 
+0.40 - 0.59 & Débil & 15 - 35\%\tabularnewline
+\hline 
+0.60 - 0.79 & Moderado & 35 - 63\%\tabularnewline
+\hline 
+0.80 - 0.90 & Fuerte & 64 - 81\%\tabularnewline
+\hline 
+>0.90 & Casi perfecto & 82 - 100\%\tabularnewline
+\hline 
+\end{tabular}
 \item \emph{Error medio absoluto}: es el promedio de la magnitud de los
 errores absolutos individuales.
 \[
@@ -269,8 +313,8 @@ la magnitud de los errores individuales elevados al cuadrado.
 \sqrt{\frac{1}{n}\sum_{i\text{=1}}^{n}\left(y_{i}-\hat{f}(x_{i})\right)^{2}}
 \]
 \item \emph{Error absoluto relativo}: es la razón de la suma de los errores
-absolutos y la suma de las diferencia de los valores exactos con la
-media. 
+absolutos y la suma de las diferencia absoluta de los valores exactos
+con la media. 
 \[
 \sum_{i\text{=1}}^{n}\frac{\bigl|y_{i}-\hat{f}(x_{i})\bigr|}{\bigl|y_{i}-\bar{y}\bigr|}\,\textrm{, donde\,}\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}
 \]
@@ -290,8 +334,9 @@ por medio del algoritmo C4.5 (\algref{algoC45}) y la implementación
 en \emph{Java} J48 \cite{Frank2016b}. El tamaño del árbol generado
 es de $677$ nodos, de los cuales $339$ corresponden a hojas.
 
-A continuación se presenta el resultado de las métricas de evaluación
-del clasificador generado con las muestras de entrenamiento recolectadas: 
+A continuación se presentan las métricas numéricas de predicción del
+clasificador generado con las muestras de entrenamiento recolectadas
+y descritas anteriormente: 
 \begin{itemize}
 \item Número de instancias: $12.012$ 
 \item Instancias correctamente clasificadas: $10.942$ (en porcentaje $91,0922$
@@ -304,14 +349,17 @@ del clasificador generado con las muestras de entrenamiento recolectadas:
 \item Error absoluto relativo: $15,1717$ \% 
 \item Raíz de Error cuadrático relativo: $48,9126$ \% 
 \end{itemize}
-Adicionalmente, en la \tabref{tab6:matriz-confusion} se muestra la
-matriz de confusión obtenida así como se detalla en la \secref{sec3:metricas}. 
+En general, se puede apreciar que la taza de errorres es baja, la
+cantidad de instancias correctas alta y el coeficiente de confianza
+es fuerte. Adicionalmente, en la \tabref{tab6:matriz-confusion} se
+muestra la matriz de confusión obtenida así como se detalla en la
+\secref{sec3:metricas}. 
 
 \begin{table}[h]
 \begin{centering}
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\begin{tabular}{|l|c|c|c|c|c|c|}
 \cline{2-7} 
-\multicolumn{1}{c|}{} & \multicolumn{6}{c|}{Matriz de Confusión}\tabularnewline
+\multicolumn{1}{l|}{} & \multicolumn{6}{c|}{Matriz de Confusión}\tabularnewline
 \hline 
 Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}ON VEHICLE}\tabularnewline
 \hline 
@@ -334,14 +382,17 @@ Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emp
 resultante}
 \end{table}
 
-Finalmente, los calculos realizados en base a las métricas principales
-de clasificación presentadas en la \secref{sec3:metricas} son:
+A partir de esta matriz se obtuvieron los siguientes calculos de métricas
+de evaluación para clasificadores expuesto también en la \secref{sec3:metricas}:
 \begin{itemize}
 \item Precisión: $0,9174$
 \item Exhaustividad: $0,9109$
 \item Exactitud: $0,9714$
 \item \emph{Valor-F}: $0,9142$
 \end{itemize}
+Finalmente, se puede apreciar que los valores demuestran una buena
+efectividad del clasificador generado debido a que las métricas están
+por encima de 90\%.
 
 \section{Resultados Experimentales}
 

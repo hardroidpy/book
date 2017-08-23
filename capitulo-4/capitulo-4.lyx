@@ -4691,6 +4691,17 @@ ref{chap:Aprendizaje-Automatico}
 
 \end_inset
 
+ y cuya implementación se basa en la implementación 
+\emph on
+Java
+\emph default
+ J48 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Frank2016b"
+
+\end_inset
+
 .
 \end_layout
 

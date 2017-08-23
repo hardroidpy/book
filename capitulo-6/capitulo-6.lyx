@@ -927,56 +927,321 @@ El procedimiento guía de captura de datos se instruyó con el uso del teléfono
  una actividad física predeterminada.
  El planeamiento del experimento consitió en realizar en orden por un periodo
  de 2 a 15 minutos alguna de las tres actividades básicas y dos de transporte.
- Las actividades humanas con sus etiquetas correspondientes se listan a
- continuación:
+ Las actividades humanas con sus etiquetas correspondientes se listan en
+ la siguiente 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab6:etiquetas}
 \end_layout
 
-\begin_layout Itemize
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features tabularvalignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Símbolo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Etiqueta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphics/ic_activity_walk.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \emph on
 WALKING
-\emph default
-: Caminar
 \end_layout
 
-\begin_layout Itemize
+\end_inset
+</cell>
+<cell mroffset="5cm" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caminar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphics/ic_activity_run.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \emph on
 RUNNING
-\emph default
-: Trotar
 \end_layout
 
-\begin_layout Itemize
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trotar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphics/ic_activity_still.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \emph on
 STILL
-\emph default
-: Estar quieto
 \end_layout
 
-\begin_layout Itemize
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estar quieto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphics/ic_activity_tilt.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \emph on
 TILTING
-\emph default
-: Estar inquieto
 \end_layout
 
-\begin_layout Itemize
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estar inquieto
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphics/ic_activity_bike.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \emph on
 ON BICYCLE
 \emph default
-: Andar en bicicleta
+ 
 \end_layout
 
-\begin_layout Itemize
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Andar en bicicleta
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphics/ic_activity_car.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 
 \emph on
 IN VEHICLE
 \emph default
-: Andar en automóvil
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Andar en automóvil
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab6:etiquetas"
+
+\end_inset
+
+Actividades humanas etiquetadas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1206,7 +1471,7 @@ AG
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+10
 \end_layout
 
 \end_inset
@@ -1596,7 +1861,7 @@ SY
 \begin_inset Text
 
 \begin_layout Plain Layout
--
+10
 \end_layout
 
 \end_inset
@@ -2352,8 +2617,12 @@ name "sec6:clasificacion"
 
 \end_inset
 
-Un clasificador es ....
- (DEFINIR que es un clasificador ) y tiene que ser generado para ...
+Un clasificador de actividades humanas es un clasificador de clases discretas
+ que utiliza un algoritmo de aprendizaje automático supervisado basado en
+ árboles de decisión.
+ Este clasificador evalúa como entrada una instancia sin etiquetar obtenida
+ a partir de datos observados y produce como salida una predicción de la
+ etiqueta más probable asociada en base a observaciones previas.
 \end_layout
 
 \begin_layout Standard
@@ -2371,9 +2640,11 @@ abbr{HAR}
 
 \end_inset
 
- utilizando el conjunto de entrenamiento y sometiendo el mismo a prueba
- y verificación para garantizar su usabilidad.
- Esta tarea se realiza utilizando la herramienta 
+ utilizando un conjunto de entrenamiento inicial.
+ Luego se evalúa el mismo por medio de pruebas y verificación para garantizar
+ su efectividad.
+ Este procedimiento se realiza utilizando la herramienta de aprendizaje
+ automático denominado 
 \emph on
 Waikato Environment Knowledge Analysis
 \emph default
@@ -2411,7 +2682,7 @@ Métricas de predicción numérica
 
 \begin_layout Standard
 De manera a evaluar el rendimiento de los clasificadores de aprendizaje
- supervisado utilizado, se describen las siguientes medidas y métricas de
+ automático supervisado se describen las siguientes medidas y métricas de
  predicción numéricas que dan una noción de cuánto se acercan las predicciones
  a los datos observados 
 \begin_inset CommandInset citation
@@ -2424,11 +2695,38 @@ key "Witten2017"
 \end_layout
 
 \begin_layout Standard
-Utilizando la nomenclatura de que los valores 
+Utilizando la siguiente nomenclatura de la definición 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{def3:clasificacion}
+\end_layout
+
+\end_inset
+
+ de la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+secref{sec3:aprendizaje}
+\end_layout
+
+\end_inset
+
+ en que 
 \begin_inset Formula $\hat{f}(x_{i})$
 \end_inset
 
- corresponden a la predicción de una instancia de evaluación 
+ corresponde a los valores de la predicción de una instancia de evaluación
+ 
 \begin_inset Formula $x_{i}$
 \end_inset
 
@@ -2444,7 +2742,7 @@ Utilizando la nomenclatura de que los valores
 
 -ésima
 \emph default
- instancia, se define los siguiente:
+ instancia, se define cuanto sigue:
 \end_layout
 
 \begin_layout Itemize
@@ -2452,7 +2750,7 @@ Utilizando la nomenclatura de que los valores
 \emph on
 Número de instancias
 \emph default
-: tamaño de la población de entrada 
+: es el tamaño de la población de entrada 
 \begin_inset Formula $N$
 \end_inset
 
@@ -2488,24 +2786,17 @@ Instancias incorrectamente clasificadas
 \emph on
 Estadísticas Kappa
 \emph default
-: el coeficiente 
+: es el coeficiente 
 \emph on
 kappa
 \emph default
- de Cohen determina que 
-\begin_inset Formula $1.0$
-\end_inset
-
- es el coeficiente máximo de concordancia y 
-\begin_inset Formula $0.4$
-\end_inset
-
- es el límite de confiabilidad.
+ de 
+\emph on
+Cohen
+\emph default
+ que establece el valor de coeficiente de concordancia para confiabilidad
+ de los datos.
  
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset Formula 
 \[
 \kappa\text{=}\frac{p_{o}-p_{e}}{1-p_{e}}
@@ -2513,7 +2804,7 @@ kappa
 
 \end_inset
 
-donde 
+, donde 
 \begin_inset Formula $p_{o}$
 \end_inset
 
@@ -2522,6 +2813,229 @@ donde
 \end_inset
 
  es la probabilidad hipotética de acuerdo.
+ Los valores se dividen en los siguientes rangos.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nivel de acuerdo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+% de datos confiables
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 - 0.20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 - 4%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.21 - 0.39
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mínimo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 - 15%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.40 - 0.59
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Débil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15 - 35%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.60 - 0.79
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Moderado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+35 - 63%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.80 - 0.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fuerte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+64 - 81%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+>0.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Casi perfecto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+82 - 100%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -2563,7 +3077,7 @@ Raíz de Error cuadrático medio
 Error absoluto relativo
 \emph default
 : es la razón de la suma de los errores absolutos y la suma de las diferencia
- de los valores exactos con la media.
+ absoluta de los valores exactos con la media.
  
 \begin_inset Formula 
 \[
@@ -2637,8 +3151,9 @@ key "Frank2016b"
 \end_layout
 
 \begin_layout Standard
-A continuación se presenta el resultado de las métricas de evaluación del
- clasificador generado con las muestras de entrenamiento recolectadas: 
+A continuación se presentan las métricas numéricas de predicción del clasificado
+r generado con las muestras de entrenamiento recolectadas y descritas anteriorme
+nte: 
 \end_layout
 
 \begin_layout Itemize
@@ -2714,7 +3229,9 @@ Raíz de Error cuadrático relativo:
 \end_layout
 
 \begin_layout Standard
-Adicionalmente, en la 
+En general, se puede apreciar que la taza de errorres es baja, la cantidad
+ de instancias correctas alta y el coeficiente de confianza es fuerte.
+ Adicionalmente, en la 
 \begin_inset ERT
 status open
 
@@ -2756,7 +3273,7 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="7">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2764,7 +3281,7 @@ status open
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2829,7 +3346,7 @@ Matriz de Confusión
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2912,7 +3429,7 @@ ON VEHICLE
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2980,7 +3497,7 @@ WALKING
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3048,7 +3565,7 @@ RUNNING
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3116,7 +3633,7 @@ STILL
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3184,7 +3701,7 @@ TILTING
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3252,7 +3769,7 @@ ON BICYLE
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3350,8 +3867,8 @@ Matriz de confusión del clasificador resultante
 \end_layout
 
 \begin_layout Standard
-Finalmente, los calculos realizados en base a las métricas principales de
- clasificación presentadas en la 
+A partir de esta matriz se obtuvieron los siguientes calculos de métricas
+ de evaluación para clasificadores expuesto también en la 
 \begin_inset ERT
 status open
 
@@ -3364,7 +3881,7 @@ secref{sec3:metricas}
 
 \end_inset
 
- son:
+:
 \end_layout
 
 \begin_layout Itemize
@@ -3401,6 +3918,12 @@ Valor-F
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Finalmente, se puede apreciar que los valores demuestran una buena efectividad
+ del clasificador generado debido a que las métricas están por encima de
+ 90%.
 \end_layout
 
 \begin_layout Section
