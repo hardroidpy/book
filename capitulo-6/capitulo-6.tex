@@ -361,7 +361,7 @@ muestra la matriz de confusión obtenida así como se detalla en la
 \cline{2-7} 
 \multicolumn{1}{l|}{} & \multicolumn{6}{c|}{Matriz de Confusión}\tabularnewline
 \hline 
-Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}ON VEHICLE}\tabularnewline
+Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
 \hline 
 \hline 
 \emph{\footnotesize{}WALKING} & 5.643 & 63 & 21 & 28 & 156 & 4\tabularnewline
@@ -374,7 +374,7 @@ Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emp
 \hline 
 \emph{\footnotesize{}ON BICYLE} & 157 & 28 & 7 & 47 & 1.089 & 10\tabularnewline
 \hline 
-\emph{\footnotesize{}ON VEHICLE} & 2 & 2 & 14 & 86 & 7 & 499\tabularnewline
+\emph{\footnotesize{}IN VEHICLE} & 2 & 2 & 14 & 86 & 7 & 499\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -396,4 +396,128 @@ por encima de 90\%.
 
 \section{Resultados Experimentales}
 
-\label{sec6:resultados}Describir resultados de experimento con HARDroid.
+\label{sec6:resultados}En esta sección se describen los resultados
+del experimento realizado utilizando la aplicación \emph{ActivitySurvey}
+que utiliza el reconocedor \emph{HARDroid}, ambos desarrollados en
+este trabajo. Los datos presentados en esta sección permiten verificar
+la correctitud de los componentes de software implementados así como
+también validar las predicciones emitidas por el reconocedor de actividades
+humanas contribuido en este trabajo.
+
+\subsection{Verificación del clasificador}
+
+Para verificar el clasificador de \emph{HARDroid }se condujo un experimento
+de prueba basado en una sesión de actividades físicas realizadas por
+dos personas. El protocolo consitió en realizar cada una de las actividades
+básicas ambulatorias y de transporte por un periodo comprendido entre
+10 a 20 minutos utilizando la aplicación \emph{ActivitySurvey}. 
+
+En la \tabref{tab6:vsesiones} se resume el tiempo en minutos invertido
+por cada persona en las actividades realizadas en un lapso de una
+hora aproximadamente.
+
+\begin{table}[th]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline 
+\multirow{2}{*}{Individuo} & \multicolumn{6}{c|}{Actividades}\tabularnewline
+\cline{2-7} 
+ & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
+\hline 
+\hline 
+nexus5x & 14 & 10 & 10 & - & 20 & 14\tabularnewline
+\hline 
+mate9 & 12 & 7 & 18 & - & 15 & 14\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab6:vsesiones}Resumen de sesiones de evaluación}
+\end{table}
+
+La aplicación \emph{ActivitySurvey} registra durante la sesión de
+evaluación los datos del individuo, la fecha y hora de la actividad
+detectada y la etiqueta de actividad aseverada en caso de una predicción
+correcta o una corrección de la etiqueta real. 
+
+En la \tabref{tab6:vencuesta} se resumen las cantidades de actividades
+detectadas correcta e incorrectamente en proporción con el total a
+partir de la encuesta realizada durante cada sesión. La respuesta
+incorrecta corresponde a una etiqueta obtenida por retro alimentación
+del usuario.
+
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\cline{2-5} 
+\multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Incorrecta}} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\tabularnewline
+\hline 
+Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE} & \textbf{\small{}Correcta} & \textbf{\small{}Porcentaje}\tabularnewline
+\hline 
+\hline 
+\emph{\footnotesize{}WALKING} &  &  & 13 &  & 145 & 91,77\%\tabularnewline
+\hline 
+\emph{\footnotesize{}RUNNING} &  &  & 13 &  & 83 & 86,46\%\tabularnewline
+\hline 
+\emph{\footnotesize{}STILL} &  &  &  & 8 & 140 & 94,59\%\tabularnewline
+\hline 
+\emph{\footnotesize{}TILTING} &  &  &  & 38 & 0 & 0,00\%\tabularnewline
+\hline 
+\emph{\footnotesize{}ON BICYLE} & 18 &  &  & 14 & 59 & 64,84\%\tabularnewline
+\hline 
+\emph{\footnotesize{}IN VEHICLE} &  & 11 &  &  & 83 & 88,30\%\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption[Actividades correctas e incorrectas]{\label{tab6:vencuesta}Resumen de actividades detectadas correctas
+e incorrectas}
+\end{table}
+
+
+\subsection{Validación de la clasificación}
+
+Para validar los resultados de la clasificación de \emph{HARDroid
+}se condujo un experimento de prueba basado en la misma sesión de
+actividades físicas realizadas por una persona. El protocolo consitió
+en utilizar la aplicación \emph{Sony} \emph{LifeLog} a la par de la
+aplicación \emph{ActivitySurvey} durante las sesiones de evaluación. 
+
+En la \tabref{tab6:vclasificacion} se muestra el tiempo invertido
+en minutos en cada actividad humana realizado por una persona.
+
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}{|c|>{\raggedright}p{3cm}|c|c|>{\raggedright}p{3cm}|c|}
+\hline 
+Sesión & Actividad \emph{LifeLog} & Intervalo & Duración & Actividad \emph{HARDroid} & Razón\tabularnewline
+\hline 
+\hline 
+nexus5x & walking & 21:26 - 21:44 & 19 & WALKING & 45/9\tabularnewline
+\hline 
+nexus5x & cycling & 21:44 - 22:00 & 27 & ON\_BICYCLE & 32/18\tabularnewline
+\hline 
+nexus5x & running & 22:12 - 22:24 & 13 & RUNNING & 41/0\tabularnewline
+\hline 
+nexus5x & vehicle & 22:39 - 22:57 & 19 & IN\_VEHICLE & 32/6\tabularnewline
+\hline 
+nexus5x & - & 22:25 - 22:35 & 10 & STILL & 65/0\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption[Evaluación \emph{HARDroid} vs \emph{Sony LifeLog}]{\label{tab6:vclasificacion}Resumen de actividades detectadas \emph{HARDroid}
+vs\emph{ Sony LifeLog}}
+\end{table}
+
+Cada actividad detectada por \emph{HARDroid} es validada con la aplicación
+\emph{Sony} \emph{LifeLog} y además se inclyye la razón de correctas
+versus incorrectas. En la \figref{fig6:vlifelog} se muestra la salida
+de la aplicación \emph{Sony Lifelog }de la sesión individual.
+
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.7]{capitulo-6/graphics/lifelog1} \includegraphics[scale=0.7]{capitulo-6/graphics/lifelog2}
+\par\end{centering}
+\caption[Evaluación con aplicación \emph{Sony Lifelog}]{\label{fig6:vlifelog}Resultado de sesión de evaluación con \emph{Sony
+Lifelog}}
+
+\end{figure}
+

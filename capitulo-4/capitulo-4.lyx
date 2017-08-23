@@ -1408,14 +1408,14 @@ status open
 \align center
 \begin_inset Graphics
 	filename graphics/sensorlog1.jpg
-	scale 80
+	scale 70
 
 \end_inset
 
-
+ 
 \begin_inset Graphics
 	filename graphics/sensorlog2.jpg
-	scale 80
+	scale 70
 
 \end_inset
 
