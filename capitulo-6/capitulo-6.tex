@@ -14,46 +14,49 @@ a la captura de datos, determinando los requisitos mínimos de los
 teléfonos móviles utilizados y describiendo el procedimiento guía
 para experimentación. Posteriormente, la sección \ref{sec6:clasificacion}
 describe los resultados obtenidos al aplicar las técnicas descritas
-en la sección \ref{sec44:proceso-se=0000F1ales} para transformar
-datos sensoriales a un conjunto de entrenamiento para la clasificación
-de actividades humanas. Finalmente, en la sección \ref{sec6:resultados}
-los resultados producidos al utilizar el conjunto entrenamiento disponible
-son presentados. Esto incluye la validación del modelo construido
-con el algoritmo de \emph{Machine Learning} (\abbr{ML}) escogido
-que confirma su usabilidad en ambientes productivos. También se expone
-la evaluación de los resultados producidos por \emph{\abbr{HARDroid}
-}con la aplicación \emph{ActivitySurvey} desarrollada para esta tarea.
+en la \secref{sec44:proceso-señales} para transformar datos sensoriales
+a un conjunto de entrenamiento necesario para clasificar actividades
+humanas. Esto incluye la validación del clasificador construido con
+las técnicas de \emph{Machine Learning} (\abbr{ML}) expuestas en
+este trabajo y confirma su efectividad en ambientes productivos. 
+
+Finalmente, en la sección \ref{sec6:resultados} los resultados producidos
+al utilizar el clasificador construido con el conjunto entrenamiento
+inicial son presentados. Aquí se expone la evaluación de los resultados
+producidos por \emph{HARDroid }en conjunción con la aplicación \emph{ActivitySurvey}
+desarrollada para esta tarea.
 
 \section{Datos Experimentales}
 
 \label{sec6:recoleccion}En base a trabajos precedentes en sistemas
 \abbr{HAR}, se han dispuesto datos experimentales para entrenar clasificadores
 de actividades humanas tales como en \cite{ReyesOrtiz2013}. Estos
-datos están disponibles como fuente para diversos estudios de investigaciones
-en este ámbito. 
+datos están disponibles para ser utilizados como fuente para diversos
+estudios de investigación en este ámbito. 
 
 Sin embargo, los datos de sensores capturados con teléfonos móviles
-son escasos. Es por esta razón que este trabajo requirió realizar
-una colecta acorde a los objetivos de estudio del mismo. El procedimiento
-y los datos recolectados por medio de experimentación se describen
-a continuación.
+aún son escasos. Es por esta razón que en este trabajo se requirió
+realizar una recolección acorde a los objetivos de estudio del mismo.
+El procedimiento y los datos recolectados por medio de experimentación
+se describen a continuación.
 
 \subsection{Instrumentación}
 
-Como es sabido el desarrollo de \emph{\abbr{HARDroid} }se concreto
-completamente para la plataforma \emph{\abbr{Android} }y a continuación
+Como está constatado en capítulos anteriores el desarrollo de \emph{HARDroid
+}se concreto completamente para la plataforma \emph{Android }y a continuación
 se detallan los rasgos técnicos de las herramientas utilizadas para
 su concepción y evaluación.
 
 \subsubsection{Teléfonos inteligentes}
 
 Escoger las herramientas apropiadas para desarrollar un sistema \abbr{HAR}
-requiere de la evaluación de dispositivos móviles disponibles en el
-mercado teniendo en cuenta los criterios citados en la \secref{sec24:dispositivos-moviles}:
-\emph{hardware}, sensores y software de plataforma. En el periodo
-de evaluación de este trabajo (2016), la cantidad de teléfonos inteligentes
-con sensores de aceleración fue vasta, algunos de los cuales se listan
-en la \tabref{tab6:dispositivos} con sus características relevantes.
+requiere primeramente de la elección de teléfonos móviles modernos
+disponibles en el mercado, teniendo en cuenta los criterios citados
+en la \secref{sec24:dispositivos-moviles} en cuanto a: \emph{hardware},
+sensores y plataforma de \emph{software}. En el periodo de pruebas
+de este trabajo (2016), la cantidad de teléfonos inteligentes con
+sensores de aceleración fue vasta, algunos de los cuales se listan
+en la \tabref{tab6:dispositivos} junto con sus características relevantes.
 
 \begin{table}[h]
 \begin{centering}
@@ -82,14 +85,15 @@ Samsung A5 & Q1.2GHz Cortex-A53  & 2GB/16GB & BOSCH & Lollipop 5.1.1\tabularnewl
 de entrenamiento.}
 \end{table}
 
-La elección fue en base a los dispositivos móviles disponibles, propiedad
-de los voluntarios durante las diferentes sesiones de experimento.
+La elección se dio en base a los teléfonos inteligentes disponibles
+que fueron propiedad de los voluntarios durante las diferentes sesiones
+de experimentación.
 
 \subsubsection{Entorno de desarrollo }
 
 Las aplicaciones móviles desarrolladas en este trabajo están enteramente
-construidas en la plataforma \emph{\abbr{Android}} donde fueron utilizados
-los programas destinados para el caso \cite{Android2016}:
+construidas para la plataforma \emph{Android}, donde fueron utilizados
+los siguientes programas destinados para el caso \cite{Android2016}:
 \begin{itemize}
 \item \emph{Android Studio}: Entorno de desarrollo integrado para proyectos\emph{
 }de software.
@@ -98,27 +102,27 @@ y librerías \abbr{API} requeridas para construir aplicaciones \emph{Android}.
 \item \emph{Gradle}: Programa de automatización de tareas de construcción
 de aplicaciones.
 \end{itemize}
-Las aplicaciones desarrolladas fueron escritas utilizando el lenguaje
-\emph{Java }principalmente. Tanto las interfaces de usuario, servicios
-de aplicación y las tareas de computación intensivas de acceso a sensores,
+Las aplicaciones móviles fueron desarrolladas utilizando el lenguaje
+\emph{Java}. Esto incluye las interfaces de usuario, los servicios
+de aplicación, las tareas de computación intensivas de acceso a sensores,
 procesamiento, algoritmos de \abbr{ML} y almacenamiento de datos
 fueron desarrollados integramente en \emph{Java}.
 
 \subsection{Procedimiento Guía }
 
-Con el objetivo de obtener un conjunto de datos adecuado a este estudio
-de \abbr{HAR} se realizó un experimento de entrenamiento con grupo
-de voluntarios. Un grupo de 8 personas entre las edades de 20 y 38
-estuvieron dispuestos para esta tarea donde la edad media de la población
-esta comprendida en $30.7\pm5$ años. 
+Con el objetivo de obtener un conjunto de datos adecuado a los objetivos
+estudio de sistemas \abbr{HAR} de este trabajo, se realizó un experimento
+de recolección con grupo de voluntarios. Un grupo de 8 personas entre
+las edades de 20 y 38 estuvieron dispuestos para esta tarea, la edad
+media de la población esta comprendida en $30.7\pm5$ años. 
 
 El procedimiento guía de captura de datos se instruyó con el uso del
 teléfono móvil como prenda sujeta al bolsillo o en la cintura mientras
 se realiza una actividad física predeterminada. El planeamiento del
 experimento consitió en realizar en orden por un periodo de 2 a 15
 minutos alguna de las tres actividades básicas y dos de transporte.
-Las actividades humanas con sus etiquetas correspondientes se listan
-en la siguiente \tabref{tab6:etiquetas}.
+De acuerdo a la \secref{ssec44:labeling} se listan en la \tabref{tab6:etiquetas}
+las actividades humanas con sus etiquetas correspondientes.
 
 \begin{table}[h]
 \begin{centering}
@@ -127,24 +131,24 @@ en la siguiente \tabref{tab6:etiquetas}.
 Símbolo & Etiqueta & Descripción\tabularnewline
 \hline 
 \hline 
-\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_walk} & \emph{WALKING} & Caminar\tabularnewline
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_walk} & \texttt{WALKING} & Caminar\tabularnewline
 \hline 
-\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_run} & \emph{RUNNING} & Trotar\tabularnewline
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_run} & \texttt{RUNNING} & Trotar\tabularnewline
 \hline 
-\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_still} & \emph{STILL} & Estar quieto\tabularnewline
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_still} & \texttt{STILL} & Estar quieto\tabularnewline
 \hline 
-\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_tilt} & \emph{TILTING} & Estar inquieto\tabularnewline
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_tilt} & \texttt{TILTING} & Estar inquieto\tabularnewline
 \hline 
-\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_bike} & \emph{ON BICYCLE}  & Andar en bicicleta\tabularnewline
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_bike} & \texttt{ON\_BICYCLE } & Andar en bicicleta\tabularnewline
 \hline 
-\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_car} & \emph{IN VEHICLE}  & \multirow{1}{*}{Andar en automóvil}\tabularnewline
+\includegraphics[scale=0.5]{capitulo-6/graphics/ic_activity_car} & \texttt{IN\_VEHICLE } & Andar en automóvil\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
 \caption{\label{tab6:etiquetas}Actividades humanas etiquetadas}
 \end{table}
 
-El resultado del experimento se resume en la \tabref{tab6:sesiones},
+El resultado de este experimento de recolección se resume en la \tabref{tab6:sesiones},
 aquí se incluyen las sesiones hechas por los voluntarios y el tiempo
 en minutos acumulado que fue invertido en cada actividad. 
 
@@ -154,7 +158,7 @@ en minutos acumulado que fue invertido en cada actividad.
 \hline 
 \multirow{2}{*}{Individuo} & \multicolumn{6}{c|}{Actividades}\tabularnewline
 \cline{2-7} 
- & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
+ & \texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
 \hline 
 \hline 
 AG & 80 & 33 & 12 & 10 & 17 & 7\tabularnewline
@@ -181,14 +185,14 @@ MD & 29 & 4 & - & - & - & -\tabularnewline
 
 \subsection{Captura de Datos}
 
-El experimento requiere de una cantidad de datos recolectados de los
-voluntarios mientras realizan las actividades humanas dictadas durante
-el entrenamiento. \emph{SensorLog} \cite{Alan2014s} es una aplicación
-\abbr{Android} que se utilizó para la captura y persistencia de las
-señales del sensor de aceleración como se ve en la \figref{fig4:sensor-log}.
-La aplicación permite exportar las señales de sensores almacenadas
+Construir un clasificador requiere de una cantidad de datos recolectados
+de los voluntarios mientras realizan las actividades humanas dictadas
+durante el experimento. Para la captura y persistencia de las señales
+del sensor de aceleración se utilizó una aplicación móvil para \emph{Android
+}denominada \emph{SensorLog} \cite{Alan2014s}, este se ve en la \figref{fig4:sensor-log}.
+Esta aplicación permite exportar las señales sensoriales almacenadas
 en forma agrupada por sesiones y subirlas a la nube. En la \tabref{tab6:captura}
-se resumen las cantidades de medidas de señales capturadas.
+se resumen las medidas de señales capturadas durante el experimento.
 
 \begin{table}[h]
 \begin{centering}
@@ -196,7 +200,7 @@ se resumen las cantidades de medidas de señales capturadas.
 \hline 
 \multicolumn{6}{|c|}{Actividades}\tabularnewline
 \hline 
-\emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
+\texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
 \hline 
 \hline 
 3.591.788 & 1.604.270 & 387.735 & 134.566 & 819.992 & 365.814\tabularnewline
@@ -209,8 +213,11 @@ se resumen las cantidades de medidas de señales capturadas.
 
 \subsection{Conjunto de Entrenamiento }
 
-En la \tabref{tab6:muestras} se resumen las cantidades de las muestras
-calculadas de acuerdo lo descrito en el proceso de la \secref{ssec44:extraction}.
+Los datos recolectados en bruto son procesadas de acuerdo al proceso
+descrito en la \secref{ssec44:extraction} para formar un conjunto
+de entrenamiento. En la \tabref{tab6:muestras} se resumen las muestras
+obtenidas al aplicar las técnicas de procesamiento de datos de este
+trabajo. 
 
 \begin{table}[h]
 \begin{centering}
@@ -218,7 +225,7 @@ calculadas de acuerdo lo descrito en el proceso de la \secref{ssec44:extraction}
 \hline 
 \multicolumn{6}{|c|}{Actividades}\tabularnewline
 \hline 
-\emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
+\texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
 \hline 
 \hline 
 5.915 & 3.019 & 645 & 485 & 1.338 & 610\tabularnewline
@@ -228,8 +235,9 @@ calculadas de acuerdo lo descrito en el proceso de la \secref{ssec44:extraction}
 \caption{\label{tab6:muestras}Unidades de muestras procesadas}
 \end{table}
 
-El proceso de generación del clasificador está automatizado por medio
-del flujo mostrado en la \figref{fig6:proceso-clasi}.
+La generación del clasificador de \abbr{ML} de este trabajo está
+automatizado por medio una herramienta construida en \emph{Java. }El
+proceso se puede apreciar en el siguiente flujo de la \figref{fig6:proceso-clasi}.
 
 \begin{figure}[th]
 \begin{centering}
@@ -238,52 +246,68 @@ del flujo mostrado en la \figref{fig6:proceso-clasi}.
 \caption{\label{fig6:proceso-clasi}Flujo de generación del clasificador C4.5}
 \end{figure}
 
+Las entradas iniciales son los archivos de datos \emph{Sensor TS i},
+donde $i=1,..,N$ dependiendo de la cantidad de voluntarios. El procesamiento
+de \emph{Cálculo Features} produce un conjunto de entrenamiento \emph{Features
+TS }que forma el modelo inicial del \emph{Clasificador C4.5} para
+producir un \emph{Decision tree} que es empaquetado en una librería
+\emph{Java}.
 
 \section{Clasificador de Actividades Humanas}
 
-\label{sec6:clasificacion}Un clasificador de actividades humanas
-es un clasificador de clases discretas que utiliza un algoritmo de
-aprendizaje automático supervisado basado en árboles de decisión.
-Este clasificador evalúa como entrada una instancia sin etiquetar
-obtenida a partir de datos observados y produce como salida una predicción
-de la etiqueta más probable asociada en base a observaciones previas.
+\label{sec6:clasificacion}El clasificador de reconocimiento de actividades
+humanas (\abbr{HAR}) construido en este trabajo es un clasificador
+de clases discretas que utiliza un algoritmo de aprendizaje automático
+supervisado basado en árboles de decisión. 
 
 En esta sección se describe el procedimiento de generación de un clasificador
-\abbr{HAR} utilizando un conjunto de entrenamiento inicial. Luego
-se evalúa el mismo por medio de pruebas y verificación para garantizar
-su efectividad. Este procedimiento se realiza utilizando la herramienta
-de aprendizaje automático denominado \emph{Waikato Environment Knowledge
-Analysis} \texttt{(\abbr{WEKA})} \cite{Frank2016}. 
+\abbr{HAR} utilizando el conjunto de entrenamiento inicial descrito
+en la sección anterior. El clasificador es evaluado por medio de pruebas
+y verificación que puedan garantizar su efectividad. El procedimiento
+de construcción se realiza con la herramienta de \abbr{ML} denominada
+\emph{Waikato Environment Knowledge Analysis} \texttt{(\abbr{WEKA})}
+\cite{Frank2016}.
 
-\subsection{Métricas de predicción numérica}
+El clasificador es un árbol de decisión obtenido por medio del algoritmo
+C4.5 (\algref{algoC45}) y la implementación en \emph{Java} J48 \cite{Frank2016b}
+considerando los siguientes parámetros:
+\begin{itemize}
+\item Umbral de confianza para poda\emph{ }(-C\emph{ confidenceFactor}):
+$0.25$
+\item Numero mínimo de instancias permisibles por hoja\emph{ }(-M\emph{
+minNumObj}): $2$
+\item Tamaño del conjunto de poda\emph{ }(-N\emph{ numFolds}): $3$
+\item Pliegue de Validación Cruzada\emph{ }(\emph{Cross-validation folds}):
+$10$
+\end{itemize}
+
+\subsection{Métricas de predicción }
 
 De manera a evaluar el rendimiento de los clasificadores de aprendizaje
 automático supervisado se describen las siguientes medidas y métricas
-de predicción numéricas que dan una noción de cuánto se acercan las
-predicciones a los datos observados \cite{Witten2017}.
-
-Utilizando la siguiente nomenclatura de la definición \ref{def3:clasificacion}
-de la \secref{sec3:aprendizaje} en que $\hat{f}(x_{i})$ corresponde
-a los valores de la predicción de una instancia de evaluación $x_{i}$
-e $y_{i}$ corresponde al valor actual de la \emph{$i$-ésima} instancia,
-se define cuanto sigue:
+numéricas de predicción que dan una noción de cuánto se acercan a
+los datos observados \cite{Witten2017}. Con la utilización de la
+validación cruzada por estratos de diez (\emph{10-fold}) resulta en
+las siguientes medidas:
 \begin{itemize}
-\item \emph{Número de instancias}: es el tamaño de la población de entrada
-$N$.
-\item \emph{Instancias correctamente clasificadas}: es una proporción del
-tamaño de la población de entrada $C$.
-\item \emph{Instancias incorrectamente clasificadas}: es un proporción del
-tamaño de la población de entrada $I$.
-\item \emph{Estadísticas Kappa}: es el coeficiente \emph{kappa} de \emph{Cohen}
-que establece el valor de coeficiente de concordancia para confiabilidad
-de los datos. 
+\item \emph{Número de instancias} ($N$): es el tamaño de la población de
+entrada.
+\item \emph{Instancias correctamente clasificadas} ($C$): es una proporción
+del tamaño de la población de entrada.
+\item \emph{Instancias incorrectamente clasificadas} \emph{(}$I$): es un
+proporción del tamaño de la población de entrada.
+\item \emph{Estadísticas Kappa} ($\kappa$): es el coeficiente \emph{kappa}
+de \emph{Cohen} que determina el valor de coeficiente de concordancia
+para confiabilidad de los datos según los rangos de la \tabref{tab6:kappa-coef}
+y se obtienen con la ecuación: 
 \[
 \kappa\text{=}\frac{p_{o}-p_{e}}{1-p_{e}}
 \]
-, donde $p_{o}$ es el acuerdo observado relativo y $p_{e}$ es la
-probabilidad hipotética de acuerdo. Los valores se dividen en los
-siguientes rangos.\\
-\\
+Donde $p_{o}$ es el acuerdo observado relativo y $p_{e}$ es la probabilidad
+hipotética de acuerdo.
+\end{itemize}
+\begin{table}[h]
+\begin{centering}
 \begin{tabular}{|c|c|c|}
 \hline 
 Valor & Nivel de acuerdo & \% de datos confiables\tabularnewline
@@ -302,58 +326,110 @@ Valor & Nivel de acuerdo & \% de datos confiables\tabularnewline
 >0.90 & Casi perfecto & 82 - 100\%\tabularnewline
 \hline 
 \end{tabular}
-\item \emph{Error medio absoluto}: es el promedio de la magnitud de los
-errores absolutos individuales.
+\par\end{centering}
+\caption{\label{tab6:kappa-coef}Rango de valores de coeficiente $\kappa$}
+\end{table}
+
+En un problema de clasificación de datos desconocidos a partir de
+una cantidad de datos de entrada limitados, la técnica de validación
+cruzada dan una idea de la capacidad de un algoritmo al clasificar
+instancias de prueba con cierta precisión. 
+
+También es importante conocer el costo asociado de una clasificación
+no acertada en términos del error. Si el clasificador predice una
+clase como: correcta es tenida en cuenta como éxito, sino es un error.
+Por lo tanto, la razón de error es solo una proporción de errores
+hecho sobre el conjunto total de instancias y mide el rendimiento
+de clasificador. 
+
+Por otra parte, existen otras métricas numéricas útiles para evaluar
+la predicción en base a los errores. De acuerdo a la nomenclatura
+presentada en la \secref{sec3:aprendizaje}, definición \ref{def3:clasificacion}
+donde se considera a $f(x_{i})$ como el valor pronosticado de una
+instancia de evaluación $x_{i}$ dada, e $y_{i}$ corresponde al valor
+real de esta \emph{$i$-ésima} instancia, se tiene cuanto sigue \cite{Witten2017}:
+\begin{itemize}
+\item \emph{Error medio absoluto}: es el promedio de los errores absolutos
+individuales.
 \[
-\frac{1}{n}\sum_{i\text{=1}}^{n}\bigl|y_{i}-\hat{f}(x_{i})\bigr|
+E_{ma}=\frac{1}{n}\sum_{i\text{=1}}^{n}\bigl|y_{i}-f(x_{i})\bigr|
 \]
+Está medida no exagera el efecto de los valores atípicos (\emph{outliders}),
+todos los errores son tratados de igual conforme a su magnitud.
 \item \emph{Raíz de Error cuadrático medio}: es la raíz del promedio de
-la magnitud de los errores individuales elevados al cuadrado.
+los errores cuadráticos individuales.
 \[
-\sqrt{\frac{1}{n}\sum_{i\text{=1}}^{n}\left(y_{i}-\hat{f}(x_{i})\right)^{2}}
+E_{rms}=\sqrt{\frac{1}{n}\sum_{i\text{=1}}^{n}\left(y_{i}-f(x_{i})\right)^{2}}
 \]
-\item \emph{Error absoluto relativo}: es la razón de la suma de los errores
-absolutos y la suma de las diferencia absoluta de los valores exactos
-con la media. 
+Es una medida de fácil manipulación matemática con la misma dimensión
+que el valor pronosticado y además comúnmente utilizada en técnicas
+de regresión lineal aunque tiende a exagerar el efecto de los valores
+atípicos.
+\item \emph{Error absoluto relativo}: es la suma de los errores absolutos
+relativo a la suma de errores absolutos respecto a la media.
 \[
-\sum_{i\text{=1}}^{n}\frac{\bigl|y_{i}-\hat{f}(x_{i})\bigr|}{\bigl|y_{i}-\bar{y}\bigr|}\,\textrm{, donde\,}\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}
+E_{ra}=\sum_{i\text{=1}}^{n}\frac{\bigl|y_{i}-f(x_{i})\bigr|}{\bigl|y_{i}-\bar{y}\bigr|}\,\textrm{, donde\,}\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}
 \]
-\item \emph{Raíz de Error cuadrático relativo}: es la raíz de la razón de
-la suma de los errores individuales elevados al cuadrado y la suma
-de las diferencia de los valores exactos con la media elevados al
-cuadrado. 
+Representa el error total absoluto normalizado con el error absoluto
+respecto a un predictor simple como lo es el promedio de valores reales.
+\item \emph{Raíz de Error cuadrático relativo}: es la raíz de la suma de
+los errores cuadráticos individuales relativo a la suma de los errores
+cuadráticos respecto a la media. 
 \[
-\sqrt{\sum_{i\text{=1}}^{n}\frac{\left(y-\hat{f}(x_{i})\right)^{2}}{\left(y_{i}-\bar{y_{i}}\right)^{2}}}
+E_{rrs}=\sqrt{\sum_{i\text{=1}}^{n}\frac{\left(y_{i}-f(x_{i})\right)^{2}}{\left(y_{i}-\bar{y_{i}}\right)^{2}}}
 \]
+Representa el error total cuadrático normalizado con el error cuadrático
+respecto a un predictor simple como lo es el promedio de valores reales.
 \end{itemize}
+Escoger cuales de estas métricas son apropiadas para una evaluación
+dependen mucho del estudio y de la aplicación del aprendizaje automático.
+Por ejemplo, si se trata de minimizar alguna métrica o disminuir el
+costo asociado a un error en particular. 
+
+En general, sobre los errores cuadráticos y/o la raíz de los mismos
+pesan mas las grandes discrepancias que las pequeñas, mientras que
+en errores absolutos no. Los errores relativos tratan de compensar
+la predictabilidad del valor pronosticado, tratando siempre de tender
+hacia el valor real medio. 
 
 \subsection{Evaluación del clasificador}
 
-El clasificador generado en este trabajo es un árbol de decisión obtenido
-por medio del algoritmo C4.5 (\algref{algoC45}) y la implementación
-en \emph{Java} J48 \cite{Frank2016b}. El tamaño del árbol generado
-es de $677$ nodos, de los cuales $339$ corresponden a hojas.
-
-A continuación se presentan las métricas numéricas de predicción del
-clasificador generado con las muestras de entrenamiento recolectadas
-y descritas anteriormente: 
+El clasificador generado en este trabajo es un árbol de decisión de
+tamaño de $677$ nodos, de los cuales $339$ corresponden a hojas.
+Las métricas numéricas de predicción se exponen a continuación considerando
+las muestras de entrenamiento descritas anteriormente: 
 \begin{itemize}
-\item Número de instancias: $12.012$ 
-\item Instancias correctamente clasificadas: $10.942$ (en porcentaje $91,0922$
-\%)
-\item Instancias incorrectamente clasificadas: $1.070$ (en porcentaje $8,9078$
-\%)
-\item Estadísticas Kappa: $0,8678$ 
-\item Error medio absoluto: $0,0341$
-\item Raíz de Error cuadrático medio: $0,164$ 
-\item Error absoluto relativo: $15,1717$ \% 
-\item Raíz de Error cuadrático relativo: $48,9126$ \% 
+\item Número de instancias ($N$): $12.012$ 
+\item Instancias correctamente clasificadas ($C$): $10.942$ ($91,0922\%$)
+\item Instancias incorrectamente clasificadas ($I$): $1.070$ ($8,9078\%$)
+\item Estadísticas Kappa ($\kappa$): $0,8678$ 
+\item Error medio absoluto ($E_{ma}$): $0,0341$
+\item Raíz de Error cuadrático medio ($E_{rms}$): $0,164$ 
+\item Error absoluto relativo ($E_{ra}$): $15,1717\%$ 
+\item Raíz de Error cuadrático relativo ($E_{rrs}$): $48,9126\%$ 
 \end{itemize}
-En general, se puede apreciar que la taza de errorres es baja, la
-cantidad de instancias correctas alta y el coeficiente de confianza
-es fuerte. Adicionalmente, en la \tabref{tab6:matriz-confusion} se
-muestra la matriz de confusión obtenida así como se detalla en la
-\secref{sec3:metricas}. 
+La discusión que surge de estos cálculos es que para el conjunto de
+entrenamiento de $12.012$ instancias el clasificador tiene una taza
+de predicción del $91,1\%$ de las veces correctamente y el $8,9\%$
+de las veces incorrectamente. El valor del coeficiente de confianza
+está entre el $0,8-0,9$ dando un porcentaje aproximado de $74,6%\%
+$ considerado como una fuerte confianza en los datos.
+
+En cuanto a los errores, se puede observar que el error absoluto es
+bajo y el error cuadrático es bajo moderado ya que son menos que un
+$20\%$. Los errores relativos con respecto al error simple utilizando
+la media arrojan un valor moderado de $15,2\%$ para el absoluto y
+un valor medio de $48,9\%$ para el cuadrático. 
+
+Estos errores dan una noción del costo de la predicción, un incremento
+en el error a partir de una situación inicial, sin importar cual sea
+la métrica, implica inherentemente una situación inicial de mayor
+variabilidad y de difícil de predicción, no que el clasificador es
+peor.
+
+Además, utilizando la técnica de validación cruzada explicada en la
+\secref{sec3:metricas} se obtiene la matriz de confusión resultante
+en la \tabref{tab6:matriz-confusion}. 
 
 \begin{table}[h]
 \begin{centering}
@@ -361,38 +437,41 @@ muestra la matriz de confusión obtenida así como se detalla en la
 \cline{2-7} 
 \multicolumn{1}{l|}{} & \multicolumn{6}{c|}{Matriz de Confusión}\tabularnewline
 \hline 
-Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
+Actividad & \texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
 \hline 
 \hline 
-\emph{\footnotesize{}WALKING} & 5.643 & 63 & 21 & 28 & 156 & 4\tabularnewline
+\texttt{\footnotesize{}WALKING} & \textbf{5.643} & 63 & 21 & 28 & 156 & 4\tabularnewline
 \hline 
-\emph{\footnotesize{}RUNNING} & 122 & 2.852 & 3 & 6 & 36 & 0\tabularnewline
+\texttt{\footnotesize{}RUNNING} & 122 & \textbf{2.852} & 3 & 6 & 36 & 0\tabularnewline
 \hline 
-\emph{\footnotesize{}STILL} & 19 & 14 & 555 & 23 & 15 & 19\tabularnewline
+\texttt{\footnotesize{}STILL} & 19 & 14 & \textbf{555} & 23 & 15 & 19\tabularnewline
 \hline 
-\emph{\footnotesize{}TILTING} & 26 & 3 & 21 & 304 & 46 & 85\tabularnewline
+\texttt{\footnotesize{}TILTING} & 26 & 3 & 21 & \textbf{304} & 46 & 85\tabularnewline
 \hline 
-\emph{\footnotesize{}ON BICYLE} & 157 & 28 & 7 & 47 & 1.089 & 10\tabularnewline
+\texttt{\footnotesize{}ON BICYLE} & 157 & 28 & 7 & 47 & \textbf{1.089} & 10\tabularnewline
 \hline 
-\emph{\footnotesize{}IN VEHICLE} & 2 & 2 & 14 & 86 & 7 & 499\tabularnewline
+\texttt{\footnotesize{}IN VEHICLE} & 2 & 2 & 14 & 86 & 7 & \textbf{499}\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
 \caption{\label{tab6:matriz-confusion}Matriz de confusión del clasificador
-resultante}
+generado}
 \end{table}
 
-A partir de esta matriz se obtuvieron los siguientes calculos de métricas
-de evaluación para clasificadores expuesto también en la \secref{sec3:metricas}:
+Con esta matriz se calculan las siguientes métricas de evaluación
+para clasificadores descritas en la \secref{sec3:metricas}:
 \begin{itemize}
 \item Precisión: $0,9174$
 \item Exhaustividad: $0,9109$
 \item Exactitud: $0,9714$
 \item \emph{Valor-F}: $0,9142$
 \end{itemize}
-Finalmente, se puede apreciar que los valores demuestran una buena
-efectividad del clasificador generado debido a que las métricas están
-por encima de 90\%.
+Estos valores arrojan una perspectiva de que el clasificador generado
+posee altos valores de exactitud, precisión y exhaustividad. Esto
+se corresponde por la baja tasa de falsos positivos y negativos. En
+cuanto al \emph{Valor-F}, el valor del mismo es alto en proporción
+a los valores de precisión y exhaustividad, ya que es de forma general
+la media armónica de ambos.
 
 \section{Resultados Experimentales}
 
@@ -400,29 +479,30 @@ por encima de 90\%.
 del experimento realizado utilizando la aplicación \emph{ActivitySurvey}
 que utiliza el reconocedor \emph{HARDroid}, ambos desarrollados en
 este trabajo. Los datos presentados en esta sección permiten verificar
-la correctitud de los componentes de software implementados así como
-también validar las predicciones emitidas por el reconocedor de actividades
-humanas contribuido en este trabajo.
+el funcionamiento correcto de los componentes de software implementados
+así como también validar las predicciones emitidas por el reconocedor
+de actividades humanas contribuido en este trabajo.
 
-\subsection{Verificación del clasificador}
+\subsection{Verificación del Clasificador HAR}
 
-Para verificar el clasificador de \emph{HARDroid }se condujo un experimento
-de prueba basado en una sesión de actividades físicas realizadas por
-dos personas. El protocolo consitió en realizar cada una de las actividades
-básicas ambulatorias y de transporte por un periodo comprendido entre
-10 a 20 minutos utilizando la aplicación \emph{ActivitySurvey}. 
+Para verificar el clasificador \abbr{HAR} de \emph{HARDroid }se condujo
+un experimento de prueba basado en una sesión de actividades físicas
+realizadas por dos personas. El protocolo consitió en realizar cada
+una de las actividades básicas ambulatorias y de transporte por un
+periodo comprendido entre 10 a 20 minutos utilizando la aplicación
+\emph{ActivitySurvey}. 
 
-En la \tabref{tab6:vsesiones} se resume el tiempo en minutos invertido
-por cada persona en las actividades realizadas en un lapso de una
-hora aproximadamente.
+En la \tabref{tab6:vsesiones} se muestra el resumen del tiempo invertido
+en minutos por cada persona en las actividades humanas realizadas
+en una sesión de evaluación de una hora aproximadamente.
 
 \begin{table}[th]
 \begin{centering}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline 
-\multirow{2}{*}{Individuo} & \multicolumn{6}{c|}{Actividades}\tabularnewline
+\multirow{2}{*}{Teléfono} & \multicolumn{6}{c|}{Actividades}\tabularnewline
 \cline{2-7} 
- & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}RUNNING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}TILTING} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE}\tabularnewline
+ & \texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
 \hline 
 \hline 
 nexus5x & 14 & 10 & 10 & - & 20 & 14\tabularnewline
@@ -434,90 +514,140 @@ mate9 & 12 & 7 & 18 & - & 15 & 14\tabularnewline
 \caption{\label{tab6:vsesiones}Resumen de sesiones de evaluación}
 \end{table}
 
-La aplicación \emph{ActivitySurvey} registra durante la sesión de
-evaluación los datos del individuo, la fecha y hora de la actividad
-detectada y la etiqueta de actividad aseverada en caso de una predicción
-correcta o una corrección de la etiqueta real. 
+La aplicación móvil \emph{ActivitySurvey} consulta la actividad humana
+detectada al servicio autónomo \emph{HARDroid} en intervalos regulares.
+Durante una sesión se registra la información del teléfono, correo,
+edad, la fecha y hora, la etiqueta de la actividad detectada y la
+etiqueta de la actividad corregida en caso de una aseveración. 
 
-En la \tabref{tab6:vencuesta} se resumen las cantidades de actividades
-detectadas correcta e incorrectamente en proporción con el total a
-partir de la encuesta realizada durante cada sesión. La respuesta
-incorrecta corresponde a una etiqueta obtenida por retro alimentación
-del usuario.
+En la \tabref{tab6:vencuesta} se muestra las cantidades de las actividades
+acertadas y no acertadas por el clasificador \abbr{HAR} en proporción
+con el total de detecciones recolectadas durante las encuestas realizadas
+en cada sesión. Una respuesta de desacierto coincide con una etiqueta
+obtenida por retro alimentación del usuario.
 
 \begin{table}[h]
 \begin{centering}
 \begin{tabular}{|l|c|c|c|c|c|c|}
 \cline{2-5} 
-\multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Incorrecta}} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\tabularnewline
+\multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Desaciertos}} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\tabularnewline
 \hline 
-Actividad & \emph{\footnotesize{}WALKING} & \emph{\footnotesize{}STILL} & \emph{\footnotesize{}ON BICYLE} & \emph{\footnotesize{}IN VEHICLE} & \textbf{\small{}Correcta} & \textbf{\small{}Porcentaje}\tabularnewline
+Actividad & \texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE} & \textbf{\small{}Aciertos} & \textbf{\small{}Porcentaje}\tabularnewline
 \hline 
 \hline 
-\emph{\footnotesize{}WALKING} &  &  & 13 &  & 145 & 91,77\%\tabularnewline
+\texttt{\footnotesize{}WALKING} &  &  & 13 &  & 151 & 92,07\%\tabularnewline
 \hline 
-\emph{\footnotesize{}RUNNING} &  &  & 13 &  & 83 & 86,46\%\tabularnewline
+\texttt{\footnotesize{}RUNNING} &  &  & 13 &  & 83 & 86,46\%\tabularnewline
 \hline 
-\emph{\footnotesize{}STILL} &  &  &  & 8 & 140 & 94,59\%\tabularnewline
+\texttt{\footnotesize{}STILL} &  &  &  & 8 & 140 & 94,59\%\tabularnewline
 \hline 
-\emph{\footnotesize{}TILTING} &  &  &  & 38 & 0 & 0,00\%\tabularnewline
+\texttt{\footnotesize{}TILTING}\emph{\footnotesize{}}\footnote{{\footnotesize{}Estar inquieto no se considera una actividad ambulatoria,
+presentándose los datos de manera informativa}} &  &  &  & 38 & 0 & 0,00\%\tabularnewline
 \hline 
-\emph{\footnotesize{}ON BICYLE} & 18 &  &  & 14 & 59 & 64,84\%\tabularnewline
+\texttt{\footnotesize{}ON\_BICYLE} & 8 &  &  & 4 & 59 & 83,10\%\tabularnewline
 \hline 
-\emph{\footnotesize{}IN VEHICLE} &  & 11 &  &  & 83 & 88,30\%\tabularnewline
+\texttt{\footnotesize{}IN\_VEHICLE} &  & 11 &  &  & 83 & 88,30\%\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption[Actividades correctas e incorrectas]{\label{tab6:vencuesta}Resumen de actividades detectadas correctas
-e incorrectas}
+\caption[Aciertos y desaciertos de actividades humanas detectadas]{\label{tab6:vencuesta}Resumen de actividades detectadas marcadas
+como aciertos o desaciertos}
 \end{table}
 
+(EXPLICAR MAS LOS RESULTADOS EN BASE A LOS PORCENTAJES Y ORIENTAR
+HACIA CONCLUIR QUE EL MODELO ES ACEPTABLE)
 
-\subsection{Validación de la clasificación}
+\subsection{Validación de la Clasificación}
 
-Para validar los resultados de la clasificación de \emph{HARDroid
+Para validar los resultados de la clasificación producida por \emph{HARDroid
 }se condujo un experimento de prueba basado en la misma sesión de
 actividades físicas realizadas por una persona. El protocolo consitió
-en utilizar la aplicación \emph{Sony} \emph{LifeLog} a la par de la
-aplicación \emph{ActivitySurvey} durante las sesiones de evaluación. 
+en utilizar la aplicación \emph{Sony} \emph{Lifelog} al mismo tiempo
+que la aplicación \emph{ActivitySurvey} durante las sesiones de pruebas. 
 
-En la \tabref{tab6:vclasificacion} se muestra el tiempo invertido
-en minutos en cada actividad humana realizado por una persona.
+En la \tabref{tab6:vclasificacion} se muestra el intervalo de tiempo
+de la sesión y su duración para cada actividad humana realizada por
+una persona.
 
 \begin{table}[h]
 \begin{centering}
 \begin{tabular}{|c|>{\raggedright}p{3cm}|c|c|>{\raggedright}p{3cm}|c|}
 \hline 
-Sesión & Actividad \emph{LifeLog} & Intervalo & Duración & Actividad \emph{HARDroid} & Razón\tabularnewline
+Teléfono & Etiqueta 
+
+\emph{Sony Lifelog} & Intervalo & Duración & Etiqueta \emph{HARDroid} & Relación\tabularnewline
 \hline 
 \hline 
-nexus5x & walking & 21:26 - 21:44 & 19 & WALKING & 45/9\tabularnewline
+nexus5x & \texttt{walking} & 21:26 - 21:44 & 19 & \texttt{WALKING} & 45/9\tabularnewline
 \hline 
-nexus5x & cycling & 21:44 - 22:00 & 27 & ON\_BICYCLE & 32/18\tabularnewline
+nexus5x & \texttt{cycling} & 21:44 - 22:00 & 27 & \texttt{ON\_BICYCLE} & 32/8\tabularnewline
 \hline 
-nexus5x & running & 22:12 - 22:24 & 13 & RUNNING & 41/0\tabularnewline
+nexus5x & \texttt{running} & 22:12 - 22:24 & 13 & \texttt{RUNNING} & 41/0\tabularnewline
 \hline 
-nexus5x & vehicle & 22:39 - 22:57 & 19 & IN\_VEHICLE & 32/6\tabularnewline
+nexus5x & \texttt{vehicle} & 22:39 - 22:57 & 19 & \texttt{IN\_VEHICLE} & 32/6\tabularnewline
 \hline 
-nexus5x & - & 22:25 - 22:35 & 10 & STILL & 65/0\tabularnewline
+nexus5x & \texttt{-} & 22:25 - 22:35 & 10 & \texttt{STILL} & 65/0\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption[Evaluación \emph{HARDroid} vs \emph{Sony LifeLog}]{\label{tab6:vclasificacion}Resumen de actividades detectadas \emph{HARDroid}
-vs\emph{ Sony LifeLog}}
+\caption[Evaluación \emph{HARDroid} vs \emph{Sony LifeLog}]{\label{tab6:vclasificacion}Comparación de actividades detectadas
+por \emph{HARDroid} vs\emph{ Sony Lifelog}}
 \end{table}
 
-Cada actividad detectada por \emph{HARDroid} es validada con la aplicación
-\emph{Sony} \emph{LifeLog} y además se inclyye la razón de correctas
-versus incorrectas. En la \figref{fig6:vlifelog} se muestra la salida
-de la aplicación \emph{Sony Lifelog }de la sesión individual.
+Cada actividad detectada por \emph{HARDroid} fue validada con la aplicación
+\emph{Sony} \emph{Lifelog} cuyo acierto se considera del 100\% en
+comparación con la relación de aciertos y desaciertos extraidos de
+los resultados de la sección anterior. 
 
-\begin{figure}
+En la \figref{fig6:vlifelog} se muestran dos pantallas de la aplicación
+\emph{Sony Lifelog }capturadas durante las sesiones de prueba donde
+se confirma como veracidad las actividades físicas realizadas durante
+el intervalo de cada sesión.
+
+\begin{figure}[th]
 \begin{centering}
-\includegraphics[scale=0.7]{capitulo-6/graphics/lifelog1} \includegraphics[scale=0.7]{capitulo-6/graphics/lifelog2}
+\includegraphics[scale=0.6]{capitulo-6/graphics/lifelog1} \includegraphics[scale=0.6]{capitulo-6/graphics/lifelog2}
 \par\end{centering}
-\caption[Evaluación con aplicación \emph{Sony Lifelog}]{\label{fig6:vlifelog}Resultado de sesión de evaluación con \emph{Sony
-Lifelog}}
-
+\caption[Verificación de actividades con \emph{Sony Lifelog}]{\label{fig6:vlifelog}Actividades físicas capturadas con la aplicación
+\emph{Sony Lifelog}}
 \end{figure}
+
+La aplicación \emph{Sony Lifelog} representa las actividades físicas
+por símbolos visuales similares a los de la \tabref{tab6:etiquetas},
+donde se pueden apreciar las actividades realizadas de: caminata,
+trote, bicicleta y automóvil.
+
+\subsection{Entrenamiento Colaborativo}
+
+(EXPLICAR Y CONCLUIR QUE EL MODELO ES ACEPTABLE Y MEJORABLE CON MAS
+ENTRENAMIENTO GRACIAS AL ENFOQUE DE REFINAMIENTO COLABORATIVO)
+
+\begin{table}[H]
+\begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+Métrica & Inicial & Colaborativo\tabularnewline
+\hline 
+\hline 
+$N$ & 12.012 & 12.578\tabularnewline
+\hline 
+$C$ & 10.942 (91,09\%) & 11.489 (91,34\%)\tabularnewline
+\hline 
+$I$ & 1.070 (8,91\%) & 1.089 (8,66\%)\tabularnewline
+\hline 
+$\kappa$ & 0,8678 & 0,8735\tabularnewline
+\hline 
+$E_{ma}$ & 0,0341 & 0,0333\tabularnewline
+\hline 
+$E_{rms}$ & 0,164 & 0,1632\tabularnewline
+\hline 
+$E_{ra}$ & 15,17\% & 14,58\%\tabularnewline
+\hline 
+$E_{rrs}$ & 48,91\% & 48,30\%\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab6:comparacion-clasi}Comparación entre modelo inicial y
+el colaborativo}
+\end{table}
 

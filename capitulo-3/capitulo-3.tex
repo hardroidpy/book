@@ -3,7 +3,7 @@
 \label{chap:Aprendizaje-Automatico}
 
 \section{Introducción}
-En el contexto de aprendizaje automático, los patrones deben ser descubiertos a partir de una serie de muestras que son denominadas instancias. El conjunto de entrada se denomina conjunto de entrenamiento. En nuestro caso específico, cada instancia es un vector de características extraída de señales en una determinada ventana de tiempo. Las muestras en el conjunto de entrenamiento pueden o no ser etiquetadas, es decir, tener asociada a una clase conocida (por ejemplo, caminar, correr, etc.). En algunos casos, tener datos etiquetados no es factible, ya que puede requerir un experto para examinar manualmente los ejemplos y asignar una etiqueta en base a su experiencia.
+En el contexto de aprendizaje automático los patrones son descubiertos a partir de una serie de muestras denominadas instancias. Esta entrada inicial se denomina conjunto de entrenamiento. En nuestro caso específico, cada instancia es un vector de características extraído de señales en una determinada ventana de tiempo. Estas muestras del conjunto de entrenamiento pueden o no ser etiquetadas, es decir, tener asociada a una clase conocida (por ejemplo, caminar, correr, etc.). En algunos casos, tener datos etiquetados no es factible, ya que puede requerir de un observador para examinar manualmente las muestras y así asignar una etiqueta en base a su experiencia.
 
 El proceso de aprendizaje es generalmente tedioso, caro y consume mucho tiempo en muchas aplicaciones de minería de datos. Existen dos enfoques de aprendizaje, es decir, aprendizaje supervisado y no supervisado, que se ocupan de datos etiquetados y no etiquetados, respectivamente. Puesto que un sistema de reconocimiento de la actividad humana debe devolver un resultado como caminar, sentarse, correr, etc., la mayoría de los sistemas de \abbr{HAR} utilizan algoritmos de aprendizaje supervisados. De hecho, podría ser muy difícil de discriminar actividades en un contexto completamente sin supervisión. Algunos otros sistemas funcionan de una manera semisupervisada en donde parte de los datos están sin etiqueta.
 
@@ -19,7 +19,7 @@ Muchos autores definen aprendizaje automático de distintas maneras, aunque \cit
 
 \label{sec3:aprendizaje}De manera a establecer un marco teórico para los algoritmos de aprendizaje automático supervisados se incluye la siguiente definición formal \cite{Rajaraman2011}.
 
-\begin{definition}[Clasificador (\emph{Machine Learning}, \abbr{ML})]\label{def3:clasificacion}Un algoritmo \abbr{ML} recibe un conjunto entrenamiento que se compone de varios pares $(\boldsymbol{x},\boldsymbol{y})$ conocidos como instancias de entrenamiento, donde
+\begin{definition}[Clasificador de \abbr{ML}]\label{def3:clasificacion}Un algoritmo \abbr{ML} recibe un conjunto entrenamiento que se compone de varios pares $(\boldsymbol{x},\boldsymbol{y})$ conocidos como instancias de entrenamiento, donde
 \begin{itemize}
 \item $\boldsymbol{x}$ es un \emph{vector} de valores, llamado vector característico, e
 \item $\boldsymbol{y}$ es la \emph{etiqueta}, el valor de clasificación para $\boldsymbol{x}$.
@@ -57,10 +57,10 @@ El aprendizaje supervisado, comúnmente conocido como clasificación de múltipl
 \caption[Algoritmos de ML]{\label{tab3:clasificadores} Algoritmos de aprendizaje automático}
 \end{table}
 
-En las siguientes secciones nos concentraremos en un enfoque basado en arboles de decisión (\emph{Decision Tree}, \abbr{DT}) para construir la función $f$. La función $f$, que corresponde a un árbol de múltiples niveles donde cada nodo aplica una función a $\boldsymbol{x}$ y determina sobre qué nodo hijo procede la búsqueda. Cada nodo posee un número arbitrario de nodos hijos. Los árboles de decisión son preferibles para las clasificación binaria o de múltiples clases, especialmente cuando la dimensión del vector característicos no es muy grande \cite{Rajaraman2011}.
+En las siguientes secciones nos concentraremos en un enfoque basado en arboles de decisión (\emph{Decision Tree}, \abbr{DT}) para construir la función $f$. La función $f$, que corresponde a un árbol de múltiples niveles donde cada nodo aplica una función a $\boldsymbol{x}$ y determina sobre qué nodo hijo procede la búsqueda. Cada nodo posee un número arbitrario de nodos hijos. Los árboles de decisión son preferibles para clasificación binaria o de múltiples clases, especialmente cuando la dimensión del vector característicos no es muy grande \cite{Rajaraman2011}.
 
 \section{Arboles de Decisión}
-El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto de tuplas o instancias etiquetadas. Un árbol de decisión es una estructura de árbol similar a un diagrama de flujo, donde cada nodo interno (nodo no hoja) denota una prueba de un atributo, y cada rama representa el camino de a seguir luego de la evaluación, y cada nodo hoja es una etiqueta o clase.
+El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto de tuplas o instancias etiquetadas. Un árbol de decisión es una estructura de árbol similar a un diagrama de flujo, donde cada nodo interno (nodo no hoja) denota una prueba de un atributo, y cada rama representa el camino a seguir luego de la evaluación, y cada nodo hoja es una etiqueta o clase.
 
 \begin{figure}[!htbp]
 	\centering
@@ -263,7 +263,7 @@ GainRatio(Ingreso) = \frac{0.029}{0.926} = 0.031 bits \\
 
 
 \section{Métricas de Evaluación y Matriz de Confusión}
-\label{sec3:metricas}En general, la selección del algoritmos de clasificación para HAR ha sido apoyada meramente por evidencias empíricas (referencias). La gran mayoría de los estudios utilizan una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado, como se visualiza en la \figref{fig:evaluacion}.
+\label{sec3:metricas}En general, la selección del algoritmos de clasificación para HAR ha sido apoyada meramente por evidencias empíricas \cite{Bao2004, LaraLabrador2013}. La gran mayoría de los estudios utilizan una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado, como se visualiza en la \figref{fig:evaluacion}.
 
 \begin{figure}[!tbph]
 	\centering
@@ -271,7 +271,7 @@ GainRatio(Ingreso) = \frac{0.029}{0.926} = 0.031 bits \\
 	\caption[Diagrama de evaluación de clasificación]{\label{fig:evaluacion}Diagrama de Evaluación de Clasificación}
 \end{figure}
 	
-Los resultados de una clasificación de un método en particular se suelen organizar en una matriz de confusión $M_{n \times n}$ para un problema de clasificación con $N$ clases.
+Los resultados de una clasificación de un método en particular se organizan en una matriz de confusión $M_{n \times n}$ para un problema de clasificación con $N$ clases.
 En esta matriz, el elemento $M_{ij}$ es el numero instancias de la clase $i$ que fueron clasificados en la clase $j$.
 Los siguientes valores se pueden obtener de la matriz de confusión en un problema de clasificación primaria:
 
@@ -282,7 +282,7 @@ Los siguientes valores se pueden obtener de la matriz de confusión en un proble
 	\item Falso Negativo (\emph{False Negative}, \abbr{FN}): El número de casos positivos que fueron clasificados como negativos.
 \end{itemize}
 
-La precisión es la métrica más utilizada para resumir el rendimiento general de la clasificación para todas las clases y se define de la siguiente manera:
+La exactitud es la métrica más utilizada para resumir el rendimiento general de la clasificación para todas las clases y se define de la siguiente manera:
 
 \begin{equation}
 Exactitud = \frac{TP + TN}{TP + TN + FP + FN}\label{eq3:exactitud}
@@ -306,7 +306,7 @@ Valor-F = 2 \cdot \frac{\mbox{Precisión} \cdot Exhaustividad}{\mbox{Precisión}
 
 Aunque se definen para la clasificación binaria, estas métricas pueden generalizarse para un problema con $N$ clases. En tal caso, una instancia podría ser positiva o negativa según una mejor clase particular, por ejemplo, los positivos podrían ser todas las instancias de ejecución mientras que los negativos serían todas las instancias distintas de la ejecución.
 
-\section{Evaluación de un Modelo}
+\section{Evaluación de un Clasificador}
 
 Utilizando el ejemplo anterior en la \tabref{tabla:sencilla2}, supongamos que se tomo una muestra de 10.000 tuplas obteniendose como resultado la \tabref{tabla:MatrizConfusion}.
 

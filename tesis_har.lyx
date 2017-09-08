@@ -98,7 +98,7 @@ customHeadersFooters
 \papersides 1
 \paperpagestyle fancy
 \tracking_changes false
-\output_changes false
+\output_changes true
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
