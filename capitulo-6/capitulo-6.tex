@@ -283,12 +283,12 @@ $10$
 
 \subsection{Métricas de predicción }
 
-De manera a evaluar el rendimiento de los clasificadores de aprendizaje
-automático supervisado se describen las siguientes medidas y métricas
-numéricas de predicción que dan una noción de cuánto se acercan a
-los datos observados \cite{Witten2017}. Con la utilización de la
-validación cruzada por estratos de diez (\emph{10-fold}) resulta en
-las siguientes medidas:
+\label{ssec6:metricas}De manera a evaluar el rendimiento de los clasificadores
+de aprendizaje automático supervisado se describen las siguientes
+medidas y métricas numéricas de predicción que dan una noción de cuánto
+se acercan a los datos observados \cite{Witten2017}. Con la utilización
+de la validación cruzada por estratos de diez (\emph{10-fold}) resulta
+en las siguientes medidas:
 \begin{itemize}
 \item \emph{Número de instancias} ($N$): es el tamaño de la población de
 entrada.
@@ -327,7 +327,7 @@ Valor & Nivel de acuerdo & \% de datos confiables\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
-\caption{\label{tab6:kappa-coef}Rango de valores de coeficiente $\kappa$}
+\caption{\label{tab6:kappa-coef}Rango de valores de coeficiente$\kappa$}
 \end{table}
 
 En un problema de clasificación de datos desconocidos a partir de
@@ -384,13 +384,11 @@ respecto a un predictor simple como lo es el promedio de valores reales.
 Escoger cuales de estas métricas son apropiadas para una evaluación
 dependen mucho del estudio y de la aplicación del aprendizaje automático.
 Por ejemplo, si se trata de minimizar alguna métrica o disminuir el
-costo asociado a un error en particular. 
-
-En general, sobre los errores cuadráticos y/o la raíz de los mismos
-pesan mas las grandes discrepancias que las pequeñas, mientras que
-en errores absolutos no. Los errores relativos tratan de compensar
-la predictabilidad del valor pronosticado, tratando siempre de tender
-hacia el valor real medio. 
+costo asociado a un error en particular. En general, sobre los errores
+cuadráticos y/o la raíz de los mismos pesan mas las grandes discrepancias
+que las pequeñas, mientras que en errores absolutos no. Los errores
+relativos tratan de compensar la predictabilidad del valor pronosticado,
+tratando siempre de tender hacia el valor real medio. 
 
 \subsection{Evaluación del clasificador}
 
@@ -524,7 +522,7 @@ En la \tabref{tab6:vencuesta} se muestra las cantidades de las actividades
 acertadas y no acertadas por el clasificador \abbr{HAR} en proporción
 con el total de detecciones recolectadas durante las encuestas realizadas
 en cada sesión. Una respuesta de desacierto coincide con una etiqueta
-obtenida por retro alimentación del usuario.
+obtenida por retroalimentación del usuario.
 
 \begin{table}[h]
 \begin{centering}
@@ -554,8 +552,10 @@ presentándose los datos de manera informativa}} &  &  &  & 38 & 0 & 0,00\%\tabu
 como aciertos o desaciertos}
 \end{table}
 
-(EXPLICAR MAS LOS RESULTADOS EN BASE A LOS PORCENTAJES Y ORIENTAR
-HACIA CONCLUIR QUE EL MODELO ES ACEPTABLE)
+Según estos resultados se puede concluir que con un promedio de $88.9%\%
+$ de aciertos el clasificador tiene una alta taza de aciertos la mayoría
+de las actividades humanas evaluadas, específicamente las actividades
+en bicicleta y en vehículo son las que más poseen falsos negativos.
 
 \subsection{Validación de la Clasificación}
 
@@ -597,7 +597,7 @@ por \emph{HARDroid} vs\emph{ Sony Lifelog}}
 Cada actividad detectada por \emph{HARDroid} fue validada con la aplicación
 \emph{Sony} \emph{Lifelog} cuyo acierto se considera del 100\% en
 comparación con la relación de aciertos y desaciertos extraidos de
-los resultados de la sección anterior. 
+los resultados de la sección anterior para una persona en particular. 
 
 En la \figref{fig6:vlifelog} se muestran dos pantallas de la aplicación
 \emph{Sony Lifelog }capturadas durante las sesiones de prueba donde
@@ -608,19 +608,40 @@ el intervalo de cada sesión.
 \begin{centering}
 \includegraphics[scale=0.6]{capitulo-6/graphics/lifelog1} \includegraphics[scale=0.6]{capitulo-6/graphics/lifelog2}
 \par\end{centering}
-\caption[Verificación de actividades con \emph{Sony Lifelog}]{\label{fig6:vlifelog}Actividades físicas capturadas con la aplicación
+\caption[Actividades reconocidas con \emph{Sony Lifelog}]{\label{fig6:vlifelog}Actividades físicas capturadas con la aplicación
 \emph{Sony Lifelog}}
 \end{figure}
 
 La aplicación \emph{Sony Lifelog} representa las actividades físicas
-por símbolos visuales similares a los de la \tabref{tab6:etiquetas},
-donde se pueden apreciar las actividades realizadas de: caminata,
-trote, bicicleta y automóvil.
+por símbolos visuales similares a la \tabref{tab6:etiquetas}, donde
+se pueden apreciar las actividades realizadas de: caminata, trote,
+en bicicleta y en automóvil.
 
 \subsection{Entrenamiento Colaborativo}
 
-(EXPLICAR Y CONCLUIR QUE EL MODELO ES ACEPTABLE Y MEJORABLE CON MAS
-ENTRENAMIENTO GRACIAS AL ENFOQUE DE REFINAMIENTO COLABORATIVO)
+Así como se expuso en la \secref{sec55:activity}, la aplicación móvil
+\emph{ActivitySurvey} está diseñada para recabar información que pueda
+ser utilizada para mejorar el clasificador continuamente. Utilizando
+este enfoque la información recolectada durante la evaluación fue
+combinada con los datos calculados inicialmente para generar un nuevo
+clasificador con datos colaborados durante las pruebas.
+
+Siguiendo el mismo procedimiento de la \secref{sec6:clasificacion}
+se generó un clasificador colaborativo, a partir de las instancias
+aseveradas como aciertos, y se obtuvo un árbol de decisión de tamaño
+de $699$ nodos, de los cuales $350$ corresponden a hojas. Las métricas
+de evaluación para clasificadores descritas en la \secref{sec3:metricas}
+son:
+\begin{itemize}
+\item Precisión: $0,9204$
+\item Exhaustividad: $0,9134$
+\item Exactitud: $0,9723$
+\item \emph{Valor-F}: $0,9168$
+\end{itemize}
+Los valores aumentan levemente en comparación con el clasificador
+inicial. En cuanto a las métricas numéricas se muestran en la \tabref{tab6:comparacion-clasi}
+en comparación con el clasificador inicial de forma resumida con su
+símbolo correspondiente.
 
 \begin{table}[H]
 \begin{centering}
@@ -651,3 +672,12 @@ $E_{rrs}$ & 48,91\% & 48,30\%\tabularnewline
 el colaborativo}
 \end{table}
 
+De acuerdo a estos resultados se aprecia que el clasificador colaborativo
+mejora levemente en comparación al inicial como es de notar el aumento
+de la precisión, la taza de aciertos, el valor del coeficiente de
+confianza, así también la reducción en los valores de los errores
+absolutos, cuadráticos y relativos. Con estos valores numéricos podemos
+resumir que un clasificador mejora de manera continua por medio de
+la retroalimentación de instancias recolectadas en campo, pero teniendo
+en consideración la sensibilidad que en algunos casos se puedan introducir
+instancias no acertadas.

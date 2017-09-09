@@ -251,9 +251,6 @@ filename "capitulo-4/capitulo-4.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "capitulo-5/capitulo-5.lyx"

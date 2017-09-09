@@ -2816,6 +2816,12 @@ Métricas de predicción
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec6:metricas"
+
+\end_inset
+
 De manera a evaluar el rendimiento de los clasificadores de aprendizaje
  automático supervisado se describen las siguientes medidas y métricas numéricas
  de predicción que dan una noción de cuánto se acercan a los datos observados
@@ -3159,7 +3165,7 @@ name "tab6:kappa-coef"
 
 \end_inset
 
-Rango de valores de coeficiente 
+Rango de valores de coeficiente
 \begin_inset Formula $\kappa$
 \end_inset
 
@@ -3333,11 +3339,7 @@ Escoger cuales de estas métricas son apropiadas para una evaluación dependen
  mucho del estudio y de la aplicación del aprendizaje automático.
  Por ejemplo, si se trata de minimizar alguna métrica o disminuir el costo
  asociado a un error en particular.
- 
-\end_layout
-
-\begin_layout Standard
-En general, sobre los errores cuadráticos y/o la raíz de los mismos pesan
+ En general, sobre los errores cuadráticos y/o la raíz de los mismos pesan
  mas las grandes discrepancias que las pequeñas, mientras que en errores
  absolutos no.
  Los errores relativos tratan de compensar la predictabilidad del valor
@@ -4689,8 +4691,8 @@ abbr{HAR}
 
  en proporción con el total de detecciones recolectadas durante las encuestas
  realizadas en cada sesión.
- Una respuesta de desacierto coincide con una etiqueta obtenida por retro
- alimentación del usuario.
+ Una respuesta de desacierto coincide con una etiqueta obtenida por retroaliment
+ación del usuario.
 \end_layout
 
 \begin_layout Standard
@@ -5327,8 +5329,14 @@ Resumen de actividades detectadas marcadas como aciertos o desaciertos
 \end_layout
 
 \begin_layout Standard
-(EXPLICAR MAS LOS RESULTADOS EN BASE A LOS PORCENTAJES Y ORIENTAR HACIA
- CONCLUIR QUE EL MODELO ES ACEPTABLE)
+Según estos resultados se puede concluir que con un promedio de 
+\begin_inset Formula $88.9%\%
+$
+\end_inset
+
+ de aciertos el clasificador tiene una alta taza de aciertos la mayoría
+ de las actividades humanas evaluadas, específicamente las actividades en
+ bicicleta y en vehículo son las que más poseen falsos negativos.
 \end_layout
 
 \begin_layout Subsection
@@ -5824,7 +5832,8 @@ Sony
 Lifelog
 \emph default
  cuyo acierto se considera del 100% en comparación con la relación de aciertos
- y desaciertos extraidos de los resultados de la sección anterior.
+ y desaciertos extraidos de los resultados de la sección anterior para una
+ persona en particular.
  
 \end_layout
 
@@ -5890,7 +5899,7 @@ name "fig6:vlifelog"
 status collapsed
 
 \begin_layout Plain Layout
-Verificación de actividades con 
+Actividades reconocidas con 
 \emph on
 Sony Lifelog
 \end_layout
@@ -5917,8 +5926,8 @@ La aplicación
 \emph on
 Sony Lifelog
 \emph default
- representa las actividades físicas por símbolos visuales similares a los
- de la 
+ representa las actividades físicas por símbolos visuales similares a la
+ 
 \begin_inset ERT
 status open
 
@@ -5932,7 +5941,7 @@ tabref{tab6:etiquetas}
 \end_inset
 
 , donde se pueden apreciar las actividades realizadas de: caminata, trote,
- bicicleta y automóvil.
+ en bicicleta y en automóvil.
 \end_layout
 
 \begin_layout Subsection
@@ -5940,8 +5949,123 @@ Entrenamiento Colaborativo
 \end_layout
 
 \begin_layout Standard
-(EXPLICAR Y CONCLUIR QUE EL MODELO ES ACEPTABLE Y MEJORABLE CON MAS ENTRENAMIENT
-O GRACIAS AL ENFOQUE DE REFINAMIENTO COLABORATIVO)
+Así como se expuso en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+secref{sec55:activity}
+\end_layout
+
+\end_inset
+
+, la aplicación móvil 
+\emph on
+ActivitySurvey
+\emph default
+ está diseñada para recabar información que pueda ser utilizada para mejorar
+ el clasificador continuamente.
+ Utilizando este enfoque la información recolectada durante la evaluación
+ fue combinada con los datos calculados inicialmente para generar un nuevo
+ clasificador con datos colaborados durante las pruebas.
+\end_layout
+
+\begin_layout Standard
+Siguiendo el mismo procedimiento de la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+secref{sec6:clasificacion}
+\end_layout
+
+\end_inset
+
+ se generó un clasificador colaborativo, a partir de las instancias aseveradas
+ como aciertos, y se obtuvo un árbol de decisión de tamaño de 
+\begin_inset Formula $699$
+\end_inset
+
+ nodos, de los cuales 
+\begin_inset Formula $350$
+\end_inset
+
+ corresponden a hojas.
+ Las métricas de evaluación para clasificadores descritas en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+secref{sec3:metricas}
+\end_layout
+
+\end_inset
+
+ son:
+\end_layout
+
+\begin_layout Itemize
+Precisión: 
+\begin_inset Formula $0,9204$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Exhaustividad: 
+\begin_inset Formula $0,9134$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Exactitud: 
+\begin_inset Formula $0,9723$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Valor-F
+\emph default
+: 
+\begin_inset Formula $0,9168$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los valores aumentan levemente en comparación con el clasificador inicial.
+ En cuanto a las métricas numéricas se muestran en la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab6:comparacion-clasi}
+\end_layout
+
+\end_inset
+
+ en comparación con el clasificador inicial de forma resumida con su símbolo
+ correspondiente.
 \end_layout
 
 \begin_layout Standard
@@ -6464,6 +6588,18 @@ Comparación entre modelo inicial y el colaborativo
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+De acuerdo a estos resultados se aprecia que el clasificador colaborativo
+ mejora levemente en comparación al inicial como es de notar el aumento
+ de la precisión, la taza de aciertos, el valor del coeficiente de confianza,
+ así también la reducción en los valores de los errores absolutos, cuadráticos
+ y relativos.
+ Con estos valores numéricos podemos resumir que un clasificador mejora
+ de manera continua por medio de la retroalimentación de instancias recolectadas
+ en campo, pero teniendo en consideración la sensibilidad que en algunos
+ casos se puedan introducir instancias no acertadas.
 \end_layout
 
 \end_body
