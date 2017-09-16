@@ -72,7 +72,7 @@
 \begin_body
 
 \begin_layout Chapter
-Conclusiones
+Conclusiones y Trabajos Futuros
 \end_layout
 
 \begin_layout Standard
@@ -86,7 +86,7 @@ name "cap8:conclusiones-y-trabajos-futuros"
 \end_layout
 
 \begin_layout Section
-Logros
+Conclusiones del presente trabajo
 \end_layout
 
 \begin_layout Standard
@@ -96,15 +96,11 @@ name "sec81:conclusiones"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 El reconocimiento de actividades humanas es un área de investigación multidiscip
 linaria con constantes aportes y diversos usos en la actualidad debido a
  su relevancia en la computación contextual y ubicua.
  Los avances en la miniaturización de los sistemas de computación y sensores
- hacen del área tanto atractiva como desafiante para explorar y proponer
+ hacen del área un tanto atractiva como desafiante para explorar y proponer
  nuevas ideas en este ámbito 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -113,177 +109,112 @@ key "LaraLabrador2013"
 \end_inset
 
 .
- Sin embargo, los esfuerzos realizados por otros trabajos no han tenido
- en cuenta la dimensión de la colaboración y el uso de Internet para contribuir
- a la mejora de los sistemas de reconocimiento tal como se ha hecho en este
- trabajo.
- Los logros más relevantes se describen a continuación.
+ 
 \end_layout
 
 \begin_layout Standard
-Acorde al objetivo principal descrito en la sección 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec13:objetivo-general"
+Los esfuerzos realizados en este trabajo han tenido en cuenta además la
+ colaboración y el uso de Internet de manera a aprovechar los mismos en
+ la mejora de los sistemas de reconocimiento, y como se mostró en la sección
+ anterior la aplicación de resultados colaborativos puede ser aprovechada
+ para mejorar el sistema desarrollado.
+ 
+\end_layout
 
-\end_inset
-
- se construyó un sistema de reconocimiento de actividades colaborativo utilizand
-o tres elementos principales: los teléfonos móviles modernos, el software
+\begin_layout Standard
+Así, en este trabajo se construyó un sistema de reconocimiento de actividades
+ colaborativo que utiliza tres elementos principales: teléfonos móviles
+ inteligentes, una librería que a la par se ha hecho disponible como software
  libre y la Internet.
- El desarrollo del trabajo se llevó acabo en dos etapas.
- La primera etapa consistió en el entrenamiento de un modelo y la segunda
- etapa consistió en la construcción de un sistema reconocedor de actividades
- para teléfonos móviles.
+ 
 \end_layout
 
 \begin_layout Standard
-De acuerdo al marco teórico de esta área enunciado en los objetivos específicos
- (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "enu:obe1"
-
-\end_inset
-
- al 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "enu:obe4"
-
-\end_inset
-
-) de la sección 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec13:objetivos-especuxedficos"
-
-\end_inset
-
- ambas etapas siguen las guías comunes para reconocer actividades humanas
- y son:
+El desarrollo del trabajo se llevó acabo en dos etapas.
+ La primera etapa consistió en el entrenamiento de un clasificador y la
+ segunda etapa consistió en la construcción de un sistema reconocedor de
+ actividades para teléfonos móviles.
+ Los principales aportes de este trabajo se produjeron en la segunda etapa:
 \end_layout
 
-\begin_layout Enumerate
-Recolección de datos de sensores
-\end_layout
-
-\begin_layout Enumerate
-Procesamiento de señal en ventanas de tiempo
-\end_layout
-
-\begin_layout Enumerate
-Extracción de muestras y variables características
-\end_layout
-
-\begin_layout Standard
-La primera etapa se caracterizó por la construcción de un clasificador basado
- en aprendizaje automático y la exportación del mismo a un modelo ejecutable
- en 
+\begin_layout Itemize
+Por una parte se tiene como resultado tangible un componente de código abierto
+ reutilizable para reconocer actividades humanas.
+ Este componente es denominado 
 \emph on
-Java
+HARDroid
 \emph default
 .
 \end_layout
 
-\begin_layout Standard
-Los objetivos específicos 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "enu:obe5"
-
-\end_inset
-
- y 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "enu:obe6"
-
-\end_inset
-
- engloban el aporte principal de este trabajo el cual se desenvolvió en
- la segunda etapa.
- Se construyó el sistema de reconocimiento de actividades para teléfonos
- móviles para la plataforma 
-\emph on
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{Android}
+\begin_layout Itemize
+Por otra parte este componente posibilita el mejoramiento iterativo de su
+ desempeño mediante un esquema colaborativo.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+Respecto al primer punto, es importante destacar que 
+\emph on
+HARDroid
 \emph default
- siguiendo las guías comunes y utilizando el resultado de la primera etapa.
- Este sistema puede ser utilizado de dos maneras, otras aplicaciones móviles
- pueden incluirla en tiempo de construcción o simplemente ejecutarlo como
- un servicio a través de una interfaz de integración 
+ puede ser aprovechado por otras aplicaciones móviles de dos maneras concretas
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GimenezYegros2016a"
 
 \end_inset
 
-.
+: 
+\end_layout
+
+\begin_layout Itemize
+el mismo puede ser incluido en tiempo de construcción, o
+\end_layout
+
+\begin_layout Itemize
+puede ser aprovechado como un servicio a través de una interfaz de integración.
 \end_layout
 
 \begin_layout Standard
-En parte, para evaluar el sistema construido y además recolectar datos de
- sensores en condiciones realistas se construyó una aplicación que reconoce
- actividades y realiza una encuesta en línea.
- Esta aplicación 
+Los experimentos realizados en el presente trabajo y documentados en la
+ sección previa muestran que 
 \emph on
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{Android}
+HARDroid
+\emph default
+ es capaz de producir un modelo en el cual se observan las siguientes caracterís
+ticas:
 \end_layout
 
+\begin_layout Itemize
+Una alta tasa de aciertos (
+\begin_inset Formula $91$
 \end_inset
 
+% a 
+\begin_inset Formula $92$
+\end_inset
 
-\emph default
- construida fue publicada para que los participantes del estudio la descarguen
- y colaboren aportando los datos asociados a las actividades reconocidas
- mientras utilizan el sistema de reconocimiento.
- El objetivo de este ejercicio es retroalimentar el modelo de aprendizaje
- automático periódicamente.
- La información recolectada se comparte a través de Internet para que se
- evalúe y eventualmente sirva como entrada para construir un nuevo el modelo
- en etapas posteriores.
+%), y por lo tanto una baja tasa de errores.
+ Esto se puede verificar en la MATRIZ DE CONFUSION RESULTANTES
+\end_layout
+
+\begin_layout Itemize
+La capacidad de extender el modelo para reconocer diversos tipos de actividades
+ como, en bicicleta, en vehículo, entre otros.
+\end_layout
+
+\begin_layout Itemize
+La posibilidad colaborativamente el modelo mediante la inclusión de muestras
+ de aciertos colectadas en campo.
 \end_layout
 
 \begin_layout Standard
-Finalmente, la colaboración se desenvuelve en dos aspectos principales.
- En el aspecto de la información recolectada para evaluar el modelo de aprendiza
-je automático al utilizar la aplicación de encuesta y la actualización del
- modelo del sistema de reconocimiento de manera periódica.
- En el aspecto del componente de software construido, donde la implementación
- del sistema reconocedor está disponible para que cualquiera lo extienda
- o utilice según sus necesidades particulares 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "GimenezYegros2016b"
-
-\end_inset
-
-.
+(REVISAR CONCLUSIONES COMPLEMENTANDO CON REF A LOS RESULTADOS)
 \end_layout
 
 \begin_layout Section
-Trabajos Futuros
+Trabajos Futuros propuestos
 \end_layout
 
 \begin_layout Standard
@@ -293,68 +224,28 @@ name "sec82:trabajos-futuros"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Luego de la experiencia obtenida y teniendo en cuenta la amplia aplicabilidad
- del reconocimiento de actividades y sobre todo en dispositivos móviles:
+Luego de la experiencia obtenida y documentada en el presente trabajo, teniendo
+ en cuenta la amplia aplicabilidad del reconocimiento de actividades humanas
+ en especial en aplicaciones para dispositivos móviles, a continuación se
+ proponen algunos trabajos que se desprenden del presente:
 \end_layout
 
 \begin_layout Enumerate
 Segmentar los grupos de individuos distintos por rangos de edad, sexo y/o
- factores fisiológicos y generar modelos distintos para cada grupo.
+ factores fisiológicos y otros, de manera a generar modelos específicos
+ para cada grupo que posibiliten el desarrollo de una nueva gama de aplicaciones.
  
 \end_layout
 
 \begin_layout Enumerate
-Realizar una comparación de distintos métodos de aprendizaje automático.
- 
-\end_layout
-
-\begin_layout Enumerate
-Incluir más variables en el procesamiento de la señal para mejorar las prediccio
-nes teniendo en cuenta la orientación del dispositivo.
- 
-\end_layout
-
-\begin_layout Enumerate
-Identificar otras actividades aplicado a otras disciplinas o contextos.
- 
-\end_layout
-
-\begin_layout Enumerate
-Utilizar un reloj inteligente (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{Smartwatches}
-\end_layout
-
-\end_inset
-
-) u otros accesorios que agreguen variables relevantes en el reconocimiento
- de actividades dependiendo del contexto.
- 
-\end_layout
-
-\begin_layout Standard
-Se propone generar modelos segmentados por distintas características de
- las personas, como ser rango de edades, sexo, etc.
- Teniendo en cuenta que la motricidad para en las diferentes edades por
- ejemplo varía para distintas edades o sexo, comprobando si esto crea modelos
- más preciso, y que cada usuario disponga en su dispositivo móvil el modelo
- acorde.
- La segmentación podría llegar a aumentarse hasta tener un modelo por persona.
-\end_layout
-
-\begin_layout Standard
-Entre los métodos de aprendizaje automático existen varias opciones por
- explorar, como las técnicas de vectores de soporte (
+Incorporar al sistema 
+\emph on
+HARDroid
+\emph default
+ desarrollado otros métodos de aprendizaje automático que permitan mejorar
+ la tasa de aciertos.
+ Entre estos se sugieren por ejemplo las técnicas de vectores de soporte
+ (
 \begin_inset ERT
 status open
 
@@ -380,34 +271,44 @@ abbr{ANN}
 
 \end_inset
 
-), y explorar cual obtiene mejores resultados en contrapartida con el consumo
- de batería del dispositivo móvil.
+).
 \end_layout
 
-\begin_layout Standard
-En el proceso de selección de variables estadísticas se debería explorar
- en detalle un mayor numero de ella, como las tres dimensiones del movimiento
- para obtener mejores resultados en las predicciones.
+\begin_layout Enumerate
+Incluir más variables en el procesamiento de señales de entrada para mejorar
+ las predicciones teniendo en cuenta la orientación del dispositivo.
  
 \end_layout
 
-\begin_layout Standard
-Dentro de las actividades definidas en el modelo de este trabajo pueden
- extenderse a otras que podrían aplicarse a otro tipo de aplicaciones, como
- ser la médica, militar, etc.
- Para aplicaciones médicas actividades relevantes serian las posturas del
- cuerpo como ser parado, sentado, acostado.
- Esto propone un sin numero de aplicaciones del modelo de reconocimiento
- de actividades.
- 
+\begin_layout Enumerate
+Extender el sistema 
+\emph on
+HARDroid
+\emph default
+ para identificar otras actividades humanas aplicado a otras disciplinas
+ o contextos.
+ Por ejemplo en medicina para detectar caídas, posturas o actividades no
+ recomendadas.
+ En el campo militar para recomendar actividades más favorables para situación.
 \end_layout
 
-\begin_layout Standard
-De la misma manera de las actividades, se propone complementar el modelo
- con diferentes tipos de dispositivos inteligentes como ser un reloj inteligente
-, algún tipo de sensor que dé mayor información del contexto de la persona.
- Esto va muy relacionado al punto anterior, ya que algunas actividades o
- posturas podrían requerir mayores datos para realizar el reconocimiento.
+\begin_layout Enumerate
+Utilizar o aprovechar otros accesorios que agreguen variables relevantes
+ en el reconocimiento de actividades dependiendo del contexto.
+ Por ejemplo, un reloj inteligente (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Smartwatches}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \end_body

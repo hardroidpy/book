@@ -1269,7 +1269,7 @@ Procesador de Muestras
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec44:proceso-señales"
+name "sec44:proceso-senales"
 
 \end_inset
 
@@ -1860,7 +1860,7 @@ name "ssec44:sampling"
 
 La realización de actividades humanas son efectuadas durante periodos de
  tiempo de larga duración, en el orden de los segundos o minutos.
- Esta taza es mucho mayor comparado con las tazas de muestreos de los sensores,
+ Esta tasa es mucho mayor comparado con las tasas de muestreos de los sensores,
  las cuales pueden llegar hasta 
 \family typewriter
 250 
@@ -1930,7 +1930,7 @@ tabref{tab4:ex-signal}
 \begin_inset Formula $w_{j}$
 \end_inset
 
- con una taza de muestreo 
+ con una tasa de muestreo 
 \begin_inset Formula $r$
 \end_inset
 

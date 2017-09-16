@@ -133,7 +133,7 @@ status open
 
 
 \backslash
-secref{sec44:proceso-señales}
+secref{sec44:proceso-senales}
 \end_layout
 
 \end_inset
@@ -1991,7 +1991,7 @@ figref{fig4:sensor-log}
 \end_inset
 
 .
- Esta aplicación permite exportar las señales sensoriales almacenadas en
+ Esta aplicación permitió exportar las señales sensoriales almacenadas en
  forma agrupada por sesiones y subirlas a la nube.
  En la 
 \begin_inset ERT
@@ -2006,7 +2006,7 @@ tabref{tab6:captura}
 
 \end_inset
 
- se resumen las medidas de señales capturadas durante el experimento.
+ se resumen las cantidades de señales capturadas durante el experimento.
 \end_layout
 
 \begin_layout Standard
@@ -2248,8 +2248,8 @@ Conjunto de Entrenamiento
 \end_layout
 
 \begin_layout Standard
-Los datos recolectados en bruto son procesadas de acuerdo al proceso descrito
- en la 
+Los datos recolectados en bruto fueron procesados de acuerdo al proceso
+ descrito en la 
 \begin_inset ERT
 status open
 
@@ -2532,7 +2532,32 @@ abbr{ML}
  de este trabajo está automatizado por medio una herramienta construida
  en 
 \emph on
-Java.
+Java 
+\emph default
+para este trabajo
+\emph on
+ 
+\emph default
+a partir de 
+\emph on
+Clasificador C4.5
+\emph default
+ disponible en la librería 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{WEKA}
+\end_layout
+
+\end_inset
+
+
+\emph on
+.
  
 \emph default
 El proceso se puede apreciar en el siguiente flujo de la 
@@ -2618,7 +2643,7 @@ Clasificador C4.5
 \emph on
 Decision tree
 \emph default
- que es empaquetado en una librería 
+ que es empaquetado como una librería 
 \emph on
 Java
 \emph default
@@ -3195,8 +3220,8 @@ También es importante conocer el costo asociado de una clasificación no
  acertada en términos del error.
  Si el clasificador predice una clase como: correcta es tenida en cuenta
  como éxito, sino es un error.
- Por lo tanto, la razón de error es solo una proporción de errores hecho
- sobre el conjunto total de instancias y mide el rendimiento de clasificador.
+ Por lo tanto, la razón de error es solo una proporción de errores sobre
+ el conjunto total de instancias y mide el rendimiento de clasificador.
  
 \end_layout
 
@@ -3476,7 +3501,7 @@ o de
 \begin_inset Formula $12.012$
 \end_inset
 
- instancias el clasificador tiene una taza de predicción del 
+ instancias el clasificador tiene una tasa de predicción del 
 \begin_inset Formula $91,1\%$
 \end_inset
 
@@ -3490,11 +3515,10 @@ o de
 \end_inset
 
  dando un porcentaje aproximado de 
-\begin_inset Formula $74,6%\%
-$
+\begin_inset Formula $74,6$
 \end_inset
 
- considerado como una fuerte confianza en los datos.
+% considerado como una fuerte confianza en los datos.
 \end_layout
 
 \begin_layout Standard
@@ -3521,7 +3545,7 @@ En cuanto a los errores, se puede observar que el error absoluto es bajo
 Estos errores dan una noción del costo de la predicción, un incremento en
  el error a partir de una situación inicial, sin importar cual sea la métrica,
  implica inherentemente una situación inicial de mayor variabilidad y de
- difícil de predicción, no que el clasificador es peor.
+ difícil de predicción, y no que el clasificador sea pobre.
 \end_layout
 
 \begin_layout Standard
@@ -4650,7 +4674,8 @@ La aplicación móvil
 \emph on
 ActivitySurvey
 \emph default
- consulta la actividad humana detectada al servicio autónomo 
+ consulta la exactitud o acierto de predicción de la actividad humana detectada
+ por el servicio autónomo 
 \emph on
 HARDroid
 \emph default
@@ -5329,14 +5354,14 @@ Resumen de actividades detectadas marcadas como aciertos o desaciertos
 \end_layout
 
 \begin_layout Standard
-Según estos resultados se puede concluir que con un promedio de 
-\begin_inset Formula $88.9%\%
-$
+Según estos resultados se puede concluir que conforme un promedio de 
+\begin_inset Formula $88.9$
 \end_inset
 
- de aciertos el clasificador tiene una alta taza de aciertos la mayoría
- de las actividades humanas evaluadas, específicamente las actividades en
- bicicleta y en vehículo son las que más poseen falsos negativos.
+% de acierto el clasificador posee una alta tasa de acierto en la mayoría
+ de las actividades humanas evaluadas.
+ Incluso se puede notar un buen rendimiento para las actividades en bicicleta
+ y en vehículo que son aquellas más difíciles de pronosticar.
 \end_layout
 
 \begin_layout Subsection
@@ -5400,8 +5425,8 @@ status open
 <column alignment="left" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="3cm">
-<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="2.5cm">
+<column alignment="center" valignment="top" width="2cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -5460,7 +5485,7 @@ HARDroid
 \begin_inset Text
 
 \begin_layout Plain Layout
-Relación
+Relación de Acierto
 \end_layout
 
 \end_inset
@@ -5520,7 +5545,7 @@ WALKING
 \begin_inset Text
 
 \begin_layout Plain Layout
-45/9
+45/54
 \end_layout
 
 \end_inset
@@ -5580,7 +5605,7 @@ ON_BICYCLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-32/8
+32/40
 \end_layout
 
 \end_inset
@@ -5640,7 +5665,7 @@ RUNNING
 \begin_inset Text
 
 \begin_layout Plain Layout
-41/0
+41/41
 \end_layout
 
 \end_inset
@@ -5700,7 +5725,7 @@ IN_VEHICLE
 \begin_inset Text
 
 \begin_layout Plain Layout
-32/6
+32/38
 \end_layout
 
 \end_inset
@@ -5760,7 +5785,7 @@ STILL
 \begin_inset Text
 
 \begin_layout Plain Layout
-65/0
+65/65
 \end_layout
 
 \end_inset
@@ -5823,17 +5848,15 @@ Cada actividad detectada por
 \emph on
 HARDroid
 \emph default
- fue validada con la aplicación 
+ fue validada conforme la predicción de la aplicación 
 \emph on
 Sony
 \emph default
  
 \emph on
-Lifelog
+Lifelog,
 \emph default
- cuyo acierto se considera del 100% en comparación con la relación de aciertos
- y desaciertos extraidos de los resultados de la sección anterior para una
- persona en particular.
+ asumiendose que esta última posee un acierto del 100%.
  
 \end_layout
 
@@ -5855,8 +5878,8 @@ figref{fig6:vlifelog}
 \emph on
 Sony Lifelog 
 \emph default
-capturadas durante las sesiones de prueba donde se confirma como veracidad
- las actividades físicas realizadas durante el intervalo de cada sesión.
+capturadas durante las sesiones de prueba donde se confirman las actividades
+ físicas realizadas durante el intervalo de cada sesión.
 \end_layout
 
 \begin_layout Standard
@@ -5864,7 +5887,7 @@ capturadas durante las sesiones de prueba donde se confirma como veracidad
 placement th
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -5921,29 +5944,6 @@ Sony Lifelog
 
 \end_layout
 
-\begin_layout Standard
-La aplicación 
-\emph on
-Sony Lifelog
-\emph default
- representa las actividades físicas por símbolos visuales similares a la
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tabref{tab6:etiquetas}
-\end_layout
-
-\end_inset
-
-, donde se pueden apreciar las actividades realizadas de: caminata, trote,
- en bicicleta y en automóvil.
-\end_layout
-
 \begin_layout Subsection
 Entrenamiento Colaborativo
 \end_layout
@@ -5966,8 +5966,8 @@ secref{sec55:activity}
 \emph on
 ActivitySurvey
 \emph default
- está diseñada para recabar información que pueda ser utilizada para mejorar
- el clasificador continuamente.
+ está diseñada para recabar información que es utilizada para mejorar el
+ clasificador continuamente.
  Utilizando este enfoque la información recolectada durante la evaluación
  fue combinada con los datos calculados inicialmente para generar un nuevo
  clasificador con datos colaborados durante las pruebas.
@@ -5987,8 +5987,8 @@ secref{sec6:clasificacion}
 
 \end_inset
 
- se generó un clasificador colaborativo, a partir de las instancias aseveradas
- como aciertos, y se obtuvo un árbol de decisión de tamaño de 
+ se generó un clasificador colaborativo a partir de las instancias aseveradas
+ como aciertos y se obtuvo un árbol de decisión de tamaño de 
 \begin_inset Formula $699$
 \end_inset
 
@@ -5997,20 +5997,7 @@ secref{sec6:clasificacion}
 \end_inset
 
  corresponden a hojas.
- Las métricas de evaluación para clasificadores descritas en la 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-secref{sec3:metricas}
-\end_layout
-
-\end_inset
-
- son:
+ Las métricas de evaluación para este nuevo clasificador fueron:
 \end_layout
 
 \begin_layout Itemize
@@ -6050,8 +6037,9 @@ Valor-F
 \end_layout
 
 \begin_layout Standard
-Los valores aumentan levemente en comparación con el clasificador inicial.
- En cuanto a las métricas numéricas se muestran en la 
+Se puede apreciar que los valores de las métricas aumentan levemente en
+ comparación con el clasificador inicial.
+ En cuanto a las métricas numéricas en la 
 \begin_inset ERT
 status open
 
@@ -6064,8 +6052,7 @@ tabref{tab6:comparacion-clasi}
 
 \end_inset
 
- en comparación con el clasificador inicial de forma resumida con su símbolo
- correspondiente.
+ se compara el nuevo clasificador con el clasificador inicial de forma resumida.
 \end_layout
 
 \begin_layout Standard
@@ -6592,14 +6579,13 @@ Comparación entre modelo inicial y el colaborativo
 
 \begin_layout Standard
 De acuerdo a estos resultados se aprecia que el clasificador colaborativo
- mejora levemente en comparación al inicial como es de notar el aumento
- de la precisión, la taza de aciertos, el valor del coeficiente de confianza,
- así también la reducción en los valores de los errores absolutos, cuadráticos
- y relativos.
+ mejora levemente en comparación al inicial.
+ Se puede notar el aumento de la precisión, la tasa de aciertos, el valor
+ del coeficiente de confianza, así también la reducción en los valores de
+ los errores absolutos, cuadráticos y relativos.
  Con estos valores numéricos podemos resumir que un clasificador mejora
  de manera continua por medio de la retroalimentación de instancias recolectadas
- en campo, pero teniendo en consideración la sensibilidad que en algunos
- casos se puedan introducir instancias no acertadas.
+ en el campo.
 \end_layout
 
 \end_body

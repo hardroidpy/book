@@ -14,7 +14,7 @@ a la captura de datos, determinando los requisitos mínimos de los
 teléfonos móviles utilizados y describiendo el procedimiento guía
 para experimentación. Posteriormente, la sección \ref{sec6:clasificacion}
 describe los resultados obtenidos al aplicar las técnicas descritas
-en la \secref{sec44:proceso-señales} para transformar datos sensoriales
+en la \secref{sec44:proceso-senales} para transformar datos sensoriales
 a un conjunto de entrenamiento necesario para clasificar actividades
 humanas. Esto incluye la validación del clasificador construido con
 las técnicas de \emph{Machine Learning} (\abbr{ML}) expuestas en
@@ -190,9 +190,9 @@ de los voluntarios mientras realizan las actividades humanas dictadas
 durante el experimento. Para la captura y persistencia de las señales
 del sensor de aceleración se utilizó una aplicación móvil para \emph{Android
 }denominada \emph{SensorLog} \cite{Alan2014s}, este se ve en la \figref{fig4:sensor-log}.
-Esta aplicación permite exportar las señales sensoriales almacenadas
+Esta aplicación permitió exportar las señales sensoriales almacenadas
 en forma agrupada por sesiones y subirlas a la nube. En la \tabref{tab6:captura}
-se resumen las medidas de señales capturadas durante el experimento.
+se resumen las cantidades de señales capturadas durante el experimento.
 
 \begin{table}[h]
 \begin{centering}
@@ -213,7 +213,7 @@ se resumen las medidas de señales capturadas durante el experimento.
 
 \subsection{Conjunto de Entrenamiento }
 
-Los datos recolectados en bruto son procesadas de acuerdo al proceso
+Los datos recolectados en bruto fueron procesados de acuerdo al proceso
 descrito en la \secref{ssec44:extraction} para formar un conjunto
 de entrenamiento. En la \tabref{tab6:muestras} se resumen las muestras
 obtenidas al aplicar las técnicas de procesamiento de datos de este
@@ -236,8 +236,10 @@ trabajo.
 \end{table}
 
 La generación del clasificador de \abbr{ML} de este trabajo está
-automatizado por medio una herramienta construida en \emph{Java. }El
-proceso se puede apreciar en el siguiente flujo de la \figref{fig6:proceso-clasi}.
+automatizado por medio una herramienta construida en \emph{Java }para
+este trabajo\emph{ }a partir de \emph{Clasificador C4.5} disponible
+en la librería \abbr{WEKA}\emph{. }El proceso se puede apreciar en
+el siguiente flujo de la \figref{fig6:proceso-clasi}.
 
 \begin{figure}[th]
 \begin{centering}
@@ -250,7 +252,7 @@ Las entradas iniciales son los archivos de datos \emph{Sensor TS i},
 donde $i=1,..,N$ dependiendo de la cantidad de voluntarios. El procesamiento
 de \emph{Cálculo Features} produce un conjunto de entrenamiento \emph{Features
 TS }que forma el modelo inicial del \emph{Clasificador C4.5} para
-producir un \emph{Decision tree} que es empaquetado en una librería
+producir un \emph{Decision tree} que es empaquetado como una librería
 \emph{Java}.
 
 \section{Clasificador de Actividades Humanas}
@@ -339,8 +341,7 @@ También es importante conocer el costo asociado de una clasificación
 no acertada en términos del error. Si el clasificador predice una
 clase como: correcta es tenida en cuenta como éxito, sino es un error.
 Por lo tanto, la razón de error es solo una proporción de errores
-hecho sobre el conjunto total de instancias y mide el rendimiento
-de clasificador. 
+sobre el conjunto total de instancias y mide el rendimiento de clasificador. 
 
 Por otra parte, existen otras métricas numéricas útiles para evaluar
 la predicción en base a los errores. De acuerdo a la nomenclatura
@@ -407,11 +408,11 @@ las muestras de entrenamiento descritas anteriormente:
 \item Raíz de Error cuadrático relativo ($E_{rrs}$): $48,9126\%$ 
 \end{itemize}
 La discusión que surge de estos cálculos es que para el conjunto de
-entrenamiento de $12.012$ instancias el clasificador tiene una taza
+entrenamiento de $12.012$ instancias el clasificador tiene una tasa
 de predicción del $91,1\%$ de las veces correctamente y el $8,9\%$
 de las veces incorrectamente. El valor del coeficiente de confianza
-está entre el $0,8-0,9$ dando un porcentaje aproximado de $74,6%\%
-$ considerado como una fuerte confianza en los datos.
+está entre el $0,8-0,9$ dando un porcentaje aproximado de $74,6$\%
+considerado como una fuerte confianza en los datos.
 
 En cuanto a los errores, se puede observar que el error absoluto es
 bajo y el error cuadrático es bajo moderado ya que son menos que un
@@ -422,8 +423,8 @@ un valor medio de $48,9\%$ para el cuadrático.
 Estos errores dan una noción del costo de la predicción, un incremento
 en el error a partir de una situación inicial, sin importar cual sea
 la métrica, implica inherentemente una situación inicial de mayor
-variabilidad y de difícil de predicción, no que el clasificador es
-peor.
+variabilidad y de difícil de predicción, y no que el clasificador
+sea pobre.
 
 Además, utilizando la técnica de validación cruzada explicada en la
 \secref{sec3:metricas} se obtiene la matriz de confusión resultante
@@ -512,11 +513,12 @@ mate9 & 12 & 7 & 18 & - & 15 & 14\tabularnewline
 \caption{\label{tab6:vsesiones}Resumen de sesiones de evaluación}
 \end{table}
 
-La aplicación móvil \emph{ActivitySurvey} consulta la actividad humana
-detectada al servicio autónomo \emph{HARDroid} en intervalos regulares.
-Durante una sesión se registra la información del teléfono, correo,
-edad, la fecha y hora, la etiqueta de la actividad detectada y la
-etiqueta de la actividad corregida en caso de una aseveración. 
+La aplicación móvil \emph{ActivitySurvey} consulta la exactitud o
+acierto de predicción de la actividad humana detectada por el servicio
+autónomo \emph{HARDroid} en intervalos regulares. Durante una sesión
+se registra la información del teléfono, correo, edad, la fecha y
+hora, la etiqueta de la actividad detectada y la etiqueta de la actividad
+corregida en caso de una aseveración. 
 
 En la \tabref{tab6:vencuesta} se muestra las cantidades de las actividades
 acertadas y no acertadas por el clasificador \abbr{HAR} en proporción
@@ -552,10 +554,11 @@ presentándose los datos de manera informativa}} &  &  &  & 38 & 0 & 0,00\%\tabu
 como aciertos o desaciertos}
 \end{table}
 
-Según estos resultados se puede concluir que con un promedio de $88.9%\%
-$ de aciertos el clasificador tiene una alta taza de aciertos la mayoría
-de las actividades humanas evaluadas, específicamente las actividades
-en bicicleta y en vehículo son las que más poseen falsos negativos.
+Según estos resultados se puede concluir que conforme un promedio
+de $88.9$\% de acierto el clasificador posee una alta tasa de acierto
+en la mayoría de las actividades humanas evaluadas. Incluso se puede
+notar un buen rendimiento para las actividades en bicicleta y en vehículo
+que son aquellas más difíciles de pronosticar.
 
 \subsection{Validación de la Clasificación}
 
@@ -571,22 +574,22 @@ una persona.
 
 \begin{table}[h]
 \begin{centering}
-\begin{tabular}{|c|>{\raggedright}p{3cm}|c|c|>{\raggedright}p{3cm}|c|}
+\begin{tabular}{|c|>{\raggedright}p{3cm}|c|c|>{\raggedright}p{2.5cm}|>{\centering}p{2cm}|}
 \hline 
 Teléfono & Etiqueta 
 
-\emph{Sony Lifelog} & Intervalo & Duración & Etiqueta \emph{HARDroid} & Relación\tabularnewline
+\emph{Sony Lifelog} & Intervalo & Duración & Etiqueta \emph{HARDroid} & Relación de Acierto\tabularnewline
 \hline 
 \hline 
-nexus5x & \texttt{walking} & 21:26 - 21:44 & 19 & \texttt{WALKING} & 45/9\tabularnewline
+nexus5x & \texttt{walking} & 21:26 - 21:44 & 19 & \texttt{WALKING} & 45/54\tabularnewline
 \hline 
-nexus5x & \texttt{cycling} & 21:44 - 22:00 & 27 & \texttt{ON\_BICYCLE} & 32/8\tabularnewline
+nexus5x & \texttt{cycling} & 21:44 - 22:00 & 27 & \texttt{ON\_BICYCLE} & 32/40\tabularnewline
 \hline 
-nexus5x & \texttt{running} & 22:12 - 22:24 & 13 & \texttt{RUNNING} & 41/0\tabularnewline
+nexus5x & \texttt{running} & 22:12 - 22:24 & 13 & \texttt{RUNNING} & 41/41\tabularnewline
 \hline 
-nexus5x & \texttt{vehicle} & 22:39 - 22:57 & 19 & \texttt{IN\_VEHICLE} & 32/6\tabularnewline
+nexus5x & \texttt{vehicle} & 22:39 - 22:57 & 19 & \texttt{IN\_VEHICLE} & 32/38\tabularnewline
 \hline 
-nexus5x & \texttt{-} & 22:25 - 22:35 & 10 & \texttt{STILL} & 65/0\tabularnewline
+nexus5x & \texttt{-} & 22:25 - 22:35 & 10 & \texttt{STILL} & 65/65\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -594,15 +597,14 @@ nexus5x & \texttt{-} & 22:25 - 22:35 & 10 & \texttt{STILL} & 65/0\tabularnewline
 por \emph{HARDroid} vs\emph{ Sony Lifelog}}
 \end{table}
 
-Cada actividad detectada por \emph{HARDroid} fue validada con la aplicación
-\emph{Sony} \emph{Lifelog} cuyo acierto se considera del 100\% en
-comparación con la relación de aciertos y desaciertos extraidos de
-los resultados de la sección anterior para una persona en particular. 
+Cada actividad detectada por \emph{HARDroid} fue validada conforme
+la predicción de la aplicación \emph{Sony} \emph{Lifelog,} asumiendose
+que esta última posee un acierto del 100\%. 
 
 En la \figref{fig6:vlifelog} se muestran dos pantallas de la aplicación
 \emph{Sony Lifelog }capturadas durante las sesiones de prueba donde
-se confirma como veracidad las actividades físicas realizadas durante
-el intervalo de cada sesión.
+se confirman las actividades físicas realizadas durante el intervalo
+de cada sesión.
 
 \begin{figure}[th]
 \begin{centering}
@@ -612,36 +614,31 @@ el intervalo de cada sesión.
 \emph{Sony Lifelog}}
 \end{figure}
 
-La aplicación \emph{Sony Lifelog} representa las actividades físicas
-por símbolos visuales similares a la \tabref{tab6:etiquetas}, donde
-se pueden apreciar las actividades realizadas de: caminata, trote,
-en bicicleta y en automóvil.
 
 \subsection{Entrenamiento Colaborativo}
 
 Así como se expuso en la \secref{sec55:activity}, la aplicación móvil
-\emph{ActivitySurvey} está diseñada para recabar información que pueda
-ser utilizada para mejorar el clasificador continuamente. Utilizando
-este enfoque la información recolectada durante la evaluación fue
-combinada con los datos calculados inicialmente para generar un nuevo
-clasificador con datos colaborados durante las pruebas.
+\emph{ActivitySurvey} está diseñada para recabar información que es
+utilizada para mejorar el clasificador continuamente. Utilizando este
+enfoque la información recolectada durante la evaluación fue combinada
+con los datos calculados inicialmente para generar un nuevo clasificador
+con datos colaborados durante las pruebas.
 
 Siguiendo el mismo procedimiento de la \secref{sec6:clasificacion}
-se generó un clasificador colaborativo, a partir de las instancias
-aseveradas como aciertos, y se obtuvo un árbol de decisión de tamaño
+se generó un clasificador colaborativo a partir de las instancias
+aseveradas como aciertos y se obtuvo un árbol de decisión de tamaño
 de $699$ nodos, de los cuales $350$ corresponden a hojas. Las métricas
-de evaluación para clasificadores descritas en la \secref{sec3:metricas}
-son:
+de evaluación para este nuevo clasificador fueron:
 \begin{itemize}
 \item Precisión: $0,9204$
 \item Exhaustividad: $0,9134$
 \item Exactitud: $0,9723$
 \item \emph{Valor-F}: $0,9168$
 \end{itemize}
-Los valores aumentan levemente en comparación con el clasificador
-inicial. En cuanto a las métricas numéricas se muestran en la \tabref{tab6:comparacion-clasi}
-en comparación con el clasificador inicial de forma resumida con su
-símbolo correspondiente.
+Se puede apreciar que los valores de las métricas aumentan levemente
+en comparación con el clasificador inicial. En cuanto a las métricas
+numéricas en la \tabref{tab6:comparacion-clasi} se compara el nuevo
+clasificador con el clasificador inicial de forma resumida.
 
 \begin{table}[H]
 \begin{centering}
@@ -673,11 +670,9 @@ el colaborativo}
 \end{table}
 
 De acuerdo a estos resultados se aprecia que el clasificador colaborativo
-mejora levemente en comparación al inicial como es de notar el aumento
-de la precisión, la taza de aciertos, el valor del coeficiente de
+mejora levemente en comparación al inicial. Se puede notar el aumento
+de la precisión, la tasa de aciertos, el valor del coeficiente de
 confianza, así también la reducción en los valores de los errores
 absolutos, cuadráticos y relativos. Con estos valores numéricos podemos
 resumir que un clasificador mejora de manera continua por medio de
-la retroalimentación de instancias recolectadas en campo, pero teniendo
-en consideración la sensibilidad que en algunos casos se puedan introducir
-instancias no acertadas.
+la retroalimentación de instancias recolectadas en el campo.
