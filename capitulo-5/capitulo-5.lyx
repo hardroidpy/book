@@ -96,7 +96,7 @@ name "sec51:intro"
 
 \end_inset
 
-En este capítulo introducimos un sistema que clasifica la actividades humanas
+En este capítulo introducimos un sistema que clasifica las actividades humanas
  ambulatorias utilizando teléfonos móviles inteligentes con la plataforma
  
 \emph on
@@ -582,7 +582,7 @@ Cliente-Servidor
 .
  Estos sistemas fueron inicialmente concebidos como de dos capas: el cliente
  se encarga de la interfaz de usuario y la lógica de la aplicación, y el
- servidor usualmente es una bases de datos relacional.
+ servidor usualmente es una base de datos relacionales.
  En la 
 \begin_inset ERT
 status open
@@ -1118,8 +1118,8 @@ En esta metodología se empieza definiendo la funcionalidad esperada del
 \begin_layout Standard
 El diseño empieza poniendo énfasis en las funcionalidades esperadas del
  sistema cuando este se encuentre en operación.
- Luego, se continua con el diseño de la lógica de negocios que soportan
- a estas funcionalidades, y por ultimo se enfoca en los recursos necesarios
+ Luego, se continúa con el diseño de la lógica de negocios que soportan
+ a estas funcionalidades, y por último se enfoca en los recursos necesarios
  por la capa lógica.
 \end_layout
 
@@ -1263,7 +1263,7 @@ abbr{OS}
 
 \begin_layout Standard
 El sistema operativo móvil se encarga del manejo de recursos del dispositivo
- y el control de operación de la aplicaciones móviles.
+ y el control de operación de las aplicaciones móviles.
  Estos sistemas tienen características similares a los sistemas operativos
  convencionales utilizados en las computadoras de escritorio (
 \emph on
@@ -2027,8 +2027,7 @@ key "Gargenta2014"
 \end_inset
 
 .
- Los componentes son descritos a continuación (con nomenclatura inglesa)
- :
+ Los componentes son descritos a continuación (con nomenclatura inglesa):
 \end_layout
 
 \begin_layout Itemize
@@ -2044,7 +2043,7 @@ actividad
 \emph default
  representa la interfaz de usuario de la aplicación responsable de desplegar
  la información y capturar las interacciones.
- Este componente no persiste información, sino que son tareas de computo
+ Este componente no persiste información, sino que son tareas de cómputo
  de corta duración y en primer plano donde el sistema operativo puede requerir
  pararlos y pasarlos a un modo de reposo frecuentemente.
 \end_layout
@@ -2173,7 +2172,7 @@ abbr{CPU}
 
 \end_inset
 
-, etc..
+, etc.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2342,8 +2341,8 @@ abbr{Android}
  
 \emph default
 citados anteriormente.
- Como se puede apreciar, el mecanismo principal para todas las interacciones
- son llevadas acabo por llamadas 
+ Como se puede apreciar, todas las interacciones son llevadas acabo por
+ el mecanismo principal de llamadas 
 \begin_inset ERT
 status open
 
@@ -2591,7 +2590,7 @@ reference "ssec52:tecnologia"
 Backend C4.5
 \series default
 \emph default
-: Es un servicio web 
+: Es un servicio web basado en 
 \begin_inset ERT
 status open
 
@@ -2604,8 +2603,7 @@ abbr{REST}
 
 \end_inset
 
- que recolecta las evaluaciones del usuario que utiliza la aplicación de
- encuesta.
+ que recolecta evaluaciones del usuario que utiliza la aplicación de encuesta.
  Además, almacena los resultados que surgen debido a la utilización del
  reconocedor con el objetivo de crear el modelo de aprendizaje automático
  de manera manual.
@@ -3440,8 +3438,8 @@ removeActivityUpdates(listener: ActivityRecognitionListener): void public
 \begin_inset Newline newline
 \end_inset
 
-Se desuscribe a eventos de detección de actividad teniendo en cuenta el
- observador registrado.
+Se cancela la subscripción a eventos de detección de actividad teniendo
+ en cuenta el observador registrado.
 \end_layout
 
 \begin_layout Itemize
@@ -3455,8 +3453,8 @@ removeActivityUpdates(callbackIntent: PendingIntent): void public
 \begin_inset Newline newline
 \end_inset
 
-Se desuscribe a eventos de detección de actividad tendiendo en cuenta la
- función diferida registrada.
+Se cancela la subscripción a eventos de detección de actividad teniendo
+ en cuenta la función diferida registrada.
 \end_layout
 
 \begin_layout Standard
@@ -3689,8 +3687,9 @@ abbr{HARDroid}
 \begin_layout Standard
 La primeras dos interacciones corresponde a la conexión de clientes y la
  tercera interacción es la suscripción.
- El servidor administra una lista de suscripciones para cada cliente con
- los tiempos de preferencia de notificación registrados ante una eventualidad.
+ El servidor administra una lista de suscripciones donde a cada cliente
+ se le registra la preferencia de notificación ante un evento de actividad
+ detectada.
  
 \end_layout
 
@@ -4202,7 +4201,7 @@ abbr{WEKA}
 
 \end_inset
 
- y se construye para luego disponerlo como una librería remota ha ser descargada
+ y se construye para luego disponerlo como una librería remota a ser descargada
  de Internet.
  El mecanismo detallado se describe en detalle en 
 \begin_inset CommandInset citation
@@ -4219,7 +4218,7 @@ key "Falsina2014"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -4451,8 +4450,9 @@ datos
 \begin_inset space ~
 \end_inset
 
-personales El usuario visualiza la pantalla de registro inicial y completa
- sus datos personales: correo electrónico, edad e intervalo de detección.
+personales El usuario visualiza la pantalla de registro inicial y procede
+ a completar sus datos personales: correo electrónico, edad e intervalo
+ de detección.
  El sistema guarda la información en las preferencias básicas del usuario.
 \end_layout
 

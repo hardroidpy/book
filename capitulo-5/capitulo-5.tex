@@ -6,12 +6,13 @@
 \section{Introducción}
 
 \label{sec51:intro}En este capítulo introducimos un sistema que clasifica
-la actividades humanas ambulatorias utilizando teléfonos móviles inteligentes
-con la plataforma \emph{\abbr{Android}\texttrademark}: \emph{\abbr{HARDroid}}.
-El sistema es una adaptación del diseño utilizado por sistemas existentes
-como \emph{Google Play Services} \cite{Google2013l}, específicamente
-la funcionalidad para reconocer actividades humanas utilizando los
-conceptos y técnicas del estado del arte expuestos en capítulos precedentes. 
+las actividades humanas ambulatorias utilizando teléfonos móviles
+inteligentes con la plataforma \emph{\abbr{Android}\texttrademark}:
+\emph{\abbr{HARDroid}}. El sistema es una adaptación del diseño utilizado
+por sistemas existentes como \emph{Google Play Services} \cite{Google2013l},
+específicamente la funcionalidad para reconocer actividades humanas
+utilizando los conceptos y técnicas del estado del arte expuestos
+en capítulos precedentes. 
 
 El sistema \emph{\abbr{HARDroid}} está implementado en base a dos
 componentes principales: una interfaz de programación que expone las
@@ -114,16 +115,16 @@ La popularidad de la división de sistemas en módulos por capas se
 volvió más relevante con el auge de los sistemas tipo \emph{Cliente-Servidor}.
 Estos sistemas fueron inicialmente concebidos como de dos capas: el
 cliente se encarga de la interfaz de usuario y la lógica de la aplicación,
-y el servidor usualmente es una bases de datos relacional. En la \figref{fig5:cliente_servidor}
-se muestra una representación de la arquitectura en dos capas. Para
-sistemas sencillos que desplieguen información y actualicen datos,
-este modelo es el más adecuado. Sin embargo, a medida que se construyen
-sistemas más complejos, el problema radica mantener la lógica central
-del sistema: las reglas de negocio, validaciones, cálculos, etc. El
-modelo de dos capas propone ubicar la lógica central embebida en las
-interacciones de la Interfaz de Usuario, la capa cliente, o almacenar
-los mismos en procedimientos almacenados en la basa de datos, la capa
-servidor.
+y el servidor usualmente es una base de datos relacionales. En la
+\figref{fig5:cliente_servidor} se muestra una representación de la
+arquitectura en dos capas. Para sistemas sencillos que desplieguen
+información y actualicen datos, este modelo es el más adecuado. Sin
+embargo, a medida que se construyen sistemas más complejos, el problema
+radica mantener la lógica central del sistema: las reglas de negocio,
+validaciones, cálculos, etc. El modelo de dos capas propone ubicar
+la lógica central embebida en las interacciones de la Interfaz de
+Usuario, la capa cliente, o almacenar los mismos en procedimientos
+almacenados en la basa de datos, la capa servidor.
 
 \begin{figure}[H]
 \begin{centering}
@@ -182,11 +183,11 @@ orientación a objetos, que han sido ideados para solucionar problemas
 comunes determinados en un contexto particular \cite{Shalloway2004}.
 Una definición acertada es la que se cita a continuación.
 \begin{quotation}
-<<\emph{Cada patrón describe un problema que ocurre una y otra vez
-en nuestro entorno, y también describe la solución principal al problema,
-de tal manera que la solución pueda ser utilizada millares de veces,
-sin tener que duplicar el trabajo de pensar cómo resolver el problema.>>}
-\cite{Alexander1977}
+\flqq{}\emph{Cada patrón describe un problema que ocurre una y otra
+vez en nuestro entorno, y también describe la solución principal al
+problema, de tal manera que la solución pueda ser utilizada millares
+de veces, sin tener que duplicar el trabajo de pensar cómo resolver
+el problema.\frqq{}} \cite{Alexander1977}
 \end{quotation}
 Para nuestro objetivo de diseño se utilizan los siguientes patrones
 de diseño para organizar la capa de \emph{Dominio} cuya responsabilidad
@@ -247,9 +248,9 @@ paso a paso hasta refinar el diseño en capas más bajas a medida que
 se avanzan con detalles específicos. 
 
 El diseño empieza poniendo énfasis en las funcionalidades esperadas
-del sistema cuando este se encuentre en operación. Luego, se continua
+del sistema cuando este se encuentre en operación. Luego, se continúa
 con el diseño de la lógica de negocios que soportan a estas funcionalidades,
-y por ultimo se enfoca en los recursos necesarios por la capa lógica.
+y por último se enfoca en los recursos necesarios por la capa lógica.
 
 Como aspecto práctico de esta metodología se han identificado las
 siguientes tareas específicas de diseño que ayudan a comprender y
@@ -280,7 +281,7 @@ de los sensores, es el sistema operativo (\emph{Operating System},
 \abbr{OS}) móvil. 
 
 El sistema operativo móvil se encarga del manejo de recursos del dispositivo
-y el control de operación de la aplicaciones móviles. Estos sistemas
+y el control de operación de las aplicaciones móviles. Estos sistemas
 tienen características similares a los sistemas operativos convencionales
 utilizados en las computadoras de escritorio (\emph{Personal Computer},
 \abbr{PC}). La función principal de un sistema operativo es proveer
@@ -407,12 +408,12 @@ los componentes disponibles y como estos se combinan entre sí para
 formar una aplicación. Cada aplicación está compuesta de cuatro (4)
 componentes distintos, donde cada uno cubre un tópico en específico
 \cite{Gargenta2014}. Los componentes son descritos a continuación
-(con nomenclatura inglesa) :
+(con nomenclatura inglesa):
 \begin{itemize}
 \item \textbf{\emph{Activity}}: El componente \emph{actividad} representa
 la interfaz de usuario de la aplicación responsable de desplegar la
 información y capturar las interacciones. Este componente no persiste
-información, sino que son tareas de computo de corta duración y en
+información, sino que son tareas de cómputo de corta duración y en
 primer plano donde el sistema operativo puede requerir pararlos y
 pasarlos a un modo de reposo frecuentemente.
 \item \textbf{\emph{Service}}: El componente \emph{servicio} ofrece un mecanismo
@@ -437,7 +438,7 @@ Estos componentes en su conjunto conforman una aplicación móvil. Estos
 son bloques básicos que están conectados de manera suelta y están
 contenidos en un entorno de aplicación que comparten un proceso del
 sistema operativo y compiten por los mismos recursos: memoria, archivos,
-\abbr{CPU}, etc..
+\abbr{CPU}, etc.
 
 \subsubsection{Componente de Comunicación}
 
@@ -464,8 +465,8 @@ diseño se basa completamente en este componente.
 \end{itemize}
 En la \figref{fig5:mensajes-ipc} se muestran las diferentes formas
 de interacción entre los componentes \emph{\abbr{Android} }citados
-anteriormente. Como se puede apreciar, el mecanismo principal para
-todas las interacciones son llevadas acabo por llamadas \abbr{IPC}.
+anteriormente. Como se puede apreciar, todas las interacciones son
+llevadas acabo por el mecanismo principal de llamadas \abbr{IPC}.
 
 Una actividad se inicia por medio de un mensaje y puede lanzar otra
 actividad en pantalla. Un servicio se inicia, se para y se asocia
@@ -503,8 +504,8 @@ el resultado con el consentimiento del usuario. Este componente está
 ubicado en la capa de \emph{Applications} descrita en \ref{ssec52:tecnologia}.
 El resultado evaluado puede ser utilizado para mejorar el clasificador
 de aprendizaje automático.
-\item \textbf{\emph{Backend C4.5}}: Es un servicio web \abbr{REST} que
-recolecta las evaluaciones del usuario que utiliza la aplicación de
+\item \textbf{\emph{Backend C4.5}}: Es un servicio web basado en \abbr{REST}
+que recolecta evaluaciones del usuario que utiliza la aplicación de
 encuesta. Además, almacena los resultados que surgen debido a la utilización
 del reconocedor con el objetivo de crear el modelo de aprendizaje
 automático de manera manual. 
@@ -645,12 +646,12 @@ Se suscribe a eventos de detección de actividad a intervalos regulares
 en mili-segundos. Espera la respuesta con una función diferida.
 \item \texttt{\footnotesize{}removeActivityUpdates(listener: ActivityRecognitionListener): void
 public} \\
-Se desuscribe a eventos de detección de actividad teniendo en cuenta
-el observador registrado.
+Se cancela la subscripción a eventos de detección de actividad teniendo
+en cuenta el observador registrado.
 \item \texttt{\footnotesize{}removeActivityUpdates(callbackIntent: PendingIntent): void
 public}\\
-Se desuscribe a eventos de detección de actividad tendiendo en cuenta
-la función diferida registrada.
+Se cancela la subscripción a eventos de detección de actividad teniendo
+en cuenta la función diferida registrada.
 \end{itemize}
 En las siguientes secciones se detallan los módulos encargados de
 implementar la lógica de negocio y las funcionalidades de esta interfaz.
@@ -691,8 +692,8 @@ de la aplicación móvil \emph{\abbr{HARDroid}}.
 
 La primeras dos interacciones corresponde a la conexión de clientes
 y la tercera interacción es la suscripción. El servidor administra
-una lista de suscripciones para cada cliente con los tiempos de preferencia
-de notificación registrados ante una eventualidad. 
+una lista de suscripciones donde a cada cliente se le registra la
+preferencia de notificación ante un evento de actividad detectada. 
 
 \subsubsection{Procesamiento}
 
@@ -779,7 +780,7 @@ de \emph{software} en formato \abbr{JAR}.
 \end{itemize}
 La actualización dinámica del clasificador se muestra en la \figref{fig5:service-classi}.
 Cada nueva versión del clasificador se genera por medio de \abbr{WEKA}
-y se construye para luego disponerlo como una librería remota ha ser
+y se construye para luego disponerlo como una librería remota a ser
 descargada de Internet. El mecanismo detallado se describe en detalle
 en \cite{Falsina2014}.
 
@@ -829,12 +830,12 @@ a las muestras generadas por una persona en particular. En la siguiente
 \begin{description}
 \item [{CU01-Leer~instrucciones}] El usuario verifica la tarjeta inicial
 con notas de bienvenida e instrucciones básicas de uso para luego
-accionar el botón <<ENTENDIDO>>. El sistema oculta la tarjeta permanentemente
-y dirige a la vista de registro.
+accionar el botón \flqq{}ENTENDIDO\frqq{}. El sistema oculta la
+tarjeta permanentemente y dirige a la vista de registro.
 \item [{CU02-Registrar~datos~personales}] El usuario visualiza la pantalla
-de registro inicial y completa sus datos personales: correo electrónico,
-edad e intervalo de detección. El sistema guarda la información en
-las preferencias básicas del usuario.
+de registro inicial y procede a completar sus datos personales: correo
+electrónico, edad e intervalo de detección. El sistema guarda la información
+en las preferencias básicas del usuario.
 \end{description}
 
 \subsubsection{Responder Encuesta}
@@ -867,11 +868,11 @@ de tarjetas visuales de encuesta con los resultados recientes de una
 sesión de entrenamiento. 
 \item [{CU06-Confirmar~actividad}] El usuario responde positivamente a
 la tarjeta visual de encuesta aseverando el resultado de la actividad
-humana detectada por medio del botón <<CORRECTO>>. \\
+humana detectada por medio del botón \flqq{}CORRECTO\frqq{}. \\
 El sistema actualiza la tarjeta de encuesta como detectada correctamente.
 \item [{CU07-Corregir~respuesta}] El usuario responde negativamente a
 la tarjeta visual de encuesta negando el resultado de la actividad
-humana detectada por medio del botón <<INCORRECTO>>. \\
+humana detectada por medio del botón \flqq{}INCORRECTO\frqq{}. \\
 El sistema despliega un dialogo para obtener la actividad humana declarada
 por el usuario.\\
 El usuario selecciona la actividad humana que corresponde. \\
