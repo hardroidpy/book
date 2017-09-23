@@ -325,7 +325,7 @@ Valor & Nivel de acuerdo & \% de datos confiables\tabularnewline
 \hline 
 0.80 - 0.90 & Fuerte & 64 - 81\%\tabularnewline
 \hline 
-\textgreater{}0.90 & Casi perfecto & 82 - 100\%\tabularnewline
+>0.90 & Casi perfecto & 82 - 100\%\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -399,26 +399,26 @@ Las métricas numéricas de predicción se exponen a continuación considerando
 las muestras de entrenamiento descritas anteriormente: 
 \begin{itemize}
 \item Número de instancias ($N$): $12.012$ 
-\item Instancias correctamente clasificadas ($C$): $10.942$ ($91,0922\%$)
-\item Instancias incorrectamente clasificadas ($I$): $1.070$ ($8,9078\%$)
-\item Estadísticas Kappa ($\kappa$): $0,8678$ 
-\item Error medio absoluto ($E_{ma}$): $0,0341$
-\item Raíz de Error cuadrático medio ($E_{rms}$): $0,164$ 
-\item Error absoluto relativo ($E_{ra}$): $15,1717\%$ 
-\item Raíz de Error cuadrático relativo ($E_{rrs}$): $48,9126\%$ 
+\item Instancias correctamente clasificadas ($C$): $10.942$ (91,0922\%)
+\item Instancias incorrectamente clasificadas ($I$): $1.070$ (8,9078\%)
+\item Estadísticas Kappa ($\kappa$): 0,8678 
+\item Error medio absoluto ($E_{ma}$): 0,0341
+\item Raíz de Error cuadrático medio ($E_{rms}$): 0,164
+\item Error absoluto relativo ($E_{ra}$): 15,1717\% 
+\item Raíz de Error cuadrático relativo ($E_{rrs}$): 48,9126\%
 \end{itemize}
 La discusión que surge de estos cálculos es que para el conjunto de
 entrenamiento de $12.012$ instancias el clasificador tiene una tasa
-de predicción del $91,1\%$ de las veces correctamente y el $8,9\%$
-de las veces incorrectamente. El valor del coeficiente de confianza
-está entre el $0,8-0,9$ dando un porcentaje aproximado de $74,6$\%
-considerado como una fuerte confianza en los datos.
+de predicción del 91,1\% de las veces correctamente y el 8,9\% de
+las veces incorrectamente. El valor del coeficiente de confianza está
+entre el 0,8 - 0,9 dando un porcentaje aproximado de 74,6\% considerado
+como una fuerte confianza en los datos.
 
 En cuanto a los errores, se puede observar que el error absoluto es
 bajo y el error cuadrático es bajo moderado ya que son menos que un
-$20\%$. Los errores relativos con respecto al error simple utilizando
-la media arrojan un valor moderado de $15,2\%$ para el absoluto y
-un valor medio de $48,9\%$ para el cuadrático. 
+20\%. Los errores relativos con respecto al error simple utilizando
+la media arrojan un valor moderado de 15,2\% para el absoluto y un
+valor medio de 48,9\% para el cuadrático. 
 
 Estos errores dan una noción del costo de la predicción, un incremento
 en el error a partir de una situación inicial, sin importar cuál sea
@@ -460,10 +460,10 @@ generado}
 Con esta matriz se calculan las siguientes métricas de evaluación
 para clasificadores descritas en la \secref{sec3:metricas}:
 \begin{itemize}
-\item Precisión: $0,9174$
-\item Exhaustividad: $0,9109$
-\item Exactitud: $0,9714$
-\item \emph{Valor-F}: $0,9142$
+\item Precisión: 0,9174
+\item Exhaustividad: 0,9109
+\item Exactitud: 0,9714
+\item \emph{Valor-F}: 0,9142
 \end{itemize}
 Estos valores arrojan una perspectiva de que el clasificador generado
 posee altos valores de exactitud, precisión y exhaustividad. Esto
@@ -519,12 +519,13 @@ autónomo \emph{HARDroid} en intervalos regulares. Durante una sesión
 se registra la información del teléfono, correo, edad, la fecha y
 hora, la etiqueta de la actividad detectada y la etiqueta de la actividad
 corregida en caso de una aseveración. En la \figref{fig6:activity-survey}
-se muestra la intefaz de usuario de la aplicación de encuesta durante
+se muestra la interfaz de usuario de la aplicación de encuesta durante
 una sesión de entrenamiento.
 
 \begin{figure}[H]
 \begin{centering}
-\includegraphics[width=0.8\columnwidth]{capitulo-6/graphics/activities_toast}
+\includegraphics[scale=0.6]{capitulo-6/graphics/activities_toast}
+\includegraphics[scale=0.6]{capitulo-6/graphics/act_feed2}
 \par\end{centering}
 \caption{\label{fig6:activity-survey}Aplicación de encuesta\emph{ Activity
 Survey}}
@@ -566,7 +567,7 @@ como aciertos o desaciertos}
 \end{table}
 
 Según estos resultados se puede concluir que conforme un promedio
-de $88.9$\% de acierto el clasificador posee una alta tasa de acierto
+de 88,9\% de acierto el clasificador posee una alta tasa de acierto
 en la mayoría de las actividades humanas evaluadas. Incluso se puede
 notar un buen rendimiento para las actividades en bicicleta y en vehículo
 que son aquellas más difíciles de pronosticar.
@@ -641,10 +642,10 @@ aseveradas como aciertos y se obtuvo un árbol de decisión de tamaño
 de $699$ nodos, de los cuales $350$ corresponden a hojas. Las métricas
 de evaluación para el nuevo clasificador fueron:
 \begin{itemize}
-\item Precisión: $0,9204$
-\item Exhaustividad: $0,9134$
-\item Exactitud: $0,9723$
-\item \emph{Valor-F}: $0,9168$
+\item Precisión: 0,9204
+\item Exhaustividad: 0,9134
+\item Exactitud: 0,9723
+\item \emph{Valor-F}: 0,9168
 \end{itemize}
 Se puede apreciar que los valores de las métricas aumentan levemente
 en comparación con el clasificador inicial. En cuanto a las métricas

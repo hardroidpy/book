@@ -3438,11 +3438,7 @@ Instancias correctamente clasificadas (
 \begin_inset Formula $10.942$
 \end_inset
 
- (
-\begin_inset Formula $91,0922\%$
-\end_inset
-
-)
+ (91,0922%)
 \end_layout
 
 \begin_layout Itemize
@@ -3454,11 +3450,7 @@ Instancias incorrectamente clasificadas (
 \begin_inset Formula $1.070$
 \end_inset
 
- (
-\begin_inset Formula $8,9078\%$
-\end_inset
-
-)
+ (8,9078%)
 \end_layout
 
 \begin_layout Itemize
@@ -3466,11 +3458,7 @@ Estadísticas Kappa (
 \begin_inset Formula $\kappa$
 \end_inset
 
-): 
-\begin_inset Formula $0,8678$
-\end_inset
-
- 
+): 0,8678 
 \end_layout
 
 \begin_layout Itemize
@@ -3478,11 +3466,7 @@ Error medio absoluto (
 \begin_inset Formula $E_{ma}$
 \end_inset
 
-): 
-\begin_inset Formula $0,0341$
-\end_inset
-
-
+): 0,0341
 \end_layout
 
 \begin_layout Itemize
@@ -3490,11 +3474,7 @@ Raíz de Error cuadrático medio (
 \begin_inset Formula $E_{rms}$
 \end_inset
 
-): 
-\begin_inset Formula $0,164$
-\end_inset
-
- 
+): 0,164
 \end_layout
 
 \begin_layout Itemize
@@ -3502,11 +3482,7 @@ Error absoluto relativo (
 \begin_inset Formula $E_{ra}$
 \end_inset
 
-): 
-\begin_inset Formula $15,1717\%$
-\end_inset
-
- 
+): 15,1717% 
 \end_layout
 
 \begin_layout Itemize
@@ -3514,11 +3490,7 @@ Raíz de Error cuadrático relativo (
 \begin_inset Formula $E_{rrs}$
 \end_inset
 
-): 
-\begin_inset Formula $48,9126\%$
-\end_inset
-
- 
+): 48,9126%
 \end_layout
 
 \begin_layout Standard
@@ -3527,43 +3499,19 @@ o de
 \begin_inset Formula $12.012$
 \end_inset
 
- instancias el clasificador tiene una tasa de predicción del 
-\begin_inset Formula $91,1\%$
-\end_inset
-
- de las veces correctamente y el 
-\begin_inset Formula $8,9\%$
-\end_inset
-
- de las veces incorrectamente.
- El valor del coeficiente de confianza está entre el 
-\begin_inset Formula $0,8-0,9$
-\end_inset
-
- dando un porcentaje aproximado de 
-\begin_inset Formula $74,6$
-\end_inset
-
-% considerado como una fuerte confianza en los datos.
+ instancias el clasificador tiene una tasa de predicción del 91,1% de las
+ veces correctamente y el 8,9% de las veces incorrectamente.
+ El valor del coeficiente de confianza está entre el 0,8 - 0,9 dando un
+ porcentaje aproximado de 74,6% considerado como una fuerte confianza en
+ los datos.
 \end_layout
 
 \begin_layout Standard
 En cuanto a los errores, se puede observar que el error absoluto es bajo
- y el error cuadrático es bajo moderado ya que son menos que un 
-\begin_inset Formula $20\%$
-\end_inset
-
-.
+ y el error cuadrático es bajo moderado ya que son menos que un 20%.
  Los errores relativos con respecto al error simple utilizando la media
- arrojan un valor moderado de 
-\begin_inset Formula $15,2\%$
-\end_inset
-
- para el absoluto y un valor medio de 
-\begin_inset Formula $48,9\%$
-\end_inset
-
- para el cuadrático.
+ arrojan un valor moderado de 15,2% para el absoluto y un valor medio de
+ 48,9% para el cuadrático.
  
 \end_layout
 
@@ -4241,27 +4189,15 @@ secref{sec3:metricas}
 \end_layout
 
 \begin_layout Itemize
-Precisión: 
-\begin_inset Formula $0,9174$
-\end_inset
-
-
+Precisión: 0,9174
 \end_layout
 
 \begin_layout Itemize
-Exhaustividad: 
-\begin_inset Formula $0,9109$
-\end_inset
-
-
+Exhaustividad: 0,9109
 \end_layout
 
 \begin_layout Itemize
-Exactitud: 
-\begin_inset Formula $0,9714$
-\end_inset
-
-
+Exactitud: 0,9714
 \end_layout
 
 \begin_layout Itemize
@@ -4269,11 +4205,7 @@ Exactitud:
 \emph on
 Valor-F
 \emph default
-: 
-\begin_inset Formula $0,9142$
-\end_inset
-
-
+: 0,9142
 \end_layout
 
 \begin_layout Standard
@@ -4722,8 +4654,8 @@ figref{fig6:activity-survey}
 
 \end_inset
 
- se muestra la intefaz de usuario de la aplicación de encuesta durante una
- sesión de entrenamiento.
+ se muestra la interfaz de usuario de la aplicación de encuesta durante
+ una sesión de entrenamiento.
 \end_layout
 
 \begin_layout Standard
@@ -4737,7 +4669,14 @@ status open
 \align center
 \begin_inset Graphics
 	filename graphics/activities_toast.jpg
-	width 80col%
+	scale 60
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename graphics/act_feed2.jpg
+	scale 60
 
 \end_inset
 
@@ -5441,11 +5380,8 @@ Resumen de actividades detectadas marcadas como aciertos o desaciertos
 \end_layout
 
 \begin_layout Standard
-Según estos resultados se puede concluir que conforme un promedio de 
-\begin_inset Formula $88.9$
-\end_inset
-
-% de acierto el clasificador posee una alta tasa de acierto en la mayoría
+Según estos resultados se puede concluir que conforme un promedio de 88,9%
+ de acierto el clasificador posee una alta tasa de acierto en la mayoría
  de las actividades humanas evaluadas.
  Incluso se puede notar un buen rendimiento para las actividades en bicicleta
  y en vehículo que son aquellas más difíciles de pronosticar.
@@ -5974,7 +5910,7 @@ capturadas durante las sesiones de prueba donde se confirman las actividades
 placement th
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -6088,27 +6024,15 @@ secref{sec6:clasificacion}
 \end_layout
 
 \begin_layout Itemize
-Precisión: 
-\begin_inset Formula $0,9204$
-\end_inset
-
-
+Precisión: 0,9204
 \end_layout
 
 \begin_layout Itemize
-Exhaustividad: 
-\begin_inset Formula $0,9134$
-\end_inset
-
-
+Exhaustividad: 0,9134
 \end_layout
 
 \begin_layout Itemize
-Exactitud: 
-\begin_inset Formula $0,9723$
-\end_inset
-
-
+Exactitud: 0,9723
 \end_layout
 
 \begin_layout Itemize
@@ -6116,11 +6040,7 @@ Exactitud:
 \emph on
 Valor-F
 \emph default
-: 
-\begin_inset Formula $0,9168$
-\end_inset
-
-
+: 0,9168
 \end_layout
 
 \begin_layout Standard

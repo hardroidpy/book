@@ -142,7 +142,20 @@ Por una parte se tiene como resultado tangible un componente de código abierto
  reutilizable para reconocer actividades humanas.
  Este componente es denominado 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
 .
 \end_layout
@@ -155,7 +168,20 @@ Por otra parte este componente posibilita el mejoramiento iterativo de su
 \begin_layout Standard
 Respecto al primer punto, es importante destacar que 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
  puede ser aprovechado por otras aplicaciones móviles de dos maneras concretas
  
@@ -180,33 +206,52 @@ puede ser aprovechado como un servicio a través de una interfaz de integración
 Los experimentos realizados en el presente trabajo y documentados en la
  sección previa muestran que 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
  es capaz de producir un modelo en el cual se observan las siguientes caracterís
 ticas:
 \end_layout
 
 \begin_layout Itemize
-Una alta tasa de aciertos (
-\begin_inset Formula $91$
+Una alta tasa de aciertos (de 91% a 92%), y por lo tanto una baja tasa de
+ errores.
+ Esto se puede verificar por la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tabref{tab6:matriz-confusion}
+\end_layout
+
 \end_inset
 
-% a 
-\begin_inset Formula $92$
-\end_inset
-
-%), y por lo tanto una baja tasa de errores.
- Esto se puede verificar en la MATRIZ DE CONFUSION RESULTANTES
+ junto con las métricas de precisión y exhaustividad resultantes.
 \end_layout
 
 \begin_layout Itemize
 La capacidad de extender el modelo para reconocer diversos tipos de actividades
- como, en bicicleta, en vehículo, entre otros.
+ así como en bicicleta, en vehículo, entre otros.
 \end_layout
 
 \begin_layout Itemize
-La posibilidad colaborativamente el modelo mediante la inclusión de muestras
- de aciertos colectadas en campo.
+La posibilidad de extender el modelo colaborativamente mediante la inclusión
+ de muestras de aciertos colectadas en campo.
 \end_layout
 
 \begin_layout Standard
