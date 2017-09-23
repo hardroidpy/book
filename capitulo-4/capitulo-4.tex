@@ -5,8 +5,8 @@
 
 \section{Introducción}
 
-\label{sec41:introduccion}El diseño de \emph{sistemas con conocimiento
-del contexto} promueven una interacción novedosa entre los usuarios
+\label{sec41:introduccion}El diseño de sistemas con conocimiento
+del contexto promueve una interacción novedosa entre los usuarios
 y diversas aplicaciones que corresponden a áreas tales como ambientes
 inteligentes, repuesta a emergencias, vigilancia y otros \cite{Choudhury2008}.
 Un sistema con la capacidad de reconocer las actividades humanas por
@@ -14,8 +14,8 @@ medio del uso de sensores empotrados se convierte en un mecanismo
 para crear aplicaciones de cuidado personal, salud, asistencia inteligente,
 entre otros. El requerimiento primordial de un sistema con una aplicación
 de contexto es que este pueda ser portado continuamente como atuendo
-de sus usuarios (\abbr{Wearables}). Por lo tanto, un sistema que
-acompaña continuamente al usuario puede interaccionar oportunamente
+de sus usuarios (\emph{\abbr{Wearable}}). Por lo tanto, un sistema
+que acompaña continuamente al usuario puede interaccionar oportunamente
 con el mismo ya que este tiene la capacidad de observar en tiempo
 real las acciones de su portador. 
 
@@ -41,7 +41,7 @@ y la de evaluación \cite{LaraLabrador2013}.
 Ambas etapas requieren la implementación de los mismos componentes,
 pero un sistema \abbr{HAR} práctico debe contemplar principalmente
 la fase de evaluación, ya que el reconocimiento de actividades resulta
-de una predicción basado en un modelo de \abbr{ML} en linea (\emph{On-line
+de una predicción basado en un modelo de \abbr{ML} en línea (\emph{On-line
 learning}). Sin embargo, la etapa de entrenamiento es un elemento
 clave para el sistema ya que es el punto de partida para el aprendizaje
 utilizando algoritmos de \abbr{ML} y usualmente se realiza según
@@ -90,12 +90,12 @@ El método de registro consiste en capturar las señales de un sensor
 y separar las medidas en una o más variables dependiendo del tipo
 de sensor. La organización de los registros se realiza con respecto
 al tiempo. Es decir, se dispone de un flujo continuo de datos con
-una marca de tiempo almacenados de manera secuencial en un medio permanente
-para su posterior procesamiento. 
+una marca de tiempo, almacenados de manera secuencial en un medio
+permanente para su posterior procesamiento. 
 
 La marca de tiempo usualmente se mide \emph{mili}-segundos y dependiendo
 del sensor el intervalo entre medidas puede variar en el mismo orden,
-Ej. con tasa de salida de \texttt{60 \abbr{Hz} }se tendrían 60 medidas
+ej. con tasa de salida de \texttt{60 \abbr{Hz} }se tendrían 60 medidas
 en un segundo. Las señales de sensores pueden clasificarse de la misma
 manera que los grupos citados en la \secref{sec23:sensores}, según
 movimiento, posición, ambiente y fisiológicas. 
@@ -190,7 +190,7 @@ coordenadas según el sistema \emph{World Geodetic System} (\abbr{WGS})
 cuyos valores globales oscilan entre -180 a 180 en longitud, y -90
 a 90 en latitud.
 
-En la \figref{fig4:gps} se muestra una aplicación móvil para \abbr{Android}
+En la \figref{fig4:gps} se muestra una aplicación móvil para \emph{\abbr{Android}}
 que obtiene la estimación de coordenadas globales al triangular satélites
 del \abbr{GPS}. 
 
@@ -219,7 +219,7 @@ Los sensores de ambiente solos no proveen información suficiente ya
 que los individuos pueden realizar las actividades bajo diversas circunstancias
 contextuales en términos de clima, ruido o iluminación. Por lo tanto
 estos sensores pueden utilizarse de manera complementaria para detectar
-sugestiones adicionales, Ej. el usuario está en el exterior de acuerdo
+sugestiones adicionales. Ej. el usuario está en el exterior de acuerdo
 a la luminosidad, o se encuentra descansando debido a un nivel de
 sonido y luminosidad baja \cite{LaraLabrador2013}.
 
@@ -260,8 +260,8 @@ llamada etiquetado y a continuación se detalla cada tarea.
 de una cantidad moderada de datos recolectados a partir de usuarios
 mientras realizan actividades humanas objetivas a nuestro estudio.
 Estos datos deben ser recolectadas y etiquetados utilizando una aplicación
-diseñada para el caso, Ej. Utilizando un teléfono \abbr{Android}
-y la aplicación \emph{SensorLog} \cite{Alan2014s}. 
+diseñada para el caso, Ej. Utilizando un teléfono con \emph{\abbr{Android}
+}y la aplicación \emph{SensorLog} \cite{Alan2014s}. 
 
 El protocolo de recolección consiste en alistar un grupo de personas
 que porten un teléfono inteligente mientras realizan con conjunto
@@ -271,7 +271,8 @@ deben ser realizadas portando el teléfono en el bolsillo donde cada
 individuo realiza una sesión de caminata, trote, bicicleta o conducir
 un vehículo por un periodo de tiempo de 10 a 15 minutos. Un ejemplo
 de recolección de datos llevada a cabo por medio de la aplicación
-disponible para la plataforma \abbr{Android} es mostrada en la \figref{fig4:sensor-log}. 
+disponible para la plataforma\emph{ \abbr{Android}} es mostrada en
+la \figref{fig4:sensor-log}. 
 
 \begin{figure}[!tbph]
 \begin{centering}
@@ -371,16 +372,16 @@ de perturbaciones bruscas o ruido en la señal.
 
 \subsubsection{Muestreo}
 
-\label{ssec44:sampling}La realización de actividades humanas son
-efectuadas durante periodos de tiempo de larga duración, en el orden
-de los segundos o minutos. Esta tasa es mucho mayor comparado con
-las tasas de muestreos de los sensores, las cuales pueden llegar hasta
-\texttt{250 \abbr{Hz}} (o \texttt{250} muestras por segundo). Una
-simple medida capturada en un instante (Ej. la aceleración de $-2.5\,m\,s^{-2}$
-en el eje $y$) no provee suficiente información para describir qué
-actividad está llevando acabo un persona. Por lo tanto, las actividades
-humanas deben ser reconocidas a partir de muestras extraídas en ventanas
-de tiempo $w$ en vez de utilizar una sola medida instantánea en $t$. 
+\label{ssec44:sampling}Las actividades humanas son realizadas durante
+periodos de tiempo de larga duración, en el orden de los segundos
+o minutos. Esta tasa es mucho mayor comparado con las tasas de muestreos
+de los sensores, las cuales pueden llegar hasta \texttt{250 \abbr{Hz}}
+(o \texttt{250} muestras por segundo). Una simple medida capturada
+en un instante (Ej. la aceleración de $-2.5\,m\,s^{-2}$ en el eje
+$y$) no provee suficiente información para describir qué actividad
+está llevando a cabo un persona. Por lo tanto, las actividades humanas
+deben ser reconocidas a partir de muestras extraídas en ventanas de
+tiempo $w$ en vez de utilizar una sola medida instantánea en $t$. 
 
 En la \tabref{tab4:ex-signal} se muestra una tabla con posibles medidas
 instantáneas para la señal de aceleración $a(t)$ en una ventana de
@@ -471,7 +472,7 @@ señal.
 de la frecuencia.
 \item \textbf{Curtosis:} medida de distribución de concentración en el dominio
 de la frecuencia.
-\item \textbf{Rango intercuartíl:} medida de dispersión de la diferencia
+\item \textbf{Rango intercuartil:} medida de dispersión de la diferencia
 entre el tercer y primer cuartíl.
 \item \textbf{Coeficientes autorregresivos:} los coeficientes obtenidos
 utilizando el método de Burg que aplica un modelo autorregresivo para
@@ -584,11 +585,11 @@ donde se requiere de un algoritmo diseñado para extraer información
 desde los datos. En este contexto los patrones son descubiertos a
 partir de un conjunto de observaciones denominadas instancias \cite{LaraLabrador2013}.
 El propósito principal del algoritmo es el de clasificar los datos
-desconocidos. Considerando el capitulo \ref{chap:Aprendizaje-Automatico},
+desconocidos. Considerando el capítulo \ref{chap:Aprendizaje-Automatico},
 la entrada aplicada a un algoritmo de \abbr{ML} es un conjunto de
 entrenamiento (\emph{training set}) y el resultado del mismo es un
 clasificador (\emph{classifier}) \cite{Rajaraman2011}. En la \figref{fig4:clasificador}
-se muestra una gráfico esquemático adaptado al problema \abbr{HAR}
+se muestra un gráfico esquemático adaptado al problema \abbr{HAR}
 del proceso de extracción de conocimiento con algoritmos de aprendizaje
 automático \cite{Raschka2014}.
 
@@ -606,7 +607,7 @@ automático.
 \subsubsection{Preparación}
 
 En esta fase es esencial contar con un conjunto de instancias de entrenamiento
-y la información adicional de su clasificación. Las preparación se
+y la información adicional de su clasificación. La preparación se
 compone de varias tareas que inciden en la mejora del clasificador
 resultante, las cuales se listan a continuación \cite{Raschka2014}:
 \begin{itemize}
@@ -657,7 +658,7 @@ recolección y registra de forma manual la etiqueta de actividad en
 cada intervalo de tiempo. Otros sistemas se caracterizan por una aplicación
 móvil que permite al usuario seleccionar la actividad que se realiza
 a partir de una lista, de esta manera, cada muestra se corresponde
-con una etiqueta de actividad. Este ultimo enfoque es utilizado en
+con una etiqueta de actividad. Este último enfoque es utilizado en
 este trabajo.
 
 Es importante considerar las etiquetas asignadas a los datos originales
@@ -669,15 +670,15 @@ vector característico.
 
 El requisito primordial para la tarea de aprendizaje es escoger al
 algoritmo adecuado para la clasificación. Así como se presenta en
-el capitulo \ref{chap:Aprendizaje-Automatico} basado en el enfoque
-de arboles de decisión. El proceso de aprendizaje puede realizarse
+el capítulo \ref{chap:Aprendizaje-Automatico} basado en el enfoque
+de árboles de decisión. El proceso de aprendizaje puede realizarse
 en base a tres metodologías \cite{Rajaraman2011}.
 
 El aprendizaje \emph{basado en lotes} consiste en contar con la mayor
 cantidad de datos de entrenamiento al principio del proceso y utilizarlo
 íntegramente para construir el modelo una sola vez y para siempre. 
 
-Por otro lado el aprendizaje \emph{en linea} puede contar con los
+Por otro lado el aprendizaje \emph{en línea} puede contar con los
 datos de entrenamiento a medida que se disponen de los mismos, como
 en un flujo de datos, estos son examinados una sola vez sin revisión.
 El modelo es mantenido de forma continua, a medida que nuevas instancias
@@ -689,7 +690,7 @@ necesidad de acceder a más de una instancia la vez.
 \item El modelo puede adaptarse a los cambios que emerjan en la población
 de instancias de entrenamiento a medida que transcurre el tiempo.
 \end{enumerate}
-Una mejora del aprendizaje \emph{en linea} es el aprendizaje \emph{activo}.
+Una mejora del aprendizaje \emph{en línea} es el aprendizaje \emph{activo}.
 El clasificador se construye primeramente utilizando un conjunto de
 entrenamiento, pero a la par se pueden recibir datos no clasificados
 para que el modelo los clasifique. Si el modelo realiza una clasificación
@@ -721,7 +722,7 @@ de una población mayor el resultado se torna atípico o con errores
 de clasificación \cite{Rajaraman2011}. 
 
 El conjunto de validación permite evaluar el clasificador determinando
-si se sobreajustan los resultados y con cuanta precisión es efectivo
+el sobreajuste de los resultados y con cuanta precisión es efectivo
 el modelo. La precisión es la proporción de instancias correctamente
 clasificadas. El sobreajuste es una medida del error en base a la
 precisión del modelo con instancias en el conjunto de evaluación.
@@ -745,14 +746,14 @@ el capítulo \ref{chap:Aprendizaje-Automatico}:
 
 El propósito de crear un modelo no solamente es clasificar el conjunto
 entrenamiento sino también clasificar datos cuya etiqueta no es conocida
-con cierta precisión. Nuevamente la preparación es una requisito primordial
+con cierta precisión. Nuevamente la preparación es un requisito primordial
 para transformar datos de entrada en instancias que puedan ser evaluadas
 por el modelo y emitir una etiqueta de resultado particular para cada
 instancia desconocida.
 
 Este trabajo clasifica instancias desconocidas por medio de un modelo
 construido con el algoritmo C4.5 (\algref{algoC45}) basado en el
-enfoque de arboles de decisión descrito en el capítulo \ref{chap:Aprendizaje-Automatico}
+enfoque de árboles de decisión descrito en el capítulo \ref{chap:Aprendizaje-Automatico}
 y cuya implementación se basa en la implementación \emph{Java} J48
 \cite{Frank2016b}.
 
@@ -792,5 +793,5 @@ los datos recolectados y/o producidos durante la adopción masiva del
 sistema, además de alertar sobre la utilización de datos sensibles
 que requieran el consentimiento del usuario.
 \end{itemize}
-En el siguiente capitulo se presenta la implementación del sistema
+En el siguiente capítulo se presenta la implementación del sistema
 \abbr{HAR}.

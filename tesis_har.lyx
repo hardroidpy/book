@@ -283,16 +283,6 @@ filename "capitulo-7/capitulo-7.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "anexos/anexo-2.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
 filename "preambulo_0/glosario.lyx"
 
 \end_inset

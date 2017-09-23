@@ -228,7 +228,7 @@ description "Heart Rate Monitor"
 \begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "Wearables"
+symbol "Wearable"
 description "Dispositivos o aparatos que pueden ser atuendos de un individuo"
 
 \end_inset
@@ -393,8 +393,8 @@ description "Feature Vectors"
 \begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "Smartphones"
-description "Teléfonos inteligentes"
+symbol "Smartphone"
+description "Teléfono inteligente"
 
 \end_inset
 
@@ -404,8 +404,8 @@ description "Teléfonos inteligentes"
 \begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
-symbol "Smartwatches"
-description "Relojes Inteligentes"
+symbol "Smartwatch"
+description "Reloj Inteligente"
 
 \end_inset
 

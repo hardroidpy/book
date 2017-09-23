@@ -2291,7 +2291,9 @@ key "Schreiber2011"
 .
  
 \emph default
-El sistema operativo 
+El sistema operativo
+\emph on
+ 
 \begin_inset ERT
 status open
 
@@ -2304,6 +2306,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  junto con su marco de trabajo operan como un sistema distribuido y la tecnologí
 a para lograr su diseño se basa completamente en este componente.
 \end_layout
@@ -2341,7 +2345,7 @@ abbr{Android}
  
 \emph default
 citados anteriormente.
- Como se puede apreciar, todas las interacciones son llevadas acabo por
+ Como se puede apreciar, todas las interacciones son llevadas a cabo por
  el mecanismo principal de llamadas 
 \begin_inset ERT
 status open
@@ -2590,7 +2594,11 @@ reference "ssec52:tecnologia"
 Backend C4.5
 \series default
 \emph default
-: Es un servicio web basado en 
+: Es un servicio web basado en el estilo 
+\emph on
+Representational State Transfer
+\emph default
+ (
 \begin_inset ERT
 status open
 
@@ -2603,7 +2611,7 @@ abbr{REST}
 
 \end_inset
 
- que recolecta evaluaciones del usuario que utiliza la aplicación de encuesta.
+) que recolecta evaluaciones del usuario que utiliza la aplicación de encuesta.
  Además, almacena los resultados que surgen debido a la utilización del
  reconocedor con el objetivo de crear el modelo de aprendizaje automático
  de manera manual.
@@ -2989,7 +2997,7 @@ abbr{DVM}
 
 \end_inset
 
- correspondiente, donde la comunicación entre procesos es llevado acabo
+ correspondiente, donde la comunicación entre procesos es llevado a cabo
  por medio de una interfaz denominada 
 \emph on
 Android Interface Definition Language
@@ -3868,7 +3876,7 @@ Procedure{Reconocimiento}{$ S $}
 \backslash
 If {$S 
 \backslash
-textit{ está vacio } $}
+textit{ está vacío } $}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4203,7 +4211,7 @@ abbr{WEKA}
 
  y se construye para luego disponerlo como una librería remota a ser descargada
  de Internet.
- El mecanismo detallado se describe en detalle en 
+ El mecanismo detallado se describe en
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Falsina2014"

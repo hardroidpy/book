@@ -296,6 +296,8 @@ HARDroid
 Utilizar o aprovechar otros accesorios que agreguen variables relevantes
  en el reconocimiento de actividades dependiendo del contexto.
  Por ejemplo, un reloj inteligente (
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -303,11 +305,13 @@ status open
 
 
 \backslash
-abbr{Smartwatches}
+abbr{Smartwatch}
 \end_layout
 
 \end_inset
 
+
+\emph default
 ).
 \end_layout
 

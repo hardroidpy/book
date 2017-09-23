@@ -42,10 +42,10 @@ se describen a continuación.
 
 \subsection{Instrumentación}
 
-Como está constatado en capítulos anteriores el desarrollo de \emph{HARDroid
-}se concreto completamente para la plataforma \emph{Android }y a continuación
-se detallan los rasgos técnicos de las herramientas utilizadas para
-su concepción y evaluación.
+Como está constatado en capítulos anteriores el desarrollo de \emph{\abbr{HARDroid}
+}se concretó completamente para la plataforma \emph{\abbr{Android}
+}y a continuación se detallan los rasgos técnicos de las herramientas
+utilizadas para su concepción y evaluación.
 
 \subsubsection{Teléfonos inteligentes}
 
@@ -106,7 +106,7 @@ Las aplicaciones móviles fueron desarrolladas utilizando el lenguaje
 \emph{Java}. Esto incluye las interfaces de usuario, los servicios
 de aplicación, las tareas de computación intensivas de acceso a sensores,
 procesamiento, algoritmos de \abbr{ML} y almacenamiento de datos
-fueron desarrollados integramente en \emph{Java}.
+fueron desarrollados íntegramente en \emph{Java}.
 
 \subsection{Procedimiento Guía }
 
@@ -114,12 +114,12 @@ Con el objetivo de obtener un conjunto de datos adecuado a los objetivos
 estudio de sistemas \abbr{HAR} de este trabajo, se realizó un experimento
 de recolección con grupo de voluntarios. Un grupo de 8 personas entre
 las edades de 20 y 38 estuvieron dispuestos para esta tarea, la edad
-media de la población esta comprendida en $30.7\pm5$ años. 
+media de la población está comprendida en $30.7\pm5$ años. 
 
 El procedimiento guía de captura de datos se instruyó con el uso del
 teléfono móvil como prenda sujeta al bolsillo o en la cintura mientras
 se realiza una actividad física predeterminada. El planeamiento del
-experimento consitió en realizar en orden por un periodo de 2 a 15
+experimento consistió en realizar en orden por un periodo de 2 a 15
 minutos alguna de las tres actividades básicas y dos de transporte.
 De acuerdo a la \secref{ssec44:labeling} se listan en la \tabref{tab6:etiquetas}
 las actividades humanas con sus etiquetas correspondientes.
@@ -236,8 +236,8 @@ trabajo.
 \end{table}
 
 La generación del clasificador de \abbr{ML} de este trabajo está
-automatizado por medio una herramienta construida en \emph{Java }para
-este trabajo\emph{ }a partir de \emph{Clasificador C4.5} disponible
+automatizado por medio de una herramienta construida en \emph{Java
+}para este trabajo\emph{ }a partir de \emph{Clasificador C4.5} disponible
 en la librería \abbr{WEKA}\emph{. }El proceso se puede apreciar en
 el siguiente flujo de la \figref{fig6:proceso-clasi}.
 
@@ -276,7 +276,7 @@ considerando los siguientes parámetros:
 \begin{itemize}
 \item Umbral de confianza para poda\emph{ }(-C\emph{ confidenceFactor}):
 $0.25$
-\item Numero mínimo de instancias permisibles por hoja\emph{ }(-M\emph{
+\item Número mínimo de instancias permisibles por hoja\emph{ }(-M\emph{
 minNumObj}): $2$
 \item Tamaño del conjunto de poda\emph{ }(-N\emph{ numFolds}): $3$
 \item Pliegue de Validación Cruzada\emph{ }(\emph{Cross-validation folds}):
@@ -296,7 +296,7 @@ en las siguientes medidas:
 entrada.
 \item \emph{Instancias correctamente clasificadas} ($C$): es una proporción
 del tamaño de la población de entrada.
-\item \emph{Instancias incorrectamente clasificadas} \emph{(}$I$): es un
+\item \emph{Instancias incorrectamente clasificadas} \emph{(}$I$): es una
 proporción del tamaño de la población de entrada.
 \item \emph{Estadísticas Kappa} ($\kappa$): es el coeficiente \emph{kappa}
 de \emph{Cohen} que determina el valor de coeficiente de concordancia
@@ -325,7 +325,7 @@ Valor & Nivel de acuerdo & \% de datos confiables\tabularnewline
 \hline 
 0.80 - 0.90 & Fuerte & 64 - 81\%\tabularnewline
 \hline 
->0.90 & Casi perfecto & 82 - 100\%\tabularnewline
+\textgreater{}0.90 & Casi perfecto & 82 - 100\%\tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
@@ -334,7 +334,7 @@ Valor & Nivel de acuerdo & \% de datos confiables\tabularnewline
 
 En un problema de clasificación de datos desconocidos a partir de
 una cantidad de datos de entrada limitados, la técnica de validación
-cruzada dan una idea de la capacidad de un algoritmo al clasificar
+cruzada da una idea de la capacidad de un algoritmo al clasificar
 instancias de prueba con cierta precisión. 
 
 También es importante conocer el costo asociado de una clasificación
@@ -355,7 +355,7 @@ individuales.
 \[
 E_{ma}=\frac{1}{n}\sum_{i\text{=1}}^{n}\bigl|y_{i}-f(x_{i})\bigr|
 \]
-Está medida no exagera el efecto de los valores atípicos (\emph{outliders}),
+Esta medida no exagera el efecto de los valores atípicos (\emph{outliders}),
 todos los errores son tratados de igual conforme a su magnitud.
 \item \emph{Raíz de Error cuadrático medio}: es la raíz del promedio de
 los errores cuadráticos individuales.
@@ -386,9 +386,9 @@ Escoger cuales de estas métricas son apropiadas para una evaluación
 dependen mucho del estudio y de la aplicación del aprendizaje automático.
 Por ejemplo, si se trata de minimizar alguna métrica o disminuir el
 costo asociado a un error en particular. En general, sobre los errores
-cuadráticos y/o la raíz de los mismos pesan mas las grandes discrepancias
+cuadráticos y/o la raíz de los mismos pesan más las grandes discrepancias
 que las pequeñas, mientras que en errores absolutos no. Los errores
-relativos tratan de compensar la predictabilidad del valor pronosticado,
+relativos tratan de compensar la predictibilidad del valor pronosticado,
 tratando siempre de tender hacia el valor real medio. 
 
 \subsection{Evaluación del clasificador}
@@ -421,7 +421,7 @@ la media arrojan un valor moderado de $15,2\%$ para el absoluto y
 un valor medio de $48,9\%$ para el cuadrático. 
 
 Estos errores dan una noción del costo de la predicción, un incremento
-en el error a partir de una situación inicial, sin importar cual sea
+en el error a partir de una situación inicial, sin importar cuál sea
 la métrica, implica inherentemente una situación inicial de mayor
 variabilidad y de difícil de predicción, y no que el clasificador
 sea pobre.
@@ -486,7 +486,7 @@ de actividades humanas contribuido en este trabajo.
 
 Para verificar el clasificador \abbr{HAR} de \emph{HARDroid }se condujo
 un experimento de prueba basado en una sesión de actividades físicas
-realizadas por dos personas. El protocolo consitió en realizar cada
+realizadas por dos personas. El protocolo consistió en realizar cada
 una de las actividades básicas ambulatorias y de transporte por un
 periodo comprendido entre 10 a 20 minutos utilizando la aplicación
 \emph{ActivitySurvey}. 
@@ -518,7 +518,18 @@ acierto de predicción de la actividad humana detectada por el servicio
 autónomo \emph{HARDroid} en intervalos regulares. Durante una sesión
 se registra la información del teléfono, correo, edad, la fecha y
 hora, la etiqueta de la actividad detectada y la etiqueta de la actividad
-corregida en caso de una aseveración. 
+corregida en caso de una aseveración. En la \figref{fig6:activity-survey}
+se muestra la intefaz de usuario de la aplicación de encuesta durante
+una sesión de entrenamiento.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[width=0.8\columnwidth]{capitulo-6/graphics/activities_toast}
+\par\end{centering}
+\caption{\label{fig6:activity-survey}Aplicación de encuesta\emph{ Activity
+Survey}}
+
+\end{figure}
 
 En la \tabref{tab6:vencuesta} se muestra las cantidades de las actividades
 acertadas y no acertadas por el clasificador \abbr{HAR} en proporción
@@ -564,7 +575,7 @@ que son aquellas más difíciles de pronosticar.
 
 Para validar los resultados de la clasificación producida por \emph{HARDroid
 }se condujo un experimento de prueba basado en la misma sesión de
-actividades físicas realizadas por una persona. El protocolo consitió
+actividades físicas realizadas por una persona. El protocolo consistió
 en utilizar la aplicación \emph{Sony} \emph{Lifelog} al mismo tiempo
 que la aplicación \emph{ActivitySurvey} durante las sesiones de pruebas. 
 
@@ -598,7 +609,7 @@ por \emph{HARDroid} vs\emph{ Sony Lifelog}}
 \end{table}
 
 Cada actividad detectada por \emph{HARDroid} fue validada conforme
-la predicción de la aplicación \emph{Sony} \emph{Lifelog,} asumiendose
+la predicción de la aplicación \emph{Sony} \emph{Lifelog,} asumiéndose
 que esta última posee un acierto del 100\%. 
 
 En la \figref{fig6:vlifelog} se muestran dos pantallas de la aplicación
@@ -628,7 +639,7 @@ Siguiendo el mismo procedimiento de la \secref{sec6:clasificacion}
 se generó un clasificador colaborativo a partir de las instancias
 aseveradas como aciertos y se obtuvo un árbol de decisión de tamaño
 de $699$ nodos, de los cuales $350$ corresponden a hojas. Las métricas
-de evaluación para este nuevo clasificador fueron:
+de evaluación para el nuevo clasificador fueron:
 \begin{itemize}
 \item Precisión: $0,9204$
 \item Exhaustividad: $0,9134$

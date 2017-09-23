@@ -96,7 +96,7 @@ name "sec21:introduccion"
 
 \end_inset
 
-En este capitulo, se resumen las cuatro áreas principales de estudio relacionado
+En este capítulo, se resumen las cuatro áreas principales de estudio relacionado
 s a los sistemas (
 \emph on
 Human Activity Recognition
@@ -239,7 +239,7 @@ De manera específica, el contexto de un usuario es el estado acerca de la
 \end_layout
 
 \begin_layout Standard
-Debido a la libertad de movilidad presentes en la computación móvil y ubicua,
+Debido a la libertad de movilidad presente en la computación móvil y ubicua,
  es primordial construir aplicaciones que conozcan el contexto de sus usuarios,
  dicho de otro modo aplicaciones de contexto (
 \emph on
@@ -281,7 +281,7 @@ name "sec23:sensores"
  Para resolver el problema del reconocimiento de actividades humanas uno
  de los temas a abordar es la recolección de datos y posiblemente la elección
  de los sensores utilizados.
- Se han utilizando varios sensores para extraer información acerca de las
+ Se han utilizado varios sensores para extraer información acerca de las
  actividades que un individuo realiza 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -317,7 +317,7 @@ status open
 
 
 \backslash
-abbr{Wearables}
+abbr{Wearable}
 \end_layout
 
 \end_inset
@@ -340,6 +340,8 @@ Los sensores ambientales, también denominados externos o de entorno, son
  de vídeo, sensores de presencia, termómetros y sensores de profundidad
  (Ej.
  el sensor 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -352,6 +354,8 @@ abbr{Kinect}
 
 \end_inset
 
+
+\emph default
 ).
  
 \end_layout
@@ -388,7 +392,7 @@ status open
 
 
 \backslash
-abbr{Wearables}
+abbr{Wearable}
 \end_layout
 
 \end_inset
@@ -413,7 +417,7 @@ key "Bao2004"
 \begin_layout Standard
 Una característica peculiar de los sensores es su autonomía debido a la
  utilización de baterías que proporcionan la energía para operar, y además
- pueden operar en conjunto con conexiones inalámbricas (Ej.
+ pueden operar en conjunto con conexiones inalámbricos (Ej.
  
 \emph on
 
@@ -558,7 +562,7 @@ A diferencia de los sensores ubicados fijamente en el ambiente, estos tienen
  Además, debido a la miniaturización, los sensores pueden ser llevados a
  todas partes por sus usuarios haciéndolos ubicuos, portables y con cobertura
  sin limitaciones.
- Aún así existen desafíos ha superar como la utilización eficiente de energía
+ Aun así existen desafíos a superar como la utilización eficiente de energía
  y el uso confortable al estar anexos a una vestimenta sin utilizar cables.
 \end_layout
 
@@ -1066,9 +1070,9 @@ key "Bao2004,Poppe2007"
 \end_layout
 
 \begin_layout Standard
-El objetivo es identificar las acciones llevadas acabo por una persona en
- base a observaciones realizadas sobre el mismo en el entorno en que se
- desenvuelve.
+El objetivo es identificar las acciones llevadas a cabo por una persona
+ en base a observaciones realizadas sobre el mismo en el entorno en que
+ se desenvuelve.
  Las aplicaciones en computación móvil y ubicua explotan el contexto del
  usuario haciendo uso de sistemas 
 \begin_inset ERT
@@ -1228,7 +1232,7 @@ abbr{HAR}
 \end_inset
 
  no es factible a ser resuelto con una solución determinista.
- El numero de combinaciones de valores de atributos y acciones puede ser
+ El número de combinaciones de valores de atributos y acciones puede ser
  muy grande, inclusive infinito; y encontrar los puntos de transición es
  complejo teniendo en cuenta que se desconoce la duración de cada acción.
  
@@ -1777,8 +1781,8 @@ abbr{HAR}
 .
  Según como se realiza la observación del individuo, puede darse el caso
  de captura en ambientes realistas los cuales son los ideales pero no siempre
- posibles, y también los ambientes casi-realistas llevadas acabo en laboratorios
- donde se simula así las condiciones reales de las actividades humanas.
+ posibles, y también los ambientes casi-realistas llevadas a cabo en laboratorio
+s donde se simula así las condiciones reales de las actividades humanas.
  Por otro lado tenemos los ambientes totalmente controlados en laboratorio.
 \end_layout
 
@@ -1800,7 +1804,7 @@ abbr{HAR}
  tales como actividades no tenidas en cuenta, calibración de sensores, ruido,
  etc.
  Otra de las consideraciones a tener en cuenta en este punto es la cantidad
- de individuos para realizar la colección, es recomendable el mayor cantidad
+ de individuos para realizar la colección, es recomendable la mayor cantidad
  de individuos en distintos tipos de edades y condiciones físicas.
 \end_layout
 
@@ -1865,7 +1869,7 @@ abbr{HAR}
 
 .
  En su mayoría a través de algoritmos de aprendizaje supervisado aunque
- también se han propuesto métodos semisupervisados y no supervisados.
+ también se han propuesto métodos semi-supervisados y no supervisados.
 \end_layout
 
 \begin_layout Standard
@@ -2209,7 +2213,7 @@ Resumen de métodos de aprendizaje agrupados por tipo
 \begin_layout Standard
 Algunos aspectos relevantes para la selección de un algoritmo de aprendizaje
  pueden ser: el consumo de energía, los requisitos de memoria, la complejidad
- de computo e interpretación, entre otros.
+ de cómputo e interpretación, entre otros.
  Estos aspectos se agudizan si se utilizan dispositivos móviles inteligentes.
  Por ejemplo, los árboles de decisión podría ser el método preferido cuando
  se requiere simplicidad en la implementación, mientras que los métodos
@@ -2238,7 +2242,7 @@ key "ReyesOrtiz2015"
 \end_layout
 
 \begin_layout Standard
-En el capitulo 
+En el cápitulo 
 \begin_inset ERT
 status open
 

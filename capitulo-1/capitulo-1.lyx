@@ -90,6 +90,8 @@ Hace apenas una década, que los teléfonos móviles pasaron de ser simples
  aparatos de comunicación a ser los dispositivos de información más utilizados
  de manera diaria.
  Desde la aparición de los teléfonos móviles modernos (
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -97,11 +99,13 @@ status open
 
 
 \backslash
-abbr{Smartphones}
+abbr{Smartphone}
 \end_layout
 
 \end_inset
 
+
+\emph default
 ) con pantalla táctil, la convergencia en el uso de teléfonos móviles, las
  redes de datos e Internet ha ido aumentando gradualmente 
 \begin_inset CommandInset citation
@@ -687,7 +691,7 @@ acelerómetro
 
 \begin_layout Standard
 Adicionalmente, los teléfonos modernos poseen capacidades de almacenamiento,
- procesamiento y buena conectividad en un tamaño compacto, haciendolos instrumen
+ procesamiento y buena conectividad en un tamaño compacto, haciéndolos instrumen
 tos ideales para construir sistemas autónomos.
  El tamaño diminuto promueve que estos dispositivos sean portados en cualquier
  momento, permitiendo recolectar información de manera ubicua y bajo condiciones
@@ -801,21 +805,9 @@ abbr{HAR}
 
 \end_inset
 
-) con teléfonos móviles modernos (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-abbr{Smartphones}
-\end_layout
-
-\end_inset
-
-) utilizando sensores que busca aportar un componente de software en forma
- de librería de código abierto que sea de libre distribución.
+) con teléfonos móviles modernos utilizando sensores que busca aportar un
+ componente de software en forma de librería de código abierto que sea de
+ libre distribución.
  
 \end_layout
 
@@ -1024,6 +1016,8 @@ name "enu:obe6"
 
 Aportar un componente de software en forma de librería para uso en teléfonos
  móviles modernos con la plataforma 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1036,6 +1030,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 .
  
 \end_layout
@@ -1117,7 +1113,9 @@ reference "chap5:hardroid"
 \end_inset
 
  se detalla la propuesta de implementación de un reconocedor de actividades
- humanas colaborativo y en linea utilizando la plataforma 
+ humanas colaborativo y en línea utilizando la plataforma 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1130,6 +1128,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
 .
 \end_layout
 
@@ -1158,7 +1158,8 @@ abbr{HAR}
 
 \end_inset
 
- propuesto: instalado en teléfonos móviles y utilizado en condiciones reales.
+ propuesto instalado en teléfonos móviles y utilizándolo en condiciones
+ reales.
  
 \end_layout
 

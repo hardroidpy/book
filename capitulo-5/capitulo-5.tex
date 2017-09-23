@@ -459,14 +459,14 @@ entre procesos.
 \item \textbf{\emph{IPC Binder}}: El componente \emph{procesador} que implementa
 el mecanismo de comunicación entre procesos \emph{\cite{Schreiber2011}}
 y se discute con más detalle durante el desenvolvimiento de este trabajo\emph{.
-}El sistema operativo \abbr{Android} junto con su marco de trabajo
-operan como un sistema distribuido y la tecnología para lograr su
-diseño se basa completamente en este componente.
+}El sistema operativo\emph{ \abbr{Android}} junto con su marco de
+trabajo operan como un sistema distribuido y la tecnología para lograr
+su diseño se basa completamente en este componente.
 \end{itemize}
 En la \figref{fig5:mensajes-ipc} se muestran las diferentes formas
 de interacción entre los componentes \emph{\abbr{Android} }citados
 anteriormente. Como se puede apreciar, todas las interacciones son
-llevadas acabo por el mecanismo principal de llamadas \abbr{IPC}.
+llevadas a cabo por el mecanismo principal de llamadas \abbr{IPC}.
 
 Una actividad se inicia por medio de un mensaje y puede lanzar otra
 actividad en pantalla. Un servicio se inicia, se para y se asocia
@@ -504,11 +504,12 @@ el resultado con el consentimiento del usuario. Este componente está
 ubicado en la capa de \emph{Applications} descrita en \ref{ssec52:tecnologia}.
 El resultado evaluado puede ser utilizado para mejorar el clasificador
 de aprendizaje automático.
-\item \textbf{\emph{Backend C4.5}}: Es un servicio web basado en \abbr{REST}
-que recolecta evaluaciones del usuario que utiliza la aplicación de
-encuesta. Además, almacena los resultados que surgen debido a la utilización
-del reconocedor con el objetivo de crear el modelo de aprendizaje
-automático de manera manual. 
+\item \textbf{\emph{Backend C4.5}}: Es un servicio web basado en el estilo
+\emph{Representational State Transfer} (\abbr{REST}) que recolecta
+evaluaciones del usuario que utiliza la aplicación de encuesta. Además,
+almacena los resultados que surgen debido a la utilización del reconocedor
+con el objetivo de crear el modelo de aprendizaje automático de manera
+manual. 
 \end{itemize}
 \begin{figure}[H]
 \begin{centering}
@@ -558,7 +559,7 @@ semejante a la arquitectura de servicios de \emph{Google Play Services}
 \cite{Google2016l}. Las aplicaciones móviles están confinadas en
 procesos separados del sistema \emph{\abbr{Android}}, cada cual en
 su entorno \abbr{DVM} correspondiente, donde la comunicación entre
-procesos es llevado acabo por medio de una interfaz denominada \emph{Android
+procesos es llevado a cabo por medio de una interfaz denominada \emph{Android
 Interface Definition Language} (\abbr{AIDL}) que forma parte del
 mecanismo \emph{IPC Binder} (ver sección \ref{ssec52:framework}).
 
@@ -733,7 +734,7 @@ correspondientes. El algoritmo de reconocimiento se describe a continuación.
 \begin{algorithmic}[1]
     \Require Conjunto de tiempos de subscripción de clientes $S$
 	\Procedure{Reconocimiento}{$ S $}
-		\If {$S \textit{ está vacio } $}
+		\If {$S \textit{ está vacío } $}
  			\State\textit{Terminar}
 		\EndIf
 		\State $t_w \leftarrow 10$
@@ -781,8 +782,7 @@ de \emph{software} en formato \abbr{JAR}.
 La actualización dinámica del clasificador se muestra en la \figref{fig5:service-classi}.
 Cada nueva versión del clasificador se genera por medio de \abbr{WEKA}
 y se construye para luego disponerlo como una librería remota a ser
-descargada de Internet. El mecanismo detallado se describe en detalle
-en \cite{Falsina2014}.
+descargada de Internet. El mecanismo detallado se describe en\cite{Falsina2014}.
 
 \begin{figure}[H]
 \begin{centering}

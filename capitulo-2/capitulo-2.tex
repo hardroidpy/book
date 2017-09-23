@@ -5,7 +5,7 @@
 
 \section{Introducción}
 
-\label{sec21:introduccion}En este capitulo, se resumen las cuatro
+\label{sec21:introduccion}En este capítulo, se resumen las cuatro
 áreas principales de estudio relacionados a los sistemas (\emph{Human
 Activity Recognition}, \abbr{HAR}) con miras a definir el problema
 del reconocimiento de actividades humanas desde un punto de vista
@@ -36,17 +36,18 @@ y producción de nuevos servicios en computación.
 Pero, ¿qué es el contexto?, citando a otras fuentes podemos definir
 el contexto como: 
 \begin{quotation}
-<<\emph{... cualquier información que pueda ser utilizada para caracterizar
-la situación de una entidad. Una entidad es una persona, lugar, u
-objeto que es considerado relevante en la interacción entre el usuario
-y la aplicación, incluyendo al usuario y la aplicación}>> \cite{Dey2000}. 
+\flqq{}\emph{... cualquier información que pueda ser utilizada para
+caracterizar la situación de una entidad. Una entidad es una persona,
+lugar, u objeto que es considerado relevante en la interacción entre
+el usuario y la aplicación, incluyendo al usuario y la aplicación}\frqq{}
+\cite{Dey2000}. 
 \end{quotation}
 De manera específica, el contexto de un usuario es el estado acerca
 de la información física, emocional o social, sin dejar de lado cualquier
 otra situación en la que el usuario esté involucrado y además sea
 relevante para la aplicación.
 
-Debido a la libertad de movilidad presentes en la computación móvil
+Debido a la libertad de movilidad presente en la computación móvil
 y ubicua, es primordial construir aplicaciones que conozcan el contexto
 de sus usuarios, dicho de otro modo aplicaciones de contexto (\emph{context-aware}).
 Debido a que el entorno de ejecución cambia con cierto dinamismo,
@@ -65,8 +66,8 @@ de aplicaciones escoger el contexto más relevante para su uso.
 \label{sec23:sensores} Para resolver el problema del reconocimiento
 de actividades humanas uno de los temas a abordar es la recolección
 de datos y posiblemente la elección de los sensores utilizados. Se
-han utilizando varios sensores para extraer información acerca de
-las actividades que un individuo realiza \cite{Chen2012,LaraLabrador2012}.
+han utilizado varios sensores para extraer información acerca de las
+actividades que un individuo realiza \cite{Chen2012,LaraLabrador2012}.
 Los sensores pueden medir signos vitales (ritmo cardíaco, temperatura
 del cuerpo, presión arterial), señales de ambiente (intensidad de
 luz, temperatura, niveles de sonido, vídeo), movimiento (aceleración,
@@ -76,7 +77,7 @@ Si clasificamos los sensores con respecto a la disposición de los
 mismos en relación a los usuarios, los autores \cite{ReyesOrtiz2015,LaraLabrador2013}
 diferencian los mismos entre ambientales, los sensores están ubicados
 de manera fija en el entorno que rodea al individuo, y de atuendo
-(\emph{\abbr{Wearables}}) cuando los sensores están sujetos o anexados
+(\emph{\abbr{Wearable}}) cuando los sensores están sujetos o anexados
 al cuerpo del individuo.
 
 \subsection{Sensores de Ambiente}
@@ -86,7 +87,7 @@ son un conjunto de dispositivos que se ubican en el entorno y miden
 propiedades físicas del mismo, a las personas que rodean, y la interacción
 entre los mismos. Existe una amplia variedad de sensores ambientales,
 como micrófonos, cámaras de vídeo, sensores de presencia, termómetros
-y sensores de profundidad (Ej. el sensor \abbr{Kinect}). 
+y sensores de profundidad (Ej. el sensor \emph{\abbr{Kinect}}). 
 
 Varios trabajos exploran el uso de sensores ambientales para el reconocimiento
 de actividades humanas y de acciones cotidianas. Entre ellos el expuesto
@@ -98,7 +99,7 @@ de la información y la exposición de la privacidad de los usuarios.
 
 \subsection{Sensores de Atuendo}
 
-Los sensores de atuendo (comúnmente denominado\emph{ \abbr{Wearables}})
+Los sensores de atuendo (comúnmente denominado\emph{ \abbr{Wearable}})
 obtienen señales directamente de los usuarios, estos pueden estar
 anexos a varias partes del cuerpo, como la cintura, la muñeca, el
 pecho, la pierna y la cabeza \cite{Bao2004}. También pueden formar
@@ -107,7 +108,7 @@ uso común como relojes, anteojos y los mismos teléfonos móviles.
 
 Una característica peculiar de los sensores es su autonomía debido
 a la utilización de baterías que proporcionan la energía para operar,
-y además pueden operar en conjunto con conexiones inalámbricas (Ej.
+y además pueden operar en conjunto con conexiones inalámbricos (Ej.
 \emph{\abbr{Bluetooth}}) para la transmisión de señales. Las señales
 obtenidas varían desde la temperatura de la piel, la frecuencia cardíaca,
 posicionamiento y hasta el movimiento. Todas estas mediciones son
@@ -139,8 +140,8 @@ tienen la ventaja de preservar la privacidad y el área de operación.
 La información capturada no es tan sensible como en sensores que capturen
 imágenes y vídeo. Además, debido a la miniaturización, los sensores
 pueden ser llevados a todas partes por sus usuarios haciéndolos ubicuos,
-portables y con cobertura sin limitaciones. Aún así existen desafíos
-ha superar como la utilización eficiente de energía y el uso confortable
+portables y con cobertura sin limitaciones. Aun así existen desafíos
+a superar como la utilización eficiente de energía y el uso confortable
 al estar anexos a una vestimenta sin utilizar cables.
 
 \section{Dispositivos Móviles}
@@ -233,7 +234,7 @@ de atributos derivados de fuentes que rodean al individuo \cite{Bao2004,Poppe200
 por ejemplo el movimiento detectado utilizando sensores, la ubicación
 u otras señales fisiológicas. 
 
-El objetivo es identificar las acciones llevadas acabo por una persona
+El objetivo es identificar las acciones llevadas a cabo por una persona
 en base a observaciones realizadas sobre el mismo en el entorno en
 que se desenvuelve. Las aplicaciones en computación móvil y ubicua
 explotan el contexto del usuario haciendo uso de sistemas \abbr{HAR}
@@ -266,7 +267,7 @@ no superpuestos y que ${\displaystyle \bigcup_{r-1}^{j=0}{I_{j}=I}}$
 Se asumen que las acciones consideradas no pueden ser realizadas simultáneamente,
 es decir la persona no realiza la acción de correr y caminar al mismo
 tiempo. Además, se debe notar que el problema \abbr{HAR} no es factible
-a ser resuelto con una solución determinista. El numero de combinaciones
+a ser resuelto con una solución determinista. El número de combinaciones
 de valores de atributos y acciones puede ser muy grande, inclusive
 infinito; y encontrar los puntos de transición es complejo teniendo
 en cuenta que se desconoce la duración de cada acción. 
@@ -384,7 +385,7 @@ La definición del método de colección de datos es un punto importante
 en un sistema \abbr{HAR}. Según como se realiza la observación del
 individuo, puede darse el caso de captura en ambientes realistas los
 cuales son los ideales pero no siempre posibles, y también los ambientes
-casi-realistas llevadas acabo en laboratorios donde se simula así
+casi-realistas llevadas a cabo en laboratorios donde se simula así
 las condiciones reales de las actividades humanas. Por otro lado tenemos
 los ambientes totalmente controlados en laboratorio.
 
@@ -393,7 +394,7 @@ no considerar las condiciones reales de las actividades, tales como
 actividades no tenidas en cuenta, calibración de sensores, ruido,
 etc. Otra de las consideraciones a tener en cuenta en este punto es
 la cantidad de individuos para realizar la colección, es recomendable
-el mayor cantidad de individuos en distintos tipos de edades y condiciones
+la mayor cantidad de individuos en distintos tipos de edades y condiciones
 físicas.
 
 \subsection{Extracción de Muestras}
@@ -422,7 +423,7 @@ pudiendo ser en tiempo y frecuencia.
 Varios enfoques de aprendizaje automático se han desarrollado a lo
 largo de los años para resolver el problema de \abbr{HAR}. En su
 mayoría a través de algoritmos de aprendizaje supervisado aunque también
-se han propuesto métodos semisupervisados y no supervisados.
+se han propuesto métodos semi-supervisados y no supervisados.
 
 La diferencia entre el aprendizaje supervisado y no supervisado consiste
 en la utilización de datos etiquetados y no etiquetados respectivamente.
@@ -466,13 +467,13 @@ agrupados por tipo}
 
 Algunos aspectos relevantes para la selección de un algoritmo de aprendizaje
 pueden ser: el consumo de energía, los requisitos de memoria, la complejidad
-de computo e interpretación, entre otros. Estos aspectos se agudizan
+de cómputo e interpretación, entre otros. Estos aspectos se agudizan
 si se utilizan dispositivos móviles inteligentes. Por ejemplo, los
 árboles de decisión podría ser el método preferido cuando se requiere
 simplicidad en la implementación, mientras que los métodos \abbr{SVM}
 para aplicaciones que requieran un alto rendimiento pero con mayor
 complejidad \cite{ReyesOrtiz2015}.
 
-En el capitulo \ref{chap:Aprendizaje-Automatico} se detalla la base
+En el cápitulo \ref{chap:Aprendizaje-Automatico} se detalla la base
 teórica referente a las técnicas de aprendizaje automático supervisados
 y el método de árboles de decisión electo para este trabajo.

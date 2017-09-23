@@ -237,11 +237,37 @@ Instrumentación
 \begin_layout Standard
 Como está constatado en capítulos anteriores el desarrollo de 
 \emph on
-HARDroid 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+ 
 \emph default
-se concreto completamente para la plataforma 
+se concretó completamente para la plataforma 
 \emph on
-Android 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{Android}
+\end_layout
+
+\end_inset
+
+ 
 \emph default
 y a continuación se detallan los rasgos técnicos de las herramientas utilizadas
  para su concepción y evaluación.
@@ -849,7 +875,7 @@ abbr{ML}
 
 \end_inset
 
- y almacenamiento de datos fueron desarrollados integramente en 
+ y almacenamiento de datos fueron desarrollados íntegramente en 
 \emph on
 Java
 \emph default
@@ -878,7 +904,7 @@ abbr{HAR}
  de este trabajo, se realizó un experimento de recolección con grupo de
  voluntarios.
  Un grupo de 8 personas entre las edades de 20 y 38 estuvieron dispuestos
- para esta tarea, la edad media de la población esta comprendida en 
+ para esta tarea, la edad media de la población está comprendida en 
 \begin_inset Formula $30.7\pm5$
 \end_inset
 
@@ -890,7 +916,7 @@ abbr{HAR}
 El procedimiento guía de captura de datos se instruyó con el uso del teléfono
  móvil como prenda sujeta al bolsillo o en la cintura mientras se realiza
  una actividad física predeterminada.
- El planeamiento del experimento consitió en realizar en orden por un periodo
+ El planeamiento del experimento consistió en realizar en orden por un periodo
  de 2 a 15 minutos alguna de las tres actividades básicas y dos de transporte.
  De acuerdo a la 
 \begin_inset ERT
@@ -2529,7 +2555,7 @@ abbr{ML}
 
 \end_inset
 
- de este trabajo está automatizado por medio una herramienta construida
+ de este trabajo está automatizado por medio de una herramienta construida
  en 
 \emph on
 Java 
@@ -2789,7 +2815,7 @@ Umbral de confianza para poda
 \end_layout
 
 \begin_layout Itemize
-Numero mínimo de instancias permisibles por hoja
+Número mínimo de instancias permisibles por hoja
 \emph on
  
 \emph default
@@ -2902,7 +2928,7 @@ Instancias incorrectamente clasificadas
 \begin_inset Formula $I$
 \end_inset
 
-): es un proporción del tamaño de la población de entrada.
+): es una proporción del tamaño de la población de entrada.
 \end_layout
 
 \begin_layout Itemize
@@ -3209,7 +3235,7 @@ Rango de valores de coeficiente
 
 \begin_layout Standard
 En un problema de clasificación de datos desconocidos a partir de una cantidad
- de datos de entrada limitados, la técnica de validación cruzada dan una
+ de datos de entrada limitados, la técnica de validación cruzada da una
  idea de la capacidad de un algoritmo al clasificar instancias de prueba
  con cierta precisión.
  
@@ -3297,7 +3323,7 @@ E_{ma}=\frac{1}{n}\sum_{i\text{=1}}^{n}\bigl|y_{i}-f(x_{i})\bigr|
 
 \end_inset
 
-Está medida no exagera el efecto de los valores atípicos (
+Esta medida no exagera el efecto de los valores atípicos (
 \emph on
 outliders
 \emph default
@@ -3365,9 +3391,9 @@ Escoger cuales de estas métricas son apropiadas para una evaluación dependen
  Por ejemplo, si se trata de minimizar alguna métrica o disminuir el costo
  asociado a un error en particular.
  En general, sobre los errores cuadráticos y/o la raíz de los mismos pesan
- mas las grandes discrepancias que las pequeñas, mientras que en errores
+ más las grandes discrepancias que las pequeñas, mientras que en errores
  absolutos no.
- Los errores relativos tratan de compensar la predictabilidad del valor
+ Los errores relativos tratan de compensar la predictibilidad del valor
  pronosticado, tratando siempre de tender hacia el valor real medio.
  
 \end_layout
@@ -3543,7 +3569,7 @@ En cuanto a los errores, se puede observar que el error absoluto es bajo
 
 \begin_layout Standard
 Estos errores dan una noción del costo de la predicción, un incremento en
- el error a partir de una situación inicial, sin importar cual sea la métrica,
+ el error a partir de una situación inicial, sin importar cuál sea la métrica,
  implica inherentemente una situación inicial de mayor variabilidad y de
  difícil de predicción, y no que el clasificador sea pobre.
 \end_layout
@@ -4313,9 +4339,9 @@ HARDroid
 \emph default
 se condujo un experimento de prueba basado en una sesión de actividades
  físicas realizadas por dos personas.
- El protocolo consitió en realizar cada una de las actividades básicas ambulator
-ias y de transporte por un periodo comprendido entre 10 a 20 minutos utilizando
- la aplicación 
+ El protocolo consistió en realizar cada una de las actividades básicas
+ ambulatorias y de transporte por un periodo comprendido entre 10 a 20 minutos
+ utilizando la aplicación 
 \emph on
 ActivitySurvey
 \emph default
@@ -4683,7 +4709,68 @@ HARDroid
  Durante una sesión se registra la información del teléfono, correo, edad,
  la fecha y hora, la etiqueta de la actividad detectada y la etiqueta de
  la actividad corregida en caso de una aseveración.
- 
+ En la 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+figref{fig6:activity-survey}
+\end_layout
+
+\end_inset
+
+ se muestra la intefaz de usuario de la aplicación de encuesta durante una
+ sesión de entrenamiento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graphics/activities_toast.jpg
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig6:activity-survey"
+
+\end_inset
+
+Aplicación de encuesta
+\emph on
+ Activity Survey
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5375,7 +5462,7 @@ HARDroid
 \emph default
 se condujo un experimento de prueba basado en la misma sesión de actividades
  físicas realizadas por una persona.
- El protocolo consitió en utilizar la aplicación 
+ El protocolo consistió en utilizar la aplicación 
 \emph on
 Sony
 \emph default
@@ -5856,7 +5943,7 @@ Sony
 \emph on
 Lifelog,
 \emph default
- asumiendose que esta última posee un acierto del 100%.
+ asumiéndose que esta última posee un acierto del 100%.
  
 \end_layout
 
@@ -5997,7 +6084,7 @@ secref{sec6:clasificacion}
 \end_inset
 
  corresponden a hojas.
- Las métricas de evaluación para este nuevo clasificador fueron:
+ Las métricas de evaluación para el nuevo clasificador fueron:
 \end_layout
 
 \begin_layout Itemize

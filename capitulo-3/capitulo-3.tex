@@ -5,7 +5,7 @@
 \section{Introducción}
 En el contexto de aprendizaje automático los patrones son descubiertos a partir de una serie de muestras denominadas instancias. Esta entrada inicial se denomina conjunto de entrenamiento. En nuestro caso específico, cada instancia es un vector de características extraído de señales en una determinada ventana de tiempo. Estas muestras del conjunto de entrenamiento pueden o no ser etiquetadas, es decir, tener asociada a una clase conocida (por ejemplo, caminar, correr, etc.). En algunos casos, tener datos etiquetados no es factible, ya que puede requerir de un observador para examinar manualmente las muestras y así asignar una etiqueta en base a su experiencia.
 
-El proceso de aprendizaje es generalmente tedioso, caro y consume mucho tiempo en muchas aplicaciones de minería de datos. Existen dos enfoques de aprendizaje, es decir, aprendizaje supervisado y no supervisado, que se ocupan de datos etiquetados y no etiquetados, respectivamente. Puesto que un sistema de reconocimiento de la actividad humana debe devolver un resultado como caminar, sentarse, correr, etc., la mayoría de los sistemas de \abbr{HAR} utilizan algoritmos de aprendizaje supervisados. De hecho, podría ser muy difícil de discriminar actividades en un contexto completamente sin supervisión. Algunos otros sistemas funcionan de una manera semisupervisada en donde parte de los datos están sin etiqueta.
+El proceso de aprendizaje es generalmente tedioso, caro y consume mucho tiempo en muchas aplicaciones de minería de datos. Existen dos enfoques de aprendizaje, es decir, aprendizaje supervisado y no supervisado, que se ocupan de datos etiquetados y no etiquetados, respectivamente. Puesto que un sistema de reconocimiento de la actividad humana debe devolver un resultado como caminar, sentarse, correr, etc., la mayoría de los sistemas de \abbr{HAR} utilizan algoritmos de aprendizaje supervisados. De hecho, podría ser muy difícil de discriminar actividades en un contexto completamente sin supervisión. Algunos otros sistemas funcionan de una manera semi-supervisada en donde parte de los datos están sin etiqueta.
 
 Muchos autores definen aprendizaje automático de distintas maneras, aunque \cite{Murphy:2012:MLP:2380985} lo define de manera muy clara:
 
@@ -19,7 +19,7 @@ Muchos autores definen aprendizaje automático de distintas maneras, aunque \cit
 
 \label{sec3:aprendizaje}De manera a establecer un marco teórico para los algoritmos de aprendizaje automático supervisados se incluye la siguiente definición formal \cite{Rajaraman2011}.
 
-\begin{definition}[Clasificador de \abbr{ML}]\label{def3:clasificacion}Un algoritmo \abbr{ML} recibe un conjunto entrenamiento que se compone de varios pares $(\boldsymbol{x},\boldsymbol{y})$ conocidos como instancias de entrenamiento, donde
+\begin{definition}[Clasificador de \abbr{ML}]\label{def3:clasificacion}Un algoritmo \abbr{ML} recibe un conjunto entrenamiento que se compone de varios pares $(\boldsymbol{x},\boldsymbol{y})$ conocidos como instancias de entrenamiento, donde:
 \begin{itemize}
 \item $\boldsymbol{x}$ es un \emph{vector} de valores, llamado vector característico, e
 \item $\boldsymbol{y}$ es la \emph{etiqueta}, el valor de clasificación para $\boldsymbol{x}$.
@@ -32,7 +32,7 @@ El objetivo del proceso \abbr{ML} es encontrar una función $y=f(\boldsymbol{x})
 \end{enumerate}
 \end{definition}
 
-El aprendizaje supervisado, comúnmente conocido como clasificación de múltiples clases discretas, ha sido un campo muy productivo que da lugar a un gran número de algoritmos. En la \tabref{tab3:clasificadores} se resumen los clasificadores más importantes en el estudio de \abbr{HAR}s según su tipo \cite{LaraLabrador2013}.
+El aprendizaje supervisado, comúnmente conocido como clasificación de múltiples clases discretas, ha sido un campo muy productivo que da lugar a un gran número de algoritmos. En la \tabref{tab3:clasificadores} se resumen los clasificadores más importantes en el estudio de \abbr{HAR} según su tipo \cite{LaraLabrador2013}.
 \begin{table}[!htbp]
 \begin{centering}
 \begin{tabular}{|l|l|}
@@ -44,7 +44,7 @@ El aprendizaje supervisado, comúnmente conocido como clasificación de múltipl
 \hline 
 		Clasificadores de Bayes 	& Redes de Bayes, \emph{Naïve} Bayes	\\
 \hline 
-		Basados en Instancia 		& k-vecinos proximos					\\
+		Basados en Instancia 		& k-vecinos próximos					\\
 \hline 
 		Transformación de dominio 	& Máquinas de soporte-vector			\\
 \hline 
@@ -57,9 +57,9 @@ El aprendizaje supervisado, comúnmente conocido como clasificación de múltipl
 \caption[Algoritmos de ML]{\label{tab3:clasificadores} Algoritmos de aprendizaje automático}
 \end{table}
 
-En las siguientes secciones nos concentraremos en un enfoque basado en arboles de decisión (\emph{Decision Tree}, \abbr{DT}) para construir la función $f$. La función $f$, que corresponde a un árbol de múltiples niveles donde cada nodo aplica una función a $\boldsymbol{x}$ y determina sobre qué nodo hijo procede la búsqueda. Cada nodo posee un número arbitrario de nodos hijos. Los árboles de decisión son preferibles para clasificación binaria o de múltiples clases, especialmente cuando la dimensión del vector característicos no es muy grande \cite{Rajaraman2011}.
+En las siguientes secciones nos concentraremos en un enfoque basado en arboles de decisión (\emph{Decision Tree}, \abbr{DT}) para construir la función $f$. La función $f$, que corresponde a un árbol de múltiples niveles donde cada nodo aplica una función a $\boldsymbol{x}$ y determina sobre qué nodo hijo procede la búsqueda. Cada nodo posee un número arbitrario de nodos hijos. Los árboles de decisión son preferibles para clasificación binaria o de múltiples clases, especialmente cuando la dimensión del vector característico no es muy grande \cite{Rajaraman2011}.
 
-\section{Arboles de Decisión}
+\section{Árboles de Decisión}
 El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto de tuplas o instancias etiquetadas. Un árbol de decisión es una estructura de árbol similar a un diagrama de flujo, donde cada nodo interno (nodo no hoja) denota una prueba de un atributo, y cada rama representa el camino a seguir luego de la evaluación, y cada nodo hoja es una etiqueta o clase.
 
 \begin{figure}[!htbp]
@@ -71,17 +71,17 @@ El árbol de decisión es un método de aprendizaje predictivo sobre un conjunto
 En la \figref{fig:arbolEjemplo} se muestra un típico ejemplo de árbol de decisión que representa el concepto de jugar o no Golf, teniendo en cuenta variables climática representadas en los nodos internos, y los nodos hojas denotan las decisiones de jugar o no al Golf. 
 
 \section{Algoritmo C4.5}
-El trabajo de J.R. Quinlan \cite{Quinlan:1993:CPM:152181} propone un algoritmo de construcción de arboles de decisión denominado C4.5, el cual a su vez es una mejora o extensión al algoritmo ID3 \cite{Quinlan:1986:IDT:637962.637969}. Este algoritmo genera un árbol de decisión a partir del paticionamiento recursivo de los datos de entrada. El árbol se construye mediante la estrategia profundidad primero (\emph{depth-first}).
+El trabajo de J.R. Quinlan \cite{Quinlan:1993:CPM:152181} propone un algoritmo de construcción de árboles de decisión denominado C4.5, el cual a su vez es una mejora o extensión al algoritmo ID3 \cite{Quinlan:1986:IDT:637962.637969}. Este algoritmo genera un árbol de decisión a partir del particionamiento recursivo de los datos de entrada. El árbol se construye mediante la estrategia profundidad primero (\emph{depth-first}).
 
-Además, el algoritmo C4.5 utiliza una técnica heurística conocida como proporción de ganancia (\emph{gain-ratio}). Que es una medida basada en información que considera diferentes números y probabilidades de los resultados de las pruebas. El algoritmo así, considera todas las pruebas posibles que puede dividir el conjunto de datos para seleccionar la prueba que le haya generado mayor ganancia de información. Para cada atributo discreto, se considera una prueba con $N$ resultados, siendo $N$ el numero de valores posibles que puede tomar el atributo. Para cada atributo continuo, se realiza la prueba binaria $(1, 0)$ sobre cada uno de los valores que puede tomar el atributo de los datos. 
+Además, el algoritmo C4.5 utiliza una técnica heurística conocida como proporción de ganancia (\emph{gain-ratio}). Que es una medida basada en información que considera diferentes números y probabilidades de los resultados de las pruebas. El algoritmo así, considera todas las pruebas posibles que puede dividir el conjunto de datos para seleccionar la prueba que le haya generado mayor ganancia de información. Para cada atributo discreto, se considera una prueba con $N$ resultados, siendo $N$ el número de valores posibles que puede tomar el atributo. Para cada atributo continuo, se realiza la prueba binaria $(1, 0)$ sobre cada uno de los valores que puede tomar el atributo de los datos. 
 
 El algoritmo C4.5, ilustrado en el \algref{algoC45}, presenta las siguientes características:
 
 \begin{itemize}
-	\item Permite trabajar con valores continuos para los atributos, en dos ramas según se cumpla una de las siguientes condiciones  $ A_{i} <= N $ o $ A_{i} > N $ . 
+	\item Permite trabajar con valores continuos para los atributos, en dos ramas según se cumpla una de las siguientes condiciones  $ A_{i} <= N $ o $ A_{i} > N $. 
 	\item Por lo general los arboles generados por el mismo se caracterizan por ser menos frondosos, ya que cada hoja cubre una distribución de clases y no una clase en particular.
 	\item Utiliza el método divide y vencerás para generar el árbol de decisión inicial a partir de un conjunto de datos de entrenamiento.
-	\item Se basan en la utilización del criterio de proporción de ganancia, definido como $ I(X_{i},C) / I(X_{i})  $. De esta manera consigue evitar que variables con mayor numero de categorías salgan beneficiadas en la selección. 
+	\item Se basan en la utilización del criterio de proporción de ganancia, definido como $ I(X_{i},C) / I(X_{i})  $. De esta manera consigue evitar que variables con mayor número de categorías salgan beneficiadas en la selección. 
 	\item Su implementación típica es recursiva.
 \end{itemize}
 
@@ -111,17 +111,17 @@ El algoritmo C4.5, ilustrado en el \algref{algoC45}, presenta las siguientes car
 
 
 \section{Selección de Atributo de División}
-Las medidas de selección de atributos de división se utilizan heurística para seleccionar el criterio de división que mejor separa una partición de datos dada $D$ de tuplas de entrenamiento etiquetadas en clases individuales. Si dividimos $D$ en particiones más pequeñas de acuerdo a un criterio de división dado, idealmente tendríamos cada partición pura, es decir todas la tuplas deben permaneces a la misma clase. Por lo tanto, el mejor medida de selección de atributo es el que se acerque más al escenario mencionado.
+Las medidas de selección de atributos de división se utilizan heurística para seleccionar el criterio de división que mejor separa una partición de datos dada $D$ de tuplas de entrenamiento etiquetadas en clases individuales. Si dividimos $D$ en particiones más pequeñas de acuerdo a un criterio de división dado, idealmente tendríamos cada partición pura, es decir todas la tuplas deben permaneces a la misma clase. Por lo tanto, la mejor medida de selección de un atributo es el que se acerque más al escenario mencionado.
 
-La medida de selección de atributo también se conocen como reglas de división porque determinan como se dividen las tuplas en un nodo determinado. Esta proporciona un rating para cada atributo de la tupla de entrenamiento. El atributo con mejor valor en esta medida es el elegido como atributo de división. Si el atributo de división es de valor continuo, el árbol sera binario, también debe determinarse el punto de división o un subconjunto de división como parte del criterio de división.
+La medida de selección de un atributo también se conoce como reglas de división porque determinan como se dividen las tuplas en un nodo determinado. Esta proporciona un rating para cada atributo de la tupla de entrenamiento. El atributo con mejor valor en esta medida es el elegido como atributo de división. Si el atributo de división es de valor continuo, el árbol será binario, también debe determinarse el punto de división o un subconjunto de división como parte del criterio de división.
 
 El nodo raíz es creado para la partición $D$ etiquetado con el criterio de división, se crean ramas para cada resultado del criterio de división, y las tuplas se dividen en consecuencia. 
 
 De aquí en adelante, utilizaremos la siguiente nomenclatura. Sea $D$ una partición de datos, un conjunto de tuplas de entrenamiento etiquetadas. Supongamos que la clase tiene $m$ valores distintos, que definen $m$ clases distintas $C_i$ (Siendo $i=1,..,m$). De modo que $C_{i,D}$ es el conjunto de tuplas de la clase $C_{i}$ en $D$. Por lo tanto $\lvert D \rvert$ y $\lvert C_{i,D} \rvert$ denotan la cantidad de tuplas en $D$ y $C_{i,D}$ respectivamente. 
 
 \subsection{Información de ganancia / entropía}
-El algoritmo ID3 utilizan la entropía como medida de selección para cada atributo.
-En donde, dado un nodo $N$ que representa las tuplas de la partición $D$, el atributo con mayor valor de ganancia es elegido para la división de $N$. Con este enfoque, el atributo reduce al mínimo la información necesaria para clasificar las tuplas de las particiones resultantes y refleja la menor aleatoriedad o impureza de la partición. Este enfoque minimiza el número esperado de ensayos necesarios para clasificar una tupla dada y garantiza un que se encuentre un árbol simple, pero no necesariamente el arbol más simple.
+El algoritmo ID3 utiliza la entropía como medida de selección para cada atributo.
+En donde, dado un nodo $N$ que representa las tuplas de la partición $D$, el atributo con mayor valor de ganancia es elegido para la división de $N$. Con este enfoque, el atributo reduce al mínimo la información necesaria para clasificar las tuplas de las particiones resultantes y además refleja la menor aleatoriedad o impureza de la partición. Este enfoque minimiza el número esperado de ensayos necesarios para clasificar una tupla dada y garantiza un que se encuentre un árbol simple, pero no necesariamente el árbol más simple.
 
 La información de ganancia necesaria para clasificar una tupla en $D$ está dada por:
 
@@ -131,13 +131,13 @@ Info(D) = - \displaystyle\sum_{i=1}^{m} p_{i}\log_2(p_{i})\label{eq3:info}
 
 donde $p_{i}$ es la probabilidad de una tupla arbitraria en $D$ pertenezca a la clase $C_{i}$ y que se estima que es igual a $ \lvert C_{i,D}} \rvert / \lvert D \rvert $. $Info(D)$ es la cantidad media de información necesaria para identificar la etiqueta de una tupla dada en $D$. Nótese, que la información que tenemos se basa solamente en las proporciones de las tuplas de cada clase. $Info(D)$ también se conoce entonces como entropía de $D$.
 
-Ahora, supongamos que se requiera particionar las tuplas en $D$ conforme a los atributos $A$ conformados por $v$ valores distintos $ \{ a_{1},a_{2},...,a_{v} \}$. Si $A$ tiene valores discretos, estos valores se corresponderán directamente con los resultados de una prueba de $v$ sobre $A$. El atributo $A$ se puede utilizar para dividir $D$ en $v$ particiones o subconjuntos, $ \{ D_{1},D_{2},...,D_{v} \}$, donde $D_j$ contiene aquellas tuplas en $D$ que se corresponden con $a_j$ resultados de $A$. Estas particiones se corresponderían con las ramas que crecen a partir del nodo $N$. Idealmente, nos gustaría que esta división pueda producir una clasificación exacta de las tuplas. Es decir, nos gustaría que cada partición sea pura. Sin embargo, es bastante probable que el particionamiento sea impuro (por ejemplo, cuando una partición puede contener una colección de tuplas de diferentes clases en lugar de una sola clase). ¿Cuánto más información sería todavía necesaria (luego de la partición) con el fin de llegar a una clasificación exacta? Esta cantidad se mide por:
+Ahora, supongamos que se requiera particionar las tuplas en $D$ conforme a los atributos $A$ conformados por $v$ valores distintos $ \{ a_{1}, a_{2}, ... , a_{v} \}$. Si $A$ tiene valores discretos, estos valores se corresponderán directamente con los resultados de una prueba de $v$ sobre $A$. El atributo $A$ se puede utilizar para dividir $D$ en $v$ particiones o subconjuntos, $ \{ D_{1}, D_{2}, ... , D_{v} \}$, donde $D_j$ contiene aquellas tuplas en $D$ que se corresponden con $a_j$ resultados de $A$. Estas particiones se corresponderían con las ramas que crecen a partir del nodo $N$. Idealmente, nos gustaría que esta división pueda producir una clasificación exacta de las tuplas. Es decir, nos gustaría que cada partición sea pura. Sin embargo, es bastante probable que el particionamiento sea impuro (por ejemplo, cuando una partición puede contener una colección de tuplas de diferentes clases en lugar de una sola clase). ¿Cuánto más información sería todavía necesaria (luego de la partición) con el fin de llegar a una clasificación exacta? Esta cantidad se mide por:
 
 \begin{equation}
 Info_{A}(D) = \displaystyle\sum_{j=1}^{v} \displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert} \times Info(D_{j})\label{eq3:infoA}
 \end{equation}
 
-El término $\displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert}$ actúa como el peso de la j-\emph{esima} partición. $Info_{A}(D)$ es la información esperada requerida para clasificar la tupla de $D$ basada en la partición de $A$. Cuando menor sea la información esperada, mayor es la pureza de las particiones.
+El término $\displaystyle\frac{\lvert D_{j} \rvert}{\lvert D \rvert}$ actúa como el peso de la j-\emph{ésima} partición. $Info_{A}(D)$ es la información esperada requerida para clasificar la tupla de $D$ basada en la partición de $A$. Cuando menor sea la información esperada, mayor es la pureza de las particiones.
 
 La información de ganancia se define como la diferencia entre lo requerido de información original (basado en la proporción de clases) y el nuevo requerimiento, obtenido luego de realizar la partición en $A$. Es decir,
 
@@ -145,7 +145,7 @@ La información de ganancia se define como la diferencia entre lo requerido de i
 Gain(A) = Info(D) - Info_{A}(D)\label{eq3:ganancia}
 \end{equation}
 
-En otras palabras, $Gain(A)$ nos dice cuanto se ganaría por la ramificación en $A$. Es la reducción esperada en el requisito de información causado por conocer el valor de $A$. El atributo A con ganancia mas alta, $Gain(A)$, se selecciona como atributo de división en el nodo $N$. Esto equivale a decir que queremos particionar en el atributo A que haría la mejor clasificación, por lo que la cantidad de información aun necesaria para clasificar las tuplas sea mínima, $InfoA(D)$.
+En otras palabras, $Gain(A)$ nos dice cuanto se ganaría por la ramificación en $A$. Es la reducción esperada en el requisito de información causado por conocer el valor de $A$. El atributo A con ganancia más alta, $Gain(A)$, se selecciona como atributo de división en el nodo $N$. Esto equivale a decir que queremos particionar en el atributo A, que haría la mejor clasificación, por lo que la cantidad de información aun necesaria para clasificar las tuplas sea mínima, $InfoA(D)$.
 
 \subsection{Ejemplo de deducción de un nodo - ID3}
 
@@ -207,7 +207,7 @@ De la misma manera, se procede a calcular las ganancias para cada atributo:
   \item $Gain(RatingCrediticio)$ = 0.048 bits. 
 \end{itemize}
 
-Dado que el atributo $Edad$ tiene mayor ganancia de información, es seleccionado para realizar la partición. El nodo $N$ es etiquetado con $Edad$, y se crean una rama por cada valor del atributo. Las tuplas se divinen en consecuencia, como se muestra en la \figref{fig:arbolPartEdad}.
+Dado que el atributo $Edad$ tiene mayor ganancia de información, es seleccionado para realizar la partición. El nodo $N$ es etiquetado con $Edad$, y se crean una rama por cada valor del atributo. Las tuplas se dividen en consecuencia, como se muestra en la \figref{fig:arbolPartEdad}.
 
 \begin{figure}[!tbph]
 	\centering
@@ -226,7 +226,7 @@ Nótese que las tuplas en la partición $Edad = Mediana$ pertenecen todas a la c
 
 
 \subsection{Proporción de ganancia}
-La medida de información de ganancia tiene inclinación hacia un particionamiento con muchos resultados, es decir, es propenso a seleccionar atributos que tengan gran numero de valores. Por ejemplo, considerando un atributo que actúa como identificador, como $Rid$; una división en $Rid$ generaría un gran numero de particiones, tantas como valores contenga $Rid$, cada partición con una sola tupla. Debido a que cada partición es pura, la información necesaria para clasificar el conjunto dado $D$ basado en el particionamiento mencionado seria $Info_{Rid}(D)=0$. Por lo tanto, la información de ganancia es la máxima, claramente, tal partición es inútil para la clasificación. 
+La medida de información de ganancia tiene inclinación hacia un particionamiento con muchos resultados, es decir, es propenso a seleccionar atributos que tengan gran número de valores. Por ejemplo, considerando un atributo que actúa como identificador, como $Rid$; una división en $Rid$ generaría un gran número de particiones, tantas como valores contenga $Rid$, cada partición con una sola tupla. Debido a que cada partición es pura, la información necesaria para clasificar el conjunto dado $D$ basado en el particionamiento mencionado seria $Info_{Rid}(D)=0$. Por lo tanto, la información de ganancia es la máxima, claramente, tal partición es inútil para la clasificación. 
 
 El algoritmo C4.5, sucesor de ID3, usa una extensión de la información de ganancia conocida como proporción de ganancia, que intenta contrarrestar la inclinación mencionada.	Aplica una normalización a la información de ganancia usando un valor "información de división" definido de manera análoga a $Info(D)$.
 
@@ -235,7 +235,7 @@ SplitInfo_{A}(D) = -\displaystyle\sum_{j=1}^{v} \displaystyle\frac{\lvert D_{j} 
 \end{equation}
 
 Este valor representa la información potencial generada al dividir el conjunto de datos de entrenamiento $D$ en $v$ particiones, correspondientes a los $v$ de una prueba en el atributo $A$.
-Nótese que, para cada resultado, es considerado el numero de tuplas que tienen ese resultado, respecto al numero total de tuplas en $D$. Esto difiere de información de ganancia, que media la información respecto a la clasificación generada basada en la misma partición. La proporción de ganancia se define como:
+Nótese que, para cada resultado, es considerado el número de tuplas que tienen ese resultado, respecto al número total de tuplas en $D$. Esto difiere de información de ganancia, que media la información respecto a la clasificación generada basada en la misma partición. La proporción de ganancia se define como:
 
 \begin{equation}
 GainRatio(A) = \frac{Gain(D)}{SplitInfo_{A}(D)}\label{eq3:GainRatio}
@@ -263,7 +263,7 @@ GainRatio(Ingreso) = \frac{0.029}{0.926} = 0.031 bits \\
 
 
 \section{Métricas de Evaluación y Matriz de Confusión}
-\label{sec3:metricas}En general, la selección del algoritmos de clasificación para HAR ha sido apoyada meramente por evidencias empíricas \cite{Bao2004, LaraLabrador2013}. La gran mayoría de los estudios utilizan una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado, como se visualiza en la \figref{fig:evaluacion}.
+\label{sec3:metricas}En general, la selección del algoritmo de clasificación para HAR ha sido apoyada meramente por evidencias empíricas \cite{Bao2004, LaraLabrador2013}. La gran mayoría de los estudios utilizan una validación cruzada con pruebas estadísticas para comparar el rendimiento de los clasificadores para un conjunto de datos determinado, como se visualiza en la \figref{fig:evaluacion}.
 
 \begin{figure}[!tbph]
 	\centering
@@ -308,7 +308,7 @@ Aunque se definen para la clasificación binaria, estas métricas pueden general
 
 \section{Evaluación de un Clasificador}
 
-Utilizando el ejemplo anterior en la \tabref{tabla:sencilla2}, supongamos que se tomo una muestra de 10.000 tuplas obteniendose como resultado la \tabref{tabla:MatrizConfusion}.
+Utilizando el ejemplo anterior en la \tabref{tabla:sencilla2}, supongamos que se tomó una muestra de 10.000 tuplas obteniéndose como resultado la \tabref{tabla:MatrizConfusion}.
 
 
 \begin{table}[!htbp]

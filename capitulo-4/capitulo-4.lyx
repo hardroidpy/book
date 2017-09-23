@@ -97,13 +97,10 @@ name "sec41:introduccion"
 
 \end_inset
 
-El diseño de 
-\emph on
-sistemas con conocimiento del contexto
-\emph default
- promueven una interacción novedosa entre los usuarios y diversas aplicaciones
- que corresponden a áreas tales como ambientes inteligentes, repuesta a
- emergencias, vigilancia y otros 
+El diseño de sistemas con conocimiento del contexto promueve una interacción
+ novedosa entre los usuarios y diversas aplicaciones que corresponden a
+ áreas tales como ambientes inteligentes, repuesta a emergencias, vigilancia
+ y otros 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Choudhury2008"
@@ -118,6 +115,8 @@ key "Choudhury2008"
  El requerimiento primordial de un sistema con una aplicación de contexto
  es que este pueda ser portado continuamente como atuendo de sus usuarios
  (
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -125,11 +124,13 @@ status open
 
 
 \backslash
-abbr{Wearables}
+abbr{Wearable}
 \end_layout
 
 \end_inset
 
+
+\emph default
 ).
  Por lo tanto, un sistema que acompaña continuamente al usuario puede interaccio
 nar oportunamente con el mismo ya que este tiene la capacidad de observar
@@ -272,7 +273,7 @@ abbr{ML}
 
 \end_inset
 
- en linea (
+ en línea (
 \emph on
 On-line learning
 \emph default
@@ -508,7 +509,7 @@ Registro
 El método de registro consiste en capturar las señales de un sensor y separar
  las medidas en una o más variables dependiendo del tipo de sensor.
  La organización de los registros se realiza con respecto al tiempo.
- Es decir, se dispone de un flujo continuo de datos con una marca de tiempo
+ Es decir, se dispone de un flujo continuo de datos con una marca de tiempo,
  almacenados de manera secuencial en un medio permanente para su posterior
  procesamiento.
  
@@ -520,7 +521,7 @@ La marca de tiempo usualmente se mide
 mili
 \emph default
 -segundos y dependiendo del sensor el intervalo entre medidas puede variar
- en el mismo orden, Ej.
+ en el mismo orden, ej.
  con tasa de salida de 
 \family typewriter
 60 
@@ -1072,6 +1073,8 @@ figref{fig4:gps}
 \end_inset
 
  se muestra una aplicación móvil para 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1084,6 +1087,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  que obtiene la estimación de coordenadas globales al triangular satélites
  del 
 \begin_inset ERT
@@ -1222,7 +1227,8 @@ Los sensores de ambiente solos no proveen información suficiente ya que
  los individuos pueden realizar las actividades bajo diversas circunstancias
  contextuales en términos de clima, ruido o iluminación.
  Por lo tanto estos sensores pueden utilizarse de manera complementaria
- para detectar sugestiones adicionales, Ej.
+ para detectar sugestiones adicionales.
+ Ej.
  el usuario está en el exterior de acuerdo a la luminosidad, o se encuentra
  descansando debido a un nivel de sonido y luminosidad baja 
 \begin_inset CommandInset citation
@@ -1319,7 +1325,9 @@ El proceso de aprendizaje automático requiere de una cantidad moderada de
  objetivas a nuestro estudio.
  Estos datos deben ser recolectadas y etiquetados utilizando una aplicación
  diseñada para el caso, Ej.
- Utilizando un teléfono 
+ Utilizando un teléfono con 
+\emph on
+
 \begin_inset ERT
 status open
 
@@ -1332,7 +1340,9 @@ abbr{Android}
 
 \end_inset
 
- y la aplicación 
+ 
+\emph default
+y la aplicación 
 \emph on
 SensorLog
 \emph default
@@ -1368,7 +1378,9 @@ secref{sec263:actividades-humanas}
  realiza una sesión de caminata, trote, bicicleta o conducir un vehículo
  por un periodo de tiempo de 10 a 15 minutos.
  Un ejemplo de recolección de datos llevada a cabo por medio de la aplicación
- disponible para la plataforma 
+ disponible para la plataforma
+\emph on
+ 
 \begin_inset ERT
 status open
 
@@ -1381,6 +1393,8 @@ abbr{Android}
 
 \end_inset
 
+
+\emph default
  es mostrada en la 
 \begin_inset ERT
 status open
@@ -1858,8 +1872,8 @@ name "ssec44:sampling"
 
 \end_inset
 
-La realización de actividades humanas son efectuadas durante periodos de
- tiempo de larga duración, en el orden de los segundos o minutos.
+Las actividades humanas son realizadas durante periodos de tiempo de larga
+ duración, en el orden de los segundos o minutos.
  Esta tasa es mucho mayor comparado con las tasas de muestreos de los sensores,
  las cuales pueden llegar hasta 
 \family typewriter
@@ -1893,7 +1907,7 @@ abbr{Hz}
 \end_inset
 
 ) no provee suficiente información para describir qué actividad está llevando
- acabo un persona.
+ a cabo un persona.
  Por lo tanto, las actividades humanas deben ser reconocidas a partir de
  muestras extraídas en ventanas de tiempo 
 \begin_inset Formula $w$
@@ -2693,7 +2707,7 @@ Curtosis:
 \begin_layout Enumerate
 
 \series bold
-Rango intercuartíl:
+Rango intercuartil:
 \series default
  medida de dispersión de la diferencia entre el tercer y primer cuartíl.
 \end_layout
@@ -3702,7 +3716,7 @@ key "LaraLabrador2013"
 
 .
  El propósito principal del algoritmo es el de clasificar los datos desconocidos.
- Considerando el capitulo 
+ Considerando el capítulo 
 \begin_inset ERT
 status open
 
@@ -3757,7 +3771,7 @@ figref{fig4:clasificador}
 
 \end_inset
 
- se muestra una gráfico esquemático adaptado al problema 
+ se muestra un gráfico esquemático adaptado al problema 
 \begin_inset ERT
 status open
 
@@ -3857,7 +3871,7 @@ Preparación
 \begin_layout Standard
 En esta fase es esencial contar con un conjunto de instancias de entrenamiento
  y la información adicional de su clasificación.
- Las preparación se compone de varias tareas que inciden en la mejora del
+ La preparación se compone de varias tareas que inciden en la mejora del
  clasificador resultante, las cuales se listan a continuación 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -4401,7 +4415,7 @@ s actividades es una tarea relativamente fácil.
  Otros sistemas se caracterizan por una aplicación móvil que permite al
  usuario seleccionar la actividad que se realiza a partir de una lista,
  de esta manera, cada muestra se corresponde con una etiqueta de actividad.
- Este ultimo enfoque es utilizado en este trabajo.
+ Este último enfoque es utilizado en este trabajo.
 \end_layout
 
 \begin_layout Standard
@@ -4422,7 +4436,7 @@ Aprendizaje
 \begin_layout Standard
 El requisito primordial para la tarea de aprendizaje es escoger al algoritmo
  adecuado para la clasificación.
- Así como se presenta en el capitulo 
+ Así como se presenta en el capítulo 
 \begin_inset ERT
 status open
 
@@ -4435,7 +4449,7 @@ ref{chap:Aprendizaje-Automatico}
 
 \end_inset
 
- basado en el enfoque de arboles de decisión.
+ basado en el enfoque de árboles de decisión.
  El proceso de aprendizaje puede realizarse en base a tres metodologías
  
 \begin_inset CommandInset citation
@@ -4461,7 +4475,7 @@ basado en lotes
 \begin_layout Standard
 Por otro lado el aprendizaje 
 \emph on
-en linea
+en línea
 \emph default
  puede contar con los datos de entrenamiento a medida que se disponen de
  los mismos, como en un flujo de datos, estos son examinados una sola vez
@@ -4486,7 +4500,7 @@ s de entrenamiento a medida que transcurre el tiempo.
 \begin_layout Standard
 Una mejora del aprendizaje 
 \emph on
-en linea
+en línea
 \emph default
  es el aprendizaje 
 \emph on
@@ -4594,8 +4608,8 @@ key "Rajaraman2011"
 \end_layout
 
 \begin_layout Standard
-El conjunto de validación permite evaluar el clasificador determinando si
- se sobreajustan los resultados y con cuanta precisión es efectivo el modelo.
+El conjunto de validación permite evaluar el clasificador determinando el
+ sobreajuste de los resultados y con cuanta precisión es efectivo el modelo.
  La precisión es la proporción de instancias correctamente clasificadas.
  El sobreajuste es una medida del error en base a la precisión del modelo
  con instancias en el conjunto de evaluación.
@@ -4658,9 +4672,9 @@ Clasificación
 El propósito de crear un modelo no solamente es clasificar el conjunto entrenami
 ento sino también clasificar datos cuya etiqueta no es conocida con cierta
  precisión.
- Nuevamente la preparación es una requisito primordial para transformar
- datos de entrada en instancias que puedan ser evaluadas por el modelo y
- emitir una etiqueta de resultado particular para cada instancia desconocida.
+ Nuevamente la preparación es un requisito primordial para transformar datos
+ de entrada en instancias que puedan ser evaluadas por el modelo y emitir
+ una etiqueta de resultado particular para cada instancia desconocida.
 \end_layout
 
 \begin_layout Standard
@@ -4678,7 +4692,7 @@ algref{algoC45}
 
 \end_inset
 
-) basado en el enfoque de arboles de decisión descrito en el capítulo 
+) basado en el enfoque de árboles de decisión descrito en el capítulo 
 \begin_inset ERT
 status open
 
@@ -4817,7 +4831,7 @@ Privacidad
 \end_layout
 
 \begin_layout Standard
-En el siguiente capitulo se presenta la implementación del sistema 
+En el siguiente capítulo se presenta la implementación del sistema 
 \begin_inset ERT
 status open
 
