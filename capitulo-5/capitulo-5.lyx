@@ -2697,6 +2697,13 @@ HARDroid
 \emph on
 ActivitySurvey
 \emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GimenezYegros2016b"
+
+\end_inset
+
 .
  El diagrama se describe en lenguaje 
 \begin_inset ERT
@@ -2818,6 +2825,13 @@ abbr{APK}
 \emph on
 Google Play
 \emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GimenezYegros2016a"
+
+\end_inset
+
 .
  Esto permite a los usuarios estar actualizados y los desarrolladores poseen
  mecanismos fáciles para integrarse al servicio 
@@ -4316,7 +4330,14 @@ abbr{HARDroid}
  desarrollado y evaluar los resultados producidos al detectar las actividades
  realizadas por el usuario, se creó la aplicación 
 \emph on
-ActivitySurvey.
+ActivitySurvey 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GimenezYegros2016e"
+
+\end_inset
+
+.
  
 \emph default
 El diseño de la aplicación móvil es bastante sencillo pero con los complementos

@@ -5,20 +5,21 @@
 
 \section{Introducción}
 
-En el ámbito de investigación y desarrollo de sistemas \abbr{HAR}
-existen dos elementos vitales: la recolección de datos experimentales
-y generación del conjunto de entrenamiento. En este capítulo, describimos
-de manera general estos elementos en las primeras dos secciones. La
-sección \ref{sec6:recoleccion} describe los aspectos relacionados
-a la captura de datos, determinando los requisitos mínimos de los
-teléfonos móviles utilizados y describiendo el procedimiento guía
-para experimentación. Posteriormente, la sección \ref{sec6:clasificacion}
-describe los resultados obtenidos al aplicar las técnicas descritas
-en la \secref{sec44:proceso-senales} para transformar datos sensoriales
-a un conjunto de entrenamiento necesario para clasificar actividades
-humanas. Esto incluye la validación del clasificador construido con
-las técnicas de \emph{Machine Learning} (\abbr{ML}) expuestas en
-este trabajo y confirma su efectividad en ambientes productivos. 
+\label{sec6:introduccion}En el ámbito de investigación y desarrollo
+de sistemas \abbr{HAR} existen dos elementos vitales: la recolección
+de datos experimentales y generación del conjunto de entrenamiento.
+En este capítulo, describimos de manera general estos elementos en
+las primeras dos secciones. La sección \ref{sec6:datos-exp} describe
+los aspectos relacionados a la captura de datos, determinando los
+requisitos mínimos de los teléfonos móviles utilizados y describiendo
+el procedimiento guía para experimentación. Posteriormente, la sección
+\ref{sec6:clasificador} describe los resultados obtenidos al aplicar
+las técnicas descritas en la \secref{sec44:proceso-senales} para
+transformar datos sensoriales a un conjunto de entrenamiento necesario
+para clasificar actividades humanas. Esto incluye la validación del
+clasificador construido con las técnicas de \emph{Machine Learning}
+(\abbr{ML}) expuestas en este trabajo y confirma su efectividad en
+ambientes productivos. 
 
 Finalmente, en la sección \ref{sec6:resultados} los resultados producidos
 al utilizar el clasificador construido con el conjunto entrenamiento
@@ -28,7 +29,7 @@ desarrollada para esta tarea.
 
 \section{Datos Experimentales}
 
-\label{sec6:recoleccion}En base a trabajos precedentes en sistemas
+\label{sec6:datos-exp}En base a trabajos precedentes en sistemas
 \abbr{HAR}, se han dispuesto datos experimentales para entrenar clasificadores
 de actividades humanas tales como en \cite{ReyesOrtiz2013}. Estos
 datos están disponibles para ser utilizados como fuente para diversos
@@ -42,12 +43,13 @@ se describen a continuación.
 
 \subsection{Instrumentación}
 
-Como está constatado en capítulos anteriores el desarrollo de \emph{\abbr{HARDroid}
-}se concretó completamente para la plataforma \emph{\abbr{Android}
-}y a continuación se detallan los rasgos técnicos de las herramientas
-utilizadas para su concepción y evaluación.
+\label{ssec6:instrumentacion}Como está constatado en capítulos anteriores
+el desarrollo de \emph{\abbr{HARDroid} }se concretó completamente
+para la plataforma \emph{\abbr{Android} }y a continuación se detallan
+los rasgos técnicos de las herramientas utilizadas para su concepción
+y evaluación.
 
-\subsubsection{Teléfonos inteligentes}
+\subsubsection{Teléfonos Inteligentes}
 
 Escoger las herramientas apropiadas para desarrollar un sistema \abbr{HAR}
 requiere primeramente de la elección de teléfonos móviles modernos
@@ -89,7 +91,7 @@ La elección se dio en base a los teléfonos inteligentes disponibles
 que fueron propiedad de los voluntarios durante las diferentes sesiones
 de experimentación.
 
-\subsubsection{Entorno de desarrollo }
+\subsubsection{Entorno de Desarrollo }
 
 Las aplicaciones móviles desarrolladas en este trabajo están enteramente
 construidas para la plataforma \emph{Android}, donde fueron utilizados
@@ -110,11 +112,12 @@ fueron desarrollados íntegramente en \emph{Java}.
 
 \subsection{Procedimiento Guía }
 
-Con el objetivo de obtener un conjunto de datos adecuado a los objetivos
-estudio de sistemas \abbr{HAR} de este trabajo, se realizó un experimento
-de recolección con grupo de voluntarios. Un grupo de 8 personas entre
-las edades de 20 y 38 estuvieron dispuestos para esta tarea, la edad
-media de la población está comprendida en $30.7\pm5$ años. 
+\label{ssec6:procedimiento}Con el objetivo de obtener un conjunto
+de datos adecuado a los objetivos estudio de sistemas \abbr{HAR}
+de este trabajo, se realizó un experimento de recolección con grupo
+de voluntarios. Un grupo de 8 personas entre las edades de 20 y 38
+estuvieron dispuestos para esta tarea, la edad media de la población
+está comprendida en $30.7\pm5$ años. 
 
 El procedimiento guía de captura de datos se instruyó con el uso del
 teléfono móvil como prenda sujeta al bolsillo o en la cintura mientras
@@ -185,13 +188,14 @@ MD & 29 & 4 & - & - & - & -\tabularnewline
 
 \subsection{Captura de Datos}
 
-Construir un clasificador requiere de una cantidad de datos recolectados
-de los voluntarios mientras realizan las actividades humanas dictadas
-durante el experimento. Para la captura y persistencia de las señales
-del sensor de aceleración se utilizó una aplicación móvil para \emph{Android
-}denominada \emph{SensorLog} \cite{Alan2014s}, este se ve en la \figref{fig4:sensor-log}.
-Esta aplicación permitió exportar las señales sensoriales almacenadas
-en forma agrupada por sesiones y subirlas a la nube. En la \tabref{tab6:captura}
+\label{ssec6:recolecci=0000F3n}Construir un clasificador requiere
+de una cantidad de datos recolectados de los voluntarios mientras
+realizan las actividades humanas dictadas durante el experimento.
+Para la captura y persistencia de las señales del sensor de aceleración
+se utilizó una aplicación móvil para \emph{Android }denominada \emph{SensorLog}
+\cite{Alan2014s}, este se ve en la \figref{fig4:sensor-log}. Esta
+aplicación permitió exportar las señales sensoriales almacenadas en
+forma agrupada por sesiones y subirlas a la nube. En la \tabref{tab6:captura}
 se resumen las cantidades de señales capturadas durante el experimento.
 
 \begin{table}[h]
@@ -213,11 +217,11 @@ se resumen las cantidades de señales capturadas durante el experimento.
 
 \subsection{Conjunto de Entrenamiento }
 
-Los datos recolectados en bruto fueron procesados de acuerdo al proceso
-descrito en la \secref{ssec44:extraction} para formar un conjunto
-de entrenamiento. En la \tabref{tab6:muestras} se resumen las muestras
-obtenidas al aplicar las técnicas de procesamiento de datos de este
-trabajo. 
+\label{ssec6:training}Los datos recolectados en bruto fueron procesados
+de acuerdo al proceso descrito en la \secref{ssec44:extraction} para
+formar un conjunto de entrenamiento. En la \tabref{tab6:muestras}
+se resumen las muestras obtenidas al aplicar las técnicas de procesamiento
+de datos de este trabajo. 
 
 \begin{table}[h]
 \begin{centering}
@@ -257,7 +261,7 @@ producir un \emph{Decision tree} que es empaquetado como una librería
 
 \section{Clasificador de Actividades Humanas}
 
-\label{sec6:clasificacion}El clasificador de reconocimiento de actividades
+\label{sec6:clasificador}El clasificador de reconocimiento de actividades
 humanas (\abbr{HAR}) construido en este trabajo es un clasificador
 de clases discretas que utiliza un algoritmo de aprendizaje automático
 supervisado basado en árboles de decisión. 
@@ -283,7 +287,7 @@ minNumObj}): $2$
 $10$
 \end{itemize}
 
-\subsection{Métricas de predicción }
+\subsection{Métricas de Predicción }
 
 \label{ssec6:metricas}De manera a evaluar el rendimiento de los clasificadores
 de aprendizaje automático supervisado se describen las siguientes
@@ -391,12 +395,13 @@ que las pequeñas, mientras que en errores absolutos no. Los errores
 relativos tratan de compensar la predictibilidad del valor pronosticado,
 tratando siempre de tender hacia el valor real medio. 
 
-\subsection{Evaluación del clasificador}
+\subsection{Evaluación del Clasificador}
 
-El clasificador generado en este trabajo es un árbol de decisión de
-tamaño de $677$ nodos, de los cuales $339$ corresponden a hojas.
-Las métricas numéricas de predicción se exponen a continuación considerando
-las muestras de entrenamiento descritas anteriormente: 
+\label{ssec6:evaluacion}El clasificador generado en este trabajo
+es un árbol de decisión de tamaño de $677$ nodos, de los cuales $339$
+corresponden a hojas. Las métricas numéricas de predicción se exponen
+a continuación considerando las muestras de entrenamiento descritas
+anteriormente: 
 \begin{itemize}
 \item Número de instancias ($N$): $12.012$ 
 \item Instancias correctamente clasificadas ($C$): $10.942$ (91,0922\%)
@@ -484,12 +489,12 @@ de actividades humanas contribuido en este trabajo.
 
 \subsection{Verificación del Clasificador HAR}
 
-Para verificar el clasificador \abbr{HAR} de \emph{HARDroid }se condujo
-un experimento de prueba basado en una sesión de actividades físicas
-realizadas por dos personas. El protocolo consistió en realizar cada
-una de las actividades básicas ambulatorias y de transporte por un
-periodo comprendido entre 10 a 20 minutos utilizando la aplicación
-\emph{ActivitySurvey}. 
+\label{ssec6:verificacion}Para verificar el clasificador \abbr{HAR}
+de \emph{HARDroid }se condujo un experimento de prueba basado en una
+sesión de actividades físicas realizadas por dos personas. El protocolo
+consistió en realizar cada una de las actividades básicas ambulatorias
+y de transporte por un periodo comprendido entre 10 a 20 minutos utilizando
+la aplicación \emph{ActivitySurvey}. 
 
 En la \tabref{tab6:vsesiones} se muestra el resumen del tiempo invertido
 en minutos por cada persona en las actividades humanas realizadas
@@ -574,11 +579,12 @@ que son aquellas más difíciles de pronosticar.
 
 \subsection{Validación de la Clasificación}
 
-Para validar los resultados de la clasificación producida por \emph{HARDroid
-}se condujo un experimento de prueba basado en la misma sesión de
-actividades físicas realizadas por una persona. El protocolo consistió
-en utilizar la aplicación \emph{Sony} \emph{Lifelog} al mismo tiempo
-que la aplicación \emph{ActivitySurvey} durante las sesiones de pruebas. 
+\label{ssec6:validacion}Para validar los resultados de la clasificación
+producida por \emph{HARDroid }se condujo un experimento de prueba
+basado en la misma sesión de actividades físicas realizadas por una
+persona. El protocolo consistió en utilizar la aplicación \emph{Sony}
+\emph{Lifelog} al mismo tiempo que la aplicación \emph{ActivitySurvey}
+durante las sesiones de pruebas. 
 
 En la \tabref{tab6:vclasificacion} se muestra el intervalo de tiempo
 de la sesión y su duración para cada actividad humana realizada por
@@ -629,14 +635,14 @@ de cada sesión.
 
 \subsection{Entrenamiento Colaborativo}
 
-Así como se expuso en la \secref{sec55:activity}, la aplicación móvil
-\emph{ActivitySurvey} está diseñada para recabar información que es
-utilizada para mejorar el clasificador continuamente. Utilizando este
-enfoque la información recolectada durante la evaluación fue combinada
-con los datos calculados inicialmente para generar un nuevo clasificador
-con datos colaborados durante las pruebas.
+\label{ssec6:colaboracion}Así como se expuso en la \secref{sec55:activity},
+la aplicación móvil \emph{ActivitySurvey} está diseñada para recabar
+información que es utilizada para mejorar el clasificador continuamente.
+Utilizando este enfoque la información recolectada durante la evaluación
+fue combinada con los datos calculados inicialmente para generar un
+nuevo clasificador con datos colaborados durante las pruebas.
 
-Siguiendo el mismo procedimiento de la \secref{sec6:clasificacion}
+Siguiendo el mismo procedimiento de la \secref{sec6:clasificador}
 se generó un clasificador colaborativo a partir de las instancias
 aseveradas como aciertos y se obtuvo un árbol de decisión de tamaño
 de $699$ nodos, de los cuales $350$ corresponden a hojas. Las métricas

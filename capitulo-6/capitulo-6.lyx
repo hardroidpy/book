@@ -90,6 +90,12 @@ Introducción
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec6:introduccion"
+
+\end_inset
+
 En el ámbito de investigación y desarrollo de sistemas 
 \begin_inset ERT
 status open
@@ -110,7 +116,7 @@ abbr{HAR}
  La sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec6:recoleccion"
+reference "sec6:datos-exp"
 
 \end_inset
 
@@ -120,7 +126,7 @@ reference "sec6:recoleccion"
  Posteriormente, la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec6:clasificacion"
+reference "sec6:clasificador"
 
 \end_inset
 
@@ -190,7 +196,7 @@ Datos Experimentales
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec6:recoleccion"
+name "sec6:datos-exp"
 
 \end_inset
 
@@ -235,6 +241,12 @@ Instrumentación
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec6:instrumentacion"
+
+\end_inset
+
 Como está constatado en capítulos anteriores el desarrollo de 
 \emph on
 
@@ -274,7 +286,7 @@ y a continuación se detallan los rasgos técnicos de las herramientas utilizada
 \end_layout
 
 \begin_layout Subsubsection
-Teléfonos inteligentes
+Teléfonos Inteligentes
 \end_layout
 
 \begin_layout Standard
@@ -772,7 +784,7 @@ La elección se dio en base a los teléfonos inteligentes disponibles que
 \end_layout
 
 \begin_layout Subsubsection
-Entorno de desarrollo 
+Entorno de Desarrollo 
 \end_layout
 
 \begin_layout Standard
@@ -887,6 +899,12 @@ Procedimiento Guía
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec6:procedimiento"
+
+\end_inset
+
 Con el objetivo de obtener un conjunto de datos adecuado a los objetivos
  estudio de sistemas 
 \begin_inset ERT
@@ -1984,6 +2002,12 @@ Captura de Datos
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec6:recolección"
+
+\end_inset
+
 Construir un clasificador requiere de una cantidad de datos recolectados
  de los voluntarios mientras realizan las actividades humanas dictadas durante
  el experimento.
@@ -2274,6 +2298,12 @@ Conjunto de Entrenamiento
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec6:training"
+
+\end_inset
+
 Los datos recolectados en bruto fueron procesados de acuerdo al proceso
  descrito en la 
 \begin_inset ERT
@@ -2683,7 +2713,7 @@ Clasificador de Actividades Humanas
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec6:clasificacion"
+name "sec6:clasificador"
 
 \end_inset
 
@@ -2863,7 +2893,7 @@ Cross-validation folds
 \end_layout
 
 \begin_layout Subsection
-Métricas de predicción 
+Métricas de Predicción 
 \end_layout
 
 \begin_layout Standard
@@ -3399,10 +3429,16 @@ Escoger cuales de estas métricas son apropiadas para una evaluación dependen
 \end_layout
 
 \begin_layout Subsection
-Evaluación del clasificador
+Evaluación del Clasificador
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec6:evaluacion"
+
+\end_inset
+
 El clasificador generado en este trabajo es un árbol de decisión de tamaño
  de 
 \begin_inset Formula $677$
@@ -4252,6 +4288,12 @@ Verificación del Clasificador HAR
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec6:verificacion"
+
+\end_inset
+
 Para verificar el clasificador 
 \begin_inset ERT
 status open
@@ -5392,6 +5434,12 @@ Validación de la Clasificación
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec6:validacion"
+
+\end_inset
+
 Para validar los resultados de la clasificación producida por 
 \emph on
 HARDroid 
@@ -5972,6 +6020,12 @@ Entrenamiento Colaborativo
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "ssec6:colaboracion"
+
+\end_inset
+
 Así como se expuso en la 
 \begin_inset ERT
 status open
@@ -6005,7 +6059,7 @@ status open
 
 
 \backslash
-secref{sec6:clasificacion}
+secref{sec6:clasificador}
 \end_layout
 
 \end_inset

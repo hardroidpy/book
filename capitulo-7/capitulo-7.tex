@@ -3,25 +3,25 @@
 
 \label{cap8:conclusiones-y-trabajos-futuros}
 
-\section{Conclusiones del presente trabajo}
+\section{Conclusiones del Presente Trabajo}
 
 \label{sec81:conclusiones}El reconocimiento de actividades humanas
-es un área de investigación multidisciplinaria con constantes aportes
-y diversos usos en la actualidad debido a su relevancia en la computación
+es un área de investigación multidisciplinaria con constantes avances
+y de diversos usos en la actualidad debido a su relevancia en la computación
 contextual y ubicua. Los avances en la miniaturización de los sistemas
 de computación y sensores hacen del área un tanto atractiva como desafiante
 para explorar y proponer nuevas ideas en este ámbito \cite{LaraLabrador2013}. 
 
 Los esfuerzos realizados en este trabajo han tenido en cuenta además
-la colaboración y el uso de Internet de manera a aprovechar los mismos
-en la mejora de los sistemas de reconocimiento, y como se mostró en
-la sección anterior la aplicación de resultados colaborativos puede
-ser aprovechada para mejorar el sistema desarrollado. 
+la colaboración y el uso de Internet de manera a aprovecharlos para
+mejorar los sistemas de reconocimiento, y como se demuestra en la
+sección anterior, la aplicación de resultados colaborativos pueden
+ser aprovechados para mejorar el sistema desarrollado. 
 
-Así, en este trabajo se construyó un sistema de reconocimiento de
-actividades colaborativo que utiliza tres elementos principales: teléfonos
-móviles inteligentes, una librería que a la par se ha hecho disponible
-como software libre y la Internet. 
+Es así que en este trabajo se construyó un sistema de reconocimiento
+de actividades humanas colaborativo que utiliza tres elementos principales:
+teléfonos móviles inteligentes, una librería que a la par se ha hecho
+disponible como software libre y la Internet. 
 
 El desarrollo del trabajo se llevó acabo en dos etapas. La primera
 etapa consistió en el entrenamiento de un clasificador y la segunda
@@ -37,7 +37,7 @@ de su desempeño mediante un esquema colaborativo.
 \end{itemize}
 Respecto al primer punto, es importante destacar que \emph{\abbr{HARDroid}}
 puede ser aprovechado por otras aplicaciones móviles de dos maneras
-concretas \cite{GimenezYegros2016a}: 
+concretas \cite{GimenezYegros2016c}: 
 \begin{itemize}
 \item el mismo puede ser incluido en tiempo de construcción, o
 \item puede ser aprovechado como un servicio a través de una interfaz de
@@ -47,17 +47,23 @@ Los experimentos realizados en el presente trabajo y documentados
 en la sección previa muestran que \emph{\abbr{HARDroid}} es capaz
 de producir un modelo en el cual se observan las siguientes características:
 \begin{itemize}
-\item Una alta tasa de aciertos (de 91\% a 92\%), y por lo tanto una baja
-tasa de errores. Esto se puede verificar por la \tabref{tab6:matriz-confusion}
-junto con las métricas de precisión y exhaustividad resultantes.
+\item Una tasa de aciertos del 91\%, un coeficiente de confiabilidad alrededor
+del 87\%, y una tasa de errores absolutos menores a 1 (\secref{ssec6:evaluacion}). 
+\item Las métricas de precisión y exhaustividad se corresponden con los
+aciertos con valores entre el 91\% y el 92\% (\secref{ssec6:colaboracion}).
+Esto es verificable en la \tabref{tab6:matriz-confusion} cuya cantidad
+de falsos negativos alcanza apenas el 3\%. 
 \item La capacidad de extender el modelo para reconocer diversos tipos de
-actividades así como en bicicleta, en vehículo, entre otros.
-\item La posibilidad de extender el modelo colaborativamente mediante la
-inclusión de muestras de aciertos colectadas en campo.
+actividades así como en bicicleta, en vehículo, entre otros (\secref{ssec6:verificacion}).
+\item La posibilidad de mejorar el clasificador colaborativamente mediante
+la inclusión de muestras de aciertos colectadas en campo (\secref{ssec6:colaboracion}).
 \end{itemize}
-(REVISAR CONCLUSIONES COMPLEMENTANDO CON REF A LOS RESULTADOS)
+Además de los resultados verificables, se aporta una librería reutilizable
+\cite{GimenezYegros2016d}, una aplicación como servicio independiente
+\cite{GimenezYegros2016a} y una aplicación de encuesta de recolección
+de muestras \cite{GimenezYegros2016e} todas disponibles en Internet.
 
-\section{Trabajos Futuros propuestos}
+\section{Trabajos Futuros Propuestos}
 
 \label{sec82:trabajos-futuros}Luego de la experiencia obtenida y
 documentada en el presente trabajo, teniendo en cuenta la amplia aplicabilidad

@@ -86,7 +86,7 @@ name "cap8:conclusiones-y-trabajos-futuros"
 \end_layout
 
 \begin_layout Section
-Conclusiones del presente trabajo
+Conclusiones del Presente Trabajo
 \end_layout
 
 \begin_layout Standard
@@ -97,8 +97,8 @@ name "sec81:conclusiones"
 \end_inset
 
 El reconocimiento de actividades humanas es un área de investigación multidiscip
-linaria con constantes aportes y diversos usos en la actualidad debido a
- su relevancia en la computación contextual y ubicua.
+linaria con constantes avances y de diversos usos en la actualidad debido
+ a su relevancia en la computación contextual y ubicua.
  Los avances en la miniaturización de los sistemas de computación y sensores
  hacen del área un tanto atractiva como desafiante para explorar y proponer
  nuevas ideas en este ámbito 
@@ -114,18 +114,18 @@ key "LaraLabrador2013"
 
 \begin_layout Standard
 Los esfuerzos realizados en este trabajo han tenido en cuenta además la
- colaboración y el uso de Internet de manera a aprovechar los mismos en
- la mejora de los sistemas de reconocimiento, y como se mostró en la sección
- anterior la aplicación de resultados colaborativos puede ser aprovechada
- para mejorar el sistema desarrollado.
+ colaboración y el uso de Internet de manera a aprovecharlos para mejorar
+ los sistemas de reconocimiento, y como se demuestra en la sección anterior,
+ la aplicación de resultados colaborativos pueden ser aprovechados para
+ mejorar el sistema desarrollado.
  
 \end_layout
 
 \begin_layout Standard
-Así, en este trabajo se construyó un sistema de reconocimiento de actividades
- colaborativo que utiliza tres elementos principales: teléfonos móviles
- inteligentes, una librería que a la par se ha hecho disponible como software
- libre y la Internet.
+Es así que en este trabajo se construyó un sistema de reconocimiento de
+ actividades humanas colaborativo que utiliza tres elementos principales:
+ teléfonos móviles inteligentes, una librería que a la par se ha hecho disponibl
+e como software libre y la Internet.
  
 \end_layout
 
@@ -187,7 +187,7 @@ abbr{HARDroid}
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "GimenezYegros2016a"
+key "GimenezYegros2016c"
 
 \end_inset
 
@@ -226,9 +226,41 @@ ticas:
 \end_layout
 
 \begin_layout Itemize
-Una alta tasa de aciertos (de 91% a 92%), y por lo tanto una baja tasa de
- errores.
- Esto se puede verificar por la 
+Una tasa de aciertos del 91%, un coeficiente de confiabilidad alrededor
+ del 87%, y una tasa de errores absolutos menores a 1 (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+secref{ssec6:evaluacion}
+\end_layout
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+Las métricas de precisión y exhaustividad se corresponden con los aciertos
+ con valores entre el 91% y el 92% (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+secref{ssec6:colaboracion}
+\end_layout
+
+\end_inset
+
+).
+ Esto es verificable en la 
 \begin_inset ERT
 status open
 
@@ -241,25 +273,74 @@ tabref{tab6:matriz-confusion}
 
 \end_inset
 
- junto con las métricas de precisión y exhaustividad resultantes.
+ cuya cantidad de falsos negativos alcanza apenas el 3%.
+ 
 \end_layout
 
 \begin_layout Itemize
 La capacidad de extender el modelo para reconocer diversos tipos de actividades
- así como en bicicleta, en vehículo, entre otros.
+ así como en bicicleta, en vehículo, entre otros (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+secref{ssec6:verificacion}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Itemize
-La posibilidad de extender el modelo colaborativamente mediante la inclusión
- de muestras de aciertos colectadas en campo.
+La posibilidad de mejorar el clasificador colaborativamente mediante la
+ inclusión de muestras de aciertos colectadas en campo (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+secref{ssec6:colaboracion}
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
-(REVISAR CONCLUSIONES COMPLEMENTANDO CON REF A LOS RESULTADOS)
+Además de los resultados verificables, se aporta una librería reutilizable
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GimenezYegros2016d"
+
+\end_inset
+
+, una aplicación como servicio independiente 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GimenezYegros2016a"
+
+\end_inset
+
+ y una aplicación de encuesta de recolección de muestras 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GimenezYegros2016e"
+
+\end_inset
+
+ todas disponibles en Internet.
 \end_layout
 
 \begin_layout Section
-Trabajos Futuros propuestos
+Trabajos Futuros Propuestos
 \end_layout
 
 \begin_layout Standard

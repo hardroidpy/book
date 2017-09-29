@@ -54,6 +54,6 @@ pan2ltx:
 	@echo Build finished.
 
 clean:
-	for m in $(objects); do find . -name $$m -exec rm {} \; ; done
+	for m in $(objects); do find . -name $$m -and -not -path ./paper/\* -exec rm {} \; ; done
 	@echo 
 	@echo Build finished.
