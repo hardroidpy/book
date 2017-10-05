@@ -1,0 +1,28 @@
+{
+  "name": "Tesis",
+  "version": "1.0.0",
+  "description": "Libro de tesis",
+  "main": "tesis.tex",
+  "dependencies": {
+    "fsmonitor": "^0.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "make view"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://agimenezpy@github.com/hardroidpy/book"
+  },
+  "keywords": [
+    "latex",
+    "tesis",
+    "book"
+  ],
+  "author": "Alberto G.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hardroidpy/book/issues"
+  },
+  "homepage": "https://github.com/hardroidpy/book"
+}

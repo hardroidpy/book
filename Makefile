@@ -6,8 +6,8 @@
 #set LANG=en_US
 
 objects = *.aux *.bbl *.bcf *.blg *.log *.lof *.loa *.lot *.pdf *.run.xml *.toc *.nlo *.md *.docx *.ild *.ind *.out *.ilg *.lyx~
-makelatex = pdflatex -draftmode -interaction nonstopmode tesis
-makepdf = pdflatex -interaction nonstopmode tesis
+makelatex = pdflatex -draftmode -interaction nonstopmode 
+makepdf = pdflatex -interaction nonstopmode 
 
 all: help
 
@@ -26,9 +26,14 @@ docx:
 	@echo "Build finished. The Docx is in ."
 
 latex:
-	$(makelatex) || bibtex tesis ;
+	$(makelatex) tesis || bibtex tesis ;
 	makeindex tesis.nlo -s nomencl.ist -o tesis.nls ;
-	$(makelatex) || $(makepdf) || echo ;
+	$(makelatex) tesis || $(makepdf) tesis || echo ;
+	@echo
+	@echo Build finished. 
+
+latex-slide:
+	cd slides && $(makepdf) presentacion.tex ;
 	@echo
 	@echo Build finished. 
 
@@ -40,6 +45,11 @@ view:
 tex:
 	lyx tesis_har.lyx -e pdflatex -f all
 	rm capitulo-3/capitulo-3l.tex
+	@echo 
+	@echo Build finished.
+
+tex-slide:
+	cd slides && lyx presentacion.lyx -e pdflatex -f all
 	@echo 
 	@echo Build finished.
 

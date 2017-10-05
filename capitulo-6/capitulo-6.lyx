@@ -2637,12 +2637,12 @@ figref{fig6:proceso-clasi}
 placement th
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename graphics/Proceso de Clasificacion.png
+	filename graphics/proceso-genera-clasi.png
 	width 80text%
 
 \end_inset
