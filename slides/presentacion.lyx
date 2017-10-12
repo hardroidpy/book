@@ -127,22 +127,84 @@ year
 
 \end_layout
 
-\begin_layout PlainFrame
-\begin_inset Argument 4
-status open
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameTitle
+\begin_inset Argument 1
+status collapsed
 
 \begin_layout Plain Layout
+presentation
+\end_layout
+
+\end_inset
+
 Contenido
 \end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout PlainFrame
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSection[]
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{frame}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+frametitle{Contenido}        		
+\backslash
+tableofcontents[currentsection]
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+end{frame} 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 

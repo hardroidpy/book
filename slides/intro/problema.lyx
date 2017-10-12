@@ -90,13 +90,13 @@ Definición del Problema
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Reconocimiento de Actividades Humanas (HAR)
+Reconocimiento de Actividades Humanas
 \end_layout
 
 \begin_layout Standard
 \align center
-Determinar la actividad o comportamiento de una (o más) persona(s) a través
- de datos proveídos por sensores situados en el entorno.
+Determinar las acciones o comportamientos de uno o más individuos a partir
+ de datos ambiguos capturados por sensores situados en el entorno.
 \end_layout
 
 \end_deeper
@@ -112,6 +112,16 @@ Determinar la actividad o comportamiento de una (o más) persona(s) a través
 \end_layout
 
 \begin_layout Frame
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
++-
+\end_layout
+
+\end_inset
+
+
 \begin_inset Argument 4
 status open
 
@@ -124,34 +134,73 @@ Definición del Problema
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_deeper
 \begin_layout FrameSubtitle
-Que es HAR
+¿Que es HAR?
 \end_layout
 
 \begin_layout Itemize
-Investigación en múltiples áreas
+Es un tópico de investigación multidisciplinario para diseñar algoritmos
+ para:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Capturar movimientos
+Capturar movimientos de uno o más individuos en interacción con su entorno
+ 
 \end_layout
 
 \begin_layout Itemize
-Interacción con el entorno
+Realizar el aprendizaje e inferencia
 \end_layout
 
 \begin_layout Itemize
-Aprender e inferir
+Proveer información de contexto 
 \end_layout
 
 \end_deeper
 \begin_layout Standard
 \align center
+\begin_inset Flex Visible
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+
+
 \begin_inset Graphics
-	filename graphics/areas.png
-	width 8cm
+	filename graphics/areas2.png
+	lyxscale 50
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

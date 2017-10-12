@@ -51,10 +51,20 @@ Santiago Yegros}
 
 \date{\monthname, \the\year}
 \makebeamertitle
-\begin{frame}[plain]{Contenido}
+\begin{frame}
+
+\frametitle<presentation>{Contenido}
 
 \tableofcontents{}
 \end{frame}
+%
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Contenido}        		\tableofcontents[currentsection]
+	\end{frame} 
+}
+
 \include{intro/problema}
 
 \include{intro/alcance}

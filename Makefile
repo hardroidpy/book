@@ -42,6 +42,11 @@ view:
 	@echo 
 	@echo Build finished.
 
+ppt:
+	evince slides/presentacion.pdf
+	@echo 
+	@echo Build finished.
+
 tex:
 	lyx tesis_har.lyx -e pdflatex -f all
 	rm capitulo-3/capitulo-3l.tex
