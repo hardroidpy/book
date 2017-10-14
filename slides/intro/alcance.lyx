@@ -71,7 +71,7 @@
 
 \begin_body
 
-\begin_layout Section
+\begin_layout Subsection
 Alcance
 \end_layout
 
@@ -168,6 +168,28 @@ Objetivos Específicos
 \end_layout
 
 \begin_layout Enumerate
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
++-
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
 Definir el marco teórico sobre el reconocimiento de actividades humanas
  (HAR).
  

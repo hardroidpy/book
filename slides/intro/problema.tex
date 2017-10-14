@@ -1,24 +1,29 @@
 
-\section{Definición del Problema}
+\section{Introducción}
+
+\subsection{Definición del Problema}
 \begin{frame}{Definición del Problema}
 
 \framesubtitle{Reconocimiento de Actividades Humanas}
-\begin{center}
+\begin{quote}
 Determinar las acciones o comportamientos de uno o más individuos
 a partir de datos ambiguos capturados por sensores situados en el
 entorno.
-\par\end{center}
-
+\end{quote}
+\begin{block}<2>{Nota}
+\emph{}El problema es conocido por sus siglas \structure{HAR} en
+inglés \emph{(Human Activity Recognition})
+\end{block}
 \end{frame}
 %
-\begin{frame}[<+->]{Definición del Problema}
+\begin{frame}{Definición del Problema}
 
 \setbeamercovered{transparent}
 
 \framesubtitle{¿Que es HAR?}
-\begin{itemize}
-\item Es un tópico de investigación multidisciplinario para diseñar algoritmos
-para:
+\begin{itemize}[<+->]
+\item Es un tópico de investigación multidisciplinario que busca diseñar
+algoritmos para:
 \begin{itemize}
 \item Capturar movimientos de uno o más individuos en interacción con su
 entorno 
@@ -26,10 +31,106 @@ entorno
 \item Proveer información de contexto 
 \end{itemize}
 \end{itemize}
+\begin{overprint}
+\onslide<2> 
 \begin{center}
-\visible<5>{\begin{center}
-\includegraphics[width=4.5cm]{intro/graphics/areas2}
-\par\end{center}}
+\includegraphics[width=4.5cm]{intro/graphics/areas-1}
+\par\end{center}
+\onslide<3> 
+\begin{center}
+\includegraphics[width=4.5cm]{intro/graphics/areas-2}
+\par\end{center}
+\onslide<4> 
+\begin{center}
+\includegraphics[width=4.5cm]{intro/graphics/areas-3}
+\par\end{center}
+
+\end{overprint}
+\end{frame}
+%
+\begin{frame}{Definición del Problema}
+
+\framesubtitle{Motivación}
+\begin{columns}
+
+\column{6cm}
+\begin{itemize}[<+->]
+\item Reconocer el \structure{contexto} es primordial en sistemas inteligentes 
+\item Avances acelerados en tecnologías de \structure{computación móvil}
+y \structure{sensores} 
+\item Uso intensivo de \structure{teléfonos móviles modernos} por personas
+en su vida diaria.
+\item \setbeamercovered{transparent}Popularidad de \structure{aplicaciones móviles}
+de contexto en ámbito de
+\begin{itemize}
+\item cuidado personal, 
+\item la movilidad y 
+\item la asistencia en la vida diaria 
+\end{itemize}
+\end{itemize}
+
+\column{4cm}
+\begin{overprint}
+\onslide<1> 
+\begin{center}
+\includegraphics[width=\textwidth]{intro/graphics/context1}
+\par\end{center}
+\onslide<2> 
+\begin{center}
+\includegraphics[width=\textwidth]{intro/graphics/sensors}
+\par\end{center}
+\onslide<3-> 
+
+\includegraphics[width=\textwidth]{intro/graphics/mobile-phone}
+
+\end{overprint}
+\end{columns}
+
+\end{frame}
+%
+\begin{frame}{Definición del Problema}
+
+\framesubtitle{Actividades Humanas}
+
+Acciones periódicas simples de larga duración.
+\begin{center}
+\begin{table}
+\caption{Actividades Básicas}
+
+\centering{}%
+\begin{tabular}{|c|>{\raggedright}p{5cm}|}
+\hline 
+Ambulatorias & Caminar, correr, sentarse, pararse, quieto, acostarse, subir y descender
+escaleras\tabularnewline
+\hline 
+Transporte & En bus, bicicleta y conducir\tabularnewline
+\hline 
+\end{tabular}
+\end{table}
+\par\end{center}
+
+\end{frame}
+%
+\begin{frame}{Definición del Problema}
+
+\framesubtitle{Actividades Humanas}
+
+Acciones cortas o periódicas
+\begin{center}
+\begin{table}
+\caption{Actividades Complejas}
+
+\centering{}%
+\begin{tabular}{|c|>{\raggedright}p{5cm}|}
+\hline 
+Cotidianas & Comer, beber, mirar TV, leer, cepillarse los dientes, entre otros.\tabularnewline
+\hline 
+Gimnasio & Alzar pesas, ejercicio aeróbico, bicicleta estática.\tabularnewline
+\hline 
+Militares & Arrastrarse, en cuclillas, irrumpir\tabularnewline
+\hline 
+\end{tabular}
+\end{table}
 \par\end{center}
 \end{frame}
 

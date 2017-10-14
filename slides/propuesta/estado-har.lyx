@@ -1,16 +1,16 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
+#LyX file created by tex2lyx 2.2
 \lyxformat 508
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
-\textclass beamer
-\use_default_options true
+\origin /home/agimenez/Desktop/Tesis/book/slides/propuesta/
+\textclass article
+\use_default_options false
 \maintain_unincluded_children false
-\language spanish
-\language_package default
+\language english
+\language_package none
 \inputencoding auto
-\fontencoding global
+\fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -30,17 +30,17 @@
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry true
+\use_geometry false
 \use_package amsmath 1
-\use_package amssymb 1
-\use_package cancel 1
+\use_package amssymb 0
+\use_package cancel 0
 \use_package esint 1
-\use_package mathdots 1
-\use_package mathtools 1
-\use_package mhchem 1
-\use_package stackrel 1
-\use_package stmaryrd 1
-\use_package undertilde 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
 \cite_engine basic
 \cite_engine_type default
 \biblio_style plain
@@ -49,7 +49,7 @@
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 1
+\use_refstyle 0
 \index Index
 \shortcut idx
 \color #008000
@@ -58,7 +58,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\quotes_language english
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -75,12 +75,35 @@
 Metodología HAR
 \end_layout
 
-\begin_layout Frame
-\begin_inset Argument 4
-status open
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
 
 \begin_layout Plain Layout
+
+\backslash
+begin{frame}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
 Metodología HAR
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
 \end_layout
 
 \end_inset
@@ -88,25 +111,332 @@ Metodología HAR
 
 \end_layout
 
-\begin_deeper
-\begin_layout FrameSubtitle
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+framesubtitle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
 Proceso de aprendizaje
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
 \align center
-\begin_inset Graphics
-	filename ../../capitulo-2/graphics/harsystem.png
+
+\begin_inset Graphics 
+	filename ../capitulo-2/graphics/harsystem
 	width 8cm
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{frame}
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
-\end_deeper
-\begin_layout Frame
+\begin_layout Standard
 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{frame}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Metodología HAR
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+framesubtitle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Coleccion de Datos
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{frame}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Metodología HAR
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+framesubtitle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Extracción de Muestas
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{frame}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Metodología HAR
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+framesubtitle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+Aprendizaje
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \end_body

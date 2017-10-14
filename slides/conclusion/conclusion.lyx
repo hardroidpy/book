@@ -119,6 +119,28 @@ Conclusión
 Trabajos Futuros
 \end_layout
 
+\begin_layout Itemize
+Segmentar los grupos de individuos distintos por rangos de edad, sexo y/o
+ factores fisiológicos y otros, de manera a generar modelo específicos para
+ cada grupo.
+\end_layout
+
+\begin_layout Itemize
+Incorporar al sistema 
+\emph on
+HARDroid
+\emph default
+ desarrollado otros métodos de aprendizaje automático que permitan mejorar
+ la tasa de aciertos.
+ (SVN, ANN).
+\end_layout
+
+\begin_layout Itemize
+Incluir más variables en el procesamiento de señales de entrada para mejorar
+ las predicciones teniendo en cuenta la orientación del dispositivo.
+ 
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -127,5 +149,66 @@ Trabajos Futuros
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Conclusión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Trabajos Futuros
+\end_layout
+
+\begin_layout Itemize
+Extender el sistema 
+\emph on
+HARDroid
+\emph default
+ para identificar otras actividades humanas aplicado a otras disciplinas
+ o contextos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Utilizar o aprovechar otros accesorios que agreguen variables relevantes
+ en el reconocimiento de actividades dependiendo del contexto (
+\emph on
+Smartwatch
+\emph default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+Gracias!
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
