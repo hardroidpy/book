@@ -72,6 +72,10 @@
 \begin_body
 
 \begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Subsection
 Definición del Problema
 \end_layout
 
@@ -93,10 +97,52 @@ Definición del Problema
 Reconocimiento de Actividades Humanas
 \end_layout
 
-\begin_layout Standard
-\align center
+\begin_layout Quote
 Determinar las acciones o comportamientos de uno o más individuos a partir
  de datos ambiguos capturados por sensores situados en el entorno.
+\end_layout
+
+\begin_layout Block
+
+\emph on
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\emph off
+2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Nota
+\end_layout
+
+\end_inset
+
+
+\emph default
+El problema es conocido por sus siglas 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+HAR
+\end_layout
+
+\end_inset
+
+ en inglés 
+\emph on
+(Human Activity Recognition
+\emph default
+)
 \end_layout
 
 \end_deeper
@@ -112,16 +158,6 @@ Determinar las acciones o comportamientos de uno o más individuos a partir
 \end_layout
 
 \begin_layout Frame
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-+-
-\end_layout
-
-\end_inset
-
-
 \begin_inset Argument 4
 status open
 
@@ -156,7 +192,16 @@ setbeamercovered{transparent}
 \end_layout
 
 \begin_layout Itemize
-Es un tópico de investigación multidisciplinario para diseñar algoritmos
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
++-
+\end_layout
+
+\end_inset
+
+Es un tópico de investigación multidisciplinario que busca diseñar algoritmos
  para:
 \end_layout
 
@@ -175,27 +220,562 @@ Proveer información de contexto
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\align center
-\begin_inset Flex Visible
+\begin_layout Overprint
+\begin_inset Argument item:1
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-5
+2
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
 \begin_inset Graphics
-	filename graphics/areas2.png
+	filename graphics/areas-1.png
 	lyxscale 50
 	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/areas-2.png
+	lyxscale 50
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/areas-3.png
+	lyxscale 50
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Definición del Problema
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Motivación
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+6cm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
++-
+\end_layout
+
+\end_inset
+
+Reconocer el 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+contexto
+\end_layout
+
+\end_inset
+
+ es primordial en sistemas inteligentes 
+\end_layout
+
+\begin_layout Itemize
+Avances acelerados en tecnologías de 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+computación móvil
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+sensores
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Uso intensivo de 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+teléfonos móviles modernos
+\end_layout
+
+\end_inset
+
+ por personas en su vida diaria.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
+Popularidad de 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+aplicaciones móviles
+\end_layout
+
+\end_inset
+
+ de contexto en ámbito de
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+cuidado personal, 
+\end_layout
+
+\begin_layout Itemize
+la movilidad y 
+\end_layout
+
+\begin_layout Itemize
+la asistencia en la vida diaria 
+\end_layout
+
+\end_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+4cm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/context1.png
+	lyxscale 50
+	special width=\textwidth
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/sensors.png
+	lyxscale 50
+	special width=\textwidth
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+3-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename graphics/mobile-phone.jpg
+	lyxscale 50
+	special width=\textwidth
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Definición del Problema
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Actividades Humanas
+\end_layout
+
+\begin_layout Standard
+Acciones periódicas simples de larga duración.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Actividades Básicas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ambulatorias
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caminar, correr, sentarse, pararse, quieto, acostarse, subir y descender
+ escaleras
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transporte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+En bus, bicicleta y conducir
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Definición del Problema
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Actividades Humanas
+\end_layout
+
+\begin_layout Standard
+Acciones cortas o periódicas
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Actividades Complejas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cotidianas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comer, beber, mirar TV, leer, cepillarse los dientes, entre otros.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gimnasio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alzar pesas, ejercicio aeróbico, bicicleta estática.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Militares
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arrastrarse, en cuclillas, irrumpir
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 

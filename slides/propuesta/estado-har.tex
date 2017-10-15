@@ -8,21 +8,74 @@
 \par\end{center}
 
 \end{frame}
-
+%
 \begin{frame}{Metodología HAR}
-	
-\framesubtitle{Coleccion de Datos}
+\framesubtitle{Proceso de aprendizaje}
+\begin{itemize}
+	\item Como en otros métodos de aprendizaje automático, el proceso de reconocimiento se divide en dos etapas conocidas:
+	\begin{itemize}
+		\item Entrenamiento
+		\item Evaluación
+	\end{itemize}
+	\item En el entrenamiento requiere:
+		\begin{itemize}
+			\item Colecta de conjunto de Datos en series de tiempo.
+			\item Se realiza la extracción de muestras en ventanas de tiempo, calculando las características de entrenamiento.
+			\item Se genera un modelo de Reconocimiento de Actividades a través de un método de aprendizaje automático.
+		\end{itemize}
+	\item En la evaluación, de igual manera, se recopila los datos, se realiza la extracción de muestras y calculo de las mismas características del entrenamiento, de modo a evaluar el modelo generado.
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Colección de Datos}
+	\begin{itemize}
+		\item El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cintura, muñeca, muslos, etc).
+		
+		\item El método de grabación consiste en capturar las señales de un sensor o más sensores a un individuo realizando alguna actividad de interés.
+		
+		\item Las señales de sensores pueden clasificarse según el movimiento, la posición, el entorno y la fisiología.	
+	\end{itemize}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Colección de Datos}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	\hline 
+	\multicolumn{4}{|c|}{Sensores} \\ 
+	\hline 
+	Movimiento 		& Posición 		& Ambientales 		& Fisiológicas 		\\ 
+	\hline 
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{propuesta/graphics/acelerometro_24px.svg}
+		\caption{}
+	\end{figure}
+	Acelerometro 	& Barometro		& Camara			& Ritmo Cardíaco	\\ 
+	Girosopio 		& GPS			& Micrófono			& Temperatura		\\ 
+	Magnetometro 	& WIFI			& Luz				&  					\\ 
+	Podometro		& GSM			& Proximidad		&  					\\
+	\hline 
+\end{tabular} 
+\end{center}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Extracción de Muestras}
 	
 \end{frame}
-
-\begin{frame}{Metodología HAR}
-	
-\framesubtitle{Extracción de Muestas}
-	
-\end{frame}
-
-\begin{frame}{Metodología HAR}
-	
+%
+\begin{frame}{Metodología HAR}	
 \framesubtitle{Aprendizaje}
 	
 \end{frame}
+%
+
+
+%	\begin{figure}[ht]
+%		\includemovie[
+%		poster,
+%		text={\small(Loading activitySurvey.mp4)}
+%		]{6cm}{6cm}{propuesta/activitySurvey.mp4}
+%	\end{figure}

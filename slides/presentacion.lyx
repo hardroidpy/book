@@ -146,12 +146,19 @@ Contenido
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents[hideothersubsections]{}
+\end_layout
 
 \end_inset
 
-
+ 
 \end_layout
 
 \end_deeper
@@ -170,7 +177,7 @@ status open
 
 
 \backslash
-AtBeginSection[]
+AtBeginSubsection[]
 \end_layout
 
 \begin_layout Plain Layout
@@ -189,9 +196,17 @@ begin{frame}
 
 		
 \backslash
-frametitle{Contenido}        		
+frametitle{Contenido}        		%
 \backslash
 tableofcontents[currentsection]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents[currentsection, currentsubsection,  hideothersubsections,
+    subsectionstyle=show/shaded,  ] 
 \end_layout
 
 \begin_layout Plain Layout
@@ -234,7 +249,7 @@ filename "intro/alcance.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "propuesta/estado-har.lyx"
+filename "propuesta/estado-har.tex"
 
 \end_inset
 
