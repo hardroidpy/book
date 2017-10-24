@@ -76,19 +76,125 @@
 %
 \begin{frame}{Metodología HAR}
 \framesubtitle{Extracción de Muestras}
+	\begin{itemize}
+		\item El siguiente paso es el procesamiento de las señales obtenidas por los sensores y extraer las características relevantes de los datos sin procesar.
+		\item El procesamiento de muestra se basa en cuatro tareas distintas que se realizan automáticamente en ambas etapas del proceso HAR, las cuales son:
+		\begin{itemize}
+			\item Etiquetado.
+			\item Suavizado.
+			\item Muestreo.
+			\item Extracción de Características.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Extracción de Muestras}
+\begin{columns}
 	
+\column{6cm}
+	\begin{itemize}[<+->]
+		\item \underline{Etiquetado}: Los datos de los sensores se deben recopilar y etiquetar utilizando una aplicación diseñada para el caso, por ejemplo, en este trabajo se usa un teléfono Android y la aplicación SensorLog.
+		\item \underline{Suavizado}: Los sensores electrónicos pueden introducir cierta inestabilidad en la señal (jitter) que afectan la calidad de los datos. Para reducir el ruido de la señal, se deben aplicar uno o más filtros. 
+	\end{itemize}
+
+
+\column{4cm}
+	\begin{overprint}
+		\onslide<1> 
+		\begin{center}
+			\includegraphics[width=\textwidth]{propuesta/graphics/labelled}
+			\par
+		\end{center}
+		\onslide<2> 
+		\begin{center}
+			\includegraphics[width=\textwidth]{propuesta/graphics/moving_average}
+			\par
+		\end{center}
+		
+	\end{overprint}
+\end{columns}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Extracción de Muestras - Muestreo}
+\begin{columns}
+	
+\column{6cm}
+	\begin{itemize}[<+->]
+		\item \underline{Muestreo}: Los datos colectados se segmentan en ventanas de tiempo de muestras discretas utilizadas como unidades de reconocimiento de actividad. Para aumentar el número de muestras, se utiliza una superposición del 50\%.
+		\item \underline{Extracción de Características}: El proceso de extracción consiste en extraer valores característicos en cada ventana de tiempo mediante la visualización de información relevante y el cálculo de valores que identifican de cierta manera las señales.
+	\end{itemize}
+
+\column{4cm}
+	\begin{overprint}
+	\onslide<1> 
+	\begin{center}
+		\includegraphics[width=\textwidth]{propuesta/graphics/muestreo}
+		\par
+	\end{center}
+	\onslide<2> 
+	\begin{center}
+		\includegraphics[width=\textwidth]{propuesta/graphics/muestreo}
+		\par
+	\end{center}
+	\end{overprint}
+
+\end{columns}
 \end{frame}
 %
 \begin{frame}{Metodología HAR}	
-\framesubtitle{Aprendizaje}
-	
+\framesubtitle{Extracción de Muestras}
+Las métricas estadísticas con respecto al tiempo y frecuencia:
+\par
+\begin{table}
+\centering
+\resizebox{8cm}{!}{
+	\begin{tabular}{|l|l|}
+		\hline 
+		Función & Métrica \tabularnewline
+		\hline 
+		\hline 
+		\texttt{mean(s)} 			& Media Aritmética			\tabularnewline
+		\hline 
+		\texttt{std(s)} 			& Desviación estándar \tabularnewline
+		\hline 
+		\texttt{max(s)} 			& Valor máximo \tabularnewline
+		\hline 
+		\texttt{min(s)} 			& Valor mínimo \tabularnewline
+		\hline 
+		\texttt{skewness(s)} 		& Asimetría \tabularnewline
+		\hline 
+		\texttt{kurtosis(s)} 		& Kurtosis \tabularnewline
+		\hline 
+		\texttt{energy(s)} 			& Energía \tabularnewline
+		\hline 
+		\texttt{entropy(s)} 		& Entropía \tabularnewline
+		\hline 
+		\texttt{irq(s)} 			& Rango intercuartil \tabularnewline
+		\hline 
+		\texttt{autoregression(s)} 	& Coeficientes autorregresivos \tabularnewline
+		\hline 
+		\texttt{meanFreq(s)} 		& Promedio en frecuencia \tabularnewline
+		\hline 
+	\end{tabular}
+	\par
+}
+\end{table}
 \end{frame}
 %
-
-
-%	\begin{figure}[ht]
-%		\includemovie[
-%		poster,
-%		text={\small(Loading activitySurvey.mp4)}
-%		]{6cm}{6cm}{propuesta/activitySurvey.mp4}
-%	\end{figure}
+\begin{frame}{Metodología HAR}	
+\framesubtitle{Aprendizaje e inferencia}
+\begin{itemize}
+	\item Un HAR es similar a cualquier aplicación de aprendizaje automático donde se requiere un algoritmo para extraer información de los datos. El objetivo principal del algoritmo es clasificar los datos desconocidos.
+	\item Hay muchos algoritmos de clasificación, como Arboles de Decisión, SVM, clasificadores de Bayes, Modelos de Markov, Redes Neuronales y otros.
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+{Metodología HAR}	
+\framesubtitle{Árbol de Decisión}
+\begin{center}
+	\includegraphics[width=8cm]{propuesta/graphics/dtree}
+	\par\end{center}
+\end{frame}
