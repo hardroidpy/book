@@ -102,6 +102,16 @@ Logros
 \end_layout
 
 \begin_layout Frame
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+shrink
+\end_layout
+
+\end_inset
+
+
 \begin_inset Argument 4
 status open
 
@@ -119,42 +129,172 @@ Conclusión
 Trabajos Futuros
 \end_layout
 
-\begin_layout Itemize
-Segmentar los grupos de individuos distintos por rangos de edad, sexo y/o
- factores fisiológicos y otros, de manera a generar modelo específicos para
- cada grupo.
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Columns
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.6
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Incorporar al sistema 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
++-
+\end_layout
+
+\end_inset
+
+Segmentar en grupos para modelos específicos.
+\end_layout
+
+\begin_layout Itemize
+Incorporar en 
+\emph on
+
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+
 \emph on
 HARDroid
+\end_layout
+
+\end_inset
+
+
 \emph default
- desarrollado otros métodos de aprendizaje automático que permitan mejorar
- la tasa de aciertos.
- (SVN, ANN).
+ otros métodos de aprendizaje.
+ 
 \end_layout
 
 \begin_layout Itemize
-Incluir más variables en el procesamiento de señales de entrada para mejorar
- las predicciones teniendo en cuenta la orientación del dispositivo.
+Incluir más variables que mejoren el clasificador.
+\end_layout
+
+\begin_layout Itemize
+Extender 
+\emph on
+
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+HARDroid
+\end_layout
+
+\end_inset
+
+
+\emph default
+ para identificar más actividades en otros contextos.
  
+\end_layout
+
+\begin_layout Itemize
+Experimentar con accesorios que incluyan señales relevantes.
+ 
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.4
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/groups.png
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\emph on
+Rangos de edad, sexo y/o factores fisiológicos
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
+\begin_layout Overprint
+\begin_inset Argument item:1
 status open
 
 \begin_layout Plain Layout
-Conclusión
+2
 \end_layout
 
 \end_inset
@@ -163,34 +303,93 @@ Conclusión
 \end_layout
 
 \begin_deeper
-\begin_layout FrameSubtitle
-Trabajos Futuros
-\end_layout
+\begin_layout Standard
+\begin_inset Graphics
+	filename graphics/svm.png
+	lyxscale 50
+	width 100text%
 
-\begin_layout Itemize
-Extender el sistema 
-\emph on
-HARDroid
-\emph default
- para identificar otras actividades humanas aplicado a otras disciplinas
- o contextos.
- 
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-Utilizar o aprovechar otros accesorios que agreguen variables relevantes
- en el reconocimiento de actividades dependiendo del contexto (
-\emph on
-Smartwatch
-\emph default
-).
- 
+
 \end_layout
 
 \begin_layout Standard
 
+\size footnotesize
+\emph on
+Explorar métodos SVM (Support Vector Machine) o ANN (Artificial Neural Networks)
 \end_layout
 
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename graphics/gyro.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\emph on
+Orientación del dispositivo
+\end_layout
+
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/wear.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\emph on
+Accesorios como Smartwatch, Smartband, entre otros
+\end_layout
+
+\end_deeper
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -206,7 +405,29 @@ Smartwatch
 \begin_deeper
 \begin_layout Standard
 \align center
-Gracias!
+\begin_inset Graphics
+	filename graphics/thanks.jpg
+	lyxscale 20
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+\align center
+por su atención!!!
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

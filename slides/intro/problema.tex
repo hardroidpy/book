@@ -5,15 +5,23 @@
 \begin{frame}{Definición del Problema}
 
 \framesubtitle{Reconocimiento de Actividades Humanas}
+\begin{overprint}
+\onslide<1> 
 \begin{quote}
 Determinar las acciones o comportamientos de uno o más individuos
 a partir de datos ambiguos capturados por sensores situados en el
 entorno.
 \end{quote}
+\onslide<2> 
 \begin{block}<2>{Nota}
 \emph{}El problema es conocido por sus siglas \structure{HAR} en
 inglés \emph{(Human Activity Recognition})
 \end{block}
+\end{overprint}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{intro/graphics/sensor-environment}
+\par\end{center}
+
 \end{frame}
 %
 \begin{frame}{Definición del Problema}
@@ -27,7 +35,7 @@ algoritmos para:
 \begin{itemize}
 \item Capturar movimientos de uno o más individuos en interacción con su
 entorno 
-\item Realizar el aprendizaje e inferencia
+\item Realizar aprendizaje e inferencia
 \item Proveer información de contexto 
 \end{itemize}
 \end{itemize}
@@ -50,87 +58,83 @@ entorno
 %
 \begin{frame}{Definición del Problema}
 
-\framesubtitle{Motivación}
+\framesubtitle{Motivación\setlength\columnsep{0pt}}
 \begin{columns}
 
-\column{6cm}
+\column{0.5\textwidth}
 \begin{itemize}[<+->]
-\item Reconocer el \structure{contexto} es primordial en sistemas inteligentes 
-\item Avances acelerados en tecnologías de \structure{computación móvil}
-y \structure{sensores} 
-\item Uso intensivo de \structure{teléfonos móviles modernos} por personas
-en su vida diaria.
+\item El \structure{contexto} es primordial para los sistemas inteligentes 
+\item Avances en tecnologías de \structure{computación móvil} y \structure{sensores} 
+\item Uso intensivo de \structure{teléfonos móviles modernos} en la vida
+diaria.
 \item \setbeamercovered{transparent}Popularidad de \structure{aplicaciones móviles}
-de contexto en ámbito de
+de contexto en 
 \begin{itemize}
-\item cuidado personal, 
+\item el cuidado personal, 
 \item la movilidad y 
 \item la asistencia en la vida diaria 
 \end{itemize}
 \end{itemize}
 
-\column{4cm}
+\column{0.5\textwidth}
 \begin{overprint}
 \onslide<1> 
 \begin{center}
-\includegraphics[width=\textwidth]{intro/graphics/context1}
+\includegraphics[width=1\textwidth]{intro/graphics/context1}
 \par\end{center}
 \onslide<2> 
 \begin{center}
-\includegraphics[width=\textwidth]{intro/graphics/sensors}
+\includegraphics[width=1\textwidth]{intro/graphics/sensors}
 \par\end{center}
-\onslide<3-> 
+\onslide<3> 
 
-\includegraphics[width=\textwidth]{intro/graphics/mobile-phone}
+\includegraphics[bb=100bp 0bp 520bp 266bp,clip,width=1\textwidth]{intro/graphics/sensor-environment}
+\onslide<4-> 
+
+\includegraphics[width=1\textwidth]{intro/graphics/mobile-phone}
 
 \end{overprint}
 \end{columns}
 
 \end{frame}
 %
-\begin{frame}{Definición del Problema}
+\begin{frame}[shrink]{Definición del Problema}
 
 \framesubtitle{Actividades Humanas}
 
-Acciones periódicas simples de larga duración.
+\setbeamercovered{transparent}
+\begin{block}{Actividades Simples}
+Acciones simples periódicas de larga duración.
+\end{block}
 \begin{center}
-\begin{table}
-\caption{Actividades Básicas}
-
-\centering{}%
+\uncover<2->{\begin{center}
 \begin{tabular}{|c|>{\raggedright}p{5cm}|}
 \hline 
 Ambulatorias & Caminar, correr, sentarse, pararse, quieto, acostarse, subir y descender
-escaleras\tabularnewline
+escaleras.\tabularnewline
 \hline 
-Transporte & En bus, bicicleta y conducir\tabularnewline
+Transporte & En bus, bicicleta y conducir.\tabularnewline
 \hline 
 \end{tabular}
-\end{table}
+\par\end{center}}
 \par\end{center}
-
-\end{frame}
-%
-\begin{frame}{Definición del Problema}
-
-\framesubtitle{Actividades Humanas}
-
-Acciones cortas o periódicas
+\begin{block}{Actividades Complejas}
+Acciones cortas o periódicas no comunes.
+\end{block}
 \begin{center}
-\begin{table}
-\caption{Actividades Complejas}
-
-\centering{}%
+\uncover<3->{\begin{center}
 \begin{tabular}{|c|>{\raggedright}p{5cm}|}
 \hline 
 Cotidianas & Comer, beber, mirar TV, leer, cepillarse los dientes, entre otros.\tabularnewline
 \hline 
 Gimnasio & Alzar pesas, ejercicio aeróbico, bicicleta estática.\tabularnewline
 \hline 
-Militares & Arrastrarse, en cuclillas, irrumpir\tabularnewline
+Militares & Arrastrarse, en cuclillas.\tabularnewline
 \hline 
 \end{tabular}
-\end{table}
+\par\end{center}}
 \par\end{center}
+
 \end{frame}
+%
 

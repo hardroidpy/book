@@ -97,11 +97,40 @@ Definición del Problema
 Reconocimiento de Actividades Humanas
 \end_layout
 
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Quote
 Determinar las acciones o comportamientos de uno o más individuos a partir
  de datos ambiguos capturados por sensores situados en el entorno.
 \end_layout
 
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Block
 
 \emph on
@@ -146,10 +175,19 @@ HAR
 \end_layout
 
 \end_deeper
-\begin_layout Frame
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/sensor-environment.jpg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
 
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -212,7 +250,7 @@ Capturar movimientos de uno o más individuos en interacción con su entorno
 \end_layout
 
 \begin_layout Itemize
-Realizar el aprendizaje e inferencia
+Realizar aprendizaje e inferencia
 \end_layout
 
 \begin_layout Itemize
@@ -329,6 +367,21 @@ Definición del Problema
 \begin_deeper
 \begin_layout FrameSubtitle
 Motivación
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+columnsep{0pt}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Columns
@@ -342,7 +395,9 @@ status open
 
 \begin_layout Plain Layout
 
-6cm
+0.5
+\backslash
+textwidth
 \end_layout
 
 \end_inset
@@ -360,7 +415,7 @@ status open
 
 \end_inset
 
-Reconocer el 
+El 
 \begin_inset Flex Structure
 status open
 
@@ -370,11 +425,11 @@ contexto
 
 \end_inset
 
- es primordial en sistemas inteligentes 
+ es primordial para los sistemas inteligentes 
 \end_layout
 
 \begin_layout Itemize
-Avances acelerados en tecnologías de 
+Avances en tecnologías de 
 \begin_inset Flex Structure
 status open
 
@@ -408,7 +463,7 @@ teléfonos móviles modernos
 
 \end_inset
 
- por personas en su vida diaria.
+ en la vida diaria.
 \end_layout
 
 \begin_layout Itemize
@@ -434,12 +489,12 @@ aplicaciones móviles
 
 \end_inset
 
- de contexto en ámbito de
+ de contexto en 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-cuidado personal, 
+el cuidado personal, 
 \end_layout
 
 \begin_layout Itemize
@@ -457,7 +512,9 @@ status open
 
 \begin_layout Plain Layout
 
-4cm
+0.5
+\backslash
+textwidth
 \end_layout
 
 \end_inset
@@ -484,7 +541,7 @@ status open
 \begin_inset Graphics
 	filename graphics/context1.png
 	lyxscale 50
-	special width=\textwidth
+	width 100text%
 
 \end_inset
 
@@ -511,7 +568,7 @@ status open
 \begin_inset Graphics
 	filename graphics/sensors.png
 	lyxscale 50
-	special width=\textwidth
+	width 100text%
 
 \end_inset
 
@@ -524,7 +581,35 @@ status open
 status open
 
 \begin_layout Plain Layout
-3-
+3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename graphics/sensor-environment.jpg
+	lyxscale 50
+	width 100text%
+	BoundingBox 100bp 0bp 520bp 266bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+4-
 \end_layout
 
 \end_inset
@@ -537,7 +622,7 @@ status open
 \begin_inset Graphics
 	filename graphics/mobile-phone.jpg
 	lyxscale 50
-	special width=\textwidth
+	width 100text%
 
 \end_inset
 
@@ -559,6 +644,16 @@ status open
 \end_layout
 
 \begin_layout Frame
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+shrink
+\end_layout
+
+\end_inset
+
+
 \begin_inset Argument 4
 status open
 
@@ -577,21 +672,14 @@ Actividades Humanas
 \end_layout
 
 \begin_layout Standard
-Acciones periódicas simples de larga duración.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float table
-wide false
-sideways false
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
 
-\begin_layout Plain Layout
-Actividades Básicas
+
+\backslash
+setbeamercovered{transparent}
 \end_layout
 
 \end_inset
@@ -599,8 +687,36 @@ Actividades Básicas
 
 \end_layout
 
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Actividades Simples
+\end_layout
+
+\end_inset
+
+Acciones simples periódicas de larga duración.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex Uncover
+status open
+
 \begin_layout Plain Layout
 \align center
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+2-
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="2">
 <features tabularvalignment="middle">
@@ -621,7 +737,7 @@ Ambulatorias
 
 \begin_layout Plain Layout
 Caminar, correr, sentarse, pararse, quieto, acostarse, subir y descender
- escaleras
+ escaleras.
 \end_layout
 
 \end_inset
@@ -641,7 +757,7 @@ Transporte
 \begin_inset Text
 
 \begin_layout Plain Layout
-En bus, bicicleta y conducir
+En bus, bicicleta y conducir.
 \end_layout
 
 \end_inset
@@ -659,45 +775,9 @@ En bus, bicicleta y conducir
 
 \end_layout
 
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
+\begin_layout Block
+\begin_inset Argument 2
 status open
-
-\begin_layout Plain Layout
-Definición del Problema
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameSubtitle
-Actividades Humanas
-\end_layout
-
-\begin_layout Standard
-Acciones cortas o periódicas
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Actividades Complejas
@@ -705,11 +785,26 @@ Actividades Complejas
 
 \end_inset
 
-
+Acciones cortas o periódicas no comunes.
 \end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex Uncover
+status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+3-
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle">
@@ -769,7 +864,7 @@ Militares
 \begin_inset Text
 
 \begin_layout Plain Layout
-Arrastrarse, en cuclillas, irrumpir
+Arrastrarse, en cuclillas.
 \end_layout
 
 \end_inset
@@ -788,5 +883,12 @@ Arrastrarse, en cuclillas, irrumpir
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

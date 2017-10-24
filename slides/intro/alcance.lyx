@@ -95,8 +95,8 @@ Propuesta
 
 \begin_layout Standard
 \align center
-Reconocer actividades humanas utilizando teléfonos móviles inteligentes
- con un enfoque colaborativo para el aprendizaje automático
+Reconocer actividades humanas utilizando teléfonos móviles modernos con
+ un enfoque colaborativo
 \end_layout
 
 \end_deeper
@@ -127,10 +127,19 @@ Objetivo General
 
 \begin_layout Standard
 \align center
-El objetivo principal del presente trabajo es implementar un sistema de
- reconocimiento de actividades humanas con teléfonos móviles cuyo principal
- aporte sea un componente de software en forma de librería de código abierto
- y libremente distribuido.
+El objetivo principal es desarrollar un sistema 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+\align block
+HAR
+\end_layout
+
+\end_inset
+
+ utilizando teléfonos móviles modernos cuyo aporte principal es un una librería
+ de código abierto y un modelo activo.
 \end_layout
 
 \end_deeper
@@ -167,17 +176,7 @@ Alcance
 Objetivos Específicos
 \end_layout
 
-\begin_layout Enumerate
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-+-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -190,41 +189,120 @@ setbeamercovered{transparent}
 
 \end_inset
 
-Definir el marco teórico sobre el reconocimiento de actividades humanas
- (HAR).
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
++-
+\end_layout
+
+\end_inset
+
+Definir el marco teórico sobre 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+HAR
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Enumerate
-Comprender las técnicas de recolección de datos en entornos restringidos
- para bajo consumo energía.
+Revisar las técnicas de 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+captura de señales
+\end_layout
+
+\end_inset
+
+ bajo restricción de consumo de energía.
  
 \end_layout
 
 \begin_layout Enumerate
-Comprender el procesamiento de señales de datos inerciales para identificar
- variables significativas de entrenamiento.
+Revisar el 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+procesamiento de señales
+\end_layout
+
+\end_inset
+
+ para identificar variables de entrenamiento.
  
 \end_layout
 
 \begin_layout Enumerate
-Comprender la clasificación por aprendizaje automático en entornos restringidos
- para bajo consumo energía.
+Comprender la clasificación basada 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+aprendizaje automático
+\end_layout
+
+\end_inset
+
+ bajo restricción de consumo energía.
  
 \end_layout
 
 \begin_layout Enumerate
-Diseñar un sistema de reconocimiento de actividades que se componga de la
- recolección de muestras colaborativas y predicción de actividades humanas
- en-línea.
+Diseñar un 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+sistema HAR
+\end_layout
+
+\end_inset
+
+ que incluya la recolección de muestras colaborativas y clasificación de
+ actividades en-línea.
  
 \end_layout
 
 \begin_layout Enumerate
-Aportar un componente de software en forma de librería para uso en teléfonos
- móviles modernos con la plataforma 
+Aportar un componente de 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+librería
+\end_layout
+
+\end_inset
+
+ para teléfonos móviles modernos con plataforma 
+\emph on
+
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+
 \emph on
 Android
+\end_layout
+
+\end_inset
+
+
 \emph default
 .
  

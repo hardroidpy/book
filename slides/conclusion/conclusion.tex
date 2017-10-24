@@ -6,46 +6,64 @@
 
 \end{frame}
 %
-\begin{frame}{Conclusión}
+\begin{frame}[shrink]{Conclusión}
 
 \framesubtitle{Trabajos Futuros}
-\begin{itemize}
-\item Segmentar los grupos de individuos distintos por rangos de edad, sexo
-y/o factores fisiológicos y otros, de manera a generar modelo específicos
-para cada grupo.
-\item Incorporar al sistema \emph{HARDroid} desarrollado otros métodos de
-aprendizaje automático que permitan mejorar la tasa de aciertos. (SVN,
-ANN).
-\item Incluir más variables en el procesamiento de señales de entrada para
-mejorar las predicciones teniendo en cuenta la orientación del dispositivo. 
-\end{itemize}
-\end{frame}
-%
-\begin{frame}{Conclusión}
 
-\framesubtitle{Trabajos Futuros}
-\begin{itemize}
-\item Extender el sistema \emph{HARDroid} para identificar otras actividades
-humanas aplicado a otras disciplinas o contextos. 
-\item Utilizar o aprovechar otros accesorios que agreguen variables relevantes
-en el reconocimiento de actividades dependiendo del contexto (\emph{Smartwatch}). 
+\setbeamercovered{transparent}
+\begin{columns}[C]
+
+\column{0.6\textwidth}
+\begin{itemize}[<+->]
+\item Segmentar en grupos para modelos específicos.
+\item Incorporar en \emph{\structure{\emph{HARDroid}}} otros métodos de
+aprendizaje. 
+\item Incluir más variables que mejoren el clasificador.
+\item Extender \emph{\structure{\emph{HARDroid}}} para identificar más
+actividades en otros contextos. 
+\item Experimentar con accesorios que incluyan señales relevantes. 
 \end{itemize}
 
-\end{frame}
-%
-\begin{frame}[t]{Congresos y presentaciones}
+\column{0.4\textwidth}
+\begin{overprint}
+\onslide<1> 
+\begin{center}
+\includegraphics[width=0.8\textwidth]{conclusion/graphics/groups}
+\par\end{center}
 
-%\framesubtitle{Congresos y presentaciones}
-\begin{itemize}
-	\item ACM CHI 2018 - Conference on Human Factors in Computing Systems - Montréal, Canada - \emph{(Pendiente)}
-	\item ICDE 2018 - 34th IEEE International Conference on Data Engineering - Paris, Francia - \emph{(Pendiente)}
-\end{itemize}
+\emph{\footnotesize{}Rangos de edad, sexo y/o factores fisiológicos}{\footnotesize \par}
+\onslide<2> 
+
+\includegraphics[width=1\textwidth]{conclusion/graphics/svm}
+
+\emph{\footnotesize{}Explorar métodos SVM (Support Vector Machine)
+o ANN (Artificial Neural Networks)}{\footnotesize \par}
+\onslide<3> 
+
+\includegraphics[width=1\textwidth]{conclusion/graphics/gyro}
+
+\emph{\footnotesize{}Orientación del dispositivo}{\footnotesize \par}
+\onslide<5> 
+\begin{center}
+\includegraphics[width=1\textwidth]{conclusion/graphics/wear}
+\par\end{center}
+
+\emph{\footnotesize{}Accesorios como Smartwatch, Smartband, entre
+otros}{\footnotesize \par}
+\end{overprint}
+\end{columns}
 
 \end{frame}
 %
 \begin{frame}
 \begin{center}
-Gracias!
+\includegraphics[width=0.8\textwidth]{conclusion/graphics/thanks}
+\par\end{center}
+
+\begin{center}
+\structure{\begin{center}
+por su atención!!!
+\par\end{center}}
 \par\end{center}
 \end{frame}
 
