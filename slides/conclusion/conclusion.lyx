@@ -150,7 +150,7 @@ setbeamercovered{transparent}
 status open
 
 \begin_layout Plain Layout
-C
+t
 \end_layout
 
 \end_inset
@@ -352,6 +352,41 @@ status open
 \size footnotesize
 \emph on
 Orientación del dispositivo
+\end_layout
+
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/activities.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size footnotesize
+\emph on
+Acciones diarias
 \end_layout
 
 \end_deeper
