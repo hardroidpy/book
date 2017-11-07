@@ -6,13 +6,8 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \usepackage{array}
+\usepackage{amstext}
 \usepackage{graphicx}
-
-%Usando para definicion
-\usepackage{amsthm}
-\setbeamertemplate{theorems}[numbered]
-\theoremstyle{definition} 
-\newtheorem{definition}{Definición}[section]
 
 \makeatletter
 
@@ -45,6 +40,12 @@
       Marzo\or Abril\or Mayo\or Junio\or Julio\or Agosto\or Septiembre\or
       Octubre\or Noviembre\or Diciembre\fi}
 
+%Usando para definicion
+\usepackage{amsthm}
+\setbeamertemplate{theorems}[numbered]
+\theoremstyle{definition} 
+\newtheorem{definition}{Definición}[section]
+
 \makeatother
 
 \usepackage{babel}
@@ -70,11 +71,11 @@ Santiago Yegros}
 \tableofcontents[hideothersubsections]{} 
 \end{frame}
 %
-\AtBeginSubsection[]
+\AtBeginSection[]
 {
 	\begin{frame}
-		\frametitle{Contenido}        		%\tableofcontents[currentsection]
-\tableofcontents[currentsection, currentsubsection,  hideothersubsections,    subsectionstyle=show/shaded,  ] 
+		\frametitle{Contenido}        		\tableofcontents[currentsection]
+%\tableofcontents[currentsection, currentsubsection,  hideothersubsections,    subsectionstyle=show/shaded,  ] 
 	\end{frame} 
 }
 

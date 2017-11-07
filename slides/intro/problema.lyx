@@ -632,10 +632,6 @@ status open
 \end_deeper
 \end_deeper
 \end_deeper
-\begin_layout Frame
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -644,16 +640,6 @@ status open
 \end_layout
 
 \begin_layout Frame
-\begin_inset Argument 3
-status open
-
-\begin_layout Plain Layout
-shrink
-\end_layout
-
-\end_inset
-
-
 \begin_inset Argument 4
 status open
 
@@ -668,7 +654,7 @@ Definición del Problema
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Actividades Humanas
+Definición Teorica
 \end_layout
 
 \begin_layout Standard
@@ -679,202 +665,61 @@ status open
 
 
 \backslash
-setbeamercovered{transparent}
+begin{definition}[Problema HAR relajado]
 \end_layout
 
 \end_inset
 
+Dado (1) un conjunto 
+\begin_inset Formula $W=\{w_{0},...,w_{m-1}\}$
+\end_inset
 
-\end_layout
+ de 
+\begin_inset Formula $m$
+\end_inset
 
-\begin_layout Block
-\begin_inset Argument 2
+ ventanas de tiempo del mismo tamaño, donde cada una está total o parcialmente
+ etiquetada, y que cada 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ contiene un conjunto de series de tiempo 
+\begin_inset Formula $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$
+\end_inset
+
+ para cada 
+\begin_inset Formula $k$
+\end_inset
+
+ atributos medidos, y (2) un conjunto 
+\begin_inset Formula $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$
+\end_inset
+
+ de etiquetas de actividades, el objetivo es encontrar una función 
+\begin_inset Formula $f\colon S_{j}\rightarrow A$
+\end_inset
+
+ que sea evaluada para todos los valores posibles de 
+\begin_inset Formula $S_{j}$
+\end_inset
+
+, tal que 
+\begin_inset Formula $f(S_{j})$
+\end_inset
+
+ es lo más próximo a la acción realizada durante 
+\begin_inset Formula $w_{j}$
+\end_inset
+
+ 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Actividades Simples
-\end_layout
-
-\end_inset
-
-Acciones simples periódicas de larga duración.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Flex Uncover
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-2-
-\end_layout
-
-\end_inset
 
 
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="5cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Ambulatorias
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Caminar, correr, sentarse, pararse, quieto, acostarse, subir y descender
- escaleras.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Transporte
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-En bus, bicicleta y conducir.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Block
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Actividades Complejas
-\end_layout
-
-\end_inset
-
-Acciones cortas o periódicas no comunes.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Flex Uncover
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-3-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="5cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Cotidianas
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Comer, beber, mirar TV, leer, cepillarse los dientes, entre otros.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Gimnasio
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Alzar pesas, ejercicio aeróbico, bicicleta estática.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Militares
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Arrastrarse, en cuclillas.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
+\backslash
+end{definition}
 \end_layout
 
 \end_inset
@@ -883,12 +728,5 @@ Arrastrarse, en cuclillas.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
 \end_body
 \end_document

@@ -92,64 +92,23 @@ de contexto en
 \onslide<4-> 
 
 \includegraphics[width=1\textwidth]{intro/graphics/mobile-phone}
-
 \end{overprint}
 \end{columns}
 
 \end{frame}
 %
-\begin{frame}[shrink]{Definición del Problema}
-
-\framesubtitle{Actividades Humanas}
-
-\setbeamercovered{transparent}
-\begin{block}{Actividades Simples}
-Acciones simples periódicas de larga duración.
-\end{block}
-\begin{center}
-\uncover<2->{\begin{center}
-\begin{tabular}{|c|>{\raggedright}p{5cm}|}
-\hline 
-Ambulatorias & Caminar, correr, sentarse, pararse, quieto, acostarse, subir y descender
-escaleras.\tabularnewline
-\hline 
-Transporte & En bus, bicicleta y conducir.\tabularnewline
-\hline 
-\end{tabular}
-\par\end{center}}
-\par\end{center}
-\begin{block}{Actividades Complejas}
-Acciones cortas o periódicas no comunes.
-\end{block}
-\begin{center}
-\uncover<3->{\begin{center}
-\begin{tabular}{|c|>{\raggedright}p{5cm}|}
-\hline 
-Cotidianas & Comer, beber, mirar TV, leer, cepillarse los dientes, entre otros.\tabularnewline
-\hline 
-Gimnasio & Alzar pesas, ejercicio aeróbico, bicicleta estática.\tabularnewline
-\hline 
-Militares & Arrastrarse, en cuclillas.\tabularnewline
-\hline 
-\end{tabular}
-\par\end{center}}
-\par\end{center}
-
-\end{frame}
-
 \begin{frame}{Definición del Problema}
-\framesubtitle{Definición Matemática}
 
-	\begin{definition}[Problema HAR relajado]
-	Dado (1) un conjunto $W=\{w_{0},...,w_{m-1}\}$ de $m$ ventanas de tiempo
-	del mismo tamaño, donde cada una está total o parcialmente etiquetada,
-	y que cada $w_{j}$ contiene un conjunto de series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$
-	para cada $k$ atributos medidos, y (2) un conjunto $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$
-	de etiquetas de actividades, el objetivo es encontrar una función
-	$f\colon S_{j}\rightarrow A$ que sea evaluada para todos los valores
-	posibles de $S_{j}$, tal que $f(S_{j})$ es lo más próximo a la acción
-	realizada durante $w_{j}$
-	\end{definition}
+\framesubtitle{Definición Teorica}
+
+\begin{definition}[Problema HAR relajado]Dado (1) un conjunto $W=\{w_{0},...,w_{m-1}\}$
+de $m$ ventanas de tiempo del mismo tamaño, donde cada una está total
+o parcialmente etiquetada, y que cada $w_{j}$ contiene un conjunto
+de series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$ para cada $k$
+atributos medidos, y (2) un conjunto $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$
+de etiquetas de actividades, el objetivo es encontrar una función
+$f\colon S_{j}\rightarrow A$ que sea evaluada para todos los valores
+posibles de $S_{j}$, tal que $f(S_{j})$ es lo más próximo a la acción
+realizada durante $w_{j}$ \end{definition}
 \end{frame}
-%
 

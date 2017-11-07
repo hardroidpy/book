@@ -19,8 +19,14 @@
 \newcommand{\monthname}{\ifcase\month\or Enero\or Febrero\or
       Marzo\or Abril\or Mayo\or Junio\or Julio\or Agosto\or Septiembre\or
       Octubre\or Noviembre\or Diciembre\fi}
+
+%Usando para definicion
+\usepackage{amsthm}
+\setbeamertemplate{theorems}[numbered]
+\theoremstyle{definition} 
+\newtheorem{definition}{Definición}[section]
 \end_preamble
-\options oneside
+\options oneside,mathserif,notheorems
 \use_default_options true
 \maintain_unincluded_children false
 \language spanish
@@ -177,7 +183,7 @@ status open
 
 
 \backslash
-AtBeginSubsection[]
+AtBeginSection[]
 \end_layout
 
 \begin_layout Plain Layout
@@ -196,14 +202,14 @@ begin{frame}
 
 		
 \backslash
-frametitle{Contenido}        		%
+frametitle{Contenido}        		
 \backslash
 tableofcontents[currentsection]
 \end_layout
 
 \begin_layout Plain Layout
 
-
+%
 \backslash
 tableofcontents[currentsection, currentsubsection,  hideothersubsections,
     subsectionstyle=show/shaded,  ] 
