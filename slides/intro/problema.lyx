@@ -367,6 +367,9 @@ Definición del Problema
 \begin_deeper
 \begin_layout FrameSubtitle
 Motivación
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -654,7 +657,7 @@ Definición del Problema
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Definición Teorica
+Definición Teórica
 \end_layout
 
 \begin_layout Standard

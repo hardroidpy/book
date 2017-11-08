@@ -1,0 +1,110 @@
+
+\section{HAR en Android}
+\begin{frame}{HARDroid}
+
+\framesubtitle{Arquitectura del Proyecto}
+
+\setbeamercovered{transparent}
+\begin{columns}
+
+\column{0.5\textwidth}
+\begin{itemize}
+\item \textbf{HARDroid} 
+\begin{itemize}
+\item Es un servicio utilitario de reconocimiento.
+\item Clasificador dinámico
+\end{itemize}
+
+\pause{}
+\item \textbf{ActivitySurvey}
+\begin{itemize}
+\item Aplicación de encuesta que utiliza el servicio.
+\item Registra las evaluaciones de los usuarios. 
+\end{itemize}
+
+\pause{}
+\item \textbf{Backend C4.5} 
+\begin{itemize}
+\item Servicio web de recolección de evaluaciones.
+\item Aciertos utilizados para mejorar el clasificador.
+\end{itemize}
+\end{itemize}
+
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\columnwidth]{../capitulo-5/graphics/arqui_general}
+\par\end{center}
+
+\end{columns}
+
+\end{frame}
+%
+\begin{frame}{HARDroid}
+
+\framesubtitle{Servicio de Reconocimiento}
+
+\setbeamercovered{transparent}
+\begin{columns}
+
+\column{0.5\textwidth}
+\begin{itemize}[<+->]
+\item \structure{HARDroid} es un gestor en la capa de \emph{Application Framework}. 
+\item Permite a aplicaciones móviles hechas por terceros: 
+\begin{itemize}
+\item las últimas mejoras del motor de reconocimiento, 
+\item actualización por plataforma de distribución basado en tienda, 
+\item los usuarios gozan actualizaciones rápidas y los desarrolladores mecanismos
+fáciles de integración.
+\end{itemize}
+\end{itemize}
+
+\column{0.5\textwidth}
+\begin{center}
+\includegraphics[width=1\columnwidth]{../capitulo-5/graphics/hardroid_func}
+\par\end{center}
+
+\end{columns}
+
+\end{frame}
+%
+\begin{frame}{HARDroid}
+
+\framesubtitle{HARDroid: Módulos Funcionales}
+\begin{itemize}
+\item Interfaz de Servicio 
+\item Servidor
+\item Procesamiento
+\item Clasificador
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{HARDroid}
+
+\framesubtitle{Activity Survey: Módulos Funcionales}
+\begin{columns}[t]
+
+\column{0.25\textwidth}
+\begin{itemize}
+\item Registro
+\item Encuesta
+\item Preferencias
+\item Persistencia
+\item Interfaz de Usuario
+\end{itemize}
+
+\column{0.75\textwidth}
+
+\includegraphics[width=1\columnwidth]{../capitulo-5/graphics/navegacion}
+\end{columns}
+
+\end{frame}
+%
+\begin{frame}{HARDroid}
+
+
+\framesubtitle{Activity Survey: Componentes Funcionales}
+\begin{center}
+\includegraphics[width=0.65\columnwidth]{../capitulo-5/graphics/act_surv_diag}
+\par\end{center}
+\end{frame}
+

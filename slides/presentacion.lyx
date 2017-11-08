@@ -275,7 +275,7 @@ filename "propuesta/sistema-har.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "resultados/resultados.lyx"
+filename "propuesta/hardroid.lyx"
 
 \end_inset
 
@@ -285,7 +285,7 @@ filename "resultados/resultados.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "conclusion/conclusion.lyx"
+filename "resultados/resultados.lyx"
 
 \end_inset
 

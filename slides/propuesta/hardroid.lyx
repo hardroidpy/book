@@ -72,7 +72,7 @@
 \begin_body
 
 \begin_layout Section
-Conclusión
+HAR en Android
 \end_layout
 
 \begin_layout Frame
@@ -80,7 +80,7 @@ Conclusión
 status open
 
 \begin_layout Plain Layout
-Conclusión
+HARDroid
 \end_layout
 
 \end_inset
@@ -90,149 +90,7 @@ Conclusión
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Logros
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-setbeamercovered{transparent}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Entrenamiento de un clasificador 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-HAR
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Aciertos del 91%
-\end_layout
-
-\begin_layout Itemize
-Confiabilidad de datos del 87%.
-\end_layout
-
-\begin_layout Itemize
-Errores absolutos menores a 1%.
- 
-\end_layout
-
-\begin_layout Itemize
-Precisión y exhaustividad entre el 91% y el 92%.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Construcción de 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-HARDroid
-\end_layout
-
-\end_inset
-
- para teléfonos inteligentes.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Reutilizable y extensible para reconocer diversas actividades.
-\end_layout
-
-\begin_layout Itemize
-Mejora el clasificador mediante la inclusión de muestras por colaboración.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-HARDroid
-\end_layout
-
-\end_inset
-
- está disponible para otras aplicaciones móviles como:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-incluido en tiempo de construcción, o
-\end_layout
-
-\begin_layout Itemize
-servicio a través de una interfaz de integración.
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 3
-status open
-
-\begin_layout Plain Layout
-shrink
-\end_layout
-
-\end_inset
-
-
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Conclusión
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameSubtitle
-Trabajos Futuros
+Arquitectura del Proyecto
 \end_layout
 
 \begin_layout Standard
@@ -252,15 +110,6 @@ setbeamercovered{transparent}
 \end_layout
 
 \begin_layout Columns
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-t
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -271,7 +120,177 @@ status open
 
 \begin_layout Plain Layout
 
-0.6
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+HARDroid
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Es un servicio utilitario de reconocimiento.
+\end_layout
+
+\begin_layout Itemize
+Clasificador dinámico
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+ActivitySurvey
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aplicación de encuesta que utiliza el servicio.
+\end_layout
+
+\begin_layout Itemize
+Registra las evaluaciones de los usuarios.
+ 
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+Backend C4.5
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Servicio web de recolección de evaluaciones.
+\end_layout
+
+\begin_layout Itemize
+Aciertos utilizados para mejorar el clasificador.
+\end_layout
+
+\end_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../capitulo-5/graphics/arqui_general.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HARDroid
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Servicio de Reconocimiento
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
 \backslash
 textwidth
 \end_layout
@@ -291,67 +310,56 @@ status open
 
 \end_inset
 
-Segmentar en grupos para modelos específicos.
-\end_layout
-
-\begin_layout Itemize
-Incorporar en 
-\emph on
 
 \begin_inset Flex Structure
 status open
 
 \begin_layout Plain Layout
-
-\emph on
 HARDroid
 \end_layout
 
 \end_inset
 
-
-\emph default
- otros métodos de aprendizaje.
- 
-\end_layout
-
-\begin_layout Itemize
-Incluir más variables que mejoren el clasificador.
-\end_layout
-
-\begin_layout Itemize
-Extender 
-\emph on
-
-\begin_inset Flex Structure
+ es un gestor en la capa de 
+\begin_inset Flex Emphasize
 status open
 
 \begin_layout Plain Layout
-
-\emph on
-HARDroid
+Application Framework
 \end_layout
 
 \end_inset
 
-
-\emph default
- para identificar más actividades en otros contextos.
+.
  
 \end_layout
 
 \begin_layout Itemize
-Experimentar con accesorios que incluyan señales relevantes.
- 
+Permite a aplicaciones móviles hechas por terceros: 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+las últimas mejoras del motor de reconocimiento, 
+\end_layout
+
+\begin_layout Itemize
+actualización por plataforma de distribución basado en tienda, 
+\end_layout
+
+\begin_layout Itemize
+los usuarios gozan actualizaciones rápidas y los desarrolladores mecanismos
+ fáciles de integración.
+\end_layout
+
+\end_deeper
 \begin_layout Column
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-0.4
+0.5
 \backslash
 textwidth
 \end_layout
@@ -361,175 +369,18 @@ textwidth
 
 \end_layout
 
-\begin_layout Overprint
-\begin_inset Argument item:1
-status open
-
-\begin_layout Plain Layout
-1
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename graphics/groups.png
+	filename ../../capitulo-5/graphics/hardroid_func.png
 	lyxscale 50
-	width 80text%
+	width 100col%
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-
-\size footnotesize
-\emph on
-Rangos de edad, sexo y/o factores fisiológicos
-\end_layout
-
-\end_deeper
-\begin_layout Overprint
-\begin_inset Argument item:1
-status open
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Graphics
-	filename graphics/svm.png
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\size footnotesize
-\emph on
-Explorar métodos SVM (Support Vector Machine) o ANN (Artificial Neural Networks)
-\end_layout
-
-\end_deeper
-\begin_layout Overprint
-\begin_inset Argument item:1
-status open
-
-\begin_layout Plain Layout
-3
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Graphics
-	filename graphics/gyro.png
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\size footnotesize
-\emph on
-Orientación del dispositivo
-\end_layout
-
-\end_deeper
-\begin_layout Overprint
-\begin_inset Argument item:1
-status open
-
-\begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename graphics/activities.jpg
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size footnotesize
-\emph on
-Acciones diarias
-\end_layout
-
-\end_deeper
-\begin_layout Overprint
-\begin_inset Argument item:1
-status open
-
-\begin_layout Plain Layout
-5
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename graphics/wear.jpg
-	lyxscale 50
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\size footnotesize
-\emph on
-Accesorios como Smartwatch, Smartband, entre otros
-\end_layout
-
-\end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Standard
@@ -540,16 +391,116 @@ Accesorios como Smartwatch, Smartband, entre otros
 \end_layout
 
 \begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HARDroid
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
 \begin_deeper
+\begin_layout FrameSubtitle
+HARDroid: Módulos Funcionales
+\end_layout
+
+\begin_layout Itemize
+Interfaz de Servicio 
+\end_layout
+
+\begin_layout Itemize
+Servidor
+\end_layout
+
+\begin_layout Itemize
+Procesamiento
+\end_layout
+
+\begin_layout Itemize
+Clasificador
+\end_layout
+
+\end_deeper
 \begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename graphics/thanks.jpg
-	lyxscale 20
-	width 80text%
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HARDroid
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Activity Survey: Módulos Funcionales
+\end_layout
+
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.25
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Registro
+\end_layout
+
+\begin_layout Itemize
+Encuesta
+\end_layout
+
+\begin_layout Itemize
+Preferencias
+\end_layout
+
+\begin_layout Itemize
+Persistencia
+\end_layout
+
+\begin_layout Itemize
+Interfaz de Usuario
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.75
+\backslash
+textwidth
+\end_layout
 
 \end_inset
 
@@ -557,14 +508,53 @@ Accesorios como Smartwatch, Smartband, entre otros
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Flex Structure
+\begin_inset Graphics
+	filename ../../capitulo-5/graphics/navegacion.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-\align center
-por su atención!!!
+HARDroid
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Activity Survey: Componentes Funcionales
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../capitulo-5/graphics/act_surv_diag.png
+	lyxscale 50
+	width 65col%
 
 \end_inset
 

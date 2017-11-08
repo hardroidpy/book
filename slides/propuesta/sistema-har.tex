@@ -45,7 +45,7 @@
 Acciones simples periódicas de larga duración.
 \end{block}
 \begin{center}
-\uncover<2->{\begin{center}
+\uncover<2->{%
 \begin{tabular}{|c|>{\raggedright}p{5cm}|}
 \hline 
 Ambulatorias & Caminar, correr, sentarse, pararse, quieto, acostarse, subir y descender
@@ -53,14 +53,13 @@ escaleras.\tabularnewline
 \hline 
 Transporte & En bus, bicicleta y conducir.\tabularnewline
 \hline 
-\end{tabular}
-\par\end{center}}
+\end{tabular}}
 \par\end{center}
 \begin{block}{Actividades Complejas}
 Acciones cortas o periódicas no comunes.
 \end{block}
 \begin{center}
-\uncover<3->{\begin{center}
+\uncover<3->{%
 \begin{tabular}{|c|>{\raggedright}p{5cm}|}
 \hline 
 Cotidianas & Comer, beber, mirar TV, leer, cepillarse los dientes, entre otros.\tabularnewline
@@ -69,28 +68,26 @@ Gimnasio & Alzar pesas, ejercicio aeróbico, bicicleta estática.\tabularnewline
 \hline 
 Militares & Arrastrarse, en cuclillas.\tabularnewline
 \hline 
-\end{tabular}
-\par\end{center}}
+\end{tabular}}
 \par\end{center}
 
 \end{frame}
 %
 \begin{frame}{Sistemas HAR}
 
-\framesubtitle{Objetivos del sistema}
+\framesubtitle{Propósito del sistema}
 
 \setbeamercovered{transparent}
 \begin{itemize}[<+->]
-\item Proveer un módulo base para el desarrollo de aplicaciones de contexto. 
-\item Reconocer varias actividades realizadas rutinariamente de diferentes
-maneras, por diferentes usuarios y en diferentes condiciones contextuales.
+\item Proveer un módulo para el desarrollo de aplicaciones de contexto. 
+\item Reconocer actividades realizadas rutinariamente de diferentes maneras, 
+\begin{itemize}
+\item por diferentes usuarios y 
+\item en diferentes contextos.
 \end{itemize}
-\begin{center}
-\visible<2>{\begin{center}
-\includegraphics[width=0.8\textwidth]{../capitulo-2/graphics/harsystem2}
-\par\end{center}}
-\par\end{center}
-
+\item Reconocer las actividades por medio del uso de sensores.
+\item Portado oportunamente como atuendo para los usuarios (\emph{Wearable})
+\end{itemize}
 \end{frame}
 %
 \begin{frame}{Sistemas HAR}
@@ -99,8 +96,7 @@ maneras, por diferentes usuarios y en diferentes condiciones contextuales.
 
 \setbeamercovered{transparent}
 \begin{itemize}
-\item Arquitectura basada en aplicaciones de aprendizaje automático (\emph{Machine Learning},
-ML).
+\item Arquitectura basada en aplicaciones de aprendizaje automático.
 \end{itemize}
 
 \pause{}
@@ -123,7 +119,7 @@ ML).
 \end{itemize}
 \begin{center}
 \visible<2->{\begin{center}
-\includegraphics[width=0.8\textwidth]{../capitulo-4/graphics/diagrama_4_1}
+\includegraphics[width=0.75\textwidth]{../capitulo-2/graphics/harsystem2}
 \par\end{center}}
 \par\end{center}
 
@@ -131,8 +127,43 @@ ML).
 %
 \begin{frame}{Sistemas HAR}
 
-\framesubtitle{Componentes}
+\framesubtitle{Componentes del sistema}
+
+\setbeamercovered{transparent}
+\setlength\columnsep{0pt}
+\begin{columns}
+
+\column{0.25\textwidth}
+\begin{itemize}
+\item Recolector
+\begin{itemize}
+\item Sensor
+\item Registro
+\end{itemize}
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Procesador
+\begin{itemize}
+\item Filtro
+\item Extracción
+\end{itemize}
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Clasificador
+\begin{itemize}
+\item Aprendizaje
+\item Clasificación
+\end{itemize}
+\end{itemize}
+
+\column{0.75\textwidth}
 
 \includegraphics[width=1\columnwidth]{propuesta/graphics/harsystem}
+\end{columns}
+
 \end{frame}
 

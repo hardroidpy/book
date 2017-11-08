@@ -240,7 +240,6 @@ Acciones simples periódicas de larga duración.
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Argument 1
 status open
 
@@ -328,7 +327,6 @@ Acciones cortas o periódicas no comunes.
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Argument 1
 status open
 
@@ -439,7 +437,7 @@ Sistemas HAR
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Objetivos del sistema
+Propósito del sistema
 \end_layout
 
 \begin_layout Standard
@@ -468,45 +466,40 @@ status open
 
 \end_inset
 
-Proveer un módulo base para el desarrollo de aplicaciones de contexto.
+Proveer un módulo para el desarrollo de aplicaciones de contexto.
  
 \end_layout
 
 \begin_layout Itemize
-Reconocer varias actividades realizadas rutinariamente de diferentes maneras,
- por diferentes usuarios y en diferentes condiciones contextuales.
+Reconocer actividades realizadas rutinariamente de diferentes maneras, 
 \end_layout
 
-\begin_layout Standard
-\align center
-\begin_inset Flex Visible
+\begin_deeper
+\begin_layout Itemize
+por diferentes usuarios y 
+\end_layout
+
+\begin_layout Itemize
+en diferentes contextos.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Reconocer las actividades por medio del uso de sensores.
+\end_layout
+
+\begin_layout Itemize
+Portado oportunamente como atuendo para los usuarios (
+\begin_inset Flex Emphasize
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-2
+Wearable
 \end_layout
 
 \end_inset
 
-
-\begin_inset Graphics
-	filename ../../capitulo-2/graphics/harsystem2.png
-	lyxscale 50
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+)
 \end_layout
 
 \end_deeper
@@ -552,17 +545,7 @@ setbeamercovered{transparent}
 \end_layout
 
 \begin_layout Itemize
-Arquitectura basada en aplicaciones de aprendizaje automático (
-\begin_inset Flex Emphasize
-status open
-
-\begin_layout Plain Layout
-Machine Learning
-\end_layout
-
-\end_inset
-
-, ML).
+Arquitectura basada en aplicaciones de aprendizaje automático.
 \end_layout
 
 \begin_layout Pause
@@ -673,9 +656,9 @@ status open
 
 
 \begin_inset Graphics
-	filename ../../capitulo-4/graphics/diagrama_4_1.jpg
+	filename ../../capitulo-2/graphics/harsystem2.png
 	lyxscale 50
-	width 80text%
+	width 75text%
 
 \end_inset
 
@@ -710,7 +693,119 @@ Sistemas HAR
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Componentes
+Componentes del sistema
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+columnsep{0pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.25
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Recolector
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sensor
+\end_layout
+
+\begin_layout Itemize
+Registro
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Procesador
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Filtro
+\end_layout
+
+\begin_layout Itemize
+Extracción
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Clasificador
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aprendizaje
+\end_layout
+
+\begin_layout Itemize
+Clasificación
+\end_layout
+
+\end_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.75
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -724,6 +819,7 @@ Componentes
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \end_body
 \end_document
