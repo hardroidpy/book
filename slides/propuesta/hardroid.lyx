@@ -80,7 +80,7 @@ HAR en Android
 status open
 
 \begin_layout Plain Layout
-HARDroid
+HAR en Android
 \end_layout
 
 \end_inset
@@ -250,7 +250,7 @@ textwidth
 status open
 
 \begin_layout Plain Layout
-HARDroid
+HAR en Android
 \end_layout
 
 \end_inset
@@ -395,7 +395,7 @@ textwidth
 status open
 
 \begin_layout Plain Layout
-HARDroid
+HAR en Android
 \end_layout
 
 \end_inset
@@ -408,22 +408,75 @@ HARDroid
 HARDroid: Módulos Funcionales
 \end_layout
 
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.25
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Interfaz de Servicio 
 \end_layout
 
 \begin_layout Itemize
-Servidor
+Gestor
 \end_layout
 
 \begin_layout Itemize
-Procesamiento
+Procesador
 \end_layout
 
 \begin_layout Itemize
 Clasificador
 \end_layout
 
+\begin_layout Itemize
+Sensor
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.75
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename graphics/hardroid.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -437,7 +490,7 @@ Clasificador
 status open
 
 \begin_layout Plain Layout
-HARDroid
+HAR en Android
 \end_layout
 
 \end_inset
@@ -509,7 +562,7 @@ textwidth
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename ../../capitulo-5/graphics/navegacion.png
+	filename graphics/activity_survey.png
 	lyxscale 50
 	width 100col%
 
@@ -532,7 +585,7 @@ textwidth
 status open
 
 \begin_layout Plain Layout
-HARDroid
+HAR en Android
 \end_layout
 
 \end_inset

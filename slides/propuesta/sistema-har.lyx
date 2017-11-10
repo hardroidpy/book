@@ -202,7 +202,7 @@ Sistemas HAR
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Actividades Humanas
+Taxonomía de Actividades Humanas
 \end_layout
 
 \begin_layout Standard
@@ -221,193 +221,114 @@ setbeamercovered{transparent}
 
 \end_layout
 
-\begin_layout Block
-\begin_inset Argument 2
-status open
+\begin_layout ColumnsTopAligned
 
-\begin_layout Plain Layout
-Actividades Simples
 \end_layout
 
-\end_inset
-
-Acciones simples periódicas de larga duración.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Flex Uncover
+\begin_layout Column
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-\begin_inset Argument 1
-status open
 
-\begin_layout Plain Layout
-2-
+0.5
+\backslash
+textwidth
 \end_layout
 
 \end_inset
 
 
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="5cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
+\end_layout
 
-\begin_layout Plain Layout
+\begin_layout Itemize
+Acciones
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Gestos
+\end_layout
+
+\begin_layout Itemize
+Transiciones
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Simples
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Posturas
+\end_layout
+
+\begin_layout Itemize
 Ambulatorias
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Caminar, correr, sentarse, pararse, quieto, acostarse, subir y descender
- escaleras.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\begin_layout Itemize
 Transporte
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-En bus, bicicleta y conducir.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
+\begin_layout Pause
 
 \end_layout
 
-\end_inset
+\end_deeper
+\begin_layout Itemize
+Complejas
+\end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Combinaciones
+\end_layout
+
+\begin_layout Itemize
+Cotidianas 
+\end_layout
+
+\begin_layout Itemize
+Gimnásticas
+\end_layout
+
+\begin_layout Itemize
+Militares
+\end_layout
+
+\begin_layout Pause
 
 \end_layout
 
-\begin_layout Block
-\begin_inset Argument 2
+\end_deeper
+\begin_layout Column
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Actividades Complejas
+
+0.5
+\backslash
+textwidth
 \end_layout
 
 \end_inset
 
-Acciones cortas o periódicas no comunes.
+
 \end_layout
 
 \begin_layout Standard
 \align center
-\begin_inset Flex Uncover
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-3-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="5cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Cotidianas
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Comer, beber, mirar TV, leer, cepillarse los dientes, entre otros.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Gimnasio
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Alzar pesas, ejercicio aeróbico, bicicleta estática.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Militares
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Arrastrarse, en cuclillas.
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
+\begin_inset Graphics
+	filename graphics/actividades.png
+	lyxscale 50
+	width 100col%
 
 \end_inset
 
