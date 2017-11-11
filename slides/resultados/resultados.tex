@@ -1,15 +1,243 @@
 
 \section{Resultados}
 \begin{frame}{Resultados}
-
 \framesubtitle{Validación del Clasificador}
+
+Para validar el clasificador se realizaron dos tipos de pruebas, siguiendos los siguientes pasos:
+
+\begin{itemize}[<+->]
+	\item Se creo un modelos de entrenamiento inicial del clasificador para \emph{HARDroid}.
+	\item Con el modelo inicial se realizaron comparaciones contra \emph{ Sony Lifelog}.
+	\item Luego utilizando el metodo colaborativo, se genero un nuevo modelo y se lo comparo con el inicial.
+\end{itemize}
+
+\begin{table}[h]
+	\begin{centering}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline 
+			\multicolumn{6}{|c|}{Actividades}\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
+			\hline 
+			\hline 
+			5.915 & 3.019 & 645 & 485 & 1.338 & 610\tabularnewline
+			\hline 
+		\end{tabular}
+		\par\end{centering}
+	\caption{Unidades de muestras procesadas en modelo de entrenamiento}
+\end{table}
+
+\end{frame}
+%
+%
+\begin{frame}{Resultados}
+\framesubtitle{Validación del Clasificador}
+
+De manera a evaluar el rendimiento de los clasificadores  se describen las siguientes medidas y métricas de predicción:
+
+\begin{itemize}
+	\item Número de instancias ($N$): es el tamaño de la población de entrada.
+	\item Instancias correctamente clasificadas ($C$): es una proporción del tamaño de la
+	población de entrada.
+	\item Instancias incorrectamente clasificadas ($I$): es una proporción del tamaño de
+	la población de entrada.
+	\item Estadísticas Kappa ($\kappa$): es el coeficiente kappa de Cohen que determina el
+	valor de coeficiente de concordancia para confiabilidad de los datos.
+\end{itemize}
+
+\end{frame}
+%
+\begin{frame}{Resultados}
+\framesubtitle{Validación del Clasificador}
+
+\begin{itemize}
+	\item Error medio absoluto ($E_{ma}$): es el promedio de los errores absolutos individuales.
+	\item Raíz de Error cuadrático medio ($E_{rms}$): es la raíz del promedio de los errores cuadráticos
+	individuales.
+	\item Error absoluto relativo ($E_{ra}$): es la suma de los errores absolutos relativo a la suma
+	de errores absolutos respecto a la media.
+	\item Raíz de Error cuadrático relativo ($E_{rrs}$): es la raíz de la suma de los errores cuadráticos
+	individuales relativo a la suma de los errores cuadráticos respecto a la
+	media.
+\end{itemize}
+
+\end{frame}
+%
+
+\begin{frame}{Resultados}
+\framesubtitle{Validación del Clasificador}
+
+El clasificador generado en este trabajo es un árbol de decisión de tamaño de $677$ nodos, de los cuales $339$
+corresponden a hojas. Las métricas numéricas de predicción se exponen a continuación:
+\begin{itemize}
+	\item Número de instancias ($N$): $12.012$ 
+	\item Instancias correctamente clasificadas ($C$): $10.942$ (91,0922\%)
+	\item Instancias incorrectamente clasificadas ($I$): $1.070$ (8,9078\%)
+	\item Estadísticas Kappa ($\kappa$): 0,8678 
+	\item Error medio absoluto ($E_{ma}$): 0,0341
+	\item Raíz de Error cuadrático medio ($E_{rms}$): 0,164
+	\item Error absoluto relativo ($E_{ra}$): 15,1717\% 
+	\item Raíz de Error cuadrático relativo ($E_{rrs}$): 48,9126\%
+\end{itemize}
+
+\end{frame}
+%
+\begin{frame}{Resultados}
+\framesubtitle{Validación del Clasificador}
+
+\begin{table}[h]
+\centering
+\resizebox{11cm}{!}{
+		\begin{tabular}{|l|c|c|c|c|c|c|}
+			\cline{2-7} 
+			\multicolumn{1}{l|}{} & \multicolumn{6}{c|}{Matriz de Confusión}\tabularnewline
+			\hline 
+			Actividad & \texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
+			\hline 
+			\hline 
+			\texttt{\footnotesize{}WALKING} & \textbf{5.643} & 63 & 21 & 28 & 156 & 4\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}RUNNING} & 122 & \textbf{2.852} & 3 & 6 & 36 & 0\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}STILL} & 19 & 14 & \textbf{555} & 23 & 15 & 19\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}TILTING} & 26 & 3 & 21 & \textbf{304} & 46 & 85\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}ON BICYLE} & 157 & 28 & 7 & 47 & \textbf{1.089} & 10\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}IN VEHICLE} & 2 & 2 & 14 & 86 & 7 & \textbf{499}\tabularnewline
+			\hline 
+		\end{tabular}
+		}
+	\caption{Matriz de confusión del clasificador generado}
+\end{table}
+
+\end{frame}
+\begin{frame}{Resultados}
+\framesubtitle{Validación del Clasificador}
+
+Con esta matriz se calculan las siguientes métricas de evaluación para clasificadores:
+\begin{itemize}
+	\item Precisión: 0,9174
+	\item Exhaustividad: 0,9109
+	\item Exactitud: 0,9714
+	\item \emph{Valor-F}: 0,9142
+\end{itemize}
 
 \end{frame}
 %
 \begin{frame}{Resultados}
 
-\framesubtitle{Verificación de la clasificación}
+\framesubtitle{Verificación de la clasificación - LifeLog}
 
+\begin{table}[h]
+\centering
+\resizebox{12cm}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline 
+			Teléfono & Etiqueta 
+			
+			\emph{Sony Lifelog} & Intervalo & Duración & Etiqueta \emph{HARDroid} & Relación de Acierto\tabularnewline
+			\hline 
+			\hline 
+			nexus5x & \texttt{walking} & 21:26 - 21:44 & 19 & \texttt{WALKING} & 45/54\tabularnewline
+			\hline 
+			nexus5x & \texttt{cycling} & 21:44 - 22:00 & 27 & \texttt{ON\_BICYCLE} & 32/40\tabularnewline
+			\hline 
+			nexus5x & \texttt{running} & 22:12 - 22:24 & 13 & \texttt{RUNNING} & 41/41\tabularnewline
+			\hline 
+			nexus5x & \texttt{vehicle} & 22:39 - 22:57 & 19 & \texttt{IN\_VEHICLE} & 32/38\tabularnewline
+			\hline 
+			nexus5x & \texttt{-} & 22:25 - 22:35 & 10 & \texttt{STILL} & 65/65\tabularnewline
+			\hline 
+		\end{tabular}
+		}
+	\caption[Evaluación \emph{HARDroid} vs \emph{Sony LifeLog}]{Comparación de actividades detectadas
+		por \emph{HARDroid} vs\emph{ Sony Lifelog}}
+\end{table}
+
+\end{frame}
+%
+%
+\begin{frame}{Resultados}
+
+\framesubtitle{Verificación de la clasificación - Colaborativo}
+
+\begin{table}[h]
+\centering
+\resizebox{11cm}{!}{
+		\begin{tabular}{|l|c|c|c|c|c|c|}
+			\cline{2-5} 
+			\multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Desaciertos}} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\tabularnewline
+			\hline 
+			Actividad & \texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE} & \textbf{\small{}Aciertos} & \textbf{\small{}Porcentaje}\tabularnewline
+			\hline 
+			\hline 
+			\texttt{\footnotesize{}WALKING} &  &  & 13 &  & 151 & 92,07\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}RUNNING} &  &  & 13 &  & 83 & 86,46\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}STILL} &  &  &  & 8 & 140 & 94,59\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}TILTING}\emph{\footnotesize{}}\footnote{{\footnotesize{}\scalebox{0.7}{Estar inquieto no se considera una actividad ambulatoria, presentándose los datos de manera informativa}}} &  &  &  & 38 & 0 & 0,00\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}ON\_BICYLE} & 8 &  &  & 4 & 59 & 83,10\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}IN\_VEHICLE} &  & 11 &  &  & 83 & 88,30\%\tabularnewline
+			\hline 
+		\end{tabular}
+		}
+	\caption[Aciertos y desaciertos de actividades humanas detectadas]{Resumen de actividades detectadas marcadas como aciertos o desaciertos}
+\end{table}
+
+\end{frame}
+%
+%
+\begin{frame}{Resultados}
+\framesubtitle{Verificación de la clasificación - Colaborativo}
+
+\begin{table}[H]
+\centering
+\resizebox{9cm}{!}{
+		\begin{tabular}{|c|c|c|}
+			\hline 
+			Métrica & Inicial & Colaborativo\tabularnewline
+			\hline 
+			\hline 
+			$N$ & 12.012 & 12.578\tabularnewline
+			\hline 
+			$C$ & 10.942 (91,09\%) & 11.489 (91,34\%)\tabularnewline
+			\hline 
+			$I$ & 1.070 (8,91\%) & 1.089 (8,66\%)\tabularnewline
+			\hline 
+			$\kappa$ & 0,8678 & 0,8735\tabularnewline
+			\hline 
+			$E_{ma}$ & 0,0341 & 0,0333\tabularnewline
+			\hline 
+			$E_{rms}$ & 0,164 & 0,1632\tabularnewline
+			\hline 
+			$E_{ra}$ & 15,17\% & 14,58\%\tabularnewline
+			\hline 
+			$E_{rrs}$ & 48,91\% & 48,30\%\tabularnewline
+			\hline 
+		\end{tabular}
+		}
+	\caption{Comparación entre modelo inicial y el colaborativo}
+\end{table}
+
+\end{frame}
+%
+%
+\begin{frame}{Resultados}
+\framesubtitle{Verificación de la clasificación - Colaborativo}
+
+De vuelta se calculan las métricas de evaluación para el nuevo clasificador:
+\begin{itemize}
+	\item Precisión: 0,9204 (Antes 0,9174)
+	\item Exhaustividad: 0,9134 (Antes 0,9109)
+	\item Exactitud: 0,9723 (Antes 0,9714)
+	\item \emph{Valor-F}: 0,9168 (Antes 0,9142)
+\end{itemize}
 \end{frame}
 %
 %
