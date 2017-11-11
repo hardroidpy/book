@@ -110,7 +110,7 @@ setbeamercovered{transparent}
 \end_layout
 
 \begin_layout Itemize
-Aplicaciones cuyo medio de interacción es además el contexto.
+Aplicaciones cuyo medio de interacción incluye al contexto.
 \end_layout
 
 \begin_layout Pause
@@ -123,11 +123,11 @@ El contexto es el estado acerca de la información
 
 \begin_deeper
 \begin_layout Itemize
-física
+física,
 \end_layout
 
 \begin_layout Itemize
-emocional
+emocional,
 \end_layout
 
 \begin_layout Itemize
@@ -148,7 +148,7 @@ La computación móvil y ubicua es sinónimo de dinamismo en el contexto
 \end_layout
 
 \begin_layout Itemize
-Tipos de contexto comunes en computación móvil son 
+Los tipos de contexto comunes en la computación móvil son: 
 \end_layout
 
 \begin_deeper
@@ -225,13 +225,14 @@ setbeamercovered{transparent}
 
 \end_layout
 
+\begin_deeper
 \begin_layout Column
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-0.5
+0.25
 \backslash
 textwidth
 \end_layout
@@ -242,52 +243,32 @@ textwidth
 \end_layout
 
 \begin_layout Itemize
-Acciones
+Acciones cortas
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Gestos
-\end_layout
-
-\begin_layout Itemize
-Transiciones
-\end_layout
-
 \begin_layout Pause
 
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Simples
+Actividades Simples
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-Posturas
-\end_layout
-
-\begin_layout Itemize
-Ambulatorias
-\end_layout
-
-\begin_layout Itemize
-Transporte
-\end_layout
-
 \begin_layout Pause
 
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Complejas
+Actividades Complejas
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Combinaciones
+Combinación
 \end_layout
 
 \begin_layout Itemize
@@ -313,7 +294,7 @@ status open
 
 \begin_layout Plain Layout
 
-0.5
+0.75
 \backslash
 textwidth
 \end_layout
@@ -328,13 +309,14 @@ textwidth
 \begin_inset Graphics
 	filename graphics/actividades.png
 	lyxscale 50
-	width 100col%
+	width 95col%
 
 \end_inset
 
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -387,7 +369,7 @@ status open
 
 \end_inset
 
-Proveer un módulo para el desarrollo de aplicaciones de contexto.
+Proveer un componente para el desarrollo de aplicaciones de contexto.
  
 \end_layout
 
@@ -406,11 +388,11 @@ en diferentes contextos.
 
 \end_deeper
 \begin_layout Itemize
-Reconocer las actividades por medio del uso de sensores.
+Reconocer actividades mediante el uso de sensores.
 \end_layout
 
 \begin_layout Itemize
-Portado oportunamente como atuendo para los usuarios (
+Ser portado oportunamente como atuendo para los usuarios (
 \begin_inset Flex Emphasize
 status open
 
@@ -579,7 +561,7 @@ status open
 \begin_inset Graphics
 	filename ../../capitulo-2/graphics/harsystem2.png
 	lyxscale 50
-	width 75text%
+	width 60text%
 
 \end_inset
 
@@ -626,15 +608,6 @@ status open
 
 \backslash
 setbeamercovered{transparent}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-setlength
-\backslash
-columnsep{0pt}
 \end_layout
 
 \end_inset

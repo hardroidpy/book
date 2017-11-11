@@ -12,21 +12,21 @@
 \item \textbf{HARDroid} 
 \begin{itemize}
 \item Es un servicio utilitario de reconocimiento.
-\item Clasificador dinámico
+\item Clasificador dinámico (\structure{DEX})
 \end{itemize}
 
 \pause{}
 \item \textbf{ActivitySurvey}
 \begin{itemize}
-\item Aplicación de encuesta que utiliza el servicio.
-\item Registra las evaluaciones de los usuarios. 
+\item Aplicación de encuesta que depende del servicio.
+\item Registra evaluaciones de los usuarios. 
 \end{itemize}
 
 \pause{}
 \item \textbf{Backend C4.5} 
 \begin{itemize}
 \item Servicio web de recolección de evaluaciones.
-\item Aciertos utilizados para mejorar el clasificador.
+\item Los aciertos son utilizados para mejorar el clasificador.
 \end{itemize}
 \end{itemize}
 
@@ -49,12 +49,12 @@
 \column{0.5\textwidth}
 \begin{itemize}[<+->]
 \item \structure{HARDroid} es un gestor en la capa de \emph{Application Framework}. 
-\item Permite a aplicaciones móviles hechas por terceros: 
+\item Modelo \structure{Cliente-Servidor}.
+\item Las aplicaciones móviles hechas por terceros obtienen: 
 \begin{itemize}
-\item las últimas mejoras del motor de reconocimiento, 
+\item mejoras del motor de reconocimiento, 
 \item actualización por plataforma de distribución basado en tienda, 
-\item los usuarios gozan actualizaciones rápidas y los desarrolladores mecanismos
-fáciles de integración.
+\item mecanismos fáciles de integración.
 \end{itemize}
 \end{itemize}
 
@@ -70,47 +70,65 @@ fáciles de integración.
 \begin{frame}{HAR en Android}
 
 \framesubtitle{HARDroid: Módulos Funcionales}
+
+\setbeamercovered{transparent}
 \begin{columns}[t]
 
-\column{0.25\textwidth}
-\begin{itemize}
-\item Interfaz de Servicio 
-\item Gestor
-\item Procesador
-\item Clasificador
-\item Sensor
+\column{0.30\textwidth}
+\begin{itemize}[<+->]
+\item Integración \structure{AIDL} 
+\item Manejo de Sesión
+\item Procesamiento de muestras
+\item Reconocimiento de Actividades
+\item Captura de señales
 \end{itemize}
 
-\column{0.75\textwidth}
+\column{0.70\textwidth}
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{propuesta/graphics/hardroid}
+\par\end{center}
 
-\includegraphics[width=1\columnwidth]{propuesta/graphics/hardroid}
 \end{columns}
 
+\end{frame}
+%
+\begin{frame}{HAR en Android}
+
+\framesubtitle{HARDroid: Mecanismo de Integración}
+\begin{center}
+\includegraphics[width=0.5\columnwidth]{propuesta/graphics/archi_ipc}
+\par\end{center}
+\begin{block}{Nota}
+Servicio y Aplicación disponibles en \structure{Google Play Store}
+\end{block}
 \end{frame}
 %
 \begin{frame}{HAR en Android}
 
 \framesubtitle{Activity Survey: Módulos Funcionales}
+
+\setbeamercovered{transparent}
 \begin{columns}[t]
 
-\column{0.25\textwidth}
-\begin{itemize}
-\item Registro
-\item Encuesta
-\item Preferencias
-\item Persistencia
-\item Interfaz de Usuario
+\column{0.30\textwidth}
+\begin{itemize}[<+->]
+\item Presentación
+\item Identificación
+\item Encuesta guiada
+\item Preferencias de comunicación y notificación
+\item Almacenamiento y sincronización
 \end{itemize}
 
-\column{0.75\textwidth}
+\column{0.70\textwidth}
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{propuesta/graphics/activity_survey}
+\par\end{center}
 
-\includegraphics[width=1\columnwidth]{propuesta/graphics/activity_survey}
 \end{columns}
 
 \end{frame}
 %
 \begin{frame}{HAR en Android}
-
 
 \framesubtitle{Activity Survey: Componentes Funcionales}
 \begin{center}

@@ -164,11 +164,11 @@ HARDroid
 
 \begin_deeper
 \begin_layout Itemize
-Reutilizable y extensible para reconocer diversas actividades.
+Reutilizable y extensible que clasifica diversas actividades.
 \end_layout
 
 \begin_layout Itemize
-Mejora el clasificador mediante la inclusión de muestras por colaboración.
+Se mejora el clasificador mediante la inclusión de muestras por colaboración.
 \end_layout
 
 \begin_layout Pause
@@ -186,7 +186,7 @@ HARDroid
 
 \end_inset
 
- está disponible para otras aplicaciones móviles como:
+ está disponible para otras aplicaciones móviles:
 \end_layout
 
 \begin_deeper
@@ -195,7 +195,7 @@ incluido en tiempo de construcción, o
 \end_layout
 
 \begin_layout Itemize
-servicio a través de una interfaz de integración.
+como servicio a través de una interfaz de integración.
 \end_layout
 
 \end_deeper
@@ -251,16 +251,7 @@ setbeamercovered{transparent}
 
 \end_layout
 
-\begin_layout Columns
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-t
-\end_layout
-
-\end_inset
-
+\begin_layout ColumnsTopAligned
 
 \end_layout
 
@@ -563,7 +554,7 @@ status open
 
 \begin_layout Plain Layout
 \align center
-por su atención!!!
+por la atención!!!
 \end_layout
 
 \end_inset

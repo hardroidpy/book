@@ -1,0 +1,156 @@
+
+\chapter{Documentación API}
+
+\section{ActivityRecognitionApi}
+\label{org/hardroid/api/ActivityRecognitionApi:activityrecognitionapi}\label{org/hardroid/api/ActivityRecognitionApi::doc}ActivityRecognitionApi (Java interface)
+
+\begin{fulllineitems}
+\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi}\pysigline{public interface \bfcode{ActivityRecognitionApi}} \par
+This interface define the service contract to subscribe to recognition of activities
+\end{fulllineitems}
+
+
+
+\subsection{Methods}
+\label{org/hardroid/api/ActivityRecognitionApi:methods}
+
+\subsubsection{getVersion}
+\label{org/hardroid/api/ActivityRecognitionApi:getversion}getVersion() (Java method)
+
+\begin{fulllineitems}
+\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.getVersion()}\pysiglinewithargsret{ int \bfcode{getVersion}}{}{} \par
+Get service version
+\begin{quote}\begin{description}
+\item[{Devuelve}] \leavevmode
+version
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsubsection{removeActivityUpdates}
+\label{org/hardroid/api/ActivityRecognitionApi:removeactivityupdates}removeActivityUpdates(PendingIntent) (Java method)
+
+\begin{fulllineitems}
+\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.removeActivityUpdates(PendingIntent)}\pysiglinewithargsret{ void \bfcode{removeActivityUpdates}}{PendingIntent\emph{ callbackIntent}}{} \par
+Remove a subscription associated with this callback
+\begin{quote}\begin{description}
+\item[{Parámetros}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{\texttt{callbackIntent}} -- required object to callback when the service completes
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsubsection{removeActivityUpdates}
+\label{org/hardroid/api/ActivityRecognitionApi:id1}removeActivityUpdates(ActivityRecognitionListener) (Java method)
+
+\begin{fulllineitems}
+\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.removeActivityUpdates(ActivityRecognitionListener)}\pysiglinewithargsret{ void \bfcode{removeActivityUpdates}}{{\hyperref[org/hardroid/client/ActivityRecognitionListener:org.hardroid.client.ActivityRecognitionListener]{\crossref{ActivityRecognitionListener}}}\emph{ listener}}{}\par
+Remove a subscription associated with this listener
+\begin{quote}\begin{description}
+\item[{Parámetros}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{\texttt{listener}} -- required object that listents when the service completes
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsubsection{requestActivityUpdates}
+\label{org/hardroid/api/ActivityRecognitionApi:requestactivityupdates}requestActivityUpdates(long, PendingIntent) (Java method)
+
+\begin{fulllineitems}
+\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestActivityUpdates(long, PendingIntent)}\pysiglinewithargsret{ void \bfcode{requestActivityUpdates}}{long\emph{ detectionIntervalMillis}, PendingIntent\emph{ callbackIntent}}{}\par
+Request a periodic update from the service with the specified parameters
+\begin{quote}\begin{description}
+\item[{Parámetros}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{\texttt{detectionIntervalMillis}} -- interval between updates
+
+\item {} 
+\textbf{\texttt{callbackIntent}} -- required object to callback when the service completes
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsubsection{requestActivityUpdates}
+\label{org/hardroid/api/ActivityRecognitionApi:id2}requestActivityUpdates(long, ActivityRecognitionListener) (Java method)
+
+\begin{fulllineitems}
+\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestActivityUpdates(long, ActivityRecognitionListener)}\pysiglinewithargsret{ void \bfcode{requestActivityUpdates}}{long\emph{ detectionIntervalMillis}, {\hyperref[org/hardroid/client/ActivityRecognitionListener:org.hardroid.client.ActivityRecognitionListener]{\crossref{ActivityRecognitionListener}}}\emph{ listener}}{}\par
+Request a periodic update from the service with the specified parameters
+\begin{quote}\begin{description}
+\item[{Parámetros}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{\texttt{detectionIntervalMillis}} -- interval between updates
+
+\item {} 
+\textbf{\texttt{listener}} -- required object that listens when then service completes
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsubsection{requestActivityUpdates}
+\label{org/hardroid/api/ActivityRecognitionApi:id3}requestActivityUpdates(long, ActivityRecognitionListener, Looper) (Java method)
+
+\begin{fulllineitems}
+\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestActivityUpdates(long, ActivityRecognitionListener, Looper)}\pysiglinewithargsret{ void \bfcode{requestActivityUpdates}}{long\emph{ detectionIntervalMillis}, {\hyperref[org/hardroid/client/ActivityRecognitionListener:org.hardroid.client.ActivityRecognitionListener]{\crossref{ActivityRecognitionListener}}}\emph{ listener}, Looper\emph{ looper}}{}\par
+Request a periodic update from the service with the specified parameters
+\begin{quote}\begin{description}
+\item[{Parámetros}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{\texttt{detectionIntervalMillis}} -- interval between updates
+
+\item {} 
+\textbf{\texttt{listener}} -- required object that listens when the service completes
+
+\item {} 
+\textbf{\texttt{looper}} -- main process looper on to execute
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+
+
+
+\subsubsection{requestSingleUpdate}
+\label{org/hardroid/api/ActivityRecognitionApi:requestsingleupdate}requestSingleUpdate(PendingIntent) (Java method)
+
+\begin{fulllineitems}
+\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestSingleUpdate(PendingIntent)}\pysiglinewithargsret{ void \bfcode{requestSingleUpdate}}{PendingIntent\emph{ callbackIntent}}{}\par
+Request a single update
+\begin{quote}\begin{description}
+\item[{Parámetros}] \leavevmode\begin{itemize}
+\item {} 
+\textbf{\texttt{callbackIntent}} -- required object to callback when the service completes
+
+\end{itemize}
+
+\end{description}\end{quote}
+
+\end{fulllineitems}
+

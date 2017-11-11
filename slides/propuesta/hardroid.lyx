@@ -149,7 +149,17 @@ Es un servicio utilitario de reconocimiento.
 \end_layout
 
 \begin_layout Itemize
-Clasificador dinámico
+Clasificador dinámico (
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+DEX
+\end_layout
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Pause
@@ -172,11 +182,11 @@ ActivitySurvey
 
 \begin_deeper
 \begin_layout Itemize
-Aplicación de encuesta que utiliza el servicio.
+Aplicación de encuesta que depende del servicio.
 \end_layout
 
 \begin_layout Itemize
-Registra las evaluaciones de los usuarios.
+Registra evaluaciones de los usuarios.
  
 \end_layout
 
@@ -204,7 +214,7 @@ Servicio web de recolección de evaluaciones.
 \end_layout
 
 \begin_layout Itemize
-Aciertos utilizados para mejorar el clasificador.
+Los aciertos son utilizados para mejorar el clasificador.
 \end_layout
 
 \end_deeper
@@ -335,12 +345,26 @@ Application Framework
 \end_layout
 
 \begin_layout Itemize
-Permite a aplicaciones móviles hechas por terceros: 
+Modelo 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+Cliente-Servidor
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Las aplicaciones móviles hechas por terceros obtienen: 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-las últimas mejoras del motor de reconocimiento, 
+mejoras del motor de reconocimiento, 
 \end_layout
 
 \begin_layout Itemize
@@ -348,8 +372,7 @@ actualización por plataforma de distribución basado en tienda,
 \end_layout
 
 \begin_layout Itemize
-los usuarios gozan actualizaciones rápidas y los desarrolladores mecanismos
- fáciles de integración.
+mecanismos fáciles de integración.
 \end_layout
 
 \end_deeper
@@ -408,6 +431,22 @@ HAR en Android
 HARDroid: Módulos Funcionales
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout ColumnsTopAligned
 
 \end_layout
@@ -419,7 +458,7 @@ status open
 
 \begin_layout Plain Layout
 
-0.25
+0.30
 \backslash
 textwidth
 \end_layout
@@ -430,23 +469,42 @@ textwidth
 \end_layout
 
 \begin_layout Itemize
-Interfaz de Servicio 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
++-
+\end_layout
+
+\end_inset
+
+Integración 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+AIDL
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Itemize
-Gestor
+Manejo de Sesión
 \end_layout
 
 \begin_layout Itemize
-Procesador
+Procesamiento de muestras
 \end_layout
 
 \begin_layout Itemize
-Clasificador
+Reconocimiento de Actividades
 \end_layout
 
 \begin_layout Itemize
-Sensor
+Captura de señales
 \end_layout
 
 \begin_layout Column
@@ -455,7 +513,7 @@ status open
 
 \begin_layout Plain Layout
 
-0.75
+0.70
 \backslash
 textwidth
 \end_layout
@@ -466,10 +524,11 @@ textwidth
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename graphics/hardroid.png
 	lyxscale 50
-	width 100col%
+	width 90col%
 
 \end_inset
 
@@ -500,7 +559,84 @@ HAR en Android
 
 \begin_deeper
 \begin_layout FrameSubtitle
+HARDroid: Mecanismo de Integración
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/archi_ipc.png
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Nota
+\end_layout
+
+\end_inset
+
+Servicio y Aplicación disponibles en 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+Google Play Store
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HAR en Android
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
 Activity Survey: Módulos Funcionales
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout ColumnsTopAligned
@@ -514,7 +650,7 @@ status open
 
 \begin_layout Plain Layout
 
-0.25
+0.30
 \backslash
 textwidth
 \end_layout
@@ -525,23 +661,32 @@ textwidth
 \end_layout
 
 \begin_layout Itemize
-Registro
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
++-
+\end_layout
+
+\end_inset
+
+Presentación
 \end_layout
 
 \begin_layout Itemize
-Encuesta
+Identificación
 \end_layout
 
 \begin_layout Itemize
-Preferencias
+Encuesta guiada
 \end_layout
 
 \begin_layout Itemize
-Persistencia
+Preferencias de comunicación y notificación
 \end_layout
 
 \begin_layout Itemize
-Interfaz de Usuario
+Almacenamiento y sincronización
 \end_layout
 
 \begin_layout Column
@@ -550,7 +695,7 @@ status open
 
 \begin_layout Plain Layout
 
-0.75
+0.70
 \backslash
 textwidth
 \end_layout
@@ -561,10 +706,11 @@ textwidth
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename graphics/activity_survey.png
 	lyxscale 50
-	width 100col%
+	width 90col%
 
 \end_inset
 
@@ -590,10 +736,6 @@ HAR en Android
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Frame
 
 \end_layout
 
