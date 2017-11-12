@@ -11,21 +11,25 @@ Para validar el clasificador se realizaron dos tipos de pruebas, siguiendos los 
 	\item Luego utilizando el metodo colaborativo, se genero un nuevo modelo y se lo comparo con el inicial.
 \end{itemize}
 
-\begin{table}[h]
-	\begin{centering}
-		\begin{tabular}{|c|c|c|c|c|c|}
-			\hline 
-			\multicolumn{6}{|c|}{Actividades}\tabularnewline
-			\hline 
-			\texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
-			\hline 
-			\hline 
-			5.915 & 3.019 & 645 & 485 & 1.338 & 610\tabularnewline
-			\hline 
-		\end{tabular}
-		\par\end{centering}
-	\caption{Unidades de muestras procesadas en modelo de entrenamiento}
-\end{table}
+\begin{overprint}
+\onslide<4> 
+
+	\begin{table}[h]
+		\begin{centering}
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline 
+				\multicolumn{6}{|c|}{Actividades}\tabularnewline
+				\hline 
+				\texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
+				\hline 
+				\hline 
+				5.915 & 3.019 & 645 & 485 & 1.338 & 610\tabularnewline
+				\hline 
+			\end{tabular}
+			\par\end{centering}
+		\caption{Unidades de muestras procesadas en modelo de entrenamiento}
+	\end{table}
+\end{overprint}
 
 \end{frame}
 %
@@ -240,11 +244,5 @@ De vuelta se calculan las métricas de evaluación para el nuevo clasificador:
 \end{itemize}
 \end{frame}
 %
-%
-\begin{frame}{Resultados}
-
-\framesubtitle{Discusión}
-
-\end{frame}
 %
 
