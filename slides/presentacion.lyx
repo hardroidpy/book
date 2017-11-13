@@ -26,7 +26,7 @@
 \theoremstyle{definition} 
 \newtheorem{definition}{Definición}[section]
 \end_preamble
-\options oneside,mathserif,notheorems
+\options oneside,mathserif,notheorems,table
 \use_default_options true
 \maintain_unincluded_children false
 \language spanish
