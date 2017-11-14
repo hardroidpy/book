@@ -341,11 +341,20 @@ Application Framework
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Itemize
-Modelo 
+Mecanismo 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+IPC
+\end_layout
+
+\end_inset
+
+ bajo el modelo 
 \begin_inset Flex Structure
 status open
 
@@ -368,11 +377,31 @@ mejoras del motor de reconocimiento,
 \end_layout
 
 \begin_layout Itemize
-actualización por plataforma de distribución basado en tienda, 
+actualización por plataforma de distribución 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+Google Play Store
+\end_layout
+
+\end_inset
+
+, 
 \end_layout
 
 \begin_layout Itemize
-mecanismos fáciles de integración.
+mecanismos fáciles de integración por 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+Gradle
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
@@ -392,6 +421,20 @@ textwidth
 
 \end_layout
 
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+1-2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
 \align center
 \begin_inset Graphics
@@ -404,6 +447,34 @@ textwidth
 
 \end_layout
 
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+3-
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graphics/archi_ipc.png
+	lyxscale 50
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Standard
@@ -507,6 +578,37 @@ Reconocimiento de Actividades
 Captura de señales
 \end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset Flex Visible
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename graphics/hardroid_logo.png
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Column
 \begin_inset ERT
 status open
@@ -559,38 +661,15 @@ HAR en Android
 
 \begin_deeper
 \begin_layout FrameSubtitle
-HARDroid: Mecanismo de Integración
+Motor Reconocedor de Actividades
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename graphics/archi_ipc.png
+	filename graphics/algoritmoHAR.png
 	lyxscale 50
-	width 50col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Block
-\begin_inset Argument 2
-status open
-
-\begin_layout Plain Layout
-Nota
-\end_layout
-
-\end_inset
-
-Servicio y Aplicación disponibles en 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-Google Play Store
-\end_layout
+	width 80col%
 
 \end_inset
 
@@ -687,6 +766,37 @@ Preferencias de comunicación y notificación
 
 \begin_layout Itemize
 Almacenamiento y sincronización
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex Visible
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename graphics/activity_survey_logo.png
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Column

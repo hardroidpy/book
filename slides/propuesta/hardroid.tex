@@ -48,21 +48,28 @@
 
 \column{0.5\textwidth}
 \begin{itemize}[<+->]
-\item \structure{HARDroid} es un gestor en la capa de \emph{Application Framework}. 
-\item Modelo \structure{Cliente-Servidor}.
+\item \structure{HARDroid} es un gestor en la capa de \emph{Application Framework}.
+\item Mecanismo \structure{IPC} bajo el modelo \structure{Cliente-Servidor}.
 \item Las aplicaciones móviles hechas por terceros obtienen: 
 \begin{itemize}
 \item mejoras del motor de reconocimiento, 
-\item actualización por plataforma de distribución basado en tienda, 
-\item mecanismos fáciles de integración.
+\item actualización por plataforma de distribución \structure{Google Play Store}, 
+\item mecanismos fáciles de integración por \structure{Gradle}.
 \end{itemize}
 \end{itemize}
 
 \column{0.5\textwidth}
+\begin{overprint}
+\onslide<1-2> 
 \begin{center}
 \includegraphics[width=1\columnwidth]{../capitulo-5/graphics/hardroid_func}
 \par\end{center}
+\onslide<3-> 
+\begin{center}
+\includegraphics[width=1\columnwidth]{propuesta/graphics/archi_ipc}
+\par\end{center}
 
+\end{overprint}
 \end{columns}
 
 \end{frame}
@@ -82,6 +89,11 @@
 \item Reconocimiento de Actividades
 \item Captura de señales
 \end{itemize}
+\begin{center}
+\visible<5>{\begin{center}
+\includegraphics[width=1.5cm]{propuesta/graphics/hardroid_logo}
+\par\end{center}}
+\par\end{center}
 
 \column{0.70\textwidth}
 \begin{center}
@@ -94,13 +106,11 @@
 %
 \begin{frame}{HAR en Android}
 
-\framesubtitle{HARDroid: Mecanismo de Integración}
+\framesubtitle{Motor Reconocedor de Actividades}
 \begin{center}
-\includegraphics[width=0.5\columnwidth]{propuesta/graphics/archi_ipc}
+\includegraphics[width=0.8\columnwidth]{propuesta/graphics/algoritmoHAR}
 \par\end{center}
-\begin{block}{Nota}
-Servicio y Aplicación disponibles en \structure{Google Play Store}
-\end{block}
+
 \end{frame}
 %
 \begin{frame}{HAR en Android}
@@ -118,6 +128,11 @@ Servicio y Aplicación disponibles en \structure{Google Play Store}
 \item Preferencias de comunicación y notificación
 \item Almacenamiento y sincronización
 \end{itemize}
+\begin{center}
+\visible<5>{\begin{center}
+\includegraphics[width=1.5cm]{propuesta/graphics/activity_survey_logo}
+\par\end{center}}
+\par\end{center}
 
 \column{0.70\textwidth}
 \begin{center}

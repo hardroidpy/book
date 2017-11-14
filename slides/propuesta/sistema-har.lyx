@@ -212,17 +212,12 @@ setbeamercovered{transparent}
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-+-
-\end_layout
-
-\end_inset
-
 Proveer un componente para el desarrollo de aplicaciones de contexto.
  
+\end_layout
+
+\begin_layout Pause
+
 \end_layout
 
 \begin_layout Itemize
@@ -238,9 +233,17 @@ por diferentes usuarios y
 en diferentes contextos.
 \end_layout
 
+\begin_layout Pause
+
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 Reconocer actividades mediante el uso de sensores.
+\end_layout
+
+\begin_layout Pause
+
 \end_layout
 
 \begin_layout Itemize
