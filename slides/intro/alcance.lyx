@@ -345,6 +345,15 @@ status open
 setbeamercovered{transparent}
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+columnsep{0pt}
+\end_layout
+
 \end_inset
 
 
@@ -479,8 +488,8 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
-<column alignment="left" valignment="top">
-<column alignment="left" valignment="top" width="4cm">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="left" valignment="top" width="3.5cm">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
@@ -488,6 +497,7 @@ status open
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 Grupo
 \series default
  
@@ -501,6 +511,7 @@ Grupo
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 Ejemplos
 \series default
  
@@ -514,6 +525,8 @@ Ejemplos
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Posturas
 \end_layout
 
@@ -523,27 +536,15 @@ Posturas
 \begin_inset Text
 
 \begin_layout Plain Layout
-Sentarse, Pararse, Estar quieto
+
+\size footnotesize
+Sentarse, Pararse, 
 \end_layout
 
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
-Ambulatorias 
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Caminar, correr, subir o descender escaleras.
+\size footnotesize
+Estar quieto
 \end_layout
 
 \end_inset
@@ -554,6 +555,38 @@ Caminar, correr, subir o descender escaleras.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+Ambulatorias 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Caminar, correr, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+subir o descender escaleras.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 Transporte 
 \end_layout
 
@@ -563,6 +596,8 @@ Transporte
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Andar en bus, en bicicleta o en vehículo
 \end_layout
 
@@ -574,6 +609,8 @@ Andar en bus, en bicicleta o en vehículo
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Cotidianas
 \end_layout
 
@@ -583,7 +620,15 @@ Cotidianas
 \begin_inset Text
 
 \begin_layout Plain Layout
-Comer, beber, mirar TV, leer, cepillarse los dientes, entre otros.
+
+\size footnotesize
+Comer, beber, 
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+mirar TV, leer, cepillarse los dientes, entre otros.
  
 \end_layout
 
@@ -595,6 +640,8 @@ Comer, beber, mirar TV, leer, cepillarse los dientes, entre otros.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Ejercitarse 
 \end_layout
 
@@ -604,6 +651,8 @@ Ejercitarse
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Alzar pesas, bicicleta estática y aeróbicos.
  
 \end_layout
