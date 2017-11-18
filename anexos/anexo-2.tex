@@ -1,3 +1,11 @@
+\newcommand{\bfcode}[1]{\code{\bfseries#1}}
+%\newcommand{\pysigparams}[2]{%
+%  \parbox[t]{#1\code{)}#2}}
+%\newcommand{\pysigline}[1]{\item[#1]\nopagebreak}
+%\newcommand{\pysiglinewithargsret}[3]{%
+%  {#1\code{(}}%
+%  \item[#1\code{(}\pysigparams{#2}{#3}]}
+
 
 \chapter{Documentación API}
 
@@ -7,7 +15,7 @@ En este anexo se proporcionan los detalles de la \abbr{API} de programación de 
 El servicio dispone de métodos de subscripción con diferentes parámetros disponibles. La documentación oficial de esta interfaz se encuentra disponible en \cite{GimenezYegros2016d}.
 
 \section{ActivityRecognitionApi}
-\label{org/hardroid/api/ActivityRecognitionApi:activityrecognitionapi}ActivityRecognitionApi (Java interface)
+\label{org/hardroid/api/ActivityRecognitionApi:activityrecognitionapi}
 
 \begin{fulllineitems}
 \phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi}\pysigline{public interface \bfcode{ActivityRecognitionApi}} \par
@@ -18,10 +26,10 @@ La interfaz define el contrato del servicio para subscribir al reconocimiento de
 \label{org/hardroid/api/ActivityRecognitionApi:methods}
 
 \subsubsection{getVersion}
-\label{org/hardroid/api/ActivityRecognitionApi:getversion}getVersion() (Java method)
+\label{org/hardroid/api/ActivityRecognitionApi:getversion}
 
 \begin{fulllineitems}
-\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.getVersion()}\pysiglinewithargsret{ int \bfcode{getVersion}}{}{} \par
+    \phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.getVersion()}\pysiglinewithargsret{ int \bfcode{getVersion()}}{}{} \par
 Obtiene la versión del servicio.
 \begin{quote}\begin{description}
 \item[{Devuelve}] \leavevmode
@@ -33,10 +41,10 @@ version
 
 
 \subsubsection{removeActivityUpdates}
-\label{org/hardroid/api/ActivityRecognitionApi:removeactivityupdates}removeActivityUpdates(PendingIntent) (Java method)
+\label{org/hardroid/api/ActivityRecognitionApi:removeactivityupdates}
 
 \begin{fulllineitems}
-\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.removeActivityUpdates(PendingIntent)}\pysiglinewithargsret{ void \bfcode{removeActivityUpdates}}{PendingIntent\emph{ callbackIntent}}{} \par
+    \phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.removeActivityUpdates(PendingIntent)}\pysiglinewithargsret{ void \bfcode{removeActivityUpdates}}{(PendingIntent\emph{ callbackIntent})}{} \par
 Elimina una subscripción asociado con una función diferida.
 \begin{quote}\begin{description}
 \item[{Parámetros}] \leavevmode\begin{itemize}
@@ -51,10 +59,10 @@ Elimina una subscripción asociado con una función diferida.
 
 
 \subsubsection{removeActivityUpdates}
-\label{org/hardroid/api/ActivityRecognitionApi:id1}removeActivityUpdates(ActivityRecognitionListener) (Java method)
+\label{org/hardroid/api/ActivityRecognitionApi:id1}
 
 \begin{fulllineitems}
-\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.removeActivityUpdates(ActivityRecognitionListener)}\pysiglinewithargsret{ void \bfcode{removeActivityUpdates}}{\crossref{ActivityRecognitionListener}}\emph{ listener}}{}\par
+    \phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.removeActivityUpdates(ActivityRecognitionListener)}\pysiglinewithargsret{ void \bfcode{removeActivityUpdates}}{(\crossref{ActivityRecognitionListener}}\emph{ listener})}{}\par
 Elimina una subscripción asociada con un observador.
 \begin{quote}\begin{description}
 \item[{Parámetros}] \leavevmode\begin{itemize}
@@ -69,10 +77,10 @@ Elimina una subscripción asociada con un observador.
 
 
 \subsubsection{requestActivityUpdates}
-\label{org/hardroid/api/ActivityRecognitionApi:requestactivityupdates}requestActivityUpdates(long, PendingIntent) (Java method)
+\label{org/hardroid/api/ActivityRecognitionApi:requestactivityupdates}
 
 \begin{fulllineitems}
-\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestActivityUpdates(long, PendingIntent)}\pysiglinewithargsret{ void \bfcode{requestActivityUpdates}}{long\emph{ detectionIntervalMillis}, PendingIntent\emph{ callbackIntent}}{}\par
+    \phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestActivityUpdates(long, PendingIntent)}\pysiglinewithargsret{ void \bfcode{requestActivityUpdates}}{(long\emph{ detectionIntervalMillis}, PendingIntent\emph{ callbackIntent})}{}\par
 Subscripción con actualización periodica al servicio con los parámetros especificados.
 \begin{quote}\begin{description}
 \item[{Parámetros}] \leavevmode\begin{itemize}
@@ -90,10 +98,10 @@ Subscripción con actualización periodica al servicio con los parámetros espec
 
 
 \subsubsection{requestActivityUpdates}
-\label{org/hardroid/api/ActivityRecognitionApi:id2}requestActivityUpdates(long, ActivityRecognitionListener) (Java method)
+\label{org/hardroid/api/ActivityRecognitionApi:id2}
 
 \begin{fulllineitems}
-\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestActivityUpdates(long, ActivityRecognitionListener)}\pysiglinewithargsret{ void \bfcode{requestActivityUpdates}}{long\emph{ detectionIntervalMillis}, ActivityRecognitionListener\emph{ listener}}{}\par
+    \phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestActivityUpdates(long, ActivityRecognitionListener)}\pysiglinewithargsret{ void \bfcode{requestActivityUpdates}}{(long\emph{ detectionIntervalMillis}, ActivityRecognitionListener\emph{ listener})}{}\par
 Subscripción con actualización periodica al servicio con los parámetros especificados.
 \begin{quote}\begin{description}
 \item[{Parámetros}] \leavevmode\begin{itemize}
@@ -112,10 +120,10 @@ Subscripción con actualización periodica al servicio con los parámetros espec
 
 
 \subsubsection{requestActivityUpdates}
-\label{org/hardroid/api/ActivityRecognitionApi:id3}requestActivityUpdates(long, ActivityRecognitionListener, Looper) (Java method)
+\label{org/hardroid/api/ActivityRecognitionApi:id3}
 
 \begin{fulllineitems}
-\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestActivityUpdates(long, ActivityRecognitionListener, Looper)}\pysiglinewithargsret{ void \bfcode{requestActivityUpdates}}{long\emph{ detectionIntervalMillis}, ActivityRecognitionListener\emph{ listener}, Looper\emph{ looper}}{}\par
+    \phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestActivityUpdates(long, ActivityRecognitionListener, Looper)}\pysiglinewithargsret{ void \bfcode{requestActivityUpdates}}{(long\emph{ detectionIntervalMillis}, ActivityRecognitionListener\emph{ listener}, Looper\emph{ looper})}{}\par
 Subscripción con actualización periodica al servicio con los parámetros especificados.
 \begin{quote}\begin{description}
 \item[{Parámetros}] \leavevmode\begin{itemize}
@@ -136,10 +144,10 @@ Subscripción con actualización periodica al servicio con los parámetros espec
 
 
 \subsubsection{requestSingleUpdate}
-\label{org/hardroid/api/ActivityRecognitionApi:requestsingleupdate}requestSingleUpdate(PendingIntent) (Java method)
+\label{org/hardroid/api/ActivityRecognitionApi:requestsingleupdate}
 
 \begin{fulllineitems}
-\phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestSingleUpdate(PendingIntent)}\pysiglinewithargsret{ void \bfcode{requestSingleUpdate}}{PendingIntent\emph{ callbackIntent}}{}\par
+    \phantomsection\label{org/hardroid/api/ActivityRecognitionApi:org.hardroid.api.ActivityRecognitionApi.requestSingleUpdate(PendingIntent)}\pysiglinewithargsret{ void \bfcode{requestSingleUpdate}}{(PendingIntent\emph{ callbackIntent})}{}\par
 Obtiene una actualización simple.
 \begin{quote}\begin{description}
 \item[{Parámetros}] \leavevmode\begin{itemize}

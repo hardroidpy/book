@@ -5,21 +5,18 @@
 \section{Acerca de HARDroid}
 \label{index:bienvenido-a-la-documentacion-de-hardroid}
 Este proyecto es un servicio de reconocimiento de actividades humanas
-para Android. Utiliza dos componentes de librería y un APK de servicio
-para reutilizar el código.
+para Android. Utiliza dos componentes, una librería y una aplicación de servicio instalable por \abbr{APK}.
 
-Puedes ver el abance del proyecto en el repositorio \href{https://github.com/hardroidpy}{GitHub}  y
-verificar la documentación JavaDoc para saber más detalles del
-funcionamiento de la {\hyperref[glossary:term\string-api]{\termref{\DUrole{xref,std,std-term}{API}}}}.
+El estado y avances del proyecto está disponible en el repositorio GitHub \cite{GimenezYegros2016c} y también verificar la documentación \emph{Java} en \cite{GimenezYegros2016d} para más detalles sobre el funcionamiento de la \abbr{API}.
 
 
 \subsection{Autores}
 \label{index:autores}\begin{itemize}
 \item {} 
-\href{https://github.com/agimenezpy}{Alberto G.}
+    Alberto G. (\url{https://github.com/agimenezpy})
 
 \item {} 
-\href{https://github.com/syegros}{Santiago Y.}
+    Santiago Y. (\url{https://github.com/syegros})
 
 \end{itemize}
 \phantomsection\label{index:har-content}
@@ -29,22 +26,18 @@ funcionamiento de la {\hyperref[glossary:term\string-api]{\termref{\DUrole{xref,
 
 \subsubsection{HARDroid}
 \label{intro:hardroid}
-\abbr{HARDroid} es un proyecto \emph{Open Source} que tiene como objetivo tener una implementación abierta del servicio de
-reconocimiento de actividades físicas utilizando sensores del celular.
+\abbr{HARDroid} es el proyecto \emph{Open Source} cuyo objetivo es tener una implementación abierta de un servicio de
+reconocimiento de actividades humanas utilizando sensores del teléfono.
 
-Nuestro proyecto implementa el concepto de desacomplamiento de una Librería \abbr{API} y una \abbr{APK} de servicio que provee la
-funcionalidad de reconocimiento de actividades físicas.
+Este proyecto implementa el desacomplamiento por medio de una librería que expone una \abbr{API} y una aplicación de servicio en forma de \abbr{APK} independiente que provee las
+funcionalidades.
 
-La idea nace de dos productos similares de Google y Sony que realizan reconocimiento de actividades los cuales son
-\emph{Google Play Services} y \emph{Sony LifeLog}.
-
+La idea se basa en los productos similares de las corporaciones Google y Sony, que permiten reconocer actividades por medio de \emph{Google Play Services} y \emph{Sony LifeLog}.
 
 \subsubsection{Google Play Services}
 \label{intro:har-google-play-services}\label{intro:google-play-services}
-Google dispone del producto Google Play Services \cite{Google2016ps}
-que proporciona dentro de una \abbr{APK} la implementación de algoritmos, y además los desarrolladores de aplicaciones
-Android pueden integrarse (a través de una \abbr{API} \cite{Google2016l}) a varias
-funcionalidades utilitarias en las siguientes dimensiones:
+La corporación Google publica como producto a Google Play Services \cite{Google2016ps} donde proporciona dentro de una \abbr{APK} la implementación de diversas funcionalides, y donde los desarrolladores de aplicaciones
+\emph{Android} pueden integrarse (a través de una \abbr{API} \cite{Google2016l}) en las siguientes dimensiones:
 \begin{quote}
 \begin{description}
 \item[{Location \& Context}] \leavevmode
@@ -62,15 +55,13 @@ Provee funcionalidades para mensajería a travéz de Internet.
 
 \end{description}
 
-
 \end{quote}
 
 \subsubsection{Sony LifeLog}
 \label{intro:sony-lifelog}\label{intro:har-life-log}
-Sony dispone de un producto registrar las actividades diarias de las personas por medio de sensores
-del celular o por medio de las relojes \emph{smartwatch}. Para esto proveen una aplicación de rastreo de actividades
-diarias con un reconocedor de actividades propio.
-\begin{table}[!htbp]
+La corporación Sony publica un producto llevar un registro de las actividades diarias personales por medio de sensores
+en el celular o utilizando relojes \emph{smartwatch} y pulseras. Con el fin de mejorar la experiencia del usuario proveen una aplicación de registro diario con un reconocedor de actividades incorporado.
+\begin{table}[!h]
 \begin{tabular}{lll}
 \textsf{\relax 
 Inicio LifeLog
@@ -88,38 +79,40 @@ Acerca del Reconocedor
 \end{tabular}
 \end{table}
 
-\section{Primeros Pasos}
+\section{Guía de Utilización}
 \label{first:har-first}\label{first::doc}\label{first:primeros-pasos}
 
 \subsubsection{Instalar las Aplicaciones}
 \label{first:instalar-las-aplicaciones}
-El proyecto se compone de dos aplicaciones \emph{\abbr{Android}} que se comunican por medio de el protocolo \emph{BINDER} \abbr{IPC} de manera a
-independizar las funciones de encuesta y servicio de reconocimiento.
+El proyecto se compone de dos aplicaciones \emph{\abbr{Android}} que se interaccionan por medio de \abbr{IPC} \emph{BINDER} de manera a
+independizar las funciones de encuesta y de servicio de reconocimiento.
 
-
+\begin{figure}[!h]
+\centering
 \includegraphics[width=0.7\textwidth]{anexos/graphics/archi_ipc.png}
+\end{figure}
 
-Para contribuir con la recolección de datos sigue los pasos para instalar en tu celular las aplicaciones.
+Para poder contribuir con la recolección de datos se siguen los siguientes pasos de instalación.
 
 \paragraph{Instalar la Encuesta}
 \label{first:instalar-la-encuesta}\label{first:har-survey}
-Para instalar la aplicación \emph{Activity Survey} de encuesta accede a este URL \url{https://goo.gl/JHNL1B} o por medio de la siguiente
+Para instalar la aplicación \emph{Activity Survey} de encuesta accede a este URL \url{https://goo.gl/JHNL1B} o por medio de la siguiente 
 imagen:
-\begin{figure}[!htbp]
+\begin{figure}[!h]
    \centering
    \includegraphics{anexos/graphics/qr_url.jpg}
 \caption{Acceso al instalador \emph{Activity Survey}}\label{first:id1}\end{figure}
 
-Descarga la aplicación desde
-\emph{Google Play Store} \cite{GimenezYegros2016e}.
-\begin{figure}[!htbp]
+Se debe descargar la aplicación desde el
+\emph{Google Play Store} \cite{GimenezYegros2016e} como se muestra en la \figref{first:id2}.
+\begin{figure}[!h]
     \centering 
     \includegraphics[width=0.4\textwidth]{anexos/graphics/inst_app5.jpg}
 \caption{Instalador desde Google Play}\label{first:id2}\end{figure}
 
-Si queres registrarte como un \emph{beta tester} registrate con tu cuenta de Google en \url{https://goo.gl/GjmMl3}.
+En caso de requerir registrarse como \emph{beta tester} proceder a acceder con una cuenta de Google en el enlace \url{https://goo.gl/GjmMl3} y seguir los pasos de la \tabref{tab:betatest}.
 
-\begin{table}[!htbp]
+\begin{table}[!h]
 \begin{tabular}{lll}
 \textsf{\relax 
 Ingresar el URL
@@ -135,16 +128,17 @@ Aceptar ser tester
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/inst_app4.jpg}}
 \\
 \end{tabular}
+\caption{Pasos de registro a \emph{Beta Test}}\label{tab:betatest}
 \end{table}
 
 
-Para finalizar debes configurar la aplicación siguiendo los pasos en \hyperref[config:har-config]{Configurar Activity Survey}.
+Para finalizar se debe configurar la aplicación siguiendo los pasos en \hyperref[config:har-config]{Configurar Activity Survey}.
 
 
 \paragraph{Instalar el Reconocedor}
 \label{first:instalar-el-reconocedor}
 Luego de instalar y configurar la aplicación de encuesta \emph{Activity Survey} (vease {\hyperref[config:har-config]{Configurar Activity Survey}),
-al intentar utilizar el servicio este te pedira instalar del \emph{Google Play Store} el servicio reconocedor \emph{HARDroid}.
+al intentar utilizar la aplicación necesitara instalar desde el \emph{Google Play Store} el servicio reconocedor \emph{HARDroid} según la \tabref{tab:hardroid}.
 
 \begin{table}[h]
 \begin{tabular}{ll}
@@ -158,6 +152,7 @@ Instalar del Play Store
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/inst_servplay.jpg}}
 \\
 \end{tabular}
+    \caption{Pasos para instalar HARDroid}\label{tab:hardroid}
 \end{table}
 
 \subsection{Configurar \emph{Activity Survey}}
@@ -165,18 +160,15 @@ Instalar del Play Store
 
 \subsubsection{Iniciar la encuesta}
 \label{config:iniciar-la-encuesta}
-Una vez instalada la aplicación de encuesta debes configurarla con los datos mínimos para iniciar
-contribuir con la recolección.
-
-Inicia la aplicación
-\begin{figure}[h]
+Una vez instalada la aplicación de encuesta se debe configurar los datos mínimos para iniciar la contribución de la recolección. Iniciar la aplicación como en la \figref{config:id1}.
+\begin{figure}[!h]
 \centering
     {\includegraphics[width=0.4\textwidth]{anexos/graphics/app_inst.jpg}}
 \caption{\emph{Activity Survey} instalada}\label{config:id1}\end{figure}
 
-Lee las instrucciones y concede los permisos
+Luego se aceptan las instrucciones y concede los permisos necesarios como en la \tabref{config:iniapp}.
 
-\begin{table}[h]
+\begin{table}[!h]
 \begin{tabular}{lll}
 \textsf{\relax 
 Iniciar la Encuesta
@@ -192,18 +184,19 @@ Dar permisos
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/app_perm.jpg}}
 \\
 \end{tabular}
+    \caption{Pasos iniciales para la aplicación de encuesta}\label{config:iniapp}
 \end{table}
 
-\subsubsection{Ingresa tu correo y edad}
+\subsubsection{Ingresar correo y edad}
 \label{config:ingresa-tu-correo-y-edad}
-Para poder identificar tus contribuciones requerimos de datos mínimos para la encuesta.
-\begin{figure}[h]
+Para poder identificar las contribuciones se requiere de datos mínimos para la encuesta como en la \figref{config:id2}.
+\begin{figure}[!h]
 \centering
     \includegraphics[width=0.4\textwidth]{anexos/graphics/app_conf.jpg}
 \caption{Iniciar la configuración}\label{config:id2}\end{figure}
 
-Configura los datos requeridos.
-\begin{table}[h]
+Configurar los datos requeridos como en la \tabref{config:emedad}.
+\begin{table}[!h]
 \begin{tabular}{lll}
 \textsf{\relax 
 Ingresa tu correo
@@ -219,10 +212,10 @@ Ingresa el intervalo
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/app_int.jpg}}
 \\
 \end{tabular}
+    \caption{Configuración inicial de la aplicación}\label{config:emedad}
 \end{table}
 
-
-El servicio de reconocimiento se activará a cada minuto que eliga en la configuración:
+El servicio de reconocimiento se activará a cada intervalo que se eliga en la configuración:
 \begin{itemize}
 \item {} 
 1 minuto
@@ -238,10 +231,10 @@ El servicio de reconocimiento se activará a cada minuto que eliga en la configu
 
 \end{itemize}
 
-\subsubsection{Servicio de Reconocimiento Activado}
+\subsubsection{Servicio de Reconocimiento}
 \label{config:servicio-de-reconocimiento-activado}
-Una vez configurado la aplicación de encuesta se conectará automáticamente al servicio de reconocimiento instalado.
-\begin{figure}[h]
+Una vez configurada la aplicación de encuesta, esta se conectará automáticamente al servicio de reconocimiento instalado una vez que se inicia una sesión de encuesta \figref{config:id3}.
+\begin{figure}[!h]
 \centering
 
     \includegraphics[width=0.4\textwidth]{anexos/graphics/app_started.jpg}
@@ -253,10 +246,10 @@ Una vez configurado la aplicación de encuesta se conectará automáticamente al
 
 \subsubsection{Ver tus actividades}
 \label{contrib:ver-tus-actividades}
-Dependiendo del intervalo de reconocimiento la aplicación desplegará las últimas 5 actividades recientes
-reconocidas.
+Dependiendo del intervalo de reconocimiento la aplicación de encuesta desplegará las últimas actividades recientes
+reconocidas en orden descendente como en la \tabref{contrib:actrec}.
 
-\begin{table}[h]
+\begin{table}[!h]
 \begin{tabular}{ll}
 \textsf{\relax 
 Actividades recientes
@@ -268,12 +261,12 @@ Mas actividades
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/activities.jpg}}
 \\
 \end{tabular}
+    \caption{Despliegue de actividades recientes}\label{contrib:actrec}
 \end{table}
 
+Además se reciben notificaciones periodicas a medida que se reconozca una actividad mientras la sesión esté iniciada \tabref{contrib:actnot}.
 
-Además recibiras notificaciones periodicas a medida que se reconozca una actividad.
-
-\begin{table}[h]
+\begin{table}[!h]
 \begin{tabular}{ll}
 \textsf{\relax 
 Notificación Recibida
@@ -285,13 +278,14 @@ Detalle de actividad
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/bar_notification2.jpg}}
 \\
 \end{tabular}
+    \caption{Notificaciones de actividades reconocidas}\label{contrib:actnot}
 \end{table}
 
-
+\pagebreak
 
 \subsubsection{Actividades Conocidas}
 \label{contrib:actividades-conocidas}
-Las actividades que el servicio reconoce son:
+Las actividades reconocidas por el servicio son:
 \begin{quote}
 \begin{description}
 \item[{Quieto}] \leavevmode
@@ -300,8 +294,8 @@ El servicio detectó que el teléfono móvil está quieto.
 \includegraphics{anexos/graphics/still.png}
 
 \item[{Caminando}] \leavevmode
-El servicio detectó que el teléfono móvil está en movimiento lento.
-
+El servicio detectó que el teléfono móvil está en movimiento lento  
+    
 \includegraphics{anexos/graphics/walk.png}
 
 \item[{Correr}] \leavevmode
@@ -334,7 +328,7 @@ El servicio no pudo detectar la actividad.
 
 \subsubsection{Responder a la Encuesta}
 \label{contrib:responder-a-la-encuesta}
-Para responder a la encuesta tienes las siguientes opciones.
+Para responder a la encuesta se tienen las siguientes opciones como \tabref{contrib:actres}.
 \begin{quote}
 \begin{description}
 \item[{Actividad Correcta}] \leavevmode
@@ -347,7 +341,7 @@ y proveer una retroalimentación con la actividad adecuada (3).
 \end{description}
 \end{quote}
 
-\begin{table}[!htbp]
+\begin{table}[!h]
 \begin{tabular}{lll}
 \textsf{\relax 
 Marcar correcto (1)
@@ -363,20 +357,20 @@ Responder (3)
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/act_feed2.jpg}}
 \\
 \end{tabular}
+    \caption{Responder encuesta de actividades}\label{contrib:actres}
 \end{table}
 
-
-Adicionalmente puede ocurrir que no se detecte ninguna actividad.
+Adicionalmente el servicio puede no detectar ninguna actividad como en la \tabref{contrib:actfeed}.
 \begin{quote}
 \begin{description}
 \item[{Actividad No reconocida}] \leavevmode
-El servicio no pudo detectar la activdad física, marcala como incorrecta y proveer la retroalimentación
-con la actividad adecuada
+El servicio no pudo detectar la activdad física, se debe marcar como incorrecta y proveer la retroalimentación
+con la actividad adecuada.
 
 \end{description}
 \end{quote}
 
-\begin{table}[!htbp]
+\begin{table}[!h]
 \begin{tabular}{ll}
 \textsf{\relax 
 Marcar incorrecto (1)
@@ -388,6 +382,7 @@ Responder (3)
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/act_feed.jpg}}
 \\
 \end{tabular}
+    \caption{Responder actividad incorrecta con retroalimentación}\label{contrib:actfeed}
 \end{table}
 
 
@@ -396,10 +391,10 @@ Responder (3)
 
 \subsubsection{Activar/Desactivar Servicio}
 \label{config_adic:activar-desactivar-servicio}
-Desde la barra de menú se puede activar y desactivar el servicio de reconocimiento. Presiona el botón
-de acción para elegir ambas opciones.
+Desde la barra de menú se puede activar y desactivar el servicio de reconocimiento. Presionar el botón
+de acción para elegir ambas opciones como en la \tabref{config_adic:servstart}.
 
-\begin{table}[!htbp]
+\begin{table}[!h]
 \begin{tabular}{lll}
 \textsf{\relax 
 Desactivar Servicio
@@ -415,31 +410,33 @@ Servicio Activado
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/enabled_serv.jpg}}
 \\
 \end{tabular}
+    \caption{Activar y desactivar sesión de reconocimiento}\label{config_adic:servstart}
 \end{table}
-
 
 \subsubsection{Configuración}
 \label{config_adic:configuracion}
-Para acceder a la configuración desde la aplicación accedé al \code{Menu \textgreater{} Configuración}.
-\begin{figure}[!htbp]
+Para acceder a la configuración desde la aplicación se accede al \code{Menu \textgreater{} Configuración} como en la \figref{config_adic:id1}.
+\begin{figure}[!h]
 \centering
     \includegraphics[width=0.4\textwidth]{anexos/graphics/mnu_config.jpg}
-\caption{Acceso a la configuración}\label{config_adic:id1}\end{figure}
+\caption{Acceso a la configuración}\label{config_adic:id1}
+\end{figure}
 
-En esta actividad muestra el detalle de los datos enviados al servidor de encuesta además de las opciones
-de configuración como:
-\begin{figure}[!htbp]
+En esta vista se  muestra el detalle de los datos enviados al servidor de encuesta y además las opciones
+de configuración como en la \figref{config_adic:id2}
+\begin{figure}[!h]
     \centering
     \includegraphics[width=0.4\textwidth]{anexos/graphics/conf_gral.jpg}
-\caption{Configuración general}\label{config_adic:id2}\end{figure}
+\caption{Configuración general}\label{config_adic:id2}
+\end{figure}
 
 
 \paragraph{Correo y Edad}
 \label{config_adic:correo-y-edad}
-Para cambiar la configuración inicial del correo y edad accede las opciones.
+Para cambiar la configuración de correo y edad accede las opciones de la \tabref{config_adic:emedad}.
 
-\begin{table}[!htbp]
-\begin{tabulary}{ll}
+\begin{table}[!h]
+\begin{tabular}{ll}
 \textsf{\relax 
 Cambiar correo
 } & \textsf{\relax 
@@ -450,22 +447,24 @@ Cambiar edad
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/conf_age.jpg}}
 \\
 \end{tabular}
+    \caption{Configuración de correo y edad}\label{config_adic:emedad}
 \end{table}
 
 \paragraph{Intervalo}
 \label{config_adic:intervalo}
-Para cambiar la configuración del intervalo accede a la opción.
-\begin{figure}[!htbp]
+Para cambiar la configuración del intervalo accede a la opción como en la \figref{config_adic:id3}.
+\begin{figure}[!h]
     \centering
     \includegraphics[width=0.4\textwidth]{anexos/graphics/conf_int.jpg}
-\caption{Cambiar intervalo}\label{config_adic:id3}\end{figure}
+\caption{Cambiar intervalo}\label{config_adic:id3}
+\end{figure}
 
 
 \paragraph{Sincronización de datos}
 \label{config_adic:sincronizacion-de-datos}
-Para cambiar la manera en que la aplicación envia los datos por WIFI o redes móviles accede a la opción.
+Para cambiar la manera en que la aplicación envia los datos por WIFI o redes móviles accede a la opción como en la \tabref{config_adic:conn}.
 
-\begin{table}[!htbp]
+\begin{table}[!h]
 \begin{tabular}{ll}
 \textsf{\relax 
 Acceso a Sincronizar
@@ -477,17 +476,16 @@ Cambiar Sincronizar
     {\includegraphics[width=0.33\textwidth]{anexos/graphics/conf_sync.jpg}}
 \\
 \end{tabular}
+
+\caption{Cambiar preferencias de comunicación}\label{config_adic:conn}
 \end{table}
-
-
 
 \subsubsection{Ayuda}
 \label{config_adic:ayuda}
-Para acceder a esta página de ayuda desde la aplicación accedé al \code{Menu \textgreater{} Ayuda}.
-\begin{figure}[!htbp]
-\centering
+Para acceder a la guia de ayuda desde la aplicación se accede al \code{Menu \textgreater{} Ayuda} como en la \figref{config_adic:id4}.
+\begin{figure}[!h]
+    \centering{}
     \includegraphics[width=0.4\textwidth]{anexos/graphics/mnu_help.jpg}
-\caption{Acceso a la ayuda}\label{config_adic:id4}\end{figure}
-
-\end{description}
+\caption{Acceso a la ayuda}\label{config_adic:id4}
+\end{figure}
 

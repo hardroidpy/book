@@ -1,19 +1,18 @@
 
 \section{Resultados}
 \begin{frame}{Resultados}
-\framesubtitle{Validación del Clasificador}
+\framesubtitle{Procedimiento Guía}
 
-Para validar el clasificador se realizaron dos tipos de pruebas, siguiendos los siguientes pasos:
+Para validar y verificar el clasificador se realizaron dos tipos de pruebas, siguiendos los siguientes pasos:
 
 \begin{itemize}[<+->]
-	\item Se creo un modelos de entrenamiento inicial del clasificador para \emph{HARDroid}.
-	\item Con el modelo inicial se realizaron comparaciones contra \emph{ Sony Lifelog}.
-	\item Luego utilizando el metodo colaborativo, se genero un nuevo modelo y se lo comparo con el inicial.
+	\item Creación de un conjunto de entrenamiento inicial del clasificador para \emph{HARDroid}.
+	\item Evaluación del clasificador inicial en comparación con \emph{Sony Lifelog}.
+	\item Generación de un nuevo conjunto entrenamiento colaborativo cuyo clasificador es comparado con el inicial.
 \end{itemize}
 
 \begin{overprint}
 \onslide<4> 
-
 	\begin{table}[h]
 		\begin{centering}
 			\begin{tabular}{|c|c|c|c|c|c|}
@@ -27,7 +26,7 @@ Para validar el clasificador se realizaron dos tipos de pruebas, siguiendos los 
 				\hline 
 			\end{tabular}
 			\par\end{centering}
-		\caption{Unidades de muestras procesadas en modelo de entrenamiento}
+		\caption{Muestras etiquetadas procesadas en el conjunto de entrenamiento inicial}
 	\end{table}
 \end{overprint}
 
@@ -37,7 +36,7 @@ Para validar el clasificador se realizaron dos tipos de pruebas, siguiendos los 
 \begin{frame}{Resultados}
 \framesubtitle{Validación del Clasificador}
 
-De manera a evaluar el rendimiento de los clasificadores  se describen las siguientes medidas y métricas de predicción:
+De manera a evaluar el rendimiento del clasificado se utilizan medidas y métricas de predicción:
 
 \begin{itemize}
 	\item Número de instancias ($N$): es el tamaño de la población de entrada.
@@ -71,8 +70,7 @@ De manera a evaluar el rendimiento de los clasificadores  se describen las sigui
 \begin{frame}{Resultados}
 \framesubtitle{Validación del Clasificador}
 
-El clasificador generado en este trabajo es un árbol de decisión de tamaño de $677$ nodos, de los cuales $339$
-corresponden a hojas. Las métricas numéricas de predicción se exponen a continuación:
+El clasificador inicial es un árbol de decisión de tamaño de $677$ nodos, de los cuales $339$ son hojas. Las métricas de validación son:
 \begin{itemize}
 	\item Número de instancias ($N$): $12.012$ 
 	\item Instancias correctamente clasificadas ($C$): $10.942$ (91,0922\%)
@@ -120,7 +118,7 @@ corresponden a hojas. Las métricas numéricas de predicción se exponen a continua
 \begin{frame}{Resultados}
 \framesubtitle{Validación del Clasificador}
 
-Con esta matriz se calculan las siguientes métricas de evaluación para clasificadores:
+La matriz se resume con las siguientes métricas de evaluación:
 \begin{itemize}
 	\item Precisión: 0,9174
 	\item Exhaustividad: 0,9109
@@ -130,9 +128,44 @@ Con esta matriz se calculan las siguientes métricas de evaluación para clasifica
 
 \end{frame}
 %
+%
 \begin{frame}{Resultados}
 
-\framesubtitle{Verificación de la clasificación - LifeLog}
+\framesubtitle{Verificación del Clasificador}
+
+\begin{table}[h]
+\centering
+\resizebox{11cm}{!}{
+		\begin{tabular}{|l|c|c|c|c|c|c|}
+			\cline{2-5} 
+			\multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Desaciertos}} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\tabularnewline
+			\hline 
+			Actividad & \texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE} & \textbf{\small{}Aciertos} & \textbf{\small{}Porcentaje}\tabularnewline
+			\hline 
+			\hline 
+			\texttt{\footnotesize{}WALKING} &  &  & 13 &  & 151 & 92,07\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}RUNNING} &  &  & 13 &  & 83 & 86,46\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}STILL} &  &  &  & 8 & 140 & 94,59\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}TILTING}\emph{\footnotesize{}}\footnote{{\footnotesize{}\scalebox{0.7}{Estar inquieto no se considera una actividad ambulatoria, presentándose los datos de manera informativa}}} &  &  &  & 38 & 0 & 0,00\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}ON\_BICYLE} & 8 &  &  & 4 & 59 & 83,10\%\tabularnewline
+			\hline 
+			\texttt{\footnotesize{}IN\_VEHICLE} &  & 11 &  &  & 83 & 88,30\%\tabularnewline
+			\hline 
+		\end{tabular}
+		}
+	\caption[Aciertos y desaciertos de actividades humanas detectadas]{Resumen de actividades detectadas marcadas como aciertos o desaciertos}
+\end{table}
+
+\end{frame}
+
+%
+\begin{frame}{Resultados}
+
+\framesubtitle{Verificación del Clasificador}
 
 \begin{table}[h]
 \centering
@@ -164,41 +197,7 @@ Con esta matriz se calculan las siguientes métricas de evaluación para clasifica
 %
 %
 \begin{frame}{Resultados}
-
-\framesubtitle{Verificación de la clasificación - Colaborativo}
-
-\begin{table}[h]
-\centering
-\resizebox{11cm}{!}{
-		\begin{tabular}{|l|c|c|c|c|c|c|}
-			\cline{2-5} 
-			\multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Desaciertos}} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\tabularnewline
-			\hline 
-			Actividad & \texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}ON\_BICYLE} & \texttt{\footnotesize{}IN\_VEHICLE} & \textbf{\small{}Aciertos} & \textbf{\small{}Porcentaje}\tabularnewline
-			\hline 
-			\hline 
-			\texttt{\footnotesize{}WALKING} &  &  & 13 &  & 151 & 92,07\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{}RUNNING} &  &  & 13 &  & 83 & 86,46\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{}STILL} &  &  &  & 8 & 140 & 94,59\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{}TILTING}\emph{\footnotesize{}}\footnote{{\footnotesize{}\scalebox{0.7}{Estar inquieto no se considera una actividad ambulatoria, presentándose los datos de manera informativa}}} &  &  &  & 38 & 0 & 0,00\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{}ON\_BICYLE} & 8 &  &  & 4 & 59 & 83,10\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{}IN\_VEHICLE} &  & 11 &  &  & 83 & 88,30\%\tabularnewline
-			\hline 
-		\end{tabular}
-		}
-	\caption[Aciertos y desaciertos de actividades humanas detectadas]{Resumen de actividades detectadas marcadas como aciertos o desaciertos}
-\end{table}
-
-\end{frame}
-%
-%
-\begin{frame}{Resultados}
-\framesubtitle{Verificación de la clasificación - Colaborativo}
+\framesubtitle{Verificación del Clasificador}
 
 \begin{table}[H]
 \centering
@@ -226,16 +225,16 @@ Con esta matriz se calculan las siguientes métricas de evaluación para clasifica
 			\hline 
 		\end{tabular}
 		}
-	\caption{Comparación entre modelo inicial y el colaborativo}
+	\caption{Comparación de métricas de predicción}
 \end{table}
 
 \end{frame}
 %
 %
 \begin{frame}{Resultados}
-\framesubtitle{Verificación de la clasificación - Colaborativo}
+\framesubtitle{Verificación del Clasificador}
 
-De vuelta se calculan las métricas de evaluación para el nuevo clasificador:
+Las métricas de evaluación del clasificador colaborativo:
 \begin{itemize}
 	\item Precisión: 0,9204 (Antes 0,9174)
 	\item Exhaustividad: 0,9134 (Antes 0,9109)
