@@ -1,61 +1,81 @@
 
 \section{Metodología HAR}
 
-\begin{frame}{Metodología HAR}
+\begin{frame}[t]{Metodología HAR}
 \framesubtitle{Definición Teórica}
 
-\begin{definition}[Problema HAR relajado]Dado (1) un conjunto $W=\{w_{0},...,w_{m-1}\}$
-	de $m$ ventanas de tiempo del mismo tamaño, donde cada una está total
-	o parcialmente etiquetada, y que cada $w_{j}$ contiene un conjunto
-	de series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$ para cada $k$
-	atributos medidos, y (2) un conjunto $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$
-	de etiquetas de actividades, el objetivo es encontrar una función
-	$f\colon S_{j}\rightarrow A$ que sea evaluada para todos los valores
-	posibles de $S_{j}$, tal que $f(S_{j})$ es lo más próximo a la acción
-	realizada durante $w_{j}$ \end{definition}
+\textbf{[Problema HAR]} \\~\
+
+Dado un conjunto $W=\{w_{0},...,w_{m-1}\}$ con $m$ ventanas de tiempo \\~\ 
+
+donde cada $w_{j}$ contiene series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$ para $k$ señales \\~\ \par
+
+Y un conjunto $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$ de actividades \\~\
+
+El objetivo es encontrar $\mathbf{  F\colon S_{j}\rightarrow A }$ para todos los $S_{j}$ \\~\
+
 \end{frame}
 
 
 \begin{frame}{Metodología HAR}
 
 \framesubtitle{Proceso de aprendizaje}
-\begin{center}
-\includegraphics[width=8cm]{../capitulo-2/graphics/harsystem}
-\par\end{center}
+\begin{overprint}
+	\onslide<1> 
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-1}
+		\par
+	\end{center}
+	
+	\onslide<2> 
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-2}
+		\par
+	\end{center}
+	
+	\onslide<3> 
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-3}
+		\par
+	\end{center}
+	
+	\onslide<4> 
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-4}
+		\par
+	\end{center}
+	
+	\onslide<5> 
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-5}
+		\par
+	\end{center}
+	
+	\onslide<6> 
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-6}
+		\par
+	\end{center}
+	
+	\onslide<7> 
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-7}
+		\par
+	\end{center}
+	
+	
+\end{overprint}
+
+%\begin{center}
+%\includegraphics[width=8cm]{../capitulo-2/graphics/harsystem}
+%\par\end{center}
 
 \end{frame}
 %
 \begin{frame}{Metodología HAR}
-\framesubtitle{Proceso de aprendizaje}
-\begin{itemize}
-	\item Como en otros métodos de aprendizaje automático, el proceso de reconocimiento se divide en dos etapas conocidas:
-	\begin{itemize}
-		\item Entrenamiento
-		\item Evaluación
-	\end{itemize}
-	\item En el entrenamiento requiere:
-		\begin{itemize}
-			\item Colecta de conjunto de Datos en series de tiempo.
-			\item Se realiza la extracción de muestras en ventanas de tiempo, calculando las características de entrenamiento.
-			\item Se genera un modelo de Reconocimiento de Actividades a través de un método de aprendizaje automático.
-		\end{itemize}
-	\item En la evaluación, de igual manera, se recopila los datos, se realiza la extracción de muestras y calculo de las mismas características del entrenamiento, de modo a evaluar el modelo generado.
-\end{itemize}
-\end{frame}
-%
-\begin{frame}{Metodología HAR}
 \framesubtitle{Colección de Datos}
-	\begin{itemize}
-		\item El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cintura, muñeca, muslos, etc).
-		
-		\item El método de grabación consiste en capturar las señales de un sensor o más sensores a un individuo realizando alguna actividad de interés.
-		
-		\item Las señales de sensores pueden clasificarse según el movimiento, la posición, el entorno y la fisiología.	
-	\end{itemize}
-\end{frame}
-%
-\begin{frame}{Metodología HAR}
-\framesubtitle{Colección de Datos}
+El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cintura, muñeca, muslos, etc) realizando alguna actividad de interés.
+
 \begin{center}
 \resizebox{\linewidth}{!}{
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -110,8 +130,9 @@
 	
 \column{6cm}
 	\begin{itemize}[<+->]
-		\item \underline{Etiquetado}: Los datos de los sensores se deben recopilar y etiquetar utilizando una aplicación diseñada para el caso, por ejemplo, en este trabajo se usa un teléfono Android y la aplicación SensorLog.
-		\item \underline{Suavizado}: Los sensores electrónicos pueden introducir cierta inestabilidad en la señal (jitter) que afectan la calidad de los datos. Para reducir el ruido de la señal, se deben aplicar uno o más filtros. 
+		\setlength\itemsep{1em}
+		\item \underline{Etiquetado}: Los datos de los sensores se deben recopilar y etiquetar.
+		\item \underline{Suavizado}: Los sensores electrónicos pueden introducir cierta inestabilidad en la señal (jitter) para reducir esto se aplica uno o mas filtros. 
 	\end{itemize}
 
 
@@ -138,8 +159,9 @@
 	
 \column{6cm}
 	\begin{itemize}[<+->]
-		\item \underline{Muestreo}: Los datos colectados se segmentan en ventanas de tiempo de muestras discretas utilizadas como unidades de reconocimiento de actividad. Para aumentar el número de muestras, se utiliza una superposición del 50\%.
-		\item \underline{Extracción de Características}: El proceso de extracción consiste en extraer valores característicos en cada ventana de tiempo mediante la visualización de información relevante y el cálculo de valores que identifican de cierta manera las señales.
+		\setlength\itemsep{1em}
+		\item \underline{Muestreo}: Los datos colectados se segmentan en ventanas de tiempo discretas.
+		\item \underline{Extracción de Características}: El proceso de extracción consiste en extraer valores característicos en cada ventana de tiempo.
 	\end{itemize}
 
 \column{4cm}
@@ -202,8 +224,17 @@ Las métricas estadísticas con respecto al tiempo y frecuencia:
 \begin{frame}{Metodología HAR}	
 \framesubtitle{Aprendizaje e inferencia}
 \begin{itemize}
-	\item Un HAR es similar a cualquier aplicación de aprendizaje automático donde se requiere un algoritmo para extraer información de los datos. El objetivo principal del algoritmo es clasificar los datos desconocidos.
-	\item Hay muchos algoritmos de clasificación, como Arboles de Decisión, SVM, clasificadores de Bayes, Modelos de Markov, Redes Neuronales y otros.
+	\setlength\itemsep{1em}
+	\item Un HAR es similar a cualquier aplicación de aprendizaje automático. 
+	\item El objetivo principal del algoritmo es clasificar los datos desconocidos.
+	\item Hay muchos algoritmos de clasificación: 
+	\begin{itemize}
+		\item Arboles de Decisión
+		\item SVM
+		\item Clasificadores de Bayes, 
+		\item Modelos de Markov
+		\item Redes Neuronales y otros.
+	\end{itemize}
 \end{itemize}
 \end{frame}
 %
@@ -224,13 +255,7 @@ Las métricas estadísticas con respecto al tiempo y frecuencia:
 	
 \column{4cm}
 	\begin{overprint}
-		\onslide<1-2> 
-		\begin{center}
-			\includegraphics[width=\textwidth]{propuesta/graphics/table_frecuencia.jpg}
-			\par
-		\end{center}
-		
-		\onslide<3-5> 
+		\onslide<1-5> 
 		\begin{center}
 			\includegraphics[width=\textwidth]{propuesta/graphics/dtree}
 			\par
