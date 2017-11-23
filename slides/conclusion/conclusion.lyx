@@ -126,20 +126,70 @@ HAR
 
 \begin_deeper
 \begin_layout Itemize
-Aciertos del 91%
+Aciertos del 
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+91%
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Confiabilidad de datos del 87%.
+Confiabilidad de datos del 
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+87%
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
-Errores absolutos menores a 1%.
+Errores absolutos menores a 
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+1%
+\end_layout
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Itemize
-Precisión y exhaustividad entre el 91% y el 92%.
+Precisión y exhaustividad entre el 
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+91%
+\end_layout
+
+\end_inset
+
+ y el 
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+92%
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Pause
@@ -556,21 +606,6 @@ t
 \begin_deeper
 \begin_layout FrameSubtitle
 Congresos y presentaciones
-\end_layout
-
-\begin_layout Itemize
-ACM CHI 2018 - Conference on Human Factors in Computing Systems - Montréal,
- Canada - 
-\begin_inset Flex Emphasize
-status open
-
-\begin_layout Plain Layout
-(Pendiente)
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Itemize

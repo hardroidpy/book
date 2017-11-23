@@ -3857,7 +3857,7 @@ nto se realiza una publicación de resultados a los clientes correspondientes.
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset ERT
@@ -3920,9 +3920,9 @@ leftarrow 10$
 
 \begin_layout Plain Layout
 
-
+        
 \backslash
-rcomment{Ventana de tiempo estándar de reconocimiento}
+Comment{Ventana de tiempo estándar de reconocimiento}
 \end_layout
 
 \begin_layout Plain Layout

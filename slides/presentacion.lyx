@@ -25,8 +25,13 @@
 \setbeamertemplate{theorems}[numbered]
 \theoremstyle{definition} 
 \newtheorem{definition}{Definición}[section]
+\usepackage{algpseudocode}
+
+\newcommand{\alertline}{%
+ \usebeamercolor[fg]{normal text}%
+ \only{\usebeamercolor[fg]{alerted text}}}
 \end_preamble
-\options oneside,mathserif,notheorems,table
+\options aspectratio=43,oneside,mathserif,notheorems,table
 \use_default_options true
 \maintain_unincluded_children false
 \language spanish
@@ -98,7 +103,7 @@ Reconocimiento de Actividades Humanas con un enfoque colaborativo
 \end_layout
 
 \begin_layout Subtitle
-Tesis de Grado
+Proyecto Final de Grado
 \end_layout
 
 \begin_layout Author
@@ -209,14 +214,6 @@ tableofcontents[currentsection]
 
 \begin_layout Plain Layout
 
-%
-\backslash
-tableofcontents[currentsection, currentsubsection,  hideothersubsections,
-    subsectionstyle=show/shaded,  ] 
-\end_layout
-
-\begin_layout Plain Layout
-
 	
 \backslash
 end{frame} 
@@ -270,9 +267,6 @@ filename "propuesta/sistema-har.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "propuesta/hardroid.lyx"
@@ -280,9 +274,6 @@ filename "propuesta/hardroid.lyx"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
 filename "resultados/resultados.tex"

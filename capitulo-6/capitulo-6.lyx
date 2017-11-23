@@ -180,11 +180,37 @@ reference "sec6:resultados"
  conjunto entrenamiento inicial son presentados.
  Aquí se expone la evaluación de los resultados producidos por 
 \emph on
-HARDroid 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+ 
 \emph default
 en conjunción con la aplicación 
 \emph on
-ActivitySurvey
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ActivitySurvey}
+\end_layout
+
+\end_inset
+
+
 \emph default
  desarrollada para esta tarea.
 \end_layout
@@ -402,6 +428,8 @@ Sensor
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
 Android
 \end_layout
 
@@ -4270,11 +4298,37 @@ name "sec6:resultados"
 En esta sección se describen los resultados del experimento realizado utilizando
  la aplicación 
 \emph on
-ActivitySurvey
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ActivitySurvey}
+\end_layout
+
+\end_inset
+
+
 \emph default
  que utiliza el reconocedor 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
 , ambos desarrollados en este trabajo.
  Los datos presentados en esta sección permiten verificar el funcionamiento
@@ -4309,7 +4363,20 @@ abbr{HAR}
 
  de 
 \emph on
-HARDroid 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+ 
 \emph default
 se condujo un experimento de prueba basado en una sesión de actividades
  físicas realizadas por dos personas.
@@ -4317,7 +4384,20 @@ se condujo un experimento de prueba basado en una sesión de actividades
  ambulatorias y de transporte por un periodo comprendido entre 10 a 20 minutos
  utilizando la aplicación 
 \emph on
-ActivitySurvey
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ActivitySurvey}
+\end_layout
+
+\end_inset
+
+
 \emph default
 .
  
@@ -4672,12 +4752,38 @@ Resumen de sesiones de evaluación
 \begin_layout Standard
 La aplicación móvil 
 \emph on
-ActivitySurvey
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ActivitySurvey}
+\end_layout
+
+\end_inset
+
+
 \emph default
  consulta la exactitud o acierto de predicción de la actividad humana detectada
  por el servicio autónomo 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
  en intervalos regulares.
  Durante una sesión se registra la información del teléfono, correo, edad,
@@ -5442,7 +5548,20 @@ name "ssec6:validacion"
 
 Para validar los resultados de la clasificación producida por 
 \emph on
-HARDroid 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+ 
 \emph default
 se condujo un experimento de prueba basado en la misma sesión de actividades
  físicas realizadas por una persona.
@@ -5456,7 +5575,20 @@ Lifelog
 \emph default
  al mismo tiempo que la aplicación 
 \emph on
-ActivitySurvey
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ActivitySurvey}
+\end_layout
+
+\end_inset
+
+
 \emph default
  durante las sesiones de pruebas.
  
@@ -5917,7 +6049,20 @@ HARDroid
 \begin_layout Standard
 Cada actividad detectada por 
 \emph on
-HARDroid
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{HARDroid}
+\end_layout
+
+\end_inset
+
+
 \emph default
  fue validada conforme la predicción de la aplicación 
 \emph on
@@ -6041,7 +6186,20 @@ secref{sec55:activity}
 
 , la aplicación móvil 
 \emph on
-ActivitySurvey
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abbr{ActivitySurvey}
+\end_layout
+
+\end_inset
+
+
 \emph default
  está diseñada para recabar información que es utilizada para mejorar el
  clasificador continuamente.

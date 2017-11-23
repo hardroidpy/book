@@ -690,6 +690,17 @@ description "Servicio de Reconocimiento de Actividades para Android"
 \begin_layout Standard
 \begin_inset CommandInset nomenclature
 LatexCommand nomenclature
+symbol "ActivitySurvey"
+description "Encuesta de Reconocimiento de Actividades para Android"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
 symbol "SDK"
 description "Software Development Kit"
 

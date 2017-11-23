@@ -137,7 +137,7 @@ frontmatter
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "preambulo_0/agradecimientos.lyx"
+filename "preambulo_0/agradecimientos.tex"
 
 \end_inset
 
@@ -147,7 +147,7 @@ filename "preambulo_0/agradecimientos.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "preambulo_0/resumen.lyx"
+filename "preambulo_0/resumen.tex"
 
 \end_inset
 

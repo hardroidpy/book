@@ -7,30 +7,30 @@
 \setbeamercovered{transparent}
 \begin{columns}
 
-\column{0.5\textwidth}
+\column{0.4\textwidth}
 \begin{itemize}
 \item \textbf{HARDroid} 
 \begin{itemize}
-\item Es un servicio utilitario de reconocimiento.
-\item Clasificador dinámico (\structure{DEX})
+\item Servicio utilitario de reconocimiento.
+\item Clasificador dinámico
 \end{itemize}
 
 \pause{}
 \item \textbf{ActivitySurvey}
 \begin{itemize}
-\item Aplicación de encuesta que depende del servicio.
-\item Registra evaluaciones de los usuarios. 
+\item Aplicación que depende del servicio.
+\item Encuesta a usuarios. 
 \end{itemize}
 
 \pause{}
 \item \textbf{Backend C4.5} 
 \begin{itemize}
-\item Servicio web de recolección de evaluaciones.
-\item Los aciertos son utilizados para mejorar el clasificador.
+\item Servicio web de recolección.
+\item Aciertos son utilizados para mejorar el clasificador.
 \end{itemize}
 \end{itemize}
 
-\column{0.5\textwidth}
+\column{0.6\textwidth}
 \begin{center}
 \includegraphics[width=1\columnwidth]{../capitulo-5/graphics/arqui_general}
 \par\end{center}
@@ -106,11 +106,39 @@
 %
 \begin{frame}{HAR en Android}
 
-\framesubtitle{Motor Reconocedor de Actividades}
-\begin{center}
-\includegraphics[width=0.8\columnwidth]{propuesta/graphics/algoritmoHAR}
-\par\end{center}
+\framesubtitle{Reconocimiento de Actividades}
 
+\centering\resizebox{0.60\textwidth}{!}{%
+\noindent\begin{minipage}[t][1\totalheight][b]{1\columnwidth}%
+\begin{algorithm}
+\begin{algorithmic}[1]
+    \Require Conjunto de tiempos de subscripción de clientes $S$
+	\Procedure{Reconocimiento}{$ S $}
+		\alertline<1> \If {$S \textit{ está vacío } $}
+ 			\State\textit{Terminar}
+		\EndIf 
+		\alertline<2> \State $t_w \leftarrow 10$ 
+        \Comment{Ventana de tiempo estándar de reconocimiento}
+		\alertline<3> \State $t_{min} \leftarrow \min_{\forall s \in S} s$
+		\alertline<4> \State Esperar $t_{min} - t_w$ segundos 
+		\alertline<5> \State $ a_{xyz} = $ Leer sensor por $t_w$ segundos o 512 muestras  
+		\alertline<6> {\State $ C = \emptyset$}
+		\alertline<7> \For{$i := 1 \to 512$}
+			\alertline<8> \State $ v_f = $ Calcular vector caracteristicos de $a_{xyz}$ con valores entre $[i, i + 127]$
+			\alertline<9> \State $ c_a = $ Clasificar $v_f$ con el algoritmo \textit{C4.5}
+			\alertline<10> \State $ C = C \cup \{c_a\}$
+			\alertline<7> \State $i := i + 64$
+        \alertline<7> \EndFor
+        \alertline<11> \State $ M = $ Calcular matriz de confusión de $C$
+		\State
+		\alertline<11> \Return $ M $
+	\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+%
+\end{minipage}
+
+}
 \end{frame}
 %
 \begin{frame}{HAR en Android}

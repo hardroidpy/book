@@ -120,7 +120,7 @@ status open
 
 \begin_layout Plain Layout
 
-0.5
+0.4
 \backslash
 textwidth
 \end_layout
@@ -145,21 +145,11 @@ HARDroid
 
 \begin_deeper
 \begin_layout Itemize
-Es un servicio utilitario de reconocimiento.
+Servicio utilitario de reconocimiento.
 \end_layout
 
 \begin_layout Itemize
-Clasificador dinámico (
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-DEX
-\end_layout
-
-\end_inset
-
-)
+Clasificador dinámico
 \end_layout
 
 \begin_layout Pause
@@ -182,11 +172,11 @@ ActivitySurvey
 
 \begin_deeper
 \begin_layout Itemize
-Aplicación de encuesta que depende del servicio.
+Aplicación que depende del servicio.
 \end_layout
 
 \begin_layout Itemize
-Registra evaluaciones de los usuarios.
+Encuesta a usuarios.
  
 \end_layout
 
@@ -210,11 +200,11 @@ Backend C4.5
 
 \begin_deeper
 \begin_layout Itemize
-Servicio web de recolección de evaluaciones.
+Servicio web de recolección.
 \end_layout
 
 \begin_layout Itemize
-Los aciertos son utilizados para mejorar el clasificador.
+Aciertos son utilizados para mejorar el clasificador.
 \end_layout
 
 \end_deeper
@@ -224,7 +214,7 @@ status open
 
 \begin_layout Plain Layout
 
-0.5
+0.6
 \backslash
 textwidth
 \end_layout
@@ -661,15 +651,295 @@ HAR en Android
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Motor Reconocedor de Actividades
+Reconocimiento de Actividades
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename graphics/algoritmoHAR.png
-	lyxscale 50
-	width 80col%
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\backslash
+resizebox{0.60
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "b"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{algorithmic}[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+Require Conjunto de tiempos de subscripción de clientes $S$
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+Procedure{Reconocimiento}{$ S $}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+alertline<1> 
+\backslash
+If {$S 
+\backslash
+textit{ está vacío } $}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 			
+\backslash
+State
+\backslash
+textit{Terminar}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+EndIf 
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+alertline<2> 
+\backslash
+State $t_w 
+\backslash
+leftarrow 10$ 
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+Comment{Ventana de tiempo estándar de reconocimiento}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+alertline<3> 
+\backslash
+State $t_{min} 
+\backslash
+leftarrow 
+\backslash
+min_{
+\backslash
+forall s 
+\backslash
+in S} s$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+alertline<4> 
+\backslash
+State Esperar $t_{min} - t_w$ segundos 
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+alertline<5> 
+\backslash
+State $ a_{xyz} = $ Leer sensor por $t_w$ segundos o 512 muestras  
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+alertline<6> {
+\backslash
+State $ C = 
+\backslash
+emptyset$}
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+alertline<7> 
+\backslash
+For{$i := 1 
+\backslash
+to 512$}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+alertline<8> 
+\backslash
+State $ v_f = $ Calcular vector caracteristicos de $a_{xyz}$ con valores
+ entre $[i, i + 127]$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+alertline<9> 
+\backslash
+State $ c_a = $ Clasificar $v_f$ con el algoritmo 
+\backslash
+textit{C4.5}
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+alertline<10> 
+\backslash
+State $ C = C 
+\backslash
+cup 
+\backslash
+{c_a
+\backslash
+}$
+\end_layout
+
+\begin_layout Plain Layout
+
+			
+\backslash
+alertline<7> 
+\backslash
+State $i := i + 64$
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+alertline<7> 
+\backslash
+EndFor
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+alertline<11> 
+\backslash
+State $ M = $ Calcular matriz de confusión de $C$
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+State
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+alertline<11> 
+\backslash
+Return $ M $
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+EndProcedure
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{algorithmic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 

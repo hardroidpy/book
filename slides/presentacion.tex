@@ -1,6 +1,6 @@
 %% LyX 2.2.0 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[spanish,oneside,mathserif,notheorems,table]{beamer}
+\documentclass[spanish,aspectratio=43,oneside,mathserif,notheorems,table]{beamer}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \setcounter{secnumdepth}{3}
@@ -8,6 +8,13 @@
 \usepackage{graphicx}
 
 \makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\floatstyle{}
+\newfloat{}{}{}
+\providecommand{\name}{}
+\floatname{}{\protect\name}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
  % this default might be overridden by plain title style
  \newcommand\makebeamertitle{\frame{\maketitle}}%
@@ -38,6 +45,11 @@
 \setbeamertemplate{theorems}[numbered]
 \theoremstyle{definition} 
 \newtheorem{definition}{Definición}[section]
+\usepackage{algpseudocode}
+
+\newcommand{\alertline}{%
+ \usebeamercolor[fg]{normal text}%
+ \only{\usebeamercolor[fg]{alerted text}}}
 
 \makeatother
 
@@ -48,7 +60,7 @@
 
 \title{Reconocimiento de Actividades Humanas con un enfoque colaborativo}
 
-\subtitle{Tesis de Grado}
+\subtitle{Proyecto Final de Grado}
 
 \author{Alberto Gimenez\\
 Santiago Yegros}
@@ -68,7 +80,6 @@ Santiago Yegros}
 {
 	\begin{frame}
 		\frametitle{Contenido}        		\tableofcontents[currentsection]
-%\tableofcontents[currentsection, currentsubsection,  hideothersubsections,    subsectionstyle=show/shaded,  ] 
 	\end{frame} 
 }
 
@@ -78,11 +89,7 @@ Santiago Yegros}
 
 \include{propuesta/estado-har}
 
-\include{propuesta/sistema-har}
-
-\include{propuesta/hardroid}
-
-\include{resultados/resultados}
+\include{propuesta/sistema-har}\include{propuesta/hardroid}\include{resultados/resultados}
 
 \include{conclusion/conclusion}
 \end{document}

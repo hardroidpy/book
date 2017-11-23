@@ -24,8 +24,8 @@ ambientes productivos.
 Finalmente, en la sección \ref{sec6:resultados} los resultados producidos
 al utilizar el clasificador construido con el conjunto entrenamiento
 inicial son presentados. Aquí se expone la evaluación de los resultados
-producidos por \emph{HARDroid }en conjunción con la aplicación \emph{ActivitySurvey}
-desarrollada para esta tarea.
+producidos por \emph{\abbr{HARDroid} }en conjunción con la aplicación
+\emph{\abbr{ActivitySurvey}} desarrollada para esta tarea.
 
 \section{Datos Experimentales}
 
@@ -64,7 +64,7 @@ en la \tabref{tab6:dispositivos} junto con sus características relevantes.
 \begin{centering}
 \begin{tabular}{|l|>{\raggedright}p{2.5cm}|l|>{\raggedright}p{2cm}|l|}
 \hline 
-Marca/modelo & CPU & RAM/ROM & Sensor & Android\tabularnewline
+Marca/modelo & CPU & RAM/ROM & Sensor & \emph{Android}\tabularnewline
 \hline 
 \hline 
 LG G2 & 1.2GHz Cortex-A7 & 1GB/8GB & BMI160 & Nougat 7.0\tabularnewline
@@ -480,9 +480,9 @@ la media armónica de ambos.
 \section{Resultados Experimentales}
 
 \label{sec6:resultados}En esta sección se describen los resultados
-del experimento realizado utilizando la aplicación \emph{ActivitySurvey}
-que utiliza el reconocedor \emph{HARDroid}, ambos desarrollados en
-este trabajo. Los datos presentados en esta sección permiten verificar
+del experimento realizado utilizando la aplicación \emph{\abbr{ActivitySurvey}}
+que utiliza el reconocedor \emph{\abbr{HARDroid}}, ambos desarrollados
+en este trabajo. Los datos presentados en esta sección permiten verificar
 el funcionamiento correcto de los componentes de software implementados
 así como también validar las predicciones emitidas por el reconocedor
 de actividades humanas contribuido en este trabajo.
@@ -490,11 +490,11 @@ de actividades humanas contribuido en este trabajo.
 \subsection{Verificación del Clasificador HAR}
 
 \label{ssec6:verificacion}Para verificar el clasificador \abbr{HAR}
-de \emph{HARDroid }se condujo un experimento de prueba basado en una
-sesión de actividades físicas realizadas por dos personas. El protocolo
-consistió en realizar cada una de las actividades básicas ambulatorias
-y de transporte por un periodo comprendido entre 10 a 20 minutos utilizando
-la aplicación \emph{ActivitySurvey}. 
+de \emph{\abbr{HARDroid} }se condujo un experimento de prueba basado
+en una sesión de actividades físicas realizadas por dos personas.
+El protocolo consistió en realizar cada una de las actividades básicas
+ambulatorias y de transporte por un periodo comprendido entre 10 a
+20 minutos utilizando la aplicación \emph{\abbr{ActivitySurvey}}. 
 
 En la \tabref{tab6:vsesiones} se muestra el resumen del tiempo invertido
 en minutos por cada persona en las actividades humanas realizadas
@@ -518,12 +518,12 @@ mate9 & 12 & 7 & 18 & - & 15 & 14\tabularnewline
 \caption{\label{tab6:vsesiones}Resumen de sesiones de evaluación}
 \end{table}
 
-La aplicación móvil \emph{ActivitySurvey} consulta la exactitud o
-acierto de predicción de la actividad humana detectada por el servicio
-autónomo \emph{HARDroid} en intervalos regulares. Durante una sesión
-se registra la información del teléfono, correo, edad, la fecha y
-hora, la etiqueta de la actividad detectada y la etiqueta de la actividad
-corregida en caso de una aseveración. En la \figref{fig6:activity-survey}
+La aplicación móvil \emph{\abbr{ActivitySurvey}} consulta la exactitud
+o acierto de predicción de la actividad humana detectada por el servicio
+autónomo \emph{\abbr{HARDroid}} en intervalos regulares. Durante
+una sesión se registra la información del teléfono, correo, edad,
+la fecha y hora, la etiqueta de la actividad detectada y la etiqueta
+de la actividad corregida en caso de una aseveración. En la \figref{fig6:activity-survey}
 se muestra la interfaz de usuario de la aplicación de encuesta durante
 una sesión de entrenamiento.
 
@@ -580,10 +580,10 @@ que son aquellas más difíciles de pronosticar.
 \subsection{Validación de la Clasificación}
 
 \label{ssec6:validacion}Para validar los resultados de la clasificación
-producida por \emph{HARDroid }se condujo un experimento de prueba
-basado en la misma sesión de actividades físicas realizadas por una
-persona. El protocolo consistió en utilizar la aplicación \emph{Sony}
-\emph{Lifelog} al mismo tiempo que la aplicación \emph{ActivitySurvey}
+producida por \emph{\abbr{HARDroid} }se condujo un experimento de
+prueba basado en la misma sesión de actividades físicas realizadas
+por una persona. El protocolo consistió en utilizar la aplicación
+\emph{Sony} \emph{Lifelog} al mismo tiempo que la aplicación \emph{\abbr{ActivitySurvey}}
 durante las sesiones de pruebas. 
 
 En la \tabref{tab6:vclasificacion} se muestra el intervalo de tiempo
@@ -615,9 +615,9 @@ nexus5x & \texttt{-} & 22:25 - 22:35 & 10 & \texttt{STILL} & 65/65\tabularnewlin
 por \emph{HARDroid} vs\emph{ Sony Lifelog}}
 \end{table}
 
-Cada actividad detectada por \emph{HARDroid} fue validada conforme
-la predicción de la aplicación \emph{Sony} \emph{Lifelog,} asumiéndose
-que esta última posee un acierto del 100\%. 
+Cada actividad detectada por \emph{\abbr{HARDroid}} fue validada
+conforme la predicción de la aplicación \emph{Sony} \emph{Lifelog,}
+asumiéndose que esta última posee un acierto del 100\%. 
 
 En la \figref{fig6:vlifelog} se muestran dos pantallas de la aplicación
 \emph{Sony Lifelog }capturadas durante las sesiones de prueba donde
@@ -636,11 +636,12 @@ de cada sesión.
 \subsection{Entrenamiento Colaborativo}
 
 \label{ssec6:colaboracion}Así como se expuso en la \secref{sec55:activity},
-la aplicación móvil \emph{ActivitySurvey} está diseñada para recabar
-información que es utilizada para mejorar el clasificador continuamente.
-Utilizando este enfoque la información recolectada durante la evaluación
-fue combinada con los datos calculados inicialmente para generar un
-nuevo clasificador con datos colaborados durante las pruebas.
+la aplicación móvil \emph{\abbr{ActivitySurvey}} está diseñada para
+recabar información que es utilizada para mejorar el clasificador
+continuamente. Utilizando este enfoque la información recolectada
+durante la evaluación fue combinada con los datos calculados inicialmente
+para generar un nuevo clasificador con datos colaborados durante las
+pruebas.
 
 Siguiendo el mismo procedimiento de la \secref{sec6:clasificador}
 se generó un clasificador colaborativo a partir de las instancias

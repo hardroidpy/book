@@ -739,7 +739,7 @@ correspondientes. El algoritmo de reconocimiento se describe a continuación.
  			\State\textit{Terminar}
 		\EndIf
 		\State $t_w \leftarrow 10$
-\rcomment{Ventana de tiempo estándar de reconocimiento}
+        \Comment{Ventana de tiempo estándar de reconocimiento}
 		\State $t_{min} \leftarrow \min_{\forall s \in S} s$
 		\State Esperar $t_{min} - t_w$ segundos 
 		\State $ a_{xyz} = $ Leer sensor por $t_w$ segundos o 512 muestras
