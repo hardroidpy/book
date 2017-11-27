@@ -1,0 +1,114 @@
+\begin{frame}
+\frametitle{Anexo 1}
+\framesubtitle{Selección de atributo de división}
+
+Podemos partir con esta tabla como datos iniciales de entrenamiento:
+
+\setbeamercovered{transparent}
+\begin{columns}
+
+\column{0.3\textwidth}
+	\pause{}
+	\begin{itemize}
+		\item Calcular Ganancia de cada atributo.		
+		\item Calcular proporción de ganancia.
+	\end{itemize}
+
+
+\column{0.7\textwidth}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{anexo/graphics/tabla_inicial}
+		\par
+	\end{center}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Anexo 1}
+\framesubtitle{Selección de atributo de división}
+
+Por ejemplo tomamos al atributo ESTADO:
+
+\setbeamercovered{transparent}
+\begin{columns}[t]
+	
+	\column{0.6\textwidth}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{anexo/graphics/tabla_estado}
+		\par
+	\end{center}
+	
+	
+	\column{0.4\textwidth}
+	\pause{}
+	\begin{center}
+		\includegraphics[width=1\columnwidth]{anexo/graphics/estado_resumen}
+		\par
+	\end{center}
+
+	\scalebox{0.7}{%
+		\vbox{
+		\begin{equation*}Info(D) = - \displaystyle\sum_{i=1}^{m} p_{i}\log_2(p_{i}) \end{equation*}
+		\begin{equation*}Info(D) = - \frac{4}{14}\log_2(\frac{4}{14}) - \frac{10}{14}\log_2(\frac{10}{14}) \end{equation*}
+ 		\begin{equation*}Info(D) = 0.863 \, bits \end{equation*}
+	}}
+\end{columns}
+\end{frame}
+%
+\begin{frame}
+\frametitle{Anexo 1}
+\framesubtitle{Selección de atributo de división}
+
+Luego calculamos la ganancia al dividir en el atributo ESTADO:
+
+\begin{equation*}
+	\begin{split}
+		Info_{Estado}(D) 	& = \frac{5}{14} \times ( -\frac{1}{5}\log_2(\frac{1}{5})-\frac{4}{5}\log_2(\frac{4}{5})  ) \\
+							& + \frac{4}{14} \times ( -\frac{2}{4}\log_2(\frac{2}{4})-\frac{2}{4}\log_2(\frac{2}{4})  ) \\
+							& + \frac{5}{14} \times ( -\frac{1}{5}\log_2(\frac{1}{5})-\frac{4}{5}\log_2(\frac{4}{5})  ) \\
+							& = 0.801 \, bits.
+	\end{split}
+\end{equation*}
+
+\begin{equation*}Gain(Estado) = Info(D) - Info_{Estado}(D) \end{equation*}
+\begin{equation*}Gain(Estado) = 0.061 \, bits \end{equation*}
+
+\end{frame}
+%
+\begin{frame}[t]
+\frametitle{Anexo 1}
+\framesubtitle{Selección de atributo de división}
+
+Repitiendo los pasos para el resto de los atributos:
+
+\begin{equation*}Gain(Humedad) = 0.012 \, bits \end{equation*}
+\begin{equation*}Gain(Viento)  = 0.005 \, bits \end{equation*}
+\begin{equation*}\alert<1>{Gain(Estado) = 0.061 \, bits}\end{equation*}
+
+Por lo tanto el mejor atributo de división es \textit{ESTADO}
+
+\end{frame}
+%
+\begin{frame}
+\frametitle{Anexo 1}
+\framesubtitle{Selección de atributo de división}
+
+Finalmente la división en el atributo ESTADO quedaría de la siguiente manera:
+
+\begin{overprint}
+
+\onslide<1>
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{anexo/graphics/tabla_coloreada}
+		\par
+	\end{center}
+
+\onslide<2>
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{anexo/graphics/primera_division}
+		\par
+	\end{center}
+
+\end{overprint}
+
+\end{frame}
