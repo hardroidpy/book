@@ -154,7 +154,7 @@ En la siguiente \tabref{tabla:sencilla2} se presenta un conjunto de entrenamient
 Existen nueve tuplas de la clase $SI$, y cinco de la clase $NO$. Para encontrar el criterio de división para las tuplas debemos calcular la ganancia de información de cada atributo. Primero usamos la ecuación \ref{eq3:info} para calcular la información esperada necesaria para clasificar una tupla en $D$:
 
 \begin{equation*}
-Info(D) = - \frac{9}{14}\log_2(\frac{9}{14}) - \frac{5}{14}\log_2(\frac{5}{14})	= 0.940 bits
+Info(D) = - \frac{9}{14}\log_2(\frac{9}{14}) - \frac{5}{14}\log_2(\frac{5}{14})	= 0.940 \, bits
 \end{equation*}
 
 \begin{table}[!htbp]
@@ -190,14 +190,14 @@ Luego, necesitamos calcular la información requerida por cada atributo. Comenza
 Info_{Edad}(D) & = \frac{5}{14} \times ( -\frac{2}{5}\log_2(\frac{2}{5})-\frac{3}{5}\log_2(\frac{3}{5})  ) \\
 			   & + \frac{4}{14} \times ( -\frac{4}{4}\log_2(\frac{4}{4})-\frac{0}{4}\log_2(\frac{0}{4})  ) \\
 			   & + \frac{5}{14} \times ( -\frac{3}{5}\log_2(\frac{3}{5})-\frac{2}{5}\log_2(\frac{2}{5})  ) \\
-			   & = 0.694 bits.
+			   & = 0.694 \, bits.
 \end{split}
 \end{equation*}
 
 Por lo tanto, la ganancia esperada de realizar tal partición seria de acuerdo a la ecuación \ref{eq3:ganancia}:
 
 \begin{equation*}
-Gain(Edad) = Info(D) - Info_{Edad}(D) = 0.940 - 0.694 = 0.246 bits
+Gain(Edad) = Info(D) - Info_{Edad}(D) = 0.940 - 0.694 = 0.246 \, bits
 \end{equation*}
 
 De la misma manera, se procede a calcular las ganancias para cada atributo:
@@ -251,13 +251,13 @@ De la misma manera que el ejemplo anterior, utilizando la \tabref{tabla:sencilla
 SplitInfo_{ingreso}(D) = & - \frac{4}{14} \times \log_2(\frac{4}{14}) \\
 						 & - \frac{6}{14} \times \log_2(\frac{6}{14}) \\
 						 & - \frac{4}{14} \times \log_2(\frac{4}{14}) \\
-						 & = 0.926 bits.
+						 & = 0.926 \, bits.
 \end{equation*}
 
 Tomando del ejemplo anterior, la información de ganancia $Gain(Ingreso)$ = 0.029 bits, la proporción de ganancia la calcularíamos:
 
 \begin{equation*}
-GainRatio(Ingreso) = \frac{0.029}{0.926} = 0.031 bits \\
+GainRatio(Ingreso) = \frac{0.029}{0.926} = 0.031 \, bits \\
 \end{equation*}
 
 
