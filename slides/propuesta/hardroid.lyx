@@ -227,7 +227,7 @@ textwidth
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename ../../capitulo-5/graphics/arqui_general.png
+	filename graphics/arqui_general.png
 	lyxscale 50
 	width 100col%
 

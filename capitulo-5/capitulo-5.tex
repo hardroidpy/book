@@ -11,8 +11,7 @@ inteligentes con la plataforma \emph{\abbr{Android}\texttrademark}:
 \emph{\abbr{HARDroid}}. El sistema es una adaptación del diseño utilizado
 por sistemas existentes como \emph{Google Play Services} \cite{Google2013l},
 específicamente la funcionalidad para reconocer actividades humanas
-utilizando los conceptos y técnicas del estado del arte expuestos
-en capítulos precedentes. 
+utilizando los conceptos y técnicas expuestos en capítulos precedentes. 
 
 El sistema \emph{\abbr{HARDroid}} está implementado en base a dos
 componentes principales: una interfaz de programación que expone las
@@ -750,7 +749,7 @@ correspondientes. El algoritmo de reconocimiento se describe a continuación.
 			\State $ C = C \cup \{c_a\}$ 
 			\State $i := i + 64$
         \EndFor
-        \State $ M = $ Calcular matriz de confusión de $C$ 
+        \State $ M = $ Calcular matriz de frecuencia de $C$ 
 		\State
 		\Return $ M $
 	\EndProcedure
@@ -783,7 +782,7 @@ de \emph{software} en formato \abbr{JAR}.
 La actualización dinámica del clasificador se muestra en la \figref{fig5:service-classi}.
 Cada nueva versión del clasificador se genera por medio de \abbr{WEKA}
 y se construye para luego disponerlo como una librería remota a ser
-descargada de Internet. El mecanismo detallado se describe en\cite{Falsina2014}.
+descargada de Internet. El mecanismo detallado se describe en \cite{Falsina2014}.
 
 \begin{figure}[H]
 \begin{centering}
