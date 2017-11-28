@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -76,19 +76,60 @@ Agradecimientos
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-blankpagelegend
+A mis padres por estar siempre presente y brindarme la posibilidad de estudiar
+ una carrera.
 \end_layout
 
-\end_inset
+\begin_layout Standard
+A nuestros tutores Ing.
+ Joaquin Lima e Ing.
+ Juan Talavera por acompañarnos y ayudarnos a llevar a cabo este trabajo.
+\end_layout
 
+\begin_layout Standard
+A mi compañero de tesis, Alberto, con quien pudimos lograr sacar este trabajo
+ de grado.
+\end_layout
 
+\begin_layout Standard
+A todos los profesores que de alguna forma nos guiaron durante las materias.
+\end_layout
+
+\begin_layout Standard
+A los voluntarios que nos regalaron un poco de su tiempo y esfuerzo fí­sico
+ para realizar las pruebas.
+\end_layout
+
+\begin_layout Standard
+\align right
+Santiago A.
+ Yegros.Z 
+\end_layout
+
+\begin_layout Standard
+A mi madre Braulia por brindarme la oportunidad de tener una educación y
+ seguir la carrera.
+\end_layout
+
+\begin_layout Standard
+A mi esposa Paola y mi hija Valeria por el ánimo y las fuerzas necesarias
+ para terminar este trabajo.
+\end_layout
+
+\begin_layout Standard
+A los profesores Ing.
+ Joaquin Lima e Ing.
+ Juan Talavera por la guí­a y mentorí­a durante el desarrollo de este proyecto.
+\end_layout
+
+\begin_layout Standard
+A los compañeros y amigos que con su entusiasmo hicieron posible culminar
+ las pruebas.
+\end_layout
+
+\begin_layout Standard
+\align right
+Alberto GimÃ©nez 
 \end_layout
 
 \end_body

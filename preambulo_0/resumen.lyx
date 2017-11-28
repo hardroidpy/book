@@ -72,23 +72,26 @@
 \begin_body
 
 \begin_layout Chapter*
-Resumen
+Resumen 
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-blankpagelegend
-\end_layout
-
-\end_inset
-
-
+Human Activity Recognition (HAR) es un tema de investigación ampliamente
+ cubierto en la última década por su relevancia en áreas donde el contexto
+ de los usuarios es importante para construir aplicaciones interactivas.
+ Las aplicaciones móviles para teléfonos inteligentes tienen la capacidad
+ de capturar datos del entorno por medio de sensores y en conjunción con
+ algoritmos que aprovechan la información sensible al contexto, se convierten
+ en una poderosa plataforma de desarrollo.
+ En este trabajo, proponemos un sistema HAR denominado HARDroid que está
+ específicamente diseñado para detectar actividades comunes de los usuarios.
+ Además, los datos recopilados de los usuarios en pruebas de campo se tienen
+ en cuenta para mejorar el clasificador de reconocimiento de actividad.
+ HARDroid está disponible gratuitamente como una biblioteca que puede incluirse
+ en las aplicaciones de Android.
+ Finalmente, se presenta una evaluación que compara el clasificador inicial
+ con un clasificador mejorado, logrando una exhaustividad del 91.34 % y una
+ precisión del 92.04 %.
 \end_layout
 
 \begin_layout Chapter*
@@ -96,19 +99,21 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-blankpagelegend
-\end_layout
-
-\end_inset
-
-
+Human Activity Recognition (HAR) is a research topic broadly covered in
+ the last decade for its relevance in areas where the users’ context is
+ important to build interactive applications.
+ Smartphone applications have the capability to collect data from the environmen
+t and along with algorithms that take advantage of context-aware information
+ becomes a powerful development platform.
+ In this work, we propose a HAR System denominated HARDroid that is specifically
+ designed to detect common user activities.
+ Furthermore, data collected from users on ground are taken into account
+ to improve the activity recognition classifier.
+ HARDroid is freely available as a library that may be included in Android
+ applications.
+ Finally, an evaluation that comparing the initial classifier with an improved
+ classifier is presented, achieving a recall of 91.34% and a precision of
+ 92.04%.
 \end_layout
 
 \end_body

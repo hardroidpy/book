@@ -145,7 +145,7 @@ La información de ganancia se define como la diferencia entre lo requerido de i
 Gain(A) = Info(D) - Info_{A}(D)\label{eq3:ganancia}
 \end{equation}
 
-En otras palabras, $Gain(A)$ nos dice cuanto se ganaría por la ramificación en $A$. Es la reducción esperada en el requisito de información causado por conocer el valor de $A$. El atributo A con ganancia más alta, $Gain(A)$, se selecciona como atributo de división en el nodo $N$. Esto equivale a decir que queremos particionar en el atributo A, que haría la mejor clasificación, por lo que la cantidad de información aun necesaria para clasificar las tuplas sea mínima, $InfoA(D)$.
+En otras palabras, $Gain(A)$ nos dice cuanto se ganaría por la ramificación en $A$. Es la reducción esperada en el requisito de información causado por conocer el valor de $A$. El atributo A con ganancia más alta, $Gain(A)$, se selecciona como atributo de división en el nodo $N$. Esto equivale a decir que queremos particionar en el atributo A, que haría la mejor clasificación, por lo que la cantidad de información aún necesaria para clasificar las tuplas sea mínima, $InfoA(D)$.
 
 \subsection{Ejemplo de deducción de un nodo - ID3}
 
@@ -244,7 +244,7 @@ GainRatio(A) = \frac{Gain(D)}{SplitInfo_{A}(D)}\label{eq3:GainRatio}
 El atributo con mayor proporción de ganancia es seleccionado como atributo de división. Tener en cuenta, por otro lado, que a medida que la información de división se acerca a cero, la relación se vuelve inestable. 
 
 \subsection{Ejemplo de deducción de un nodo - C4.5}
-De la misma manera que el ejemplo anterior, utilizando la \tabref{tabla:sencilla2}, por ejemplo para el atributo $Ingreso$ una prueba de división divide la tabla en tres particiones, es decir, $alto$, $medio$, $bajo$, las cuales contienen, cuanto, seis, y cuatro tuplas respectivamente. Con estos datos, para calcular la proporción de ganancia del atributo $Ingreso$, debemos calcular primeramente la información de división, utilizando la formula \ref{eq3:SplitInfo}:
+De la misma manera que el ejemplo anterior, utilizando la \tabref{tabla:sencilla2}, por ejemplo para el atributo $Ingreso$ una prueba de división divide la tabla en tres particiones, es decir, $alto$, $medio$, $bajo$, las cuales contienen, cuanto, seis, y cuatro tuplas respectivamente. Con estos datos, para calcular la proporción de ganancia del atributo $Ingreso$, debemos calcular primeramente la información de división, utilizando la fórmula \ref{eq3:SplitInfo}:
 
 
 \begin{equation*}

@@ -148,7 +148,7 @@ key "Google2013l"
 \end_inset
 
 , específicamente la funcionalidad para reconocer actividades humanas utilizando
- los conceptos y técnicas del estado del arte expuestos en capítulos precedentes.
+ los conceptos y técnicas expuestos en capítulos precedentes.
  
 \end_layout
 
@@ -4020,7 +4020,7 @@ EndFor
 
         
 \backslash
-State $ M = $ Calcular matriz de confusión de $C$ 
+State $ M = $ Calcular matriz de frecuencia de $C$ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4225,7 +4225,7 @@ abbr{WEKA}
 
  y se construye para luego disponerlo como una librería remota a ser descargada
  de Internet.
- El mecanismo detallado se describe en
+ El mecanismo detallado se describe en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Falsina2014"
