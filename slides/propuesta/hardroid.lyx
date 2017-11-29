@@ -691,13 +691,6 @@ backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
-\begin_inset Float algorithm
-placement h
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -884,7 +877,7 @@ EndFor
 \backslash
 alertline<11> 
 \backslash
-State $ M = $ Calcular matriz de confusión de $C$
+State $ M = $ Calcular matriz de frecuencia de $C$
 \end_layout
 
 \begin_layout Plain Layout
@@ -915,11 +908,6 @@ EndProcedure
 
 \backslash
 end{algorithmic}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset

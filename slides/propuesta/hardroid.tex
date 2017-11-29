@@ -110,7 +110,6 @@
 
 \centering\resizebox{0.60\textwidth}{!}{%
 \noindent\begin{minipage}[t][1\totalheight][b]{1\columnwidth}%
-\begin{algorithm}
 \begin{algorithmic}[1]
     \Require Conjunto de tiempos de subscripción de clientes $S$
 	\Procedure{Reconocimiento}{$ S $}
@@ -129,13 +128,11 @@
 			\alertline<10> \State $ C = C \cup \{c_a\}$
 			\alertline<7> \State $i := i + 64$
         \alertline<7> \EndFor
-        \alertline<11> \State $ M = $ Calcular matriz de confusión de $C$
+        \alertline<11> \State $ M = $ Calcular matriz de frecuencia de $C$
 		\State
 		\alertline<11> \Return $ M $
 	\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-%
+\end{algorithmic}%
 \end{minipage}
 
 }

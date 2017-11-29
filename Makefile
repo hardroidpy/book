@@ -5,7 +5,7 @@
 #set PATH=%PATH%;"%USERPROFILES%/AppData/Local/Pandoc"
 #set LANG=en_US
 
-objects = *.aux *.bbl *.bcf *.blg *.log *.lof *.loa *.lot *.pdf *.run.xml *.toc *.nlo *.md *.docx *.ild *.ind *.out *.ilg *.lyx~
+objects = *.aux *.bbl *.bcf *.blg *.log *.lof *.loa *.lot *.pdf *.run.xml *.toc *.nlo *.md *.docx *.ild *.ind *.out *.ilg *.lyx~ *.nav *.snm *.vrb *.brf *.nls
 makelatex = pdflatex -draftmode -interaction nonstopmode 
 makepdf = pdflatex -interaction nonstopmode 
 
@@ -33,7 +33,7 @@ latex:
 	@echo Build finished. 
 
 latex-slide:
-	cd slides && $(makepdf) presentacion.tex ;
+	cd slides && $(makelatex) presentacion.tex && $(makepdf) presentacion.tex ;
 	@echo
 	@echo Build finished. 
 
