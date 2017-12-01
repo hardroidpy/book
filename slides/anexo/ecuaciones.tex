@@ -1,0 +1,113 @@
+\begin{frame}{Ecuaciones}
+
+\framesubtitle{Métricas de Evaluación}
+
+\setbeamercovered{transparent}
+\begin{columns}
+
+\column{0.3\textwidth}
+\begin{itemize}[<+->]
+\item Precisión 
+\item Exhaustividad 
+\item Exactitud 
+\item Valor-F
+\end{itemize}
+
+\column{0.7\textwidth}
+\begin{overprint}
+\onslide<1> 
+
+\[
+Precisi\acute{o}n=\frac{TP}{TP+FP}
+\]
+
+\begin{center}
+\emph{valor predictivo positivo}
+\par\end{center}
+\onslide<2> 
+
+\[
+Exhaustividad=\frac{TP}{TP+FN}
+\]
+
+\begin{center}
+\emph{tasa positiva verdadera}
+\par\end{center}
+\onslide<3> 
+
+\[
+Exactitud=\frac{TP+TN}{TP+TN+FP+FN}
+\]
+
+\begin{center}
+\emph{rendimiento general}
+\par\end{center}
+\onslide<4> 
+
+\[
+Valor-F=2\cdot\frac{Precisi\acute{o}n\cdot Exhaustividad}{Precisi\acute{o}n+Exhaustividad}
+\]
+
+\begin{center}
+\emph{media armónica}
+\par\end{center}
+
+\end{overprint}
+\end{columns}
+
+\end{frame}
+%
+\begin{frame}{Ecuaciones}
+
+\framesubtitle{Métricas de Errores}
+
+\setbeamercovered{transparent}
+\begin{columns}
+
+\column{0.5\textwidth}
+\begin{itemize}[<+->]
+\item Error absoluto
+\item Raíz de Error cuadrático medio
+\item Error absoluto relativo
+\item Raíz de Error cuadrático relativo
+\end{itemize}
+
+\column{0.5\textwidth}
+\begin{overprint}
+\onslide<1> 
+
+\[
+E_{ma}=\frac{1}{n}\sum_{i\text{=1}}^{n}\bigl|y_{i}-f(x_{i})\bigr|
+\]
+
+\onslide<2> 
+
+\[
+E_{rms}=\sqrt{\frac{1}{n}\sum_{i\text{=1}}^{n}\left(y_{i}-f(x_{i})\right)^{2}}
+\]
+
+\onslide<3> 
+\begin{center}
+\[
+E_{ra}=\sum_{i\text{=1}}^{n}\frac{\bigl|y_{i}-f(x_{i})\bigr|}{\bigl|y_{i}-\bar{y}\bigr|}
+\]
+con 
+\[
+\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}
+\]
+\par\end{center}
+\onslide<4> 
+\begin{center}
+\[
+E_{rrs}=\sqrt{\sum_{i\text{=1}}^{n}\frac{\left(y_{i}-f(x_{i})\right)^{2}}{\left(y_{i}-\bar{y_{i}}\right)^{2}}}
+\]
+con 
+\[
+\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}
+\]
+\par\end{center}
+\end{overprint}
+\end{columns}
+
+\end{frame}
+
