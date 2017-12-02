@@ -242,6 +242,16 @@ filename "intro/problema.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
+filename "intro/alcance.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
 filename "propuesta/estado-har.tex"
 
 \end_inset
