@@ -110,94 +110,6 @@ setbeamercovered{transparent}
 \end_layout
 
 \begin_layout Itemize
-Entrenamiento de un clasificador 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-HAR
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Aciertos del 
-\begin_inset Flex Bold
-status open
-
-\begin_layout Plain Layout
-91%
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Confiabilidad de datos del 
-\begin_inset Flex Bold
-status open
-
-\begin_layout Plain Layout
-87%
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Errores absolutos menores a 
-\begin_inset Flex Bold
-status open
-
-\begin_layout Plain Layout
-1%
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Precisión y exhaustividad entre el 
-\begin_inset Flex Bold
-status open
-
-\begin_layout Plain Layout
-91%
-\end_layout
-
-\end_inset
-
- y el 
-\begin_inset Flex Bold
-status open
-
-\begin_layout Plain Layout
-92%
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
 Construcción de 
 \begin_inset Flex Structure
 status open
@@ -218,7 +130,7 @@ Reutilizable y extensible que clasifica diversas actividades.
 \end_layout
 
 \begin_layout Itemize
-Se mejora el clasificador mediante la inclusión de muestras por colaboración.
+Se mejora el clasificador mediante colaboración.
 \end_layout
 
 \begin_layout Pause
@@ -246,6 +158,74 @@ incluido en tiempo de construcción, o
 
 \begin_layout Itemize
 como servicio a través de una interfaz de integración.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Primera librería de reconocimiento 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+open-source
+\end_layout
+
+\end_inset
+
+ para 
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+Android
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aporte al estado del arte de las 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+HAR
+\end_layout
+
+\end_inset
+
+ con software libre para el estudio en dispositivos móviles.
+\end_layout
+
+\begin_layout Itemize
+Implementación alternativa a 
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+Google Play Services
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+closed source
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \end_deeper
@@ -608,6 +588,24 @@ t
 Congresos y presentaciones
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength
+\backslash
+itemsep{1em}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 ICDE 2018 - 34th IEEE International Conference on Data Engineering - Paris,
  Francia - 
@@ -621,6 +619,21 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+MobiSys 2018 - The 16th ACM International Conference on Mobile Systems,
+ Applications, and Services - Munich, Alemania - 
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+(Pendiente)
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_deeper

@@ -1125,5 +1125,129 @@ Activity Survey: Componentes Funcionales
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HAR en Android
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Backend C4.5: Módulos Funcionales
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Servicio Web en 
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+Amazon AWS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Base de datos 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Conjunto entrenamiento inicial
+\end_layout
+
+\begin_layout Itemize
+Resultados de las encuestas
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Modelo activo de aprendizaje por colaboración
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../capitulo-6/graphics/proceso-genera-clasi.png
+	lyxscale 50
+	height 100line%
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \end_body
 \end_document

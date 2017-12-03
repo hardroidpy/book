@@ -9,6 +9,11 @@
 \usepackage{graphicx}
 
 \makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
  % this default might be overridden by plain title style
  \newcommand\makebeamertitle{\frame{\maketitle}}%
@@ -56,12 +61,13 @@
 
 \subtitle{Proyecto Final de Grado}
 
-\author{Alberto Gimenez\\
+\author{Alberto Giménez\\
 Santiago Yegros}
 
-\institute{Facultad Politécnica}
+\institute{Tutores: Ing. Joaquín Lima\\
+Ing. Juan Talavera}
 
-\date{\monthname, \the\year}
+\date{Facultad Politécnica - \monthname, \the\year}
 \makebeamertitle
 \begin{frame}
 

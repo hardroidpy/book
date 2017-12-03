@@ -6,9 +6,21 @@
 Para validar y verificar el clasificador se realizaron dos tipos de pruebas siguiendo los siguientes pasos:
 
 \begin{itemize}[<+->]
-	\item Creación de un conjunto entrenamiento inicial para el clasificador de \emph{HARDroid}.
-	\item Evaluación del reconocedor \emph{HARDroid} en comparación con \emph{Sony Lifelog}.
-	\item Generación de un nuevo conjunto entrenamiento colaborativo cuyo clasificador es evaluado.
+	\item Creación de un conjunto entrenamiento inicial para el clasificador de \structure{HARDroid} (\emph{off-line}).
+	\item Evaluación del reconocedor \structure{HARDroid} en comparación con \emph{Sony Lifelog} (\emph{off-line}).
+	\item Generación de un nuevo conjunto entrenamiento \structure{colaborativo} cuyo clasificador es evaluado (\emph{on-line}).
+\end{itemize}
+
+\end{frame}
+%
+\begin{frame}{Resultados}
+\framesubtitle{Entrenamiento inicial}
+\setbeamercovered{transparent}
+
+\begin{itemize}[<+->]
+	\item Voluntarios de 8 personas entre 20 y 38 años.
+	\item Captura y etiquetado supervisado por actividad de 2 a 15 minutos.
+	\item Tiempo acumulado de entrenamiento de 516 minutos (8:36).
 \end{itemize}
 
 \begin{table}[h]
@@ -19,6 +31,8 @@ Para validar y verificar el clasificador se realizaron dos tipos de pruebas sigu
 			\texttt{\footnotesize{WALKING}} & \texttt{\footnotesize{RUNNING}} & \texttt{\footnotesize{STILL}} & \texttt{\footnotesize{TILTING}} & \texttt{\footnotesize{ON\_BICYLE}} & \texttt{\footnotesize{IN\_VEHICLE}}\tabularnewline
 			\hline 
 			\hline 
+			5.915 &	3.019 &	645 & 485 & 1.338 & 610\tabularnewline
+			\hline 
 			49\% & 25\% & 6\% & 4\% & 11\% & 5\%\tabularnewline
 			\hline 
 		\end{tabular}
@@ -27,7 +41,6 @@ Para validar y verificar el clasificador se realizaron dos tipos de pruebas sigu
 
 \end{frame}
 %
-%
 \begin{frame}{Resultados}
 \framesubtitle{Validación del Clasificador}
 
@@ -35,8 +48,8 @@ El rendimiento del clasificador se evalúa utilizando algunas métricas numéricas 
 
 \begin{itemize}
 	\item Número de instancias ($N$).
-	\item Instancias correctamente clasificadas ($C$).
-	\item Instancias incorrectamente clasificadas ($I$).
+	\item Correctamente clasificadas ($C$).
+	\item Incorrectamente clasificadas ($I$).
 	\item Estadísticas Kappa ($\kappa$).
 \end{itemize}
 
@@ -63,7 +76,7 @@ El costo del clasificador se evalúa utilizando algunas métricas numéricas en tér
 %
 
 \begin{frame}{Resultados}
-\framesubtitle{Validación del Clasificador}
+\framesubtitle{Validación del Clasificador ($\mathrm{A}$)}
 \setbeamercovered{transparent}
 
 El clasificador inicial ($\mathrm{A}$) es un árbol de decisión 
@@ -102,7 +115,7 @@ El clasificador inicial ($\mathrm{A}$) es un árbol de decisión
 \end{frame}
 %
 \begin{frame}{Resultados}
-\framesubtitle{Validación del Clasificador}
+\framesubtitle{Validación del Clasificador ($\mathrm{A}$)}
 
 \begin{table}[h]
 \centering
@@ -133,13 +146,13 @@ El clasificador inicial ($\mathrm{A}$) es un árbol de decisión
 
 \end{frame}
 \begin{frame}{Resultados}
-\framesubtitle{Validación del Clasificador}
+\framesubtitle{Validación del Clasificador ($\mathrm{A}$)}
 
 A partir de la matriz de confusión se calculan las métricas de evaluación:
 \begin{itemize}
+    \item Exactitud: \textbf{0,9714}
 	\item Precisión: \textbf{0,9174}
 	\item Exhaustividad: \textbf{0,9109}
-	\item Exactitud: \textbf{0,9714}
 	\item \emph{Valor-F}: \textbf{0,9142}
 \end{itemize}
 
@@ -148,7 +161,7 @@ A partir de la matriz de confusión se calculan las métricas de evaluación:
 %
 \begin{frame}{Resultados}
 
-\framesubtitle{Verificación del Clasificador}
+\framesubtitle{Verificación del Clasificador ($\mathrm{A}$)}
 \setbeamercovered{transparent}
 
 \begin{table}[h]
@@ -186,7 +199,7 @@ Resultado de la encuesta con dos individuos.
 
 %
 \begin{frame}{Resultados}
-\framesubtitle{Verificación del Clasificador}
+\framesubtitle{Verificación del Clasificador ($\mathrm{A}$)}
 
 \begin{table}[h]
 \centering
@@ -224,7 +237,7 @@ Resultado de la encuesta con dos individuos.
 %
 %
 \begin{frame}{Resultados}
-\framesubtitle{Mejoras del Clasificador}
+\framesubtitle{Clasificador Colaborativo ($\mathrm{B}$)}
 
 El clasificador colaborativo ($\mathrm{B}$) es un árbol de decisión 
 de \textbf{699} nodos con \textbf{350} hojas.
@@ -251,7 +264,7 @@ de \textbf{699} nodos con \textbf{350} hojas.
 			& $\checkmark$ \tabularnewline
 			\cline{1-4}
 			$\kappa$ & 0,8678 & 0,8735
-			& \textcolor{green}{0,57\%}
+			& \textcolor{green}{+0,57\%}
 			& $\checkmark$ \tabularnewline
 			\cline{1-4}
 			$E_{ma}$ & 0,0341 & 0,0333
@@ -278,13 +291,13 @@ de \textbf{699} nodos con \textbf{350} hojas.
 %
 %
 \begin{frame}{Resultados}
-\framesubtitle{Mejoras del Clasificador}
+\framesubtitle{Clasificador Colaborativo ($\mathrm{B}$)}
 
 Las métricas de evaluación del clasificador colaborativo resultan en:
 \begin{itemize}
+	\item Exactitud: \textbf{0,9723} (Antes 0,9714)
 	\item Precisión: \textbf{0,9204} (Antes 0,9174)
 	\item Exhaustividad: \textbf{0,9134} (Antes 0,9109)
-	\item Exactitud: \textbf{0,9723} (Antes 0,9714)
 	\item \emph{Valor-F}: \textbf{0,9168} (Antes 0,9142)
 \end{itemize}
 \end{frame}
