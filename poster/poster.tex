@@ -62,174 +62,124 @@
 
 %%% Abstract
 \begin{abstract}
-Human Activity Recognition (HAR) es un tema de investigación ampliamente cubierto en la última década por su relevancia en áreas donde el contexto de los usuarios es importante para construir aplicaciones interactivas. Las aplicaciones móviles para teléfonos inteligentes tienen la capacidad de capturar datos del entorno por medio de sensores y en conjunción con algoritmos que aprovechan la información sensible al contexto, se convierten en una poderosa plataforma de desarrollo. En este trabajo, proponemos un sistema HAR denominado HARDroid que está específicamente diseñado para detectar actividades comunes de los usuarios. Además, los datos recopilados de los usuarios en pruebas de campo se tienen en cuenta para mejorar el clasificador de reconocimiento de actividad. HARDroid está disponible gratuitamente como una biblioteca que puede incluirse en las aplicaciones de Android. Finalmente, se presenta una evaluación que compara el clasificador inicial con un clasificador mejorado, logrando una exhaustividad del 91.34 \% y una precisión del 92.04 \%.
+El reconocimiento de actividades humanas (HAR, \textit{Human Activity Recognition}) es un tópico ampliamente cubierto en la última década por su relevancia en aplicaciones dependientes del contexto. Dada la capacidad de los teléfonos móviles inteligentes de recopilar datos del entorno e incorporar algoritmos de razonamiento, estos se convierten en una poderosa plataforma para construir aplicaciones con información de contexto. En este trabajo, se propone un sistema de código abierto denominado \textit{HARDroid} específicamente diseñado para detectar actividades humanas básicas para la plataforma \textit{Android}. Adicionalmente, se aporta un modelo de mejora continua del clasificador de actividades por medio de la colaboración de datos recopilados en terreno. Finalmente, se presenta una evaluación que compara el clasificador entrenado inicialmente y el clasificador colaborativo logrando mejora en exhaustividad del 91,34\%, una precisión del 92,04\% y una exactitud del 97,23\%. 
+\\
+\textbf{Palabras Claves}
+Sensores, Aprendizaje Automático, Aplicación de Contexto, Teléfonos móviles, Colaboración .
 \end{abstract}
 
 %%% Introduction
 \section{Introducción}
-A importância do assunto deve ser destacada resumidamente.
 
-\PARstart{G}{ranulometries} are ordered sets of morphological openings or closings, each of
-which removes image details below a certain size. These can be used for texture
-analysis
-through the use of \emph{pattern spectra}, which show how the number of 
-foreground pixels in the image changes as a function of the size parameter 
-\cite{maragos89:_patter}.
-A drawback of the classical definition of pattern spectra is that spatial 
-information is not included in a pattern spectrum as shown below.
- In this paper, \emph{spatial pattern spectra} are developed which retain information on the distribution of these details at different scales.
- 
+HAR es un área de investigación en constante desarrollo que abarca el diseño de algoritmos para recolectar datos ambiguos capturados del entorno de individuos para proporcionar información contextual durante su interacción [2]. Uno de los contextos más relevantes es reconocer las actividades humanas que consisten en las caminar, correr o las posturas como estar pie o sentado, todo esto a través de algún sensor disponible.
+
+A medida que el uso de los teléfonos móviles inteligentes fue masificado, el desarrollo de las aplicaciones basadas en HAR han sido propicias a fin de mejorar la interacción con los usuarios. El uso de información contextual es para diversos fines y tipos de sistemas inteligentes, por ejemplo, en medicina, cuidado personal, entretenimiento o uso militar \cite{LaraLabrador2013}.
+
+Este trabajo consiste en la aplicación de HAR en teléfonos inteligentes para obtener ude uso libre y de fácil integración. Además, se evalúa la mejora continua del clasificador de actividades por medio de la inclusión datos generados a partir del uso del mismo.
 
 \newcommand{\imsize}{0.45\columnwidth}
-\begin{figure}
-\begin{center}
-\begin{tabular}{c c}
-
-\end{tabular}
-\end{center}
-\caption{ Parts (a) through (c) show three images consisting of squares of
-different sizes;
-(d) shows the pattern spectra, denoting the number of foreground pixels 
- removed by openings by reconstruction by $\lambda \times \lambda$ squares. No 
-granulometry is capable of separating the patterns, because the only 
-differences between the images lie in the distributions of the 
-connected components. }\label{fig:blocks}
-\end{figure}
-
-
-
 
 \section{Metodología HAR}
-Dar uma ideia compacta da metodologia ou forma de abordagem da pesquisa, bem como o projeto foi desenvolvido.\\
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\linewidth]{../capitulo-2/graphics/harsystem}
-	\caption{}
-	\label{fig:harsystem}
-\end{figure}
+Un sistema HAR es similar a otras aplicaciones de aprendizaje automático donde el proceso de reconocimiento se divide en dos etapas bien conocidas como: entrenamiento y evaluación. En la Figura \ref{fig:harsystem2} se resume las fases comunes de estas dos etapas \cite{LaraLabrador2013}. El entrenamiento requiere inicialmente un conjunto de datos recolectados con los atributos medidos de los individuos al realizar cada actividad. La señal se divide luego en ventanas para la extracción de muestras y filtrando para obtener así información relevante de las señales en bruto.
 
+Luego, se utilizan métodos de aprendizaje automático para generar un clasificador de actividades a partir del conjunto de datos de entrenamiento con los valores característicos calculados.
 
-The opening transform \cite{Nacken:thesis} $\Omega_X$ of a binary image $X$ 
-for a granulometry ${\alpha_r}$ is
-\begin{equation}
-  \Omega_X(x) = \max\{ r \in \Lambda \vert x \in \alpha_r(X) \}
-\end{equation}
+\textbf{Recolección}
+
+El primer paso en el proceso recolectar las señales de los sensores que continuamente monitorean a los usuarios; los sensores pueden estar unidos al cuerpo o ser transportados ya que comúnmente están integrados en teléfonos inteligentes, en relojes o lentes inteligentes. Las señales de los sensores se pueden clasificar según el movimiento, la posición, el entorno y la fisiología \cite{LaraLabrador2013}.
+
+\textbf{Procesamiento}
+
+El siguiente paso es el procesamiento de las señales obtenidas y extraer las características relevantes. El clasificador de actividades se construye a partir de un conjunto de muestras utilizando métodos de aprendizaje automático durante el entrenamiento \cite{reyes}. El procesamiento incluye tres tareas distintas realizadas automáticamente en ambas etapas del proceso HAR, además se realiza una tarea manual durante la etapa de entrenamiento.
+\begin{itemize}
+	\item Etiquetado
+	\item Filtro de Señal
+	\item Muestreo
+	\item Extracción de muestras
+\end{itemize}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{../capitulo-2/graphics/harsystem2}
-	\caption{}
+	\caption{Metodología HAR}
 	\label{fig:harsystem2}
 \end{figure}
 
+Las señales procesadas corresponden al atributo de aceleración. Con el fin de minimizar los efectos causados por los cambios de orientación, se calcula la magnitud del acelerómetro, a partir de las dimensiones $x$, $y$, $z$. Esta elección es porque la magnitud es menos sensible a los cambios de orientación. 
 
-The pattern spectrum of a binary image $X$ using granulometry 
-$\{\alpha_r\}$ is the histogram of $\Omega_X$ obtained with the same 
-size distribution \cite{Nacken:thesis}, disregarding the bin for grey level 0.
+\textbf{Aprendizaje y Clasificación}
 
-
-\begin{figure}
-\begin{center}
-\end{center}
-\caption{ \label{fig:opentransf} Opening transform with $\{\alpha_r\}$ as in 
- Fig. \ref{fig:blocks}: (left) original image; (right) opening transform
-(contrast stretched for clarity). 
-}
-\end{figure}
+Un sistema HAR requiere de un algoritmo para extraer información de los datos. El objetivo es clasificar datos desconocidos. Hay muchos algoritmos de aprendizaje, como \textit{Decision Trees}, \textit{SVM}, \textit{Neural Networks}, entre otros. Este trabajo se utiliza un clasificador construido con el algoritmo C4.5 basado en árbol de decisión cuya implementación depende de Java J48 \cite{Frank2016b}.
 
 
 \section{HARDroid}
-Dar uma ideia compacta da metodologia ou forma de abordagem da pesquisa, bem como o projeto foi desenvolvido.
-\\
-Pattern spectra only retain the amount of detail present at  scale $r$.
-This can be amended by computing some parameterization of the spatial 
-distribution in an image $\alpha_r(X) \setminus \alpha_{r+}(X)$ as a function of $r$. 
+HARDroid es un sistema que clasifica las actividades humanas en teléfonos inteligentes basados en Android. El sistema tiene dos componentes: una interfaz de programación de aplicaciones (API) y un servicio en segundo plano que realiza las tareas clave independiente que implementa algoritmos de procesamiento de muestras y reconocimiento. El diseño desacoplado logra un sistema HAR extensible. que permite una fácil evolución y mantenimiento sin afectar a las aplicaciones dependientes. El servicio está pensado como un servicio de utilidad capaz de actualizar el clasificador de actividades de forma dinámica. La Figura \ref{fig:hardroid} muestra el esquema de integración de servicios HARDroid para aplicaciones distribuidas.
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../capitulo-5/graphics/hardroid_func}
+	\caption{Integración de servicio HARDroid.}
+	\label{fig:hardroid}
+\end{figure}
 
+El clasificador dinámico se actualiza frecuentemente por medio de la colaboración y se descarga de Internet de forma segura empaquetado en un JAR \cite{Falsina2014}.
 
-An obvious parameterization of the spatial distribution is through 
-the use of moments. Focusing on the case of 2-D binary images, the 
-moment $m_{ij}$ of order $ij$ of an image $X$ is given by
+Para verificar el funcionamiento del servicio HARDroid y evaluar los resultados de reconocimiento, se creó la aplicación ActivitySurvey para probar la integración y encuestar a usuarios reales. Las respuestas a las encuestas son utilizadas para mejorar el clasificador al sincronizar los datos con un servicio web REST llamado Backend C4.5. En la Figura \ref{fig:arq-hardroid} se muestra la arquitectura del proyecto.
 
-  
-These two are shown in Figures \ref{fig:tauspect} and \ref{fig:binspect}. Note that 
-these definitions hold only where $(S_{m_{00},\alpha}(f))(r) \neq 0$. For all 
-other values of $r$ they will be defined as zero. Further post-processing can
-be done to compute central moments and moment invariant from pattern moment 
-spectra \cite{Flusser:Suk:93,Hu:62}. 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{../capitulo-5/graphics/arqui_general}
+	\caption{Arquitectura del Proyecto.}
+	\label{fig:arq-hardroid}
+\end{figure}
 
 \section{Resultados}
 
-Verificar os principais resultados obtidos de acordo com os objetivos propostos.\\
+\textbf{Datos Experimentales}
 
-Nacken \cite{Nacken:thesis} derived an algorithm for computation
-of pattern spectra for granulometries based on openings by discs of increasing
-radius for various metrics, using the opening transform. After the
-opening transform has been computed, it is straightforward to compute the 
-pattern spectrum:
-\begin{itemize}
-\item Set all elements of array {\tt S} to zero
-\item For all $x \in X$ increment {\tt S}[$\Omega_X(x)$] by one. 
-\end{itemize}
+Los datos experimentales se obtuvieron de un grupo de voluntarios de entre 20 y 38 años. El procedimiento de captura de datos se hizo con el uso del teléfono inteligente en el bolsillo mientras se realizaba una actividad física en un período de 2 a 15 minutos con una aplicación para el etiquetado de datos. Se recogieron un total de 6.904.165 medidas de 7 teléfonos diferentes que como resultado obtuvieron 12.012 conjuntos de características.
 
-To compute the pattern \emph{moment} spectrum, the only thing that needs to be
-changed is the way {\tt S}[$\Omega_X(x)$] is incremented. As shown in Algorithm
-\ref{alg:spect}.
+\textbf{Clasificador Inicial}
 
-\begin{algorithm}
-\begin{itemize}
-\item Set all elements of array {\tt S} to zero
-\item For all $(x,y) \in X$ increment {\tt S}[$\Omega_X(x,y)$] by 
-$x^iy^j$. 
-\end{itemize}
-\caption{ Algorithm for computation of pattern moment
-spectrum of order $ij$. \label{alg:spect}}
-\end{algorithm}
+Se construyo un clasificador con el algoritmo C4.5 con la implementación en Java J48 utilizando WEKA \cite{Frank2016b}. El clasificador es una clase Java ejecutable en Android. Además, la evaluación de la clasificación de los datos de entrenamiento se resume en precisión de 91,74\% y exhaustividad del 91,09\%.
 
-This algorithm can 
-readily be adapted to other granulometries, simply by computing the 
-appropriate opening transform.
+\textbf{Verificación}
 
-\begin{figure}
-\begin{center}
-\begin{tabular}{c c}
+La evaluación del clasificador HARDroid se realizó mediante ejercicios guiados donde cada actividad física se realizó durante un período de 10 a 20 minutos usando ActivitySurvey. Este consulta la actividad humana producida a intervalos regulares y se registra la información de la actividad detectada y actividad sugerida por el usuario.
 
-\end{tabular}
-\end{center}
-\caption{ \label{fig:tauspect} 
-The opening transform using city-block metric: (a) opening transform of
-Fig. 1(c); (b) pattern spectrum; (c) pattern variance-$x$; 
-(d) variance-$y$ spectra.}
-\end{figure}
+En el Cuadro 1 muestra el recuento de actividades detectadas exitosas y no exitosas en proporción al número total de detecciones recopiladas durante las sesiones de la encuesta.
 
+\begin{table}[!tbph]
+\begin{centering}
+	\begin{tabular}{|c|c|c|c|}
+		\hline 
+		\textbf{Actividad} & \textbf{Error} & \textbf{Éxito} & \textbf{Porcentaje} \\ 
+		\hline 
+		WALKING & 13 & 151 & 92,07\% \\ 
+		\hline 
+		RUNNING & 13 & 83 & 86,46\% \\ 
+		\hline 
+		STILL & 8 & 140 & 94,59\% \\ 
+		\hline 
+		ON\_BICYCLE & 12 & 59 & 83,10\% \\ 
+		\hline 
+		IN\_VEHICLE & 11 & 83 & 88,30\% \\ 
+		\hline 
+	\end{tabular} 
+\par\end{centering}
+\caption{Actividades Detectadas}
+\end{table}
 
-\renewcommand{\imsize}{0.3\columnwidth}
-\begin{figure}
-\begin{center}
-\end{center}
-\caption{ \label{fig:binspect} Pattern mean-$x$ (top) and variance-$x$ 
-(bottom) spectra: the three collumns show spectra for Fig. 1(a), (b) and (c) 
-from left to right respectively.  Unlike the standard pattern spectra, 
-these spatial pattern spectra can distinguish the three images.}
-\end{figure}
+Con esto se puede verificar que el clasificador una alta tasa de éxito en la mayoría de las actividades de acuerdo con un promedio de 88,8\%.
+
+\textbf{Clasificador Colaborativo}
+
+Con la información recopilada por colaboración y combinada con datos iniciales el resultado es un clasificador de actividades generado con instancias correctamente clasificadas resultan en una precisión del 92,04\%, exhaustividad del 91,34\% y aumento de características a 12.578. Por lo tanto, el clasificador colaborativo es una mejora sobre el modelo clasificador inicial por medio de la retroalimentación.
 
 \section{Conclusión}
 
-Sitting on a corner all alone,
-staring from the bottom of his soul,
-watching the night come in from the window
-\\
-It'll all collapse tonight, the fullmoon is here again
-In sickness and in health, understanding so demanding
-It has no name, there's one for every season
-Makes him insane to know
-\\
-Running away from it all
-"I'll be safe in the cornfields", he thinks
-Hunted by his own,
-again he feels the moon rising on the sky
-
+En este trabajo, un sistema HAR en Android de código abierto es aportado y es reutilizable para reconocer las actividades humanas comunes. Además, el clasificador permite la mejora iterativa de su rendimiento a través de un esquema de colaboración. Las pruebas de evaluación tienen resultados alentadores con una alta tasa de éxito del 92\% y la posibilidad de que el modelo se pueda mejorar con un esfuerzo de colaboración.
  
 %%% References
 
@@ -238,32 +188,27 @@ again he feels the moon rising on the sky
 \bibliographystyle{plain}
 \begin{thebibliography}{1}
 
-\bibitem{Flusser:Suk:93}
-J.~Flusser and T.~Suk.
-\newblock Pattern recognition by affine moment invariants.
-\newblock {\em Pattern Recognition}, 26:167--174, 1993.
+\bibitem{LaraLabrador2013}
+Oscar D.Lara and Miguel A. Labrador. 2013.
+\newblock A Survey on Human Activity Recognition using Wearable Sensors
+\newblock In \textit{IEEE Communications Surveys Tutorials} 15, no. 3, 1192-1209.
 
-\bibitem{Hu:62}
-M.~K. Hu.
-\newblock Visual pattern recognition by moment invariants.
-\newblock {\em IRE Transactions on Information Theory}, IT-8:179--187, 1962.
+\bibitem{Falsina2014}
+Luca Falsina. Grab’n Run. 2014.
+\newblock Retrieved November 20, 2016 from
+\newblock http://grab-n-run.readthedocs.io/en/latest/index.html.
 
-\bibitem{maragos89:_patter}
-P.~Maragos.
-\newblock Pattern spectrum and multiscale shape representation.
-\newblock {\em IEEE Trans. Patt. Anal. Mach. Intell.}, 11:701--715, 1989.
+\bibitem{Frank2016b}
+Eibe Frank. J48 Implementation.
+\newblock 2017. Retrieved March 6, 2017 from
+\newblock http://weka.sourceforge.net/doc.stable/weka/classifiers/
+\newblock trees/J48.html.
 
-\bibitem{Meijster:Wilkinson:PAMI}
-A.~Meijster and M.~H.~F. Wilkinson.
-\newblock A comparison of algorithms for connected set openings and closings.
-\newblock {\em IEEE Trans. Patt. Anal. Mach. Intell.}, 24(4):484--494, 2002.
-
-\bibitem{Nacken:thesis}
-P.~F.~M. Nacken.
-\newblock {\em Image Analysis Methods Based on Hierarchies of Graphs and
-  Multi-Scale Mathematical Morphology}.
-\newblock PhD thesis, University of Amsterdam, Amsterdam, The Netherlands,
-  1994.
+\bibitem{reyes}
+Jorge Luis Reyes Ortiz. 2015. 
+\newblock \textit{Smartphone-Based Human Activity Recognition}
+\newblock Springer Theses. Springer International Publishing, Cham. 
+\newblock http://dx.doi.org/10.1007/978-3-319-14274-6.
 
 \end{thebibliography}
 
