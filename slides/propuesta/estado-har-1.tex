@@ -1,0 +1,246 @@
+
+\section{Metodología HAR}
+
+\begin{frame}[t]{Metodología HAR}
+\framesubtitle{Definición Teórica}
+
+\begin{block}{Problema HAR} 
+
+Dado un conjunto $W=\{w_{0},...,w_{m-1}\}$ con $m$ ventanas de tiempo \\~\ 
+
+donde cada $w_{j}$ contiene series de tiempo $S_{j}=\{s_{j,0},...,s_{j,k-1}\}$ para $k$ señales \\~\ \par
+
+Y un conjunto $A\text{=}\{\mathrm{a}_{0},...,\mathrm{a}_{n-1}\}$ de $n$ actividades \\~\
+
+El objetivo es encontrar $\mathbf{  F\colon S_{j}\rightarrow A }$ para todos los $S_{j}$ en cada $w_{j}$ \\~\
+\end{block}
+
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Proceso de aprendizaje}
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-3}
+		\par
+	\end{center}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Proceso de evaluación}
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-6}
+		\par
+	\end{center}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Proceso HAR}
+	\begin{center}
+		\includegraphics[width=8cm]{propuesta/graphics/har-7}
+		\par
+	\end{center}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Colección de Datos}
+El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cintura, muñeca, muslos, etc) realizando alguna actividad de interés.
+
+\begin{center}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+	\hline 
+	\multicolumn{8}{|c|}{Sensores} \\ 
+	\hline 
+	\multicolumn{2}{|c|}{Movimiento}	& \multicolumn{2}{c|}{Posición} 	& \multicolumn{2}{c|}{Ambientales}  	& \multicolumn{2}{c|}{Fisiológicas}  		\\ 
+	\hline 
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/acelerometro} 	& Acelerometro 		&
+	\includegraphics[width=0.04\textwidth]{propuesta/graphics/barometro}		& Barómetro			&
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/camera}			& Camara			&
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/ritmo_cardiaco}	& Ritmo Cardíaco	
+	\\
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/giroscopio} 		& Giroscopio 		&
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/gps}				& GPS				&
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/microfono}		& Micrófono			&
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/temperatura}		& Temperatura		
+	\\
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/magnetometro} 	& Magnetómetro		&
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/wifi}				& WIFI				&
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/luz}				& Luz				&
+																				&  						
+	\\
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/pedometro}		& Podómetro			&	
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/gsm}				& GSM				&
+	\includegraphics[width=0.05\textwidth]{propuesta/graphics/proximidad}		& Proximidad		&	
+																				&					
+	\\
+	\hline 
+\end{tabular}
+} % fin del resize
+\end{center}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Extracción de Muestras}
+	\begin{itemize}
+		\setlength\itemsep{1em}
+		\item El siguiente paso es el procesamiento de las señales obtenidas por los sensores y extraer las características relevantes de los datos sin procesar.
+		\item El procesamiento de muestra se basa en cuatro tareas distintas:
+		\begin{itemize}
+			\item Etiquetado.
+			\item Suavizado.
+			\item Muestreo.
+			\item Extracción de Características.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Extracción de Muestras}
+\begin{columns}
+	
+\column{4cm}
+	\begin{itemize}[<+->]
+		\setlength\itemsep{1em}
+		\item \underline{Etiquetado}: Los datos de los sensores se deben recopilar y etiquetar.
+		\item \underline{Suavizado}: Los sensores electrónicos pueden introducir cierta inestabilidad en la señal (jitter) para reducir esto se aplica uno o mas filtros. 
+	\end{itemize}
+
+
+\column{6cm}
+	\begin{overprint}
+		\onslide<1> 
+		\begin{center}
+			\includegraphics[width=\textwidth]{propuesta/graphics/labelled}
+			\par
+		\end{center}
+		\onslide<2> 
+		\begin{center}
+			\includegraphics[width=\textwidth]{propuesta/graphics/moving_average}
+			\par
+		\end{center}
+		
+	\end{overprint}
+\end{columns}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}
+\framesubtitle{Extracción de Muestras - Muestreo}
+\begin{columns}
+	
+\column{5.2cm}
+	\begin{itemize}[<+->]
+		\setlength\itemsep{1em}
+		\item \underline{Muestreo}: Los datos colectados se segmentan en ventanas de tiempo discretas.
+		\item \underline{Extracción de Características}: El proceso de extracción consiste en extraer valores característicos en cada ventana de tiempo.
+	\end{itemize}
+
+\column{4.8cm}
+	\begin{overprint}
+	\onslide<1> 
+	\begin{center}
+		\includegraphics[width=5.2cm]{propuesta/graphics/muestreo}
+		\par
+	\end{center}
+	\onslide<2> 
+	\begin{center}
+		\includegraphics[width=5.2cm]{propuesta/graphics/muestreo}
+		\par
+	\end{center}
+	\end{overprint}
+
+\end{columns}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}	
+\framesubtitle{Extracción de Muestras}
+Las métricas estadísticas con respecto al tiempo y frecuencia:
+\par
+\begin{table}
+\centering
+\resizebox{8cm}{!}{
+	\begin{tabular}{|l|l|}
+		\hline 
+		Función & Métrica \tabularnewline
+		\hline 
+		\hline 
+		\texttt{mean(s)} 			& Media Aritmética			\tabularnewline
+		\hline 
+		\texttt{std(s)} 			& Desviación estándar \tabularnewline
+		\hline 
+		\texttt{max(s)} 			& Valor máximo \tabularnewline
+		\hline 
+		\texttt{min(s)} 			& Valor mínimo \tabularnewline
+		\hline 
+		\texttt{skewness(s)} 		& Asimetría \tabularnewline
+		\hline 
+		\texttt{kurtosis(s)} 		& Kurtosis \tabularnewline
+		\hline 
+		\texttt{energy(s)} 			& Energía \tabularnewline
+		\hline 
+		\texttt{entropy(s)} 		& Entropía \tabularnewline
+		\hline 
+		\texttt{irq(s)} 			& Rango intercuartil \tabularnewline
+		\hline 
+		\texttt{autoregression(s)} 	& Coeficientes autorregresivos \tabularnewline
+		\hline 
+		\texttt{meanFreq(s)} 		& Promedio en frecuencia \tabularnewline
+		\hline 
+	\end{tabular}
+	\par
+}
+\end{table}
+\end{frame}
+%
+\begin{frame}{Metodología HAR}	
+\framesubtitle{Aprendizaje e inferencia}
+\begin{itemize}
+	\setlength\itemsep{1em}
+	\item Un HAR es similar a cualquier aplicación de aprendizaje automático. 
+	\item El objetivo principal del algoritmo es clasificar los datos desconocidos.
+	\item Hay muchos algoritmos de clasificación: 
+	\begin{itemize}
+		\item Arboles de Decisión
+		\item SVM
+		\item Clasificadores de Bayes, 
+		\item Modelos de Markov
+		\item Redes Neuronales y otros.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+%
+\begin{frame}
+{Metodología HAR}	
+\framesubtitle{Árbol de Decisión}
+\begin{columns}
+	
+\column{0.57\textwidth}
+	\begin{itemize}[<+->]
+		\item Método de aprendizaje predictivo sobre un conjunto de instancias etiquetadas.
+		\item Cada nodo interno denota una prueba de un atributo, y cada nodo hoja es una etiqueta o clase.
+		\item Utiliza el criterio de proporción de ganancia.
+		\item Simple de Implementar.
+		\item Algoritmos de J. R. Quinlan ID3, C4.5 (Implementación Java j48 de WEKA).
+	\end{itemize}
+	
+	
+\column{0.43\textwidth}
+	\begin{overprint}
+		\onslide<1-5> 
+		\begin{center}
+			\includegraphics[width=\textwidth]{propuesta/graphics/dtree}
+			\par
+		\end{center}
+
+	\end{overprint}
+\end{columns}
+\end{frame}
+%
+\begin{frame}[fragile]{Metodología HAR}
+\framesubtitle{Árbol de Decisión - Algoritmo}
+
+\begin{center}
+	\includegraphics[width=\textheight]{propuesta/graphics/algoritmoC45}
+	\par
+\end{center}
+
+\end{frame}
