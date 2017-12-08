@@ -1,0 +1,91 @@
+%% LyX 2.2.0 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[spanish,aspectratio=43,oneside,mathserif,notheorems,table]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+ % this default might be overridden by plain title style
+ \newcommand\makebeamertitle{\frame{\maketitle}}%
+ % (ERT) argument for the TOC
+ \AtBeginDocument{%
+   \let\origtableofcontents=\tableofcontents
+   \def\tableofcontents{\@ifnextchar[{\origtableofcontents}{\gobbletableofcontents}}
+   \def\gobbletableofcontents#1{\origtableofcontents}
+ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usetheme[pageofpages=de,% String used between the current page and thetotal page count.
+          bullet=circle,% Use circles instead of squares for bullets.
+          titleline=true,% Show a line below the frame title.
+          alternativetitlepage=true,% Use the fancy title page.
+          titlepagelogo=../graphics/logo.png,% Logo for the first page.
+          ]{Torino}
+% Nouvelle is a green and red alternative to the chameleon color theme.
+\usecolortheme{freewilly}
+%\usecolortheme{nouvelle}
+
+\newcommand{\monthname}{\ifcase\month\or Enero\or Febrero\or
+      Marzo\or Abril\or Mayo\or Junio\or Julio\or Agosto\or Septiembre\or
+      Octubre\or Noviembre\or Diciembre\fi}
+
+%Usando para definicion
+\usepackage{amsthm}
+\setbeamertemplate{theorems}[numbered]
+\theoremstyle{definition} 
+\newtheorem{definition}{Definición}[section]
+\usepackage{algpseudocode}
+
+\newcommand{\alertline}{%
+ \usebeamercolor[fg]{normal text}%
+ \only{\usebeamercolor[fg]{alerted text}}}
+
+\makeatother
+
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+\begin{document}
+
+\title{Reconocimiento de Actividades Humanas con un enfoque colaborativo}
+
+\subtitle{Proyecto Final de Grado}
+
+\author{Alberto Giménez\\
+Santiago Yegros}
+
+\institute{Tutores: Ing. Joaquín Lima\\
+Ing. Juan Talavera}
+
+\date{Facultad Politécnica - \monthname, \the\year}
+\makebeamertitle
+\begin{frame}
+
+\frametitle<presentation>{Contenido}
+
+\tableofcontents[hideothersubsections]{} 
+\end{frame}
+%
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Contenido}        		\tableofcontents[currentsection]
+	\end{frame} 
+}
+
+\include{intro/problema-1}
+
+\include{intro/alcance-1}
+
+\include{propuesta/estado-har-1}
+
+\include{propuesta/sistema-har-1}\include{propuesta/hardroid-1}\include{resultados/resultados-1}
+
+\include{conclusion/conclusion-1}
+
+
+\end{document}

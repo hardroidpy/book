@@ -1,0 +1,141 @@
+
+\section{Sistemas HAR}
+\begin{frame}{Sistemas HAR}
+
+\framesubtitle{Aplicaciones de Contexto}
+
+\setbeamercovered{transparent}
+\begin{itemize}
+\item Aplicaciones cuyo medio de interacción incluye al contexto.
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item El contexto es el estado acerca de la información
+\begin{itemize}
+\item física,
+\item emocional,
+\item social, entre otros
+\end{itemize}
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item La computación móvil y ubicua es sinónimo de dinamismo en el contexto
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Los tipos de contexto comunes en la computación móvil son: 
+\begin{itemize}
+\item la ubicación, 
+\item la identidad, 
+\item la actividad 
+\item y el tiempo
+\end{itemize}
+\end{itemize}
+\end{frame}
+%
+\begin{frame}<article>{Sistemas HAR}
+
+\framesubtitle{Propósito del sistema}
+
+\setbeamercovered{transparent}
+\begin{itemize}
+\item Proveer un componente para el desarrollo de aplicaciones de contexto. 
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Reconocer actividades realizadas rutinariamente de diferentes maneras, 
+\begin{itemize}
+\item por diferentes usuarios y 
+\item en diferentes contextos.
+\end{itemize}
+
+\pause{}
+\item Reconocer actividades mediante el uso de sensores.
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Ser portado oportunamente como atuendo para los usuarios (\emph{Wearable})
+\end{itemize}
+\end{frame}
+%
+\begin{frame}{Sistemas HAR}
+
+\framesubtitle{Diseño del sistema}
+
+\setbeamercovered{transparent}
+\begin{itemize}
+\item Arquitectura basada en aplicaciones de aprendizaje automático.
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Componentes principales
+\begin{itemize}
+\item un \structure{recolector} de medidas 
+\item un \structure{procesador} de muestras 
+\item un \structure{clasificador} de actividades
+\end{itemize}
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Metodología operativa
+\begin{itemize}
+\item Aprendizaje fuera de linea (\emph{off-line})
+\item Clasificación en linea (\emph{on-line})
+\end{itemize}
+\end{itemize}
+\begin{center}
+\visible<2->{\begin{center}
+\includegraphics[width=0.6\textwidth]{../capitulo-2/graphics/harsystem2}
+\par\end{center}}
+\par\end{center}
+
+\end{frame}
+%
+\begin{frame}{Sistemas HAR}
+
+\framesubtitle{Componentes del sistema}
+
+\setbeamercovered{transparent}
+\begin{columns}
+
+\column{0.25\textwidth}
+\begin{itemize}
+\item Recolector
+\begin{itemize}
+\item Sensor
+\item Registro
+\end{itemize}
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Procesador
+\begin{itemize}
+\item Filtro
+\item Extracción
+\end{itemize}
+\end{itemize}
+
+\pause{}
+\begin{itemize}
+\item Clasificador
+\begin{itemize}
+\item Aprendizaje
+\item Clasificación
+\end{itemize}
+\end{itemize}
+
+\column{0.75\textwidth}
+
+\includegraphics[width=1\columnwidth]{propuesta/graphics/harsystem}
+\end{columns}
+
+\end{frame}
+

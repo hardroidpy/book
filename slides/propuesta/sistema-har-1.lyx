@@ -71,12 +71,16 @@
 
 \begin_body
 
+\begin_layout Section
+Sistemas HAR
+\end_layout
+
 \begin_layout Frame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-Alcance
+Sistemas HAR
 \end_layout
 
 \end_inset
@@ -86,90 +90,7 @@ Alcance
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Propuesta
-\end_layout
-
-\begin_layout Standard
-\align center
-Reconocer actividades humanas utilizando teléfonos móviles modernos con
- un enfoque colaborativo
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Alcance
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameSubtitle
-Objetivo General
-\end_layout
-
-\begin_layout Standard
-\align center
-El objetivo principal es desarrollar un sistema 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-\align block
-HAR
-\end_layout
-
-\end_inset
-
- utilizando teléfonos móviles modernos cuyo aporte principal es una librería
- de código abierto y un modelo de aprendizaje activo.
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Alcance
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameSubtitle
-Objetivos Específicos
+Aplicaciones de Contexto
 \end_layout
 
 \begin_layout Standard
@@ -188,120 +109,165 @@ setbeamercovered{transparent}
 
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Itemize
+Aplicaciones cuyo medio de interacción incluye al contexto.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+El contexto es el estado acerca de la información
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+física,
+\end_layout
+
+\begin_layout Itemize
+emocional,
+\end_layout
+
+\begin_layout Itemize
+social, entre otros
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+La computación móvil y ubicua es sinónimo de dinamismo en el contexto
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Los tipos de contexto comunes en la computación móvil son: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+la ubicación, 
+\end_layout
+
+\begin_layout Itemize
+la identidad, 
+\end_layout
+
+\begin_layout Itemize
+la actividad 
+\end_layout
+
+\begin_layout Itemize
+y el tiempo
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
 \begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
-+-
+article
 \end_layout
 
 \end_inset
 
-Definir el marco teórico sobre 
-\begin_inset Flex Structure
+
+\begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-HAR
+Sistemas HAR
 \end_layout
 
 \end_inset
 
-.
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Propósito del sistema
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Proveer un componente para el desarrollo de aplicaciones de contexto.
  
 \end_layout
 
-\begin_layout Enumerate
-Revisar las técnicas de 
-\begin_inset Flex Structure
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Reconocer actividades realizadas rutinariamente de diferentes maneras, 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+por diferentes usuarios y 
+\end_layout
+
+\begin_layout Itemize
+en diferentes contextos.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Reconocer actividades mediante el uso de sensores.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Ser portado oportunamente como atuendo para los usuarios (
+\begin_inset Flex Emphasize
 status open
 
 \begin_layout Plain Layout
-captura de señales
+Wearable
 \end_layout
 
 \end_inset
 
-.
- 
-\end_layout
-
-\begin_layout Enumerate
-Revisar el 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-procesamiento de señales
-\end_layout
-
-\end_inset
-
- para identificar variables de entrenamiento.
- 
-\end_layout
-
-\begin_layout Enumerate
-Comprender la clasificación basada 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-aprendizaje automático
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Enumerate
-Diseñar un 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-sistema HAR
-\end_layout
-
-\end_inset
-
- que incluya la recolección de muestras colaborativas y clasificación de
- actividades en-línea.
- 
-\end_layout
-
-\begin_layout Enumerate
-Aportar un componente de 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-software libre
-\end_layout
-
-\end_inset
-
- para teléfonos móviles modernos con plataforma 
-\emph on
-
-\begin_inset Flex Bold
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Android
-\end_layout
-
-\end_inset
-
-
-\emph default
-.
- 
+)
 \end_layout
 
 \end_deeper
@@ -317,7 +283,7 @@ Android
 status open
 
 \begin_layout Plain Layout
-Alcance
+Sistemas HAR
 \end_layout
 
 \end_inset
@@ -327,7 +293,175 @@ Alcance
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Actividades Humanas
+Diseño del sistema
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamercovered{transparent}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Arquitectura basada en aplicaciones de aprendizaje automático.
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Componentes principales
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+un 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+recolector
+\end_layout
+
+\end_inset
+
+ de medidas 
+\end_layout
+
+\begin_layout Itemize
+un 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+procesador
+\end_layout
+
+\end_inset
+
+ de muestras 
+\end_layout
+
+\begin_layout Itemize
+un 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+clasificador
+\end_layout
+
+\end_inset
+
+ de actividades
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Metodología operativa
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aprendizaje fuera de linea (
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+off-line
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Clasificación en linea (
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+on-line
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\align center
+\begin_inset Flex Visible
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+2-
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../../capitulo-2/graphics/harsystem2.png
+	lyxscale 50
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sistemas HAR
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Componentes del sistema
 \end_layout
 
 \begin_layout Standard
@@ -368,48 +502,52 @@ textwidth
 \end_layout
 
 \begin_layout Itemize
-Acciones cortas
+Recolector
 \end_layout
 
 \begin_deeper
-\begin_layout Pause
+\begin_layout Itemize
+Sensor
+\end_layout
 
+\begin_layout Itemize
+Registro
 \end_layout
 
 \end_deeper
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
-Actividades Simples
+Procesador
 \end_layout
 
 \begin_deeper
-\begin_layout Pause
+\begin_layout Itemize
+Filtro
+\end_layout
 
+\begin_layout Itemize
+Extracción
 \end_layout
 
 \end_deeper
+\begin_layout Pause
+
+\end_layout
+
 \begin_layout Itemize
-Actividades Complejas
+Clasificador
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Combinación
+Aprendizaje
 \end_layout
 
 \begin_layout Itemize
-Cotidianas 
-\end_layout
-
-\begin_layout Itemize
-Gimnásticas
-\end_layout
-
-\begin_layout Itemize
-Militares
-\end_layout
-
-\begin_layout Pause
-
+Clasificación
 \end_layout
 
 \end_deeper
@@ -429,60 +567,17 @@ textwidth
 
 \end_layout
 
-\begin_layout Overprint
-\begin_inset Argument item:1
-status open
-
-\begin_layout Plain Layout
-1-3
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
-\align center
 \begin_inset Graphics
-	filename ../propuesta/graphics/actividades.png
-	lyxscale 50
-	width 95col%
+	filename graphics/harsystem.png
+	lyxscale 20
+	width 100col%
 
 \end_inset
 
 
 \end_layout
 
-\end_deeper
-\begin_layout Overprint
-\begin_inset Argument item:1
-status open
-
-\begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename graphics/actividades.png
-	lyxscale 50
-	width 70col%
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \end_deeper
 \end_deeper
 \end_body
