@@ -111,8 +111,7 @@ diaria.
 \includegraphics[width=1\textwidth]{intro/graphics/context1}
 
 \begin{spacing}{0}
-\noindent \textcolor{darkgray}{\emph{\tiny{}\copyright Connected
-Social Media, Intel}}{\tiny \par}
+\noindent \emph{\tiny{}\copyright Connected Social Media, Intel}{\tiny \par}
 \end{spacing}
 \onslide<2> 
 
@@ -122,15 +121,14 @@ Social Media, Intel}}{\tiny \par}
 \includegraphics[bb=100bp 0bp 520bp 266bp,clip,width=1\textwidth]{intro/graphics/sensor-environment}
 
 \begin{spacing}{0}
-\noindent \textcolor{darkgray}{\emph{\tiny{}\copyright Beacons, Google
-Developers}}{\tiny \par}
+\noindent \emph{\tiny{}\copyright Beacons, Google Developers}{\tiny \par}
 \end{spacing}
 \onslide<4-> 
 
 \includegraphics[width=1\textwidth]{intro/graphics/mobile-phone}
 
 \begin{spacing}{0}
-\noindent \textcolor{darkgray}{\emph{\tiny{}\cc Mobile Dev, Pinterest}}{\tiny \par}
+\noindent \emph{\tiny{}\cc Mobile Dev, Pinterest}{\tiny \par}
 \end{spacing}
 \end{overprint}
 \end{columns}
@@ -174,23 +172,26 @@ Toptal.io}}%
 
 \framesubtitle{Definición del Problema}
 
-En la actualidad \emph{Google Play Services} es la única libreria
-\structure{HAR} de uso libre para aplicaciones móviles de terceros.
-\begin{itemize}
-\item No es de código abierto.
-\item Es de libre utilización pero no puede ser mejorado y extendido por
-una comunidad abierta.
-\item No existe una herramienta de software libre para fines practicos e
-investigativos equivalente con respecto a \structure{HAR}.
-\end{itemize}
-\begin{uncoverenv}<2>
-\begin{center}
-\textcolor{darkgray}{\emph{\tiny{}}}%
-\noindent\begin{minipage}[t]{1\columnwidth}%
-\includegraphics[width=0.65\textwidth]{intro/graphics/har_stack}%
-\end{minipage}
-\par\end{center}{\tiny \par}
-\end{uncoverenv}
+En la actualidad \emph{\textbf{\emph{Google Play Services}}} es la
+única librería \structure{HAR} de uso libre para aplicaciones móviles
+de terceros.
+\begin{overprint}
+\onslide<1> 
 
+\begin{figure}
+\caption{Arquitectura de \protect\structure{HAR} en \protect\emph{Android}}
+
+\centering{}\includegraphics[width=0.65\textwidth]{intro/graphics/har_stack}
+\end{figure}
+
+\onslide<2> 
+\begin{itemize}
+\item No es de código abierto (\structure{open source}).
+\item Es de libre utilización pero no puede ser mejorado y extendido de
+forma \structure{colaborativa}.
+\item No existe una herramienta de software libre para fines prácticos e
+investigación equivalente con respecto a \structure{HAR}.
+\end{itemize}
+\end{overprint}
 \end{frame}
 

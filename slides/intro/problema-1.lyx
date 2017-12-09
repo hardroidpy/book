@@ -613,7 +613,6 @@ status open
 
 \size tiny
 \emph on
-\color darkgray
 \begin_inset ERT
 status open
 
@@ -689,7 +688,6 @@ status open
 
 \size tiny
 \emph on
-\color darkgray
 \begin_inset ERT
 status open
 
@@ -737,7 +735,6 @@ status open
 
 \size tiny
 \emph on
-\color darkgray
 \begin_inset ERT
 status open
 
@@ -956,9 +953,21 @@ Definición del Problema
 \begin_layout Standard
 En la actualidad 
 \emph on
+
+\begin_inset Flex Bold
+status open
+
+\begin_layout Plain Layout
+
+\emph on
 Google Play Services
+\end_layout
+
+\end_inset
+
+
 \emph default
- es la única libreria 
+ es la única librería 
 \begin_inset Flex Structure
 status open
 
@@ -971,36 +980,12 @@ HAR
  de uso libre para aplicaciones móviles de terceros.
 \end_layout
 
-\begin_layout Itemize
-No es de código abierto.
-\end_layout
-
-\begin_layout Itemize
-Es de libre utilización pero no puede ser mejorado y extendido por una comunidad
- abierta.
-\end_layout
-
-\begin_layout Itemize
-No existe una herramienta de software libre para fines practicos e investigativo
-s equivalente con respecto a 
-\begin_inset Flex Structure
+\begin_layout Overprint
+\begin_inset Argument item:1
 status open
 
 \begin_layout Plain Layout
-HAR
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Uncover
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-2
+1
 \end_layout
 
 \end_inset
@@ -1010,30 +995,45 @@ status open
 
 \begin_deeper
 \begin_layout Standard
-\align center
-
-\size tiny
-\emph on
-\color darkgray
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitectura de 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+HAR
+\end_layout
+
+\end_inset
+
+ en 
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+Android
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename graphics/har_stack.png
 	lyxscale 50
@@ -1047,6 +1047,65 @@ status open
 \end_inset
 
 
+\end_layout
+
+\end_deeper
+\begin_layout Overprint
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+No es de código abierto (
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+open source
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Es de libre utilización pero no puede ser mejorado y extendido de forma
+ 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+colaborativa
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+No existe una herramienta de software libre para fines prácticos e investigación
+ equivalente con respecto a 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+HAR
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
