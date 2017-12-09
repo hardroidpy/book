@@ -890,7 +890,7 @@ separation "3pt"
 shadowsize "4pt"
 framecolor "black"
 backgroundcolor "none"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -935,5 +935,121 @@ copyright
 
 \end_layout
 
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+HAR en Android
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Definición del Problema
+\end_layout
+
+\begin_layout Standard
+En la actualidad 
+\emph on
+Google Play Services
+\emph default
+ es la única libreria 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+HAR
+\end_layout
+
+\end_inset
+
+ de uso libre para aplicaciones móviles de terceros.
+\end_layout
+
+\begin_layout Itemize
+No es de código abierto.
+\end_layout
+
+\begin_layout Itemize
+Es de libre utilización pero no puede ser mejorado y extendido por una comunidad
+ abierta.
+\end_layout
+
+\begin_layout Itemize
+No existe una herramienta de software libre para fines practicos e investigativo
+s equivalente con respecto a 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+HAR
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Uncover
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+
+\size tiny
+\emph on
+\color darkgray
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphics/har_stack.png
+	lyxscale 50
+	width 65text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \end_body
 \end_document

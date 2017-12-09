@@ -145,7 +145,7 @@ HARDroid
 
 \begin_deeper
 \begin_layout Itemize
-Servicio utilitario de reconocimiento.
+Servicio Reconocedor
 \end_layout
 
 \begin_layout Itemize
@@ -173,12 +173,11 @@ ActivitySurvey
 
 \begin_deeper
 \begin_layout Itemize
-Aplicación que depende del servicio.
+Cliente de Reconocimiento
 \end_layout
 
 \begin_layout Itemize
-Encuesta a usuarios.
- 
+Encuesta guiada
 \end_layout
 
 \begin_layout Pause
@@ -202,11 +201,11 @@ Backend C4.5
 
 \begin_deeper
 \begin_layout Itemize
-Servicio web de recolección.
+Servicio web de recolección
 \end_layout
 
 \begin_layout Itemize
-Aciertos son utilizados para mejorar el clasificador.
+Aprendizaje en-linea
 \end_layout
 
 \end_deeper
@@ -229,7 +228,7 @@ textwidth
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename graphics/arqui_general.png
+	filename graphics/arch_har_stack.png
 	lyxscale 50
 	width 100col%
 
