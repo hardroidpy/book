@@ -1,8 +1,8 @@
 
-\section{Metodología HAR}
+\section{Metodología y Sistemas HAR}
 
-\begin{frame}[t]{Metodología HAR}
-\framesubtitle{Definición Teórica}
+\begin{frame}[t]{Definición Teórica}
+\framesubtitle{Metodología HAR}
 
 \begin{block}{Problema HAR} 
 
@@ -17,32 +17,32 @@ El objetivo es encontrar $\mathbf{  F\colon S_{j}\rightarrow A }$ para todos los
 
 \end{frame}
 %
-\begin{frame}{Metodología HAR}
-\framesubtitle{Proceso de aprendizaje}
+\begin{frame}{Proceso de aprendizaje}
+\framesubtitle{Metodología HAR}
 	\begin{center}
 		\includegraphics[width=8cm]{propuesta/graphics/har-3}
 		\par
 	\end{center}
 \end{frame}
 %
-\begin{frame}{Metodología HAR}
-\framesubtitle{Proceso de evaluación}
+\begin{frame}{Proceso de evaluación}
+\framesubtitle{Metodología HAR}
 	\begin{center}
 		\includegraphics[width=8cm]{propuesta/graphics/har-6}
 		\par
 	\end{center}
 \end{frame}
 %
-\begin{frame}{Metodología HAR}
-\framesubtitle{Proceso HAR}
+\begin{frame}{Proceso HAR}
+\framesubtitle{Metodología HAR}
 	\begin{center}
-		\includegraphics[width=8cm]{propuesta/graphics/har-7}
+		\includegraphics[width=11cm]{propuesta/graphics/metodologia_har}
 		\par
 	\end{center}
 \end{frame}
 %
-\begin{frame}{Metodología HAR}
-\framesubtitle{Colección de Datos}
+\begin{frame}{Colección de Datos}
+\framesubtitle{Metodología HAR}
 El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cintura, muñeca, muslos, etc) realizando alguna actividad de interés.
 
 \begin{center}
@@ -79,8 +79,8 @@ El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cin
 \end{center}
 \end{frame}
 %
-\begin{frame}{Metodología HAR}
-\framesubtitle{Extracción de Muestras}
+\begin{frame}{Extracción de Muestras}
+\framesubtitle{Metodología HAR}
 	\begin{itemize}
 		\setlength\itemsep{1em}
 		\item El siguiente paso es el procesamiento de las señales obtenidas por los sensores y extraer las características relevantes de los datos sin procesar.
@@ -94,8 +94,8 @@ El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cin
 	\end{itemize}
 \end{frame}
 %
-\begin{frame}{Metodología HAR}
-\framesubtitle{Extracción de Muestras}
+\begin{frame}{Extracción de Muestras}
+\framesubtitle{Metodología HAR}
 \begin{columns}
 	
 \column{4cm}
@@ -123,8 +123,8 @@ El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cin
 \end{columns}
 \end{frame}
 %
-\begin{frame}{Metodología HAR}
-\framesubtitle{Extracción de Muestras - Muestreo}
+\begin{frame}{Extracción de Muestras}
+\framesubtitle{Metodología HAR}
 \begin{columns}
 	
 \column{5.2cm}
@@ -143,7 +143,7 @@ El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cin
 	\end{center}
 	\onslide<2> 
 	\begin{center}
-		\includegraphics[width=5.2cm]{propuesta/graphics/muestreo}
+		\includegraphics[width=5.2cm]{propuesta/graphics/muestreo_con_act}
 		\par
 	\end{center}
 	\end{overprint}
@@ -151,13 +151,13 @@ El primer paso es recolectar señales obtenidas de sensores unidos al cuerpo (cin
 \end{columns}
 \end{frame}
 %
-\begin{frame}{Metodología HAR}	
-\framesubtitle{Extracción de Muestras}
-Las métricas estadísticas con respecto al tiempo y frecuencia:
+\begin{frame}{Inferencia}
+\framesubtitle{Metodología HAR}	
+La extracción se realiza en función a cada muestra $S$ de entrada. Las métricas estadísticas con respecto al tiempo y frecuencia utilizadas son:
 \par
 \begin{table}
 \centering
-\resizebox{8cm}{!}{
+\resizebox{7cm}{!}{
 	\begin{tabular}{|l|l|}
 		\hline 
 		Función & Métrica \tabularnewline
@@ -191,15 +191,14 @@ Las métricas estadísticas con respecto al tiempo y frecuencia:
 \end{table}
 \end{frame}
 %
-\begin{frame}{Metodología HAR}	
-\framesubtitle{Aprendizaje e inferencia}
+\begin{frame}{Aprendizaje e inferencia}
+\framesubtitle{Metodología HAR}	
 \begin{itemize}
 	\setlength\itemsep{1em}
-	\item Un HAR es similar a cualquier aplicación de aprendizaje automático. 
-	\item El objetivo principal del algoritmo es clasificar los datos desconocidos.
+	\item El objetivo principal del algoritmo es clasificar los datos desconocidos en función a muestras obtenidas.
 	\item Hay muchos algoritmos de clasificación: 
 	\begin{itemize}
-		\item Arboles de Decisión
+		\item \alert<2>{Arboles de Decisión}
 		\item SVM
 		\item Clasificadores de Bayes, 
 		\item Modelos de Markov
@@ -208,18 +207,16 @@ Las métricas estadísticas con respecto al tiempo y frecuencia:
 \end{itemize}
 \end{frame}
 %
-\begin{frame}
-{Metodología HAR}	
-\framesubtitle{Árbol de Decisión}
+\begin{frame}{Árbol de Decisión}
+\framesubtitle{Metodología HAR}	
 \begin{columns}
 	
 \column{0.57\textwidth}
 	\begin{itemize}[<+->]
 		\item Método de aprendizaje predictivo sobre un conjunto de instancias etiquetadas.
 		\item Cada nodo interno denota una prueba de un atributo, y cada nodo hoja es una etiqueta o clase.
-		\item Utiliza el criterio de proporción de ganancia.
-		\item Simple de Implementar.
-		\item Algoritmos de J. R. Quinlan ID3, C4.5 (Implementación Java j48 de WEKA).
+		\item Para su construcción se utiliza criterio de proporción de ganancia.
+		\item Simple de Implementar y tiene un bajo consumo de energía.
 	\end{itemize}
 	
 	
@@ -230,17 +227,9 @@ Las métricas estadísticas con respecto al tiempo y frecuencia:
 			\includegraphics[width=\textwidth]{propuesta/graphics/dtree}
 			\par
 		\end{center}
+		\emph{\footnotesize{}Algoritmos C4.5 (Implementación Java j48 de WEKA)}{\footnotesize \par}
 
 	\end{overprint}
 \end{columns}
 \end{frame}
 %
-\begin{frame}[fragile]{Metodología HAR}
-\framesubtitle{Árbol de Decisión - Algoritmo}
-
-\begin{center}
-	\includegraphics[width=\textheight]{propuesta/graphics/algoritmoC45}
-	\par
-\end{center}
-
-\end{frame}
