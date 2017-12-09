@@ -1,306 +1,388 @@
 
 \section{Resultados}
-\begin{frame}{Resultados}
-\framesubtitle{Procedimiento Guía}
+\begin{frame}{Procedimiento Guía}
+
+\framesubtitle{Resultados}
+
 \setbeamercovered{transparent}
-Para validar y verificar el clasificador se realizaron dos tipos de pruebas siguiendo los siguientes pasos:
 
+Para validar y verificar el clasificador se realizaron dos tipos de
+pruebas siguiendo los siguientes pasos:
 \begin{itemize}[<+->]
-	\item Creación de un conjunto entrenamiento inicial para el clasificador de \structure{HARDroid} (\emph{off-line}).
-	\item Evaluación del reconocedor \structure{HARDroid} en comparación con \emph{Sony Lifelog} (\emph{on-line}).
-	\item Generación de un nuevo conjunto entrenamiento \structure{colaborativo} cuyo clasificador es evaluado (\emph{on-line}).
+\item Creación de un conjunto entrenamiento inicial para el clasificador
+de \structure{HARDroid} (\emph{off-line}, entrenamiento). 
+\item Evaluación del reconocedor \structure{HARDroid} en comparación con
+\emph{Sony Lifelog} (\emph{on-line}, validación de aporte). 
+\item A partir del uso se obtuvo un nuevo conjunto entrenamiento \structure{colaborativo}
+a partir de encuestas recolectadas (\emph{on-line}, prueba de concepto). 
 \end{itemize}
-
 \end{frame}
 %
-\begin{frame}{Resultados}
-\framesubtitle{Entrenamiento inicial}
+\begin{frame}{Entrenamiento inicial}
+
+\framesubtitle{Resultados}
+
 \setbeamercovered{transparent}
-
 \begin{itemize}[<+->]
-	\item Voluntarios de 8 personas entre 20 y 38 años.
-	\item Captura y etiquetado supervisado por actividad de 2 a 15 minutos.
-	\item Tiempo acumulado de entrenamiento de 516 minutos (8:36).
+\item Con 8 voluntarios entre las edades de 20 y 38 años. 
+\item Sesión de captura y etiquetado supervisado para cada actividad de
+2 a 15 minutos de duración. 
+\item Tiempo acumulado de entrenamiento de 516 minutos. 
 \end{itemize}
-
 \begin{table}[h]
-	\caption{Muestras etiquetadas en conjunto de entrenamiento inicial}
-	\begin{centering}
-		\begin{tabular}{|c|c|c|c|c|c|}
-			\hline 
-			\texttt{\footnotesize{WALKING}} & \texttt{\footnotesize{RUNNING}} & \texttt{\footnotesize{STILL}} & \texttt{\footnotesize{TILTING}} & \texttt{\footnotesize{ON\_BICYLE}} & \texttt{\footnotesize{IN\_VEHICLE}}\tabularnewline
-			\hline 
-			\hline 
-			5.915 &	3.019 &	645 & 485 & 1.338 & 610\tabularnewline
-			\hline 
-			49\% & 25\% & 6\% & 4\% & 11\% & 5\%\tabularnewline
-			\hline 
-		\end{tabular}
-		\par\end{centering}
+\caption{Muestras etiquetadas en conjunto de entrenamiento inicial}
+
+\centering{}%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+\texttt{\footnotesize{}WALKING}{\footnotesize{} } & \texttt{\footnotesize{}RUNNING}{\footnotesize{} } & \texttt{\footnotesize{}STILL}{\footnotesize{} } & \texttt{\footnotesize{}TILTING}{\footnotesize{} } & \texttt{\footnotesize{}ON\_BICYLE}{\footnotesize{} } & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
+\hline 
+\hline 
+5.915  & 3.019  & 645  & 485  & 1.338  & 610\tabularnewline
+\hline 
+49\%  & 25\%  & 6\%  & 4\%  & 11\%  & 5\%\tabularnewline
+\hline 
+\end{tabular}
 \end{table}
 
 \end{frame}
 %
-\begin{frame}{Resultados}
-\framesubtitle{Validación del Clasificador}
+\begin{frame}{Validación del Clasificador}
 
-El rendimiento del clasificador se evalúa utilizando algunas métricas numéricas de predicción:
+\framesubtitle{Resultados}
 
+El rendimiento del clasificador se evalúa utilizando métricas de predicción
+propuestas en el estado del arte \emph{{[}Witten et al., 2017{]}}:
+\begin{overprint}
+\onslide<1> 
 \begin{itemize}
-	\item Número de instancias ($N$).
-	\item Correctamente clasificadas ($C$).
-	\item Incorrectamente clasificadas ($I$).
-	\item Estadísticas Kappa ($\kappa$).
+\item Número de instancias ($N$). 
+\item Correctamente clasificadas ($C$). 
+\item Incorrectamente clasificadas ($I$). 
+\item Estadística Kappa ($\kappa$). 
 \end{itemize}
+\onslide<2> 
 
-\begin{block}<2>{Definición}
-Es el coeficiente kappa de Cohen que determina el valor de coeficiente 
-de concordancia para confiabilidad de los datos.
+\begin{table}
+\caption{Estadística Kappa ($\kappa$)}
+\centering\resizebox{0.7\textwidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline 
+Valor & Nivel de acuerdo & \% de datos confiables\tabularnewline
+\hline 
+\hline 
+0 - 0.20 & No & 0 - 4\%\tabularnewline
+\hline 
+0.21 - 0.39 & Mínimo & 4 - 15\%\tabularnewline
+\hline 
+0.40 - 0.59 & Débil & 15 - 35\%\tabularnewline
+\hline 
+0.60 - 0.79 & Moderado & 35 - 63\%\tabularnewline
+\hline 
+0.80 - 0.90 & Fuerte & 64 - 81\%\tabularnewline
+\hline 
+>0.90 & Casi perfecto & 82 - 100\%\tabularnewline
+\hline 
+\end{tabular}}
+\end{table}
+
+\end{overprint}
+\begin{block}<2>{Coeficiente $\kappa$ de Cohen}
+
+Coeficiente de concordancia para confiabilidad de los datos.
 \end{block}
-
 \end{frame}
 %
-\begin{frame}{Resultados}
-\framesubtitle{Validación del Clasificador}
+\begin{frame}{Validación del Clasificador}
 
-El costo del clasificador se evalúa utilizando algunas métricas numéricas en términos del error:
+\framesubtitle{Resultados}
 
-\begin{itemize}
-	\item Error medio absoluto ($E_{ma}$).
-	\item Raíz de Error cuadrático medio ($E_{rms}$).
-	\item Error absoluto relativo ($E_{ra}$).
-	\item Raíz de Error cuadrático relativo ($E_{rrs}$).
+El costo del clasificador se evalúa utilizando métricas de error propuestas
+en el estado del arte \emph{{[}Witten et al., 2017{]}}:
+\begin{columns}
+
+\column{0.5\textwidth}
+\begin{itemize}[<+->]
+\item Error medio absoluto ($E_{ma}$). 
+\item Raíz de Error cuadrático medio ($E_{rms}$). 
+\item Error absoluto relativo ($E_{ra}$). 
+\item Raíz de Error cuadrático relativo ($E_{rrs}$). 
 \end{itemize}
 
+\column{0.5\textwidth}
+\begin{overprint}
+\onslide<1> 
+
+\[
+E_{ma}=\frac{1}{n}\sum_{i\text{=1}}^{n}\bigl|y_{i}-f(x_{i})\bigr|
+\]
+
+\onslide<2> 
+
+\[
+E_{rms}=\sqrt{\frac{1}{n}\sum_{i\text{=1}}^{n}\left(y_{i}-f(x_{i})\right)^{2}}
+\]
+
+\onslide<3> 
+\begin{center}
+\[
+E_{ra}=\sum_{i\text{=1}}^{n}\frac{\bigl|y_{i}-f(x_{i})\bigr|}{\bigl|y_{i}-\bar{y}\bigr|}
+\]
+con 
+\[
+\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}
+\]
+\par\end{center}
+\onslide<4> 
+\begin{center}
+\[
+E_{rrs}=\sqrt{\sum_{i\text{=1}}^{n}\frac{\left(y_{i}-f(x_{i})\right)^{2}}{\left(y_{i}-\bar{y_{i}}\right)^{2}}}
+\]
+con 
+\[
+\bar{y}=\frac{1}{n}\sum_{i=1}^{n}y_{i}
+\]
+\par\end{center}
+
+\end{overprint}
+\end{columns}
+
 \end{frame}
 %
+\begin{frame}{Validación del Clasificador ($\mathrm{A}$)}
 
-\begin{frame}{Resultados}
-\framesubtitle{Validación del Clasificador ($\mathrm{A}$)}
-\setbeamercovered{transparent}
+\framesubtitle{Resultados}
 
-El clasificador inicial ($\mathrm{A}$) es un árbol de decisión 
- de \textbf{677} nodos con \textbf{339} hojas.
-
+El clasificador inicial ($\mathrm{A}$) es un árbol de decisión de
+\textbf{677} nodos con \textbf{339} hojas con las siguientes características.
 
 \begin{table}[H]
-	\centering
-	\caption{Métricas del clasificador $\mathrm{A}$}
-	\resizebox{5cm}{!}{
-		\begin{tabular}{|c|c|}
-			\hline 
-			Métrica & Valor\tabularnewline
-			\hline 
-			\hline 
-			$N$ & 12.012\tabularnewline
-			\hline 
-			$C$ & 10.942 (91,0922\%)\tabularnewline
-			\hline 
-			$I$ & 1.070 (8,9078\%) \tabularnewline
-			\hline 
-			$\kappa$ & 0,8678 \tabularnewline
-			\hline 
-			$E_{ma}$ & 0,0341 \tabularnewline
-			\hline 
-			$E_{rms}$ & 0,164 \tabularnewline
-			\hline 
-			$E_{ra}$ & 15,17\% \tabularnewline
-			\hline 
-			$E_{rrs}$ & 48,91\% \tabularnewline
-			\hline 
-		\end{tabular}
-	}
+\caption{Métricas del clasificador $\mathrm{A}$}
+\centering\resizebox{5cm}{!}{ %
+\begin{tabular}{|c|c|}
+\hline 
+Métrica  & Valor\tabularnewline
+\hline 
+\hline 
+$N$  & 12.012\tabularnewline
+\hline 
+$C$  & 10.942 (91,0922\%)\tabularnewline
+\hline 
+$I$  & 1.070 (8,9078\%) \tabularnewline
+\hline 
+$\kappa$  & 0,8678 \tabularnewline
+\hline 
+$E_{ma}$  & 0,0341 \tabularnewline
+\hline 
+$E_{rms}$  & 0,164 \tabularnewline
+\hline 
+$E_{ra}$  & 15,17\% \tabularnewline
+\hline 
+$E_{rrs}$  & 48,91\% \tabularnewline
+\hline 
+\end{tabular}} 
 \end{table}
 
 \end{frame}
 %
-\begin{frame}{Resultados}
-\framesubtitle{Validación del Clasificador ($\mathrm{A}$)}
+\begin{frame}{Validación del Clasificador ($\mathrm{A}$)}
+
+\framesubtitle{Resultados}
 
 \begin{table}[h]
-\centering
-\caption{Matriz de confusión del clasificador generado}
-\resizebox{11cm}{!}{
-		\begin{tabular}{|l|c|c|c|c|c|c|}
-			\cline{2-7} 
-			\multicolumn{1}{l|}{} & \multicolumn{6}{c|}{Matriz de Confusión}\tabularnewline
-			\hline 
-			Actividad & \texttt{\footnotesize{WALKING}} & \texttt{\footnotesize{RUNNING}} & \texttt{\footnotesize{STILL}} & \texttt{\footnotesize{TILTING}} & \texttt{\footnotesize{ON\_BICYLE}} & \texttt{\footnotesize{IN\_VEHICLE}}\tabularnewline
-			\hline 
-			\hline 
-			\texttt{\footnotesize{WALKING}} & \textbf{5.643} & 63 & 21 & 28 & 156 & 4\tabularnewline
-			\hline 
-			\texttt{\footnotesize{RUNNING}} & 122 & \textbf{2.852} & 3 & 6 & 36 & 0\tabularnewline
-			\hline 
-			\texttt{\footnotesize{STILL}} & 19 & 14 & \textbf{555} & 23 & 15 & 19\tabularnewline
-			\hline 
-			\texttt{\footnotesize{TILTING}} & 26 & 3 & 21 & \textbf{304} & 46 & 85\tabularnewline
-			\hline 
-			\texttt{\footnotesize{ON\_BICYLE}} & 157 & 28 & 7 & 47 & \textbf{1.089} & 10\tabularnewline
-			\hline 
-			\texttt{\footnotesize{IN\_VEHICLE}} & 2 & 2 & 14 & 86 & 7 & \textbf{499}\tabularnewline
-			\hline 
-		\end{tabular}
-	}
+ \caption{Matriz de confusión del clasificador generado}
+\centering\resizebox{11cm}{!}{ %
+\begin{tabular}{l|c|c|c|c|c|c}
+ & \texttt{\footnotesize{}WALKING} & \texttt{\footnotesize{}RUNNING}{\footnotesize{} } & \texttt{\footnotesize{}STILL} & \texttt{\footnotesize{}TILTING}{\footnotesize{} } & \texttt{\footnotesize{}ON\_BICYLE}{\footnotesize{} } & \texttt{\footnotesize{}IN\_VEHICLE}\tabularnewline
+\hline 
+\texttt{\footnotesize{}WALKING}{\footnotesize{} } & \textbf{5.643}  & 63  & 21  & 28  & 156  & 4\tabularnewline
+\hline 
+\texttt{\footnotesize{}RUNNING}{\footnotesize{} } & 122  & \textbf{2.852}  & 3  & 6  & 36  & 0\tabularnewline
+\hline 
+\texttt{\footnotesize{}STILL}{\footnotesize{} } & 19  & 14  & \textbf{555}  & 23  & 15  & 19\tabularnewline
+\hline 
+\texttt{\footnotesize{}TILTING} & 26  & 3  & 21  & \textbf{304}  & 46  & 85\tabularnewline
+\hline 
+\texttt{\footnotesize{}ON\_BICYLE}{\footnotesize{} } & 157  & 28  & 7  & 47  & \textbf{1.089}  & 10\tabularnewline
+\hline 
+\texttt{\footnotesize{}IN\_VEHICLE}{\footnotesize{} } & 2  & 2  & 14  & 86  & 7  & \textbf{499}\tabularnewline
+\end{tabular}} 
 \end{table}
 
 \end{frame}
-\begin{frame}{Resultados}
-\framesubtitle{Validación del Clasificador ($\mathrm{A}$)}
+%
+\begin{frame}{Validación del Clasificador ($\mathrm{A}$)}
 
-A partir de la matriz de confusión se calculan las métricas de evaluación:
-\begin{itemize}
-    \item Exactitud: \textbf{0,9714}
-	\item Precisión: \textbf{0,9174}
-	\item Exhaustividad: \textbf{0,9109}
-	\item \emph{Valor-F}: \textbf{0,9142}
+\framesubtitle{Resultados}
+
+A partir de la matriz de confusión se calculan las métricas de evaluación
+propuestas en el estado del arte \emph{{[}Witten et al., 2017{]}}: 
+\begin{columns}
+
+\column{0.4\textwidth}
+\begin{itemize}[<+->]
+\item Exactitud: \textbf{0,9714} 
+\item Precisión: \textbf{0,9174} 
+\item Exhaustividad: \textbf{0,9109} 
+\item \emph{Valor-F}: \textbf{0,9142} 
 \end{itemize}
 
+\column{0.6\textwidth}
+\begin{overprint}
+\onslide<1> 
+
+\[
+Exactitud=\frac{TP+TN}{TP+TN+FP+FN}
+\]
+
+\begin{center}
+\emph{(rendimiento general)}
+\par\end{center}
+\onslide<2> 
+
+\[
+Precisi\acute{o}n=\frac{TP}{TP+FP}
+\]
+
+\begin{center}
+\emph{(valor predictivo positivo)}
+\par\end{center}
+\onslide<3> 
+
+\[
+Exhaustividad=\frac{TP}{TP+FN}
+\]
+
+\begin{center}
+\emph{(tasa positiva verdadera)}
+\par\end{center}
+\onslide<4> 
+
+\[
+ValorF=2\cdot\frac{Precisi\acute{o}n\cdot Exhaustividad}{Precisi\acute{o}n+Exhaustividad}
+\]
+
+\begin{center}
+\emph{(valor ponderado)}
+\par\end{center}
+
+\end{overprint}
+\end{columns}
+
 \end{frame}
 %
-%
-\begin{frame}{Resultados}
+\begin{frame}{Verificación del Clasificador ($\mathrm{A}$)}
 
-\framesubtitle{Verificación del Clasificador ($\mathrm{A}$)}
-\setbeamercovered{transparent}
+\framesubtitle{Resultados}
 
 \begin{table}[h]
-\centering
-\caption{Aciertos y desaciertos de actividades humanas detectadas}
-	\resizebox{11cm}{!}{
-		\begin{tabular}{|l|c|c|c|c|c|c|}
-			\cline{2-5} 
-			\multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Desaciertos}} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\tabularnewline
-			\hline 
-			Actividad & \texttt{\footnotesize{WALKING}} & \texttt{\footnotesize{STILL}} & \texttt{\footnotesize{ON\_BICYLE}} & \texttt{\footnotesize{IN\_VEHICLE}} & \textbf{\small{Aciertos}} & \textbf{\small{Porcentaje}}\tabularnewline
-			\hline 
-			\hline 
-			\texttt{\footnotesize{WALKING}} &  &  & 13 &  & 151 & 92,07\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{RUNNING}} &  &  & 13 &  & 83 & 86,46\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{STILL}} &  &  &  & 8 & 140 & 94,59\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{TILTING}}\emph{\footnotesize{}}\footnote{{\footnotesize{\scalebox{0.7}{Estar inquieto no se considera una actividad ambulatoria, presentándose los datos de manera informativa}}}} &  &  &  & 38 & 0 & 0,00\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{ON\_BICYLE}} & 8 &  &  & 4 & 59 & 83,10\%\tabularnewline
-			\hline 
-			\texttt{\footnotesize{IN\_VEHICLE}} &  & 11 &  &  & 83 & 88,30\%\tabularnewline
-			\hline 
-		\end{tabular}
-		}
+ \caption{Aciertos y desaciertos en actividades humanas detectadas}
+\centering\resizebox{11cm}{!}{ %
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\cline{2-5} 
+\multicolumn{1}{l|}{} & \multicolumn{4}{c|}{\textbf{Desaciertos}} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{}\tabularnewline
+\cline{2-7} 
+\multicolumn{1}{l|}{} & \texttt{\footnotesize{}WALKING}{\footnotesize{} } & \texttt{\footnotesize{}STILL}{\footnotesize{} } & \texttt{\footnotesize{}ON\_BICYLE}{\footnotesize{} } & \texttt{\footnotesize{}IN\_VEHICLE} & \textbf{\small{}Aciertos} & \textbf{\small{}Tasa de Aciertos}\tabularnewline
+\hline 
+\hline 
+\texttt{\footnotesize{}WALKING}{\footnotesize{} } &  &  & 13  &  & 151  & 92,07\%\tabularnewline
+\hline 
+\texttt{\footnotesize{}RUNNING} &  &  & 13  &  & 83  & 86,46\%\tabularnewline
+\hline 
+\texttt{\footnotesize{}STILL} &  &  &  & 8  & 140  & 94,59\%\tabularnewline
+\hline 
+\texttt{\footnotesize{}ON\_BICYLE}{\footnotesize{} } & 8  &  &  & 4  & 59  & 83,10\%\tabularnewline
+\hline 
+\texttt{\footnotesize{}IN\_VEHICLE} &  & 11  &  &  & 83  & 88,30\%\tabularnewline
+\hline 
+\end{tabular}} 
 \end{table}
 
 \begin{block}{Nota}
+
 Resultado de la encuesta con dos individuos.
 \end{block}
-
 \end{frame}
-
 %
-\begin{frame}{Resultados}
-\framesubtitle{Verificación del Clasificador ($\mathrm{A}$)}
+\begin{frame}{Verificación del Clasificador ($\mathrm{A}$)}
+
+\framesubtitle{Resultados}
 
 \begin{table}[h]
-\centering
-\caption{\emph{HARDroid} vs \emph{Sony Lifelog}}
-\resizebox{11cm}{!}{
-		\begin{tabular}{|c|c|c|c|c|c|}
-			\hline 
-			\emph{Sony Lifelog} & Rango & Duración & \emph{HARDroid} & Aciertos/Desaciertos & Porcentaje \tabularnewline
-			\hline 
-			\hline 
-			\texttt{walking} & 21:26 - 21:44 & 19 & \texttt{WALKING} & 45/54
-			& 83\%\tabularnewline
-			\hline 
-			\texttt{cycling} & 21:44 - 22:00 & 27 & \texttt{ON\_BICYCLE} & 32/40 
-			& 80\%\tabularnewline
-			\hline 
-			\texttt{running} & 22:12 - 22:24 & 13 & \texttt{RUNNING} & 41/41
-			& 100\%\tabularnewline
-			\hline 
-			\texttt{vehicle} & 22:39 - 22:57 & 19 & \texttt{IN\_VEHICLE} & 32/38
-			& 84\%\tabularnewline
-			\hline 
-			\texttt{-} & 22:25 - 22:35 & 10 & \texttt{STILL} & 65/65
-			& 100\% \tabularnewline
-			\hline 
-		\end{tabular}
-		}
+ \caption{\emph{HARDroid} vs \emph{Sony Lifelog}}
+\centering\resizebox{11cm}{!}{ %
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Etiqueta & Rango  & Duración  & \textbf{\emph{HARDroid}}  & \textbf{\emph{Sony Lifelog}}  & \textbf{Tasa de Aciertos}\tabularnewline
+\hline 
+\hline 
+\texttt{WALKING}  & 21:26 - 21:44  & 19  & 45 & 54  & 83\%\tabularnewline
+\hline 
+\texttt{ON\_BICYCLE}  & 21:44 - 22:00  & 27  & 32 & 40  & 80\%\tabularnewline
+\hline 
+\texttt{RUNNING}  & 22:12 - 22:24  & 13  & 41 & 41  & 100\%\tabularnewline
+\hline 
+\texttt{IN\_VEHICLE}  & 22:39 - 22:57  & 19  & 32 & 38  & 84\%\tabularnewline
+\hline 
+\texttt{STILL}  & 22:25 - 22:35  & 10  & 65 & (65)  & 100\% \tabularnewline
+\hline 
+\end{tabular}} 
 \end{table}
 
 \begin{block}{Nota}
-	Resultados de la encuesta con un individuo.
-\end{block}
 
+Resultados de la encuesta con un individuo. Se asume que \emph{Sony
+Lifelog} es 100\% efectivo para la comparación.
+\end{block}
 \end{frame}
 %
-%
-\begin{frame}{Resultados}
-\framesubtitle{Clasificador Colaborativo ($\mathrm{B}$)}
+\begin{frame}{Clasificador Colaborativo ($\mathrm{B}$)}
 
-El clasificador colaborativo ($\mathrm{B}$) es un árbol de decisión 
+\framesubtitle{Resultados }
+
+El clasificador colaborativo ($\mathrm{B}$) es un árbol de decisión
 de \textbf{699} nodos con \textbf{350} hojas.
 
 \begin{table}[H]
-\centering
-	\caption{Comparación ($\mathrm{A}$) vs ($\mathrm{B}$)}
-	\resizebox{10cm}{!}{
-		\begin{tabular}{|c|c|c|c|c}
-			\cline{1-4} 
-			Métrica & Inicial ($\mathrm{A})$ & Colaborativo ($\mathrm{B})$ & Diferencia & \tabularnewline
-			\cline{1-4} 
-			\cline{1-4}
-			$N$ & 12.012 & 12.578 
-			& \textcolor{green}{+566}
-			& $\checkmark$ \tabularnewline
-			\cline{1-4}
-			$C$ & 10.942 (91,09\%) & 11.489 (91,34\%)
-			& \textcolor{green}{+0,25\%}
-			& $\checkmark$ \tabularnewline
-			\cline{1-4}
-			$I$ & 1.070 (8,91\%) & 1.089 (8,66\%)
-			& \textcolor{red}{-0,25\%}
-			& $\checkmark$ \tabularnewline
-			\cline{1-4}
-			$\kappa$ & 0,8678 & 0,8735
-			& \textcolor{green}{+0,57\%}
-			& $\checkmark$ \tabularnewline
-			\cline{1-4}
-			$E_{ma}$ & 0,0341 & 0,0333
-			&\textcolor{red}{-0,08\%}
-			& $\checkmark$ \tabularnewline
-			\cline{1-4}
-			$E_{rms}$ & 0,164 & 0,1632
-			&\textcolor{red}{-0,08\%}
-			& $\checkmark$ \tabularnewline
-			\cline{1-4}
-			$E_{ra}$ & 15,17\% & 14,58\%
-			&\textcolor{red}{-0,59\%}
-			& $\checkmark$ \tabularnewline
-			\cline{1-4}
-			$E_{rrs}$ & 48,91\% & 48,30\%
-			&\textcolor{red}{-0,61\%}
-			& $\checkmark$ \tabularnewline
-			\cline{1-4}
-		\end{tabular}
-		}
+\caption{Comparación ($\mathrm{A}$) vs ($\mathrm{B}$)}
+\centering\resizebox{10cm}{!}{ %
+\begin{tabular}{|c|c|c|c|c}
+\cline{1-4} 
+Métrica  & Inicial ($\mathrm{A})$  & Colaborativo ($\mathrm{B})$  & Diferencia  & \tabularnewline
+\hline 
+\hline 
+$N$  & 12.012  & 12.578  & \textcolor{green}{+566}  & $\checkmark$ \tabularnewline
+\cline{1-4} 
+$C$  & 10.942 (91,09\%)  & 11.489 (91,34\%)  & \textcolor{green}{+0,25\%}  & $\checkmark$ \tabularnewline
+\cline{1-4} 
+$I$  & 1.070 (8,91\%)  & 1.089 (8,66\%)  & \textcolor{red}{-0,25\%}  & $\checkmark$ \tabularnewline
+\cline{1-4} 
+$\kappa$  & 0,8678  & 0,8735  & \textcolor{green}{+0,57\%}  & $\checkmark$ \tabularnewline
+\cline{1-4} 
+$E_{ma}$  & 0,0341  & 0,0333  & \textcolor{red}{-0,08\%}  & $\checkmark$ \tabularnewline
+\cline{1-4} 
+$E_{rms}$  & 0,164  & 0,1632  & \textcolor{red}{-0,08\%}  & $\checkmark$ \tabularnewline
+\cline{1-4} 
+$E_{ra}$  & 15,17\%  & 14,58\%  & \textcolor{red}{-0,59\%}  & $\checkmark$ \tabularnewline
+\cline{1-4} 
+$E_{rrs}$  & 48,91\%  & 48,30\%  & \textcolor{red}{-0,61\%}  & $\checkmark$ \tabularnewline
+\cline{1-4} 
+\end{tabular}} 
 \end{table}
 
 \end{frame}
 %
-%
-\begin{frame}{Resultados}
-\framesubtitle{Clasificador Colaborativo ($\mathrm{B}$)}
+\begin{frame}{Clasificador Colaborativo ($\mathrm{B}$)}
 
-Las métricas de evaluación del clasificador colaborativo resultan en:
+\framesubtitle{Resultados }
+
+Las métricas de evaluación del clasificador colaborativo resultan
+en: 
 \begin{itemize}
-	\item Exactitud: \textbf{0,9723} (Antes 0,9714)
-	\item Precisión: \textbf{0,9204} (Antes 0,9174)
-	\item Exhaustividad: \textbf{0,9134} (Antes 0,9109)
-	\item \emph{Valor-F}: \textbf{0,9168} (Antes 0,9142)
+\item Exactitud: \textbf{0,9723} (> 0,9714) 
+\item Precisión: \textbf{0,9204} (> 0,9174) 
+\item Exhaustividad: \textbf{0,9134} (> 0,9109) 
+\item \emph{Valor-F}: \textbf{0,9168} (> 0,9142) 
 \end{itemize}
 \end{frame}
-%
-%
 

@@ -71,16 +71,12 @@
 
 \begin_body
 
-\begin_layout Section
-Sistemas HAR
-\end_layout
-
 \begin_layout Frame
 \begin_inset Argument 4
 status open
 
 \begin_layout Plain Layout
-Sistemas HAR
+Diseño del Sistema HAR
 \end_layout
 
 \end_inset
@@ -90,7 +86,7 @@ Sistemas HAR
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Aplicaciones de Contexto
+Metodología y Sistemas HAR
 \end_layout
 
 \begin_layout Standard
@@ -109,214 +105,37 @@ setbeamercovered{transparent}
 
 \end_layout
 
-\begin_layout Itemize
-Aplicaciones cuyo medio de interacción incluye al contexto.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-El contexto es el estado acerca de la información
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-física,
-\end_layout
-
-\begin_layout Itemize
-emocional,
-\end_layout
-
-\begin_layout Itemize
-social, entre otros
-\end_layout
-
-\end_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-La computación móvil y ubicua es sinónimo de dinamismo en el contexto
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Los tipos de contexto comunes en la computación móvil son: 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-la ubicación, 
-\end_layout
-
-\begin_layout Itemize
-la identidad, 
-\end_layout
-
-\begin_layout Itemize
-la actividad 
-\end_layout
-
-\begin_layout Itemize
-y el tiempo
-\end_layout
-
-\end_deeper
-\end_deeper
 \begin_layout Standard
-\begin_inset Separator plain
+\paragraph_spacing other 0
+\align center
+\begin_inset Graphics
+	filename ../../capitulo-2/graphics/harsystem2.png
+	lyxscale 50
+	width 85text%
+
 \end_inset
 
 
 \end_layout
 
-\begin_layout Frame
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-article
-\end_layout
-
-\end_inset
-
-
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Sistemas HAR
-\end_layout
-
-\end_inset
-
+\begin_layout ColumnsTopAligned
 
 \end_layout
 
 \begin_deeper
-\begin_layout FrameSubtitle
-Propósito del sistema
-\end_layout
-
-\begin_layout Standard
+\begin_layout Column
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
+0.5
 \backslash
-setbeamercovered{transparent}
+textwidth
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
-Proveer un componente para el desarrollo de aplicaciones de contexto.
- 
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Reconocer actividades realizadas rutinariamente de diferentes maneras, 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-por diferentes usuarios y 
-\end_layout
-
-\begin_layout Itemize
-en diferentes contextos.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Reconocer actividades mediante el uso de sensores.
-\end_layout
-
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Ser portado oportunamente como atuendo para los usuarios (
-\begin_inset Flex Emphasize
-status open
-
-\begin_layout Plain Layout
-Wearable
-\end_layout
-
-\end_inset
-
-)
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Sistemas HAR
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameSubtitle
-Diseño del sistema
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-setbeamercovered{transparent}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Arquitectura basada en aplicaciones de aprendizaje automático.
-\end_layout
-
-\begin_layout Pause
 
 \end_layout
 
@@ -372,6 +191,22 @@ clasificador
 
 \end_layout
 
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Metodología operativa
 \end_layout
@@ -406,38 +241,7 @@ on-line
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-\align center
-\begin_inset Flex Visible
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-2-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename ../../capitulo-2/graphics/harsystem2.png
-	lyxscale 50
-	width 60text%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -446,139 +250,5 @@ status open
 
 \end_layout
 
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Sistemas HAR
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameSubtitle
-Componentes del sistema
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-setbeamercovered{transparent}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Columns
-
-\end_layout
-
-\begin_deeper
-\begin_layout Column
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-0.25
-\backslash
-textwidth
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Recolector
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Sensor
-\end_layout
-
-\begin_layout Itemize
-Registro
-\end_layout
-
-\end_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Procesador
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Filtro
-\end_layout
-
-\begin_layout Itemize
-Extracción
-\end_layout
-
-\end_deeper
-\begin_layout Pause
-
-\end_layout
-
-\begin_layout Itemize
-Clasificador
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Aprendizaje
-\end_layout
-
-\begin_layout Itemize
-Clasificación
-\end_layout
-
-\end_deeper
-\begin_layout Column
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-0.75
-\backslash
-textwidth
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename graphics/harsystem.png
-	lyxscale 20
-	width 100col%
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_deeper
 \end_body
 \end_document

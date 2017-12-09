@@ -1,8 +1,8 @@
 
 \section{HAR en Android}
-\begin{frame}{HAR en Android}
+\begin{frame}{Proyecto HARDroid}
 
-\framesubtitle{Arquitectura del Proyecto}
+\framesubtitle{HAR en Android}
 
 \setbeamercovered{transparent}
 \begin{columns}
@@ -14,15 +14,19 @@
 \item Servicio utilitario de reconocimiento.
 \item Clasificador dinámico
 \end{itemize}
+\begin{spacing}{0.5}
 
 \pause{}
+\end{spacing}
 \item \textbf{ActivitySurvey}
 \begin{itemize}
 \item Aplicación que depende del servicio.
 \item Encuesta a usuarios. 
 \end{itemize}
+\begin{spacing}{0.5}
 
 \pause{}
+\end{spacing}
 \item \textbf{Backend C4.5} 
 \begin{itemize}
 \item Servicio web de recolección.
@@ -39,167 +43,4 @@
 
 \end{frame}
 %
-\begin{frame}{HAR en Android}
-
-\framesubtitle{Servicio de Reconocimiento}
-
-\setbeamercovered{transparent}
-\begin{columns}
-
-\column{0.5\textwidth}
-\begin{itemize}[<+->]
-\item \structure{HARDroid} es un gestor en la capa de \emph{Application Framework}.
-\item Mecanismo \structure{IPC} bajo el modelo \structure{Cliente-Servidor}.
-\item Las aplicaciones móviles hechas por terceros obtienen: 
-\begin{itemize}
-\item mejoras del motor de reconocimiento, 
-\item actualización por plataforma de distribución \structure{Google Play Store}, 
-\item mecanismos fáciles de integración por \structure{Gradle}.
-\end{itemize}
-\end{itemize}
-
-\column{0.5\textwidth}
-\begin{overprint}
-\onslide<1-2> 
-\begin{center}
-\includegraphics[width=1\columnwidth]{../capitulo-5/graphics/hardroid_func}
-\par\end{center}
-\onslide<3-> 
-\begin{center}
-\includegraphics[width=1\columnwidth]{propuesta/graphics/archi_ipc}
-\par\end{center}
-
-\end{overprint}
-\end{columns}
-
-\end{frame}
-%
-\begin{frame}{HAR en Android}
-
-\framesubtitle{HARDroid: Módulos Funcionales}
-
-\setbeamercovered{transparent}
-\begin{columns}
-
-\column{0.30\textwidth}
-\begin{itemize}[<+->]
-\item Integración \structure{AIDL} 
-\item Manejo de Sesión
-\item Procesamiento de muestras
-\item Reconocimiento de Actividades
-\item Captura de señales
-\end{itemize}
-\begin{center}
-\visible<5>{\begin{center}
-\includegraphics[width=1.5cm]{propuesta/graphics/hardroid_logo}
-\par\end{center}}
-\par\end{center}
-
-\column{0.70\textwidth}
-\begin{center}
-\includegraphics[width=0.9\columnwidth]{propuesta/graphics/hardroid}
-\par\end{center}
-
-\end{columns}
-
-\end{frame}
-%
-\begin{frame}{HAR en Android}
-
-\framesubtitle{Reconocimiento de Actividades}
-
-\centering\resizebox{0.60\textwidth}{!}{%
-\noindent\begin{minipage}[t][1\totalheight][b]{1\columnwidth}%
-\begin{algorithmic}[1]
-    \Require Conjunto de tiempos de subscripción de clientes $S$
-	\Procedure{Reconocimiento}{$ S $}
-		\alertline<1> \If {$S \textit{ está vacío } $}
- 			\State\textit{Terminar}
-		\EndIf 
-		\alertline<2> \State $t_w \leftarrow 10$ 
-        \Comment{Ventana de tiempo estándar de reconocimiento}
-		\alertline<3> \State $t_{min} \leftarrow \min_{\forall s \in S} s$
-		\alertline<4> \State Esperar $t_{min} - t_w$ segundos 
-		\alertline<5> \State $ a_{xyz} = $ Leer sensor por $t_w$ segundos o 512 muestras  
-		\alertline<6> {\State $ C = \emptyset$}
-		\alertline<7> \For{$i := 1 \to 512$}
-			\alertline<8> \State $ v_f = $ Calcular vector caracteristicos de $a_{xyz}$ con valores entre $[i, i + 127]$
-			\alertline<9> \State $ c_a = $ Clasificar $v_f$ con el algoritmo \textit{C4.5}
-			\alertline<10> \State $ C = C \cup \{c_a\}$
-			\alertline<7> \State $i := i + 64$
-        \alertline<7> \EndFor
-        \alertline<11> \State $ M = $ Calcular matriz de frecuencia de $C$
-		\State
-		\alertline<11> \Return $ M $
-	\EndProcedure
-\end{algorithmic}%
-\end{minipage}
-
-}
-\end{frame}
-%
-\begin{frame}{HAR en Android}
-
-\framesubtitle{Activity Survey: Módulos Funcionales}
-
-\setbeamercovered{transparent}
-\begin{columns}
-
-\column{0.30\textwidth}
-\begin{itemize}[<+->]
-\item Presentación
-\item Identificación
-\item Encuesta guiada
-\item Preferencias de comunicación y notificación
-\item Almacenamiento y sincronización
-\end{itemize}
-\begin{center}
-\visible<5>{\begin{center}
-\includegraphics[width=1.5cm]{propuesta/graphics/activity_survey_logo}
-\par\end{center}}
-\par\end{center}
-
-\column{0.70\textwidth}
-\begin{center}
-\includegraphics[width=0.9\columnwidth]{propuesta/graphics/activity_survey}
-\par\end{center}
-
-\end{columns}
-
-\end{frame}
-%
-\begin{frame}{HAR en Android}
-
-\framesubtitle{Activity Survey: Componentes Funcionales}
-\begin{center}
-\includegraphics[width=0.65\columnwidth]{../capitulo-5/graphics/act_surv_diag}
-\par\end{center}
-
-\end{frame}
-%
-\begin{frame}{HAR en Android}
-
-\framesubtitle{Backend C4.5: Módulos Funcionales}
-
-\setbeamercovered{transparent}
-\begin{columns}
-
-\column{0.5\textwidth}
-\begin{itemize}
-\item Servicio Web en \emph{Amazon AWS}
-\item Base de datos 
-\begin{itemize}
-\item Conjunto entrenamiento inicial
-\item Resultados de las encuestas
-\end{itemize}
-\item Modelo activo de aprendizaje por colaboración
-\end{itemize}
-
-\column{0.5\textwidth}
-\begin{center}
-\includegraphics[height=1\linewidth]{../capitulo-6/graphics/proceso-genera-clasi}
-\par\end{center}
-\end{columns}
-
-\end{frame}
 

@@ -76,41 +76,9 @@
 status open
 
 \begin_layout Plain Layout
-Alcance
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameSubtitle
 Propuesta
 \end_layout
 
-\begin_layout Standard
-\align center
-Reconocer actividades humanas utilizando teléfonos móviles modernos con
- un enfoque colaborativo
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Alcance
-\end_layout
-
 \end_inset
 
 
@@ -118,190 +86,14 @@ Alcance
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Objetivo General
+Alcance
 \end_layout
 
 \begin_layout Standard
 \align center
-El objetivo principal es desarrollar un sistema 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-\align block
-HAR
-\end_layout
-
-\end_inset
-
- utilizando teléfonos móviles modernos cuyo aporte principal es una librería
- de código abierto y un modelo de aprendizaje activo.
-\end_layout
-
-\end_deeper
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Frame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Frame
-\begin_inset Argument 4
-status open
-
-\begin_layout Plain Layout
-Alcance
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameSubtitle
-Objetivos Específicos
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-setbeamercovered{transparent}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-+-
-\end_layout
-
-\end_inset
-
-Definir el marco teórico sobre 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-HAR
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Enumerate
-Revisar las técnicas de 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-captura de señales
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Enumerate
-Revisar el 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-procesamiento de señales
-\end_layout
-
-\end_inset
-
- para identificar variables de entrenamiento.
- 
-\end_layout
-
-\begin_layout Enumerate
-Comprender la clasificación basada 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-aprendizaje automático
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Enumerate
-Diseñar un 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-sistema HAR
-\end_layout
-
-\end_inset
-
- que incluya la recolección de muestras colaborativas y clasificación de
- actividades en-línea.
- 
-\end_layout
-
-\begin_layout Enumerate
-Aportar un componente de 
-\begin_inset Flex Structure
-status open
-
-\begin_layout Plain Layout
-software libre
-\end_layout
-
-\end_inset
-
- para teléfonos móviles modernos con plataforma 
-\emph on
-
-\begin_inset Flex Bold
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Android
-\end_layout
-
-\end_inset
-
-
-\emph default
-.
- 
+Reconocer actividades humanas utilizando teléfonos móviles modernos a partir
+ de una herramienta de código abierto extensible y personalizable con un
+ enfoque colaborativo
 \end_layout
 
 \end_deeper
@@ -317,17 +109,17 @@ Android
 status open
 
 \begin_layout Plain Layout
-Alcance
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout FrameSubtitle
 Actividades Humanas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Alcance
 \end_layout
 
 \begin_layout Standard
@@ -371,48 +163,33 @@ textwidth
 Acciones cortas
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
+\paragraph_spacing other 0.5
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Actividades Simples
 \end_layout
 
-\begin_deeper
 \begin_layout Pause
+\paragraph_spacing other 0.5
 
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Actividades Complejas
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Combinación
-\end_layout
-
-\begin_layout Itemize
-Cotidianas 
-\end_layout
-
-\begin_layout Itemize
-Gimnásticas
-\end_layout
-
-\begin_layout Itemize
-Militares
-\end_layout
-
 \begin_layout Pause
+\paragraph_spacing other 0.5
 
 \end_layout
 
-\end_deeper
+\begin_layout Itemize
+Actividades Colectivas
+\end_layout
+
 \begin_layout Column
 \begin_inset ERT
 status open
@@ -429,20 +206,6 @@ textwidth
 
 \end_layout
 
-\begin_layout Overprint
-\begin_inset Argument item:1
-status open
-
-\begin_layout Plain Layout
-1-3
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 \align center
 \begin_inset Graphics
@@ -455,13 +218,39 @@ status open
 
 \end_layout
 
-\end_deeper
-\begin_layout Overprint
-\begin_inset Argument item:1
+\begin_layout Standard
+\align right
+
+\size small
+\begin_inset Flex Emphasize
 status open
 
 \begin_layout Plain Layout
-4
+
+\size small
+[Chen et al., 2012, Reyes Ortiz, 2015]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Actividades Humanas
 \end_layout
 
 \end_inset
@@ -470,20 +259,282 @@ status open
 \end_layout
 
 \begin_deeper
+\begin_layout FrameSubtitle
+Alcance
+\end_layout
+
 \begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename graphics/actividades.png
-	lyxscale 50
-	width 70col%
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{0.75
+\backslash
+textwidth}{!}{
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
-\end_deeper
-\end_deeper
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top" width="5cm">
+<column alignment="left" valignment="middle" width="6cm">
+<row>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Grupo
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Actividades
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Áreas de Aplicación
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Posturas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sentado
+\end_layout
+
+\begin_layout Plain Layout
+Parado
+\end_layout
+
+\begin_layout Plain Layout
+Acostado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medicina, Cuidado Personal, Asistencia en vida diaria
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ambulatorias 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caminar
+\end_layout
+
+\begin_layout Plain Layout
+Correr
+\end_layout
+
+\begin_layout Plain Layout
+Quieto
+\end_layout
+
+\begin_layout Plain Layout
+Subir y descender escaleras
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cuidado Personal, Entretenimiento
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transporte 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+En bus o automóvil
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+En bicicleta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Conmutar, Seguridad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cotidianas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+Comer
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+Beber
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+Trabajar en la PC
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+Mirar TV
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+Leer un libro 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Asistencia en la vida diaria, Ambientes inteligentes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \end_body
 \end_document

@@ -90,7 +90,7 @@ Conclusión
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Logros
+Aportes
 \end_layout
 
 \begin_layout Standard
@@ -120,7 +120,7 @@ HARDroid
 
 \end_inset
 
- para teléfonos inteligentes.
+ para dispositivos inteligentes.
  
 \end_layout
 
@@ -134,6 +134,7 @@ Se mejora el clasificador mediante colaboración.
 \end_layout
 
 \begin_layout Pause
+\paragraph_spacing other 0.5
 
 \end_layout
 
@@ -161,6 +162,7 @@ como servicio a través de una interfaz de integración.
 \end_layout
 
 \begin_layout Pause
+\paragraph_spacing other 0.5
 
 \end_layout
 

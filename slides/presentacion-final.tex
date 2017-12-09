@@ -5,9 +5,19 @@
 \usepackage[latin9]{inputenc}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+\usepackage{array}
+\usepackage{float}
+\usepackage{amstext}
+\usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{setspace}
 
 \makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
  % this default might be overridden by plain title style
  \newcommand\makebeamertitle{\frame{\maketitle}}%
@@ -39,6 +49,8 @@
 \theoremstyle{definition} 
 \newtheorem{definition}{Definición}[section]
 \usepackage{algpseudocode}
+\usepackage{helvet}
+\usepackage{cclicenses}
 
 \newcommand{\alertline}{%
  \usebeamercolor[fg]{normal text}%
@@ -75,9 +87,7 @@ Ing. Juan Talavera}
 	\begin{frame}
 		\frametitle{Contenido}        		\tableofcontents[currentsection]
 	\end{frame} 
-}
-
-\include{intro/problema-1}
+} \include{intro/problema-1}
 
 \include{intro/alcance-1}
 
@@ -85,9 +95,9 @@ Ing. Juan Talavera}
 
 \include{propuesta/sistema-har-1}\include{propuesta/hardroid-1}\include{resultados/resultados-1}
 
-\include{conclusion/conclusion-1}
+\include{conclusion/conclusion}
 
 \include{anexo/anexo}
 
-
+\include{anexo/ecuaciones}\include{anexo/hardesing}
 \end{document}

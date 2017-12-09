@@ -80,7 +80,7 @@ Introducción
 status open
 
 \begin_layout Plain Layout
-Definición del Problema
+Reconocimiento de Actividades Humanas
 \end_layout
 
 \end_inset
@@ -90,7 +90,7 @@ Definición del Problema
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Reconocimiento de Actividades Humanas
+Definición del Problema
 \end_layout
 
 \begin_layout Overprint
@@ -110,6 +110,26 @@ status open
 \begin_layout Quote
 Determinar las acciones o comportamientos de uno o más individuos a partir
  de datos ambiguos capturados por sensores situados en el entorno.
+ 
+\end_layout
+
+\begin_layout Quote
+\noindent
+\align right
+
+\size small
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+
+\size small
+[Bao and Intille, 2004, Chen et al., 2012, Reyes Ortiz, 2015]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -173,10 +193,56 @@ HAR
 \end_deeper
 \begin_layout Standard
 \align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename graphics/sensor-environment.jpg
 	lyxscale 50
-	width 80text%
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing other 0
+\noindent
+
+\size tiny
+\emph on
+\color darkgray
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+copyright
+\end_layout
+
+\end_inset
+
+ Beacons, Google Developers
+\end_layout
 
 \end_inset
 
@@ -196,7 +262,7 @@ HAR
 status open
 
 \begin_layout Plain Layout
-Definición del Problema
+¿Que es HAR?
 \end_layout
 
 \end_inset
@@ -222,7 +288,7 @@ setbeamercovered{transparent}
 
 \begin_deeper
 \begin_layout FrameSubtitle
-¿Que es HAR?
+Definición del Problema
 \end_layout
 
 \begin_layout Itemize
@@ -241,8 +307,7 @@ Es un tópico de investigación multidisciplinario que busca diseñar algoritmos
 
 \begin_deeper
 \begin_layout Itemize
-Capturar movimientos de uno o más individuos en interacción con su entorno
- 
+Capturar movimientos de individuos en interacción con su entorno 
 \end_layout
 
 \begin_layout Itemize
@@ -352,7 +417,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-Definición del Problema
+Motivación
 \end_layout
 
 \end_inset
@@ -362,7 +427,7 @@ Definición del Problema
 
 \begin_deeper
 \begin_layout FrameSubtitle
-Motivación
+Definición del Problema
 \end_layout
 
 \begin_layout Standard
@@ -372,6 +437,8 @@ status open
 \begin_layout Plain Layout
 
 
+\backslash
+setbeamercovered{transparent}
 \backslash
 setlength
 \backslash
@@ -405,15 +472,6 @@ textwidth
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-+-
-\end_layout
-
-\end_inset
-
 El 
 \begin_inset Flex Structure
 status open
@@ -425,6 +483,11 @@ contexto
 \end_inset
 
  es primordial para los sistemas inteligentes 
+\end_layout
+
+\begin_layout Pause
+\paragraph_spacing other 0.5
+
 \end_layout
 
 \begin_layout Itemize
@@ -451,6 +514,11 @@ sensores
  
 \end_layout
 
+\begin_layout Pause
+\paragraph_spacing other 0.5
+
+\end_layout
+
 \begin_layout Itemize
 Uso intensivo de 
 \begin_inset Flex Structure
@@ -465,19 +533,12 @@ teléfonos móviles modernos
  en la vida diaria.
 \end_layout
 
-\begin_layout Itemize
-\begin_inset ERT
-status open
+\begin_layout Pause
+\paragraph_spacing other 0.5
 
-\begin_layout Plain Layout
-
-
-\backslash
-setbeamercovered{transparent}
 \end_layout
 
-\end_inset
-
+\begin_layout Itemize
 Popularidad de 
 \begin_inset Flex Structure
 status open
@@ -536,7 +597,6 @@ status open
 
 \begin_deeper
 \begin_layout Standard
-\align center
 \begin_inset Graphics
 	filename graphics/context1.png
 	lyxscale 50
@@ -545,6 +605,28 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing other 0
+\noindent
+
+\size tiny
+\emph on
+\color darkgray
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+copyright
+\end_layout
+
+\end_inset
+
+ Connected Social Media, Intel
 \end_layout
 
 \end_deeper
@@ -563,7 +645,6 @@ status open
 
 \begin_deeper
 \begin_layout Standard
-\align center
 \begin_inset Graphics
 	filename graphics/sensors.png
 	lyxscale 50
@@ -602,6 +683,28 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+\paragraph_spacing other 0
+\noindent
+
+\size tiny
+\emph on
+\color darkgray
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+copyright
+\end_layout
+
+\end_inset
+
+ Beacons, Google Developers
+\end_layout
+
 \end_deeper
 \begin_layout Overprint
 \begin_inset Argument item:1
@@ -628,10 +731,207 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+\paragraph_spacing other 0
+\noindent
+
+\size tiny
+\emph on
+\color darkgray
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cc
+\end_layout
+
+\end_inset
+
+ Mobile Dev, Pinterest
+\end_layout
+
 \end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Contexto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout FrameSubtitle
+Definición del Problema
+\end_layout
+
+\begin_layout Standard
+Medio de interacción que representa el estado de la información física,
+ emocional, social, entre otros.
+ 
+\begin_inset Flex Emphasize
+status open
+
+\begin_layout Plain Layout
+[Dey and Abowd, 2000]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Uncover
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsTopAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ubicación 
+\end_layout
+
+\begin_layout Itemize
+Identidad 
+\end_layout
+
+\begin_layout Itemize
+Actividad física
+\end_layout
+
+\begin_layout Itemize
+Tiempo
+\end_layout
+
+\begin_layout Itemize
+Social
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+0.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size tiny
+\emph on
+\color darkgray
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graphics/context2.png
+	lyxscale 50
+	width 65text%
+
+\end_inset
+
+
+\size tiny
+\emph on
+\color darkgray
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+copyright
+\end_layout
+
+\end_inset
+
+ Toptal.io
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
 
 \end_layout
 

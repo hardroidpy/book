@@ -26,6 +26,8 @@
 \theoremstyle{definition} 
 \newtheorem{definition}{Definición}[section]
 \usepackage{algpseudocode}
+\usepackage{helvet}
+\usepackage{cclicenses}
 
 \newcommand{\alertline}{%
  \usebeamercolor[fg]{normal text}%
@@ -233,10 +235,7 @@ end{frame}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset CommandInset include
 LatexCommand include
 filename "intro/problema-1.lyx"
@@ -283,7 +282,7 @@ filename "propuesta/hardroid-1.lyx"
 
 \begin_inset CommandInset include
 LatexCommand include
-filename "resultados/resultados-1.tex"
+filename "resultados/resultados-1.lyx"
 
 \end_inset
 
@@ -293,7 +292,7 @@ filename "resultados/resultados-1.tex"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "conclusion/conclusion-1.lyx"
+filename "conclusion/conclusion.lyx"
 
 \end_inset
 
@@ -301,6 +300,29 @@ filename "conclusion/conclusion-1.lyx"
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "anexo/anexo.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "anexo/ecuaciones.lyx"
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "anexo/hardesing.lyx"
+
+\end_inset
+
 
 \end_layout
 

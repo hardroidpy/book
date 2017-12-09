@@ -6,6 +6,9 @@ target="tex latex"
 if [ "-s" == "$1" ]; then
     target="tex-slide latex-slide";
     ext=$2;
+elif [ "-f" == "$1" ]; then
+    target="slide-final";
+    ext=$2;
 fi
 
 if [ ! -z "$ext" ]; then

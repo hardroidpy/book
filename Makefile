@@ -37,6 +37,12 @@ latex-slide:
 	@echo
 	@echo Build finished. 
 
+slide-final:
+	cd slides && lyx presentacion-final.lyx -e pdflatex -f all;
+	cd slides && $(makelatex) presentacion-final.tex && $(makepdf) presentacion-final.tex ;
+	@echo
+	@echo Build finished. 
+
 view:
 	evince tesis.pdf
 	@echo 

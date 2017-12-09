@@ -1,14 +1,18 @@
 
 \section{Introducción}
-\begin{frame}{Definición del Problema}
+\begin{frame}{Reconocimiento de Actividades Humanas}
 
-\framesubtitle{Reconocimiento de Actividades Humanas}
+\framesubtitle{Definición del Problema}
 \begin{overprint}
 \onslide<1> 
 \begin{quote}
 Determinar las acciones o comportamientos de uno o más individuos
 a partir de datos ambiguos capturados por sensores situados en el
-entorno.
+entorno. 
+\begin{flushright}
+{\small{}\emph{{\small{}{[}Bao and Intille, 2004, Chen et al., 2012, Reyes Ortiz,
+2015{]}}}}
+\par\end{flushright}{\small \par}
 \end{quote}
 \onslide<2> 
 \begin{block}<2>{Nota}
@@ -17,22 +21,29 @@ inglés \emph{(Human Activity Recognition})
 \end{block}
 \end{overprint}
 \begin{center}
-\includegraphics[width=0.8\textwidth]{intro/graphics/sensor-environment}
+\begin{minipage}[t]{0.7\columnwidth}%
+\includegraphics[width=1\textwidth]{intro/graphics/sensor-environment}
+
+\begin{spacing}{0}
+\noindent \textcolor{darkgray}{\emph{\tiny{}\copyright Beacons, Google
+Developers}}{\tiny \par}
+\end{spacing}
+%
+\end{minipage}
 \par\end{center}
 
 \end{frame}
 %
-\begin{frame}{Definición del Problema}
+\begin{frame}{¿Que es HAR?}
 
 \setbeamercovered{transparent}
 
-\framesubtitle{¿Que es HAR?}
+\framesubtitle{Definición del Problema}
 \begin{itemize}[<+->]
 \item Es un tópico de investigación multidisciplinario que busca diseñar
 algoritmos para:
 \begin{itemize}
-\item Capturar movimientos de uno o más individuos en interacción con su
-entorno 
+\item Capturar movimientos de individuos en interacción con su entorno 
 \item Realizar aprendizaje e inferencia
 \item Proveer información de contexto 
 \end{itemize}
@@ -54,21 +65,38 @@ entorno
 \end{overprint}
 \end{frame}
 %
-\begin{frame}{Definición del Problema}
+\begin{frame}{Motivación}
 
-\framesubtitle{Motivación}
+\framesubtitle{Definición del Problema}
 
-\setlength\columnsep{0pt}
+\setbeamercovered{transparent}\setlength\columnsep{0pt}
 \begin{columns}
 
 \column{0.5\textwidth}
-\begin{itemize}[<+->]
+\begin{itemize}
 \item El \structure{contexto} es primordial para los sistemas inteligentes 
+\end{itemize}
+\begin{spacing}{0.5}
+
+\pause{}
+\end{spacing}
+\begin{itemize}
 \item Avances en tecnologías de \structure{computación móvil} y \structure{sensores} 
+\end{itemize}
+\begin{spacing}{0.5}
+
+\pause{}
+\end{spacing}
+\begin{itemize}
 \item Uso intensivo de \structure{teléfonos móviles modernos} en la vida
 diaria.
-\item \setbeamercovered{transparent}Popularidad de \structure{aplicaciones móviles}
-de contexto en 
+\end{itemize}
+\begin{spacing}{0.5}
+
+\pause{}
+\end{spacing}
+\begin{itemize}
+\item Popularidad de \structure{aplicaciones móviles} de contexto en 
 \begin{itemize}
 \item el cuidado personal, 
 \item la movilidad y 
@@ -79,21 +107,67 @@ de contexto en
 \column{0.5\textwidth}
 \begin{overprint}
 \onslide<1> 
-\begin{center}
+
 \includegraphics[width=1\textwidth]{intro/graphics/context1}
-\par\end{center}
+
+\begin{spacing}{0}
+\noindent \textcolor{darkgray}{\emph{\tiny{}\copyright Connected
+Social Media, Intel}}{\tiny \par}
+\end{spacing}
 \onslide<2> 
-\begin{center}
+
 \includegraphics[width=1\textwidth]{intro/graphics/sensors}
-\par\end{center}
 \onslide<3> 
 
 \includegraphics[bb=100bp 0bp 520bp 266bp,clip,width=1\textwidth]{intro/graphics/sensor-environment}
+
+\begin{spacing}{0}
+\noindent \textcolor{darkgray}{\emph{\tiny{}\copyright Beacons, Google
+Developers}}{\tiny \par}
+\end{spacing}
 \onslide<4-> 
 
 \includegraphics[width=1\textwidth]{intro/graphics/mobile-phone}
+
+\begin{spacing}{0}
+\noindent \textcolor{darkgray}{\emph{\tiny{}\cc Mobile Dev, Pinterest}}{\tiny \par}
+\end{spacing}
 \end{overprint}
 \end{columns}
 
 \end{frame}
+%
+\begin{frame}{Contexto}
+
+\framesubtitle{Definición del Problema}
+
+Medio de interacción que representa el estado de la información física,
+emocional, social, entre otros. \emph{{[}Dey and Abowd, 2000{]}}
+\begin{uncoverenv}<2>
+\begin{columns}[t]
+
+\column{0.5\textwidth}
+\begin{itemize}
+\item Ubicación 
+\item Identidad 
+\item Actividad física
+\item Tiempo
+\item Social
+\end{itemize}
+
+\column{0.5\textwidth}
+\begin{center}
+\textcolor{darkgray}{\emph{\tiny{}}}%
+\noindent\begin{minipage}[t]{1\columnwidth}%
+\includegraphics[width=0.65\textwidth]{intro/graphics/context2}\textcolor{darkgray}{\emph{\tiny{}\copyright
+Toptal.io}}%
+\end{minipage}
+\par\end{center}{\tiny \par}
+
+\end{columns}
+
+\end{uncoverenv}
+
+\end{frame}
+%
 
